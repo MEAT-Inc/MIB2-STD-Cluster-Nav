@@ -1,0 +1,885 @@
+_fini
+__cxa_finalize
+__deregister_frame_info
+__register_frame_info
+_Jv_RegisterClasses
+ipodiap2_get_capabilities
+strlen
+memset
+memcpy
+sql_exec_uint64
+log_emit
+sync_log
+sql_exec
+qdb_rows
+qdb_freeresult
+iap2_medialib_getinfo
+strm_dict_find_value
+strcmp
+strdup
+iap2_medialib_freeinfo
+qdb_cell
+ulltoa
+iap2_medialib_sync_start
+sync_thread_is_cancelled
+__get_errno_ptr
+strerror
+sync_merge_flush
+ipod_db_clear
+ntfy_add_event
+iap2_medialib_getdata
+strtoull
+sync_merge_add_revision
+iap2_map_metadata
+sync_merge_add_lib
+sync_merge_delete_file_byname
+plss_delete_playlistdata_all
+plss_create_playlist
+malloc
+sync_playlist_add_data
+option_sync_max_first_fid_event
+plss_delete_playlist
+iap2_medialib_next
+sync_emit_first_existing_fid_event
+sync_merge_cleanup_exttables
+iap2_medialib_sync_stop
+iap2_connect
+iap2_disconnect
+ipodiap2_clear_ipod_structure
+memccpy
+ipodiap2_init
+mme_log
+conf_get_element
+conf_get_bool_from_element_attr
+verbose
+ipodiap2_get_next_ipod_struct
+pthread_mutex_lock
+pthread_mutex_unlock
+sync_target_folder_get
+sync_max_lib_entries_get
+iap2_create_mdmask
+ipod_db_get_rootfolderid
+sql_lock
+sql_commit
+mmsync_mss
+mss_db_item_added
+mss_db_item_delete
+mss_db_check
+libaoi.so.1
+libmd.so.1
+libstrm.so.1
+qdb_rowchanges
+ipod_get_cache_size
+strtoul
+IPOD_OPT_CACHE_SIZE
+ipod_db_get_hashes
+metadata_conf_get_by_source
+__stackavail
+sprintf
+IPOD_MD_PROVIDER
+IPOD_MD_SOURCENAME_TITLE
+iap2_mdmask_lookup
+ipod_mdmask_lookup
+iap2_mdstring_lookup
+calloc
+metadata_kvpair_map_by_source
+IAP2_MD_PROVIDER
+ipod_mdstring_lookup
+ipod_map_metadata
+ipod_trkinfo_get_number
+ipod_trkinfo_get_string
+ultoa
+IPOD_MD_SOURCENAME_OFFSET
+conf_configurable_metadata_ftypearr
+ipod_create_mdmask
+ipod_ulltoa_pad
+ipod_browse_set_options
+ipod_set_verbose_level
+ipod_trkinfo_set_options
+ipod_gps_send
+MsgSendvs
+ipod_uid_set_trk_list
+ipod_create_genius_playlist
+ipod_browse_get_numrecords
+ipod_write_feature
+ipod_request_app_launch
+ipod_cfg_set
+ipod_ctrl_passthru
+ipod_eaf_cfg_session_set
+ipod_eaf_cfg_set
+ipod_eaf_addprotocol
+ipod_eaf_send
+ipod_set_bluetooth_status
+strm_dict_size
+strm_dict_key_get
+strm_dict_value_get
+ipod_set_audiobook_speed
+MsgSend
+ipod_get_audiobook_speed
+ipod_get_itunesdb_info
+ipod_get_auth_status
+ipod_restart
+ipod_gps_get_ctrl
+ipod_uid_clear_trk_list
+ipod_uid_play_trk_list
+ipod_browse_reset
+ipod_pb_play_track
+ipod_pb_get_numtracks
+ipod_set_chapter
+ipod_get_software_version
+ipod_pushui_setvideoauth
+ipod_preference_get
+ipod_preference_set
+ipod_reidentify
+ipod_pushui_devvideoscreeninfo
+ipod_pushui_getversion
+ipod_smplrmt_rotationinput
+ipod_get_ui_mode
+ipod_set_ui_mode
+ipod_pushui_devstatechange
+ipod_pushui_setopt
+ipod_pushui_getopt
+ipod_smplrmt_pushuibutton
+ipod_smplrmt_videobutton
+ipod_smplrmt_audiobutton
+ipod_smplrmt_imagebutton
+ipod_smplrmt_button
+ipod_eaf_session_free
+ipod_eaf_session_accept
+ipod_eaf_session_open
+ipod_pps_path_get
+MsgSendsv
+ipod_get_events
+ipod_gps_recv
+ipod_browse_play
+ipod_get_device_serialnum
+ipod_get_device_name
+ipod_get_nowplaying_name
+ipod_get_nowplaying_app
+ipod_get_model
+ipod_get_capabilities
+ipod_pushui_get_approval
+ipod_cfg_audio_in_get
+ipod_eaf_getevents
+ipod_eaf_getprotocol
+ipod_eaf_recv
+ipod_eaf_notify
+ionotify
+ipod_notify
+ipod_uid_get_albart_image
+MsgSendv
+ipod_uid_get_albart_info
+ipod_uid_get_trkinfo
+ipod_get_albart_image
+ipod_get_albart_info
+ipod_browse_select_record
+ipod_cfg_get
+ipod_disconnect
+ipod_connect
+ipod_log
+vsnprintf
+ipod_get_lingo_options
+ipod_trkinfo_load
+ipod_browse_get_record_index
+ipod_browse_get_record
+ipod_browse_set_record_index
+ipod_trkinfo_get_index
+ipod_trkinfo_set_index
+ipod_trkinfo_next
+ipod_seek_time
+ipod_get_shuffle
+ipod_set_shuffle
+ipod_get_repeat
+ipod_set_repeat
+ipod_get_play_status
+ipod_play_control
+ipod_toggle
+ipod_pause
+ipod_resume_musicapp
+ipod_resume
+ipod_play
+ipod_prev_chapter
+ipod_next_chapter
+ipod_fast_backward
+ipod_fast_forward
+ipod_prev_track
+ipod_next_track
+ipod_stop
+iap2_eap_file_descriptor
+iap2_comm_list_count
+iap2_comm_list_entry_get
+iap2_raw_msg_send
+iap2_eap_send
+iap2_medialib_info_stop
+iap2_medialib_info_start
+iap2_hid_sendreport
+iap2_hid_start
+iap2_destinfo_status
+iap2_comm_mutestatusupdate
+iap2_comm_mergecalls
+iap2_comm_swapcalls
+iap2_bt_status_set
+iap2_devaudio_stop
+iap2_devaudio_start
+iap2_hid_stop
+iap2_power_set
+iap2_playpause
+iap2_shuffle
+iap2_repeat
+iap2_audiobook_speed
+iap2_fastend
+iap2_fastbwd
+iap2_fastfwd
+iap2_prev
+iap2_next
+iap2_pause
+iap2_play
+iap2_comm_list_free
+iap2_comm_list_get
+iap2_comm_senddtmf
+iap2_comm_holdstatusupdate
+iap2_comm_endcall
+iap2_comm_acceptcall
+iap2_comm_initialcall
+iap2_gps_data_send
+iap2_medialib_play_all
+iap2_medialib_play_collection
+iap2_medialib_play_tracks_num
+iap2_medialib_play_resume
+iap2_hid_init
+iap2_app_launch_ext
+iap2_app_launch
+iap2_language_set
+iap2_ppsdir_get
+iap2_filexfer_read
+iap2_eap_recv
+iap2_devaudio_geturl
+iap2_nowplay_getuidlist_num
+iap2_nowplay_getartwork
+iap2_eap_event_arm
+iap2_vehicle_update
+iap2_nowplay_set
+iap2_medialib_play_tracks_str
+iap2_nowplay_getuidlist_str
+memmove
+iap2_eap_close
+iap2_eap_open
+libc.so.3
+__slog_mux
+pthread_once
+__slog_once
+_slogfd
+vslogf
+write
+slogi
+slogb
+pthread_mutex_init
+pthread_atfork
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+mss-ipodiap2.so
+ipodiap2_db_get_plid
+ipodiap2_revision_table_check
+ipodiap2_sync_full
+ipodiap2_db_get_final_revision
+ipodiap2_db_clear_revisions
+ipodiap2_db_library_clear
+ipodiap2_plid_add
+ipodiap2_db_get_first_fid
+ipodiap2_db_save_final_revision
+ipodiap2_init
+ipodiap2_get_next_ipod_struct
+ipodiap2_remap_playlists
+SELECT plid FROM playlists WHERE playlists.filename=?1 LIMIT 1;
+Unable to get playlist ID for playlist UID '%s'
+SELECT name FROM sqlite_master WHERE type='table' and name='iap2_revision_history';
+Unable to delete library
+Error retrieving database UID (rc=%d)
+medialib_uid
+Error allocating a device UID
+iap2_revision
+SELECT rev FROM iap2_last_revision;
+Unable to get last revision
+Error retrieving final revision (rc=%d)
+DELETE FROM iap2_revision_history;
+Unable to clear revision table
+Error clearing the revisions table (rc=%d)
+Error starting medialibrary sync (rc=%d)
+Error getting next entry: %s
+UPDATE mediastore_metadata SET syncflags=0, last_sync=0;
+Unable to delete playlists
+Error deleting library contents (rc=%d)
+Error acquiring media library
+Error adding revision '%llx' (rc=%d)
+Unable to pull track UID
+Error adding UID '%s' rc=(%d)
+Error deleting UID '%s' (rc=%d)
+Error acquiring playlist UID
+Error adding revision '%llu' rc=%d
+Error creating playlist '%s' (rc=%d)
+Error checking if playlist exists rc=%d
+Unable to save playlist.  iPod playlist max should be 127.
+Error storing playlist '%s' '%s' (rc=%d)
+Invalid plid %llx found
+Error allocating a playlist UID string
+Error adding entry to playlist UID '%s' (rc=%d)
+Error acquiring playlist UID for deletion
+SELECT fid FROM files ORDER BY fid LIMIT 1;
+Unable to get existing fid
+REPLACE INTO iap2_last_revision(id, rev) VALUES(1, ?1);
+Unable to save last revision
+Error saving final revision (rc=%d)
+Specified library uid not found on device: %s
+Initializing MSS 'iap2'.
+Database/Synchronization/MSS/ipod
+auto_sync
+permitted
+Error locking mutex
+Unable to find free iPod structure
+Error connecting to an iPod at path "%s"
+Error unlocking mutex
+CREATE INDEX files_filename_index_iap2_uid ON files(filename);
+Error locking database
+UPDATE playlist_entries SET fid=IFNULL( (SELECT files.fid FROM files  WHERE playlist_entries.unresolved_entry_text = files.filename),0), unresolved_entry_text=NULL WHERE fid = 0;
+Unable to map playlist fid entries
+Error committing actions to database, rolling back
+ipodiap2
+ipod_db_clear
+ipod_db_get_rootfolderid
+ipod_db_get_hashes
+iap2_map_metadata
+ipod_map_metadata
+offset
+ipod_cache_size
+DELETE FROM files WHERE fid IN (SELECT fid FROM files LIMIT 200);
+DELETE FROM playlist_entries WHERE oid IN (SELECT oid FROM playlist_entries LIMIT 200);
+Unable to delete playlist data
+DELETE FROM playlists WHERE plid IN (SELECT plid FROM playlists LIMIT 200);
+SELECT folderid from folders WHERE basepath='/';
+Unable to get root folder from the database
+Invalid configuration: ipod '%s' field must be stored in a metadata field.
+Invalid configuration: ipod offset cannot be in an external table.
+Error allocating memory for ipod hashes query.
+SELECT files.filename, b.%s, files.fid FROM files, %s b WHERE files.fid = b.fid AND files.ftype != 5 ORDER BY files.filename+0;
+Error allocating memory for key value pairs
+Unexpected type returned
+rating
+duration
+album_uid
+album
+track_num
+disc_num
+disc_count
+artist_uid
+artist
+albumartist_uid
+albumartist
+genre_uid
+genre
+composer_uid
+composer
+compilation
+ondevice
+chp_count
+chp_times
+chp_name
+lyrics
+description
+podcast_date
+play_count
+skip_count
+last_play
+star_rating
+series_name
+season_num
+vol_adjust
+eq_preset
+bitrate
+book_off
+time_off
+ipod_get_lingo_options
+pb_trkinfo_load
+db_trkinfo_load
+ipod_trkinfo_load
+ipod_browse_get_record_index
+ipod_browse_get_record
+browse_load_records
+ipod_browse_set_record_index
+ipod_trkinfo_get_index
+ipod_trkinfo_set_index
+ipod_trkinfo_next
+ipod_seek_time
+ipod_get_shuffle
+ipod_set_shuffle
+ipod_get_repeat
+ipod_set_repeat
+ipod_get_play_status
+ipod_play_control
+/.FS_info./control
+/.FS_info./eaf
+IPOD:%s(%d): %s
+Could not get options for Lingo %d.
+Request: start %d numtracks %d (infomask=0x%x)
+Returned: numtracks %d bytes used %d
+No metadata types set.
+No records loaded
+Request next record
+No more records
+Request: start %d numtracks %d (category %d)
+Returned: numrecords %d bytes used %d
+Return record %d: %s
+Request record index %d
+Record index %d not loaded
+Moved to record index %d
+Request current track index (type %d)
+No track info loaded
+Current track info index %d
+Request track index %d (type %d)
+Index %d not loaded
+Moved to track %d
+Request next track (type %d)
+No more tracks
+Moved to track %d metadata size=%d
+Seek time: %d ms
+Could not get shuffle setting.
+Get Shuffle: %d
+Set Shuffle: %d
+Could not get repeat setting.
+Get Repeat: %d
+Set Repeat: %d
+State: %d Track: %d/%d Position: %d/%d Flags: 0x%x
+Control command: %d
+calluuid
+calluuid
+calluuid
+calluuid
+destination
+addressbookid
+%s/%s/%s
+/dev/slog
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+NAME=mss-ipodiap2.so
+DESCRIPTION=iPod iap2 Media Synchronizer
+DATE=2016/10/04-12:31:42-EDT
+STATE=stable
+HOST=media2
+USER=builder
+VERSION=Media 1.0.69.1
+TAGID=9999@813869
+mss-ipodiap2.so.sym
+.symtab
+.strtab
+.shstrtab
+.note.gnu.build-id
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.note
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes
+QNX_info
+.gnu_debuglink
+BUILDENV_qss
+VARIANT_startup
+VARIANT_v7
+VARIANT_le
+VARIANT_a
+__pic__
+__PIC__
+__EH_FRAME_BEGIN__
+__JCR_LIST__
+__do_global_dtors_aux
+completed.4602
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+object.4617
+__frame_dummy_init_array_entry
+ipodiap2_mediastore_supported
+zero_prefix_uid
+ipodiap2_db_get_plid
+ipodiap2_sync_full
+ipodiap2_getname
+ipodiap2_probe
+ipodiap2_getid
+ipodiap2_sync
+.LANCHOR1
+__PRETTY_FUNCTION__.13619
+__PRETTY_FUNCTION__.13602
+__PRETTY_FUNCTION__.13749
+__PRETTY_FUNCTION__.13548
+__PRETTY_FUNCTION__.13514
+__PRETTY_FUNCTION__.13581
+__PRETTY_FUNCTION__.13686
+__PRETTY_FUNCTION__.13527
+__PRETTY_FUNCTION__.13569
+__PRETTY_FUNCTION__.14100
+__PRETTY_FUNCTION__.13480
+__PRETTY_FUNCTION__.13700
+.LANCHOR2
+ipod_mutex
+.LANCHOR0
+auto_sync_enabled
+ipod_md_lookup
+mdmask_lookup
+mdstring_lookup
+create_mdmask
+__PRETTY_FUNCTION__.13565
+__PRETTY_FUNCTION__.13530
+__PRETTY_FUNCTION__.13487
+__PRETTY_FUNCTION__.13447
+__PRETTY_FUNCTION__.13388
+iap2_md_map
+ipod_md_map
+trkinfo_get_list_ptr
+pb_trkinfo_load
+db_trkinfo_load
+__PRETTY_FUNCTION__.7970
+__PRETTY_FUNCTION__.6951
+__PRETTY_FUNCTION__.6911
+__PRETTY_FUNCTION__.7746
+__PRETTY_FUNCTION__.7730
+__PRETTY_FUNCTION__.7691
+__PRETTY_FUNCTION__.6873
+__PRETTY_FUNCTION__.7645
+__PRETTY_FUNCTION__.7573
+__PRETTY_FUNCTION__.7442
+__PRETTY_FUNCTION__.7248
+__PRETTY_FUNCTION__.6853
+__PRETTY_FUNCTION__.6835
+__PRETTY_FUNCTION__.6822
+__PRETTY_FUNCTION__.6804
+__PRETTY_FUNCTION__.6791
+__PRETTY_FUNCTION__.6767
+__PRETTY_FUNCTION__.6753
+verbose
+medialib_getinfo
+CALLUUID_KEY.6532
+CALLUUID_KEY.6497
+CALLUUID_KEY.6457
+CALLUUID_KEY.6431
+DESTINATION_KEY.6397
+ADDRESSBOOKID_KEY.6398
+_slog_prepare
+slogsend
+_slog_init
+_slog_parent
+_slog_child
+__FRAME_END__
+__JCR_END__
+_DYNAMIC
+__dso_handle
+_GLOBAL_OFFSET_TABLE_
+mss_db_item_delete
+ipod_write_feature
+iap2_disconnect
+ipod_disconnect
+strm_dict_key_get
+sync_log
+sync_merge_delete_file_byname
+ipod_pushui_setvideoauth
+iap2_mdmask_lookup
+sync_merge_add_lib
+__slog_once
+ipod_create_genius_playlist
+ipod_set_bluetooth_status
+ipod_eaf_session_free
+MsgSend
+ipod_get_nowplaying_name
+ipod_smplrmt_pushuibutton
+ipod_trkinfo_get_index
+iap2_playpause
+ipod_eaf_send
+ipodiap2_get_capabilities
+ipod_get_cache_size
+iap2_hid_sendreport
+iap2_nowplay_getuidlist_str
+lltoa
+strerror
+memmove
+ipodiap2_clear_ipod_structure
+ipod_fast_forward
+metadata_kvpair_map_by_source
+ipod_gps_send
+ipod_get_ui_mode
+ipod_get_device_serialnum
+__exidx_end
+ipod_get_lingo_options
+iap2_medialib_getdata
+qdb_rows
+iap2_destinfo_status
+conf_get_bool_from_element_attr
+ipod_pushui_getversion
+_bss_end__
+ipod_get_shuffle
+ipod_db_get_rootfolderid
+ipod_notify
+iap2_comm_senddtmf
+conf_get_element
+ipod_pushui_devstatechange
+ipod_smplrmt_button
+ipod_get_device_name
+ipod_pushui_get_approval
+ipod_stop
+plss_delete_playlistdata_all
+iap2_devaudio_start
+ipod_reidentify
+ipod_toggle
+IPOD_MD_PROVIDER
+memcpy
+ipod_trkinfo_next
+strm_dict_find_value
+__cxa_finalize
+ipod_eaf_recv
+ipod_db_get_hashes
+iap2_medialib_play_tracks_str
+iap2_eap_open
+malloc
+iap2_medialib_freeinfo
+vsnprintf
+ipod_play_control
+mme_log
+iap2_nowplay_getartwork
+ipod_get_nowplaying_app
+ipod_get_model
+ipod_db_clear
+ipod_uid_get_albart_info
+ipod_cfg_get
+iap2_shuffle
+__bss_start__
+IPOD_MD_SOURCENAME_TITLE
+strtoul
+ipod_eaf_cfg_set
+ipod_resume_musicapp
+iap2_eap_send
+ipod_get_audiobook_speed
+__stackavail
+iap2_devaudio_geturl
+_slogfd
+iap2_comm_list_free
+__slog_mux
+__exidx_start
+ipod_ctrl_passthru
+iap2_prev
+ipod_smplrmt_audiobutton
+iap2_medialib_getinfo
+iap2_comm_swapcalls
+iap2_play
+iap2_medialib_play_all
+iap2_medialib_info_start
+metadata_conf_get_by_source
+_init
+ipod_pushui_getopt
+vslogf
+iap2_comm_list_count
+iap2_eap_file_descriptor
+iap2_medialib_info_stop
+slogi
+iap2_hid_init
+plss_create_playlist
+ipod_get_capabilities
+ipod_smplrmt_rotationinput
+ipod_seek_time
+iap2_medialib_next
+IAP2_MD_PROVIDER
+calloc
+iap2_gps_data_send
+ipod_eaf_cfg_session_set
+ipod_trkinfo_load
+ipod_uid_play_trk_list
+iap2_repeat
+ipod_trkinfo_get_number
+iap2_ppsdir_get
+iap2_comm_endcall
+write
+ntfy_add_event
+sync_emit_first_existing_fid_event
+ipod_trkinfo_set_index
+ipod_set_chapter
+ipod_get_auth_status
+iap2_nowplay_getuidlist_num
+pthread_once
+__deregister_frame_info
+ipod_browse_select_record
+slogb
+ipod_eaf_getevents
+ipod_map_metadata
+memccpy
+ipod_pushui_setopt
+ipod_mdmask_lookup
+iap2_comm_holdstatusupdate
+__bss_end__
+qdb_freeresult
+iap2_fastend
+ipod_prev_track
+sql_exec
+__get_errno_ptr
+ipod_eaf_getprotocol
+ipod_play
+ipod_request_app_launch
+strm_dict_value_get
+mss_db_item_added
+ipod_browse_get_record_index
+ipod_eaf_notify
+ipod_set_verbose_level
+iap2_medialib_play_tracks_num
+ipod_smplrmt_imagebutton
+ipod_trkinfo_get_string
+ipod_uid_get_trkinfo
+plss_delete_playlist
+sync_target_folder_get
+sync_max_lib_entries_get
+iap2_power_set
+iap2_vehicle_update
+option_sync_max_first_fid_event
+iap2_connect
+ipod_uid_set_trk_list
+ipod_next_track
+ipod_eaf_addprotocol
+_btext
+ipodiap2_get_next_ipod_struct
+iap2_bt_status_set
+log_emit
+iap2_eap_recv
+ipod_eaf_session_accept
+ipod_get_albart_info
+ipod_gps_get_ctrl
+slogf
+sql_lock
+qdb_cell
+strdup
+ipod_browse_play
+IPOD_MD_SOURCENAME_OFFSET
+strtoull
+iap2_comm_list_get
+iap2_mdstring_lookup
+__bss_start
+memset
+iap2_filexfer_read
+iap2_comm_mergecalls
+ipod_pb_get_numtracks
+ionotify
+ipod_pushui_devvideoscreeninfo
+ipod_pause
+ipod_create_mdmask
+MsgSendv
+ipod_set_audiobook_speed
+iap2_eap_close
+ipod_pps_path_get
+__end__
+sync_merge_flush
+MsgSendsv
+ipod_preference_set
+qdb_rowchanges
+conf_configurable_metadata_ftypearr
+strcmp
+ulltoa
+pthread_mutex_unlock
+iap2_nowplay_set
+ipod_gps_recv
+ipod_set_ui_mode
+ipodiap2_init
+mss_db_check
+ipod_mdstring_lookup
+sync_merge_cleanup_exttables
+iap2_comm_mutestatusupdate
+_fini
+iap2_language_set
+iap2_audiobook_speed
+sprintf
+ipod_preference_get
+ipod_eaf_session_open
+sql_commit
+ipod_cfg_set
+ipod_smplrmt_videobutton
+iap2_app_launch
+ipod_trkinfo_set_options
+ipod_uid_get_albart_image
+iap2_comm_acceptcall
+ipod_connect
+ipod_browse_reset
+ipod_pb_play_track
+IPOD_OPT_CACHE_SIZE
+ipod_next_chapter
+iap2_next
+iap2_medialib_play_resume
+ipod_browse_set_record_index
+iap2_raw_msg_send
+ipod_browse_set_options
+ipod_get_software_version
+_edata
+iap2_eap_event_arm
+ipod_uid_clear_trk_list
+sync_thread_is_cancelled
+ipod_fast_backward
+pthread_mutex_lock
+ultoa
+ipod_log
+iap2_medialib_sync_start
+iap2_app_launch_ext
+ipod_set_shuffle
+ipod_prev_chapter
+iap2_devaudio_stop
+mmsync_mss
+pthread_atfork
+iap2_medialib_sync_stop
+ipod_get_events
+iap2_create_mdmask
+MsgSendvs
+iap2_fastbwd
+pthread_mutex_init
+ipod_get_repeat
+strlen
+strm_dict_size
+iap2_fastfwd
+_stack
+sync_playlist_add_data
+iap2_medialib_play_collection
+__data_start
+ipod_browse_get_record
+sql_exec_uint64
+iap2_comm_initialcall
+_Jv_RegisterClasses
+ipod_get_albart_image
+ipod_resume
+iap2_hid_stop
+ipod_ulltoa_pad
+ipod_set_repeat
+iap2_comm_list_entry_get
+iap2_hid_start
+__register_frame_info
+ipod_browse_get_numrecords
+ipod_restart
+sync_merge_add_revision
+close
+ipod_cfg_audio_in_get
+iap2_map_metadata
+iap2_pause
+ipod_get_itunesdb_info
+ipod_get_play_status

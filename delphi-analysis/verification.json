@@ -1,0 +1,2812 @@
+[
+  {
+    "path": "extbin\\apps\\bin\\AndroidAuto",
+    "bytes": 482967,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\AndroidAutoServices",
+    "bytes": 299599,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\CarPlay",
+    "bytes": 644087,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\CarPlayServices",
+    "bytes": 371199,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\AppConnect",
+    "bytes": 221263,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\ClusterServices",
+    "bytes": 694751,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\Most",
+    "bytes": 1346199,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\MostCanRouter",
+    "bytes": 567999,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\TransportServer",
+    "bytes": 89131,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\NavServices",
+    "bytes": 3981759,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\NavigationServer",
+    "bytes": 4909668,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\vwjxe.ifs",
+    "bytes": 19445976,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\bin\\delphibin.ifs",
+    "bytes": 9539652,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\libautoreceiver.so",
+    "bytes": 1621327,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\libautoreceiver.so.1",
+    "bytes": 1621327,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\libScreenStream.so",
+    "bytes": 48955,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\libAirPlay.so",
+    "bytes": 160384,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\libAirPlaySupport.so",
+    "bytes": 671036,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\libiap2client.so",
+    "bytes": 22960,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\libiap2client.so.1",
+    "bytes": 22960,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\ipod-drvr-iap2.so",
+    "bytes": 783734,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\mss-ipodiap2.so",
+    "bytes": 78303,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\libRenderSystem.so",
+    "bytes": 2022512,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\libNavConfigProvider.so",
+    "bytes": 13311,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\lib\\libclm_api.so",
+    "bytes": 196131,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\apps.txt",
+    "bytes": 180,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\ca-bundle.crt",
+    "bytes": 277956,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\CCC.crt",
+    "bytes": 2021,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\config.ini",
+    "bytes": 3565,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\crl.pem",
+    "bytes": 820,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\CTS.crt",
+    "bytes": 2021,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\detailed_debug.cfg",
+    "bytes": 114,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\DiagnosticsManagerConfig.xml",
+    "bytes": 30478,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\domains.txt",
+    "bytes": 1522,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\dvfs_j6.conf",
+    "bytes": 517,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\dvfs_pwrtbl_j6.conf",
+    "bytes": 3117,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\effective_tld_names.dat",
+    "bytes": 98833,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\evssl_oid_list.dat",
+    "bytes": 10567,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\iap2.cfg",
+    "bytes": 6886,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\image.id",
+    "bytes": 139,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\image_scr.id",
+    "bytes": 91,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\index.html",
+    "bytes": 8727,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\installed_sds_asr.txt",
+    "bytes": 7,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\installed_sds_tts.txt",
+    "bytes": 7,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\ipod.logo",
+    "bytes": 25246,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\irc.xml",
+    "bytes": 14743,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\irc_HS.xml",
+    "bytes": 18566,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\languages.xml",
+    "bytes": 759,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\MediaServerConfig.xml",
+    "bytes": 18470,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\MHConfig.cfg",
+    "bytes": 15533,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\MirrorLinkConfig.xml",
+    "bytes": 888,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\most_deviceinfo.cfg",
+    "bytes": 265,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\cfg_customer_update_version.xml",
+    "bytes": 279,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\EBA\\EBAConfigs.xml",
+    "bytes": 507,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\EBA\\SignalMapperNavServer.cfg",
+    "bytes": 1119,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\EBA\\SignalMapperSensorHandler.cfg",
+    "bytes": 821,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\EBA\\SignalMapperSHIELD.cfg",
+    "bytes": 766,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\settings.db",
+    "bytes": 1897472,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\exitview\\dash.png",
+    "bytes": 407,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\exitview\\dashramp.png",
+    "bytes": 278,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\exitview\\exitviewconfig.evx",
+    "bytes": 10462,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\exitview\\guardrail.png",
+    "bytes": 279,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\exitview\\ramp.png",
+    "bytes": 336,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\exitview\\road.png",
+    "bytes": 336,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\exitview\\solid.png",
+    "bytes": 410,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\exitview\\triangle.png",
+    "bytes": 1271,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\Font\\VWThesisSansLight.ttf",
+    "bytes": 147704,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\Font\\VWThesisSansRegular.ttf",
+    "bytes": 134092,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\Font\\VWThesisSemibold.ttf",
+    "bytes": 120240,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\gui\\bitmap.skn",
+    "bytes": 317,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\gui\\ferry_pattern.png",
+    "bytes": 184,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\gui\\one_way_pattern.png",
+    "bytes": 2979,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\gui\\railway_pattern.png",
+    "bytes": 910,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\gui\\restricted_roads_pattern.png",
+    "bytes": 187,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\gui\\road_name_marker.png",
+    "bytes": 178,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\gui\\Street_Pin_Shadow2D.png",
+    "bytes": 235,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\gui\\Street_Pin_Shadow3D.png",
+    "bytes": 180,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\guidanceview\\guidanceviewcommon.cff",
+    "bytes": 474002,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\guidanceview\\guidanceview_default.xml",
+    "bytes": 6381,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\guidanceview\\guidanceview_exitview.xml",
+    "bytes": 6569,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\guidanceview\\guidanceview_kdk.xml",
+    "bytes": 2920,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\images.cff",
+    "bytes": 6860736,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\intersectionmap\\KDKConfig.kdx",
+    "bytes": 8125,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\MapConfigs\\fontconfig_default_0.fcx",
+    "bytes": 4547,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\MapConfigs\\mapconfig_default_0_DTM.mc2ex.gz",
+    "bytes": 14952,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\MapConfigs\\mapconfig_default_0_DTM.mxf.gz",
+    "bytes": 14218,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\MapConfigs\\mapconfig_default_1_DTM.mc2ex.gz",
+    "bytes": 14557,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\MapConfigs\\mapconfig_default_1_DTM.mxf.gz",
+    "bytes": 14074,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\MapConfigs\\mapconfig_weather_0_DTM.mc2ex.gz",
+    "bytes": 14959,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\MapConfigs\\mapconfig_weather_0_DTM.mxf.gz",
+    "bytes": 14284,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\MapConfigs\\mapconfig_weather_1_DTM.mc2ex.gz",
+    "bytes": 14552,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\MapConfigs\\mapconfig_weather_1_DTM.mxf.gz",
+    "bytes": 14123,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\Models\\objects.cff",
+    "bytes": 45217,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\pcconfig\\autozoomZoom.conf",
+    "bytes": 2635,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\pcconfig\\controller.conf",
+    "bytes": 2717,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\pcconfig\\maneuverZoom.conf",
+    "bytes": 2493,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\pcconfig\\specialPOITypesToHMIMapping.conf",
+    "bytes": 3842,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\pcconfig\\travellinkLegend.png",
+    "bytes": 5042,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\pcconfig\\travellinkMapping.conf",
+    "bytes": 13305,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\pcconfig\\zoomCurve.conf",
+    "bytes": 1061,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\pcconfig\\zoomLevels.conf",
+    "bytes": 4433,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\poi\\fuel_map.xml",
+    "bytes": 460,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\poi\\lang_map.xml",
+    "bytes": 14585,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\poi\\petrol_stations.pc.gz",
+    "bytes": 224,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\poi\\poi_vw_NDS.pc.gz",
+    "bytes": 21421,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\poi\\weather.pc.gz",
+    "bytes": 2398,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\poi\\_replace\\petrol_stations\\poi_vw_NDS_BEV.pc1.gz",
+    "bytes": 228,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\poi\\_replace\\petrol_stations\\poi_vw_NDS_DIESEL.pc1.gz",
+    "bytes": 223,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\poi\\_replace\\petrol_stations\\poi_vw_NDS_GASOLINE.pc1.gz",
+    "bytes": 223,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\res\\strings\\en-US.xml.gz",
+    "bytes": 3410,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\res\\strings\\es-MX.xml.gz",
+    "bytes": 3773,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\res\\strings\\fr-CA.xml.gz",
+    "bytes": 3769,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\res\\strings\\lang_map.xml",
+    "bytes": 300,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\resourceConfig.xml",
+    "bytes": 232402,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\resources\\bitmaps\\countryflags.xml.gz",
+    "bytes": 464,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\resources\\bitmaps\\roadclass.xml.gz",
+    "bytes": 339,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\resources\\bitmaps\\target.xml.gz",
+    "bytes": 385,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\resources\\bitmaps\\vza.xml.gz",
+    "bytes": 2122,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\roadicon\\ROADICON.RI.gz",
+    "bytes": 19178,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\signpost\\alternate.sp",
+    "bytes": 90,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\textures\\textures.cff",
+    "bytes": 17540,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\eb\\tti\\TTI.te.gz",
+    "bytes": 4568,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\NDS\\mapprefs.xml",
+    "bytes": 7589,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Customer\\PSF\\mapprefs.xml",
+    "bytes": 5053,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\enum.dtd",
+    "bytes": 295,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\enum.xml",
+    "bytes": 162638,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\Materials\\materials.cff",
+    "bytes": 427955,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\OnlineTpegClient_enum.xml",
+    "bytes": 599,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\ScriptingDataPool.xml",
+    "bytes": 3432,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\sddatapool.xml",
+    "bytes": 807830,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\sddatapool_OnlineTpegClient.xml",
+    "bytes": 4091,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\sddatapool_TmcPlugin.xml",
+    "bytes": 17946,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\sddatapool_TpegBusinessLogic.xml",
+    "bytes": 823,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\sddatapool_TrafficDataPlayer.xml",
+    "bytes": 3067,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\SIDataPool.xml",
+    "bytes": 6327,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\SPDataPool.xml",
+    "bytes": 3256,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\TpegBusinessLogic_enum.xml",
+    "bytes": 113,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\MD\\Delphi\\TrafficDataPlayer_enum.xml",
+    "bytes": 1877,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NC\\Delphi\\NavServer.cfg",
+    "bytes": 5481,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NC\\Delphi\\NavServer.cfg.test",
+    "bytes": 5485,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NC\\Delphi\\UpdateNavConfig.sh",
+    "bytes": 2887,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\countryCarCodes.conf",
+    "bytes": 1435,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\countryFlags.conf",
+    "bytes": 470,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\countryHNSpellerType.conf",
+    "bytes": 1163,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\countryIds.conf",
+    "bytes": 1581,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\countryIsoCodes.conf",
+    "bytes": 1372,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\countryItuCodes.conf",
+    "bytes": 1753,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\defaultLangCode.conf",
+    "bytes": 22,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\font.conf",
+    "bytes": 176,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\HMIlanguages.conf",
+    "bytes": 34,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\iconRoad.conf",
+    "bytes": 16790,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\iconRoadClass.conf",
+    "bytes": 180,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\iconTarget.conf",
+    "bytes": 204,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\iconTmcEvent.conf",
+    "bytes": 2659,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\iconTrafficRegulation.conf",
+    "bytes": 13986,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\languages.conf",
+    "bytes": 34,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\petrol_stations\\poiTopCategories.conf",
+    "bytes": 24,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\petrol_stations\\poi_vw_NDS_BEV\\poiTopCategories.conf",
+    "bytes": 24,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\petrol_stations\\poi_vw_NDS_DIESEL\\poiTopCategories.conf",
+    "bytes": 24,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\petrol_stations\\poi_vw_NDS_GASOLINE\\poiTopCategories.conf",
+    "bytes": 24,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poiCategoryNames_en_US.conf",
+    "bytes": 1689,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poiCategoryNames_es_MX.conf",
+    "bytes": 1894,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poiCategoryNames_fr_CA.conf",
+    "bytes": 1872,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poiCategorySynonyms_en_US.conf",
+    "bytes": 4291,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poiCategorySynonyms_es_MX.conf",
+    "bytes": 5338,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poiCategorySynonyms_fr_CA.conf",
+    "bytes": 5131,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poiFuelMapping.conf",
+    "bytes": 81,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poi_vw_NDS\\poiAlongRoute.conf",
+    "bytes": 28,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poi_vw_NDS\\poiCategoryData.conf",
+    "bytes": 1677,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poi_vw_NDS\\poiCategoryStructure.conf",
+    "bytes": 1843,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poi_vw_NDS\\poiMappingIds.conf",
+    "bytes": 1042,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poi_vw_NDS\\poiNavIds.conf",
+    "bytes": 735,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poi_vw_NDS\\poiPriorityIdx.conf",
+    "bytes": 536,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\poi\\poi_vw_NDS\\poiTopCategories.conf",
+    "bytes": 20,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\resourceConfig.conf",
+    "bytes": 173177,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\statesNames.conf",
+    "bytes": 662,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\NS\\Customer\\streetAbbreviations.conf",
+    "bytes": 2853,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\prov.db",
+    "bytes": 23552,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.cz_CZ",
+    "bytes": 13344,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.de_DE",
+    "bytes": 14156,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.en_GB",
+    "bytes": 12280,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.es_ES",
+    "bytes": 13666,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.fi_FI",
+    "bytes": 11922,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.fr_FR",
+    "bytes": 14454,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.it_IT",
+    "bytes": 14362,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.nl_NL",
+    "bytes": 13742,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.no_NO",
+    "bytes": 5668,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.pl_PL",
+    "bytes": 13888,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.pt_PT",
+    "bytes": 13666,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.sv_SE",
+    "bytes": 11358,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\supplements.tr_TR",
+    "bytes": 14058,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.bg_BG",
+    "bytes": 258346,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.bg_BG.imperial",
+    "bytes": 261598,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.bs_BA",
+    "bytes": 139494,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.bs_BA.imperial",
+    "bytes": 139818,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.cs_CZ",
+    "bytes": 141790,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.cs_CZ.imperial",
+    "bytes": 143612,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.da_DK",
+    "bytes": 134980,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.da_DK.imperial",
+    "bytes": 134966,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.de_DE",
+    "bytes": 143202,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.de_DE.imperial",
+    "bytes": 146466,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.el_GR",
+    "bytes": 186008,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.el_GR.imperial",
+    "bytes": 185994,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.en_CN",
+    "bytes": 2321,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.en_CN.imperial",
+    "bytes": 2261,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.en_GB",
+    "bytes": 139978,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.en_GB.imperial",
+    "bytes": 142442,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.en_US",
+    "bytes": 120964,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.en_US.imperial",
+    "bytes": 122032,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.es_ES",
+    "bytes": 161034,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.es_ES.imperial",
+    "bytes": 162822,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.es_MX",
+    "bytes": 161786,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.es_MX.imperial",
+    "bytes": 164338,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.et_EE",
+    "bytes": 128190,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.et_EE.imperial",
+    "bytes": 130080,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.fi_FI",
+    "bytes": 151894,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.fi_FI.imperial",
+    "bytes": 151880,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.fr_CA",
+    "bytes": 165514,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.fr_CA.imperial",
+    "bytes": 166514,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.fr_FR",
+    "bytes": 160240,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.fr_FR.imperial",
+    "bytes": 161988,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.hr_HR",
+    "bytes": 141714,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.hr_HR.imperial",
+    "bytes": 141700,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.hu_HU",
+    "bytes": 137454,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.hu_HU.imperial",
+    "bytes": 137426,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.it_IT",
+    "bytes": 174692,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.it_IT.imperial",
+    "bytes": 176504,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.lt_LT",
+    "bytes": 169178,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.lt_LT.imperial",
+    "bytes": 169164,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.lv_LV",
+    "bytes": 155910,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.lv_LV.imperial",
+    "bytes": 155896,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.nl_NL",
+    "bytes": 182204,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.nl_NL.imperial",
+    "bytes": 183968,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.no_NO",
+    "bytes": 206152,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.no_NO.imperial",
+    "bytes": 207978,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.pl_PL",
+    "bytes": 171342,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.pl_PL.imperial",
+    "bytes": 172454,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.pt_BR",
+    "bytes": 166548,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.pt_BR.imperial",
+    "bytes": 168304,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.pt_PT",
+    "bytes": 166560,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.pt_PT.imperial",
+    "bytes": 168312,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.ro_RO",
+    "bytes": 151358,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.ro_RO.imperial",
+    "bytes": 151344,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.ru_RU",
+    "bytes": 167554,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.ru_RU.imperial",
+    "bytes": 168958,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.sk_SK",
+    "bytes": 143354,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.sk_SK.imperial",
+    "bytes": 143332,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.sl_SI",
+    "bytes": 137056,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.sl_SI.imperial",
+    "bytes": 137042,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.sr_RS",
+    "bytes": 147002,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.sr_RS.imperial",
+    "bytes": 146988,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.sv_SE",
+    "bytes": 156208,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.sv_SE.imperial",
+    "bytes": 158044,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.tr_TR",
+    "bytes": 142126,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.tr_TR.imperial",
+    "bytes": 143868,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.uk_UA",
+    "bytes": 161978,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.uk_UA.imperial",
+    "bytes": 161978,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.zh_CN",
+    "bytes": 3264,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.zh_CN.imperial",
+    "bytes": 3266,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.zh_HK",
+    "bytes": 54778,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\tmcevents.zh_HK.imperial",
+    "bytes": 54764,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NAV\\v0\\TI\\Customer\\TmcTable.bin",
+    "bytes": 13976,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\Nav_DestSel_POIAlongRouteAutomatic.cfg",
+    "bytes": 2396,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\Nav_DestSel_POIAlongRouteManual.cfg",
+    "bytes": 2394,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\Nav_DestSel_POIRadiusSearch.cfg",
+    "bytes": 708,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\Nav_DestSel_WorldRadiusSearch.cfg",
+    "bytes": 714,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\NetFrontNX.cfg",
+    "bytes": 10280,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\platform_restart.cfg",
+    "bytes": 142,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\canfuel\\canfuel_ref.db",
+    "bytes": 1306624,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\channelart.db",
+    "bytes": 57344,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00000T00.png",
+    "bytes": 561,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00001T00.png",
+    "bytes": 3187,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00002T00.png",
+    "bytes": 3317,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00003T00.png",
+    "bytes": 2497,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00004T00.png",
+    "bytes": 3176,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00005T00.png",
+    "bytes": 4216,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00006T00.png",
+    "bytes": 3239,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00007T00.png",
+    "bytes": 6072,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00008T00.png",
+    "bytes": 4039,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00009T00.png",
+    "bytes": 5014,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00010T00.png",
+    "bytes": 2025,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00011T00.png",
+    "bytes": 2825,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00012T00.png",
+    "bytes": 2292,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00014T00.png",
+    "bytes": 2535,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00015T00.png",
+    "bytes": 1608,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00016T00.png",
+    "bytes": 2926,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00017T00.png",
+    "bytes": 504,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00018T00.png",
+    "bytes": 2798,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00019T00.png",
+    "bytes": 2297,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00020T00.png",
+    "bytes": 2829,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00021T00.png",
+    "bytes": 2670,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00022T00.png",
+    "bytes": 1626,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00023T00.png",
+    "bytes": 4547,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00024T00.png",
+    "bytes": 1948,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00025T00.png",
+    "bytes": 2236,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00026T00.png",
+    "bytes": 2798,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00027T00.png",
+    "bytes": 2245,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00028T00.png",
+    "bytes": 2543,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00029T00.png",
+    "bytes": 866,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00030T00.png",
+    "bytes": 1684,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00031T00.png",
+    "bytes": 4736,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00032T00.png",
+    "bytes": 3223,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00033T00.png",
+    "bytes": 3284,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00034T00.png",
+    "bytes": 1858,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00035T00.png",
+    "bytes": 2593,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00039T00.png",
+    "bytes": 2137,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00040T00.png",
+    "bytes": 2181,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00041T00.png",
+    "bytes": 3369,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00042T00.png",
+    "bytes": 2850,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00043T00.png",
+    "bytes": 2482,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00044T00.png",
+    "bytes": 3088,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00045T00.png",
+    "bytes": 1988,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00046T00.png",
+    "bytes": 2098,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00047T00.png",
+    "bytes": 4683,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00048T00.png",
+    "bytes": 2390,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00049T00.png",
+    "bytes": 1632,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00050T00.png",
+    "bytes": 3548,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00052T00.png",
+    "bytes": 2765,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00054T00.png",
+    "bytes": 2752,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00058T00.png",
+    "bytes": 2181,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00060T00.png",
+    "bytes": 2548,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00061T00.png",
+    "bytes": 3385,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00062T00.png",
+    "bytes": 2042,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00063T00.png",
+    "bytes": 5209,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00064T00.png",
+    "bytes": 2589,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00065T00.png",
+    "bytes": 4910,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00066T00.png",
+    "bytes": 1478,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00067T00.png",
+    "bytes": 2792,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00068T00.png",
+    "bytes": 6741,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00069T00.png",
+    "bytes": 2152,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00070T00.png",
+    "bytes": 3312,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00071T00.png",
+    "bytes": 2296,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00072T00.png",
+    "bytes": 1500,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00073T00.png",
+    "bytes": 3042,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00074T00.png",
+    "bytes": 1934,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00077T00.png",
+    "bytes": 4023,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00078T00.png",
+    "bytes": 5223,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00079T00.png",
+    "bytes": 4449,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00081T00.png",
+    "bytes": 2155,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00082T00.png",
+    "bytes": 1980,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00083T00.png",
+    "bytes": 6199,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00084T00.png",
+    "bytes": 1141,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00088T00.png",
+    "bytes": 4843,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00089T00.png",
+    "bytes": 1690,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00091T00.png",
+    "bytes": 2348,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00092T00.png",
+    "bytes": 2180,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00094T00.png",
+    "bytes": 2398,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00097T00.png",
+    "bytes": 2150,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00099T00.png",
+    "bytes": 878,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00100T00.png",
+    "bytes": 5005,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00101T00.png",
+    "bytes": 7016,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00102T00.png",
+    "bytes": 1781,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00104T00.png",
+    "bytes": 1938,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00105T00.png",
+    "bytes": 1927,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00108T00.png",
+    "bytes": 2774,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00110T00.png",
+    "bytes": 2052,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00111T00.png",
+    "bytes": 4049,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00112T00.png",
+    "bytes": 875,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00113T00.png",
+    "bytes": 2207,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00114T00.png",
+    "bytes": 5339,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00115T00.png",
+    "bytes": 3882,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00116T00.png",
+    "bytes": 4126,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00117T00.png",
+    "bytes": 1550,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00119T00.png",
+    "bytes": 1775,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00120T00.png",
+    "bytes": 3871,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00122T00.png",
+    "bytes": 1772,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00123T00.png",
+    "bytes": 479,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00126T00.png",
+    "bytes": 2742,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00127T00.png",
+    "bytes": 2884,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00129T00.png",
+    "bytes": 1218,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00130T00.png",
+    "bytes": 1164,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00131T00.png",
+    "bytes": 1232,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00132T00.png",
+    "bytes": 3036,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00133T00.png",
+    "bytes": 2101,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00134T00.png",
+    "bytes": 1131,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00136T00.png",
+    "bytes": 1820,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00137T00.png",
+    "bytes": 6470,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00139T00.png",
+    "bytes": 2794,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00140T00.png",
+    "bytes": 2247,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00141T00.png",
+    "bytes": 2068,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00142T00.png",
+    "bytes": 6157,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00143T00.png",
+    "bytes": 2836,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00144T00.png",
+    "bytes": 2319,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00145T00.png",
+    "bytes": 847,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00146T00.png",
+    "bytes": 1654,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00147T00.png",
+    "bytes": 2552,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00148T00.png",
+    "bytes": 2552,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00149T00.png",
+    "bytes": 974,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00150T00.png",
+    "bytes": 5236,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00151T00.png",
+    "bytes": 2015,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00152T00.png",
+    "bytes": 2495,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00153T00.png",
+    "bytes": 3020,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00155T00.png",
+    "bytes": 2759,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00159T00.png",
+    "bytes": 3380,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00160T00.png",
+    "bytes": 1863,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00161T00.png",
+    "bytes": 2228,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00162T00.png",
+    "bytes": 2606,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00163T00.png",
+    "bytes": 1973,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00165T00.png",
+    "bytes": 3150,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00166T00.png",
+    "bytes": 1854,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00168T00.png",
+    "bytes": 1872,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00169T00.png",
+    "bytes": 1193,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00170T00.png",
+    "bytes": 1452,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00172T00.png",
+    "bytes": 1013,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00175T00.png",
+    "bytes": 3717,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00177T00.png",
+    "bytes": 2835,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00182T00.png",
+    "bytes": 1827,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00190T00.png",
+    "bytes": 1705,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00191T00.png",
+    "bytes": 1588,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00195T00.png",
+    "bytes": 1949,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00200T00.png",
+    "bytes": 5629,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00201T00.png",
+    "bytes": 2968,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00202T00.png",
+    "bytes": 945,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00203T00.png",
+    "bytes": 3637,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00204T00.png",
+    "bytes": 820,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00207T00.png",
+    "bytes": 2861,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00208T00.png",
+    "bytes": 2200,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00210T00.png",
+    "bytes": 1655,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00212T00.png",
+    "bytes": 1508,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00215T00.png",
+    "bytes": 3276,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00219T00.png",
+    "bytes": 3104,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00223T00.png",
+    "bytes": 2750,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00224T00.png",
+    "bytes": 3001,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00233T00.png",
+    "bytes": 4050,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00234T00.png",
+    "bytes": 3219,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00235T00.png",
+    "bytes": 5191,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00236T00.png",
+    "bytes": 4082,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00237T00.png",
+    "bytes": 711,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00238T00.png",
+    "bytes": 1587,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00248T00.png",
+    "bytes": 781,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00249T00.png",
+    "bytes": 6379,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00250T00.png",
+    "bytes": 1919,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00251T00.png",
+    "bytes": 770,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00252T00.png",
+    "bytes": 1762,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00253T00.png",
+    "bytes": 1735,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00254T00.png",
+    "bytes": 2626,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00290T00.png",
+    "bytes": 1161,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00298T00.png",
+    "bytes": 543,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00299T00.png",
+    "bytes": 2189,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00301T00.png",
+    "bytes": 1703,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00302T00.png",
+    "bytes": 2820,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00303T00.png",
+    "bytes": 4441,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00304T00.png",
+    "bytes": 1368,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00305T00.png",
+    "bytes": 2972,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00306T00.png",
+    "bytes": 1192,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00307T00.png",
+    "bytes": 2760,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00308T00.png",
+    "bytes": 2274,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00309T00.png",
+    "bytes": 1501,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00310T00.png",
+    "bytes": 2551,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00313T00.png",
+    "bytes": 2757,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00316T00.png",
+    "bytes": 1878,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00319T00.png",
+    "bytes": 2950,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00320T00.png",
+    "bytes": 1347,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00321T00.png",
+    "bytes": 914,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00322T00.png",
+    "bytes": 2466,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00340T00.png",
+    "bytes": 1000,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00350T00.png",
+    "bytes": 962,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00360T00.png",
+    "bytes": 1661,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00370T00.png",
+    "bytes": 1035,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\channelart\\I00372T00.png",
+    "bytes": 3730,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\fuel\\fuel_ref.db",
+    "bytes": 14320640,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\movies\\movies_ref.db",
+    "bytes": 1207296,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\sms.cfg",
+    "bytes": 4319,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\sports\\sports.db",
+    "bytes": 69632,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\traffic\\traffic_ref.db",
+    "bytes": 112640,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\weather\\weather_ref.db",
+    "bytes": 88064,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\sdars_res\\ws_alerts\\ws_alerts_ref.db",
+    "bytes": 4511744,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\SHIELDConfigs.xml",
+    "bytes": 31813,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\SignalMapperSensorHandlerQnx.cfg",
+    "bytes": 821,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\SMConfig.db",
+    "bytes": 58368,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\source_def.cfg",
+    "bytes": 406,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\ssl_blacklist.dat",
+    "bytes": 4895,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\TunerManager.xml",
+    "bytes": 82718,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\Unicode2Pinyin.db",
+    "bytes": 1039360,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\UPNPManagerConfig.xml",
+    "bytes": 1218,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\version.txt",
+    "bytes": 127,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\wavePlayerCfg.xml",
+    "bytes": 1342,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\XAppTestExamplesConfig.lot",
+    "bytes": 9116,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\cfg\\MHConfig.cfg.back",
+    "bytes": 15573,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\adaptation.swap",
+    "bytes": 48502,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\adaptation2.swap",
+    "bytes": 105132,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\adaptation3.swap",
+    "bytes": 21472,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\adaptation4.swap",
+    "bytes": 44484,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\adaptation5.swap",
+    "bytes": 3956,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\adaptation6.swap",
+    "bytes": 28174,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\adaptationLate.swap",
+    "bytes": 4688,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\bundles.properties",
+    "bytes": 9416,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\coding.swap",
+    "bytes": 33270,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\configurationmanager_map.res",
+    "bytes": 43724,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\copyright.index",
+    "bytes": 332,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\copyright.txt",
+    "bytes": 56059,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_010_Default HMI.config",
+    "bytes": 1778,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_012_Default Test Drive.config",
+    "bytes": 1731,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_015_Sytem Specific Tracing.config",
+    "bytes": 1828,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_020_Tuner Specific Tracing.config",
+    "bytes": 1839,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_030_Media Specific Tracing.config",
+    "bytes": 1880,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_040_Phone Specific Tracing.config",
+    "bytes": 1824,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_045_Phone + Speech Tracing.config",
+    "bytes": 1865,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_050_Navi Specific Tracing.config",
+    "bytes": 1854,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_055_Navi + Speech Tracing.config",
+    "bytes": 1908,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_060_CAR Specific Tracing.config",
+    "bytes": 1810,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_070_Audiomanagement Specific Tracing.config",
+    "bytes": 1801,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_080_Speech Tracing.config",
+    "bytes": 1878,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_085_Smartphone Specific Tracing.config",
+    "bytes": 1927,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_090_Default FIZ.config",
+    "bytes": 1784,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_100_Default QS.config",
+    "bytes": 1783,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_110_Default TCI.config",
+    "bytes": 1778,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_120_NN4.config",
+    "bytes": 1716,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_130_DSI only.config",
+    "bytes": 1731,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\debugprobes_140_Full HMI.config",
+    "bytes": 1815,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\diagApi.properties",
+    "bytes": 3130,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\dsiexclude.properties",
+    "bytes": 1,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\fieldset.properties",
+    "bytes": 839,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\lang_hmi_builtin.config",
+    "bytes": 17,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_ar_SA.properties",
+    "bytes": 29710,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_bg_BG.properties",
+    "bytes": 29867,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_bs_BA.properties",
+    "bytes": 27435,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_cs_CZ.properties",
+    "bytes": 27443,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_da_DK.properties",
+    "bytes": 27598,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_de_DE.properties",
+    "bytes": 27562,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_el_GR.properties",
+    "bytes": 31356,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_en_GB.properties",
+    "bytes": 27587,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_en_SA.properties",
+    "bytes": 27587,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_en_US.properties",
+    "bytes": 94982,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_es_ES.properties",
+    "bytes": 27580,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_es_MX.properties",
+    "bytes": 44541,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_et_EE.properties",
+    "bytes": 27575,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_fi_FI.properties",
+    "bytes": 27791,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_fr_CA.properties",
+    "bytes": 18256,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_fr_FR.properties",
+    "bytes": 27834,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_hr_HR.properties",
+    "bytes": 27447,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_hu_HU.properties",
+    "bytes": 28789,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_it_IT.properties",
+    "bytes": 27489,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_ja_JP.properties",
+    "bytes": 53727,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_lt_LT.properties",
+    "bytes": 27488,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_lv_LV.properties",
+    "bytes": 27489,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_nl_NL.properties",
+    "bytes": 27553,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_no_NO.properties",
+    "bytes": 27588,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_pl_PL.properties",
+    "bytes": 27568,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_pt_BR.properties",
+    "bytes": 27687,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_pt_PT.properties",
+    "bytes": 27597,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_ro_RO.properties",
+    "bytes": 28283,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_ru_RU.properties",
+    "bytes": 30271,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_sk_SK.properties",
+    "bytes": 27388,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_sl_SI.properties",
+    "bytes": 27361,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_sr_RS.properties",
+    "bytes": 27407,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_sv_SE.properties",
+    "bytes": 27816,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_tr_TR.properties",
+    "bytes": 28124,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_uk_UA.properties",
+    "bytes": 29999,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_zh_CN.properties",
+    "bytes": 53561,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_zh_HK.properties",
+    "bytes": 55086,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\locationformattingrules_zh_TW.properties",
+    "bytes": 55086,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\logging.properties",
+    "bytes": 15416,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\logging.properties_false",
+    "bytes": 13953,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\logging.properties_true",
+    "bytes": 13952,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\threads.properties",
+    "bytes": 2580,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\threshold.swap",
+    "bytes": 7494,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\threshold2.swap",
+    "bytes": 1524,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\threshold3.swap",
+    "bytes": 20814,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\threshold4.swap",
+    "bytes": 220,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\threshold5.swap",
+    "bytes": 4,
+    "ok": true
+  },
+  {
+    "path": "extbin\\apps\\hmi\\HMI\\config\\vehiclestatuswarningids.txt",
+    "bytes": 3386,
+    "ok": true
+  }
+]

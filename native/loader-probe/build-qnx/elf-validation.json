@@ -1,0 +1,525 @@
+{
+  "static_checks": "PASS",
+  "vehicle_validated": false,
+  "artifacts": [
+    {
+      "file": "probe_main",
+      "sha256": "671937560014a323c45db689e844c03c9097edfa02649db586ff8b0148e9b892",
+      "flags": "0x5000002",
+      "needed": [
+        "libprobe_provider.so",
+        "libc.so.3"
+      ],
+      "interpreter": "/usr/lib/ldqnx.so.2",
+      "imports": [
+        "printf",
+        "_init_array",
+        "_preinit_array",
+        "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase",
+        "__deregister_frame_info",
+        "probe_provider_calls",
+        "_ITM_registerTMCloneTable",
+        "_ITM_deregisterTMCloneTable",
+        "dlsym",
+        "_init_libc",
+        "_fini_array",
+        "strcmp",
+        "atexit",
+        "exit",
+        "__register_frame_info"
+      ],
+      "exports": [
+        "__exidx_end",
+        "_bss_end__",
+        "errno",
+        "__bss_start__",
+        "__exidx_start",
+        "_init",
+        "__bss_end__",
+        "_btext",
+        "__bss_start",
+        "main",
+        "__end__",
+        "_fini",
+        "_edata",
+        "_end",
+        "_stack",
+        "__data_start"
+      ],
+      "relocations": [
+        {
+          "type": 20,
+          "symbol": "errno"
+        },
+        {
+          "type": 22,
+          "symbol": "printf"
+        },
+        {
+          "type": 22,
+          "symbol": "_init_array"
+        },
+        {
+          "type": 22,
+          "symbol": "_preinit_array"
+        },
+        {
+          "type": 22,
+          "symbol": "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase"
+        },
+        {
+          "type": 22,
+          "symbol": "__deregister_frame_info"
+        },
+        {
+          "type": 22,
+          "symbol": "probe_provider_calls"
+        },
+        {
+          "type": 22,
+          "symbol": "dlsym"
+        },
+        {
+          "type": 22,
+          "symbol": "_init_libc"
+        },
+        {
+          "type": 22,
+          "symbol": "_fini_array"
+        },
+        {
+          "type": 22,
+          "symbol": "strcmp"
+        },
+        {
+          "type": 22,
+          "symbol": "atexit"
+        },
+        {
+          "type": 22,
+          "symbol": "exit"
+        },
+        {
+          "type": 22,
+          "symbol": "__register_frame_info"
+        }
+      ]
+    },
+    {
+      "file": "probe_runner",
+      "sha256": "89b6b6a049a4ce39b4b4f86a5af5f31d8f5c255bb557113d422a5dded57a6f08",
+      "flags": "0x5000002",
+      "needed": [
+        "libc.so.3"
+      ],
+      "interpreter": "/usr/lib/ldqnx.so.2",
+      "imports": [
+        "unsetenv",
+        "waitpid",
+        "printf",
+        "_init_array",
+        "_preinit_array",
+        "execl",
+        "puts",
+        "fflush",
+        "fprintf",
+        "__deregister_frame_info",
+        "__get_errno_ptr",
+        "setenv",
+        "fork",
+        "_init_libc",
+        "_fini_array",
+        "atexit",
+        "access",
+        "exit",
+        "_exit",
+        "__register_frame_info"
+      ],
+      "exports": [
+        "__exidx_end",
+        "_bss_end__",
+        "errno",
+        "__bss_start__",
+        "__exidx_start",
+        "__bss_end__",
+        "_btext",
+        "__bss_start",
+        "main",
+        "__end__",
+        "_Stderr",
+        "_edata",
+        "_end",
+        "_stack",
+        "__data_start"
+      ],
+      "relocations": [
+        {
+          "type": 20,
+          "symbol": "errno"
+        },
+        {
+          "type": 20,
+          "symbol": "_Stderr"
+        },
+        {
+          "type": 22,
+          "symbol": "unsetenv"
+        },
+        {
+          "type": 22,
+          "symbol": "waitpid"
+        },
+        {
+          "type": 22,
+          "symbol": "printf"
+        },
+        {
+          "type": 22,
+          "symbol": "_init_array"
+        },
+        {
+          "type": 22,
+          "symbol": "_preinit_array"
+        },
+        {
+          "type": 22,
+          "symbol": "execl"
+        },
+        {
+          "type": 22,
+          "symbol": "puts"
+        },
+        {
+          "type": 22,
+          "symbol": "fflush"
+        },
+        {
+          "type": 22,
+          "symbol": "fprintf"
+        },
+        {
+          "type": 22,
+          "symbol": "__deregister_frame_info"
+        },
+        {
+          "type": 22,
+          "symbol": "__get_errno_ptr"
+        },
+        {
+          "type": 22,
+          "symbol": "setenv"
+        },
+        {
+          "type": 22,
+          "symbol": "fork"
+        },
+        {
+          "type": 22,
+          "symbol": "_init_libc"
+        },
+        {
+          "type": 22,
+          "symbol": "_fini_array"
+        },
+        {
+          "type": 22,
+          "symbol": "atexit"
+        },
+        {
+          "type": 22,
+          "symbol": "access"
+        },
+        {
+          "type": 22,
+          "symbol": "exit"
+        },
+        {
+          "type": 22,
+          "symbol": "_exit"
+        },
+        {
+          "type": 22,
+          "symbol": "__register_frame_info"
+        }
+      ]
+    },
+    {
+      "file": "probe_linked",
+      "sha256": "3f81de7a58da69ee0b25b9e6b02d59e652c1aa981e70babde2504efda17895ee",
+      "flags": "0x5000002",
+      "needed": [
+        "libprobe_observer.so",
+        "libprobe_provider.so",
+        "libc.so.3"
+      ],
+      "interpreter": "/usr/lib/ldqnx.so.2",
+      "imports": [
+        "printf",
+        "_init_array",
+        "_preinit_array",
+        "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase",
+        "__deregister_frame_info",
+        "probe_provider_calls",
+        "_ITM_registerTMCloneTable",
+        "_ITM_deregisterTMCloneTable",
+        "dlsym",
+        "_init_libc",
+        "_fini_array",
+        "strcmp",
+        "atexit",
+        "exit",
+        "__register_frame_info"
+      ],
+      "exports": [
+        "__exidx_end",
+        "_bss_end__",
+        "errno",
+        "__bss_start__",
+        "__exidx_start",
+        "_init",
+        "__bss_end__",
+        "_btext",
+        "__bss_start",
+        "main",
+        "__end__",
+        "_fini",
+        "_edata",
+        "_end",
+        "_stack",
+        "__data_start"
+      ],
+      "relocations": [
+        {
+          "type": 20,
+          "symbol": "errno"
+        },
+        {
+          "type": 22,
+          "symbol": "printf"
+        },
+        {
+          "type": 22,
+          "symbol": "_init_array"
+        },
+        {
+          "type": 22,
+          "symbol": "_preinit_array"
+        },
+        {
+          "type": 22,
+          "symbol": "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase"
+        },
+        {
+          "type": 22,
+          "symbol": "__deregister_frame_info"
+        },
+        {
+          "type": 22,
+          "symbol": "probe_provider_calls"
+        },
+        {
+          "type": 22,
+          "symbol": "dlsym"
+        },
+        {
+          "type": 22,
+          "symbol": "_init_libc"
+        },
+        {
+          "type": 22,
+          "symbol": "_fini_array"
+        },
+        {
+          "type": 22,
+          "symbol": "strcmp"
+        },
+        {
+          "type": 22,
+          "symbol": "atexit"
+        },
+        {
+          "type": 22,
+          "symbol": "exit"
+        },
+        {
+          "type": 22,
+          "symbol": "__register_frame_info"
+        }
+      ]
+    },
+    {
+      "file": "libprobe_provider.so",
+      "sha256": "fbbb9afe734eb26ac1b967480c8fcc2fba7b784fe494a3d3ec961e357105a78e",
+      "flags": "0x5000002",
+      "needed": [],
+      "interpreter": null,
+      "imports": [
+        "__cxa_finalize",
+        "__deregister_frame_info",
+        "_ITM_registerTMCloneTable",
+        "_ITM_deregisterTMCloneTable",
+        "__register_frame_info"
+      ],
+      "exports": [
+        "__exidx_end",
+        "_bss_end__",
+        "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase",
+        "__bss_start__",
+        "__exidx_start",
+        "_init",
+        "probe_provider_calls",
+        "__bss_end__",
+        "_btext",
+        "__bss_start",
+        "__end__",
+        "_fini",
+        "_edata",
+        "_end",
+        "_stack",
+        "__data_start"
+      ],
+      "relocations": [
+        {
+          "type": 23,
+          "symbol": ""
+        },
+        {
+          "type": 23,
+          "symbol": ""
+        },
+        {
+          "type": 23,
+          "symbol": ""
+        },
+        {
+          "type": 21,
+          "symbol": "__cxa_finalize"
+        },
+        {
+          "type": 21,
+          "symbol": "__deregister_frame_info"
+        },
+        {
+          "type": 21,
+          "symbol": "_ITM_registerTMCloneTable"
+        },
+        {
+          "type": 21,
+          "symbol": "_ITM_deregisterTMCloneTable"
+        },
+        {
+          "type": 21,
+          "symbol": "__register_frame_info"
+        },
+        {
+          "type": 22,
+          "symbol": "__cxa_finalize"
+        },
+        {
+          "type": 22,
+          "symbol": "__deregister_frame_info"
+        },
+        {
+          "type": 22,
+          "symbol": "__register_frame_info"
+        }
+      ]
+    },
+    {
+      "file": "libprobe_observer.so",
+      "sha256": "2524028398244954307a0121f82dc0db86665f45c876fa16797f3c2253ce8250",
+      "flags": "0x5000002",
+      "needed": [],
+      "interpreter": null,
+      "imports": [
+        "__cxa_finalize",
+        "__deregister_frame_info",
+        "_ITM_registerTMCloneTable",
+        "_ITM_deregisterTMCloneTable",
+        "dlsym",
+        "_exit",
+        "__register_frame_info"
+      ],
+      "exports": [
+        "probe_observer_snapshot",
+        "__exidx_end",
+        "_bss_end__",
+        "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase",
+        "__bss_start__",
+        "__exidx_start",
+        "_init",
+        "__bss_end__",
+        "_btext",
+        "__bss_start",
+        "__end__",
+        "_fini",
+        "_edata",
+        "_end",
+        "_stack",
+        "__data_start"
+      ],
+      "relocations": [
+        {
+          "type": 23,
+          "symbol": ""
+        },
+        {
+          "type": 23,
+          "symbol": ""
+        },
+        {
+          "type": 23,
+          "symbol": ""
+        },
+        {
+          "type": 23,
+          "symbol": ""
+        },
+        {
+          "type": 21,
+          "symbol": "__cxa_finalize"
+        },
+        {
+          "type": 21,
+          "symbol": "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase"
+        },
+        {
+          "type": 21,
+          "symbol": "__deregister_frame_info"
+        },
+        {
+          "type": 21,
+          "symbol": "_ITM_registerTMCloneTable"
+        },
+        {
+          "type": 21,
+          "symbol": "_ITM_deregisterTMCloneTable"
+        },
+        {
+          "type": 21,
+          "symbol": "__register_frame_info"
+        },
+        {
+          "type": 22,
+          "symbol": "__cxa_finalize"
+        },
+        {
+          "type": 22,
+          "symbol": "__deregister_frame_info"
+        },
+        {
+          "type": 22,
+          "symbol": "dlsym"
+        },
+        {
+          "type": 22,
+          "symbol": "_exit"
+        },
+        {
+          "type": 22,
+          "symbol": "__register_frame_info"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1123 @@
+/usr/lib/ldqnx.so.2
+libXSAL.so
+SAL_Set_Thread_Priority
+SAL_Stat_Queue
+strerror
+SAL_Undeclare_Urgent
+snprintf
+SAL_Get_Thread_Name_Self
+SAL_Subscribe
+getpid
+SAL_Wait_Ready
+SAL_Receive_Only_Timeout
+SAL_Get_Thread_Priority
+__cxa_finalize
+malloc
+SAL_Run
+SAL_Get_Thread_Id
+SAL_Publish
+SAL_Signal_Ready
+abort
+SAL_Receive
+_init
+SAL_Is_Thread_Alive
+__deregister_frame_info
+SAL_Init
+SAL_Get_Max_Number_Of_Threads
+SAL_Unsubscribe
+__get_errno_ptr
+SAL_Exit
+memcmp
+DTS_Client_Get_Frontend
+_fini
+sprintf
+SAL_Wait_Destroyed
+SAL_Sleep
+SAL_Declare_Urgent
+SAL_Create_Thread
+SAL_Get_App_Id
+SAL_Create_Queue
+SAL_Send
+_Jv_RegisterClasses
+__register_frame_info
+SAL_Get_Config
+libTSD.so
+libDebugTrace.so
+_Tolotab
+fflush
+strtol
+DTS_System_Init
+DTS_Set_Thread_Name_Func_Getter
+realloc
+fopen
+fclose
+fwrite
+strlen
+DTS_Client_Prepare_Name
+libAirPlay.so
+CFDataCreateWithFilePath
+AirPlayReceiverSessionRequestSiriAction
+AirPlayReceiverServerSetProperty
+AirPlayReceiverSessionChangeModes
+ScreenRegister
+CFDictionaryGetValue
+CFRetain
+CFEqual
+CFRelease
+CFObjectSetPropertyInt64
+CFStringGetTypeID
+AirPlayReceiverServerControl
+AirPlayCreateModesDictionary
+AirPlayReceiverServerCreate
+AirPlayReceiverServerSetDelegate
+AirPlayReceiverSessionSetNightMode
+AirPlayReceiverSessionRequestUI
+HIDRegisterDevice
+AirPlayReceiverSessionSetLimitedUI
+AirPlayReceiverSessionSetDelegate
+CFArrayEnsureCreatedAndAppendCString
+CFGetInt64
+HIDDeviceCreateVirtual
+CFGetCString
+CFGetTypeID
+strcmp
+ScreenCreate
+CFDataCreate
+libAirPlaySupport.so
+HIDDevicePostReport
+CFRunLoopRun
+ScreenDeregister
+CFNumberCreate
+_ScreenSetProperty
+remove
+CFRunLoopStop
+__assert
+HIDDeviceSetProperty
+fread
+setvbuf
+fputc
+CFRunLoopGetMain
+strcspn
+CFStringCreateWithCString
+HIDDeregisterDevice
+_Touptab
+CFCreateObjectFromString
+CFNumberGetTypeID
+CFCreateObjectFromStringEx
+CFStringGetCStringPtr
+libAudioStream.so
+Receive_AudioAvailability
+munmap_device_memory
+mmap_device_memory
+SetAudioPlayback
+libScreenStream.so
+gfxSetVisible
+gfxSetDisplayID
+gfxSetZOrder
+libscreen.so.1
+libpps.so.1
+_Locale
+ppsparse
+libUtilities.so
+CRC32_new
+_ZNSt5ctypeIcED1Ev
+_ZNKSt5ctypeIcE10do_tolowerEPcPKc
+_Znaj
+_ZNKSt11logic_error4whatEv
+_ZdaPv
+_ZNSs5_GrowEjb
+_ZNKSt5ctypeIcE10do_toupperEPcPKc
+_ZTVNSt6locale5facetE
+_ZNSt12length_errorD0Ev
+_ZNSt10ctype_baseD1Ev
+_ZdlPv
+wmemmove
+__aeabi_atexit
+_ZNKSt5ctypeIcE10do_tolowerEc
+CRC32_delete
+_ZNSs5eraseEjj
+_ZNSt5ctypeIcED0Ev
+_ZNKSt5ctypeIcE9do_narrowEPKcS2_cPc
+_ZNKSt12_String_base5_XlenEv
+_ZTVSt11logic_error
+_ZNSt6locale5facetD1Ev
+_ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb
+_ZTVSt10ctype_base
+_ZNKSt12_String_base5_XranEv
+_ZNSt11logic_errorD1Ev
+_ZNKSt5ctypeIcE9do_narrowEcc
+_ZNSt6vectorISsSaISsEE9_Insert_nESt16_Vector_iteratorISsS0_EjRKSs
+_ZTVSt12length_error
+_ZNSt6locale5facetD0Ev
+_ZNKSt5ctypeIcE10do_toupperEc
+_ZNSt9_FacetptrISt5ctypeIcEE6_PsaveE
+_ZNSt12length_errorD1Ev
+_ZTVSt5ctypeIcE
+_ZNSt10ctype_baseD0Ev
+_ZNSt9exceptionD2Ev
+_Z7mbs2wcsRKSs
+_ZNKSt12length_error8_DoraiseEv
+_ZNKSt11logic_error8_DoraiseEv
+_ZNSs6assignERKSsjj
+_ZNSt11logic_errorD0Ev
+wmemcpy
+_ZNKSt9exception6_RaiseEv
+_Znwj
+_ZSt6_ThrowRKSt9exception
+_ZNKSt5ctypeIcE8do_widenEPKcS2_Pc
+wcslen
+_ZNKSt5ctypeIcE8do_widenEc
+libiap2client.so.1
+iap2_disconnect
+iap2_nowplay_getartwork
+iap2_gps_data_send
+iap2_connect
+libstrm.so.1
+libcpp-ne.so.4
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewb
+_ZNKSt12codecvt_base16do_always_noconvEv
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecb
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev
+_ZSt9use_facetISt5ctypeIwEERKT_RKSt6locale
+_ZNSt15basic_streambufIwSt11char_traitsIwEE6xsputnEPKwi
+_ZNSt9_FacetptrISt8numpunctIcEE6_PsaveE
+_ZTVSt8numpunctIcE
+_ZTv0_n12_NSdD0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsgetnEPci
+_ZNSt15basic_streambufIcSt11char_traitsIcEED1Ev
+_ZNSt6locale5facet9_RegisterEv
+_ZNKSt5ctypeIwE10do_toupperEw
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5_LockEv
+_ZSt9use_facetISt8numpunctIwEERKT_RKSt6locale
+_ZTVSd
+_ZZNSt13basic_filebufIcSt11char_traitsIcEE5_InitEP6_FiletNS2_7_InitflEE7_Stinit
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcjjjj
+_ZTVSt7codecvtIcc9_MbstatetE
+_ZNSt13basic_filebufIcSt11char_traitsIcEE5imbueERKSt6locale
+_ZGVNSt8numpunctIwE2idE
+_ZNKSt8numpunctIcE11do_truenameEv
+_ZNSbIwSt11char_traitsIwESaIwEE5eraseEjj
+_ZNSs6insertEjjc
+_ZNSt6_MutexD1Ev
+_ZNKSt5ctypeIwE11do_scan_notEsPKwS2_
+_ZNSt15basic_streambufIwSt11char_traitsIwEE5uflowEv
+_ZNSt8numpunctIcED0Ev
+_ZSt7_FiopenPKcNSt5_IosbIiE9_OpenmodeEi
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPKv
+_ZNKSt5ctypeIwE5do_isEPKwS2_Ps
+_ZTv0_n12_NSoD0Ev
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FputES3_RSt8ios_basewPKcjjjj
+_ZNKSt8numpunctIwE11do_truenameEv
+_ZNSsC1EPKc
+_ZNSt15basic_streambufIwSt11char_traitsIwEE7_UnlockEv
+_ZNSt7codecvtIcc9_MbstatetED1Ev
+_ZTVSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE
+_ZTTSd
+_ZNSt5ctypeIcE7_GetcatEPPKNSt6locale5facetE
+_ZNSiD0Ev
+_ZTTSt13basic_ostreamIwSt11char_traitsIwEE
+_ZNSt9_FacetptrISt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEE6_PsaveE
+_ZNSt9basic_iosIcSt11char_traitsIcEED0Ev
+_ZTVSt12out_of_range
+_ZNKSt7codecvtIcc9_MbstatetE10do_unshiftERS0_PcS3_RS3_
+_ZNSt8numpunctIwED1Ev
+__cxa_guard_release
+_ZNKSt8numpunctIwE11do_groupingEv
+_ZNSt9_FacetptrISt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEE6_PsaveE
+_ZThn8_NSdD1Ev
+_ZTVSo
+_ZSt7_BADOFF
+_ZNKSt8numpunctIcE12do_falsenameEv
+_ZNSt7codecvtIcc9_MbstatetED0Ev
+_ZTVSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basece
+_ZTVSt8numpunctIwE
+_ZNSbIwSt11char_traitsIwESaIwEE5_TidyEbj
+_ZNSt19ostreambuf_iteratorIwSt11char_traitsIwEEaSEw
+_ZSt9use_facetISt8numpunctIcEERKT_RKSt6locale
+_ZGVNSt7codecvtIcc9_MbstatetE2idE
+_ZTVSt9exception
+_ZNSt12out_of_rangeD0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5uflowEv
+_ZNSt4fposI9_MbstatetE4_StzE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9showmanycEv
+_ZNKSt8numpunctIwE12do_falsenameEv
+_ZNSt9_FacetptrISt8numpunctIwEE6_PsaveE
+_ZNKSt7codecvtIcc9_MbstatetE5do_inERS0_PKcS4_RS4_PcS6_RS6_
+_ZNSt6localeC1Ev
+_ZNSt13basic_filebufIcSt11char_traitsIcEE9underflowEv
+__cxa_pure_virtual
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZNSt8_LocinfoD1Ev
+_ZNKSt5ctypeIwE9do_narrowEPKwS2_cPc
+_ZNSt13basic_filebufIcSt11char_traitsIcEE5uflowEv
+_ZGVNSt8numpunctIcE2idE
+_ZNSt13basic_filebufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZTVSt9basic_iosIcSt11char_traitsIcEE
+_ZNSt6locale2id7_Id_cntE
+_ZGVNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecy
+_ZNSt8ios_base7_AddstdEv
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecm
+_ZNKSt5ctypeIwE8do_widenEPKcS2_Pw
+_ZTv0_n12_NSt13basic_ostreamIwSt11char_traitsIwEED0Ev
+_ZNSt9basic_iosIwSt11char_traitsIwEED0Ev
+_ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_jj
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewy
+_ZNSt15basic_streambufIwSt11char_traitsIwEE4syncEv
+_ZNKSt8numpunctIwE16do_decimal_pointEv
+_ZNSt7codecvtIcc9_MbstatetE2idE
+_ZNKSt5ctypeIwE10do_tolowerEw
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewm
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewe
+_ZNKSt5ctypeIwE10do_toupperEPwPKw
+_ZNSt12out_of_rangeD1Ev
+_ZNSt5ctypeIwED1Ev
+mbrtowc
+_ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev
+_ZTTSo
+_ZNKSt8numpunctIcE16do_thousands_sepEv
+_ZNSt15basic_streambufIwSt11char_traitsIwEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZGVNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE2idE
+fgetc
+_ZNSt15basic_streambufIwSt11char_traitsIwEED0Ev
+_ZSt10_MaklocchrIwET_cPS0_RKSt7_Cvtvec
+_Locksyslock
+_ZTVSt15basic_streambufIwSt11char_traitsIwEE
+_ZTVSt12codecvt_base
+_ZNSt15basic_streambufIwSt11char_traitsIwEE9pbackfailEl
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetE
+_ZNSt6_Mutex7_UnlockEv
+_ZNKSt5ctypeIwE10do_scan_isEsPKwS2_
+_ZNKSt12out_of_range8_DoraiseEv
+_ZNSdD0Ev
+_ZSt4_Fpz
+_ZNSt15basic_streambufIwSt11char_traitsIwEE9showmanycEv
+_ZNSt15basic_streambufIwSt11char_traitsIwEE9underflowEv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE9pbackfailEi
+_ZNSt9basic_iosIcSt11char_traitsIcEED1Ev
+_ZNSt5ctypeIwE7_GetcatEPPKNSt6locale5facetE
+_ZNSt8numpunctIcED1Ev
+_ZNSt6_MutexC1Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecx
+__cxa_guard_acquire
+_ZNSt12codecvt_baseD0Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecl
+_ZNSoD0Ev
+_ZNSt8numpunctIwED0Ev
+_ZTVSt13basic_filebufIcSt11char_traitsIcEE
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_IputES3_RSt8ios_basewPcj
+_ZNSs6appendERKSsjj
+_ZTVSt15basic_streambufIcSt11char_traitsIcEE
+_ZNKSt5ctypeIwE5do_isEsw
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecd
+_ZTVSt5ctypeIwE
+_ZNSdD1Ev
+_ZNSt8numpunctIwE7_GetcatEPPKNSt6locale5facetE
+_ZNKSt7codecvtIcc9_MbstatetE6do_outERS0_PKcS4_RS4_PcS6_RS6_
+_ZNKSt7codecvtIcc9_MbstatetE9do_lengthERKS0_PKcS5_j
+_ZTCSd0_Si
+fsetpos
+_ZNSiD1Ev
+_ZNSt6localeD1Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9underflowEv
+wmemset
+_ZNSbIwSt11char_traitsIwESaIwEE6assignEPKwj
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IputES3_RSt8ios_basecPcj
+_ZNSt9_FacetptrISt5ctypeIwEE6_PsaveE
+_ZNKSt12codecvt_base13do_max_lengthEv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE6setbufEPci
+_ZNSt8numpunctIcE2idE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9pbackfailEi
+wcrtomb
+_ZNKSt8numpunctIcE16do_decimal_pointEv
+_ZNSt5ctypeIwE2idE
+_ZNSs6appendEjc
+_ZNKSt5ctypeIwE9do_narrowEwc
+_ZNSt8ios_baseD2Ev
+_ZTVSi
+_ZNSbIwSt11char_traitsIwESaIwEE6appendEjw
+_ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev
+_ZSt10_MaklocstrIwEPT_PKcS1_RKSt7_Cvtvec
+_ZTv0_n12_NSdD1Ev
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewx
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewd
+_ZNKSt8numpunctIwE16do_thousands_sepEv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE4syncEv
+_ZNSt15basic_streambufIwSt11char_traitsIwEE5_LockEv
+_ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE2idE
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewl
+_ZNSt15basic_streambufIcSt11char_traitsIcEED0Ev
+fseek
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_PutcES3_PKcj
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci
+_Unlocksyslock
+_ZNSt15basic_streambufIwSt11char_traitsIwEE6xsgetnEPwi
+memchr
+_ZTv0_n12_NSoD1Ev
+_ZNSt7codecvtIcc9_MbstatetE7_GetcatEPPKNSt6locale5facetE
+_ZNSs6assignEPKc
+_ZNKSt5ctypeIwE8do_widenEc
+_ZNSt15basic_streambufIwSt11char_traitsIwEE5imbueERKSt6locale
+_ZTv0_n12_NSt13basic_ostreamIwSt11char_traitsIwEED1Ev
+_ZNKSt12codecvt_base11do_encodingEv
+_ZSt4setwi
+_ZNSt15basic_streambufIwSt11char_traitsIwEE6setbufEPwi
+_ZNSt9basic_iosIwSt11char_traitsIwEED1Ev
+_ZTVSt8ios_base
+_ZNKSt6locale9_GetfacetEj
+_ZNSs5_TidyEbj
+_ZNSt5ctypeIwED0Ev
+_ZNSt8numpunctIwE2idE
+_ZNSt13basic_ostreamIwSt11char_traitsIwEED1Ev
+fgetpos
+_ZNSt15basic_streambufIwSt11char_traitsIwEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE4syncEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6setbufEPci
+_ZNSt13basic_filebufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+_ZNSt8numpunctIcE7_GetcatEPPKNSt6locale5facetE
+_ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5imbueERKSt6locale
+_ZNSt8ios_base5_InitEv
+_ZTv0_n12_NSiD0Ev
+_ZThn8_NSdD0Ev
+_ZTVSt13basic_ostreamIwSt11char_traitsIwEE
+_ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev
+ungetc
+_ZNSt13basic_filebufIcSt11char_traitsIcEED0Ev
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPKv
+_ZNSt8_LocinfoC1EPKc
+_ZNSt12codecvt_baseD1Ev
+_ZNKSt8numpunctIcE11do_groupingEv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE8overflowEi
+_ZTVSt9basic_iosIwSt11char_traitsIwEE
+_ZNSt15basic_streambufIwSt11char_traitsIwEE8overflowEl
+_ZNSt15basic_streambufIwSt11char_traitsIwEED1Ev
+_ZTTSi
+_Getctyptab
+_ZNSt19ostreambuf_iteratorIcSt11char_traitsIcEEaSEc
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7_UnlockEv
+_ZNSt6locale2idcvjEv
+_ZNSt6locale5facet7_IncrefEv
+_ZNSt9_FacetptrISt7codecvtIcc9_MbstatetEE6_PsaveE
+_ZNSt8numpunctIwE5_InitERKSt8_Locinfo
+_ZNSt15basic_streambufIcSt11char_traitsIcEE8overflowEi
+_ZNSt13basic_ostreamIwSt11char_traitsIwEED0Ev
+_ZNSt5ctypeIcE2idE
+_ZNSoD1Ev
+_ZNKSt5ctypeIwE10do_tolowerEPwPKw
+wcstombs
+_ZNSt8numpunctIcE5_InitERKSt8_Locinfo
+_ZTv0_n12_NSiD1Ev
+_ZTCSd8_So
+_ZNSt6_Mutex5_LockEv
+_ZNSsC1Ejc
+__aeabi_idiv
+__div0
+__aeabi_idivmod
+__aeabi_ldivmod
+__gnu_ldivmod_helper
+libc.so.3
+_init_array
+errno
+_preinit_array
+tolower
+optarg
+setenv
+_init_libc
+getopt
+_fini_array
+__divsi3
+spawnp
+localeconv
+waitfor
+toupper
+_ZNSdD2Ev
+_ZNSsD1Ev
+_ZNSt15basic_streambufIwSt11char_traitsIwEED2Ev
+_ZNSt6locale5facet7_DecrefEv
+_ZNSbIwSt11char_traitsIwESaIwEED1Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEED2Ev
+_ZNSt8numpunctIcE5_TidyEv
+_ZNSt8numpunctIwE5_TidyEv
+libm.so.2
+fabsf
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+_ZTV14xAppFacadeBase
+_ZTTSt19basic_ostringstreamIwSt11char_traitsIwESaIwEE
+_ZTVSt19basic_ostringstreamIwSt11char_traitsIwESaIwEE
+_Z27Callback_SessionUnduckAudioP29AirPlayReceiverSessionPrivatedPv
+_ZTVSt18basic_stringstreamIcSt11char_traitsIcESaIcEE
+_Z26Callback_ServerSetPropertyP28AirPlayReceiverServerPrivateP9CFLStringPKvS4_Pv
+_ZTV7Bonjour
+_ZTVN3sal6ThreadE
+_ZTVSt19basic_ostringstreamIcSt11char_traitsIcESaIcEE
+_ZN9PPSThread11spoInstanceE
+_ZN10SensorData11spoInstanceE
+_ZNSt6vectorIfSaIfEED1Ev
+_ZTTSt18basic_stringstreamIcSt11char_traitsIcESaIcEE
+_ZTV13AirPlayThread
+_ZN3sal6Thread14threadFunctionEPv
+_Z24Callback_SessionFinalizeP29AirPlayReceiverSessionPrivatePv
+_ZNSt3mapISs31TelephonyRegistrationStatusEnumSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+_ZN6Server11spoInstanceE
+_ZTVN3sal11ApplicationE
+_ZN13AirPlayThread11spoInstanceE
+_Z27Callback_ServerCopyPropertyP28AirPlayReceiverServerPrivateP9CFLStringPKvPiPv
+_ZTVSt15basic_stringbufIcSt11char_traitsIcESaIcEE
+_ZTTSt14basic_ofstreamIcSt11char_traitsIcEE
+_Z33Callback_SessionCommandCompletioniP13CFLDictionaryPv
+_Z25Callback_SessionRequestUIP29AirPlayReceiverSessionPrivatePv
+_ZTV10SensorData
+_ZTV6Server
+_ZNSt3mapISs22PlaybackRepeatModeEnumSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+_ZSt3hexRSt8ios_base
+_ZTV9PPSThread
+_ZNSt3mapISs18PlaybackStatusEnumSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+_ZTV6Logger
+_ZNSt3mapISs22CallStateDirectionEnumSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+_Z25Callback_SessionDuckAudioP29AirPlayReceiverSessionPrivateddPv
+_Z26Callback_SessionInitializeP29AirPlayReceiverSessionPrivatePv
+_ZNSt3mapISs19CallStateStatusEnumSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+_ZTVSt14basic_ofstreamIcSt11char_traitsIcEE
+_Z22Callback_SessionFailedP28AirPlayReceiverServerPrivateiPv
+_ZTTSt19basic_ostringstreamIcSt11char_traitsIcESaIcEE
+_ZNSt3mapISs14locationObjectSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+_ZNSt3mapISs17BluetoothInfoEnumSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+_ZTVN3sal12ActiveObjectE
+_Z22Callback_ServerControlP28AirPlayReceiverServerPrivateP9CFLStringPKvP13CFLDictionaryPS6_Pv
+_ZNSt3mapISs15telephonyObjectSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+_ZTVN3sal13PassiveObjectE
+_Z28Callback_SessionCopyPropertyP29AirPlayReceiverSessionPrivateP9CFLStringPKvPiPv
+_ZNSt3mapISs19CommunicationObjectSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+_Z23Callback_SessionControlP29AirPlayReceiverSessionPrivateP9CFLStringPKvP13CFLDictionaryPS6_Pv
+_Z23Callback_SessionCreatedP28AirPlayReceiverServerPrivateP29AirPlayReceiverSessionPrivatePv
+_ZNSt3mapISs16NowplayingObjectSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+_Z28Callback_SessionModesChangedP29AirPlayReceiverSessionPrivatePK16AirPlayModeStatePv
+_ZTVSt15basic_stringbufIwSt11char_traitsIwESaIwEE
+_ZTV12RemoteClient
+_ZNSt3mapISs23PlaybackShuffleModeEnumSt4lessISsESaISt4pairIKSsS0_EEED1Ev
+raB3G
+raB3G
+raB3G
+raB3G
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Application/build/../source/Application.cpp
+parseCommandLineArgs - config file '%s'
+parseCommandLineArgs - last exit code %s
+parseCommandLineArgs - manufacturing mode detected -> no special handling
+parseCommandLineArgs - display id %s
+g:l:t:e:N:v:c:X:yD:
+"carplay"
+%s: [pid: %d] - Logger activated (compilation %s %s)
+Jun 26 2018
+18:35:13
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Application/build/../source/Dispatcher.cpp
+Dispatcher::onStartingExecute: EV_APP_INITIALIZED published
+invalid map/set<T> iterator
+../../../../sw/AP_XSALcpp/public/salTemplateDispatcher.h
+TemplateDispatcher::onMessage(),No passive object avaliable with id: %d
+assertion failed: isRegistered( passive )
+map/set<T> too long
+false
+controller
+accessory
+speech
+phoneCall
+turnByTurn
+speaking
+recognizing
+screen
+audio
+Resource [ 
+resourceID=
+owner=
+AppState [ 
+AppID=
+speechMode=
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Server/build/../source/Server.cpp
+Server::onMessage - event %d
+Server::onMessage - EV_CP_REGISTER_LISTENER - listener %llx, appId %d, threadId %d passiveObjId %d
+Server::onMessage - EV_CP_UNREGISTER_LISTENER - listener %llx
+Server::onMessage - EV_CP_VISIBLE - visible=%d zorder=%d
+Server::onMessage - EV_CP_DAYNIGHT_MODE - nightMode %d
+Server::onMessage - EV_CP_BUTTON_EVENT - button=%d buttonState=%d
+Server::onMessage - EV_CP_CHARACTER_EVENT - NumberOfAlternatives=%d 
+Server::onMessage - EV_CP_ROTARY_EVENT - rotations=%d 
+Server::onMessage - EV_CP_TOUCH_EVENT - TouchSource=%d NumberOfFingers=%d
+Server::onMessage - EV_CP_MODE_CHANGE
+Server::onMessage - EV_CP_RSP_UPDATE_MODE
+Server::onMessage - EV_CP_SIRI_ACTION - SiriAction=%d
+Server::onMessage - EV_CP_UISCREEN - UiScreenID=%d
+Server::onMessage - EV_CP_RSP_BT_DEACTIVATE 
+Server::onMessage - EV_CP_RSP_AUDIO_AVAILABILITY - available=%d, streamType=%d, audioType=%d
+LimitedUI value Via Diag = %d 
+Server::onMessage -EV_CP_START_SERVICE 
+Server::onMessage - EV_CP_AUDIO_AVAILABILITY [ availability = %d, streamType = %d, audioType = %d ]
+Server::onMessage - EV_CP_INT_UPDATE_MODE
+Server::onMessage - EV_CP_INT_RSP_MODE_CHANGE
+Server::onMessage - EV_CP_INT_APP_SELECTED
+Server::onMessage - EV_CP_INT_DUCK_AUDIO
+Server::onMessage - EV_CP_INT_UNDUCK_AUDIO
+Server::onMessage - EV_CP_INT_REQ_BT_DEACTIVATE
+Server::onMessage - EV_CP_INT_PLAYBACK_DATA
+Server::onMessage - EV_CP_INT_PLAYBACK_STATE
+Server::onMessage - EV_CP_INT_CALL_STATE
+Server::onMessage - EV_CP_INT_TELEPHONY_STATE
+Server::onMessage - EV_CP_INT_PLAY_POSITION - position %d
+Server::onMessage - EV_CP_INT_COVER_ART
+Server::onMessage - EV_CP_INT_PHONE_CALL_STATUS - call %s ACTIVE
+Server::onMessage - EV_GET_PHONE_CALL_STATUS - sending [ call %s ACTIVE ]
+Server::onMessage - AC_BT_STATUS_EVT [ btState = %d, callState = %d, MAC address = "%s" , pairingMethods = %d ]
+Server::onMessage - EV_MIB_DSI_POWERSTATE - PowerState %d
+Server::onMessage - EV_MIB_DSI_CLAMPSTATE - ClampS %d (%s)
+Server::onMessage - EV_CP_PUB_SUBSCRIBE_SERVICE_STATUS - appId %d, threadId %d
+Server::onMessage - EV_CP_PUB_SERVICE_STARTED
+Server::onMessage - EV_CP_PUB_SERVICE_STOPPED
+Server::onMessage - EV_APP_EXIT - appId %d
+Server::onMessage - EV_SYSTEM_SHUTDOWN not processed
+ Server::onMessage CARSERV_EV_DEST_INPUT_VEL_THR_RES -  Threshold value %d
+Server::onMessage  - CARSERV_EV_PARK_BRAKE_RES -   %d
+Server::onMessage  - CARSERV_EV_CLUTCH_STATE_RES -   %d
+Server::onMessage - unexpected message with event id: %d
+143_1509
+Server::processRegisterListener - number of clients %d
+Server::processUnregisterListener(listener) - listener unregistered
+Server::processUnregisterListener - number of clients %d
+Server::processUnregisterListener(appId) - listener unregistered
+Server::processUnregisterListener(appId) - number of clients %d
+Server::processUnregisterListener(appId, threadId, passiveObjId) - listener unregistered
+Server::processUnregisterListener(appId, threadId, passiveObjId) - number of clients %d
+ Gear Changed %d 
+ limiting UI is enabled via diag 
+Gear Changed %d, muIpDestVesThrStatus = %d 
+muClutchStatus %d, muParkBreakStatus = %d 
+ Set from Auto gear 
+ Set from Manual gear 
+Gear Status Unknown - not limiting the UI 
+ limiting UI is diabled via diag 
+Server::processCharacterEvent - NOT IMPLEMENTED YET
+Server::processResponseBTDeactivation
+Server::processResponseUpdateAudioAvailability - available=%d, streamType=%d, audioType = %d
+<%d> %s
+Publishing message EV_CP_PUB_NOTIFY_AVRCP_DEVICE_CONNECTED_AS_CP %d, %d , %d
+ EV_CP_PUB_NOTIFY_AVRCP_DEVICE_CONNECTED_AS_CP sent. 
+/pps/hwinfostatus
+name::MAN
+manufacturer::MAN
+name::Volkswagen
+manufacturer::Volkswagen AG
+overridePPSforVehicleModel buffer = %s, Number of byts %d 
+overridePPSforVehicleModel failed. Unable to open file
+vector<T> too long
+map/set<T> too long
+false
+speech
+phoneCall
+turnByTurn
+speaking
+recognizing
+AppStateRequest [ 
+appID=
+state=
+FALSE
+speechMode=
+screen
+audio
+untake
+borrow
+unborrow
+NiceToHave
+UserInitiated
+anytime
+never
+ResourceRequest [ 
+resourceID=
+transferType=
+transferPriority=
+takeConstraint=
+borrowConstraint=
+unborrowConstraint=
+ServiceConfiguration [ 
+displayName="
+screenResolution=
+XResolution=
+YResolution=
+XOffset=
+YOffset=
+touchpadXResolution=
+touchpadYResolution=
+physicalDisplayHeight=
+physicalDisplayWidth=
+inputFeatures=
+useRightHandDrive=
+startInNightMode=
+initialAppState [ 
+initialResources [ 
+bluetoothIdentities [ 
+vehicleModel = 
+limitedUIElements = 
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Server/build/../source/AirPlayThread.cpp
+%s - inCommand="%s"
+disableBluetooth
+deviceID
+%s - [inCommand="%s"] "%s"=%llu
+disableBluetooth
+deviceID
+%s - [inCommand="%s"] "%s"="%s"
+%s - [inCommand="%s"] unknown type id %d for value="%s"
+%s - unhandled command "%s"
+%s - inProperty="%s"
+modes
+%s - unknown resource id %d
+%s - unknown app id %d
+%s - AirPlayCreateModesDictionary() failed with error %d
+%s - unhandled property "%s"
+accessory
+controller
+%s - screen=%s, mainAudio=%s, phoneCall=%s, speech (entity=%s, mode=%s), turnByTurn=%s
+%s - inDurationSecs=%.3f, inVolume=%.3f
+%s - inDurationSecs=%.3f
+bluetoothIDs
+rightHandDrive
+nightMode
+--bool
+features
+firmwareRevision
+hardwareRevision
+manufacturer
+model
+oemIcon
+%s - "%s" - unable to use icon file "%s", error %d
+oemIconLabel
+oemIconVisible
+limitedUI
+limitedUIElements
+softKeyboard
+softPhoneKeypad
+nonMusicLists
+musicLists
+japanMaps
+%s - inReason=%d
+%s - inStatus=%d
+AirPlay
+%s - event=%d
+%s - EV_CP_START_AIRPLAY - %s
+%s - unhandled event %d 
+210.81
+0x281972352317
+%s - AirPlayReceiverServerSetProperty() - device id success
+%s - AirPlayReceiverServerSetProperty() - device id failed
+startServer
+%s - AirPlayReceiverServerStart() returned %d
+%s - CFRunLoopRun() exit
+%s - AirPlayReceiverServerCreate() failed with error %d
+%s - ScreenDeregister(moScreen) failed with %d
+%s - HIDRegisterDevice(moTouchHID) failed with %d
+%s - HIDRegisterDevice(moKnobHID) failed with %d
+%s - HIDRegisterDevice(moTelephonyHID) failed with %d
+widthPixels
+heightPixels
+widthPhysical
+heightPhysical
+maxFPS
+e5f7a68d-7b0f-4305-984b-974f677a150b
+%s - ScreenRegister() failed with %d
+%s - ScreenCreate() failed with %d
+displayUUID
+Touch Screen
+countryCode
+productID
+vendorID
+0x0e46
+%s - HIDPointingCreateDescriptor() failed with %d
+%s - CFDataCreate() failed with %d (Not enough memory)
+hidDescriptor
+%s - HIDRegisterDevice() failed with %d
+%s - HIDDeviceCreateVirtual() failed with %d
+Knobs
+%s - HIDCustomCreateDescriptor() failed with %d
+Telephony
+%s - HIDTelephonyCreateDescriptor() failed with %d
+%s - [ %d, %d ] Number Of Fingers: %d
+AirPlayThread::postTouchEvent - HIDDevicePostReport() failed with %d
+%s - aiRotations %d 
+AirPlayThread::postRotaryEvent - HIDDevicePostReport() failed with %d
+%s - aiButton %d, aiButtonState %d 
+AirPlayThread::postButtonEvent - Button Type Unknown
+AirPlayThread::postButtonEvent - HIDDevicePostReport() failed with %d
+%s - aiSiriAction=%d
+AirPlayThread::requestSiriAction - Unknown Siri Action
+%s - AirPlayReceiverSessionRequestSiriAction() successful
+%s - AirPlayReceiverSessionRequestSiriAction() failed with error %d
+%s - aiScreenID=%d
+mobilephone:
+maps:
+music:
+nowplaying:
+AirPlayThread::requestUI - Unknown Screen UI
+%s - AirPlayReceiverSessionRequestUI() successful
+%s - AirPlayReceiverSessionRequestUI() failed with error %d
+%s - <%d> %s
+%s - reason="%s"
+%s - AirPlayReceiverSessionChangeModes() successful
+%s - AirPlayReceiverSessionChangeModes() failed with error %d
+%s - isNightMode = %s
+%s - AirPlayReceiverSessionSetNightMode(%d) successful
+%s - AirPlayReceiverSessionSetNightMode(%d) failed with error %d
+%s - Set_Limited_UI = %s
+%s - AirPlayReceiverSessionSetLimitedUI(%d) successful
+%s - AirPlayReceiverSessionSetLimitedUI(%d) failed with error %d
+%s - setenv("SOCK", "%s", 1) failed with %d
+%s - setenv("SOCK", "%s", 1) success
+mDNSPlatformDefaultProbeCountForTypeUnique
+%s - setenv("mDNSPlatformDefaultProbeCountForTypeUnique", "%s", 1) failed with %d
+%s - setenv("mDNSPlatformDefaultProbeCountForTypeUnique", "%s", 1) success
+MDNS_DIRECTLINK_IFACE
+%s - setenv("MDNS_DIRECTLINK_IFACE", "%s", 1) failed with %d
+%s - setenv("MDNS_DIRECTLINK_IFACE", "%s", 1) success
+/dev/d_carplay
+carplay0
+AirPlayThread::mapAirPlay2CarPlay_AppOwner - unknown AirPlay app Owner %d
+AirPlayThread::mapAirPlay2CarPlay_ResourceOwner - unknown AirPlay resource owner %d
+AirPlayThread::mapAirPlay2CarPlay_SpeechMode - unknown AirPlay speech mode %d
+vector<T> too long
+setEnv
+setLimitedUI
+setNightMode
+setPrevModeState
+modeChanges
+requestUI
+requestSiriAction
+postButtonEvent
+postRotaryEvent
+postTouchEvent
+configureTelephonyHID
+configureKnobHID
+configureTouchHID
+configureScreen
+startAirPlayServer
+onMessage
+~AirPlayThread
+AirPlayThread
+Callback_SessionCommandCompletion
+Callback_SessionFailed
+Callback_SessionCreated
+Callback_ServerSetProperty
+Callback_ServerCopyProperty
+Callback_ServerControl
+Callback_SessionUnduckAudio
+Callback_SessionDuckAudio
+Callback_SessionRequestUI
+Callback_SessionModesChanged
+Callback_SessionSetProperty
+Callback_SessionCopyProperty
+Callback_SessionControl
+Callback_SessionFinalize
+Callback_SessionInitialize
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Server/build/../source/SensorData.cpp
+SensorData::onMessage - EV_SH_GPS_DATA [ latitude %f, longitude %f, heading %f]
+SensorData::onMessage - EV_SH_GPS_DATA [number of NMEA sentences %zu ]
+SensorData::onMessage - EV_SH_GPS_DATA [ NMEA string <%d> "%s" ]
+China
+No provisioning of Position information to China variants
+SensorData::onMessage - CARSERV_EV_CURRENT_GEAR_RES [ Current gear %d ]
+SensorData::onMessage - unexpected message with event id %d
+$GPHDT
+SensorData::onMessage - EV_SH_GPS_DATA [ GPHDT string "%s" ]
+/dev/ipod0
+SensorData::onMessage - EV_SH_GPS_DATA - iap2_gps_data_send("%s") returned %d
+SensorData::onMessage - EV_SH_GPS_DATA - iap2_connect(%s) failed
+SensorData::onMessage - EV_SH_GYRO_DATA - Gyro data received is invalid/erroneous
+$PAGCD
+%.2f,,,%f,
+%.3f,%u,
+SensorData::onMessage - EV_SH_GYRO_DATA [ NMEA string "%s" ]
+SensorData::onMessage - EV_SH_GYRO_DATA - iap2_gps_data_send() returned %d
+SensorData::onMessage - EV_SH_GYRO_DATA - iap2_connect(%s) failed
+SensorData::onMessage - EV_SH_VEHICLE_SPEED_DATA - Speed data received is invalid/erroneous
+$PASCD
+%.2f,%f,
+%.3f,%c,%c,%u,%u,
+SensorData::onMessage - EV_SH_VEHICLE_SPEED_DATA [ NMEA string "%s" ]
+SensorData::onMessage - EV_SH_VEHICLE_SPEED_DATA - iap2_gps_data_send() returned %d
+SensorData::onMessage - EV_SH_VEHICLE_SPEED_DATA - iap2_connect(%s) failed
+SensorData::onMessage - EV_SH_ACCELEROMETER_DATA - Accelerometer data received is invalid/erroneous
+$PAACD
+%.2f,%f,%f,%f,
+%.3f,%.5f,%u,
+SensorData::onMessage - EV_SH_ACCELEROMETER_DATA [ NMEA string "%s" ]
+SensorData::onMessage - EV_SH_ACCELEROMETER_DATA - iap2_gps_data_send() returned %d
+SensorData::onMessage - EV_SH_ACCELEROMETER_DATA - iap2_connect(%s) failed
+map/set<T> too long
+vector<T> too long
+XAPP_MAIN
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Server/build/../source/PPSThread.cpp
+/pps/iap2/.all?wait
+PPSThread::execute - read string "%s"
+PPSThread::execute - PPS data [ object %s ]
+@location
+@telephony
+@nowplaying
+@communications
+@bluetooth
+PPSThread::execute - unable to open file "%s"
+PPSThread::parseLocationObject - PPS data [ "%s"="%s" ]
+PPSThread::parseTelephonyObject - PPS data [ %s - "%s"="%s" ]
+PPSThread::parseNowplayingObject - PPS data [ %s - "%s"="%s" ]
+PPSThread::parseCommunicationObject - PPS data [ %s - "%s"="%s" ]
+GlobalPositioningSystemFixData
+VehicleAccelerometerData
+VehicleGyroData
+VehicleHeadingData
+VehicleSpeedData
+CallStateCallerName
+CallStateDirection
+CallStatePhoneNumber
+CallStateStatus
+UniqueCallID
+TelephonyAirplaneModeStatus
+MobileOperator
+TelephonyRegistrationStatus
+TelephonySignalStrength
+Incoming
+Outgoing
+Connecting
+Active
+Disconnected
+Sending
+Ringing
+Disconneting
+Not Registered
+Searching
+Denied
+Registered Home
+Roaming
+Emergency Calls Only
+RegisteredRoaming
+MediaItemTitle
+MediaItemAlbumTitle
+MediaItemAlbumTrackNumber
+MediaItemAlbumTrackCount
+MediaItemAlbumDiscNumber
+MediaItemAlbumDiscCount
+MediaItemArtist
+MediaItemGenre
+MediaItemComposer
+MediaItemPlaybackDurationInMilliseconds
+PlaybackAppName
+PlaybackRepeatMode
+PlaybackShuffleMode
+PlaybackStatus
+PlaybackElapsedTimeInMilliseconds
+MediaItemArtworkFileTransferIdentifier
+Songs
+Albums
+Playing
+Paused
+Stopped
+SeekForward
+SeekBackward
+BluetoothAdvancedAudioDistribution
+BluetoothAudioVideoRemoteControl
+BluetoothHandsFree
+BluetoothHumanInterfaceDevice
+BluetoothMessageAccess
+BluetoothPersonalAreaNetworkAccessPoint
+BluetoothPersonalAreaNetworkClient
+BluetoothiAP2Link
+AirplaneModeStatus
+CallAddressBookID
+CallDirection
+CallDisplayName
+CallIsConferenced
+CallLabel
+CallRemoteID
+CallService
+CallStatus
+CallUUID
+CarrierName
+CellularSupported
+CurrentCallCount
+EndAndAcceptAvailable
+FaceTimeAudioEnabled
+FaceTimeVideoEnabled
+HoldAndAcceptAvailable
+HoldAvailable
+InitiateCallAvailable
+MergeAvailable
+MuteStatus
+NewVoicemailCount
+RegistrationStatus
+SignalStrength
+SwapAvailable
+TelephonyEnabled
+/dev/ipod0
+PPSThread::parseNowplayingObject - album art size %d
+/tmp/CarPlay_AlbumArt_%d.jpeg
+PPSThread::parseNowplayingObject - "%s" deleted
+PPSThread::parseNowplayingObject - unable to delete "%s"
+PPSThread::parseNowplayingObject - opening file "%s" failed
+PPSThread::parseNowplayingObject - iap2_nowplay_getartwork() returned %d instead of %d
+PPSThread::parseNowplayingObject - allocating memory of size %d for album art failed
+PPSThread::parseNowplayingObject - iap2_connect(%s) failed
+PPSThread::parseBluetoothObject - PPS data [ %s - "%s"="%s" ]
+CONNECTED
+NOT CONNECTED
+BLUETOOTH IS %s TO SAME HEAD UNIT
+Received %d object for BT
+map/set<T> too long
+invalid map/set<T> iterator
+~PPSThread
+PPSThread
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Server/build/../source/Bonjour.cpp
+Bonjour::Bonjour - spawning Bonjour service succeeded, process id %d
+/var/run/mdnsd/mdnsd.pid
+Bonjour::Bonjour - /var/run/mdnsd/mdnsd.pid available
+Bonjour::Bonjour - /var/run/mdnsd/mdnsd.pid unavailable, error %d (%s)
+Bonjour::Bonjour - kill(mdnsd) returned %d
+Bonjour::Bonjour - spawning Bonjour service failed with error %d (%s)
+mdnsd
+-debug
+Bonjour::~Bonjour - killing Bonjour service (pid %d) succeeded
+Bonjour::~Bonjour - killing Bonjour service (pid %d) failed with error %d (%s)
+Bonjour::~Bonjour - invalid process id
+Bonjour::isRunning - kill(%d, 0) returned %d
+Bonjour::isRunning - invalid process id
+~Bonjour
+Bonjour
+ - entry
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Utils/build/../source/Logger.cpp
+ - exit
+Unknown
+VWAG_SKODA
+VWAG_AUDI
+VWAG_VOLKSWAGEN
+VWAG_PORSCHE
+VWAG_SEAT
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Utils/build/../source/HeadUnit.cpp
+HeadUnit::getManufacturerName - no valid brand detected, using "%s"
+HeadUnit::getSoftwareVersion - ImageInfo-Object returned wrong pointer to VersionNumber
+HeadUnit::getSoftwareVersion - init() failed
+0x%#x
+Skoda
+Volkswagen
+Porsche PCM
+HeadUnit::getOEMIconLabel - no valid brand detected, using "%s"
+/extbin/apps/bmp/
+Delphi_CarPlay_oemIcon.png
+Man_CarPlay_oemIcon.png
+Skoda_CarPlay_oemIcon.png
+Audi_CarPlay_oemIcon.png
+VW_CarPlay_oemIcon.png
+Porsche_CarPlay_oemIcon.png
+Seat_CarPlay_oemIcon.png
+Europe
+NorthAmerica
+China
+HeadUnit::getMarketName - no valid region detected, using "%s"
+/dev/fs0
+ systeminfo: malloc failed
+ systeminfo: magic doesn't match
+/home/root/platformrestart_yes
+/home/root/platformrestart_no
+/home/root/tracescope_yes
+/home/root/tracescope_no
+vector<T> too long
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salActiveObject.cpp
+assertion failed: SAL_Get_Thread_Id() == getId()
+SAL_Create_Queue() failure
+SAL_Receive() failure
+Alive ActiveObject cannot be destroyed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salApplication.cpp
+assertion failed: appId > 1
+assertion failed: maxNumberOfThreads > 0
+assertion failed: appId >= std::numeric_limits<SAL_App_Id_T>::min() && appId <= std::numeric_limits<SAL_App_Id_T>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salException.cpp
+assertion failed: h != 0
+Resource fatal error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salIByteBuffer.cpp
+assertion failed: mPosition + sizeof( d ) <= mSize
+assertion failed: position < mSize
+assertion failed: mPosition + bytes <= mSize
+assertion failed: !( d == 0 && s > 0 )
+assertion failed: mPosition + s <= mSize
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salMessage.cpp
+assertion failed: msg != 0
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salOByteBuffer.cpp
+assertion failed: d != 0
+assign
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salThread.cpp
+assertion failed: name != 0 && ! isAlive()
+assertion failed: p!=0
+cstr != 0
+../public/salFixedString.h
+assertion failed: threadName != 0
+assertion failed: SAL_UNKNOWN_THREAD_ID == threadId || (threadId > 0 && threadId <= static_cast<int>( getMaxNumberOfThreads() ) )
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salUtils.cpp
+assertion failed: eventId >= std::numeric_limits<int16_t>::min() && eventId <= std::numeric_limits<int16_t>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salError.cpp
+Allocation fatal error
+Lock fatal error
+Resource fatal error
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.interp
+.note
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

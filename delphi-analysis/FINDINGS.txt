@@ -1,0 +1,76 @@
+Delphi MST2 0890: initial offline triage
+=====================================
+
+Source: .\delphi-dump
+Manifest: _collection_20261028_110711_7149a61a\manifest.jsonl
+Acquisition summary reports COMPLETE. Independently recomputed SHA256 and byte
+counts for all 562 records marked downloaded: 562 match, zero mismatches.
+This checks consistency with the acquisition manifest, not vendor authenticity.
+The original acquisition files were read only. No vehicle connection was used.
+
+Evidence and implications
+-------------------------
+1. AndroidAuto is an ELF32 little-endian ARM executable. DT_NEEDED includes
+   libautoreceiver.so.1, libscreen.so.1 and libprotobuf-lite.so.7.
+   Its strings identify AaVideoSink.cpp, dataAvailableCallback,
+   sourceVideoConfigCallback, addSupportedConfigurations, MediaVideoPlayer.cpp,
+   and H.264 decoding through VP_Open/VP_Decode.
+   Candidate receiver hooks exist; their calling conventions are not recovered.
+   Evidence: AndroidAuto.strings.txt lines 618-653.
+
+2. libautoreceiver.so retains C++ symbol tables with VideoSink::addDiscoveryInfo,
+   VideoSink::addSupportedConfiguration and protocol VideoConfiguration types.
+   NavigationStatusService/InstrumentClusterInput names are also present.
+   Those protocol names DO NOT establish secondary cluster VIDEO support.
+   We must inspect discovery serialization and the receiver's negotiated version.
+
+3. NavigationServer contains cluster-map activation events and the literal
+   /dev/transport_server/spawn/isoTX, alongside open/close channel responses and
+   start/stop-write events. This is a concrete candidate transport endpoint,
+   not a license to open it or write arbitrary data to it on the car.
+   Evidence: NavigationServer.strings.txt lines 4109-4118.
+
+4. NavigationServer contains FPK encoder control diagnostics naming
+   VE_InitializeProxy, VE_SetParams, VE_Open and VE_Encode, followed by a
+   transportStreamPackagesReady callback and writing packages to the MOST sink.
+   This strongly suggests a native map rendering -> encoder -> transport-stream
+   packaging -> MOST path. Static strings alone do not recover the packet format,
+   endpoint protocol, buffer ownership or active runtime configuration.
+   Evidence: NavigationServer.strings.txt lines 4826-4983 and 5746-5757.
+
+5. ClusterServices contains FB_GfxStreamSink control handlers for Connect,
+   DisConnect, DataRate, RequestSync, FadeIn/FadeOut and MOST registration.
+   This is evidence for a graphics-stream control plane, not the video payload
+   submission API itself. Evidence: ClusterServices.strings.txt lines 420-475.
+
+6. CarPlay imports ScreenCreate/ScreenRegister and gfxSetDisplayID.
+   libScreenStream.so exposes ScreenStreamProcessData and H.264 conversion/
+   decoding strings. This offers a separate CarPlay investigation path but
+   does not establish support for an additional phone display.
+
+Next offline work
+-----------------
+Extract vwjxe.ifs and delphibin.ifs using a verified QNX imagefs parser, then
+inspect DisplayManagement and the Java HMI navigation/App-Connect arbitration.
+Recover the functions surrounding the isoTX endpoint and TS callback; identify
+the transport format and lifecycle. Inspect Android Auto discovery schema and
+the construction of VideoSink instances to determine whether a second video
+service can be represented. Check receiver compatibility before designing a hook.
+
+Possible implementation paths (unproven)
+--------------------------------------
+A. Negotiate a dedicated phone cluster video stream and feed compatible video
+   into the existing transport-stream/MOST path, avoiding redundant re-encoding.
+B. If a second phone stream is unavailable, render/capture the primary phone
+   view into the existing cluster encoder. This would be mirroring and would
+   have different aspect-ratio, latency and center-display behavior.
+Neither path is implemented or proven by this dump. No patch or installer has
+been produced, and no writes to the vehicle are currently justified by triage.
+
+Artifacts
+---------
+verification.json: each downloaded file and recomputed comparison result.
+binary-triage.json: ELF dependencies, symbols and matching strings.
+*.strings.txt: printable ASCII runs from selected binaries/images; compressed
+image contents are not extracted and these text files are not source code.
+../inspect_delphi.py: repeatable offline verification and triage script.

@@ -1,0 +1,893 @@
+/usr/lib/ldqnx.so.2
+libXSAL.so
+SAL_Set_Thread_Priority
+SAL_Stat_Queue
+strerror
+SAL_Undeclare_Urgent
+SAL_Destroy_Timer
+SAL_Subscribe
+getpid
+SAL_Wait_Ready
+SAL_Get_Thread_Priority
+__cxa_finalize
+malloc
+SAL_Run
+SAL_Get_Thread_Id
+SAL_Publish
+SAL_Signal_Ready
+SAL_Start_Timer_Ex
+abort
+SAL_Receive
+_init
+SAL_Is_Thread_Alive
+fstat
+__deregister_frame_info
+SAL_Create_Timer
+SAL_Init
+SAL_Get_Max_Number_Of_Threads
+SAL_Unsubscribe
+__get_errno_ptr
+SAL_Stop_Timer
+SAL_Exit
+SAL_Sync_Send_VS
+DTS_Client_Get_Frontend
+_fini
+sprintf
+SAL_Wait_Destroyed
+SAL_Sleep
+SAL_Declare_Urgent
+SAL_Create_Thread
+SAL_Disconnect
+SAL_Connect
+SAL_Get_App_Id
+SAL_Create_Queue
+SAL_Start_Timer
+SAL_Send
+_Jv_RegisterClasses
+__register_frame_info
+close
+SAL_Get_Config
+libDebugTrace.so
+_Tolotab
+strtol
+DTS_System_Init
+realloc
+__aeabi_uidiv
+strlen
+DTS_Client_Prepare_Name
+libTSD.so
+tsd_access_get_us
+libUtilities.so
+_ZNSt5ctypeIcED1Ev
+_ZNKSt5ctypeIcE10do_tolowerEPcPKc
+_Znaj
+_ZNKSt11logic_error4whatEv
+_ZdaPv
+_ZNSs5_GrowEjb
+_ZNKSt5ctypeIcE10do_toupperEPcPKc
+_ZTVNSt6locale5facetE
+_ZNSt12length_errorD0Ev
+_ZNSt10ctype_baseD1Ev
+_ZdlPv
+wmemmove
+__aeabi_atexit
+_ZNKSt5ctypeIcE10do_tolowerEc
+_Z7wcs2mbsRKSbIwSt11char_traitsIwESaIwEE
+__assert
+_ZNSs5eraseEjj
+_ZNSt5ctypeIcED0Ev
+_ZNKSt5ctypeIcE9do_narrowEPKcS2_cPc
+_ZNKSt12_String_base5_XlenEv
+_ZTVSt11logic_error
+_ZNSt6locale5facetD1Ev
+_ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb
+_ZTVSt10ctype_base
+_ZNKSt12_String_base5_XranEv
+_ZNSt11logic_errorD1Ev
+_ZNKSt5ctypeIcE9do_narrowEcc
+_ZTVSt12length_error
+_ZNSt6locale5facetD0Ev
+_ZNKSt5ctypeIcE10do_toupperEc
+_ZNSt9_FacetptrISt5ctypeIcEE6_PsaveE
+_ZNSt12length_errorD1Ev
+_ZTVSt5ctypeIcE
+_ZNSt10ctype_baseD0Ev
+_ZNSt9exceptionD2Ev
+_Touptab
+_ZNKSt12length_error8_DoraiseEv
+_ZNKSt11logic_error8_DoraiseEv
+_ZNSs6assignERKSsjj
+_ZNSt11logic_errorD0Ev
+wmemcpy
+_ZNKSt9exception6_RaiseEv
+_Znwj
+_ZSt6_ThrowRKSt9exception
+_ZNKSt5ctypeIcE8do_widenEPKcS2_Pc
+_ZNKSt5ctypeIcE8do_widenEc
+libm.so.2
+SAL_Unlock_Mutex
+SAL_Try_Lock_Mutex
+SAL_Lock_Mutex
+SAL_Destroy_Mutex
+SAL_Create_Mutex
+libcpp-ne.so.4
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecb
+_Locale
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev
+_ZNSt9_FacetptrISt8numpunctIcEE6_PsaveE
+_ZTVSt8numpunctIcE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsgetnEPci
+_ZNSt15basic_streambufIcSt11char_traitsIcEED1Ev
+_ZNSt6locale5facet9_RegisterEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5_LockEv
+_ZNKSt19istreambuf_iteratorIcSt11char_traitsIcEEdeEv
+_ZTVSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcjjjj
+_ZNKSt8numpunctIcE11do_truenameEv
+_ZNSbIwSt11char_traitsIwESaIwEE5eraseEjj
+_ZNSt19istreambuf_iteratorIcSt11char_traitsIcEEppEv
+_ZNSs6insertEjjc
+_ZNSt6_MutexD1Ev
+_ZGVNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd
+_ZNSt8numpunctIcED0Ev
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl
+_ZTv0_n12_NSoD0Ev
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx
+_ZNSsC1EPKc
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt
+_ZNSt5ctypeIcE7_GetcatEPPKNSt6locale5facetE
+_ZNSiD0Ev
+_ZNSt9basic_iosIcSt11char_traitsIcEED0Ev
+_ZTVSt12out_of_range
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale
+__cxa_guard_release
+_ZNSt9_FacetptrISt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEE6_PsaveE
+_ZTVSo
+_ZSt7_BADOFF
+_ZNKSt8numpunctIcE12do_falsenameEv
+_ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev
+_ZTVSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basece
+_ZNSbIwSt11char_traitsIwESaIwEE5_TidyEbj
+_ZSt9use_facetISt8numpunctIcEERKT_RKSt6locale
+_ZTVSt9exception
+_ZNSt12out_of_rangeD0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5uflowEv
+_ZNSt4fposI9_MbstatetE4_StzE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9showmanycEv
+_ZNSt6localeC1Ev
+__cxa_pure_virtual
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZNSt8_LocinfoD1Ev
+_ZGVNSt8numpunctIcE2idE
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv
+_ZTVSt9basic_iosIcSt11char_traitsIcEE
+_ZNSt6locale2id7_Id_cntE
+_ZGVNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecy
+_ZNSt8ios_base7_AddstdEv
+_ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecm
+_ZSteqIcSt11char_traitsIcEEbRKSt19istreambuf_iteratorIT_T0_ES7_
+_ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_jj
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_Stoulx
+_ZNSt12out_of_rangeD1Ev
+_ZTTSo
+_ZNKSt8numpunctIcE16do_thousands_sepEv
+_Locksyslock
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetE
+_Stofx
+_ZNSt6_Mutex7_UnlockEv
+_ZNKSt12out_of_range8_DoraiseEv
+_ZSt4_Fpz
+_ZNSt9basic_iosIcSt11char_traitsIcEED1Ev
+_ZNSt8numpunctIcED1Ev
+_ZNSt6_MutexC1Ev
+_ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecx
+__cxa_guard_acquire
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecl
+_Stoldx
+_ZNSoD0Ev
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb
+_ZNSs6appendERKSsjj
+_ZTVSt15basic_streambufIcSt11char_traitsIcEE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecd
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf
+_Stodx
+_ZNSiD1Ev
+_Stollx
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetffldEPcRS3_S6_RKSt6locale
+_ZNSt6localeD1Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9underflowEv
+wmemset
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IputES3_RSt8ios_basecPcj
+_ZNSt8numpunctIcE2idE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9pbackfailEi
+_ZNKSt8numpunctIcE16do_decimal_pointEv
+_ZNSs6appendEjc
+_ZNSt8ios_baseD2Ev
+_ZNSt9_FacetptrISt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEE6_PsaveE
+_ZTVSi
+_ZNSbIwSt11char_traitsIwESaIwEE6appendEjw
+strcspn
+_ZNSt15basic_streambufIcSt11char_traitsIcEED0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci
+_Unlocksyslock
+memchr
+_ZTv0_n12_NSoD1Ev
+_ZNSs6assignEPKc
+_ZSt4setwi
+_Stolx
+_ZTVSt8ios_base
+_ZNKSt6locale9_GetfacetEj
+_ZNSs5_TidyEbj
+_ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE4syncEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6setbufEPci
+_ZNSt8numpunctIcE7_GetcatEPPKNSt6locale5facetE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5imbueERKSt6locale
+_ZNSt19istreambuf_iteratorIcSt11char_traitsIcEE5_PeekEv
+_ZNSt8ios_base5_InitEv
+_ZTv0_n12_NSiD0Ev
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPKv
+_ZNSt8_LocinfoC1EPKc
+_ZNKSt8numpunctIcE11do_groupingEv
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy
+_ZTTSi
+_Getctyptab
+_ZNSt19ostreambuf_iteratorIcSt11char_traitsIcEEaSEc
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7_UnlockEv
+_ZNSt6locale2idcvjEv
+_ZNSt6locale5facet7_IncrefEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE8overflowEi
+_Stoullx
+_ZNSt5ctypeIcE2idE
+_ZNSoD1Ev
+_ZNSt8numpunctIcE5_InitERKSt8_Locinfo
+_ZTv0_n12_NSiD1Ev
+_ZNSt6_Mutex5_LockEv
+_ZNSbIwSt11char_traitsIwESaIwEE6insertEjjw
+_ZNSsC1Ejc
+libc.so.3
+_init_array
+errno
+_preinit_array
+tolower
+spawnvp
+unlink
+_init_libc
+_fini_array
+tmpnam
+localeconv
+wmemcmp
+toupper
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+oldtimeStamp
+_ZTVN3sal6ThreadE
+_ZN3sal6Thread14threadFunctionEPv
+_ZTVN3sal11ApplicationE
+_ZTV19PersistenceSqFacade
+_ZN19PresistenceSqFacade10mpInstanceE
+_ZN19PersistenceSqFacade10mpInstanceE
+_ZTVN3sal12ActiveObjectE
+_ZTV19PresistenceSqFacade
+_ZTVN3sal13PassiveObjectE
+raB3G
+raB3G
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/AppBase/build/../source/ClusterServicesApp.cpp
+Starting Persistence
+assertion failed: mPersistance
+Starting PictureServer
+assertion failed: mPictureServer
+Starting NavGuidance
+assertion failed: mNavGuidance
+Starting ClusterServicesApp()
+ClusterServicesApp() initialized
+removeMOSTActiveObjects
+"clusterservices"
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/AppBase/build/../source/ClusterServicesMain.cpp
+%s: [pid: %d] - Logger activated (compilation %s %s)
+Jun 26 2018
+18:30:13
+ClusterServicesApp::main() (compilation %s %s)
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/AppBase/build/../source/PictureServer.cpp
+onCreatingMessageQueue()
+../../../../sw/AP_XSALcpp/public/salTemplateDispatcher.h
+TemplateDispatcher::onMessage(),No passive object avaliable with id: %d
+Received EV_CS_SHUTDOWN_MOST message, start to shut down PictureServer_AO thread
+invalid map/set<T> iterator
+assertion failed: isRegistered( passive )
+onStoppingExecute: PictureServer_AO UNREGISTERED
+map/set<T> too long
+assertion failed: m_mostFB != NULL
+assertion failed: m_DSI != NULL
+onCreatingMessageQueue
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/AppBase/build/../source/NavGuidance.cpp
+Received EV_CS_SHUTDOWN_MOST message, start to shut down NavGuidance_AO thread
+NavGuidance_AO::SysDispatcher()
+onStoppingExecute: NavGuidance_AO UNREGISTERED
+NavGuidance_AO::onStartingExecute()
+setNotification
+setKombiHmiReady
+responsePictureStream
+responsePictureServerAbilities
+responseInternalAddressID
+responseStationArt
+responseCoverArt
+responseAdbContactPicture
+responseActiveCallPicture
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/SUPictureServer/build/../source/SUPictureServer.cpp
+assertion failed: 2 == pi.m_parameters.size()
+assertion failed: 4 == pi.m_parameters.size()
+assertion failed: 3 == pi.m_parameters.size()
+Unknown type: %d
+assertion failed: false
+Can not open file! Errno: %d=%s
+Can not stat file! Errno: %d=%s
+Creating SU Picture Server
+assertion failed: m_ps_impl
+Got empty image path
+DecodeAndSave
+DecodeAndSave fialed, err=%d
+URL is null!
+Opening picture: %s
+Picture size: %u
+Error reading file! Errno: %d=%s
+File sizes are different! %u!=%u, Errno: %d=%s
+Scaled and compressed image size: %d bytes, original size: %d bytes, new path %s
+Loading next picture 0x%x, remaining: %u
+Reading/scaling of file %s failed, sending default picture
+No picture to sent
+deque<T> too long
+Queueing picture fid: 0x%x, list size: %u
+Response on Get received, fid: %d, path: %s
+New notification received fid: %d, path: %s, queue size %d
+Found duplicated request, fid: %d, path: %s - moving to end of the queue, queue size %d!
+%s(), %lld, %d, %d, %d
+%s(), %lld, %d, %d
+SUPictureServer::%s(), %d, %d
+onStarting
+FB_PictureServer
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/SUPictureServer/build/../source/FB_PictureServer.cpp
+PictureStream_AbortAck
+push_cover_art= %d, push_station_art= %d, push_active_call_picture= %d
+FunctionAvailability_Notification
+FunctionAvailability_Get
+GetInternalAdressID_Notification
+ActiveCallPicture_Notification
+hmi is ready
+hmi is not ready
+Not Allowed
+RX Communication Status = %s
+SUPictureServer::onStarting()
+Transmission result %d, for handle: %u, function: %#x, op: %u
+Registering Picture Server on MOST
+Do not registering Picture Server on MOST, is_call_picture: %u, is_cover_art: %u, station_art: %u
+koding read
+MOST ready
+MOST state : %d, ready :%d
+Unknown event received, event %d
+assertion failed: m_connection
+assertion failed: m_picture_server
+Picture Server %s running 
+Response on previous request %u has not been send
+PictureStream_StartAck
+PictureStreamAbilities_Get
+ActiveCallPicture_Get
+CoverArt_Get
+AdbContactPicture_Get
+StationArt_Notification
+AdbContactPicture_Notification
+CoverArt_Notification
+StationArt_Get
+Sending picture type: 0x%x, handle: %u, size: %u, path: %s
+No subscribers to send picture to
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/SUPictureServer/build/../source/FB_PictureServer_Info.cpp
+assertion failed: m_picture_server != NULL
+Reported function maturity %d for %#x
+1.0.6
+0.0.0
+Delphi
+Invalid block id
+Invalid function id
+Invalid function maturity
+Invalid param
+FadeOut_ResultAck
+FadeIn_ResultAck
+DataRate_Status
+FGLayer_Error
+FGLayer_Status
+onMessage
+onStarting
+FB_GfxStreamSink
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/SUNavGuidance/build/../source/FB_GfxStreamSink.cpp
+FB_GfxStreamSink::FadeOut_ProcessingAck, SenderHandle: %d
+FB_GfxStreamSink::FadeOut_ErrorAck, code error: %d, SenderHandle: %d
+FB_GfxStreamSink::FadeIn_ProcessingAck, SenderHandle: %d
+FB_GfxStreamSink::FadeIn_ErrorAck, code error: %d, SenderHandle: %d
+FB_GfxStreamSink::DataRate_Error, code error: %d
+FB_GfxStreamSink::RequestSync_Error, code error: %d
+FB_GfxStreamSink::RequestSync_Status() - received SYNCREQUEST_SYNCHRONISATION_SATISFIED status
+FB_GfxStreamSink::RequestSync_Status() - received SYNCREQUEST_SYNCHRONISATION_NEEDED status
+FB_GfxStreamSink::RequestSync_Status() - received invalid Syncrequest: %d
+FB_GfxStreamSink::DisConnect_Error, code error: %d
+FB_GfxStreamSink::DisConnect_ResultAck, SenderHandle: %d, SinkNr %d
+FB_GfxStreamSink::DisConnect_Result, SinkNr: %d
+FB_GfxStreamSink::DisConnect_Processing
+FB_GfxStreamSink::DisConnect_ProcessingAck, SenderHandle: %d
+FB_GfxStreamSink::DisConnect_ErrorAck, code error: %d, SenderHandle: %d
+FB_GfxStreamSink::Connect_Error, code error: %d
+FB_GfxStreamSink::Connect_ResultAck, SenderHandle: %d, SinkNr: %d
+FB_GfxStreamSink::Connect_Result, SinkNr: %d
+FB_GfxStreamSink::Connect_Processing
+FB_GfxStreamSink::Connect_ProcessingAck, SenderHandle: %d
+FB_GfxStreamSink::Connect_ErrorAck, code error: %d, SenderHandle: %d
+FB_GfxStreamSink::Notification_Error, code error: %d
+FB_GfxStreamSink::Notification_Status
+FB_GfxStreamSink::FktIDs_Error, code error: %d
+FB_GfxStreamSink::FktIDs_Status
+clearParameters
+FB_GfxStreamSink::FadeOut_ResultAck, SenderHandle: %d
+%s(), send RG_Select_Status(), RG_MODE = %d
+FB_GfxStreamSink::FadeIn_ResultAck, SenderHandle: %d
+%s(), send ETA_Status(), RTT_Status(), DistanceToDestination_Status(), DistanceToNextManeuver_Status()
+FB_GfxStreamSink::DataRate_Status() - received DATARATE_OFF status
+FB_GfxStreamSink::DataRate_Status() - received DATARATE_REDUCEDBANDWIDTH status
+FB_GfxStreamSink::DataRate_Status() - received DATARATE_FULL status
+FB_GfxStreamSink::DataRate_Status() - received Datarate: %d - requested invalid Datarate
+%s(), enablePermanentMAP is true
+%s(), send FGLayer_SetGet()
+%s(), code error: %d
+%s(), not enable to send a confirmation to MCM due to Error from IC
+%s(), FGRefPic: %d
+%s(), set wrong FGRefPic in IC: %d
+%s(), send FadeIn_StartResultAck()
+send GfxStreamSink notification
+commAllowed = %d, fblockId = %x, instanceID = %x
+FB_GfxStreamSink::CommunicationStatus received
+send NotificationClearAll()
+FB_GfxStreamSink, Communication status for unknown fBlock
+Registering GfxStreamSink on MOST
+Do not registering GfxStreamSink on MOST, m_is_nav_guidance_coded: %u
+%s(), received EV_CS_NG_EH_TIMER
+NavGuidance didn't get the response from IC on FGLayer_SetGet(), number of retries: %d
+Unknown event received, event %d from APP: %d
+assertion failed: m_error_handling_timer
+GfxStreamSink %s running 
+assertion failed: NULL != mGfxStreamSinkImpl
+assertion failed: NULL != m_connection
+assertion failed: NULL != m_gfx_stream_sink
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/SUNavGuidance/build/../source/FB_GfxStreamSink_Info.cpp
+FB_GfxStreamSink::FBlockInfo_Error, code error: %d
+FB_GfxStreamSink::FBlockInfo_Status
+BoundaryChange_Error
+BoundaryChange_Status
+MoveBoundary_Error
+MoveBoundary_ResultAck
+MoveBoundary_Result
+MoveBoundary_Processing
+MoveBoundary_ProcessingAck
+MoveBoundary_ErrorAck
+AvailableChannels_Error
+AvailableChannels_Status
+ConnectionTable_Error
+ConnectionTable_Status
+RemoveConnection_Error
+RemoveConnection_Result
+RemoveConnection_Processing
+RemoveConnection_ProcessingAck
+BuildConnection_Error
+BuildConnection_Result
+BuildConnection_Processing
+BuildConnection_ProcessingAck
+RemoveConnection_ResultAck
+BuildConnection_ResultAck
+CommunicationStatus
+onStarting
+FB_ConnectionMaster
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/SUNavGuidance/build/../source/FB_ConnectionMaster.cpp
+%s(), ErrorCode: %d
+%s(), SourceFBlock: %d, SourceInstID: %d SourceNr: %d, SinkFBlock: %d, SinkInstID: %d, SinkNr: %d
+%s(), SenderHandle: %d
+%s(), SourceFBlock: %d, SourceInstID: %d, SourceNr: %d, SinkFBlock: %d, SinkInstID: %d, SinkNr: %d
+%s(), SenderHandle: %d, SourceFBlock: %d, SourceInstID: %d, SourceNr: %d, SinkFBlock: %d, SinkInstID: %d, SinkNr: %d
+SH: %d, EC: %d, comm: %d
+SH: %d, EC: %d, re: %d
+%s() received
+%s(), Communication status for unknown fBlock
+Registering ConnectionMaster on MOST
+Do not registering ConnectionMaster on MOST, m_is_nav_guidance_coded: %u
+assertion failed: m_bc_eh_timer
+%s() running 
+assertion failed: NULL != m_connection_master
+Received CREATE MOST VIDEO THREAD ACK
+Wrong reply on CREATE MOST VIDEO THREAD ev
+ev EV_CS_NG_BC_EH_TIMER
+setTrafficOffset
+setSemiDynRoute
+setRTT
+setMapScaleResult
+setMapScale
+setETA
+setDistanceToNextManeuver
+setDistanceToDestination
+setNotification
+setRgSelect
+setCapabilities
+setTurnToStreet
+setCurrentStreet
+setCityName
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/SUNavGuidance/build/../source/SUNavigationInfo.cpp
+%s(), set timeFormat: %d, day: %d, hour: %d, min: %d, validity: %d
+%s(), set wrong timeFormat: %d, validity: %s
+%s(), set alternativeRoute: %d
+%s(), set hour: %d, min: %d, validity %d
+%s(), set steps: %d, autoZoom: %d, scale %d, mapScaleUnit %d, validity %d
+%s(), set steps: %d, autoZoom: %d, reserve2 %d, reserve3 %d, reserve4 %d
+%s(), set timeFormat: %d, day: %d, hour: %d, min: %d, validity: %d, timeInfo: %d
+%s(), set distance: %lld, unit: %d, validity: %d
+%s(), set wrong unit: %d, validity: %s
+one of FBlocks is not allowed
+%s(), set rgMode: %d
+%s(), last saved: m_RgMode.rgMode = %d, m_RgMode.validity = %d
+%s(), change_Compass_KDK_Map set to true
+%s(), set wrong rgMode: %d
+%s(), send RG_Select_Status()
+%s(), send FadeOut_StartResultAck()
+%s(), set suppNavType[%d]: %d
+%s() - invalid size of array: suppNavType %d
+%s(), send Capabilities_Status()
+%s(), set turnToInfo: %s, signPost: %s
+%s(), set CurrentStreet: %s
+%s(), set CityName: %s
+RTT_Notification
+TrafficOffset_Notification
+DistanceToDestination_Notification
+ETA_Notification
+DistanceToNextManeuver_Notification
+RTT_Get
+TrafficOffset_Get
+DistanceToDestination_Get
+ETA_Get
+DistanceToNextManeuver_Get
+DeAllocate_StartResult
+Allocate_StartResult
+Capabilities_Notification
+SemiDynRoute_Notification
+Capabilities_Get
+SemiDynRoute_Get
+SourceDeallocateResult
+SourceAllocateResult
+RG_Select_Notification
+RG_Select_Get
+CityName_Notification
+TurnToStreet_Notification
+CurrentStreet_Notification
+CityName_Get
+TurnToStreet_Get
+CurrentStreet_Get
+StreamDataInfo_Get
+DeAllocate_StartResultAck
+Allocate_StartResultAck
+SourceInfo_Get
+CommunicationStatus
+onMessage
+onStarting
+FB_NavigationInfo
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/SUNavGuidance/build/../source/FB_NavigationInfo.cpp
+%s(), SourceNr: %d
+%s(), send SemiDynRoute_Status()
+%s(), last saved: m_RgMode.rgMode = %d
+%s(), status: %d, conn_handle: %d, user_data: %d
+%s(), send DeAllocate_ResultAck
+%s(), status: %d, source_id: %d, conn_handle: %d, user_data: %d, label: %d, blockwidth: %d
+%s(), send Allocate_ResultAck
+SourceAllocateResult %d
+%s(), send CityName_Status()
+%s(), send TurnToStreet_Status()
+%s(), send CurrentStreet_Status()
+%s(), SenderHandle: %d, SourceNr: %d
+%s(), send SourceDeallocate()
+Cannot DeAllocate because received SourceNr: %d differ between expected sourceNr: %d
+%s(), send SourceAllocate()
+Cannot allocate because received SourceNr: %d differ between expected sourceNr: %d
+SourceInfo_Get ERROR - No source no =%u
+%s(), CommunicationStatus received
+%s(), starting notification mechanism
+%s(), started notification: send RG_Select_Status
+Registering NavigationInfo on MOST
+Do not registering NavigationInfo on MOST, m_is_nav_guidance_coded: %u
+%s(), rcvd EV_CS_OPEN_CHANNEL_REQ, code: %d
+2nd req of the same VC, isOpenedChannel=%d
+%s(), rcvd EV_CS_CLOSE_CHANNEL_REQ, code: %d
+%s(), ConMaster comm: %s
+assertion failed: NULL != mNavigationInfoImpl
+assertion failed: NULL != m_navigation_info
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/SUNavGuidance/build/../source/FB_NavigationInfo_Info.cpp
+assertion failed: m_navigation_info != NULL
+FB_NavigationInfo Report error %s, code %d
+FB_NavigationInfo Function maturity set to %d for %#x
+FB_NavigationInfo Wrong maturity %d
+FB_NavigationInfo Invalid function ID %d
+FB_NavigationInfo ReportBlockType
+FB_NavigationInfo ReportSystemIntegrator
+FB_NavigationInfo ReportMostVersion
+FB_NavigationInfo ReportFblockVersion
+FB_NavigationInfo ReportSupplierVersion
+FB_NavigationInfo ReportBlockName
+FB_NavigationInfo ReportAllBlockInfo
+FB_NavigationInfo::FBlockInfo_SetGet
+FB_NavigationInfo:Block Name: %x
+NavigationInfo
+FB_NavigationInfo Most version set to %s
+setFGLayer
+fadeOut
+fadeIn
+setNotification
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/SUNavGuidance/build/../source/SUGfxStreamSink.cpp
+%s(): fGRefPic = %d
+%s(), set wrong fGRefPic: %d
+%s(): fadeSpeed = %d
+%s(), set wrong fadeSpeed: %d
+%s(): fadeSpeed = %d, posOffH = %d, posOffV = %d
+%s(list size = %d)
+%s(), ATTR = %d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/PersistenceHandler/build/../source/PersistenceHandler.cpp
+Received EV_CS_SHUTDOWN_MOST message, start to shut down PersistanceHandler_AO thread
+onStoppingExecute: PersistanceHandler_AO UNREGISTERED
+onStartingExecute()1
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/PersistenceHandler/build/../source/VIPPersistence.cpp
+publish_ADPT_0B5A_CODING11
+ADPT_0B5A_CODING: is_coverart=%d is_stationart=%d is_callpicture=%d is_map_most_streaming=%d is_kdk_most_streaming=%d
+No ADPT_0B5A_CODING data or too small data size (%d)
+EV_PERSISTENCE_VIP_UPDATE %d
+EV_PERSISTENCE_VIP_UPDATE(ADPT_0B5A_CODING)
+EV_CS_GET_ADPT_0B5A_CODING
+WaitForInitialization
+Init Done: received EV_PERSISTENCE_READY message
+Running_Enter
+Persistence first %d, Received event: %d in state: %u
+On Starting executed!
+SendXSALMessage
+GetSizeVIPData
+ReadSize
+ReadData
+IncreaseBufferSize
+getSizeVIPData
+ReadVIPData
+readVIPData
+WriteVIPData
+writeVIPData
+DeleteKey
+DeleteNs
+WriteData
+WriteString
+WriteBuffer
+ReadInt
+DeleteKey
+DeleteNs
+WriteByteBuffer
+WriteArray
+WriteInt
+GetDataSize
+ReadByteBuffer
+ReadString
+ReadArray
+ReadBuffer
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_PersistenceManager/PersistenceClient/build/../source/PersistenceSqFacade.cpp
+ErrorCode %d 
+%s not possible try again TryCount %d
+ Send buffer NOT success, retrying ...
+%s - Not possible to send, try to reconnect
+ Send buffer success
+%s - Access Time: %llu us
+Persistence Data exceeds the allowed limit, data will not be read, size: %d (incl HAUS_KEEPING_INFO) allowed: %d!!!
+%s to %d
+Allocated Persistence data size exceeds the allowed limit is violated , maximum allowed is: %d!
+Allocated Persistence data size exceeds, not enough memory available!
+Persistence Data exceeds the allowed limit, data will not be stored, allowed is: %d your size: %d(including HAUS_KEEPING_INFO)!!!
+Value is not in DB.
+Check SQLite Error Code %d in 'sqlite3.h'
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIKOMONavInfoImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+vector<bool> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIKOMOGfxStreamSinkImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIKombiPictureServerImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salActiveObject.cpp
+assertion failed: SAL_Get_Thread_Id() == getId()
+SAL_Create_Queue() failure
+SAL_Receive() failure
+Alive ActiveObject cannot be destroyed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salApplication.cpp
+assertion failed: appId > 1
+assertion failed: maxNumberOfThreads > 0
+assertion failed: appId >= std::numeric_limits<SAL_App_Id_T>::min() && appId <= std::numeric_limits<SAL_App_Id_T>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salException.cpp
+assertion failed: h != 0
+Resource fatal error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salIByteBuffer.cpp
+assertion failed: mPosition + sizeof( d ) <= mSize
+assertion failed: position < mSize
+assertion failed: mPosition + bytes <= mSize
+assertion failed: !( d == 0 && s > 0 )
+assertion failed: mPosition + s <= mSize
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salMessage.cpp
+assertion failed: msg != 0
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salOByteBuffer.cpp
+assertion failed: d != 0
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salSyncSender.cpp
+assertion failed: isConnected()
+assertion failed: !isConnected()
+assertion failed: serverAppId >= std::numeric_limits<SAL_App_Id_T>::min() && serverAppId <= std::numeric_limits<SAL_App_Id_T>::max()
+assign
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salThread.cpp
+assertion failed: name != 0 && ! isAlive()
+assertion failed: p!=0
+cstr != 0
+../public/salFixedString.h
+assertion failed: threadName != 0
+assertion failed: SAL_UNKNOWN_THREAD_ID == threadId || (threadId > 0 && threadId <= static_cast<int>( getMaxNumberOfThreads() ) )
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salTimer.cpp
+assertion failed: objectId >= -32768 && objectId <= 32767
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salUtils.cpp
+assertion failed: eventId >= std::numeric_limits<int16_t>::min() && eventId <= std::numeric_limits<int16_t>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salError.cpp
+Allocation fatal error
+Lock fatal error
+Resource fatal error
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_MOSTLib_MIB20_STD/build/../source/FunctionBlock.cpp
+MOST Error: FBlockID = %02X, Instance = %d, FktID = %03X, Op = %02X
+Server
+Client
+MOST Error: ErrorCode = %02X, FBlock type = %s, SenderHandle = %04X
+MOST Error: ErrorCode = %02X, FBlock type = %s
+MOST Error: FBlockID = %02X, Instance = %d, FktID = %03X, ErrorCode = %02X
+MOST ErrorAck: (%s) 0x%02X 0x%02X 0x%02X 0x09
+MOST ErrorAck: sh 0x%04X error code 0x%02X
+invalid map/set<T> iterator
+map/set<T> too long
+vector<T> too long
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_MOSTLib_MIB20_STD/build/../source/FunctionBlockInternal.cpp
+SourceAllocate_Result
+vector<T> too long
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_MOSTLib_MIB20_STD/build/../source/MostMessage.cpp
+%s bufferSize (=%d) < HEADER_SIZE (=%d) !
+Message
+false
+0123456789abcdefABCDEF
+vector<T> too long
+vector<T> too long
+vector<T> too long
+invalid map/set<T> iterator
+map/set<T> too long
+vector<T> too long
+map/set<T> too long
+deque<T> too long
+invalid map/set<T> iterator
+vector<T> too long
+map/set<T> too long
+invalid map/set<T> iterator
+vector<T> too long
+SAL_Destroy_Mutex() failure
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.interp
+.note
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

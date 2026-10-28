@@ -1,0 +1,1934 @@
+_fini
+__cxa_finalize
+__deregister_frame_info
+__register_frame_info
+_Jv_RegisterClasses
+auth_resp_send
+ipod_log
+__stackavail
+packet_sendlist_pop
+memcpy
+acp_challenge
+packet_addparam_blob
+link_send_message
+packet_sendlist_push
+auth_cert_send
+auth_cert_request
+malloc
+acp_device_authentication_certificate
+acp_device_authentication_response
+bt_update_recv
+pthread_mutex_lock
+pthread_mutex_unlock
+pps_buffer_concantenate
+pps_update_bulk
+bt_stop_updates
+__get_errno_ptr
+bt_start_updates
+ipod_cfg_find
+strcmp
+usleep
+packet_addparam_num
+bt_send_info
+iap2_init_hid_interfaces
+strtoul
+iap2_hidcomp_create
+ipod_cfg_list_init
+strncpy
+strtok_r
+strncmp
+ipod_cfg_list_get
+iap2_voldown
+hid_remote_voldown
+hid_remote_none
+iap2_endfast
+iap2_volup
+hid_remote_volup
+iap2_shuffle
+hid_remote_shuffle
+iap2_repeat
+hid_remote_repeat
+iap2_audiobook_speed
+hid_remote_speed_reg
+hid_remote_speed_dec
+hid_remote_speed_inc
+iap2_fbwd
+hid_remote_prev
+iap2_prev
+iap2_ffwd
+hid_remote_next
+iap2_next
+iap2_playpause
+hid_remote_playpause
+iap2_pause
+hid_remote_pause
+iap2_play
+hid_remote_play
+iap2_start_features
+power_start
+power_update_send
+pps_object_read_attr
+hid_remote_starthid
+devaudio_start
+nowplay_getconfig
+nowplay_start
+medialib_enable
+telephony_startstate
+telephony_startupdates
+telephony_startlistupdates
+destination_startinfo
+clock_gettime
+pthread_cond_timedwait
+fsys_init_entries
+ipod_resmgr_mount
+iap2_send_probe
+link_send_probe
+packet_detect_probe_support
+packet_detect_probe_nosupport
+packet_recvlist_push
+destination_sendinfostatus
+packet_addparam_str
+packet_addparam_nodata
+pps_encoder_start_object
+pps_encoder_add_double
+pps_encoder_end_object
+destination_info_recv
+pps_encoder_initialize
+pps_encoder_start_array
+pps_encoder_end_array
+pps_encoder_add_string
+pps_encoder_add_int
+pps_encoder_buffer
+sprintf
+pps_object_open
+pps_encoder_cleanup
+pps_encoder_length
+devaudio_geturl
+strlen
+devctl
+devaudio_info_recv
+pps_object_update_num
+delay
+sample_rates
+devaudio_stop
+devnotify_recv_wirelesscarplaystatus
+pps_object_update_str
+devnotify_recv_deviceuuid
+devnotify_recv_updlang
+devnotify_recv_updinfo
+devnotify_recv_updtime
+eap_protocol_findbyindex
+eap_protocol_findbyid
+eap_session_find_unclaimed
+strdup
+eap_session_read_data
+MsgError
+MsgWrite
+MsgReply
+fsys_find_parent_dir_by_name
+iofunc_notify_trigger
+eap_session_recv_data
+circbuf_write_data
+eap_session_send_data
+link_send_eap
+eap_session_recv_start
+circbuf_init
+eap_session_destroy
+circbuf_destroy
+eap_session_recv_stop
+eap_session_close
+eap_protocol_findbyname
+eap_add_protocols_from_pps
+ppsparse
+link_add_session
+eap_init_protocols
+strstr
+iap2_ctrl_msg_table
+eap_session_acc_create
+eap_app_launch
+file_xfer_read
+file_xfer_destroy
+file_xfer_init
+medialib_find_by_uid
+file_xfer_data
+medialib_add_plist_contents
+medialib_plist_check_pending_complete
+file_xfer_setup
+fsys_lseek
+iofunc_attr_init
+medialib_findbyindex
+mountpoint
+fsys_find_attr_by_name
+strchr
+fsys_read
+iofunc_read_verify
+strcpy
+fsys_open
+iofunc_open_default
+gps_info_send
+memset
+gps_stop_recv
+gps_start_recv
+hid_stop
+hid_start
+hid_send_report
+hid_mappings
+hid_name_to_id
+hid_build_driver_control_report
+stricmp
+iap2_hidcomp_destroy
+getenv
+sscanf
+ident_update_set_lang
+ident_info_funcs
+ident_info_request
+ident_info_reject_recv
+disable_single_command
+disable_command_list
+init_features
+iap2_init
+pthread_mutex_init
+pthread_condattr_init
+pthread_condattr_setclock
+pthread_cond_init
+systime_ms
+link_create
+link_setup
+pthread_cond_wait
+link_destroy
+pthread_cond_destroy
+pthread_mutex_destroy
+ipod_module
+transport_recv_pkt
+iap2_msg
+iap2_notify
+iap2_unblock
+iap2_ocb_calloc
+iap2_ocb_free
+iap2_ocb_close
+strm_dict_new
+strm_dict_destroy
+strm_dict_set
+nowplay_getartwork
+MsgReplyv
+nowplay_getuidlist
+nowplay_setinfo
+medialib_info_get
+medialib_sync_stop
+medialib_data_ready
+medialib_data_get
+medialib_disable
+medialib_play_resume
+medialib_play_uidlist
+medialib_play_collection
+medialib_play_all
+vehicle_send_update
+strm_dict_find_value
+comm_initialcall
+comm_acceptcall
+comm_endcall
+comm_swapcalls
+comm_mergecalls
+comm_holdstatusupdate
+comm_mutestatusupdate
+comm_senddtmf
+link_send_raw_message
+medialib_sync_start
+iofunc_notify
+iofunc_notify_remove
+iofunc_close_ocb_default
+link_get_default_params
+iap2_link_params_isvalid
+ipod_log_lock
+ipod_log_threadid
+print_packet
+ipod_log_unlock
+abort
+cksum
+packet_is_ack
+packet_has_payload
+TimerSettime
+transport_send_pkt
+pthread_cond_signal
+packet_get_session_id
+pthread_cond_broadcast
+link_send_file
+link_send_syn
+link_params_set
+packet_list_init
+transport_get_link_params
+srand
+pulse_attach
+strtol
+sched_getscheduler
+sched_get_priority_min
+sched_get_priority_max
+TimerCreate
+packet_list_destroy
+link_handle_reply
+packet_list_realloc
+packet_get_session_type
+pps_update_auth
+nowplay_update_recv
+medialib_handle_info
+medialib_handle_update
+power_update_recv
+telephony_state_recv
+telephony_update_recv
+telephony_listupdate_recv
+vehicle_recv_start
+vehicle_recv_stop
+wifi_acc_config_info
+__aeabi_uldivmod
+link_recv_pkt_single
+packet_recvlist_pop
+memcmp
+memmove
+transport_receive
+ipod_print_bytes
+packet_is_eak
+MsgSendPulse
+packet_log_recvtime
+packet_parse_hdr
+find_param
+ulltoa
+medialib_add_plist_contentend
+strtoull
+medialib_collection_strings
+medialib_plist_upd_handlers
+medialib_item_upd_handlers
+circbuf_read_data
+strm_dict_size
+strm_dict_key_get
+strm_dict_value_get
+nowplay_set_params
+packet_add_param_from_config
+packet_addparam_enum
+pthread_condattr_destroy
+power_stop
+write
+vsnprintf
+pps_object_update_num_int
+pps_object_update_num_u64
+mkdir
+file_hdr_types
+vehicle_params
+libstrm.so.1
+libpps.so.1
+__gnu_uldivmod_helper
+__udivdi3
+__aeabi_unwind_cpp_pr0
+__gnu_ldivmod_helper
+__divdi3
+__aeabi_uidivmod
+__aeabi_uidiv
+__udivsi3
+__div0
+libc.so.3
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+ipod-drvr-iap2.so
+Not ParameterRequestChallenge
+Could not alloc memory for auth resp
+Device device_authentication_certificate failed ... terminating
+Not ParameterChallengeResponse
+Device authentication succeeded
+Device authentication failed ... terminating
+bt_stop_updates
+bt_start_updates
+bt_send_info
+Skipping invalid parameter 0x%x
+%s::%d
+BluetoothHandsFree
+BluetoothPhoneBookAccess
+BluetoothAudioVideoRemoteControl
+BluetoothAdvancedAudioDistribution
+BluetoothHumanInterfaceDevice
+BluetoothiAP2Link
+BluetoothPersonalAreaNetworkAccessPoint
+BluetoothMessageAccess
+BluetoothPersonalAreaNetworkClient
+%s: Failed to get send packet
+workarounds
+btstatusdelay
+Workaround enabled - delay start of StartBluetoothConnectionUpdate message
+iap2_start_features
+iap2_send_probe
+vendorid
+deviceid
+Driver PlayControl
+component
+name::
+function::
+nativecomponent
+interface::
+Media Remote "voldown" failed
+Media Remote "endfast" failed
+Media Remote "volup" failed
+Media Remote "shuffle" failed
+Media Remote "repeat" failed
+Media Remote "fbwd" failed
+Media Remote "prev" failed
+Media Remote "ffwd" failed
+Media Remote "next" failed
+Media Remote "playpause" failed
+Media Remote "pause" failed
+Media Remote "play" failed
+power
+charge
+current
+Cannot enable Power
+btconnectstatus
+bluetooth
+connectstatus
+ignore
+enable
+Cannot enable HID Media Remote
+Cannot enable Device Audio
+Cannot enable NowPlaying
+medialib
+synccompletetimeout
+Media Library Sync Complete timeout = %dms
+syncafterstop
+Media Library continue sync after stop
+Cannot enable Media Library
+%s: Error waiting for Media Library Information - cannot sync without it (rc=%d)
+Unable to present filesystem
+Unable to publish mountpath
+Send iAP2 probe sequence
+%s: packet too large
+iAP2 is supported
+iAP2 is not supported
+destination_startinfo
+destination_sendinfostatus
+%s: Failed to send StartDestinationInfo
+CenterCoordinate
+Latitude
+Longitude
+Failed to encode coordinate for parameter 0x%x
+Parameter 0x%x did not have latitude and longitude.
+Failed to allocate memory, errno %d
+EntryPoints
+Failed to encode EntryPoint array.
+CoordinateThreshold
+Locale
+Failed to encode parameter 0x%x.
+%s-%d
+destination
+STREAM_INFO rate = %d, status = %d
+SampleRate
+Failed to open connection to io-audio (%s):(%d)
+Failed to set sample rate %d
+Failed to begin io-audio handshake %d
+Failed interface selection with io-audio %d
+Failed to finish io-audio handshake %d
+Failed to handshake io-audio%d
+Failed to get send packet.
+Unavailable
+Unknown
+DeviceWirelessCarPlayStatus
+DeviceUUID
+DeviceLanguage
+DeviceName
+%s::%llu
+DeviceTimeSecondsSinceReferenceDate
+DeviceTimeTimeZoneOffsetMinutes
+DeviceTimeDaylightSavingsOffsetMinutes
+DeviceTimeMonotonicReferenceQNX
+eap_session_send_data
+eap_session_recv_start
+eap_session_recv_stop
+eap_session_close
+eap_app_launch
+Maximum number of eap protocols reached, unable to add (%s)
+Unable to allocate memory for eap protocol (%s)
+Error, no space to buffer data for sessionid %d
+%s: Session is invalid
+%s: Session is closed
+Using session created by accessory for protid=%x sessid=%x
+%s: Created new session for protid=%x sessid=%x
+%s: Destroying sessid=%x - not claimed by accessory
+%s: Unable to lock mutex
+%s: Failed to send packet
+ppsprotocoldir
+Unable to allocate '%s' for adding additional protocols
+%s%s%s
+Unable to open pps directory '%s' for adding additional protocols
+Unable to add EAP session to link
+Protocol '%s' already exists - ignoring
+Invalid protocol
+MatchAction not set for protocol "%s"
+protocol
+,match::
+,match=
+No match provided provided for %s - using default of 0
+carplay
+maxbufsize
+nativeprotocol
+MediaItemArtworkFileTransferIdentifier
+MediaItemArtworkSize
+PlaybackQueueListAvail
+file_xfer_adddata not in correct state
+MediaItemNextArtworkFileTransferIdentifier
+Unable to allocate memory for file transfer (%d)
+gps_info_send
+Location feature is not enabled
+Apple device is not accepting Location sentences right now
+$GPGGA,
+$GPRMC,
+$GPGSV,
+$PASCD,
+$PAGCD,
+$PAACD,
+$GPHDT,
+Invalid location type
+Apple device is not accepting Location '%s' sentences right now
+GlobalPositioningSystemFixData
+RecommendedMinimumSpecificGPSTransitData
+GPSSatellitesInView
+VehicleSpeedData
+VehicleGyroData
+VehicleAccelerometerData
+VehicleHeadingData
+hid_send_report
+Unable to start hid id=%d
+Unable to add new HID component (%d)
+mediaremote
+Added: Usage %04x - "%s" [%02x %02x]
+Unable to remove HID component id=%d (%d)
+shuffle
+repeat
+bookspeedreg
+bookspeedinc
+bookspeeddec
+playpause
+ident_info_recvmsgs
+ident_info_sendmsgs
+ident_update_set_lang
+ident_info_request
+Doesn't support WIFI
+No id in config file use 0 as default
+transport
+accessory
+currentdraw
+usbhost
+devaudio
+rates
+location
+Location Component
+types
+vehicle
+infoid
+infoname
+Vehicle Infomation
+infoengine
+status
+statusid
+statusname
+Vehicle Status
+statustypes
+usbdevice
+ident
+recvmsgs
+%s: Cannot add custom messages
+sendmsgs
+IAP2_BT_STATUS_MAC_ADDR
+%hhx:%hhx:%hhx:%hhx:%hhx:%hhx
+appmatchID
+bundleseedID
+supported_languages
+current_language
+hardware_version
+firmware_version
+serial
+manufacturer
+model
+%s: Failed to find language "%s" in config file
+%s: Failed to allocate memory for language processing
+Unable to add Param ID (%d) "%s"
+Skipping parameter 0x%x
+GPGGA
+GPRMC
+GPGSV
+PASCD
+PAGCD
+PAACD
+GPHDT
+range
+outsidetemp
+rangewarn
+mapsdisplayname
+siriname
+gasoline
+diesel
+electric
+iap2_init
+Disabling msg %s (%x)
+commands
+deviceauth
+Device authentication feature enabled
+Driver MediaRemote feature enabled
+nowplaying
+Nowplaying feature enabled
+applaunch
+Application Launch feature enabled
+Media Library features enabled
+Location features enabled
+Device Audio features enabled
+autostart
+Disabling autostart of audio
+Power features enabled
+provide
+Power providing feature enabled
+EAP features enabled
+multisessionperprotocol
+Vehicle features enabled
+communications
+Communications features enabled
+lists
+Bluetooth connection enabled
+WiFi connection enabled
+Destination features enabled
+multipacketack
+Config file has missing entry for accessory name
+Config file has missing entry for model name
+Config file has missing entry for manufacturer name
+Config file has missing entry for serial number
+Config file has missing entry for firmware version
+Config file has missing entry for hardware version
+Config file has missing entry for current language
+Config file has missing entry for supported languages
+Config file has missing entry for transport name
+Config file has missing entry for transport id
+%s: Failed to initialize mutex (%d)
+%s: Failed to initialize condvar (%d)
+%s: Failed to initialize features (%d)
+/pps/services/multimedia/iap2/
+device
+Unable to create PPS object "%s" in %s
+Created PPS object %s
+Created PPS object "%s"
+%s: Failed to initialize iAP2Link (%d)
+%s: Waiting for link users to finish, refcnt: %d
+%s: Driver might crash; link users refcnt: %d, rc %d
+iap2_medialib_play_collection
+iap2_medialib_play_tracks
+iap2_medialib_play_resume
+iap2_medialib_play_all
+iap2_nowplay_set
+iap2_communications_initialcall
+iap2_communications_acceptcall
+iap2_communications_endcall
+iap2_communications_swapcalls
+iap2_communications_mergecalls
+iap2_communications_holdstatusupdate
+iap2_communications_mutestatusupdate
+iap2_communications_senddtmf
+ipod_drvr
+iap2_msg
+NOWPLAYSET
+VEHICLEUPDATE
+%s: Found unclaimed session sessid=%x
+%s: Created session for sessid=%x
+%s: Closing protid=%x sessid=%x
+%s: Cannot close invalid session
+addressbookid
+calluuid
+Closing active session before terminating <%s>.
+link_queue_add_pkt
+link_queue_remove_pkt
+link_send_raw_message
+link_sendack
+link_params_set
+link_synchronization
+link_init
+link_handle_reply
+link_add_session
+link_handle_sync_payload
+link_handle_file_payload
+link_recv_pkt_single
+Our link sync parameters: MaxOutstandingPkts: %u, MaxRecvLen: %u b, RetryTimeout: %u ms, AckTimeout %u ms, MaxNumRetries: %u, MaxAcks: %u
+SEND(%6d): 
+%s: Cannot lock link
+Added packet to outgoing link queue (num=%d)
+Removed packet from outgoing link queue (num=%d)
+Wait for response
+Timed out waiting for response
+Received ACK/response
+ACKLIST TIMEOUT - START
+ACKLIST TIMEOUT - END - Early exit because initialization failed
+ACKLIST TIMEOUT - END
+Message '%s' has been disabled
+usb_wait
+workaround: overwriting usb_wait:%d
+usb_wait_retries
+workaround: overwriting usb_wait_retries:%d
+Sending probe packet ...
+Probe wait on response usb_wait:%d
+Probe timed out waiting for response.
+Probe query completed
+Did not receive reply for SYN
+Received link sync parameters: MaxOutstandingPkts: %u, MaxRecvLen: %u b, RetryTimeout: %u ms, AckTimeout %u ms, MaxNumRetries: %u, MaxAcks: %u
+Syn parameters do not match
+Syn parameters matched!
+Unable to setup iAP2 Link parameters
+Unable to initalize iAP2 Packet List
+%s: Unable to initialize memory for iAP2 Link
+%s: Unable to initialize iAP2 Link mutex
+%s: Unable to initialize iAP2 Link cond
+probelimit
+%s: Link probe limit set to %u
+%s: Failed to allocate memory for acklist
+%s: pulse attach failed
+acktimeoutprio
+%s: Set timeout timer priority to %d
+Unable to initialize iAP2 Link
+No payload
+Invalid packet
+Not a reply
+Is a reply
+Looking for reply send=%x reply=%x t->cmd=%d
+found matching msg packet return the data!
+Processed all packets in link
+Carplay available: %s
+Unable to add control session
+Unable to add file session
+Allocate %d send buffers (sz=%d) and %d receive buffers (sz=%d)
+No matching packet found!
+Failed to allocate memory for message data.
+false
+Exhausted Identify attempts - terminate. 
+Failed to allocate memory for file data.
+%s: Failed to get recv packet
+RECV: skipping %#x, nbytes=%d
+Not an iAP2 packet, too small
+is_valid hdr cksum incorrect size=%d
+payload cksum incorrect len=%d
+RECV(%6d): PKT(n=%-4d data=
+ iAP2Supported)
+found original probe packet return probe resp
+No matching packet found! - gone through all packets
+iAP2NotSupported)
+Does not support iAP2, exiting.
+RECV(%6d): 
+Packet seq received not expected range expected=%x received=%x
+Out of sequence packet received expected=%x received=%x
+Failed to send ack pulse, error %d
+Start the timer for ack=%x
+No packets in outgoing link queue
+Processed all packets in link queue ack=%d resp=%d nochange=%d total=%d npktsqueue=%d for incoming seqnum=%x
+medialib_play_all
+medialib_play_resume
+medialib_sync_stop
+medialib_play_collection
+medialib_play_uidlist
+medialib_sync_start
+medialib_data_get
+medialib_handle_update
+medialib_disable
+medialib_enable
+Music
+Podcast
+Audiobook
+iTunesU
+Add SyncComplete item
+%s: Failed to lock mutex
+Cannot re-allocate sync buffer to hold playlist contentend
+Invalid size of Playlist Contents buffer
+Ignoring playlist data while paused (%llu %llu)
+%s: Library UID '%s' is invalid
+Cannot stop sync (pause=%d)- not started
+Unable to allocate memory for media library info
+Skipping invalid sub-parameter 0x%x
+Skipping duplicate medialibrary "%s" with UID %s
+medialibrary
+%s::%s
+MediaLibraryName
+local
+unknown
+iTunes Radio
+MediaLibraryType
+MediaLibraryCount
+Error parsing subparam %x: %s
+Memory
+Invalid collection type "%s"
+Add SyncComplete item due to timeout
+Media Library Sync already running
+%s: Cannot lock mutex
+Resuming Media Library sync '%s'
+%s - Required tokens not found
+Pausing Media Library sync param=%d buffer=%d/%d
+Adjust sync complete since another update received
+MediaLibraryIsHidingRemoteItems
+PlayAllSongsCapable
+Received 100%% progress - Add SyncComplete item
+MediaLibraryRevision
+MediaLibraryRevisionTime
+MediaLibraryInfo
+Stopped
+syncbufsize
+ Internal sync buffer size = %d
+Started
+Playlist
+Artist
+Album
+AlbumArtist
+Genre
+Composer
+nowplay_getuidlist
+nowplay_setinfo
+nowplay_start
+nowplay_info_subparam_md
+nowplay_info_subparam_status
+%s: Failed to unlock mutex
+%s: Invalid value for key "%s"
+%s: Invalid key "%s"
+MediaItemPersistentIdentifier
+MediaItemTitle
+MediaItemPlaybackDurationInMilliseconds
+MediaItemAlbumTitle
+MediaItemAlbumTrackNumber
+MediaItemAlbumTrackCount
+MediaItemAlbumDiscNumber
+MediaItemAlbumDiscCount
+MediaItemArtist
+MediaItemGenre
+MediaItemComposer
+MediaItemIsLikeSupported
+MediaItemIsBanSupported
+MediaItemIsBanned
+MediaItemIsLiked
+MediaItemChapterCount
+Paused
+SeekForward
+SeekBackward
+PlaybackStatus
+PlaybackElapsedTimeInMilliseconds
+PlaybackQueueIndex
+PlaybackQueueCount
+PlaybackQueueChapterIndex
+Songs
+Albums
+PlaybackShuffleMode
+PlaybackRepeatMode
+PlaybackAppName
+PBMediaLibraryUniqueIdentifier
+%d.%02dx
+PlaybackSpeed
+PBiTunesRadioAd
+PBiTunesRadioStationName
+PBiTunesRadioStationMediaPlaylistPersistentID
+SetElapsedTimeAvailable
+PlaybackAppBundleID
+playback
+metadata
+artfile
+index
+PlaybackQueueListTransferID
+packet_list_destroy
+packet_list_realloc
+packet_recvlist_push
+packet_sendlist_push
+packet_recvlist_pop
+packet_sendlist_pop
+Cannot add this parameter to the packet; exceeds packet length
+%s: Only have %zu of %zu packets on recvlist and %zu of %zu on recvlist, leaking the rest
+%s: Only have %zu of %zu packets on recvlist and %zu of %zu on recvlist, waiting
+%s: No packets in receive list, need to wait %d
+%s: cond failed %d
+%s: No available packets, need to wait
+power_update_send
+power_stop
+power_start
+MaximumCurrentDrawnFromAccessory
+DeviceBatteryWillChargeIfPowerIsPresent
+AccessoryPowerMode
+IsExternalChargerConnected
+Disabled
+Charging
+Trickle
+Charged
+BatteryChargingState
+BatteryChargeLevel
+ppsoverride
+%s::%s
+Authenticated
+%s/%s%s
+?nopersist,critical
+Unknown
+CKSUM[
+n=%-4d 
+data=
+ iAP2Probe
+--?-- [msgid=%02x%02x]
+ CTRL[
+--?-- [msgid=%s:%02x]
+ CTRL data[
+%s[msgid=%02X%02X]
+    (n=%4d)[%02X%02X] %s
+            (n=%4d)[%5d] %s
+FILE[%s id=%02X
+ data=
+EAP[id=%02X
+Unknown type
+Destination Handoff
+Accessory Identification
+Telephony
+Media Library Access
+Device Notifications & Bluetooth Status Notifications
+Now Playing
+Device/Accessory WiFi information
+Human Interface Device
+Accessory Authentication
+Power
+USB Device Mode Audio
+External Accessory Protocol / App Launch
+Location
+Start
+Cancel
+Pause
+Setup
+Success
+Failure
+First
+FirstLast
+StartDestinationInformation
+StopDestinationInformation
+DestinationInformationStatus
+StartIdentification
+IdentificationInformation
+IdentificationAccepted
+IdentificationRejected
+CancelIdentification
+IdentificationInformationUpdate
+StartCallStateUpdates
+CallStateUpdate
+StopCallStateUpdates
+StartCommunicationsUpdates
+CommunicationsUpdate
+StopCommunicationsUpdates
+InitialCall
+AcceptCall
+EndCall
+SwapCalls
+MergeCalls
+HoldStatusUpdate
+MuteStatusUpdate
+SendDTMF
+StartListUpdates
+ListUpdate
+StopListUpdates
+StartMediaLibraryInformation
+StopMediaLibraryInformation
+StartMediaLibraryUpdates
+MediaLibraryUpdate
+StopMediaLibraryUpdates
+PlayMediaLibraryCurrentSelection
+PlayMediaLibraryItems
+PlayMediaLibraryCollection
+PlayMediaLibrarySpecial
+BluetoothComponentInformation
+StartBluetoothConnectionUpdates
+BluetoothConnectionUpdate
+StopBluetoothConnectionUpdates
+DeviceInformationUpdate
+DeviceLanguageUpdate
+DeviceTimeUpdate
+DeviceUUIDUpdate
+StartNowPlayingUpdates
+NowPlayingUpdate
+StopNowPlayingUpdates
+SetNowPlayingInformation
+RequestWiFiInformation
+WiFiInformation
+RequestAccessoryWiFiConfigurationInformation
+AccessoryWiFiConfigurationInformation
+StartHID
+DeviceHIDReport
+AccessoryHIDReport
+StopHID
+StartVehicleStatusUpdates
+VehicleStatusUpdate
+StopVehicleStatusUpdates
+RequestAuthenticationCertificate
+AuthenticationCertificate
+RequestAuthenticationChallenge
+AuthenticationResponse
+AuthenticationFailed
+AuthenticationSucceeded
+RequestDeviceAuthenticationCertificate
+DeviceAuthenticationCertificate
+RequestDeviceAuthenticationChallenge
+DeviceAuthenticationResponse
+DeviceAuthenticationFailed
+DeviceAuthenticationSucceeded
+StartPowerUpdates
+PowerUpdate
+StopPowerUpdates
+PowerSourceUpdate
+StartUSBDeviceModeAudio
+USBDeviceModeAudioInformation
+StopUSBDeviceModeAudio
+StartExternalAccessoryProtocolSession
+StopExternalAccessoryProtocolSession
+RequestAppLaunch
+StatusExternalAccessoryProtocolSession
+StartLocationInformation
+StopLocationInformation
+EntryPoint
+FailureOccurred
+ParametersSuccessfullyUsed
+ModelIdentifier
+Manufacturer
+SerialNumber
+FirmwareVersion
+HardwareVersion
+MessagesSentByAccessory
+MessagesReceivedFromDevice
+PowerSourceType
+MaximumCurrentDrawnFromDevice
+SupportedExternalAccessoryProtocol
+AppMatchTeamID
+CurrentLanguage
+SupportedLanguage
+SerialTransportComponent
+USBDeviceTransportComponent
+USBHostTransportComponent
+BluetoothTransportComponent
+iAP2HIDComponent
+VehicleInformationComponent
+VehicleStatusComponent
+LocationInformationComponent
+USBHostHIDComponent
+WiFiTransportComponent
+LocationComponent
+CallUUID
+CallStateDirection
+SignalStrength
+RegistrationStatus
+AirplaneModeStatus
+CarrierName
+CellularSupported
+TelephonyEnabled
+FaceTimeAudioEnabled
+FaceTimeVideoEnabled
+MuteStatus
+CurrentCallCount
+NewVoicemailCount
+InitiateCallAvailable
+EndAndAcceptAvailable
+HoldAndAcceptAvailable
+SwapAvailable
+MergeAvailable
+HoldAvailable
+DestinationID
+AcceptAction
+EndAction
+HoldStatus
+RecentListProperties
+RecentListMax
+RecentListCombine
+FavoritesListProperties
+FavoritesListMax
+RecentsListAvailable
+RecentsList
+RecentsListCount
+FavoritesListAvailable
+FavouritesList
+FavouritesListCount
+LastKnownMediaLibraryRevision
+MediaItemProperties
+MediaPlaylistProperties
+MediaLibraryUpdateProgress
+MediaItem
+MediaPlaylist
+MediaItemDeletePersistentIdentifier
+MediaPlaylistDeletePersistentIdentifier
+MediaLibraryReset
+ItemsPersistentIdentifiers
+ItemsStartingIndex
+CollectionPersistentIdentifier
+CollectionType
+CollectionStartingIndex
+AllSongs
+BluetoothComponentStatus
+BluetoothTransportComponentIdentifier
+ConnectedBluetoothProfiles
+SecondsSinceReferenceDate
+TimeZoneOffsetMinutes
+DaylightSavingsOffsetMinutes
+MediaItemAttributes
+PlaybackAttributes
+ElapsedTime
+WiFi BSSID
+WiFi SSID
+Passphrase
+SecurityType
+Channel
+HIDComponentIdentifier
+VendorIdentifier
+ProductIdentifier
+LocalizedKeyboardCountryCode
+HIDReportDescriptor
+HIDReport
+Range
+OutsideTemperature
+RangeWarn
+RangeWarning
+AuthenticationChallenge
+AvailableCurrentForDevice
+DeviceBatteryShouldChargeIfPowerIsPresent
+VolumeAdjustment
+SoundCheckAdjustment
+ExternalAccessoryProtocolIdentifier
+ExternalAccessoryProtocolSessionIdenfifier
+LaunchAlert
+ExternalAccessoryProtocolSessionIdentifier
+ExternalAccessoryProtocolSessionStatus
+MinimumIntervalInMilliseconds
+NMEASentenceRSVDIntervalMin
+NMEASentenceGPGGAIntervalMin
+NMEASentenceGPRMCIntervalMin
+NMEASentenceGPGSVIntervalMin
+NMEASentencePASCDIntervalMin
+NMEASentencePAGCDIntervalMin
+NMEASentencePAACDIntervalMin
+NMEASentenceGPHDTIntervalMin
+NMEASentence
+ExternalAccessoryProtocolName
+ExternalAccessoryMatchAction
+NativeTransportComponentIdentifier
+ExternalAccessoryProtocolCarPlay
+TransportComponentIdentifier
+TransportComponentName
+TransportSupportsiAP2Connection
+USBDeviceSupportedAudioSampleRate
+USBHostTransportCarPlayInterfaceNumber
+TransportSupportsCarPlay
+BluetoothTransportMediaAccessControlAddress
+HIDComponentName
+HIDComponentFunction
+VehicleInformationComponentIdentifier
+VehicleInformationComponentName
+VehicleInformationComponentEngineType
+VehicleInformationComponentDisplayName
+VehicleInformationComponentSiriDisplayName
+VehicleInformationComponentMapsDisplayName
+VehicleInformationComponentSiriName
+VehicleStatusComponentIdentifier
+VehicleStatusComponentName
+USBHostTransportComponentIdentifier
+USBHostTransportInterfaceNumber
+TransportComponentIdentifer
+UnixTimestamp
+Duration
+Occurrences
+MediaItemPropertyPersistentIdentifier
+MediaItemPropertyTitle
+MediaItemPropertyMediaType
+MediaItemPropertyRating
+MediaItemPropertyPlaybackDurationInMilliseconds
+MediaItemPropertyAlbumPersistentIdentifier
+MediaItemPropertyAlbumTitle
+MediaItemPropertyAlbumTrackNumber
+MediaItemPropertyAlbumTrackCount
+MediaItemPropertyAlbumDiscNumber
+MediaItemPropertyAlbumDiscCount
+MediaItemPropertyArtistPersistentIdentifier
+MediaItemPropertyArtist
+MediaItemPropertyAlbumArtistPersistentIdentifier
+MediaItemPropertyAlbumArtist
+MediaItemPropertyGenrePersistentIdentifier
+MediaItemPropertyGenre
+MediaItemPropertyComposerPersistentIdentifier
+MediaItemPropertyComposer
+MediaItemPropertyIsPartOfCompilation
+MediaItemPropertyIsResidentOnDevice
+MediaItemPropertyChapterCount
+MediaPlaylistPropertyPersistentIdentifier
+MediaPlaylistPropertyName
+MediaPlaylistPropertyParentPersistentIdentifier
+MediaPlaylistIsGeniusMix
+MediaPlaylistIsFolder
+MediaPlaylistContainedMediaItemsFileTransferIdentifier
+MediaPlaylistPropertyIsiTunesRadioStation
+MediaItemMediaType
+MediaItemRating
+MediaItemAlbumPersistentIdentifier
+MediaItemArtistPersistentIdentifier
+MediaItemAlbumArtistPersistentIdentifier
+MediaItemAlbumArtist
+MediaItemGenrePersistentIdentifier
+MediaItemComposerPersistentIdentifier
+MediaItemIsPartOfCompilation
+MediaItemIsResidentOnDevice
+MediaPlaylistPersistentIdentifier
+MediaPlaylistName
+MediaPlaylistParentPersistentIdentifier
+MediaPlaylistIsiTunesRadioStation
+ComponentEnabled
+PlaybackMediaLibraryUniqueIdentifier
+comm_senddtmf
+comm_mergecalls
+comm_swapcalls
+comm_endcall
+comm_acceptcall
+comm_initialcall
+comm_mutestatusupdate
+comm_holdstatusupdate
+telephony_startlistupdates
+telephony_startupdates
+telephony_startstate
+0 bars
+1 bar
+2 bars
+3 bars
+4 bars
+5 bars
+Not Registered
+Searching
+Denied
+Registered Home
+Roaming
+Emergency Calls Only
+CallRemoteID
+CallDisplayName
+Disconnected
+Sending
+Ringing
+Connecting
+Active
+Disconnecting
+CallStatus
+Incoming
+Outgoing
+CallDirection
+CallAddressBookID
+CallLabel
+FaceTimeAudio
+FaceTimeVideo
+CallService
+CallIsConferenced
+CallConferenceGroup
+No Reason (Call Ended)
+Call Declined
+Call Failed
+CallDisconnectReason
+Favorites
+Recents
+Failed to allocate memory for %sList
+Entry size too big: need %u, have %u
+RecentsListSessionUpdateCountQNX
+FavoritesListSessionUpdateCountQNX
+FavoritesListCount
+%s: StartListUpdates not enabled in config file.
+recentslistmax
+recentslistcombine
+favoriteslistmax
+transport_recv_pkt
+%s: returning EIO because driver initialization failed
+vehicle_send_update
+Apple device is not accepting Vehicle updates
+wifi_acc_config_info
+%s: Wifi Feature not supported
+%s: no SSID in config file
+RequestAccessoryWiFiConfigurationInformation ssid = %s
+RequestAccessoryWiFiConfigurationInformation Passphrase = %s
+WPA2 Personal
+RequestAccessoryWiFiConfigurationInformation SecurityType = %s
+RequestAccessoryWiFiConfigurationInformation Channel = %s
+%s: invalid SecurityType(%s) ignored
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+%c - iAP2 iPod driver
+Options:
+    config=<path>           Path to configuration file (default: /etc/mm/iap2.cfg)
+    ppsdir=<dir>            Directory for PPS objects
+    probe                   Send iAP2 probe sequence
+NAME=ipod-drvr-iap2.so
+DESCRIPTION=iAP2 iPod driver
+DATE=2016/10/04-12:31:35-EDT
+STATE=stable
+HOST=media2
+USER=builder
+VERSION=Media 1.0.69.1
+TAGID=9999@813869
+ipod-drvr-iap2.so.sym
+.symtab
+.strtab
+.shstrtab
+.note.gnu.build-id
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.ARM.exidx
+.eh_frame
+.note
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes
+QNX_usage
+QNX_info
+.gnu_debuglink
+BUILDENV_qss
+VARIANT_startup
+VARIANT_v7
+VARIANT_le
+VARIANT_a
+__pic__
+__PIC__
+__EH_FRAME_BEGIN__
+__JCR_LIST__
+__do_global_dtors_aux
+completed.4602
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+object.4617
+__frame_dummy_init_array_entry
+.LANCHOR0
+__func__.8345
+__func__.8314
+__func__.8258
+__func__.7810
+C.4.7770
+__func__.7769
+destination_info_coord_subparam
+__func__.8512
+__func__.8966
+devaudio_send_rate
+eap_session_findbyid
+eap_protocol_add
+eap_session_notify
+__func__.9246
+__func__.9045
+__func__.9156
+__func__.8857
+__func__.8742
+gps_update_pps
+__func__.7927
+__func__.8045
+ident_info_tspserial
+ident_info_tspwifi
+ident_info_hidhostcomp
+ident_info_hidcomp
+ident_info_eap
+ident_info_current
+ident_info_power
+ident_info_tspusbdev
+ident_info_gpscomp
+ident_info_vehinfocomp
+ident_info_vehstatuscomp
+ident_info_tspusbhost
+ident_info_recvmsgs
+ident_info_sendmsgs
+ident_info_tspbt
+ident_info_bundleid
+ident_info_suplang
+ident_info_curlang
+ident_info_add_hwver
+ident_info_add_fwver
+ident_info_add_serno
+ident_info_add_mfg
+ident_info_add_model
+ident_info_add_name
+.LANCHOR1
+__func__.8303
+__func__.7965
+__func__.9968
+__func__.9792
+section.9702
+C.147.9599
+C.118.9336
+C.128.9420
+C.134.9469
+__func__.8521
+C.5.8261
+iap2_drvr
+chkstr
+strm_dict_from_msg
+__func__.7680
+link_seq_gap
+link_build_syn
+link_log_outgoing_pkt
+wait_for_state
+link_wait
+link_lock
+link_unlock
+link_queue_add_pkt
+link_queue_remove_pkt
+link_send_pkt
+link_sendack
+link_acklist_timeout
+link_synchronization
+link_handle_payload
+__func__.8102
+__func__.8135
+__func__.10361
+__func__.8232
+__func__.8843
+__func__.8486
+__func__.8276
+__func__.9222
+__func__.8900
+__func__.9325
+__func__.9541
+__func__.10309
+probe_support.10160
+send_seq_mutex
+medialib_update_plist_contents
+medialib_update_str
+medialib_update_pluid
+medialib_update_bool
+medialib_update_desc
+medialib_update_num
+medialib_update_uid
+medialib_add_sync_complete
+__func__.12074
+__func__.11494
+__func__.11292
+__func__.11649
+__func__.11524
+C.80.11158
+C.81.11159
+__func__.11151
+__func__.11406
+__func__.10914
+__func__.8402
+__func__.8367
+__func__.9831
+__func__.10189
+__func__.8368
+__func__.8467
+__func__.9001
+C.14.8375
+C.15.8376
+C.4.8288
+C.5.8289
+freelist
+freelists
+allocatelist
+allocatelists
+C.33.8391
+C.32.8379
+__func__.8039
+__func__.8014
+__func__.7899
+__func__.7880
+__func__.7854
+__func__.7828
+__func__.8319
+__func__.8290
+C.4.8259
+print_iap2_header
+UNKNOWN_STR
+params_dest_info
+sparams_dest_info_centercoord
+sparams_dest_info_entrypoint
+params_dest_infostatus
+sparams_dest_infostatus_successparams
+params_id_info
+sparams_id_info_eap
+sparams_id_info_tspserial
+sparams_id_info_tspusbdev
+sparams_id_info_tspusbhost
+sparams_id_info_tspbt
+sparams_id_info_hidcomp
+sparams_id_info_vehinfocomp
+sparams_id_info_vehstatcomp
+sparams_id_info_gpscomp
+sparams_id_info_hidhostcomp
+sparams_id_info_wifitspcomp
+params_id_reject
+params_id_update
+params_telephony_startstate
+params_telephony_state
+params_telephony_startupdates
+params_telephony_update
+params_telephony_initialcall
+params_telephony_acceptcall
+params_telephony_endcall
+params_telephony_holdstatus
+params_telephony_mutestatus
+params_telephony_senddtmf
+params_telephony_startlist
+sparams_telephony_startlist_recentprops
+sparams_telephony_startlist_favoritesprops
+params_telephony_list
+sparams_telephony_list_recents
+sparams_telephony_list_favorites
+params_media_libinfo
+sparams_media_libinfo
+params_media_updstart
+sparams_media_updstart_item_props
+sparams_media_updstart_plist_props
+params_media_updinfo
+sparams_media_updinfo_item
+sparams_media_updinfo_plist
+params_media_updstop
+params_media_playcur
+params_media_playitems
+params_media_playcoll
+params_media_playspecial
+params_bt_status
+sparams_bt_status
+params_bt_start
+params_bt_upd
+sparams_bt_upd_profiles
+params_devnotify_updinfo
+params_devnotify_updlang
+params_devnotify_updtime
+params_devnotify_deviceuuid
+params_devnotify_wirelesscarplaystatus
+params_nowplay_start
+sparams_nowplay_start_mdtypes
+sparams_nowplay_start_pbtypes
+params_nowplay_upd
+sparams_nowplay_upd_pbtypes
+params_nowplay_setinfo
+params_acc_wifi_cfg
+params_hid_start
+params_hid_devrep
+params_hid_accrep
+params_hid_stop
+params_vehicle_start
+params_vehicle_upd
+params_auth_cert
+params_auth_chal
+params_auth_resp
+params_power_start
+params_power_update
+params_power_srcupdate
+params_devaudio_info
+params_eap_start
+params_eap_stop
+params_eap_launchapp
+params_eap_status
+params_gps_start
+params_gps_info
+iap2_info_msg_destination
+iap2_info_msg_id
+iap2_info_msg_phone
+iap2_info_msg_media
+iap2_info_msg_devnotify_bt
+iap2_info_msg_nowplay
+iap2_info_msg_devnotify_wifi
+iap2_info_msg_hid
+iap2_info_msg_vehicle
+iap2_info_msg_auth
+iap2_info_msg_power
+iap2_info_msg_devaudio
+iap2_info_msg_eap
+iap2_info_msg_gps
+__func__.9629
+__func__.9556
+__func__.9538
+__func__.9512
+__func__.9484
+__func__.9447
+__func__.9604
+__func__.9576
+__func__.8637
+C.85.8700
+C.92.8733
+__func__.8438
+__func__.8254
+__func__.7604
+vehicle_update_pps
+__func__.8356
+__func__.8330
+section.8327
+shift
+__FRAME_END__
+__JCR_END__
+_DYNAMIC
+__dso_handle
+_GLOBAL_OFFSET_TABLE_
+eap_session_acc_create
+clock_gettime
+packet_parse_hdr
+strcpy
+__gnu_uldivmod_helper
+iap2_init_hid_interfaces
+bt_send_info
+medialib_plist_check_pending_complete
+strm_dict_key_get
+pps_object_update_num
+transport_get_link_params
+transport_send_pkt
+__divdi3
+pthread_cond_signal
+pps_encoder_buffer
+strtok_r
+disable_single_command
+acp_device_authentication_response
+ident_update_set_lang
+medialib_add_plist_contents
+iap2_init
+iap2_playpause
+bt_stop_updates
+devnotify_recv_wirelesscarplaystatus
+destination_info_recv
+devnotify_recv_updinfo
+comm_mergecalls
+comm_mutestatusupdate
+memmove
+iap2_unblock
+__exidx_end
+device_authentication_response
+medialib_findbyindex
+packet_addparam_str
+ipod_cfg_find
+__aeabi_unwind_cpp_pr0
+medialib_plist_upd_handlers
+iap2_msg
+ipod_log_lock
+packet_is_eak
+destination_sendinfostatus
+telephony_listupdate_recv
+link_add_session
+iap2_endfast
+vehicle_recv_start
+getenv
+nowplay_update_recv
+_bss_end__
+power_update_send
+iofunc_attr_init
+file_xfer_data
+ipod_log_unlock
+eap_protocol_findbyindex
+hid_send_report
+pulse_attach
+medialib_disable
+usleep
+pthread_condattr_init
+pps_object_update_num_int
+MsgWrite
+pps_update_bulk
+packet_addparam_blob
+comm_acceptcall
+memcpy
+ppsparse
+pthread_condattr_setclock
+eap_app_launch
+medialib_play_all
+pps_buffer_concantenate
+iap2_ocb_calloc
+strm_dict_find_value
+packet_addparam_nodata
+devaudio_info_recv
+__aeabi_uldivmod
+__cxa_finalize
+file_xfer_read
+disable_command_list
+medialib_data_get
+nowplay_getartwork
+malloc
+pps_encoder_add_int
+__udivsi3
+iofunc_notify_trigger
+eap_session_close
+link_get_default_params
+comm_endcall
+hid_remote_speed_inc
+vsnprintf
+fsys_init_entries
+eap_session_read_data
+iap2_shuffle
+__bss_start__
+strtoul
+sched_getscheduler
+packet_get_session_id
+telephony_state_recv
+devaudio_geturl
+hid_mappings
+packet_add_param_from_config
+vehicle_params
+cksum
+iap2_send_probe
+pps_encoder_initialize
+hid_remote_playpause
+hid_remote_shuffle
+iap2_hidcomp_destroy
+__stackavail
+packet_sendlist_push
+telephony_startupdates
+iap2_volup
+__exidx_start
+iap2_hidcomp_create
+iap2_prev
+pps_object_read_attr
+hid_start
+iap2_voldown
+hid_remote_pause
+pps_encoder_length
+__udivdi3
+abort
+hid_remote_next
+iap2_play
+ident_info_reject_recv
+sample_rates
+file_hdr_types
+gps_start_recv
+link_send_raw_message
+_init
+hid_remote_volup
+packet_list_realloc
+strtol
+ipod_cfg_list_init
+transport_recv_pkt
+MsgSendPulse
+comm_senddtmf
+medialib_handle_info
+packet_is_ack
+medialib_data_ready
+nowplay_getuidlist
+calloc
+eap_init_protocols
+hid_build_driver_control_report
+iap2_repeat
+iofunc_open_default
+iap2_ocb_free
+pthread_condattr_destroy
+write
+strm_dict_destroy
+stricmp
+MsgError
+medialib_play_uidlist
+file_xfer_destroy
+link_send_file
+link_destroy
+init_features
+pthread_cond_broadcast
+__deregister_frame_info
+find_param
+hid_remote_play
+hid_remote_prev
+bt_update_recv
+devnotify_recv_updlang
+medialib_add_plist_contentend
+hid_name_to_id
+packet_list_destroy
+__bss_end__
+__get_errno_ptr
+devctl
+pps_encoder_end_array
+strm_dict_value_get
+circbuf_write_data
+telephony_startlistupdates
+devaudio_stop
+packet_detect_probe_nosupport
+strstr
+comm_initialcall
+iofunc_notify
+medialib_item_upd_handlers
+strm_dict_set
+pps_encoder_start_array
+eap_session_send_data
+comm_holdstatusupdate
+strncmp
+eap_session_recv_start
+bt_start_updates
+medialib_play_resume
+fsys_read
+iap2_start_features
+iap2_ctrl_msg_table
+nowplay_getconfig
+pps_encoder_cleanup
+strncpy
+packet_recvlist_pop
+sched_get_priority_max
+realloc
+iofunc_notify_remove
+pps_object_update_str
+pthread_cond_init
+memcmp
+pps_update_auth
+sched_get_priority_min
+eap_protocol_findbyid
+nowplay_set_params
+sscanf
+_btext
+ident_info_request
+pps_encoder_add_string
+iap2_notify
+telephony_startstate
+iap2_ocb_close
+pps_object_update_num_u64
+device_authentication_certificate
+link_handle_reply
+strdup
+devnotify_recv_updtime
+medialib_find_by_uid
+strtoull
+__bss_start
+eap_session_recv_data
+memset
+TimerCreate
+__div0
+link_send_probe
+srand
+link_create
+packet_addparam_num
+__aeabi_uidiv
+packet_detect_probe_support
+gps_info_send
+eap_session_recv_stop
+MsgReplyv
+comm_swapcalls
+iofunc_read_verify
+file_xfer_setup
+packet_recvlist_push
+acp_device_authentication_certificate
+__end__
+hid_remote_speed_dec
+mountpoint
+strcmp
+ulltoa
+circbuf_read_data
+pthread_mutex_unlock
+iofunc_close_ocb_default
+delay
+hid_stop
+vehicle_send_update
+power_start
+_fini
+medialib_play_collection
+iap2_audiobook_speed
+sprintf
+systime_ms
+pps_encoder_add_double
+medialib_sync_start
+medialib_collection_strings
+power_stop
+medialib_sync_stop
+eap_protocol_findbyname
+fsys_open
+print_packet
+pps_object_open
+link_send_eap
+acp_challenge
+gps_stop_recv
+eap_add_protocols_from_pps
+iap2_next
+ipod_log_threadid
+link_send_syn
+hid_remote_speed_reg
+__aeabi_uidivmod
+wifi_acc_config_info
+medialib_handle_update
+_edata
+iap2_link_params_isvalid
+vehicle_recv_stop
+packet_addparam_enum
+link_recv_pkt_single
+pthread_mutex_destroy
+file_xfer_init
+devnotify_recv_deviceuuid
+pthread_mutex_lock
+ipod_log
+auth_cert_request
+pthread_cond_wait
+fsys_find_attr_by_name
+pps_encoder_start_object
+packet_sendlist_pop
+auth_cert_send
+link_setup
+medialib_enable
+strm_dict_new
+iap2_ffwd
+nowplay_setinfo
+pps_encoder_end_object
+eap_session_destroy
+pthread_cond_destroy
+ipod_module
+fsys_find_parent_dir_by_name
+ident_info_funcs
+fsys_lseek
+hid_remote_repeat
+transport_receive
+medialib_info_get
+hid_remote_none
+pthread_mutex_init
+eap_session_find_unclaimed
+hid_remote_voldown
+strlen
+devaudio_start
+strm_dict_size
+destination_startinfo
+auth_resp_send
+_stack
+circbuf_init
+power_update_recv
+ipod_resmgr_mount
+TimerSettime
+__gnu_ldivmod_helper
+strchr
+telephony_update_recv
+nowplay_start
+__data_start
+link_send_message
+hid_remote_starthid
+_Jv_RegisterClasses
+packet_list_init
+packet_get_session_type
+MsgReply
+ipod_cfg_list_get
+pthread_cond_timedwait
+link_params_set
+mkdir
+__register_frame_info
+ipod_print_bytes
+close
+packet_log_recvtime
+packet_has_payload
+iap2_fbwd
+iap2_pause
+circbuf_destroy

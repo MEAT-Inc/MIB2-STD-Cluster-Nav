@@ -1,0 +1,9 @@
+Summary for .\delphi-analysis\display-hmi-java\targeted.jar
+Decompiled with CFR 0.152
+
+
+de.vw.mib.asl.internal.smartphoneintegration.target.ASLHandler
+----------------------------
+
+updateExlapServerData(boolean )
+  Unable to fully structure code

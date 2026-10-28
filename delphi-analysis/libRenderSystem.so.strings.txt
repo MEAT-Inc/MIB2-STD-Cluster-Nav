@@ -1,0 +1,2895 @@
+!:oD:
+_3Wk]S
+_I!-%
+Ze-^.
+st:c>@
+]y=H5a
+{UTeF
+GA?![
+J89H5Q
+_init
+_fini
+__cxa_finalize
+__deregister_frame_info
+__register_frame_info
+_Jv_RegisterClasses
+libm.so.2
+libbacktrace.so.1
+libsocket.so.3
+libc.so.3
+__cxa_guard_acquire
+_ZN12SystemCommon14Classification8ModuleIdC1EPKc
+__cxa_guard_release
+_ZdlPv
+__aeabi_atexit
+__cxa_pure_virtual
+_ZN12ThreadHelper17INVALID_THREAD_IDE
+_ZN12ThreadHelper18GetCurrentThreadIDEv
+_ZN12TraceChannelC1EPKcb
+_ZN12TraceChannelD1Ev
+_ZN23TraceClientManagerProxy15isTracingActiveERK12TraceChannelm
+_ZN23TraceClientManagerProxy10getMessageEPK12TraceChannelm
+_ZN12TraceMessagelsEPKc
+_ZN12TraceMessagelsEl
+_ZN23TraceClientManagerProxy11sendMessageEv
+_ZN13DynamicLoader11CloseModuleEPv
+_ZN8SDStringC1EPKc
+_ZN13DynamicLoader13FileExtensionEv
+_ZplRK8SDStringS1_
+_ZN13DynamicLoader10LoadModuleERK8SDString
+_ZN8SDStringD1Ev
+_ZN13DynamicLoader17ModuleHandleValidEPv
+_ZN13DynamicLoader10LoadSymbolEPvPKc
+_ZN12ThreadHelper5SleepEm
+_ZN13SetResetEvent3SetEv
+_ZN15CriticalSection4LockEv
+_ZN13SetResetEvent5ResetEv
+_ZN13SetResetEvent4WaitEv
+_ZN15CriticalSection6UnlockEv
+_ZN13DynamicLoader12LoadModuleExERK8SDStringb
+_ZN8SDStringpLEPKc
+_ZplRK8SDStringc
+strlen
+memcmp
+_ZN12TraceMessagelsERK8SDString
+strcmp
+abort
+memcpy
+_Znwj
+_ZN15CriticalSectionC1Ev
+_ZN15CriticalSectionD1Ev
+memmove
+_ZN3Gfx3App10SetAppCtrlEPN2MR7AppCtrlE
+_ZN3Gfx3App10GetAppCtrlEv
+_ZN28GLFreetypeFontHandlingFacadeC2Ev
+_ZTV28GLFreetypeFontHandlingFacade
+_ZN28GLFreetypeFontHandlingFacadeC1Ev
+_ZN28GLFreetypeFontHandlingFacadeD2Ev
+_ZN28GLFreetypeFontHandlingFacadeD1Ev
+_ZN28GLFreetypeFontHandlingFacadeD0Ev
+_ZN28GLFreetypeFontHandlingFacade14CreateInstanceEv
+_ZN10FileSystem10FileExistsEPKc
+_ZN8SDStringC1ERKS_
+_ZN10FileSystem10FileExistsE8SDString
+memset
+floorf
+_ZN20GLSystemPaintSurface6CreateEmm13GLPixelFormat
+__aeabi_uidivmod
+_ZNK8SDString7ToAsciiEv
+_ZNK11SDByteArray12GetConstDataEv
+_ZN11SDByteArrayD1Ev
+_ZNK8SDString7ToUtf16Ev
+_ZNK8SDString9GetLengthEv
+_ZNK8SDStringeqERKS_
+_ZN12SystemCommon14Classification8ScopedIdC1ENS0_8ModuleIdEtPKcl
+_ZN12SystemCommon14Classification8ScopedIdD1Ev
+atomic_add
+atomic_sub_value
+_ZN3Gfx4FontD1Ev
+_ZTVN3Gfx4FontE
+_ZN14GLFontResourceD1Ev
+_ZNK14GLFontResource5GetIDEv
+_ZN8SDStringaSERKS_
+_ZN14GLFontResourceD0Ev
+_ZN3Gfx4FontD0Ev
+_ZN8SDStringC1Ev
+_ZTV14GLFontResource
+_ZN22GLBitmapLoaderStrategyC2Ev
+_ZTV22GLBitmapLoaderStrategy
+_ZN22GLBitmapLoaderStrategyC1Ev
+_ZN22GLBitmapLoaderStrategyD2Ev
+_ZTV21GLImageLoaderStrategy
+_ZN22GLBitmapLoaderStrategyD1Ev
+_ZNK22GLBitmapLoaderStrategy14CanHandleImageEPKhm
+_ZNK22GLBitmapLoaderStrategy7GetNameEv
+_ZN22GLBitmapLoaderStrategy14CreateInstanceEv
+_ZNK22GLBitmapLoaderStrategy19LoadImageFromBufferEPKhmP17GLMemoryAllocatorP7PIArrayI13GLPixelFormatS5_11NullLocking7PIAllocIN24PICommonAllocDescriptors7PIArrayE18PIDefaultAllocatorEEbN19GLPaintSurfaceTypes4TypeES5_hRK7PIColor
+_ZN20GLPixmapPaintSurface6CreateEmm13GLPixelFormatP17GLMemoryAllocator
+_ZN16GLPainterFactory13CreatePainterEP14GLPaintSurface14GLPainterTypes
+_ZN20GLPixmapPaintSurface8AttachToEPhmm13GLPixelFormat
+_ZN21GLImageLoaderStrategy23GetBestMatchPixelFormatEP7PIArrayI13GLPixelFormatS1_11NullLocking7PIAllocIN24PICommonAllocDescriptors7PIArrayE18PIDefaultAllocatorEES1_
+_ZN22GLBitmapLoaderStrategyD0Ev
+_ZN21GLImageLoaderStrategy7ReleaseEv
+_ZN12GLImageCacheD2Ev
+_ZTV12GLImageCache
+_ZN12GLImageCacheD1Ev
+_ZN12GLImageCache7ReleaseEv
+_ZN12GLImageCache16CreateImageCacheENS_11GLCacheTypeEl
+_ZN12GLImageCacheD0Ev
+_ZN13GLImageLoader17CreateImageLoaderEv
+_ZN21GLImageLoaderStrategyD1Ev
+_ZN21GLImageLoaderStrategy27s_defaultSystemFormatsCountE
+_ZN21GLImageLoaderStrategy22s_defaultSystemFormatsE
+_ZN21GLImageLoaderStrategyD0Ev
+_ZN14GLImageManager14CreateInstanceEv
+_ZN19GLJPGLoaderStrategyC2Emmm
+_ZTV19GLJPGLoaderStrategy
+_ZN19GLJPGLoaderStrategyC1Emmm
+_ZNK19GLJPGLoaderStrategy14CanHandleImageEPKhm
+_ZNK19GLJPGLoaderStrategy7GetNameEv
+_ZN19GLJPGLoaderStrategyD1Ev
+_ZN19GLJPGLoaderStrategyD0Ev
+_ZNK19GLJPGLoaderStrategy19LoadImageFromBufferEPKhmP17GLMemoryAllocatorP7PIArrayI13GLPixelFormatS5_11NullLocking7PIAllocIN24PICommonAllocDescriptors7PIArrayE18PIDefaultAllocatorEEbN19GLPaintSurfaceTypes4TypeES5_hRK7PIColor
+__sigjmp_prolog
+_setjmp
+_ZN19GLJPGLoaderStrategy14CreateInstanceEmmm
+_ZN19GLJPGLoaderStrategy14CreateInstanceEv
+siglongjmp
+_ZNK19GLPngLoaderStrategy14CanHandleImageEPKhm
+_ZNK19GLPngLoaderStrategy7GetNameEv
+_ZN19GLPngLoaderStrategyD1Ev
+_ZN19GLPngLoaderStrategyD0Ev
+_ZNK19GLPngLoaderStrategy19LoadImageFromBufferEPKhmP17GLMemoryAllocatorP7PIArrayI13GLPixelFormatS5_11NullLocking7PIAllocIN24PICommonAllocDescriptors7PIArrayE18PIDefaultAllocatorEEbN19GLPaintSurfaceTypes4TypeES5_hRK7PIColor
+_ZN12TraceMessagelsEh
+_ZN12TraceMessagelsEm
+_ZN12TraceMessagelsEi
+_ZN19GLPngLoaderStrategy14CreateInstanceEv
+_ZTV19GLPngLoaderStrategy
+SCHeapFree
+SCHeapAlloc
+qsort
+_Znaj
+_ZdaPv
+realloc
+malloc
+_ZN3Gfx10ReleasePNGEPKh
+_ZN3Gfx13DecompressPNGEPKhmbRmS2_S2_RNS_14ImageColorType4EnumERh
+_ZN3Gfx13DecompressPNGEPKhmRmS2_S2_
+_ZN3Gfx13DecompressPNGEPKhmRm
+_ZN3Gfx9CreatePNGEPKhmmmRm
+_ZN3Gfx5ImageD1Ev
+_ZTVN3Gfx5ImageE
+_ZN7GLImageD1Ev
+_ZNK7GLImage10GetSourceXEv
+_ZNK7GLImage10GetSourceYEv
+_ZNK7GLImage14GetSourceWidthEv
+_ZNK7GLImage15GetSourceHeightEv
+_ZN3Gfx6PixmapD1Ev
+_ZTVN3Gfx6PixmapE
+_ZN3Gfx6PixmapD0Ev
+_ZN7GLImageD0Ev
+_ZN3Gfx5ImageD0Ev
+_ZTV7GLImage
+_ZN13GLImageLoaderD1Ev
+_ZTV13GLImageLoader
+_ZN15HelperFunctions18CreateAbsolutePathERK8SDStringRS0_
+_ZN13GLImageLoaderD0Ev
+_ZN14GLImageManagerD1Ev
+_ZTV14GLImageManager
+_ZN14GLImageManagerD0Ev
+sprintf
+strcpy
+_ZN15GLImageResourceD1Ev
+_ZTV15GLImageResource
+strrchr
+strcat
+_ZN15GLImageResourceD0Ev
+_ZN3Gfx15ImageProcessing5ImageD1Ev
+_ZTVN3Gfx15ImageProcessing5ImageE
+_ZN3Gfx15ImageProcessing12ImageCreatorD1Ev
+_ZTVN3Gfx15ImageProcessing12ImageCreatorE
+_ZN3Gfx15ImageProcessing14ImageConverterD1Ev
+_ZTVN3Gfx15ImageProcessing14ImageConverterE
+_ZN3Gfx15ImageProcessing11ImageScalerD1Ev
+_ZTVN3Gfx15ImageProcessing11ImageScalerE
+_ZN3Gfx15ImageProcessing8ImageBltD1Ev
+_ZTVN3Gfx15ImageProcessing8ImageBltE
+_ZN3Gfx15ImageProcessing16ImageCreatorImplD1Ev
+_ZN3Gfx15ImageProcessing18ImageConverterImplD1Ev
+_ZN3Gfx15ImageProcessing15ImageScalerImplD1Ev
+_ZN3Gfx15ImageProcessing15ImageProcessingD2Ev
+_ZN3Gfx15ImageProcessing15ImageProcessingD1Ev
+_ZNK3Gfx15ImageProcessing15ImageProcessing17IsFormatSupportedENS_11PixelFormat4EnumE
+_ZNK3Gfx15ImageProcessing15ImageProcessing12GetConverterEv
+_ZNK3Gfx15ImageProcessing15ImageProcessing9GetScalerEv
+_ZNK3Gfx15ImageProcessing15ImageProcessing15GetImageCreatorEv
+_ZNK3Gfx15ImageProcessing15ImageProcessing11GetImageBltEv
+_ZNK3Gfx15ImageProcessing18ImageConverterImpl15ConvertPixArrayEmmPKhNS_11PixelFormat4EnumElPhS5_lb
+_ZN3Gfx15ImageProcessing12ImageBltImplD1Ev
+_ZN3Gfx15ImageProcessing16ImageCreatorImplD0Ev
+_ZN3Gfx15ImageProcessing12ImageCreatorD0Ev
+_ZN3Gfx15ImageProcessing18ImageConverterImplD0Ev
+_ZN3Gfx15ImageProcessing14ImageConverterD0Ev
+_ZN3Gfx15ImageProcessing15ImageScalerImplD0Ev
+_ZN3Gfx15ImageProcessing11ImageScalerD0Ev
+_ZN3Gfx15ImageProcessing12ImageBltImplD0Ev
+_ZN3Gfx15ImageProcessing8ImageBltD0Ev
+_ZN3Gfx15ImageProcessing5ImageD0Ev
+_ZN3Gfx15ImageProcessing15ImageProcessingC1Ev
+_ZTVN3Gfx15ImageProcessing18ImageConverterImplE
+_ZTVN3Gfx15ImageProcessing15ImageScalerImplE
+_ZTVN3Gfx15ImageProcessing16ImageCreatorImplE
+_ZTVN3Gfx15ImageProcessing12ImageBltImplE
+_ZN3Gfx15ImageProcessing15ImageProcessing18GetImageProcessingEv
+_ZN3Gfx15ImageProcessing15ImageProcessingC2Ev
+_ZNK3Gfx15ImageProcessing16ImageCreatorImpl16CreateImageInMemEmmNS_11PixelFormat4EnumElPh
+_ZNK3Gfx15ImageProcessing16ImageCreatorImpl18CreateImageFromMemEmmNS_11PixelFormat4EnumElPKh
+_ZNK3Gfx15ImageProcessing16ImageCreatorImpl11CreateImageEmmNS_11PixelFormat4EnumE
+__aeabi_idiv
+__aeabi_idivmod
+SCExtraHeapFree
+SCExtraHeapAlloc
+_ZNK3Gfx15ImageProcessing18ImageConverterImpl12ConvertImageE10PISmartPtrINS0_5ImageE12DeleteSingleIS3_E7PIAllocIN24PICommonAllocDescriptors10PISmartPtrE18PIDefaultAllocatorEENS_11PixelFormat4EnumEb
+_ZNK3Gfx15ImageProcessing12ImageBltImpl3BltE10PISmartPtrINS0_5ImageE12DeleteSingleIS3_E7PIAllocIN24PICommonAllocDescriptors10PISmartPtrE18PIDefaultAllocatorEESB_ffff
+_ZNK3Gfx15ImageProcessing15ImageScalerImpl10ScaleImageE10PISmartPtrINS0_5ImageE12DeleteSingleIS3_E7PIAllocIN24PICommonAllocDescriptors10PISmartPtrE18PIDefaultAllocatorEEffNS0_11ImageScaler10FilterTypeE
+_ZN17GLMemoryAllocatorD1Ev
+_ZTV17GLMemoryAllocator
+_ZN17GLMemoryAllocatorD0Ev
+_ZN14GLPaintSurfaceD1Ev
+_ZTV14GLPaintSurface
+_ZNK14GLPaintSurface4LockEv
+_ZNK14GLPaintSurface6UnlockEv
+_ZN14GLPaintSurface7GetDataEv
+_ZNK14GLPaintSurface7GetDataEv
+_ZN20GLPixmapPaintSurfaceD1Ev
+_ZN20GLPixmapPaintSurface7ReleaseEv
+_ZN20GLPixmapPaintSurfaceD0Ev
+_ZN14GLPaintSurfaceD0Ev
+_ZTV20GLPixmapPaintSurface
+_ZN20GLSystemPaintSurfaceD1Ev
+_ZN20GLSystemPaintSurface8AttachToEN3Gfx12NativePixmapEb
+_ZN20GLSystemPaintSurface7ReleaseEv
+_ZN20GLSystemPaintSurfaceD0Ev
+_ZTV20GLSystemPaintSurface
+_ZN9GLPainterD1Ev
+_ZTV9GLPainter
+_ZN9GLPainter5BeginEv
+_ZN9GLPainter3EndEv
+_ZN9GLPainter11SetClipRectEllll
+_ZNK9GLPainter11GetClipRectEv
+_ZN9GLPainter5ClearERK7PIColor
+_ZN9GLPainter8SetPixelEll
+_ZN9GLPainter8GetPixelEllR7PIColor
+_ZN9GLPainter4LineEllll
+_ZN9GLPainter4LineEffff
+_ZN9GLPainter8PolylineEPK7PIPointIlEm
+_ZN9GLPainter8PolylineEPK7PIPointI15Int32FixedPointILt8EEEm
+_ZN9GLPainter8PolylineEPK7PIPointIfEm
+_ZN9GLPainter9RectangleEllll
+_ZN9GLPainter8FillRectEllll
+_ZN9GLPainter14RoundRectangleEllllll
+_ZN9GLPainter6CircleEllt
+_ZN9GLPainter7EllipseEllll
+_ZN9GLPainter3PieEv
+_ZN9GLPainter7PolygonEPK7PIPointIlEm
+_ZN9GLPainter7PolygonEPK7PIPointIfEm
+_ZN9GLPainter7PolygonEPK7PIPointI15Int32FixedPointILt8EEEm
+_ZN9GLPainter7PolygonEPK14PIPolygonPointIlEm
+_ZN9GLPainter7PolygonEPK14PIPolygonPointIfEm
+_ZN9GLPainter7PolygonEPK14PIPolygonPointI15Int32FixedPointILt8EEEm
+_ZN9GLPainter4TextEPKcRK6PIRectIlLb0EEms
+_ZN9GLPainter4TextEPKtRK6PIRectIlLb0EEms
+_ZN9GLPainter13GetTextExtentEPKcmRlS2_s
+_ZN9GLPainter13GetTextExtentEPKtmRlS2_s
+_ZN9GLPainter6BitBltEPK14GLPaintSurfacellllll
+_ZN9GLPainter13BitBltStretchEPK14GLPaintSurfacellllllll
+_ZN9GLPainter10BitBltMaskEPK14GLPaintSurfacellllllS2_
+_ZN9GLPainter10BitBltMaskEPK14GLPaintSurfacellllllRK7PIColor
+_ZN9GLPainter17BitBltStretchMaskEPK14GLPaintSurfacellllllllRK7PIColor
+_ZN9GLPainter10BitBltMaskERK7PIColorllllllPK14GLPaintSurface
+_ZN9GLPainter17BitBltStretchMaskEPK14GLPaintSurfacellllllllS2_
+_ZN9GLPainter11BitBltAlphaEPK14GLPaintSurfacellllllh
+_ZN9GLPainter3ArcElllllllll
+_ZN9GLPainter7SetFontERK6GLFont
+_ZNK9GLPainter7GetFontEv
+_ZN9GLPainter7GetFontEv
+_ZN9GLPainter7ReleaseEv
+_ZN9GLPainter18FlushCommandBufferEv
+_ZN9GLPainter13GetTextExtentERK8SDStringmRlS3_s
+_ZN9GLPainter4TextERK8SDStringRK6PIRectIlLb0EEms
+_ZN9GLPainterD0Ev
+_ZN9GLPainter13CreateSurfaceEPKhmml13GLPixelFormat
+_ZN9GLPainterC2Ev
+_ZN9GLPainter6SetPenERK5GLPen
+_ZN19GLPaintSurfaceTypes20IsPixmapPaintSurfaceEPK14GLPaintSurface
+__aeabi_uidiv
+_ZN3Gfx17PixmapComposition17AdjustBlitOffsetsEPNS_19PixmapConfigurationES2_
+_ZN3Gfx12MemoryPixmapD1Ev
+_ZN3Gfx10PixmapImplD2Ev
+_ZTVN3Gfx12MemoryPixmapE
+_ZN3Gfx12MemoryPixmapD0Ev
+_ZN3Gfx17PixmapComposition7ComposeER14GLPaintSurfaceRKS1_RKN6MRMath7Vector2IlN8Geometry8CoordSys9UndefinedEEESC_SC_SC_18GLCompositionModesRK6PIRectIlLb0EERKNS_9ColorRGBAIhLl255EEEh
+_ZN3Gfx17PixmapComposition7ComposeER14GLPaintSurfaceRKS1_RK6PIRectIlLb0EES8_S8_18GLCompositionModesRKNS_9ColorRGBAIhLl255EEEh
+_ZN3Gfx12MemoryPixmapC1EP14GLPaintSurface
+_ZN3Gfx10PixmapImpl15GetPaintSurfaceEv
+_ZN3Gfx17PixmapComposition7ComposeER14GLPaintSurfacePKNS_19PixmapConfigurationES5_RKN6MRMath7Vector2IlN8Geometry8CoordSys9UndefinedEEEbNS7_IfSA_EE
+_ZN3Gfx17PixmapComposition7ComposeER14GLPaintSurfaceRK7PIArrayINS_19PixmapConfigurationERKS4_11NullLocking7PIAllocIN24PICommonAllocDescriptors7PIArrayE18PIDefaultAllocatorEERKN6MRMath7Vector2IlN8Geometry8CoordSys9UndefinedEEEbNSH_IfSK_EE
+_ZN3Gfx17PixmapComposition7ComposeER14GLPaintSurfaceRKN8stlp_std6vectorINS_19PixmapConfigurationENS3_9allocatorIS5_EEEERKN6MRMath7Vector2IlN8Geometry8CoordSys9UndefinedEEEbNSC_IfSF_EE
+_ZNK3Gfx10PixmapImpl7IsValidEv
+_ZNK3Gfx10PixmapImpl14GetPixelFormatEv
+_ZNK3Gfx10PixmapImpl8GetWidthEv
+_ZNK3Gfx10PixmapImpl9GetHeightEv
+_ZN3Gfx10PixmapImpl7GetDataEv
+_ZNK3Gfx10PixmapImpl7GetDataEv
+_ZN3Gfx10PixmapImpl15GetNativePixmapEv
+_ZNK3Gfx10PixmapImpl8GetPitchEv
+_ZNK3Gfx10PixmapImpl15GetPaintSurfaceEv
+_ZN3Gfx19PixmapConfigurationC2EPKNS_6PixmapEPKNS_9ColorRGBAIhLl255EEERKN6MRMath7Vector2I15Int32FixedPointILt16EEN8Geometry8CoordSys9UndefinedEEERK6PIRectIlLb0EE
+_ZN3Gfx19PixmapConfigurationC1EPKNS_6PixmapEPKNS_9ColorRGBAIhLl255EEERKN6MRMath7Vector2I15Int32FixedPointILt16EEN8Geometry8CoordSys9UndefinedEEERK6PIRectIlLb0EE
+_ZN3Gfx19PixmapConfigurationC2ERKNS_5ImageE
+_ZN3Gfx19PixmapConfigurationC1ERKNS_5ImageE
+_ZN3Gfx18RenderSystemCommon16As2DRenderSystemEv
+_ZN3Gfx18RenderSystemCommon16As3DRenderSystemEv
+_ZN3Gfx18RenderSystemCommonC2Ev
+_ZTVN3Gfx18RenderSystemCommonE
+_ZN3Gfx18RenderSystemCommonC1Ev
+_ZN3Gfx18RenderSystemCommonD2Ev
+_ZN3Gfx18RenderSystemCommonD1Ev
+_ZN3Gfx18RenderSystemCommon13DumpProfilingEPKcb
+_ZN3Gfx18RenderSystemCommonD0Ev
+_ZN8ThreadPDC1Ev
+_ZN13SetResetEventC1Ev
+_ZN8ThreadPD15SetFriendlyNameEPKc
+_ZN8ThreadPD6CreateEP10RunnablePD
+_ZN8ThreadPD4JoinEv
+_ZN13SetResetEventD1Ev
+_ZN8ThreadPDD1Ev
+_ZN13SetResetEvent8WaitTimeEm
+getenv
+pthread_self
+pthread_getschedparam
+pthread_setschedparam
+perror
+_ZNK13SDStringArray7GetSizeEv
+_ZNK13SDStringArray5GetAtEl
+_ZNK11SDByteArraycvPKcEv
+_ZN13SDStringArray9RemoveAllEv
+_ZN13SDStringArray3AddERK8SDString
+_ZNK8SDString8GetCountEv
+_ZN13SDStringArrayD1Ev
+_ZN13SDStringArrayC1Ev
+_ZN3Gfx15MemoryAllocatorD1Ev
+_ZTVN3Gfx15MemoryAllocatorE
+_ZN3Gfx4RS2D15PrimitiveBufferC2ENS0_10VertexType4EnumEmRNS_15MemoryAllocatorES5_NS0_10BufferHint4EnumE
+_ZN3Gfx4RS2D15PrimitiveBufferC1ENS0_10VertexType4EnumEmRNS_15MemoryAllocatorES5_NS0_10BufferHint4EnumE
+_ZN3Gfx4RS2D15PrimitiveBufferD2Ev
+_ZN3Gfx4RS2D15PrimitiveBufferD1Ev
+_ZN3Gfx4RS2D15PrimitiveBuffer7PolygonEm
+_ZN3Gfx4RS2D15PrimitiveBuffer10SubPolygonEmPKv
+_ZN3Gfx4RS2D15PrimitiveBuffer8PolylineEmPKv
+_ZN3Gfx4RS2D15PrimitiveBuffer10ClearCacheEv
+_ZN3Gfx4RS2D15PrimitiveBuffer6FreezeEv
+_ZN3Gfx4RS2D15PrimitiveBuffer7ReleaseEv
+_ZN3Gfx4RS2D15PrimitiveBuffer6CreateENS0_10VertexType4EnumEmPNS_15MemoryAllocatorES5_NS0_10BufferHint4EnumE
+_ZN3Gfx15MemoryAllocatorD0Ev
+_ZN3Gfx4RS2D19RenderSystemFactoryC2Ev
+_ZN3Gfx4RS2D19RenderSystemFactoryC1Ev
+_ZN3Gfx4RS2D19RenderSystemFactoryD2Ev
+_ZN3Gfx4RS2D19RenderSystemFactoryD1Ev
+_ZN3Gfx4RS2D19RenderSystemFactory11GetInstanceEv
+_ZN3Gfx4RS2D19RenderSystemFactory18CreateRenderSystemENS0_16RenderSystemType4EnumE
+_ZN3Gfx12MemoryPixmapC2EP14GLPaintSurface
+_ZN3Gfx12MemoryPixmapC2ENS_11PixelFormat4EnumEll
+_ZNK3Gfx21RenderTargetParameter8Integers27GetInterleavedParameterListEv
+_ZNK3Gfx21RenderTargetParameter8Integers28GetInterleavedParameterCountEv
+__aeabi_ldivmod
+atan2f
+_FSin
+sqrtf
+fabsf
+_ZN3Gfx4RS3D19RenderSystemFactoryC2Ev
+_ZN3Gfx4RS3D19RenderSystemFactoryC1Ev
+_ZN3Gfx4RS3D19RenderSystemFactoryD2Ev
+_ZN3Gfx4RS3D19RenderSystemFactoryD1Ev
+_ZN3Gfx4RS3D19RenderSystemFactory18CreateRenderSystemEPKcNS0_16RenderSystemType4EnumE
+_ZN3Gfx4RS3D19RenderSystemFactory11GetInstanceEv
+_ZN12ThreadHelper12GetTickCountEv
+_smp_cmpxchg
+_ZN12TraceMessagelsEs
+_ZN3Gfx13WindowManager11GetInstanceEv
+_ZN12TraceMessagelsEf
+strstr
+_ZN12TraceMessagelsEj
+_ZNK3Gfx4RS3D19VertexBufferBinding3EndEv
+_ZNK3Gfx4RS3D19VertexBufferBinding5BeginEv
+_ZNK3Gfx4RS3D19VertexBufferBinding7GetSizeEv
+_ZNK3Gfx4RS3D17VertexDeclaration7GetSizeEv
+_ZNK3Gfx4RS3D17VertexDeclaration3EndEv
+_ZNK3Gfx4RS3D17VertexDeclaration5BeginEv
+_ZNK3Gfx4RS3D19VertexBufferBinding9GetBufferEm
+strncmp
+_ZN3Gfx4RS3D19VertexBufferBindingC2Ev
+_ZN3Gfx4RS3D19VertexBufferBindingC1Ev
+_ZN3Gfx4RS3D19VertexBufferBinding3AddERKNS_8SmartPtrINS0_12VertexBufferENS_15OptionalDeleterIS3_14PIAllocReleaseIS3_7PIAllocINS0_24PIAllocDescriptor_BufferE18PIDefaultAllocatorEEEEEE
+_ZN3Gfx4RS3D19VertexBufferBinding7SetSizeEm
+_ZN3Gfx4RS3D19VertexBufferBinding17RemoveAllBindingsEv
+_ZN3Gfx4RS3D19VertexBufferBinding3SetEmRKNS_8SmartPtrINS0_12VertexBufferENS_15OptionalDeleterIS3_14PIAllocReleaseIS3_7PIAllocINS0_24PIAllocDescriptor_BufferE18PIDefaultAllocatorEEEEEE
+_ZN3Gfx4RS3D17VertexDeclaration3AddERKNS0_13VertexElementE
+_ZNK3Gfx4RS3D17VertexDeclaration4FindENS0_21VertexElementSemantic4EnumEt
+_ZNK3Gfx4RS3D17VertexDeclaration4FindEm
+_ZNK3Gfx4RS3D17VertexDeclaration22GetMaximumBindingIndexEv
+_ZNK3Gfx4RS3D17VertexDeclarationeqERKS1_
+_ZNK3Gfx4RS3D17VertexDeclarationneERKS1_
+_ZN3Gfx4RS3D17VertexDeclaration9RemoveAllEv
+_ZN3Gfx4RS3D17VertexDeclarationC1Ev
+_ZN3Gfx4RS3D17VertexDeclarationC2Ev
+_ZN3Gfx4RS3D17VertexDeclaration3AddENS0_21VertexElementSemantic4EnumENS0_21VertexElementDataType4EnumEmtmNS0_26VertexElementNormalization4EnumEm
+_ZN12TraceMessagelsEb
+_ZN3Gfx12MemoryPixmapC1ENS_11PixelFormat4EnumEll
+_ZN3Gfx10PixmapImplC2ENS_11PixelFormat4EnumE
+_ZN3Gfx10PixmapImplC2Ev
+_ZN3Gfx12MemoryPixmapC1Ev
+_ZN3Gfx12MemoryPixmapC2Ev
+_ZTVN3Gfx10PixmapImplE
+_ZN3Gfx10PixmapImplC1Ev
+_ZN3Gfx10PixmapImplC1ENS_11PixelFormat4EnumE
+_ZN3Gfx10PixmapImplD1Ev
+_ZN3Gfx10PixmapImplD0Ev
+_ZNK3Gfx21RenderTargetParameter7Strings5beginEv
+_ZNK3Gfx21RenderTargetParameter7Strings3endEv
+_ZN3Gfx21RenderTargetParameter8Integers5ClearEv
+_ZNK3Gfx21RenderTargetParameter8Integers5beginEv
+_ZNK3Gfx21RenderTargetParameter8Integers3endEv
+_ZN3Gfx21RenderTargetParameter8IntegersC1Ev
+_ZN3Gfx21RenderTargetParameter8IntegersC2Ev
+_ZN3Gfx21RenderTargetParameter7StringsC1Ev
+_ZN3Gfx21RenderTargetParameter7StringsC2Ev
+_ZN3Gfx21RenderTargetParameter7Strings5ClearEv
+_ZN3Gfx21RenderTargetParameter8IntegersD1Ev
+_ZN3Gfx21RenderTargetParameter8IntegersD2Ev
+_ZN3Gfx21RenderTargetParameter7StringsD1Ev
+_ZN3Gfx21RenderTargetParameter7StringsD2Ev
+_ZN3Gfx21RenderTargetParameter8Integers3AddENS_27RenderTargetFactoryParamKey4EnumEl
+_ZN3Gfx21RenderTargetParameter7Strings3AddENS_27RenderTargetFactoryParamKey4EnumEPKc
+_ZN3Gfx21RenderTargetParameter8IntegersC1EPKlm
+_ZN3Gfx21RenderTargetParameter8IntegersC2EPKlm
+_ZN3Gfx6Window7ReleaseEv
+_ZN3Gfx13WindowManager10s_instanceE
+_ZN3Gfx13WindowManagerC2Ev
+_ZN3Gfx13WindowManagerD2Ev
+_ZN3Gfx6WindowD2Ev
+calloc
+_ZNK3Gfx13WindowManager22ReliesOnExternalWindowEv
+_ZN3Gfx13WindowManager20RelyOnExternalWindowEb
+_ZN3Gfx13WindowManager16RegisterObserverEPNS_21WindowManagerObserverERK8SDString
+_ZN3Gfx13WindowManager18UnregisterObserverEPNS_21WindowManagerObserverE
+_ZN3Gfx13WindowManager21ExternalWindowCreatedERK8SDStringRKNS_12NativeWindowE
+_ZN3Gfx13WindowManager23ExternalWindowDestroyedERK8SDString
+_ZTVN3Gfx14WindowReleaserE
+_ZN3Gfx13WindowManager4InitEv
+_ZN12TraceMessagelsEPKv
+_ZN8SDStringaSEPKc
+_ZNK8SDString7IsEmptyEv
+_ZN3Gfx6WindowC2EPNS_14WindowReleaserE
+_ZTVN3Gfx13WindowManagerE
+_ZN3Gfx13WindowManagerC1Ev
+_ZN3Gfx13WindowManagerD1Ev
+_ZN3Gfx13WindowManagerD0Ev
+_ZTVN3Gfx6WindowE
+_ZN3Gfx6WindowC1EPNS_14WindowReleaserE
+_ZN3Gfx6WindowD1Ev
+_ZN3Gfx6WindowD0Ev
+libPropal-3.6.so
+_ZNK8SDString8ContainsERKS_NS_15CaseSensitivityE
+_ZNK8SDString7IndexOfERKS_lNS_15CaseSensitivityE
+_ZN8SDString7ReplaceEllRKS_
+_ZN8SDString7ReplaceERKS_S1_NS_15CaseSensitivityE
+_ZN10TraceScopeC1EP12TraceChannelPKclS3_
+_ZN4FileC1ERK8SDStringmmmmb
+_ZN4File4OpenEv
+_ZN4File11SetPositionEyNS_10MoveMethodE
+_ZN4File4ReadEPhmPm
+_ZN4File5CloseEv
+_ZN4FileD1Ev
+_ZN10TraceScopeD1Ev
+_ZN4File7GetSizeEPy
+libSystemCommon-2.11.so
+acosf
+atan2
+strncpy
+SCHeapReAlloc
+fopen
+fseek
+ftell
+fclose
+fread
+memchr
+fprintf
+_Stderr
+sscanf
+floor
+frexp
+__get_errno_ptr
+strerror
+fflush
+fwrite
+remove
+ferror
+gmtime
+libSDString-4.3.so
+libCTracer-4.5.so
+_Z12PIGetHashKeyIRK8SDStringEmT_
+_ZN12TraceMessagelsEc
+_ZN6SDCharC1Ec
+_ZNK8SDString11LastIndexOfE6SDCharlNS_15CaseSensitivityE
+_ZN6SDCharD1Ev
+_ZNK8SDString7IndexOfE6SDCharlNS_15CaseSensitivityE
+_ZNK8SDString4LeftEl
+_ZNK8SDString3MidEll
+_ZplPKcRK8SDString
+_ZN11InputStreamD1Ev
+_ZTV11InputStream
+_ZN11InputStream13CancelPendingEv
+_ZN16StreamControllerD1Ev
+_ZTV16StreamController
+_ZN16StreamController27GetStreamControllerCallbackEv
+_ZN16StreamController27SetStreamControllerCallbackEP24StreamControllerCallback
+_ZN11InputStreamD0Ev
+_ZN16StreamControllerD0Ev
+_ZN8SDString7CompareERKS_S1_NS_15CaseSensitivityE
+_ZNK8SDString11LastIndexOfERKS_lNS_15CaseSensitivityE
+_ZN10FileSystem15DirectoryExistsE8SDString
+_ZplRK8SDStringPKc
+_ZNK8SDString5RightEl
+_ZN10FileSystem14IsAbsolutePathERK8SDString
+_ZN10FileSystemC1Ev
+_ZN10FileSystemD1Ev
+_ZN10FileSystem9CreateDirE8SDString
+_ZN10FileSystem9ChangeDirE8SDString
+_ZN10FileSystem10DeleteFileE8SDString
+_ZN10FileSystem9MoveEntryE8SDStringS0_b
+_ZN10FileSystem14ToAbsolutePathERK8SDString
+_ZNK8SDStringeqEPKc
+_ZN8TimeDateC1Ev
+_ZN8TimeDate12GetTimeStampEPc
+_ZN8TimeDateD1Ev
+_ZN10FileSystem9FindEntryE8SDString
+_ZN11SDByteArray7GetDataEv
+_ZNK11SDByteArray7GetSizeEv
+_ZN10FileSystem13GetFirstEntryEPK8SDString
+_ZN10FileSystem12GetNextEntryEv
+_ZNK8SDStringneEPKc
+_ZN10FileSystem13GetCurrentDirEv
+_ZN10FileSystem7EndFindEv
+_ZN4File5WriteEPKhmPm
+_ZNK8SDString7ToLowerEv
+_ZNK8SDString7CompareEPKcNS_15CaseSensitivityE
+_ZNK8SDString7GetSizeEv
+_ZN11SDByteArrayC1EPKcl
+_ZN8SDStringaSERK11SDByteArray
+_ZN4File8GetFlagsEv
+_ZNK8SDString8EndsWithEPKcNS_15CaseSensitivityE
+_ZNK8SDString10StartsWithERKS_NS_15CaseSensitivityE
+libcpp-ne.so.4
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+libRenderSystem.so
+D:/ws/UB_sdk_nds_MIBS2B_WXP_x86_tgt_QNX65_arm/build/Release/runtime
+pbP, 
+0fP,0
+p?UUUUUU
+p?UUUUUU
+N@ffffff
+,B2< 
+1w7G#
+3w7G#
+MapRendering - RenderSystem
+MR_GFX_RenderSystem
+GFX_WARN: 
+ErrorReporter::ReportError() called with ErrorCode 
+FramebufferAccess
+FramebufferAccessStartWriteablePtr
+FramebufferAccessFinishWriteablePtr
+ImgTec
+Unknown
+NVIDIA
+NVIDIA (TEGRA 2/3)
+Qualcomm
+ARMMali
+Vivante
+Undefined
+glCreateShader
+GFX_ERR: 
+Loading of dll function failed: 
+glCreateProgram
+glShaderSource
+glCompileShader
+glShaderBinary
+glDisableVertexAttribArray
+glEnableVertexAttribArray
+glGetActiveUniform
+glGetActiveAttrib
+glGetAttribLocation
+glGetUniformiv
+glGetUniformfv
+glGetUniformLocation
+glGetShaderiv
+glGetShaderInfoLog
+glAttachShader
+glBindAttribLocation
+glLinkProgram
+glGetProgramiv
+glGetProgramInfoLog
+glUniform1i
+glUniform1f
+glUniform2f
+glUniform2fv
+glUniform3f
+glUniform3fv
+glUniform4f
+glUniform4fv
+glUniformMatrix3fv
+glUniformMatrix4fv
+glUseProgram
+glValidateProgram
+glVertexAttribPointer
+glDeleteShader
+glDeleteProgram
+glBlendEquation
+glGenFramebuffers
+glGenRenderbuffers
+glBindFramebuffer
+glBindRenderbuffer
+glRenderbufferStorage
+glFramebufferRenderbuffer
+glFramebufferTexture2D
+glCheckFramebufferStatus
+glDeleteFramebuffers
+glDeleteRenderbuffers
+glGenerateMipmap
+glWireframeEB
+glBlendEquationSeparate
+glReadBuffer
+glDrawRangeElements
+glTexImage3D
+glTexSubImage3D
+glCopyTexSubImage3D
+glCompressedTexImage3D
+glCompressedTexSubImage3D
+glGenQueries
+glDeleteQueries
+glIsQuery
+glBeginQuery
+glEndQuery
+glGetQueryiv
+glGetQueryObjectuiv
+glUnmapBuffer
+glGetBufferPointerv
+glDrawBuffers
+glUniformMatrix2x3fv
+glUniformMatrix3x2fv
+glUniformMatrix2x4fv
+glUniformMatrix4x2fv
+glUniformMatrix3x4fv
+glUniformMatrix4x3fv
+glBlitFramebuffer
+glRenderbufferStorageMultisample
+glFramebufferTextureLayer
+glMapBufferRange
+glFlushMappedBufferRange
+glBindVertexArray
+glDeleteVertexArrays
+glGenVertexArrays
+glIsVertexArray
+glGetIntegeri_v
+glBeginTransformFeedback
+glEndTransformFeedback
+glBindBufferRange
+glBindBufferBase
+glTransformFeedbackVaryings
+glGetTransformFeedbackVarying
+glVertexAttribIPointer
+glGetVertexAttribIiv
+glGetVertexAttribIuiv
+glVertexAttribI4i
+glVertexAttribI4ui
+glVertexAttribI4iv
+glVertexAttribI4uiv
+glGetUniformuiv
+glGetFragDataLocation
+glUniform1ui
+glUniform2ui
+glUniform3ui
+glUniform4ui
+glUniform1uiv
+glUniform2uiv
+glUniform3uiv
+glUniform4uiv
+glClearBufferiv
+glClearBufferuiv
+glClearBufferfv
+glClearBufferfi
+glGetStringi
+glCopyBufferSubData
+glGetUniformIndices
+glGetActiveUniformsiv
+glGetUniformBlockIndex
+glGetActiveUniformBlockiv
+glGetActiveUniformBlockName
+glUniformBlockBinding
+glDrawArraysInstanced
+glDrawElementsInstanced
+glFenceSync
+glIsSync
+glDeleteSync
+glClientWaitSync
+glWaitSync
+glGetInteger64v
+glGetSynciv
+glGetInteger64i_v
+glGetBufferParameteri64v
+glGenSamplers
+glDeleteSamplers
+glIsSampler
+glBindSampler
+glSamplerParameteri
+glSamplerParameteriv
+glSamplerParameterf
+glSamplerParameterfv
+glGetSamplerParameteriv
+glGetSamplerParameterfv
+glVertexAttribDivisor
+glBindTransformFeedback
+glDeleteTransformFeedbacks
+glGenTransformFeedbacks
+glIsTransformFeedback
+glPauseTransformFeedback
+glResumeTransformFeedback
+glGetProgramBinary
+glProgramBinary
+glProgramParameteri
+glInvalidateFramebuffer
+glInvalidateSubFramebuffer
+glTexStorage2D
+glTexStorage3D
+glGetInternalformativ
+glDispatchCompute
+glDispatchComputeIndirect
+glDrawArraysIndirect
+glDrawElementsIndirect
+glFramebufferParameteri
+glGetFramebufferParameteriv
+glGetProgramInterfaceiv
+glGetProgramResourceIndex
+glGetProgramResourceName
+glGetProgramResourceiv
+glGetProgramResourceLocation
+glUseProgramStages
+glActiveShaderProgram
+glCreateShaderProgramv
+glBindProgramPipeline
+glDeleteProgramPipelines
+glGenProgramPipelines
+glIsProgramPipeline
+glGetProgramPipelineiv
+glProgramUniform1i
+glProgramUniform2i
+glProgramUniform3i
+glProgramUniform4i
+glProgramUniform1ui
+glProgramUniform2ui
+glProgramUniform3ui
+glProgramUniform4ui
+glProgramUniform1f
+glProgramUniform2f
+glProgramUniform3f
+glProgramUniform4f
+glProgramUniform1iv
+glProgramUniform2iv
+glProgramUniform3iv
+glProgramUniform4iv
+glProgramUniform1uiv
+glProgramUniform2uiv
+glProgramUniform3uiv
+glProgramUniform4uiv
+glProgramUniform1fv
+glProgramUniform2fv
+glProgramUniform3fv
+glProgramUniform4fv
+glProgramUniformMatrix2fv
+glProgramUniformMatrix3fv
+glProgramUniformMatrix4fv
+glProgramUniformMatrix2x3fv
+glProgramUniformMatrix3x2fv
+glProgramUniformMatrix2x4fv
+glProgramUniformMatrix4x2fv
+glProgramUniformMatrix3x4fv
+glProgramUniformMatrix4x3fv
+glValidateProgramPipeline
+glGetProgramPipelineInfoLog
+glBindImageTexture
+glGetBooleani_v
+glMemoryBarrier
+glMemoryBarrierByRegion
+glTexStorage2DMultisample
+glGetMultisamplefv
+glSampleMaski
+glGetTexLevelParameteriv
+glGetTexLevelParameterfv
+glBindVertexBuffer
+glVertexAttribFormat
+glVertexAttribIFormat
+glVertexAttribBinding
+glVertexBindingDivisor
+libOpenGLWrapper
+GFX_INFO: 
+OpenGLInitializer: libOpenGLWrapper
+ loaded
+libGLESv2_wrap
+OpenGLInitializer: libGLESv2_wrap
+libEGL
+libGLESv2
+OpenGLInitializer: libEGL
+OpenGLInitializer: libGLESv2
+eglGetError
+eglGetDisplay
+eglInitialize
+eglTerminate
+eglQueryString
+eglGetConfigs
+eglChooseConfig
+eglGetConfigAttrib
+eglCreateWindowSurface
+eglCreatePbufferSurface
+eglCreatePixmapSurface
+eglDestroySurface
+eglQuerySurface
+eglBindAPI
+eglQueryAPI
+eglWaitClient
+eglReleaseThread
+eglCreatePbufferFromClientBuffer
+eglSurfaceAttrib
+eglBindTexImage
+eglReleaseTexImage
+eglSwapInterval
+eglCreateContext
+eglDestroyContext
+eglMakeCurrent
+eglGetCurrentContext
+eglGetCurrentSurface
+eglGetCurrentDisplay
+eglQueryContext
+eglWaitGL
+eglWaitNative
+eglSwapBuffers
+eglCopyBuffers
+eglGetProcAddress
+glClearColor
+glClearDepthf
+glDepthRangef
+glGetFloatv
+glGetTexParameterfv
+glLineWidth
+glPolygonOffset
+glTexParameterf
+glTexParameterfv
+glActiveTexture
+glBindBuffer
+glBindTexture
+glBlendFunc
+glBlendFuncSeparate
+glBlendColor
+glBufferData
+glBufferSubData
+glClear
+glClearStencil
+glColorMask
+glCompressedTexImage2D
+glCompressedTexSubImage2D
+glCopyTexImage2D
+glCopyTexSubImage2D
+glCullFace
+glDeleteBuffers
+glDeleteTextures
+glDepthFunc
+glDepthMask
+glDisable
+glDrawArrays
+glDrawElements
+glEnable
+glFinish
+glFlush
+glFrontFace
+glGetBooleanv
+glGetBufferParameteriv
+glGenBuffers
+glGenTextures
+glGetError
+glGetIntegerv
+glGetString
+glGetTexParameteriv
+glHint
+glIsBuffer
+glIsEnabled
+glIsTexture
+glPixelStorei
+glReadPixels
+glSampleCoverage
+glScissor
+glStencilFunc
+glStencilMask
+glStencilOp
+glStencilFuncSeparate
+glStencilMaskSeparate
+glStencilOpSeparate
+glTexImage2D
+glTexParameteri
+glTexParameteriv
+glTexSubImage2D
+glViewport
+OpenGLInitializer: failed to load mandatory OpenGLES functions!
+SetGLLoggingMode
+GetGLESVersion
+SetLinemode
+SetOpenGLCallDumper
+GetVRAMStat
+Imagination Technologies
+Advanced Micro Devices, Inc
+AMD EGL Emulator
+NVIDIA Corporation
+OpenGLInitializer: We detected NVIDIA but we need to do further tests to determine if we run on Tegra 2/3 or a different NVIDIA GPU.
+Google Inc.
+Qualcomm, Inc
+Vivante Corporation
+OpenGLInitializer: Cannot determine vendor/renderer by egl vendor because "
+" is ambiguous. We create a dummy surface+context now to get all information.
+NVIDIA Tegra 3
+NVIDIA Tegra
+PowerVR
+OpenGLInitializer detected OpenGL vendor: 
+Mesa Project
+basic_string
+UnknownVendor
+UnknownRenderer
+UnknownExtensions
+OpenGLVendorDetection: eglChooseConfig failed.
+OpenGLVendorDetection: eglCreatePbufferSurface returned EGL_NO_SURFACE.
+OpenGLVendorDetection: eglCreateContext invalid context.
+OpenGLVendorDetection: eglMakeCurrent failed.
+vector
+Gfx::TextRendering::BitmapGlyph::Init(): got invalid glyph
+CacheManager::Init(): Freetype library handle is NULL.
+CacheManager::Init(): Do not call this method more than once.
+CacheManager::Init(): max charmap bytes, max sizes and max faces must > 0.
+CacheManager::Init(): Freetype cache manager creation failed.
+CacheManager::Init(): Freetype cache creation failed.
+FT_New_Face(
+) : Font format not supported
+) : Font file not found
+) : error
+out of memory
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::TextRendering::AlternateTextRenderer>]
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::TextRendering::TextRenderer>]
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::TextRendering::GlobalData>]
+Creating freetype font resource: '
+', ID = 
+FacadeImpl::CreateFontResource(): Resource with given id already exists.
+FacadeImpl::CreateFontResource(): Invalid resource id provided.
+FacadeImpl::CreateFontResource(): Failed allocating font resource.
+FacadeImpl::CreateFontResource(): Failed initializing font resource.
+FacadeImpl::Startup(): Failed creating freetype lib.
+FacadeImpl::Startup(): Failed creating freetype cache manager.
+FacadeImpl::Startup(): Failed creating angle lookup.
+FacadeImpl::Startup(): Failed creating glyph provider.
+FacadeImpl::Startup(): Failed creating global data.
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::TextRendering::AngleLookup>]
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::TextRendering::CacheManager>]
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::TextRendering::FreetypeLib>]
+FreetypeLib::FreetypeLib(): Freetype library disposal failed.
+FreetypeLib::FreetypeLib(): Freetype library initialization failed.
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::TextRendering::ComplexGlyphIndexProvider>]
+GraphicsLib_BMP_LoadStrategy
+GraphicsLib_JPG_LoadStrategy
+GraphicsLib_PNG_LoadStrategy
+GLPngLoaderStrategy::LoadImage(): Cannot handle image of size 
+Bytes
+GLPngLoaderStrategy::LoadImageFromBuffer: Cannot handle image of color type 
+GLPngLoaderStrategy::LoadImage(): Could not create paint surface with model 
+GLPngLoaderStrategy::LoadImage(): Could not get pointer to pixel data
+GLPngLoaderStrategy::LoadImageFromBuffer: Cannot handle target color model 
+1.6.1
+PNGData: trying to create a PNG from a NULL pointer.
+WritePNGData(): error!
+PNGReader: not a valid png image.
+DecompressPNG(): png initialization failed!
+CreatePNG(): png initialization failed!
+Cannot unregister invalid image loader strategy!
+Cannot register invalid image loader strategy!
+No registered image loader strategy!
+Cannot load invalid image from file!
+GLImageLoader::LoadImageFromFile(...) : Getting size of image file "
+"  failed, may be missing resource!
+GLImageLoader::LoadImageFromFile(...) : Allocating cached image data failed!
+GLImageLoader::LoadImageFromFile(...) : Retrieving cached imaga data buffer failed!
+GLImageLoader::LoadImageFromFile(...) : Getting image data failed!
+GLImageManagerImpl::GetImage(
+) Invalid image ID.
+) Lookup failed.
+) Failed to create GLImageImpl.
+) Image invalid.
+GLImageManagerImpl::CreateMemoryImage(
+) failed. m_pImageLoader is NULL.
+) failed. Image ID already exists.
+) failed. Failed to load the image.
+MemoryImage%ld
+) failed. pResource is NULL.
+) failed. pNewImage is NULL.
+GLImageManagerImpl::RegisterImage2(
+) failed. pRessource is NULL.
+GLImageManagerImpl::RegisterImage1(
+GLStandardPainterImpl<COLORFORMAT>::Text(const pi_char*
+GLStandardPainterImpl<COLORFORMAT>::GetTextExtent (const pi_wchar*
+GLStandardPainterImpl<COLORFORMAT>::GetTextExtent (const pi_char*
+GLStandardPainterImpl<COLORFORMAT>::Text(const pi_wchar*
+Started OpenGL thread with name MR_OpenGL
+RSThread shutdown complete
+JOBMANAGER
+RSThread received shutdown task
+GFX_DEBUG: 
+RSThread was waiting for 
+ms without receiving the wakeup signal. Waiting again...
+%s_PRIO
+pthread_setschedparam
+%s RenderSystem OpenGL thread now at prio %d
+Invalid %s thread priority %d for RenderSystem OpenGL thread. Default to %d
+SWRenderSystem::SetCurrentRenderTarget(): no paint surface available, SW renderer can only render to pixmaps.
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::RS2D::SWRenderPixmap>]
+Unhandled parameter key=
+, value=
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::RS2D::SWRenderSystemPixmap>]
+void Gfx::RS3D::GenericRenderSystemImpl<Transf, RTFactory, BOFactory, TexSys, ShaderSys, Settings, InitHelper, Bindings, RTController>::FrameStartedHint() [with Transf = Gfx::RS3D::TransformationBase, RTFactory = Gfx::RS3D::ES2RenderTargetFactory, BOFactory = Gfx::RS3D::OpenGLBufferSystem, TexSys = Gfx::RS3D::OpenGLTextureMapping, ShaderSys = Gfx::RS3D::ES2ShaderSystem, Settings = Gfx::RS3D::OpenGLSettings, InitHelper = Gfx::EGLAutoInit, Bindings = Gfx::RS3D::OpenGLBufferBindings, RTController = Gfx::RS3D::OpenGLRenderTargetController]
+RenderSystem error: 
+ (skipped 
+Race condition detected: 
+void Gfx::RS3D::GenericRenderSystemImpl<Transf, RTFactory, BOFactory, TexSys, ShaderSys, Settings, InitHelper, Bindings, RTController>::FrameEndedHint() [with Transf = Gfx::RS3D::TransformationBase, RTFactory = Gfx::RS3D::ES2RenderTargetFactory, BOFactory = Gfx::RS3D::OpenGLBufferSystem, TexSys = Gfx::RS3D::OpenGLTextureMapping, ShaderSys = Gfx::RS3D::ES2ShaderSystem, Settings = Gfx::RS3D::OpenGLSettings, InitHelper = Gfx::EGLAutoInit, Bindings = Gfx::RS3D::OpenGLBufferBindings, RTController = Gfx::RS3D::OpenGLRenderTargetController]
+void Gfx::RS3D::GenericRenderSystemImpl<Transf, RTFactory, BOFactory, TexSys, ShaderSys, Settings, InitHelper, Bindings, RTController>::UpdateRenderTarget() [with Transf = Gfx::RS3D::TransformationBase, RTFactory = Gfx::RS3D::ES2RenderTargetFactory, BOFactory = Gfx::RS3D::OpenGLBufferSystem, TexSys = Gfx::RS3D::OpenGLTextureMapping, ShaderSys = Gfx::RS3D::ES2ShaderSystem, Settings = Gfx::RS3D::OpenGLSettings, InitHelper = Gfx::EGLAutoInit, Bindings = Gfx::RS3D::OpenGLBufferBindings, RTController = Gfx::RS3D::OpenGLRenderTargetController]
+pi_bool Gfx::RS3D::GenericRenderSystemImpl<Transf, RTFactory, BOFactory, TexSys, ShaderSys, Settings, InitHelper, Bindings, RTController>::SetCurrentRenderTarget(Gfx::RenderTarget*) [with Transf = Gfx::RS3D::TransformationBase, RTFactory = Gfx::RS3D::ES2RenderTargetFactory, BOFactory = Gfx::RS3D::OpenGLBufferSystem, TexSys = Gfx::RS3D::OpenGLTextureMapping, ShaderSys = Gfx::RS3D::ES2ShaderSystem, Settings = Gfx::RS3D::OpenGLSettings, InitHelper = Gfx::EGLAutoInit, Bindings = Gfx::RS3D::OpenGLBufferBindings, RTController = Gfx::RS3D::OpenGLRenderTargetController]
+Invalid
+the uniform 
+ is not available in this shader (material name: "
+Statistic overflow
+Texture creation for FBO failed 
+Depth texture creation for FBO failed 
+OpenGLRenderTargetFactory::CreateRenderWindow: no valid egl config found
+OpenGLRenderTargetFactory::CreateRenderWindow: failed to create Gfx::Window
+OpenGLRenderTargetFactory::CreateRenderTargetImpl: width=
+, height=
+, renderTargetType=
+, pixel_format=
+, layer=
+, scale=
+void Gfx::RS3D::OpenGLTextureMapping::Reset()
+GL_OES_texture_compression_S3TC
+GL_EXT_texture_compression_s3tc
+GL_EXT_texture_compression_dxt1
+GL_EXT_texture_compression_dxt5
+GL_NV_texture_compression_s3tc
+DXT (S3TC) texture compression seems to be not supported by the OpenGLES driver, so we decompress the texture on the CPU
+the texture compression format 
+ is not supported by the OpenGLES driver
+Gfx::RS3D::TexturePtr Gfx::RS3D::OpenGLTextureMapping::CreateDepthTexture(pi_int16, pi_int16)
+virtual void Gfx::RS3D::ES2RenderSystem::ClearFrameBuffer(pi_uint32, const Gfx::Color4r&, Gfx::real, pi_uint32)
+virtual void Gfx::RS3D::ES2RenderSystem::ReadPixels(pi_int32, pi_int32, pi_int32, pi_int32, Gfx::PixelFormat::Enum, pi_uchar*)
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = void (*)(Gfx::RS3D::Fence*)]
+virtual pi_bool Gfx::RS3D::ES2RenderSystem::Render(Gfx::RS3D::RenderOperation&)
+void Gfx::RS3D::GenericRenderSystemImpl<Transf, RTFactory, BOFactory, TexSys, ShaderSys, Settings, InitHelper, Bindings, RTController>::FrameEndedHint() [with Transf = Gfx::RS3D::TransformationBase, RTFactory = Gfx::RS3D::ES2RenderTargetFactory, BOFactory = Gfx::RS3D::OpenGLBufferSystem, TexSys = Gfx::RS3D::OpenGLTextureMapping, ShaderSys = Gfx::RS3D::ES2ShaderSystem, Settings = Gfx::RS3D::OpenGLSettings, InitHelper = Gfx::EGLAutoInit, Bindings = Gfx::RS3D::OpenGLBufferBindings, RTController = Gfx::RS3D::OpenGLRenderTargetController]
+virtual void Gfx::RS3D::ES2RenderSystem::Sync()
+a_position
+a_normal
+a_color
+a_texCoord
+a_custom
+u_mvpMatrix
+s_texture
+Unsupported attribute name: 
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<stlport_ext_::array<stlport_ext_::array<int, 5u>, 5u> >]
+#define NVIDIA_TEGRA
+#define NVIDIA_TEGRA_2_3
+Error in glCreateShader()! glGetError(): 
+the uniform "
+" in material "
+" was not set!
+Error compiling shader:
+Error linking program:
+Failed to upload shader; vertex[size=
+ crc=
+], fragment[size=
+compiling vertex shader failed!
+compiling fragment shader failed!
+Failed to upload shader; vertex and fragment [size=
+tegra3_
+tegra2
+GL_RENDERER is neither "NVIDIA Tegra 3" nor "NVIDIA Tegra" - that was unexpected
+shader binary version string: "
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::RS3D::ConstantNames>]
+No appropriate EGL config found!
+Using EGLConfig 
+: colorSize=
+, depthSize=
+, stencilSize=
+, numSamples=
+, GLES3=
+Antialiasing seems to be not supported --> falling back to numSamples=
+EGLInit::EGLInit()
+eglError after eglInitialize: 
+eglGetSystemTimeFrequencyNV
+Loaded EGL extension function: eglGetSystemTimeFrequencyNV
+eglGetSystemTimeNV
+Loaded EGL extension function: eglGetSystemTimeNV
+eglCreateFenceSyncNV
+Loaded EGL extension function: eglCreateFenceSyncNV
+eglDestroySyncNV
+Loaded EGL extension function: eglDestroySyncNV
+eglFenceNV
+Loaded EGL extension function: eglFenceNV
+eglClientWaitSyncNV
+Loaded EGL extension function: eglClientWaitSyncNV
+eglSignalSyncNV
+Loaded EGL extension function: eglSignalSyncNV
+eglGetSyncAttribNV
+Loaded EGL extension function: eglGetSyncAttribNV
+glCoverageMaskNV
+Loaded OGL extension function: glCoverageMaskNV
+glCoverageOperationNV
+Loaded OGL extension function: glCoverageOperationNV
+glDiscardFramebufferEXT
+Loaded OGL extension function: glDiscardFramebufferEXT
+glRenderbufferStorageMultisampleIMG
+Loaded OGL extension function: glRenderbufferStorageMultisampleIMG
+glRenderbufferStorageMultisampleANGLE
+Loaded OGL extension function: glRenderbufferStorageMultisampleANGLE
+glRenderbufferStorageMultisampleEXT
+Loaded OGL extension function: glRenderbufferStorageMultisampleEXT
+glFramebufferTexture2DMultisampleIMG
+Loaded OGL extension function: glFramebufferTexture2DMultisampleIMG
+glFramebufferTexture2DMultisampleEXT
+Loaded OGL extension function: glFramebufferTexture2DMultisampleEXT
+glBlitFramebufferANGLE
+Loaded OGL extension function: glBlitFramebufferANGLE
+eglCreateSyncKHR
+Loaded EGL extension function: eglCreateSyncKHR
+eglDestroySyncKHR
+Loaded EGL extension function: eglDestroySyncKHR
+eglClientWaitSyncKHR
+Loaded EGL extension function: eglClientWaitSyncKHR
+eglGetSyncAttribKHR
+Loaded EGL extension function: eglGetSyncAttribKHR
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::EGLContext>]
+EGLRoot::Initialize()
+EGLAutoInit::EGLAutoInit()
+EGLAutoInit::EGLAutoInit(): using display 
+EGLRoot::PrepareContext()
+creating new EGL-context (sharing context 0), because the config of the existing one does not match the now requested config
+Rendertarget needs surface to be bound.
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = Gfx::RenderTargetImplBaseDeleter]
+Invalid number of parameters 
+. Ignoring parameter key=
+Unable to resolve EGLRenderPBuffer: m_resolveCounter and m_frameCounter are equal, i.e., m_resolveCounter == 
+Unable to resolve EGLRenderPBuffer: m_resolvePixmap is invalid.
+Unable to resolve EGLRenderPBuffer: m_eglPBufferSurface.GetPixmap() failed.
+Unable to resolve EGLRenderPBuffer: invalid height 
+Unable to resolve EGLRenderPBuffer: srcPixmap and m_resolvePixmap pixel formats are not equal, i.e., 
+Unable to resolve EGLRenderPBuffer: m_nSuperSamples is invalid, i.e., 
+Unable to resolve EGLRenderPBuffer: srcPixmap height and m_resolvePixmap height are not equal, i.e., 
+Unable to resolve EGLRenderPBuffer: srcPixmap width and m_resolvePixmap width are not equal, i.e., 
+Unable to resolve EGLRenderPBuffer: Pixel format has to use 32 bits per pixel.
+dummy
+libscreen
+screen_create_context
+screen_create_window
+screen_create_window_buffers
+screen_get_context_property_iv
+screen_get_context_property_pv
+screen_set_window_property_iv
+screen_set_window_property_pv
+screen_create_window_type
+screen_join_window_group
+libOpenKodeMain
+libKD
+kdCreateWindow
+kdSetWindowPropertyiv
+kdSetWindowPropertycv
+kdRealizeWindow
+kdDestroyWindow
+kdGetError
+kdInitializeNV
+kdTerminateNV
+libdisplayinit
+display_init
+display_create_window
+display_destroy_window
+display_deinit
+display_init() failed!
+ESODisplayInitWindowManager: display_create_window() for layer 
+display_create_window for layer %d failed!
+Created GenericWindowManager
+Created ESODisplayInitWindowManager
+Created QNXScreenWindowManager
+Created OpenKODEWindowManager
+Created NullWindowManager
+OpenKODEWindowManager: kdCreateWindow() returned NULL
+; kdGetError() returned 
+kdCreateWindow failed! error: %d
+OpenKODEWindowManager: kdRealizeWindow() returned 
+kdRealizeWindow failed with %d! error: %d
+lositiniidemanifgilrArabicLayoutEngine::CalcGlyphIndicesForRun(...) : Unexpected mismatch in container sizes.
+ArabicLayoutEngine::StoreSingleGlyphSubstitutionsFromFormat1Subtable(...) : No member in which to store data for feature 
+ArabicLayoutEngine::StoreSingleGlyphSubstitutionsFromFormat2Subtable(...) : No member in which to store data for feature 
+ArabicLayoutEngine::ArabicLayoutEngine(...) : Could not load table data.
+ArabicLayoutEngine::ArabicLayoutEngine(...) : Arabic script not supported by font.
+ArabicLayoutEngine::Init(...) : Unexpected zero offsets in font file. Font may be corrupt.
+ArabicLayoutEngine::Init(...) : Arabic language table not found.
+ArabicLayoutEngine::Init(...) : Required feature has no table. Font file may be corrupt.
+ArabicLayoutEngine::Init(...) : Required feature is not supported.
+ArabicShaping::Shape(...) : Expecting client to set vector size to number of characters in text.
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::TextRendering::ArabicLayoutEngine>]
+static const char* stlport_ext_::detail::sp_typeid_<T>::name() [with T = stlport_ext_::detail::sp_ms_deleter<Gfx::TextRendering::ComplexLayoutEngine>]
+ComplexGlyphIndexProvider::Set(): Failed calculation of glyph indices for Hebrew text: 
+ComplexGlyphIndexProvider::Set(): Failed calculation of glyph indices for Arabic text: 
+ComplexLayoutEngine::CalcGlyphIndicesForRun(): Illegal usage.
+9 : E F } ~ 
+"<"="C"R"S"T"U"d"e"f"g"h"i"j"k"n"o"p"q"r"s"t"u"v"w"x"y"z"{"|"}"~"
+#)#*#h'i'j'k'l'm'n'o'p'q'r's't'u'
+)+*,*-*.*4*5*<*=*d*e*y*z*}*~*
+: 9 F E ~ } 
+)="<"
+"S"R"U"T"e"d"g"f"i"h"k"j"o"n"q"p"s"r"u"t"w"v"y"x"{"z"}"|"
+#*#)#i'h'k'j'm'l'o'n'q'p's'r'u't'
+),*+*.*-*5*4*=*<*e*d*z*y*~*}*
+ScriptListTable::FindScript(...) : Unsupported error in font file.
+?(Qjm
+?yP$t
+?~P$t
+?8Qjm
+GetFileData
+Exists
+D:/ws/UB_sdk_nds_MIBS2B_WXP_x86_tgt_QNX65_arm/src/Externals/GraphicsRS/SDTransparentArchiveAccess/Impl/SDTransparentArchiveAccess/Impl/SDTransparentArchiveAccess.cpp
+Fallback to file-system used (File: "
+" --> "
+Error while opening file "
+Error while reading from file "
+Error while determining size of file "
+.cff:
+GetFileProperties
+MR_GFX_SDTransparentArchiveAccess
+kerning
+glyph-dict
+postscript-font-name
+sfnt-table
+tt-cmaps
+/..namedfork/rsrc
+.resource/
+resource.frk/
+truetype
+truetype-engine
+.AppleDouble/
+type1
+SPACING
+FAMILY_NAME
+SLANT
+Italic
+Oblique
+WEIGHT_NAME
+SETWIDTH_NAME
+ADD_STYLE_NAME
+Regular
+RESOLUTION_X
+RESOLUTION_Y
+CHARSET_REGISTRY
+CHARSET_ENCODING
+10646
+COMMENT
+DEFAULT_CHAR
+FONT_ASCENT
+FONT_DESCENT
+ENDPROPERTIES
+_XFREE86_GLYPH_RANGES
+CHARS
+ENDFONT
+ENDCHAR
+STARTCHAR
+SWIDTH
+DWIDTH
+BITMAP
+STARTFONT
+STARTPROPERTIES
+FONTBOUNDINGBOX
+CHARSET_COLLECTIONS
+COPYRIGHT
+DESTINATION
+DEVICE_FONT_NAME
+FACE_NAME
+FONTNAME_REGISTRY
+FOUNDRY
+FULL_NAME
+ITALIC_ANGLE
+NOTICE
+RAW_ASCENT
+RAW_AVERAGE_WIDTH
+RAW_AVG_CAPITAL_WIDTH
+RAW_AVG_LOWERCASE_WIDTH
+RAW_CAP_HEIGHT
+RAW_DESCENT
+RAW_END_SPACE
+RAW_FIGURE_WIDTH
+RAW_MAX_SPACE
+RAW_MIN_SPACE
+RAW_NORM_SPACE
+RAW_PIXEL_SIZE
+RAW_POINT_SIZE
+RAW_PIXELSIZE
+RAW_POINTSIZE
+RAW_QUAD_WIDTH
+RAW_SMALL_CAP_SIZE
+RAW_STRIKEOUT_ASCENT
+RAW_STRIKEOUT_DESCENT
+RAW_SUBSCRIPT_SIZE
+RAW_SUBSCRIPT_X
+RAW_SUBSCRIPT_Y
+RAW_SUPERSCRIPT_SIZE
+RAW_SUPERSCRIPT_X
+RAW_SUPERSCRIPT_Y
+RAW_UNDERLINE_POSITION
+RAW_UNDERLINE_THICKNESS
+RAW_X_HEIGHT
+RELATIVE_SETWIDTH
+RELATIVE_WEIGHT
+RESOLUTION
+WEIGHT
+_MULE_BASELINE_OFFSET
+_MULE_RELATIVE_COMPOSE
+xf86-driver-name
+          
+pshinter
+postscript-cmaps
+Black
+postscript-info
+%!PS-Adobe-3.0 Resource-CIDFont
+StartData
+/sfnts
+(Hex)
+%ADOBeginFontDict
+psaux
+t1cid
+CIDFontName
+CIDFontVersion
+CIDFontType
+Registry
+Ordering
+Supplement
+UIDBase
+CIDMapOffset
+FDBytes
+GDBytes
+CIDCount
+version
+Notice
+FullName
+FamilyName
+Weight
+ItalicAngle
+isFixedPitch
+UnderlinePosition
+UnderlineThickness
+FSType
+PaintType
+FontType
+SubrMapOffset
+SDBytes
+SubrCount
+lenBuildCharArray
+ForceBoldThreshold
+StrokeWidth
+UniqueID
+lenIV
+LanguageGroup
+password
+BlueScale
+BlueShift
+BlueFuzz
+BlueValues
+OtherBlues
+FamilyBlues
+FamilyOtherBlues
+StdHW
+StdVW
+MinFeature
+StemSnapH
+StemSnapV
+ForceBold
+FontBBox
+FDArray
+FontMatrix
+ExpansionFactor
+CID Type 1
+pfr-metrics
+StartFontMetrics
+Ascender
+AxisLabel
+AxisType
+BlendAxisTypes
+BlendDesignMap
+BlendDesignPositions
+CapHeight
+CharWidth
+CharacterSet
+Characters
+Descender
+EncodingScheme
+EndAxis
+EndCharMetrics
+EndComposites
+EndDirection
+EndFontMetrics
+EndKernData
+EndKernPairs
+EndTrackKern
+EscChar
+FontName
+IsBaseFont
+IsCIDFont
+IsFixedPitch
+IsFixedV
+MappingScheme
+MetricsSets
+StartAxis
+StartCharMetrics
+StartComposites
+StartDirection
+StartKernData
+StartKernPairs
+StartKernPairs0
+StartKernPairs1
+StartTrackKern
+TrackKern
+VVector
+Version
+WeightVector
+XHeight
+ < C O [ c
+Y!Q!t!
+"("4"<"Da
+#\#g#w#
+&7&[-
+-/-J.+.Q/
+1O3W4M4|5
+$"$)$0$I$Y$d
+$t$~$
+%-%4%
+%T%\%g%o%{
+&A&I&R
+)@)F)U,
+','j'
+($(b1
+' '$'(0
+'B'F'J'N'R'V'Z'^'b'f0
+(:(>(B(F(J(N(R(V(Z(^0
+(x(|(
+)-);3
+)3)71
+)M)Q0
+)l)z8
+)r)v1
+*X*x*
+*0*4*8*<*@*D*H*L*P*T0
+*d*h*l*p*t0
++!+%+)+-+11
++J+O+T+Y+
++g+k+o+s+w+{4
+,',;,@0
+,/,3,76
+,P,T,X,\,`,d,h3
+-Z-s-z-
+.s.|.
+/9/B/P/`
+" 050j0q
+1Y1t1x1
+2*2129
+2S2]2g2r
+3,3>3Fd
+4/49c
+@4Y4`4l4t
+6,7U7
+;Y;q;za
+6:6O6f6
+6r6{6
+7+7?7Ha
+7c7m7t
+:%:-:2
+}:O:T:j:r:w
+=z?!@
+<6<@<t<}
+<R<\<b<i
+=@=X=d=oi
+>N>Z>o
+?5?X?g?p?~a
+@+@6@?@I
+,A1AqA|A
+A9ASA[
+B%B+B:BIBuB
+BQBkBpC
+B[B_BcBg1
+K"K-KAK]a
+DFDQD[D
+E=E{E
+DgDpDvD
+EGEPE\
+FMFUFeFpF
+GgGqG
+G G*G1GJ
+H#H-H8HeH
+IGIRI]Iga
+I&I1I7I?
+JaJfJqJ
+$J(J3J?JJ
+KiKrK
+MBMcMoM
+O+OeO
+Q0QnQ
+L*LsL
+L;LBLM
+N#N*NPNiN
+OmOxO
+PMPXPcP
+=Q@QL
+R!RNRX
+!S<SGSbSn
+T T+T4T@T
+XkXsa
+TRTiTwT
+U"UIUZUkU{
+V0VKVmVyV
+4W:WCWMWkWrW
+\X\q\
+Y0Y;YFYh
+Z$ZUZ_
+Z.Z=ZF
+[[[t[za
+[$[9[J
+]-]9]d
+]?]Yr
+e]eaa
+^2^Y^c^
+_9_F_
+```e`j`o`x`
+a(aIa]bBbRb
+cMcRc`cicxc
+cXc\1
+dUdbd
+d d)d8dH
+drd~d
+e"e/eH
+-eqe|e
+j=jbj}k
+k#kIk_k
+mHmdm
+fEfOi
+fjfxf
+i>i]ijiv
+h&h2hMh
+h[hfhu
+j&j/a
+l:lClL
+l`lkls
+mtm~m
+nMn]n
+o$o,a
+n#n*n@
+nenpn
+rfrts
+p?pXpvp
+q?qNqVqr
+r1rJrVh
+s's~s
+s5sXsgspa
+tNtqt
+u"uHuTubh
+lv&xAx^x
+y^ygywy
+v6v@vGvNvgvwx5
+wPwaw
+xIxNxT
+xhxoxxx
+y)yFr
+zNzZz
+zfzlz
+|!}}}
+|-|r|
+|<|[|b
+};}Z}a
+~G~P~^~n
+.null
+nonmarkingreturn
+notequal
+infinity
+lessequal
+greaterequal
+partialdiff
+summation
+product
+integral
+Omega
+radical
+approxequal
+Delta
+nonbreakingspace
+lozenge
+apple
+franc
+Gbreve
+gbreve
+Idotaccent
+Scedilla
+scedilla
+Cacute
+cacute
+Ccaron
+ccaron
+dcroat
+.notdef
+space
+exclam
+quotedbl
+numbersign
+dollar
+percent
+ampersand
+quoteright
+parenleft
+parenright
+asterisk
+comma
+hyphen
+period
+slash
+three
+seven
+eight
+colon
+semicolon
+equal
+greater
+question
+bracketleft
+backslash
+bracketright
+asciicircum
+underscore
+quoteleft
+braceleft
+braceright
+asciitilde
+exclamdown
+sterling
+fraction
+florin
+section
+currency
+quotesingle
+quotedblleft
+guillemotleft
+guilsinglleft
+guilsinglright
+endash
+dagger
+daggerdbl
+periodcentered
+paragraph
+bullet
+quotesinglbase
+quotedblbase
+quotedblright
+guillemotright
+ellipsis
+perthousand
+questiondown
+grave
+acute
+circumflex
+tilde
+macron
+breve
+dotaccent
+dieresis
+cedilla
+hungarumlaut
+ogonek
+caron
+emdash
+ordfeminine
+Lslash
+Oslash
+ordmasculine
+dotlessi
+lslash
+oslash
+germandbls
+onesuperior
+logicalnot
+trademark
+onehalf
+plusminus
+Thorn
+onequarter
+divide
+brokenbar
+degree
+thorn
+threequarters
+twosuperior
+registered
+minus
+multiply
+threesuperior
+copyright
+Aacute
+Acircumflex
+Adieresis
+Agrave
+Aring
+Atilde
+Ccedilla
+Eacute
+Ecircumflex
+Edieresis
+Egrave
+Iacute
+Icircumflex
+Idieresis
+Igrave
+Ntilde
+Oacute
+Ocircumflex
+Odieresis
+Ograve
+Otilde
+Scaron
+Uacute
+Ucircumflex
+Udieresis
+Ugrave
+Yacute
+Ydieresis
+Zcaron
+aacute
+acircumflex
+adieresis
+agrave
+aring
+atilde
+ccedilla
+eacute
+ecircumflex
+edieresis
+egrave
+iacute
+icircumflex
+idieresis
+igrave
+ntilde
+oacute
+ocircumflex
+odieresis
+ograve
+otilde
+scaron
+uacute
+ucircumflex
+udieresis
+ugrave
+yacute
+ydieresis
+zcaron
+exclamsmall
+Hungarumlautsmall
+dollaroldstyle
+dollarsuperior
+ampersandsmall
+Acutesmall
+parenleftsuperior
+parenrightsuperior
+twodotenleader
+onedotenleader
+zerooldstyle
+oneoldstyle
+twooldstyle
+threeoldstyle
+fouroldstyle
+fiveoldstyle
+sixoldstyle
+sevenoldstyle
+eightoldstyle
+nineoldstyle
+commasuperior
+threequartersemdash
+periodsuperior
+questionsmall
+asuperior
+bsuperior
+centsuperior
+dsuperior
+esuperior
+isuperior
+lsuperior
+msuperior
+nsuperior
+osuperior
+rsuperior
+ssuperior
+tsuperior
+parenleftinferior
+parenrightinferior
+Circumflexsmall
+hyphensuperior
+Gravesmall
+Asmall
+Bsmall
+Csmall
+Dsmall
+Esmall
+Fsmall
+Gsmall
+Hsmall
+Ismall
+Jsmall
+Ksmall
+Lsmall
+Msmall
+Nsmall
+Osmall
+Psmall
+Qsmall
+Rsmall
+Ssmall
+Tsmall
+Usmall
+Vsmall
+Wsmall
+Xsmall
+Ysmall
+Zsmall
+colonmonetary
+onefitted
+rupiah
+Tildesmall
+exclamdownsmall
+centoldstyle
+Lslashsmall
+Scaronsmall
+Zcaronsmall
+Dieresissmall
+Brevesmall
+Caronsmall
+Dotaccentsmall
+Macronsmall
+figuredash
+hypheninferior
+Ogoneksmall
+Ringsmall
+Cedillasmall
+questiondownsmall
+oneeighth
+threeeighths
+fiveeighths
+seveneighths
+onethird
+twothirds
+zerosuperior
+foursuperior
+fivesuperior
+sixsuperior
+sevensuperior
+eightsuperior
+ninesuperior
+zeroinferior
+oneinferior
+twoinferior
+threeinferior
+fourinferior
+fiveinferior
+sixinferior
+seveninferior
+eightinferior
+nineinferior
+centinferior
+dollarinferior
+periodinferior
+commainferior
+Agravesmall
+Aacutesmall
+Acircumflexsmall
+Atildesmall
+Adieresissmall
+Aringsmall
+AEsmall
+Ccedillasmall
+Egravesmall
+Eacutesmall
+Ecircumflexsmall
+Edieresissmall
+Igravesmall
+Iacutesmall
+Icircumflexsmall
+Idieresissmall
+Ethsmall
+Ntildesmall
+Ogravesmall
+Oacutesmall
+Ocircumflexsmall
+Otildesmall
+Odieresissmall
+OEsmall
+Oslashsmall
+Ugravesmall
+Uacutesmall
+Ucircumflexsmall
+Udieresissmall
+Yacutesmall
+Thornsmall
+Ydieresissmall
+001.000
+001.001
+001.002
+001.003
+Black
+Light
+Medium
+Regular
+Roman
+Semibold
+Delta
+Omega
+fraction
+hyphen
+macron
+periodcentered
+space
+Tcommaaccent
+tcommaaccent
+psnames
+raster1
+raster5
+smooth
+smooth-lcd
+smooth-lcdv
+      
+!!!!!!
+                                
+DFKaiSho-SB
+DFKaiShu
+DFKai-SB
+HuaTianSongTi?
+MingLiU
+PMingLiU
+MingLi43
+OpticalSize
+Slant
+TrueType
+multi-masters
+tt-glyf
+.notdef
+StandardEncoding
+ExpertEncoding
+ISOLatin1Encoding
+eexec
+closefile
+FontDirectory
+CharStrings
+%!PS-AdobeFont
+%!FontType
+DesignVector
+Subrs
+Private
+BuildCharArray
+%!PS-TrueTypeFont
+known
+type42
+sfnts
+Type 42
+Bold Italic
+winfonts
+Windows FNT
+cinunmraBODA1tal
+autofitter
+THEZOCQS
+HEZLOCUS
+fijkdbh
+xzroesc
+xzroesc
+pqgjy
+unknown compression method
+invalid window size
+incorrect header check
+need dictionary
+invalid block type
+invalid stored block lengths
+too many length or distance symbols
+oversubscribed dynamic bit lengths tree
+incomplete dynamic bit lengths tree
+invalid bit length repeat
+oversubscribed literal/length tree
+incomplete literal/length tree
+oversubscribed distance tree
+incomplete distance tree
+empty distance tree with lengths
+invalid literal/length code
+invalid distance code
+incorrect data check
+Bogus message code %d
+Sorry, there are legal restrictions on arithmetic coding
+ALIGN_TYPE is wrong, please fix
+MAX_ALLOC_CHUNK is wrong, please fix
+Bogus buffer control mode
+Invalid component ID %d in SOS
+DCT coefficient out of range
+IDCT output block size %d not supported
+Bogus Huffman table definition
+Bogus input colorspace
+Bogus JPEG colorspace
+Bogus marker length
+Wrong JPEG library version: library is %d, caller expects %d
+Sampling factors too large for interleaved scan
+Invalid memory pool code %d
+Unsupported JPEG data precision %d
+Invalid progressive parameters Ss=%d Se=%d Ah=%d Al=%d
+Invalid progressive parameters at scan script entry %d
+Bogus sampling factors
+Invalid scan script at entry %d
+Improper call to JPEG library in state %d
+JPEG parameter struct mismatch: library thinks size is %u, caller expects %u
+Bogus virtual array access
+Buffer passed to JPEG library is too small
+Suspension not allowed here
+CCIR601 sampling not implemented yet
+Too many color components: %d, max %d
+Unsupported color conversion request
+Bogus DAC index %d
+Bogus DAC value 0x%x
+Bogus DHT index %d
+Bogus DQT index %d
+Empty JPEG image (DNL not supported)
+Read from EMS failed
+Write to EMS failed
+Didn't expect more than one scan
+Input file read error
+Output file write error --- out of disk space?
+Fractional sampling not implemented yet
+Huffman code size table overflow
+Missing Huffman code table entry
+Maximum supported image dimension is %u pixels
+Empty input file
+Premature end of input file
+Cannot transcode due to multiple use of quantization table %d
+Scan script does not transmit all data
+Invalid color quantization mode change
+Not implemented yet
+Requested feature was omitted at compile time
+Backing store not supported
+Huffman table 0x%02x was not defined
+JPEG datastream contains no image
+Quantization table 0x%02x was not defined
+Not a JPEG file: starts with 0x%02x 0x%02x
+Insufficient memory (case %d)
+Cannot quantize more than %d color components
+Cannot quantize to fewer than %d colors
+Cannot quantize to more than %d colors
+Invalid JPEG file structure: two SOF markers
+Invalid JPEG file structure: missing SOS marker
+Unsupported JPEG process: SOF type 0x%02x
+Invalid JPEG file structure: two SOI markers
+Invalid JPEG file structure: SOS before SOF
+Failed to create temporary file %s
+Read failed on temporary file
+Seek failed on temporary file
+Write failed on temporary file --- out of disk space?
+Application transferred too few scanlines
+Unsupported marker type 0x%02x
+Virtual array controller messed up
+Image too wide for this implementation
+Read from XMS failed
+Write to XMS failed
+Copyright (C) 1998, Thomas G. Lane
+6b  27-Mar-1998
+Caution: quantization tables are too coarse for baseline JPEG
+Adobe APP14 marker: version %d, flags 0x%04x 0x%04x, transform %d
+Unknown APP0 marker (not JFIF), length %u
+Unknown APP14 marker (not Adobe), length %u
+Define Arithmetic Table 0x%02x: 0x%02x
+Define Huffman Table 0x%02x
+Define Quantization Table %d  precision %d
+Define Restart Interval %u
+Freed EMS handle %u
+Obtained EMS handle %u
+End Of Image
+        %3d %3d %3d %3d %3d %3d %3d %3d
+JFIF APP0 marker: version %d.%02d, density %dx%d  %d
+Warning: thumbnail image size does not match data length %u
+JFIF extension marker: type 0x%02x, length %u
+    with %d x %d thumbnail image
+Miscellaneous marker 0x%02x, length %u
+Unexpected marker 0x%02x
+        %4u %4u %4u %4u %4u %4u %4u %4u
+Quantizing to %d = %d*%d*%d colors
+Quantizing to %d colors
+Selected %d colors for quantization
+At marker 0x%02x, recovery action %d
+RST%d
+Smoothing not supported with nonstandard sampling ratios
+Start Of Frame 0x%02x: width=%u, height=%u, components=%d
+    Component %d: %dhx%dv q=%d
+Start of Image
+Start Of Scan: %d components
+    Component %d: dc=%d ac=%d
+  Ss=%d, Se=%d, Ah=%d, Al=%d
+Closed temporary file %s
+Opened temporary file %s
+JFIF extension marker: JPEG-compressed thumbnail image, length %u
+JFIF extension marker: palette thumbnail image, length %u
+JFIF extension marker: RGB thumbnail image, length %u
+Unrecognized component IDs %d %d %d, assuming YCbCr
+Freed XMS handle %u
+Obtained XMS handle %u
+Unknown Adobe color transform code %d
+Inconsistent progression sequence for component %d coefficient %d
+Corrupt JPEG data: %u extraneous bytes before marker 0x%02x
+Corrupt JPEG data: premature end of data segment
+Corrupt JPEG data: bad Huffman code
+Warning: unknown JFIF revision number %d.%02d
+Premature end of JPEG file
+Corrupt JPEG data: found marker 0x%02x instead of RST%d
+Invalid SOS parameters for sequential JPEG
+Application transferred too many scanlines
+JPEGMEM
+%ld%c
+sAmTb
+BKbhTb~XBK!;
+A!;I2
+!W,m]
+libpng version 1.6.1 - March 28, 2013
+Copyright (c) 1998-2013 Glenn Randers-Pehrson
+Copyright (c) 1996-1997 Andreas Dilger
+Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
+ libpng version 1.6.1 - March 28, 2013
+unexpected zlib return code
+unexpected end of LZ stream
+missing LZ dictionary
+zlib IO error
+bad parameters to zlib
+damaged LZ stream
+insufficient memory
+truncated
+unsupported zlib version
+unexpected zlib return
+ASCII conversion buffer too small
+Invalid IHDR data
+internal error handling cHRM coefficients
+internal error handling cHRM->XYZ
+Unknown freer parameter in png_data_freer
+Too many bytes for PNG signature
+profile '
+ICC profile tag start not a multiple of 4
+ICC profile tag outside profile
+invalid length
+gamma value does not match sRGB
+gamma value does not match libpng estimate
+duplicate
+gamma value out of range
+invalid sRGB rendering intent
+inconsistent rendering intents
+duplicate sRGB information ignored
+cHRM chunk does not match sRGB
+known incorrect sRGB profile
+out-of-date sRGB profile with no signature
+copyright violation: edited ICC profile ignored
+inconsistent chromaticities
+invalid end points
+internal error checking chromaticities
+invalid chromaticities
+length does not match profile
+tag count too large
+invalid rendering intent
+intent outside defined range
+invalid signature
+PCS illuminant is not D50
+RGB color space not permitted on grayscale PNG
+Gray color space not permitted on RGB PNG
+invalid ICC profile color space
+invalid embedded Abstract ICC profile
+unexpected DeviceLink ICC profile class
+unexpected NamedColor ICC profile class
+unrecognized ICC profile class
+unexpected ICC PCS encoding
+ +0000
+0123456789ABCDEFbad longjmp: 
+undefined
+libpng error: %s
+Libpng jmp_buf still allocated
+fixed point overflow in 
+Out of Memory
+Out of memory
+internal error: array realloc
+internal error: array alloc
+png_image_finish_read[color-map]: no color-map
+png_image_finish_read: invalid argument
+png_image_finish_read: damaged PNG_IMAGE_VERSION
+unexpected encoding (internal error)
+color-map index out of range
+bad encoding (internal error)
+a background color must be supplied to remove alpha/transparency
+gray[8] color-map: too few entries
+gray[16] color-map: too few entries
+gray+alpha color-map: too few entries
+gray-alpha color-map: too few entries
+ga-alpha color-map: too few entries
+rgb[ga] color-map: too few entries
+rgb[gray] color-map: too few entries
+rgb+alpha color-map: too few entries
+rgb-alpha color-map: too few entries
+rgb color-map: too few entries
+palette color-map: too few entries
+invalid PNG color type
+bad data option (internal error)
+color map overflow (BAD internal error)
+bad background index (internal error)
+read beyond end of data
+invalid memory read
+Read palette index exceeding num_palette
+Too many IDATs found
+Invalid attempt to read row data
+bad adaptive filter value
+sequential row overflow
+internal sequential row size calculation error
+lost rgb to gray
+unexpected compose
+lost/gained channels
+unexpected 8-bit transformation
+unknown interlace type
+unexpected bit depth
+png_start_read_image/png_read_update_info: duplicate call
+png_read_update_info/png_start_read_image: duplicate call
+png_read_image: unsupported transformation
+png_image_read: alpha channel lost
+unexpected alpha swap transformation
+png_read_image: invalid transformations
+bad color-map processing (internal error)
+Missing IHDR before IDAT
+Missing PLTE before IDAT
+Image is too high to process with png_read_png()
+png_image_read: out of memory
+png_image_read: opaque pointer not NULL
+png_image_begin_read_from_memory: invalid argument
+png_image_begin_read_from_memory: incorrect PNG_IMAGE_VERSION
+png_image_begin_read_from_file: invalid argument
+png_image_begin_read_from_file: incorrect PNG_IMAGE_VERSION
+png_image_begin_read_from_stdio: invalid argument
+png_image_begin_read_from_stdio: incorrect PNG_IMAGE_VERSION
+Read Error
+Call to NULL read function
+NULL row buffer
+Uninitialized row
+png_do_rgb_to_gray found nongray pixel
+png_do_quantize returned rowbytes=0
+invalid background gamma type
+invalid after png_start_read_image or png_read_update_info
+invalid before the PNG header has been read
+invalid file gamma in png_set_gamma
+invalid screen gamma in png_set_gamma
+png_set_background
+invalid error action to rgb_to_gray
+ignoring out of range rgb_to_gray coefficients
+rgb to gray red coefficient
+rgb to gray green coefficient
+gamma value
+output gamma out of expected range
+invalid alpha mode
+conflicting calls to set alpha mode and background
+""""UUUU
+PNG unsigned integer out of range
+ using zstream
+1.2.7
+Row has too many bytes to allocate in memory
+invalid chunk type
+insufficient memory to read chunk
+internal row logic error
+internal row size calculation error
+internal row width error
+invalid user transform pixel depth
+CRC error
+out of place
+invalid
+unknown chunk exceeds memory limits
+error in user chunk
+forcing save of an unhandled chunk; please call png_set_keep_unknown_chunks
+no space in chunk cache
+unhandled critical chunk
+missing IHDR
+invalid unit
+bad width format
+non-positive width
+bad height format
+non-positive height
+invalid parameter count
+unrecognized equation type
+invalid data
+invalid index
+invalid with alpha channel
+too many profiles
+invalid values
+ignored in grayscale PNG
+tRNS must be after
+hIST must be after
+bKGD must be after
+Not enough image data
+Extra compressed data
+Too much image data
+Not a PNG file
+PNG file corrupted by ASCII conversion
+zstream unclaimed
+bad keyword
+bad compression method
+extra compressed data
+unknown compression type
+bad compression info
+DDDDUUUU
+00003333
+invalid compression buffer size
+png_set_keep_unknown_chunks: invalid keep
+png_set_keep_unknown_chunks: no chunk list
+png_set_keep_unknown_chunks: too many chunks
+png_set_unknown_chunks now expects a valid location
+invalid location in png_set_unknown_chunks
+invalid unknown chunk location
+too many unknown chunks
+unknown chunk: out of memory
+too many text chunks
+text compression mode is out of range
+text chunk: out of memory
+Insufficient memory to store text
+too many sPLT chunks
+png_set_sPLT: invalid sPLT
+sPLT out of memory
+Invalid iCCP compression method
+Insufficient memory to process iCCP chunk
+Insufficient memory to process iCCP profile
+Invalid palette length
+Invalid palette
+Invalid sCAL unit
+Invalid sCAL width
+Invalid sCAL height
+Invalid pCAL equation type
+Invalid pCAL parameter count
+Invalid format for pCAL parameter
+png_set_gAMA
+cHRM Red X
+cHRM Red Y
+cHRM Red Z
+cHRM White X
+cHRM White Y
+cHRM Green X
+cHRM Green Y
+cHRM Blue X
+cHRM Blue Y
+ 0@P`p
+!1AQaq
+"2BRbr
+#3CScs
+$4DTdt
+%5EUeu
+&6FVfv
+'7GWgw
+(8HXhx
+)9IYiy
+*:JZjz
++;K[k{
+,<L\l|
+-=M]m}
+.>N^n~
+/?O_o
+png_set_filler is invalid for low bit depth gray output
+png_set_filler: inappropriate color type
+Write Error
+Call to NULL write function
+Unknown row filter for method 0
+Unknown custom filter method
+png_write_info was never called before png_write_row
+internal write transform logic error
+png_write_image: internal call error
+png_image_write_: out of memory
+png_image_write_to_stdio: invalid argument
+png_image_write_to_stdio: incorrect PNG_IMAGE_VERSION
+png_image_write_to_file: invalid argument
+png_image_write_to_file: incorrect PNG_IMAGE_VERSION
+No IDATs written into file
+Wrote palette index exceeding num_palette
+profile matches sRGB but writing iCCP instead
+Valid palette required for paletted images
+no color-map for color-mapped image
+png_write_image: unsupported transformation
+length exceeds PNG maxima
+Invalid bit depth for grayscale image
+Invalid bit depth for RGB image
+Invalid bit depth for paletted image
+Invalid bit depth for grayscale+alpha image
+Invalid bit depth for RGBA image
+Invalid image color type specified
+error writing ancillary chunked compressed data
+sPLT: invalid keyword
+Invalid number of colors in palette
+tEXt: invalid keyword
+tEXt: text too long
+Unrecognized equation type for pCAL chunk
+pCAL: invalid keyword
+in use by IDAT
+compressed data too long
+iTXt: invalid keyword
+iTXt: invalid compression
+iTXt: uncompressed text too long
+zTXt: invalid compression type
+zTXt: invalid keyword
+No profile for iCCP chunk
+ICC profile too short
+ICC profile length invalid (not a multiple of 4)
+iCCP: invalid keyword
+Z_OK on Z_FINISH with output space
+Invalid number of transparent colors specified
+Ignoring attempt to write tRNS chunk out-of-range for bit_depth
+Ignoring attempt to write 16-bit tRNS chunk when bit_depth is 8
+Can't write tRNS with an alpha channel
+unknown header flags set
+header crc mismatch
+invalid code lengths set
+invalid code -- missing end-of-block
+invalid literal/lengths set
+invalid distances set
+invalid distance too far back
+incorrect length check
+Qkkbal
+wn>Jj
+[-&LMb#{'
+w+OQvr
+R1h58
+)\ZEo^m/
+H*0"ZOW
+mj>zjZ
+l6qnk
+IiGM>nw
+1A26b
+ewh/?y
+1wsHp
+#bML"
+vQO+t
+^oEZ_
+OZw3(?
+V_:X1:
+NJ2"v
+O*9y]
+stream end
+file error
+stream error
+data error
+buffer error
+incompatible version
+ not a power-of-2 value: 
+ using: 
+blockSize
+smallObjThreshold
+NodePoolManager::Free(): no check byte found
+NodePoolManager::Free(): invalid node type
+NodePoolManager::ConsistencyCheck(): failed
+NodePoolManager::~NodePoolManager(): consistency check failed
+MR_Tools
+"$%'/1')'
+$%'/1')'
+!"&&(01(((
+%'/1J
+'/1')L
+(01((M
+%'/1'
+!"$%'
+!"&&(
+!"$%'/
+##!!((
+###!!(
+,,,,,,,,-/-,--..
+---,,66
+k(k2k<kFkPkZkd
+k k!k"k#
+k$k%k&k'k(k)k*k+k,k-k.k/k0k1k2
+k(k2k<kFkPkZkdk
+j2j2j2j2jd
+k(k2k<kFkPkZ
+retry
+~SDFileArchiveAccess
+retry
+D:/ws/UB_sdk_nds_MIBS2B_WXP_x86_tgt_QNX65_arm/src/Externals/GraphicsRS/SDFileArchiveAccess/Impl/SDFileArchiveAccess/Impl/SDFileArchiveAccess.cpp
+Could not open SDArchive '
+Could not find archive entry '
+SetPosition on archive entry failed '
+Read on archive entry failed '
+GetEntryMetaData on archive entry failed '
+Delete
+retry
+MR_GFX_SDFileArchiveAccess
+EntryName
+D:/ws/UB_sdk_nds_MIBS2B_WXP_x86_tgt_QNX65_arm/src/Externals/GraphicsRS/SDFileArchiveAccess/Impl/SDFileArchiveAccess/Impl/EntryName.cpp
+ltuox
+ltuo@c
+ltuo\g
+ltuo0g
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+libRenderSystem.so.sym
+.shstrtab
+.gnu.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes
+.gnu_debuglink

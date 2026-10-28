@@ -1,0 +1,3326 @@
+[
+  {
+    "name": "screen-cda",
+    "local_path": "delphi-dump\\ramdisk\\delphi-stage_4b0597ac42d84f0ca7dc8a8c7e138c00\\00_screen-cda",
+    "sha256": "05653d5067da9b524722a323cbc27582ff56c4a58889cd0da1e3a4f3d93d16d9",
+    "bytes": 206772,
+    "entry": "0x1031f8",
+    "section_count": 0,
+    "needed": [
+      "libXMLLib.so",
+      "libpng.so",
+      "libzlib.so",
+      "libDebugTrace.so",
+      "libXSAL.so",
+      "libWFD.so.1",
+      "libscreen.so.1",
+      "libm.so.2",
+      "libTSD.so",
+      "libc.so.3"
+    ],
+    "symbols": [
+      {
+        "name": "_setjmp",
+        "value": 1059040,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_buffer_property_iv",
+        "value": 1059052,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_create_read_struct",
+        "value": 1059064,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_set_gamma",
+        "value": 1059076,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_set_display_property_iv",
+        "value": 1059088,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__register_frame_info",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdEnumeratePorts",
+        "value": 1059112,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Create_Thread",
+        "value": 1059124,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_flush_context",
+        "value": 1059136,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "calloc",
+        "value": 1059148,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2GetAttributeValueAsInt",
+        "value": 1059160,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__sigjmp_prolog",
+        "value": 1059172,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2GetAttributeNameA",
+        "value": 1059184,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdWaitForVSyncQNX",
+        "value": 1059196,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "clock_gettime",
+        "value": 1059208,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_attr_setdetachstate",
+        "value": 1059220,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Receive",
+        "value": 1059232,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_window_property_pv",
+        "value": 1059244,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_set_scale_16",
+        "value": 1059256,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "fwrite",
+        "value": 1059268,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Create_Shared_Memory",
+        "value": 1059280,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdSetPortMode",
+        "value": 1059292,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "system",
+        "value": 1059304,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdBindSourceToPipeline",
+        "value": 1059316,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_get_rows",
+        "value": 1059328,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_set_expand",
+        "value": 1059340,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "usleep",
+        "value": 1059352,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "memcpy",
+        "value": 1059364,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_get_gAMA",
+        "value": 1059376,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_Jv_RegisterClasses",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdSetDeviceAttribi",
+        "value": 1059388,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "sleep",
+        "value": 1059400,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "name_attach",
+        "value": 1059412,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdGetError",
+        "value": 1059424,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2GetRootNode",
+        "value": 1059436,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "errno",
+        "value": 1255324,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "_fini",
+        "value": 1208936,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "pthread_attr_init",
+        "value": 1059448,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_get_valid",
+        "value": 1059460,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdDestroyWFDEGLImagesQNX",
+        "value": 1059472,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdGetPortModeAttribi",
+        "value": 1059484,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Sleep",
+        "value": 1059496,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "tsd_access_get",
+        "value": 1059508,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__cxa_finalize",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "malloc",
+        "value": 1059532,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdCreatePipeline",
+        "value": 1059544,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_init_array",
+        "value": 1059556,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__get_errno_ptr",
+        "value": 1059568,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_init_io",
+        "value": 1059580,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_display_property_pv",
+        "value": 1059592,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdDeviceCommit",
+        "value": 1059604,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "dlsym",
+        "value": 1059616,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2LoadA",
+        "value": 1059628,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_get_image_height",
+        "value": 1059640,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_attr_setstacksize",
+        "value": 1059652,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "strlen",
+        "value": 1059664,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "opendir",
+        "value": 1059676,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "tsd_access_open",
+        "value": 1059688,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_create_context",
+        "value": 1059700,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdDestroyPort",
+        "value": 1059712,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Destroy_Channel",
+        "value": 1059724,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_window_property_cv",
+        "value": 1059736,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2FreeDoc",
+        "value": 1059748,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Bind",
+        "value": 1059760,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "snprintf",
+        "value": 1059772,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Subscribe",
+        "value": 1059784,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_read_update_info",
+        "value": 1059796,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_get_image_width",
+        "value": 1059808,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Create_Queue",
+        "value": 1059820,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "atexit",
+        "value": 1059832,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "DTS_Client_Get_Frontend",
+        "value": 1059844,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__aeabi_uidiv",
+        "value": 1059856,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_set_read_fn",
+        "value": 1059868,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "munmap_device_memory",
+        "value": 1059880,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__data_start",
+        "value": 1254964,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "screen_create_pixmap",
+        "value": 1059892,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "mmap_device_memory",
+        "value": 1059904,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "access",
+        "value": 1059916,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_create_info_struct",
+        "value": 1059928,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2GetNextAttribute",
+        "value": 1059940,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "getpid",
+        "value": 1059952,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__bss_start__",
+        "value": 1255324,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_Publish",
+        "value": 1059964,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "fclose",
+        "value": 1059976,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Close_Shared_Memory",
+        "value": 1059988,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_read_window",
+        "value": 1060000,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "fread",
+        "value": 1060012,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdGetPortModes",
+        "value": 1060024,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Run",
+        "value": 1060036,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "fopen",
+        "value": 1060048,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_event_property_pv",
+        "value": 1060060,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Get_Thread_Id",
+        "value": 1060072,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdSetPipelineAttribiv",
+        "value": 1060084,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2GetAttributeValueA",
+        "value": 1060096,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__exidx_end",
+        "value": 1249768,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "pthread_attr_destroy",
+        "value": 1060108,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_event_property_iv",
+        "value": 1060120,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "ThreadCtl",
+        "value": 1060132,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdGetPortAttribi",
+        "value": 1060144,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_event",
+        "value": 1060156,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_create",
+        "value": 1060168,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_set_strip_alpha",
+        "value": 1060180,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdDestroyPipeline",
+        "value": 1060192,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_init_libc",
+        "value": 1060204,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "closedir",
+        "value": 1060216,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_window_property_iv",
+        "value": 1060228,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "longjmp",
+        "value": 1060240,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__emutls_get_address",
+        "value": 1060252,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_context_property_iv",
+        "value": 1060264,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "mmap_device_io",
+        "value": 1060276,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdDestroyDevice",
+        "value": 1060288,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "fputc",
+        "value": 1060300,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2GetNextChildNode",
+        "value": 1060312,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__end__",
+        "value": 1256384,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "png_write_image",
+        "value": 1060324,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__bss_end__",
+        "value": 1256384,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "screen_read_display",
+        "value": 1060336,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_self",
+        "value": 1060348,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "sscanf",
+        "value": 1060360,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_set_window_property_pv",
+        "value": 1060372,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdIsExtensionSupported",
+        "value": 1060384,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__aeabi_uldivmod",
+        "value": 1060396,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2GetFirstChildNode",
+        "value": 1060408,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Send",
+        "value": 1060420,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_create_pixmap_buffer",
+        "value": 1060432,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "unlink",
+        "value": 1060444,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_set_sig_bytes",
+        "value": 1060456,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_set_longjmp_fn",
+        "value": 1060468,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "memset",
+        "value": 1060480,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__bss_start",
+        "value": 1255324,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_Sync_Read",
+        "value": 1060492,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_read_image",
+        "value": 1060504,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_write_info",
+        "value": 1060516,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "DTS_Set_Thread_Name_Func_Getter",
+        "value": 1060528,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_create_write_struct",
+        "value": 1060540,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_bss_end__",
+        "value": 1256384,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "fprintf",
+        "value": 1060552,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdEnumeratePipelines",
+        "value": 1060564,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_set_gray_to_rgb",
+        "value": 1060576,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Wait_Ready",
+        "value": 1060588,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Sync_Receive",
+        "value": 1060600,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_context_property_pv",
+        "value": 1060612,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "sprintf",
+        "value": 1060624,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_destroy_pixmap",
+        "value": 1060636,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_set_IHDR",
+        "value": 1060648,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "getprio",
+        "value": 1060660,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_buffer_property_pv",
+        "value": 1060672,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdCreateDevice",
+        "value": 1060684,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_fini_array",
+        "value": 1060696,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_preinit_array",
+        "value": 1060708,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "fseek",
+        "value": 1060720,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Signal_Ready",
+        "value": 1060732,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Create_Channel",
+        "value": 1060744,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Sync_Reply",
+        "value": 1060756,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2GetNodeNameA",
+        "value": 1060768,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_sig_cmp",
+        "value": 1060780,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "tsd_access_get_utc",
+        "value": 1060792,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_set_window_property_iv",
+        "value": 1060804,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_read_png",
+        "value": 1060816,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_write_end",
+        "value": 1060828,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_setname_np",
+        "value": 1060840,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_read_info",
+        "value": 1060852,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_end",
+        "value": 1256384,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "wfdCreateWFDEGLImagesQNX",
+        "value": 1060864,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__stackavail",
+        "value": 1060876,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_set_bgr",
+        "value": 1060888,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "exit",
+        "value": 1060900,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdCreateSourceFromImage",
+        "value": 1060912,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdEnumerateDevices",
+        "value": 1060924,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "DTS_Client_Prepare_Name",
+        "value": 1060936,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdBindPipelineToPort",
+        "value": 1060948,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_set_pixmap_property_iv",
+        "value": 1060960,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "strstr",
+        "value": 1060972,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "strcmp",
+        "value": 1060984,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "xml2GetFirstAttribute",
+        "value": 1060996,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "getopt",
+        "value": 1061008,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_pixmap_property_pv",
+        "value": 1061020,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_btext",
+        "value": 1061368,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "pthread_setschedprio",
+        "value": 1061032,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "munmap_device_io",
+        "value": 1061044,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "ftell",
+        "value": 1061056,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "free",
+        "value": 1061068,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "atoi",
+        "value": 1061080,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "readdir",
+        "value": 1061092,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_get_rowbytes",
+        "value": 1061104,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Get_Config",
+        "value": 1061116,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_edata",
+        "value": 1255324,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_Get_App_Id",
+        "value": 1061128,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_create_event",
+        "value": 1061140,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "strerror",
+        "value": 1061152,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdGetPortAttribiv",
+        "value": 1061164,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_destroy_read_struct",
+        "value": 1061176,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__exidx_start",
+        "value": 1249768,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "pthread_detach",
+        "value": 1061188,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "dlopen",
+        "value": 1061200,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdDestroySource",
+        "value": 1061212,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_set_pixmap_property_cv",
+        "value": 1061224,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdCreatePort",
+        "value": 1061236,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_get_IHDR",
+        "value": 1061248,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "wfdGetPortModeAttribf",
+        "value": 1061260,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_stack",
+        "value": 524288,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "optarg",
+        "value": 1255328,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "png_destroy_write_struct",
+        "value": 1061272,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "png_get_io_ptr",
+        "value": 1061284,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "main",
+        "value": 1174520,
+        "size": 2744,
+        "defined": true
+      },
+      {
+        "name": "ftime",
+        "value": 1061296,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_init",
+        "value": 1059012,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "strcpy",
+        "value": 1061308,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Init",
+        "value": 1061320,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "DTS_System_Init",
+        "value": 1061332,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__deregister_frame_info",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "screen_get_display_property_iv",
+        "value": 1061356,
+        "size": 0,
+        "defined": false
+      }
+    ],
+    "external_layer_event_immediates": [
+      {
+        "va": "0x11708c",
+        "instruction": "movw r0, #0x1694"
+      },
+      {
+        "va": "0x1171e4",
+        "instruction": "movw r0, #0x1694"
+      },
+      {
+        "va": "0x117318",
+        "instruction": "movw r0, #0x1694"
+      },
+      {
+        "va": "0x11afe4",
+        "instruction": "movw r2, #0x1693"
+      }
+    ]
+  },
+  {
+    "name": "libXSAL.so",
+    "local_path": "delphi-dump\\ramdisk\\delphi-stage_4b0597ac42d84f0ca7dc8a8c7e138c00\\01_libXSAL.so",
+    "sha256": "b754301a9656e9d8f296d9ab0f9326749073cca602e79e63689d0290228ad4e1",
+    "bytes": 130364,
+    "entry": "0x488c",
+    "section_count": 0,
+    "needed": [
+      "libc.so.3"
+    ],
+    "symbols": [
+      {
+        "name": "SAL_I_Destroy_And_Unbind_Timers_From_Thread",
+        "value": 59704,
+        "size": 132,
+        "defined": true
+      },
+      {
+        "name": "clock_gettime",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Open_Shared_Memory",
+        "value": 89608,
+        "size": 864,
+        "defined": true
+      },
+      {
+        "name": "SAL_Start_Name_Server_Thread",
+        "value": 95536,
+        "size": 164,
+        "defined": true
+      },
+      {
+        "name": "SAL_Wait_Semaphore",
+        "value": 29252,
+        "size": 356,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Init_Time_Module",
+        "value": 56984,
+        "size": 52,
+        "defined": true
+      },
+      {
+        "name": "strcpy",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Buffer_Pools_Mutex",
+        "value": 130424,
+        "size": 8,
+        "defined": true
+      },
+      {
+        "name": "DTS_Client_Set_Dt_Level",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_NS_Unbind_Channel",
+        "value": 93104,
+        "size": 320,
+        "defined": true
+      },
+      {
+        "name": "ConnectAttach_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_mutex_timedlock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Receive_From_Timeout",
+        "value": 48912,
+        "size": 776,
+        "defined": true
+      },
+      {
+        "name": "pthread_cond_signal",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Start_Timer_Module",
+        "value": 57372,
+        "size": 228,
+        "defined": true
+      },
+      {
+        "name": "SAL_Set_Thread_Priority",
+        "value": 42712,
+        "size": 504,
+        "defined": true
+      },
+      {
+        "name": "SAL_Unselect",
+        "value": 80220,
+        "size": 432,
+        "defined": true
+      },
+      {
+        "name": "pthread_attr_destroy",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Stat_Queue",
+        "value": 47764,
+        "size": 572,
+        "defined": true
+      },
+      {
+        "name": "ConnectDetach_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "MsgSendvs_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Destroy_Channel",
+        "value": 24384,
+        "size": 260,
+        "defined": true
+      },
+      {
+        "name": "pthread_create",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_getspecific",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_rwlock_rdlock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "strerror",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_attr_init",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Deinit_Event_Property_Module",
+        "value": 48336,
+        "size": 172,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Receive_From",
+        "value": 73348,
+        "size": 884,
+        "defined": true
+      },
+      {
+        "name": "pthread_rwlock_init",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_exit",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Undeclare_Urgent",
+        "value": 78468,
+        "size": 820,
+        "defined": true
+      },
+      {
+        "name": "snprintf",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Deinit_Queue_Structure",
+        "value": 46680,
+        "size": 156,
+        "defined": true
+      },
+      {
+        "name": "sem_timedwait",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__exidx_end",
+        "value": 125048,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "munmap",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_rwlock_timedwrlock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Create_Queue_For_Thread",
+        "value": 71944,
+        "size": 300,
+        "defined": true
+      },
+      {
+        "name": "SAL_Init_RWLock_Attr",
+        "value": 65008,
+        "size": 136,
+        "defined": true
+      },
+      {
+        "name": "shm_open",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "timer_create",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "getenv",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "_bss_end__",
+        "value": 130972,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_Get_Thread_Name_Self",
+        "value": 40080,
+        "size": 60,
+        "defined": true
+      },
+      {
+        "name": "SAL_Create_Channel",
+        "value": 24644,
+        "size": 272,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Local_Publish",
+        "value": 52956,
+        "size": 528,
+        "defined": true
+      },
+      {
+        "name": "pthread_setname_np",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Get_Connection",
+        "value": 99312,
+        "size": 252,
+        "defined": true
+      },
+      {
+        "name": "usleep",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Destroy_Timer",
+        "value": 60548,
+        "size": 796,
+        "defined": true
+      },
+      {
+        "name": "SAL_Lock_Mutex_Timeout",
+        "value": 26844,
+        "size": 608,
+        "defined": true
+      },
+      {
+        "name": "SAL_Subscribe",
+        "value": 55208,
+        "size": 852,
+        "defined": true
+      },
+      {
+        "name": "getpid",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Close_Shared_Memory",
+        "value": 90472,
+        "size": 1108,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Timers",
+        "value": 130476,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_Destroy_Cond",
+        "value": 69408,
+        "size": 444,
+        "defined": true
+      },
+      {
+        "name": "SAL_Init_Cond_Attr",
+        "value": 68916,
+        "size": 136,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Post_Message_Node",
+        "value": 43832,
+        "size": 108,
+        "defined": true
+      },
+      {
+        "name": "SAL_Wait_Semaphore_Timeout",
+        "value": 29608,
+        "size": 532,
+        "defined": true
+      },
+      {
+        "name": "pthread_key_delete",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Delta_Time",
+        "value": 57360,
+        "size": 8,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Time_Diff",
+        "value": 57076,
+        "size": 56,
+        "defined": true
+      },
+      {
+        "name": "memcpy",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Wait_Ready",
+        "value": 41392,
+        "size": 484,
+        "defined": true
+      },
+      {
+        "name": "SAL_Sync_Send_SV",
+        "value": 20864,
+        "size": 484,
+        "defined": true
+      },
+      {
+        "name": "SAL_Receive_Only_Timeout",
+        "value": 50168,
+        "size": 752,
+        "defined": true
+      },
+      {
+        "name": "SAL_Get_Thread_Priority",
+        "value": 40368,
+        "size": 464,
+        "defined": true
+      },
+      {
+        "name": "pthread_mutexattr_destroy",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Deinit_Thread_Module",
+        "value": 36556,
+        "size": 220,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Connection_Id",
+        "value": 130524,
+        "size": 432,
+        "defined": true
+      },
+      {
+        "name": "MsgSend_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__cxa_finalize",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Receive_From_Timeout",
+        "value": 74880,
+        "size": 284,
+        "defined": true
+      },
+      {
+        "name": "sem_destroy",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_NS_Resolve_Channel",
+        "value": 92788,
+        "size": 316,
+        "defined": true
+      },
+      {
+        "name": "timer_delete",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Add_Node_To_Free_List",
+        "value": 43364,
+        "size": 20,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_TLS_Key_Create",
+        "value": 36776,
+        "size": 160,
+        "defined": true
+      },
+      {
+        "name": "SAL_Send_Pulse",
+        "value": 23000,
+        "size": 276,
+        "defined": true
+      },
+      {
+        "name": "malloc",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Init_Timer_Module",
+        "value": 58480,
+        "size": 644,
+        "defined": true
+      },
+      {
+        "name": "pthread_rwlock_destroy",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Run",
+        "value": 64684,
+        "size": 236,
+        "defined": true
+      },
+      {
+        "name": "SAL_NS_Init_Proxy",
+        "value": 95228,
+        "size": 272,
+        "defined": true
+      },
+      {
+        "name": "SAL_Get_Thread_Id",
+        "value": 39784,
+        "size": 12,
+        "defined": true
+      },
+      {
+        "name": "sem_wait",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__bss_start__",
+        "value": 130340,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Set_Thread_Priority",
+        "value": 35268,
+        "size": 360,
+        "defined": true
+      },
+      {
+        "name": "sem_post",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Prev_Message",
+        "value": 83380,
+        "size": 716,
+        "defined": true
+      },
+      {
+        "name": "SAL_Elapsed_Time",
+        "value": 57340,
+        "size": 20,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Stop_Timer",
+        "value": 57796,
+        "size": 52,
+        "defined": true
+      },
+      {
+        "name": "pthread_rwlock_unlock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Queue_End",
+        "value": 82060,
+        "size": 604,
+        "defined": true
+      },
+      {
+        "name": "SAL_Signal_Cond",
+        "value": 69852,
+        "size": 444,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Free_Node",
+        "value": 43384,
+        "size": 24,
+        "defined": true
+      },
+      {
+        "name": "SAL_Set_Message_Dropped_Callback",
+        "value": 88332,
+        "size": 40,
+        "defined": true
+      },
+      {
+        "name": "SAL_Wait_Cond",
+        "value": 70296,
+        "size": 548,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_NS_Data",
+        "value": 130492,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Time_Add_Offset",
+        "value": 57132,
+        "size": 100,
+        "defined": true
+      },
+      {
+        "name": "SAL_Publish",
+        "value": 53748,
+        "size": 1460,
+        "defined": true
+      },
+      {
+        "name": "SAL_Create_Mutex",
+        "value": 25060,
+        "size": 452,
+        "defined": true
+      },
+      {
+        "name": "SAL_Get_Thread_Name",
+        "value": 39796,
+        "size": 284,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Init_Connection_Module",
+        "value": 99652,
+        "size": 156,
+        "defined": true
+      },
+      {
+        "name": "ftruncate",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Signal_Ready",
+        "value": 41124,
+        "size": 268,
+        "defined": true
+      },
+      {
+        "name": "__exidx_start",
+        "value": 125048,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_TLS_Key_Delete",
+        "value": 36400,
+        "size": 156,
+        "defined": true
+      },
+      {
+        "name": "SAL_RLock_RWLock",
+        "value": 65852,
+        "size": 352,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Stop_Router_Thread",
+        "value": 63200,
+        "size": 68,
+        "defined": true
+      },
+      {
+        "name": "SAL_Create_Semaphore",
+        "value": 28168,
+        "size": 372,
+        "defined": true
+      },
+      {
+        "name": "mmap",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Receive_From",
+        "value": 74596,
+        "size": 284,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Unsubscribe_Thread_Events",
+        "value": 53484,
+        "size": 264,
+        "defined": true
+      },
+      {
+        "name": "SAL_Start_Timer_Ex",
+        "value": 62020,
+        "size": 680,
+        "defined": true
+      },
+      {
+        "name": "abort",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Create_RWLock",
+        "value": 65144,
+        "size": 356,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Thread_Id_Self",
+        "value": 130432,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_Unlock_RWLock",
+        "value": 68564,
+        "size": 352,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Run",
+        "value": 101392,
+        "size": 2548,
+        "defined": true
+      },
+      {
+        "name": "MsgReply_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Purge",
+        "value": 86752,
+        "size": 756,
+        "defined": true
+      },
+      {
+        "name": "SAL_Receive",
+        "value": 74232,
+        "size": 364,
+        "defined": true
+      },
+      {
+        "name": "SAL_Last_Message",
+        "value": 81356,
+        "size": 704,
+        "defined": true
+      },
+      {
+        "name": "SAL_Sync_Receive",
+        "value": 20036,
+        "size": 828,
+        "defined": true
+      },
+      {
+        "name": "_init",
+        "value": 16120,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_Try_Wait_Semaphore",
+        "value": 30140,
+        "size": 384,
+        "defined": true
+      },
+      {
+        "name": "SAL_Delay",
+        "value": 43216,
+        "size": 12,
+        "defined": true
+      },
+      {
+        "name": "SAL_Is_Thread_Alive",
+        "value": 40832,
+        "size": 292,
+        "defined": true
+      },
+      {
+        "name": "SAL_Purge_Only",
+        "value": 87508,
+        "size": 824,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_App_Id",
+        "value": 130496,
+        "size": 1,
+        "defined": true
+      },
+      {
+        "name": "pthread_getschedparam",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Init_Thread_Module",
+        "value": 36936,
+        "size": 984,
+        "defined": true
+      },
+      {
+        "name": "SAL_NS_Deinit_Proxy",
+        "value": 95036,
+        "size": 192,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Create_Timer",
+        "value": 57964,
+        "size": 436,
+        "defined": true
+      },
+      {
+        "name": "MsgSendv_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Stop_Timer_Module",
+        "value": 57368,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "calloc",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Create_Shared_Memory",
+        "value": 88732,
+        "size": 876,
+        "defined": true
+      },
+      {
+        "name": "fstat",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_NS_Get_Running_App_Ids",
+        "value": 92172,
+        "size": 304,
+        "defined": true
+      },
+      {
+        "name": "SAL_Remove_Message_Then_Prev",
+        "value": 84992,
+        "size": 756,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Init_Publish_Module",
+        "value": 52864,
+        "size": 56,
+        "defined": true
+      },
+      {
+        "name": "SAL_Init_Mutex_Attr",
+        "value": 24916,
+        "size": 144,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Bind_Timer_To_Thread",
+        "value": 59124,
+        "size": 80,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Init_Queue_Structure",
+        "value": 46836,
+        "size": 156,
+        "defined": true
+      },
+      {
+        "name": "pthread_rwlock_timedrdlock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__deregister_frame_info",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_NS_Thread_Data",
+        "value": 130520,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_First_Unknown_Thread_Id",
+        "value": 130500,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_Init_Thread_Attr",
+        "value": 37920,
+        "size": 164,
+        "defined": true
+      },
+      {
+        "name": "SAL_Create_Cond",
+        "value": 69052,
+        "size": 356,
+        "defined": true
+      },
+      {
+        "name": "pthread_setschedparam",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Try_Receive_From",
+        "value": 75164,
+        "size": 524,
+        "defined": true
+      },
+      {
+        "name": "SAL_WLock_RWLock_Timeout",
+        "value": 67616,
+        "size": 588,
+        "defined": true
+      },
+      {
+        "name": "SAL_Create_Timer",
+        "value": 59836,
+        "size": 712,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Unselect",
+        "value": 79348,
+        "size": 36,
+        "defined": true
+      },
+      {
+        "name": "SAL_Init",
+        "value": 63308,
+        "size": 1376,
+        "defined": true
+      },
+      {
+        "name": "SAL_Free_Buffer",
+        "value": 34148,
+        "size": 744,
+        "defined": true
+      },
+      {
+        "name": "pthread_key_create",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Remove_Message",
+        "value": 85748,
+        "size": 12,
+        "defined": true
+      },
+      {
+        "name": "__bss_end__",
+        "value": 130972,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_Get_Max_Number_Of_Threads",
+        "value": 64976,
+        "size": 32,
+        "defined": true
+      },
+      {
+        "name": "SAL_Unsubscribe",
+        "value": 56060,
+        "size": 924,
+        "defined": true
+      },
+      {
+        "name": "SAL_Lock_Mutex",
+        "value": 25956,
+        "size": 444,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Get_Free_Node",
+        "value": 45212,
+        "size": 492,
+        "defined": true
+      },
+      {
+        "name": "__get_errno_ptr",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "sem_init",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Receive_Only",
+        "value": 76336,
+        "size": 852,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Destroy_Timer",
+        "value": 57600,
+        "size": 196,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Search_Message_Queue",
+        "value": 50060,
+        "size": 108,
+        "defined": true
+      },
+      {
+        "name": "SAL_Alloc",
+        "value": 34892,
+        "size": 240,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Get_Thread_Attr",
+        "value": 36192,
+        "size": 40,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Init_Buffer_Pools",
+        "value": 30812,
+        "size": 832,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Time_Get_Seconds",
+        "value": 57040,
+        "size": 8,
+        "defined": true
+      },
+      {
+        "name": "SAL_Wait_Cond_Timeout",
+        "value": 70844,
+        "size": 616,
+        "defined": true
+      },
+      {
+        "name": "MsgReplyv_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Sync_Reply",
+        "value": 18816,
+        "size": 260,
+        "defined": true
+      },
+      {
+        "name": "pthread_attr_setstacksize",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Bind",
+        "value": 23688,
+        "size": 140,
+        "defined": true
+      },
+      {
+        "name": "pthread_rwlock_wrlock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "MsgSendsv_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Create_Message_Queue",
+        "value": 44356,
+        "size": 856,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Thread_Table",
+        "value": 130436,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "strncpy",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Select",
+        "value": 79384,
+        "size": 836,
+        "defined": true
+      },
+      {
+        "name": "SAL_Try_RLock_RWLock",
+        "value": 66792,
+        "size": 472,
+        "defined": true
+      },
+      {
+        "name": "SAL_Stop_Timer",
+        "value": 62700,
+        "size": 500,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_NS_Proxy_Data",
+        "value": 130516,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Post_Message",
+        "value": 45704,
+        "size": 976,
+        "defined": true
+      },
+      {
+        "name": "SAL_Wait_Destroyed_Timeout",
+        "value": 42296,
+        "size": 416,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Release_Message",
+        "value": 43456,
+        "size": 376,
+        "defined": true
+      },
+      {
+        "name": "SAL_Exit",
+        "value": 64920,
+        "size": 24,
+        "defined": true
+      },
+      {
+        "name": "SAL_Destroy_Buffer_Pool",
+        "value": 32732,
+        "size": 456,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Init_Event_Property_Module",
+        "value": 48508,
+        "size": 404,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Buffer_Pools_Tab",
+        "value": 130368,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "pthread_cond_init",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_RT_Channel",
+        "value": 130964,
+        "size": 8,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Get_Thread_Id",
+        "value": 36140,
+        "size": 52,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_GRT",
+        "value": 130468,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "memcmp",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_NS_Unbind_App",
+        "value": 92476,
+        "size": 312,
+        "defined": true
+      },
+      {
+        "name": "SAL_NS_Config_Ok",
+        "value": 91580,
+        "size": 208,
+        "defined": true
+      },
+      {
+        "name": "_btext",
+        "value": 18572,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_TLS_Set_Specific",
+        "value": 36232,
+        "size": 168,
+        "defined": true
+      },
+      {
+        "name": "sem_trywait",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Unbind_Timer_From_Thread",
+        "value": 59204,
+        "size": 88,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Post_Timer_Event",
+        "value": 59292,
+        "size": 412,
+        "defined": true
+      },
+      {
+        "name": "SAL_Receive_Timeout",
+        "value": 49688,
+        "size": 372,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Deinit_Publish_Module",
+        "value": 52920,
+        "size": 36,
+        "defined": true
+      },
+      {
+        "name": "SAL_Free",
+        "value": 35132,
+        "size": 136,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Pend_Message",
+        "value": 72244,
+        "size": 596,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Max_Number_Of_Buffer_Pools",
+        "value": 130504,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_Sync_Send_VS",
+        "value": 21348,
+        "size": 584,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Free_Thread_Resources",
+        "value": 35640,
+        "size": 488,
+        "defined": true
+      },
+      {
+        "name": "__bss_start",
+        "value": 130340,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_Try_WLock_RWLock",
+        "value": 68204,
+        "size": 360,
+        "defined": true
+      },
+      {
+        "name": "memset",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Destroy_Mutex",
+        "value": 25512,
+        "size": 444,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Before_Run",
+        "value": 103940,
+        "size": 484,
+        "defined": true
+      },
+      {
+        "name": "SAL_WLock_RWLock",
+        "value": 67264,
+        "size": 352,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Deinit_Time_Module",
+        "value": 57036,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_Deinit",
+        "value": 99112,
+        "size": 200,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Timers_Free_List",
+        "value": 130480,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "ChannelDestroy_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Sync_Read",
+        "value": 19452,
+        "size": 584,
+        "defined": true
+      },
+      {
+        "name": "MsgRead_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "__end__",
+        "value": 130972,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Message_Dropped_Callback",
+        "value": 130452,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Try_Pend_Message",
+        "value": 72840,
+        "size": 508,
+        "defined": true
+      },
+      {
+        "name": "SAL_Destroy_Semaphore",
+        "value": 28540,
+        "size": 356,
+        "defined": true
+      },
+      {
+        "name": "SAL_Wait_Ready_Timeout",
+        "value": 41876,
+        "size": 420,
+        "defined": true
+      },
+      {
+        "name": "MsgSendPulse_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_NS_Unsubscribe_App",
+        "value": 91788,
+        "size": 384,
+        "defined": true
+      },
+      {
+        "name": "shm_unlink",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_mutex_unlock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Name_Server_Init",
+        "value": 98696,
+        "size": 416,
+        "defined": true
+      },
+      {
+        "name": "SAL_First_Message",
+        "value": 80652,
+        "size": 704,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Max_Number_Of_Threads",
+        "value": 130508,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Remove_Node_From_Queue",
+        "value": 43408,
+        "size": 48,
+        "defined": true
+      },
+      {
+        "name": "DTS_Client_Get_Frontend",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Deinit_Timer_Module",
+        "value": 58400,
+        "size": 80,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Pend_Message_Timeout",
+        "value": 46992,
+        "size": 592,
+        "defined": true
+      },
+      {
+        "name": "_fini",
+        "value": 104424,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_After_Run",
+        "value": 100308,
+        "size": 140,
+        "defined": true
+      },
+      {
+        "name": "sprintf",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Get_Message",
+        "value": 84096,
+        "size": 140,
+        "defined": true
+      },
+      {
+        "name": "SAL_Wait_Destroyed",
+        "value": 71460,
+        "size": 484,
+        "defined": true
+      },
+      {
+        "name": "SAL_Try_Receive_From",
+        "value": 76052,
+        "size": 284,
+        "defined": true
+      },
+      {
+        "name": "SAL_Init_Semaphore_Attr",
+        "value": 28024,
+        "size": 144,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Event_Property",
+        "value": 130456,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_Sleep",
+        "value": 43228,
+        "size": 20,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Number_Of_Running_User_Threads",
+        "value": 130440,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Event_Property_Mutex",
+        "value": 130460,
+        "size": 8,
+        "defined": true
+      },
+      {
+        "name": "SAL_RLock_RWLock_Timeout",
+        "value": 66204,
+        "size": 588,
+        "defined": true
+      },
+      {
+        "name": "SAL_Create_Buffer_Pool",
+        "value": 31644,
+        "size": 1088,
+        "defined": true
+      },
+      {
+        "name": "SAL_NS_Subscribe",
+        "value": 94392,
+        "size": 644,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Start_Timer",
+        "value": 57848,
+        "size": 116,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Thread_Table_Mutex",
+        "value": 130444,
+        "size": 8,
+        "defined": true
+      },
+      {
+        "name": "SAL_Declare_Urgent",
+        "value": 77648,
+        "size": 820,
+        "defined": true
+      },
+      {
+        "name": "SAL_NS_Bind_Channel",
+        "value": 93424,
+        "size": 324,
+        "defined": true
+      },
+      {
+        "name": "pthread_rwlock_trywrlock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Remove_Node_From_List",
+        "value": 43276,
+        "size": 28,
+        "defined": true
+      },
+      {
+        "name": "pthread_rwlock_tryrdlock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Remove_Message_Then_Next",
+        "value": 84236,
+        "size": 756,
+        "defined": true
+      },
+      {
+        "name": "SAL_Signal_Semaphore",
+        "value": 28896,
+        "size": 356,
+        "defined": true
+      },
+      {
+        "name": "SAL_Is_Queue_End",
+        "value": 86256,
+        "size": 496,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Create_Shared_Memory_Path",
+        "value": 88372,
+        "size": 360,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Destroy_Message_Queue",
+        "value": 43940,
+        "size": 416,
+        "defined": true
+      },
+      {
+        "name": "pthread_self",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_mutexattr_init",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "MsgReceive_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Time_Get_Milli_Seconds",
+        "value": 57048,
+        "size": 28,
+        "defined": true
+      },
+      {
+        "name": "SAL_NS_Unsubscribe",
+        "value": 93748,
+        "size": 644,
+        "defined": true
+      },
+      {
+        "name": "pthread_mutexattr_setrecursive",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "ftime",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Connection_Id_Mutex",
+        "value": 130956,
+        "size": 8,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Get_Time",
+        "value": 57232,
+        "size": 20,
+        "defined": true
+      },
+      {
+        "name": "_edata",
+        "value": 130340,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_Sync_Reply_V",
+        "value": 19076,
+        "size": 376,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Timers_Mutex",
+        "value": 130484,
+        "size": 8,
+        "defined": true
+      },
+      {
+        "name": "_end",
+        "value": 130972,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "pthread_mutex_destroy",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Destroy_RWLock",
+        "value": 65500,
+        "size": 352,
+        "defined": true
+      },
+      {
+        "name": "SAL_Name_Server_Destroy",
+        "value": 95500,
+        "size": 36,
+        "defined": true
+      },
+      {
+        "name": "pthread_mutex_lock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Create_Thread",
+        "value": 38084,
+        "size": 1060,
+        "defined": true
+      },
+      {
+        "name": "SAL_Disconnect",
+        "value": 23276,
+        "size": 272,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Clock_Start_Time",
+        "value": 130472,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "pthread_cond_wait",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Connect",
+        "value": 24220,
+        "size": 164,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Deinit_Connection_Module",
+        "value": 99564,
+        "size": 88,
+        "defined": true
+      },
+      {
+        "name": "SAL_Local_Publish",
+        "value": 77188,
+        "size": 460,
+        "defined": true
+      },
+      {
+        "name": "SAL_Get_App_Id",
+        "value": 64944,
+        "size": 32,
+        "defined": true
+      },
+      {
+        "name": "SAL_Create_Connection",
+        "value": 23828,
+        "size": 392,
+        "defined": true
+      },
+      {
+        "name": "SAL_Unlock_Mutex",
+        "value": 26400,
+        "size": 444,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Get_Thread_Priority",
+        "value": 40140,
+        "size": 228,
+        "defined": true
+      },
+      {
+        "name": "SAL_Create_Queue",
+        "value": 47584,
+        "size": 180,
+        "defined": true
+      },
+      {
+        "name": "SAL_Alloc_Buffer",
+        "value": 33188,
+        "size": 960,
+        "defined": true
+      },
+      {
+        "name": "pthread_mutex_trylock",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Start_Timer",
+        "value": 61344,
+        "size": 676,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Deinit_Buffer_Pools",
+        "value": 30524,
+        "size": 288,
+        "defined": true
+      },
+      {
+        "name": "SAL_Sync_Send_V",
+        "value": 22516,
+        "size": 484,
+        "defined": true
+      },
+      {
+        "name": "SAL_Send",
+        "value": 50920,
+        "size": 1944,
+        "defined": true
+      },
+      {
+        "name": "SAL_Next_Message",
+        "value": 82664,
+        "size": 716,
+        "defined": true
+      },
+      {
+        "name": "pthread_cond_destroy",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_attr_setschedpolicy",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_mutex_init",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Exit_Thread",
+        "value": 35628,
+        "size": 12,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Max_Number_Of_Timers",
+        "value": 130512,
+        "size": 4,
+        "defined": true
+      },
+      {
+        "name": "_stack",
+        "value": 524288,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Free_Message_Data_Buffer",
+        "value": 43304,
+        "size": 60,
+        "defined": true
+      },
+      {
+        "name": "__data_start",
+        "value": 130336,
+        "size": 0,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_Search_Selected_Message",
+        "value": 79288,
+        "size": 60,
+        "defined": true
+      },
+      {
+        "name": "_Jv_RegisterClasses",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Unbind",
+        "value": 23548,
+        "size": 140,
+        "defined": true
+      },
+      {
+        "name": "SAL_Try_Lock_Mutex",
+        "value": 27452,
+        "size": 572,
+        "defined": true
+      },
+      {
+        "name": "pthread_attr_setdetachstate",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_I_Proccess_DT_Command",
+        "value": 99808,
+        "size": 500,
+        "defined": true
+      },
+      {
+        "name": "SAL_Is_Queue_Begin",
+        "value": 85760,
+        "size": 496,
+        "defined": true
+      },
+      {
+        "name": "ChannelCreate_r",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "timer_settime",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "pthread_cond_timedwait",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Sync_Send",
+        "value": 21932,
+        "size": 584,
+        "defined": true
+      },
+      {
+        "name": "__register_frame_info",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "close",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Try_Receive",
+        "value": 75688,
+        "size": 364,
+        "defined": true
+      },
+      {
+        "name": "SAL_I_TLS_Get_Specific",
+        "value": 36128,
+        "size": 12,
+        "defined": true
+      },
+      {
+        "name": "pthread_setspecific",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "free",
+        "value": 0,
+        "size": 0,
+        "defined": false
+      },
+      {
+        "name": "SAL_Get_Config",
+        "value": 63268,
+        "size": 40,
+        "defined": true
+      },
+      {
+        "name": "SAL_Clock",
+        "value": 57252,
+        "size": 88,
+        "defined": true
+      }
+    ],
+    "external_layer_event_immediates": []
+  }
+]

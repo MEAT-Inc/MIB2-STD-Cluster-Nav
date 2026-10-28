@@ -1,0 +1,36 @@
+{
+  "collection": "_observer_preflight_20261028_233615_52c306c9",
+  "original_summary_preserved": true,
+  "firmware_files": [
+    {
+      "remote": "/extbin/apps/bin/AndroidAuto",
+      "bytes": 482967,
+      "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271",
+      "matches_expected": true
+    },
+    {
+      "remote": "/extbin/apps/lib/libautoreceiver.so",
+      "bytes": 1621327,
+      "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d",
+      "matches_expected": true
+    },
+    {
+      "remote": "/extbin/apps/lib/libautoreceiver.so.1",
+      "bytes": 1621327,
+      "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d",
+      "matches_expected": true
+    }
+  ],
+  "all_commands_ok": true,
+  "android_process_found": true,
+  "receiver_mapping": {
+    "displayed_name": "bautoreceiver.so.1",
+    "expected_basename": "libautoreceiver.so.1",
+    "mapping_start": "0x78100000",
+    "name_truncated": true
+  },
+  "preflight_collection_passed": true,
+  "original_false_negative": "pidin truncates library names to its display field width",
+  "deployment_ready": false,
+  "remaining": "procman startup/restart policy and actual process ancestry"
+}

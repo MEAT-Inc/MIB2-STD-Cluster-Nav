@@ -1,0 +1,83 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.asl.internal.carplay.common;
+
+public class CarPlayConstants {
+    public static final int CARPLAY_CONTEXT_INDEX = 7;
+    public static final int CONNECTION_STATE_DISCONNECTED = 0;
+    public static final int CONNECTION_STATE_WAITING_FOR_DSI = 1;
+    public static final int CONNECTION_STATE_WAITING_FOR_CONNECTION = 2;
+    public static final int CONNECTION_STATE_CONNECTED = 3;
+    public static final int ENTERTAINMENT_SOURCE_UNKNOWN = 0;
+    public static final int ENTERTAINMENT_SOURCE_CARPLAY = 2;
+    public static final int ENTERTAINMENT_SOURCE_OTHER = 3;
+    public static final int AUDIO_SOURCE_UNKNOWN = 0;
+    public static final int AUDIO_SOURCE_ = 1;
+    public static final int AUDIO_SOURCE_CARPLAY_PHONE = 2;
+    public static final int AUDIO_SOURCE_CARPLAY_SPEECH = 3;
+    public static final int AUDIO_SOURCE_CARPLAY_MEDIA = 4;
+    public static final int AUDIO_SOURCE_HMI = 5;
+    public static final int AUDIO_STATUS_IGNORE = -1;
+    public static final int AUDIO_STATUS_NOT_REQUESTED = 0;
+    public static final int AUDIO_STATUS_ENTERTAINMENT_REQUESTED = 1;
+    public static final int AUDIO_STATUS_SOUND_REQUESTED = 2;
+    public static final int AUDIO_STATUS_READY = 3;
+    public static final int NAVIGATION_UNKNOWN = 0;
+    public static final int NAVIGATION_INACTIVE = 1;
+    public static final int NAVIGATION_CARPLAY = 2;
+    public static final int NAVIGATION_HMI = 3;
+    public static final int SPEECH_UNKNOWN = 0;
+    public static final int SPEECH_INACTIVE = 1;
+    public static final int SPEECH_CARPLAY = 2;
+    public static final int SPEECH_HMI = 3;
+    public static final int MAIN_SCREEN_SOURCE_UNKNOWN = 0;
+    public static final int MAIN_SCREEN_SOURCE_HMI = 1;
+    public static final int MAIN_SCREEN_SOURCE_DEVICE = 2;
+    public static final int MAIN_AUDIO_SOURCE_UNKNOWN = 0;
+    public static final int MAIN_AUDIO_SOURCE_HMI = 1;
+    public static final int MAIN_AUDIO_SOURCE_DEVICE = 2;
+    public static final int RESOURCE_REQUEST_UNDEFINED = -1;
+    public static final int RESOURCE_REQUEST_CARPLAY_MAINSCREEN = 0;
+    public static final int RESOURCE_REQUEST_CARPLAY_MAINAUDIO = 1;
+    public static final int RESOURCE_REQUEST_CARPLAY_MAINSCREEN_AND_MAINAUDIO = 2;
+    public static final int RESOURCE_REQUEST_REASON_UNDEFINED = -1;
+    public static final int RESOURCE_REQUEST_REASON_DEFAULT = 0;
+    public static final int RESOURCE_REQUEST_REASON_CARPLAY_PHONECALL = 1;
+    public static final int RESOURCE_REQUEST_REASON_CARPLAY_SPEECH_SPEAK = 2;
+    public static final int RESOURCE_REQUEST_REASON_CARPLAY_SPEECH_RECOGNIZING = 3;
+    public static final int RESOURCE_REQUEST_REASON_CARPLAY_MEDIA = 4;
+    public static final int RESOURCE_REQUEST_REASON_HMI_PHONECALL = 5;
+    public static final int RESOURCE_REQUEST_REASON_HMI_SPEECH = 6;
+    public static final int SOUND_CHANNEL_IGNORE = -1;
+    public static final boolean RELEASE_ENTERTAINMENT = true;
+    public static final boolean DONT_RELEASE_ENTERTAINMENT = false;
+    public static final boolean RELEASE_ANNOUNCEMENT = true;
+    public static final boolean DONT_RELEASE_ANNOUNCEMENT = false;
+    public static final int RINGTONE_CONNECTION_UNKNOWN = -1;
+    public static final boolean CARPLAY_NAVIGATION_ACTIVE = true;
+    public static final boolean CARPLAY_NAVIGATION_INACTIVE = false;
+    public static final int TIMER_1000_MS = 1000;
+    public static final int TIMER_3000_MS = 3000;
+    public static final int TIMER_5000_MS = 5000;
+    public static final int TIMER_300_MS = 300;
+    public static final int TIMER_450_MS = 450;
+    public static final int LAST_ENTERTAINMENT_CONTEXT_UNKNOWN = -1;
+    public static final int PTT_KEY_NONE = 0;
+    public static final int PTT_KEY_PRESSED = 1;
+    public static final int PTT_KEY_LONGPRESSED = 2;
+    public static final int PTT_KEY_RELEASED = 3;
+    public static final int PTT_KEY_LONGRELEASED = 4;
+    public static final int NO_INPUT_SOURCE = -1;
+    public static final boolean SET_CONNECTION_ALWAYS = true;
+    public static final boolean SET_CONNECTION_IF_NOT_READY = false;
+    public static final boolean RELEASE_CONNECTION_ALWAYS = true;
+    public static final boolean RELEASE_CONNECTION_IF_REQ_OR_READY = false;
+    public static final String OEM_ICON_TITLE_VW = "Volkswagen";
+    public static final String OEM_ICON_TITLE_SEAT = "SEAT";
+    public static final String OEM_ICON_TITLE_SKODA = "SKODA";
+    public static final String OEM_ICON_TITLE_DEFAULT = "HMI";
+    public static final String DEFAULT_REASON = "User initiated";
+    public static final long TIMER_POPUP_UPDATE = 200L;
+}
+

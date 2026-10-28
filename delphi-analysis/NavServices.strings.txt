@@ -1,0 +1,4221 @@
+/usr/lib/ldqnx.so.2
+libXSAL.so
+clock_gettime
+strcpy
+pthread_cond_signal
+SAL_Set_Thread_Priority
+SAL_Stat_Queue
+strerror
+SAL_Undeclare_Urgent
+munmap
+SAL_Create_Queue_For_Thread
+SAL_Get_Thread_Name_Self
+pthread_setname_np
+SAL_Destroy_Timer
+SAL_Subscribe
+getpid
+SAL_Wait_Ready
+SAL_Get_Thread_Priority
+__cxa_finalize
+malloc
+SAL_Run
+SAL_Get_Thread_Id
+SAL_Publish
+SAL_Create_Mutex
+SAL_Get_Thread_Name
+SAL_Signal_Ready
+SAL_Receive_From
+SAL_Start_Timer_Ex
+abort
+SAL_Receive
+SAL_Is_Thread_Alive
+pthread_getschedparam
+fstat
+__deregister_frame_info
+SAL_Init_Thread_Attr
+pthread_setschedparam
+SAL_Create_Timer
+SAL_Init
+SAL_Get_Max_Number_Of_Threads
+SAL_Unsubscribe
+SAL_Lock_Mutex
+__get_errno_ptr
+strncpy
+SAL_Stop_Timer
+SAL_Exit
+pthread_cond_init
+SAL_Sync_Send_VS
+SAL_Destroy_Mutex
+pthread_mutex_unlock
+DTS_Client_Get_Frontend
+_fini
+sprintf
+SAL_Wait_Destroyed
+SAL_Sleep
+SAL_Declare_Urgent
+pthread_self
+pthread_mutex_destroy
+pthread_mutex_lock
+SAL_Create_Thread
+SAL_Disconnect
+pthread_cond_wait
+SAL_Connect
+SAL_Local_Publish
+SAL_Get_App_Id
+SAL_Unlock_Mutex
+SAL_Create_Queue
+SAL_Start_Timer
+SAL_Send
+pthread_cond_destroy
+pthread_mutex_init
+_Jv_RegisterClasses
+SAL_Try_Lock_Mutex
+pthread_cond_timedwait
+__register_frame_info
+SAL_Get_Config
+libDebugTrace.so
+__aeabi_unwind_cpp_pr0
+_Stdout
+_Tolotab
+_Ctype
+__aeabi_uldivmod
+vsnprintf
+Dt_Get_Group_Mask
+fflush
+strtol
+DTS_System_Init
+DTS_Set_Thread_Name_Func_Getter
+strncmp
+realloc
+fopen
+__aeabi_uidiv
+fclose
+_Stderr
+__aeabi_uidivmod
+fwrite
+strlen
+fputs
+Dt_Get_Settings
+DTS_Client_Prepare_Name
+libNavConfigProvider.so
+_ZN9NavConfig17NavConfigProvider11getInstanceEv
+_ZNKSt12_String_base5_XranEv
+_ZNK9NavConfig17NavConfigProvider13getConfigPathENS_15eNavConfigPathsE
+_ZNKSt12_String_base5_XlenEv
+_ZNSs6assignERKSsjj
+_ZdlPv
+_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
+_Znwj
+_ZNSs5_TidyEbj
+libXMLLib.so
+xml2FreeDoc
+xml2GetNodeA
+xml2LoadA
+xml2GetRootNode
+xml2GetNodeNameA
+xml2GetNextChildNode
+xml2GetFirstChildNode
+xml2FindAttributeA
+__aeabi_unwind_cpp_pr1
+sem_wait
+SAL_Open_Shared_Memory
+SAL_Close_Shared_Memory
+sem_post
+libm.so.2
+fmodf
+__aeabi_d2lz
+floor
+fabsf
+atan2
+__aeabi_ldivmod
+libicudata.so
+libicui18n.so
+_ZNK6icu_5513UnicodeString13doCaseCompareEiiPKtiij
+_ZN6icu_556LocaleC1EPKcS2_S2_S2_
+_ZN6icu_5512CollationKeyC1Ev
+__cxa_pure_virtual
+_ZN6icu_558Collator14createInstanceERKNS_6LocaleER10UErrorCode
+ucnv_open_55
+_ZN6icu_5513UnicodeStringC1EPKti
+strncat
+_ZN6icu_558Collator14createInstanceER10UErrorCode
+_ZN6icu_5513UnicodeStringD1Ev
+_ZNK6icu_5512CollationKey9compareToERKS0_
+qsort
+_ZN6icu_556LocaleD1Ev
+_ZN6icu_5512CollationKeyD1Ev
+ucnv_close_55
+strcmp
+__aeabi_idiv
+libicuuc.so
+strtoul
+fgets
+_ZN6icu_5513UnicodeStringC1EPKciP10UConverterR10UErrorCode
+u_strFromWCS_55
+pthread_cond_broadcast
+strstr
+libUtilities.so
+CRC32_new
+_ZN9SALString6assignEPKc
+_ZNSt5ctypeIcED1Ev
+_ZN9Timestamp5stampEv
+_ZNKSt5ctypeIcE10do_tolowerEPcPKc
+_Znaj
+_ZN9SALStringD1Ev
+_ZNKSt11logic_error4whatEv
+_ZdaPv
+_ZNSs5_GrowEjb
+_ZNKSt5ctypeIcE10do_toupperEPcPKc
+_ZTVNSt6locale5facetE
+_ZNSt12length_errorD0Ev
+_ZNSt10ctype_baseD1Ev
+wmemmove
+devctl
+lseek
+__aeabi_atexit
+_ZNKSt5ctypeIcE10do_tolowerEc
+_Z7wcs2mbsRKSbIwSt11char_traitsIwESaIwEE
+_ZNSt6_WinitC1Ev
+_ZNK9Timestamp13getPassedTimeEv
+_Z25getLongitudeFromMercatorXi
+__assert
+CRC32_delete
+_ZNSs5eraseEjj
+_ZNSt5ctypeIcED0Ev
+_ZNKSt5ctypeIcE9do_narrowEPKcS2_cPc
+_ZTVSt11logic_error
+_ZNSt6locale5facetD1Ev
+_ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb
+_ZTV9SALString
+_ZN9SALStringaSERKS_
+_Z22getLatLongFromMercatorRK16MercatorPosition
+_ZTVSt10ctype_base
+fputc
+_ZNSt11logic_errorD1Ev
+_ZNSt8ios_base4InitD1Ev
+_ZNKSt5ctypeIcE9do_narrowEcc
+_ZNSt6vectorISsSaISsEE9_Insert_nESt16_Vector_iteratorISsS0_EjRKSs
+sscanf
+_ZTVSt12length_error
+_ZNSt6locale5facetD0Ev
+_ZNKSt5ctypeIcE10do_toupperEc
+_Z25getMercatorXFromLongituded
+_ZN9SALStringD0Ev
+_ZNSt6_WinitD1Ev
+_ZNSt9_FacetptrISt5ctypeIcEE6_PsaveE
+_ZNSt8ios_base4InitC1Ev
+_Z22getMercatorFromLatLongRK13WorldPosition
+_ZNSt12length_errorD1Ev
+_ZN9TimestampC1Ev
+_Z24getMercatorYFromLatituded
+_ZTVSt5ctypeIcE
+_ZNSt10ctype_baseD0Ev
+_ZNSt9exceptionD2Ev
+_Touptab
+__stackavail
+_Z7mbs2wcsRKSs
+_ZNKSt12length_error8_DoraiseEv
+_ZNKSt11logic_error8_DoraiseEv
+_ZNSt11logic_errorD0Ev
+wmemcpy
+_Z24getLatitudeFromMercatorYi
+_ZNKSt9exception6_RaiseEv
+strdup
+_ZSt6_ThrowRKSt9exception
+_ZNKSt5ctypeIcE8do_widenEPKcS2_Pc
+wcslen
+_ZNKSt5ctypeIcE8do_widenEc
+_ZN9SALStringC1ERKS_
+libTSD.so
+tsd_access_get_us
+libsocket.so.3
+sigemptyset
+ferror
+delay
+fgetc
+strcspn
+libcpp-ne.so.4
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewb
+_ZNKSt12codecvt_base16do_always_noconvEv
+_Locale
+_ZSt9use_facetISt5ctypeIwEERKT_RKSt6locale
+_ZNSt15basic_streambufIwSt11char_traitsIwEE6xsputnEPKwi
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsgetnEPci
+_ZNSt15basic_streambufIcSt11char_traitsIcEED1Ev
+_ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetE
+_ZNSt6locale5facet9_RegisterEv
+_ZNKSt5ctypeIwE10do_toupperEw
+strftime
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5_LockEv
+_ZSt9use_facetISt8numpunctIwEERKT_RKSt6locale
+_ZSt13set_terminatePFvvE
+_ZZNSt13basic_filebufIcSt11char_traitsIcEE5_InitEP6_FiletNS2_7_InitflEE7_Stinit
+_ZTVSt7codecvtIcc9_MbstatetE
+_ZNSt13basic_filebufIcSt11char_traitsIcEE5imbueERKSt6locale
+_ZGVNSt8numpunctIwE2idE
+_ZNSbIwSt11char_traitsIwESaIwEE5eraseEjj
+_ZNSs6insertEjjc
+_ZNSt6_MutexD1Ev
+_ZNKSt5ctypeIwE11do_scan_notEsPKwS2_
+_ZNSt15basic_streambufIwSt11char_traitsIwEE5uflowEv
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPKv
+_ZNKSt5ctypeIwE5do_isEPKwS2_Ps
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_FputES3_RSt8ios_basewPKcjjjj
+_ZNKSt8numpunctIwE11do_truenameEv
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd
+_ZNSsC1EPKc
+_ZNSt15basic_streambufIwSt11char_traitsIwEE7_UnlockEv
+_ZNSt19istreambuf_iteratorIwSt11char_traitsIwEE5_PeekEv
+_ZTVSt13basic_istreamIwSt11char_traitsIwEE
+_ZNSt7codecvtIcc9_MbstatetED1Ev
+_ZTVSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE
+_ZNSiD0Ev
+_ZTTSt13basic_ostreamIwSt11char_traitsIwEE
+_ZNSt9_FacetptrISt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEE6_PsaveE
+_ZNSt9basic_iosIcSt11char_traitsIcEED0Ev
+_ZTVSt12out_of_range
+_ZNKSt7codecvtIcc9_MbstatetE10do_unshiftERS0_PcS3_RS3_
+_ZNSt8numpunctIwED1Ev
+__cxa_guard_release
+_ZNKSt8numpunctIwE11do_groupingEv
+_ZNSt13basic_istreamIwSt11char_traitsIwEED1Ev
+_ZSt7_BADOFF
+_ZNSt7codecvtIcc9_MbstatetED0Ev
+_ZTVSt8numpunctIwE
+_ZNSbIwSt11char_traitsIwESaIwEE5_TidyEbj
+_ZGVNSt7codecvtIcc9_MbstatetE2idE
+_ZTVSt9exception
+_ZNSt12out_of_rangeD0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5uflowEv
+_ZNSt4fposI9_MbstatetE4_StzE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9showmanycEv
+_ZNKSt8numpunctIwE12do_falsenameEv
+_ZNSt9_FacetptrISt8numpunctIwEE6_PsaveE
+_ZNKSt7codecvtIcc9_MbstatetE5do_inERS0_PKcS4_RS4_PcS6_RS6_
+_ZNSt6localeC1Ev
+_ZNSt13basic_filebufIcSt11char_traitsIcEE9underflowEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZNSt8_LocinfoD1Ev
+_ZNKSt5ctypeIwE9do_narrowEPKwS2_cPc
+_ZNSt13basic_filebufIcSt11char_traitsIcEE5uflowEv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZTVSt9basic_iosIcSt11char_traitsIcEE
+_ZNSt6locale2id7_Id_cntE
+_ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE2idE
+_ZNKSt5ctypeIwE8do_widenEPKcS2_Pw
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb
+__gxx_personality_v0
+_ZTv0_n12_NSt13basic_ostreamIwSt11char_traitsIwEED0Ev
+_ZNSt9basic_iosIwSt11char_traitsIwEED0Ev
+_ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_jj
+_ZnwjRKSt9nothrow_t
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewy
+_ZNSt15basic_streambufIwSt11char_traitsIwEE4syncEv
+_ZNKSt8numpunctIwE16do_decimal_pointEv
+_ZNSt7codecvtIcc9_MbstatetE2idE
+_ZNKSt5ctypeIwE10do_tolowerEw
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewm
+_Stoulx
+_ZTTSt13basic_istreamIwSt11char_traitsIwEE
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewe
+_ZNKSt5ctypeIwE10do_toupperEPwPKw
+_ZSt15set_new_handlerPFvvE
+_ZSt7nothrow
+_ZNSt12out_of_rangeD1Ev
+_ZNSt5ctypeIwED1Ev
+_ZGVNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE2idE
+mbrtowc
+_ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev
+_ZNSt15basic_streambufIwSt11char_traitsIwEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZGVNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE2idE
+_ZNSt15basic_streambufIwSt11char_traitsIwEED0Ev
+_ZSt10_MaklocchrIwET_cPS0_RKSt7_Cvtvec
+_Locksyslock
+_ZTv0_n12_NSt13basic_istreamIwSt11char_traitsIwEED1Ev
+_ZTVSt15basic_streambufIwSt11char_traitsIwEE
+setvbuf
+_ZTVSt12codecvt_base
+_ZNSt15basic_streambufIwSt11char_traitsIwEE9pbackfailEl
+_Stofx
+_ZNSt6_Mutex7_UnlockEv
+_ZNKSt5ctypeIwE10do_scan_isEsPKwS2_
+_ZNKSt12out_of_range8_DoraiseEv
+_ZNSt9_FacetptrISt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEE6_PsaveE
+__cxa_end_cleanup
+_ZNSt19istreambuf_iteratorIwSt11char_traitsIwEEppEv
+_ZSt4_Fpz
+_ZNSt15basic_streambufIwSt11char_traitsIwEE9showmanycEv
+_ZNSt15basic_streambufIwSt11char_traitsIwEE9underflowEv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE9pbackfailEi
+_ZNSt9basic_iosIcSt11char_traitsIcEED1Ev
+_ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED0Ev
+_ZNSt6_MutexC1Ev
+__cxa_guard_acquire
+_ZNSt12codecvt_baseD0Ev
+_Stoldx
+_ZNSt8numpunctIwED0Ev
+_ZTVSt13basic_filebufIcSt11char_traitsIcEE
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_IputES3_RSt8ios_basewPcj
+_ZNSs6appendERKSsjj
+_ZTVSt15basic_streambufIcSt11char_traitsIcEE
+_ZNKSt5ctypeIwE5do_isEsw
+_ZTVSt5ctypeIwE
+_ZNSt13basic_istreamIwSt11char_traitsIwEED0Ev
+_ZNSt8numpunctIwE7_GetcatEPPKNSt6locale5facetE
+_ZNKSt7codecvtIcc9_MbstatetE6do_outERS0_PKcS4_RS4_PcS6_RS6_
+_ZNKSt7codecvtIcc9_MbstatetE9do_lengthERKS0_PKcS5_j
+fsetpos
+_Stodx
+_ZNSiD1Ev
+_Stollx
+_ZNSt6localeD1Ev
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9underflowEv
+wmemset
+_ZNSbIwSt11char_traitsIwESaIwEE6assignEPKwj
+_ZNSt9_FacetptrISt5ctypeIwEE6_PsaveE
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf
+_ZNKSt12codecvt_base13do_max_lengthEv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE6setbufEPci
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9pbackfailEi
+wcrtomb
+_ZNSt5ctypeIwE2idE
+_ZNSs6appendEjc
+_ZNKSt5ctypeIwE9do_narrowEwc
+_ZNSt8ios_baseD2Ev
+_ZTVSi
+_ZNSbIwSt11char_traitsIwESaIwEE6appendEjw
+_ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev
+_ZSt10_MaklocstrIwEPT_PKcS1_RKSt7_Cvtvec
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewx
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewd
+_ZNKSt19istreambuf_iteratorIwSt11char_traitsIwEEdeEv
+_ZNKSt8numpunctIwE16do_thousands_sepEv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE4syncEv
+_ZNSt15basic_streambufIwSt11char_traitsIwEE5_LockEv
+_ZNSt9exception18_Set_raise_handlerEPFvRKS_E
+_ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE2idE
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewl
+_ZNSt15basic_streambufIcSt11char_traitsIcEED0Ev
+fseek
+_ZNKSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE5_PutcES3_PKcj
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci
+_Unlocksyslock
+_ZNSt15basic_streambufIwSt11char_traitsIwEE6xsgetnEPwi
+_ZNSs6assignEPKc
+_ZNKSt5ctypeIwE8do_widenEc
+_ZNSt15basic_streambufIwSt11char_traitsIwEE5imbueERKSt6locale
+_ZTv0_n12_NSt13basic_ostreamIwSt11char_traitsIwEED1Ev
+_ZNKSt12codecvt_base11do_encodingEv
+_ZSt4setwi
+_ZNSt15basic_streambufIwSt11char_traitsIwEE6setbufEPwi
+_Stolx
+_ZNSt9basic_iosIwSt11char_traitsIwEED1Ev
+_ZNKSt6locale9_GetfacetEj
+_ZNSt5ctypeIwED0Ev
+_ZNSt8numpunctIwE2idE
+_ZNSt13basic_ostreamIwSt11char_traitsIwEED1Ev
+fgetpos
+_ZNSt15basic_streambufIwSt11char_traitsIwEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE4syncEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6setbufEPci
+_ZNSt13basic_filebufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+_ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE7_GetcatEPPKNSt6locale5facetE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5imbueERKSt6locale
+_ZNSt8ios_base5_InitEv
+_ZTv0_n12_NSiD0Ev
+_ZTVSt13basic_ostreamIwSt11char_traitsIwEE
+_ZTv0_n12_NSt13basic_istreamIwSt11char_traitsIwEED0Ev
+_ZNSt7num_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev
+ungetc
+_ZNSt13basic_filebufIcSt11char_traitsIcEED0Ev
+_ZNSt8_LocinfoC1EPKc
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale
+_ZNSt12codecvt_baseD1Ev
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm
+_ZNSt13basic_filebufIcSt11char_traitsIcEE8overflowEi
+_ZdlPvS_
+_ZTVSt9basic_iosIwSt11char_traitsIwEE
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe
+_ZNSt15basic_streambufIwSt11char_traitsIwEE8overflowEl
+_ZNSt15basic_streambufIwSt11char_traitsIwEED1Ev
+_ZTTSi
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE8_GetffldEPcRS3_S6_RKSt6locale
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt
+_ZNKSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx
+_Getctyptab
+_ZNSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEED1Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7_UnlockEv
+_ZNSt6locale2idcvjEv
+_ZSt7_FiopenPKwNSt5_IosbIiE9_OpenmodeEi
+_ZSteqIwSt11char_traitsIwEEbRKSt19istreambuf_iteratorIT_T0_ES7_
+_ZNSt6locale5facet7_IncrefEv
+_ZNSt9_FacetptrISt7codecvtIcc9_MbstatetEE6_PsaveE
+_ZNSt8numpunctIwE5_InitERKSt8_Locinfo
+_ZNSt15basic_streambufIcSt11char_traitsIcEE8overflowEi
+_Stoullx
+_ZNSt13basic_ostreamIwSt11char_traitsIwEED0Ev
+_ZNSt5ctypeIcE2idE
+_ZNKSt5ctypeIwE10do_tolowerEPwPKw
+_ZTVSt7num_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE
+_ZTv0_n12_NSiD1Ev
+_ZNSt6_Mutex5_LockEv
+_ZNSsC1Ejc
+libc.so.3
+_init_array
+_Iswctype
+errno
+_preinit_array
+wcstol
+remove
+optarg
+opterr
+readdir
+gmtime_r
+rename
+basename
+wmemchr
+stricmp
+optind
+__progname
+SchedSet
+sigfillset
+sigaction
+wcschr
+_init_libc
+getopt
+localtime
+opendir
+mem_offset
+_fini_array
+difftime
+sem_open
+strnicmp
+wmemcmp
+nsec2timespec
+lseek64
+closedir
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+_ZN3aaf8Watchdog15mThreadSettingsE
+_ZTV31EV_NavExtPNav_ClearDatabase_Req
+_ZN3aaf9MemTracer11mAllocCountE
+aafDefaultApplicationBusinessState
+_ZN3sal5MutexD1Ev
+aafThreadGroupAll
+_ZTV34EV_NavExtSHIELD_PrepareSources_Req
+_ZTVN3aaf11Observer_IFE
+_ZN3aaf15ComponentConfigD1Ev
+_ZTV39EV_NavExtPNav_UpdatePredictedRoutes_Ans
+_ZN3aaf6Config5mCoreE
+_ZTVN3aaf12ActiveObjectE
+_ZTVN3aaf13MemoryManagerE
+_ZTVN3aaf11ApplicationE
+aafBuildJobStateUnknown
+_ZTV13MapConfigItem
+_ZN3aaf8ProcInfo20printThreadLogicalIdEP6_FiletiPiP6formatiP11shared_info
+_ZTV13NavShListener
+num_thread_states
+_ZTVN3sal6ThreadE
+_ZTV22SHIELDProxyEnvironment
+_ZTV37EV_NavExtSHIELD_RequestSuggestion_Ans
+_ZTV17SHIELDSearchQuery
+_ZTVN3aaf19ExceptionHandler_IFE
+_ZTV31EV_NavExtSHIELD_UpdateRoute_Req
+_ZN3aaf9MemTracer13mReallocCountE
+_ZN3aaf9MemTracer7mErrorsE
+_ZTV36EV_NavExtSHIELD_OnActiveSearchUpdate
+_ZTV31EV_NavExtSHIELD_UpdateMapConfig
+_ZTV38EV_NavExtSHIELD_SetPreferredBrands_Req
+_ZN3aaf6Config24mThreadRepositoryEnabledE
+_ZN3aaf9MemTracer14mPeakAllocSizeE
+_ZN3aaf6Config24mExceptionHandlerEnabledE
+_ZNSsD1Ev
+_ZTVN3aaf17ThreadActionScopeE
+_ZTV34EV_NavExtPNav_SetOperationMode_Req
+_ZN3aaf6Config19mApplicationEnabledE
+_ZN3aaf8ProcInfo24printThreadWatchdogStateEP6_FiletiPiP6formatiP11shared_info
+_ZTVN3sal13PassiveObjectE
+_ZN3aaf9MemTracer17mCurrentAllocSizeE
+_ZTVN3aaf14Application_IFE
+_ZTV26EV_NavExtSHIELD_Search_Req
+_ZN3aaf18ActiveObjectConfigD1Ev
+_ZTV16SHIELDProxyToken
+_ZTV12PNavLocation
+spaces
+aafApplicationProcessStateUnknown
+aafBuildJobIdUnknown
+aafDefaultThreadAvailabilityState
+_ZN3aaf6Config9mObserverE
+_ZN3aaf13MemoryManager9mInstanceE
+_ZTV30EV_NavExtSHIELD_GetVersion_Ans
+_ZN3aaf17ApplicationConfigD1Ev
+_ZTVN3aaf19MemoryManagerConfigE
+_ZN3aaf9MemTracer16mMaxMemoryOwnersE
+aafObserverData
+_ZTV21PNavLikelyDestination
+_ZTV19SHIELDProxyLocation
+_ZN3aaf6Config15mBuilderEnabledE
+_ZN3aaf8ProcInfo19printMessageEventIDEP6_FiletiPiP6formatiP11shared_info
+_ZTV35EV_NavExtPNav_SetMaxPredictions_Req
+_ZTV26EV_NavExtSHIELD_Search_Err
+aafComponentBusinessStateUnknown
+_ZTV23SHIELDProxySearchResult
+_ZTVN3aaf7CondVarE
+_ZTV31EV_NavExtSHIELD_CancelQuery_Ans
+_ZN3aaf13SignalHandler24mRepositoryInitialValuesE
+_ZTV23SHIELDProxyRouteSegment
+_ZTV26EV_NavExtSHIELD_Search_Ans
+_ZTV45EV_NavExtSHIELD_RequestSupportedCountries_Ans
+_ZN3aaf6Thread20threadSignalFunctionEP13aafSignalInfoPv
+_ZTVN3aaf8WatchdogE
+_ZN3aaf6Config17mExceptionHandlerE
+_ZN3aaf6Config12mProcessInfoE
+aafApplicationAvailabilityStateUnknown
+_ZN3aaf8ProcInfo15printThreadNameEP6_FiletiPiP6formatiP11shared_info
+_ZTV31EV_NavExtSHIELD_SetLocation_Req
+_ZTV39EV_NavExtPNav_UpdatePredictedRoutes_Req
+_ZN3aaf26MemoryManagerConfiguration19mMemoryErrorHandlerE
+aafIndexUnknown
+aafComponentIdUnknown
+_ZTV36EV_NavExtSHIELD_SetActiveProfile_Req
+_ZTV18SHIELDProxyHistory
+_ZN3aaf6Config16mWatchdogEnabledE
+formats
+aafThreadAvailabilityStateUnknown
+_ZTV18PNavPredictedRoute
+_ZTVN3aaf4CoreE
+_ZTVN3aaf7BuilderE
+_ZTV19PresistenceSqFacade
+_ZN3aaf6Config9mWatchdogE
+aafDefaultThreadBusinessState
+_ZTVN3aaf13Threadable_IFE
+_ZN3aaf26MemoryManagerConfiguration14mMemoryManagerE
+_ZN3aaf9MemTracer22mOwnerCurrentAllocSizeE
+_ZN3aaf12ThreadConfigD1Ev
+thread_state
+_ZN3aaf4File11mTraceErrorE
+_ZN3aaf6Config19mProcessInfoEnabledE
+aafApplicationIdUnknown
+_ZTV44EV_NavExtSHIELD_SetActiveSearchCountries_Req
+_ZTV35EV_NavExtPNav_SetMaxPredictions_Ans
+_ZTVN3aaf16ExceptionHandlerE
+initialisationData
+_ZTV37EV_NavExtSHIELD_RequestSuggestion_Err
+aafObserverSubscribeSize
+_ZTVN3aaf6ThreadE
+_ZTVN3aaf15MemoryConfig_IFE
+_ZTV19PersistenceSqFacade
+_ZTVN3sal11ApplicationE
+_ZTV20SHIELDProxyResultIDs
+aafBuildingStepUnknown
+_ZTVN3aaf9ComponentE
+_ZTV20SHIELDProxyHighlight
+_ZTV34EV_NavExtSHIELD_SetEnvironment_Req
+_ZN19PresistenceSqFacade10mpInstanceE
+oldtimeStamp
+_ZTV39EV_NavExtPNav_RequestRouteWaypoints_Ans
+aafComponentAvailabilityStateUnknown
+_ZN19PersistenceSqFacade10mpInstanceE
+_ZTVN3aaf17ApplicationConfigE
+aafDefaultComponentAvailabilityState
+_ZTVN3aaf16ThreadRepositoryE
+_ZN3aaf6Config13mAppplicationE
+_ZN3aaf6Config17mThreadRepositoryE
+_ZTVN3aaf18ActiveObjectConfigE
+_ZTV22EV_NavExtSHIELD_Status
+_ZTV31EV_NavExtSHIELD_CancelQuery_Err
+_ZN3aaf6Config21mSignalHandlerEnabledE
+_ZTV31EV_NavExtSHIELD_SetLanguage_Req
+aafDefaultApplicationAvailabilityState
+_ZTV31EV_NavExtSHIELD_CancelQuery_Req
+_ZN3sal6Thread14threadFunctionEPv
+_ZTV42EV_NavExtPNav_UpdateLikelyDestinations_Ans
+_ZTVN3aaf15MemoryAllocatorE
+aafDefaultComponentBusinessState
+_ZN3aaf6Thread16threadEntryPointEPv
+_ZTVN3aaf16SignalHandler_IFE
+kc_names
+_ZN3aaf9MemTracer6mMutexE
+_ZN3aaf8Watchdog18mDefaultCyclicTimeE
+_ZN3aaf9MemTracer8mMaxSizeE
+_ZTVN3aaf19ThreadRepository_IFE
+_ZTV20SHIELDProxyCountryID
+_ZTVN3aaf8ProcInfoE
+zeros
+_ZN3aaf8ProcInfo26printThreadWatchdogCounterEP6_FiletiPiP6formatiP11shared_info
+aafApplicationBusinessStateUnknown
+_ZTV34EV_NavExtSHIELD_AddResultToHistory
+_ZTVN3aaf4FileE
+_ZTVN3aaf13SignalHandlerE
+_ZN3aaf8ProcInfo17printMessageCountEP6_FiletiPiP6formatiP11shared_info
+_ZTVN3aaf26MemoryManagerConfigurationE
+_ZTV21SHIELDProxySuggestion
+_ZTVN3aaf12ThreadConfigE
+_ZTV18SHIELDProxyCountry
+_ZTVN3aaf7Core_IFE
+_ZTVN3aaf8ObserverE
+_ZTV37EV_NavExtSHIELD_RequestSuggestion_Req
+_ZTV17NDS_POICategoryID
+_ZTVN3aaf15ComponentConfigE
+PidinMutex
+_ZN3aaf8ProcInfo23printMessageAppIDThrdIDEP6_FiletiPiP6formatiP11shared_info
+_ZTV38EV_NavExtSHIELD_SetCurrentPosition_Req
+_ZTV34EV_NavExtSHIELD_MapProductId_URIds
+_ZN3aaf6Config12mCoreEnabledE
+_ZN3aaf6Config8mBuilderE
+_ZN3aaf8ProcInfo24printThreadBusinessStateEP6_FiletiPiP6formatiP11shared_info
+aafLogicalThreadIdUnknown
+_ZTV14ProductId_URId
+_ZTV39EV_NavExtPNav_RequestRouteWaypoints_Req
+aafThreadPriorityUnknown
+_ZN3aaf6Config14mSignalHandlerE
+_ZTVN3aaf16MemoryManager_IFE
+_ZTVN3sal12ActiveObjectE
+_ZN3aaf8ProcInfo16printMessageDataEP6_FiletiPiP6formatiP11shared_info
+aafThreadPhysicalIdUnknown
+_ZN3aaf9MemTracer10mFreeCountE
+_ZNSt4listIN3aaf8Watchdog14ThreadSettingsESaIS2_EED1Ev
+_ZTV14SALMessageBase
+_ZNSt3mapIPvN3aaf9MemTracer7MemInfoESt4lessIS0_ESaISt4pairIKS0_S3_EEED1Ev
+aafObserverSubscribe
+_ZTV28EV_NavExtPNav_PrepareOff_Req
+aafDefaultStartupSequenceMask
+_ZN3aaf8ProcInfo28printThreadAvailabilityStateEP6_FiletiPiP6formatiP11shared_info
+_ZTV31EV_NavExtPNav_ClearDatabase_Ans
+aafEventIdUnknown
+_ZN3aaf6Config16mObserverEnabledE
+_ZTV19SHIELDProxyPosition
+_ZTV34EV_NavExtPNav_SetOperationMode_Ans
+_ZN3aaf9MemTracer9mRegistryE
+aafThreadPriorityDefault
+_ZN3aaf8ProcInfo25printThreadSpecificActionEP6_FiletiPiP6formatiP11shared_info
+N@p@-
+fA0@-
+333333
+0n0,0
+raB3G
+raB3G
+Y@0@-
+UUUUp@-
+#gXpl
+'u_p@-
+invalid map/set<T> iterator
+map/set<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/AppBase/build/../source/DSINavDispatcher.cpp
+assertion failed: "The same listener registered twice" !=0 && pr.second
+../../../../sw/AP_XSALcpp/public/salTemplateDispatcher.h
+TemplateDispatcher::onMessage(),No passive object avaliable with id: %d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/AppBase/build/../source/NavDispatcher.cpp
+NavDispatcher::onServerTermination()
+NavDispatcher::onMediaEject()
+NavDispatcher::onStoppingExecute()
+NavDispatcher::onStartingExecute()
+vector<T> too long
+NavDisp
+assertion failed: isRegistered( passive )
+onMapStatus
+onMapKernelInfo
+../../../../sw/AP_DSI_MIB20_STD/DSIUtils/public/dsiupdatecontainer.h
+ DSIUtil UpdateContainer::setNotification for attribute %d
+../../../../sw/AP_DSI_MIB20_STD/DSIUtils/public/dsiFunktor.h
+ DSIUtil Funktor1::fireUpdate
+ DSIUtil IFunktor::setNotification
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/AppBase/build/../source/NavStartup.cpp
+NavServer initialized
+NavServer connected
+NavStartup::setNotification ATTR_DOMAINSTATUS_NAV
+[NavStartup::startDomain()] : NAV, |%d|
+[NavStartup::startDomain()] : SEARCH, |%d|
+[NavStartup::startDomain()] : POST, |%d|
+Notify NavServer to start TMC initialisation
+onMessage event: %d
+Event EV_PREPARE_OFF_APP received
+Event EV_PREPARE_OFF_APP_DONE sent
+Event EV_PREPARE_OFF_FAST received
+Event EV_PREPARE_OFF_FAST_DONE sent
+Event EV_PREPARE_OFF_EMERGENCY received
+Event EV_PREPARE_OFF_APP_CANCEL received
+assertion failed: data.size() == 1 && "dsiutils Funktor1::update wrong number of params"
+DSIUtil Funktor::update called
+ DSIUtil Funktor::update updating value and valid flag
+ DSIUtil UpdateContainer::update for attribute %d
+NavServer fully operable
+NavStartup: Ready4Nav attribut sent to HMI
+processEvent %d, state: %d
+updateNavServerState: %d
+SRV_INFO: %s, status: %d
+NavStartup::onSUStarting()
+Path to DB: %s
+../public/NavServicesNotifier.h
+ DSIUtil UpdateContainer::addUpdater for attribute %d
+assertion failed: mListener != 0
+NavStartup::NavStartup()
+SRV_INFO: %s, dbPartNumber: %ls, dbVersion: %ls, dbSystemName: %ls
+getMarketCodeFromMapRegion
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/AppBase/build/../source/NavMarketHandling.cpp
+NavMarketHandling::%s - map region: %x, system market EU
+NavMarketHandling::%s - map region: %x, system market NAR
+NavMarketHandling::%s - map region: %x, system market CHN
+NavMarketHandling::%s - map region: %x, system market ROW
+NavMarketHandling::deleteInstance()
+NavMarketHandling::createInstance()
+NavMarketHandling::loadMapRegion()
+SUDestinatinonMemory::loadMapRegion() - failed accessing ITEM_ID_ADPT_0600_CODING data
+NavMarketHandling::getMarketCode()
+NavMarketHandling::getMapRegion()
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/AppBase/build/../source/NavStorage.cpp
+::onPrepareOffAppCancel()
+::onPrepareOffEmergency()
+::onPrepareOffFast()
+::onPrepareOffApp()
+::deleteInstance()
+::createInstance()
+"NavServices"
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/AppBase/build/../source/NavServicesMain.cpp
+%s: [pid: %d] - Logger activated (compilation %s %s)
+Jun 26 2018
+19:12:33
+R E S T A R T E D
+Xg:v:l:teN:
+NavServices exit
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/SULocationSelection.cpp
+SULocationSelection::onStarting !!!!!
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LocationGuesser.cpp
+LocationGuesser::onStarting
+../../../../sw/AP_NavServices_MIB20_STD/AppBase/public/NavServicesFunktor.h
+LocationGuesser::sendMatchRequestForHn
+assertion failed: m_wantedHousenumbers.size()>0
+invalid vector<T> subscript
+../../../../sw/AP_NavServices_MIB20_STD/SUConfig/public/ICUSorting.h
+assertion failed: U_SUCCESS( err )
+../../../../sw/AP_NavServices_MIB20_STD/AppBase/public/NavServicesNotifier.h
+LocationGuesser::setCurrentCountryId %d, %ls
+LocationGuesser::sendMatchRequestForCity
+assertion failed: m_wantedCities.size()>0
+chnVcardMatch2
+Fix for CHN Vcard 2 :%ls -> %ls
+chnVcardMatch1
+Fix for CHN Vcard 1 with hn and street not separated:%ls -> street:%ls, hn:%ls
+LocationGuesser::sendMatchRequest
+assertion failed: m_wantedCountries.size()>0
+assertion failed: !mMatchDataList.empty()
+LocationGuesser::liTryBestMatch Request received!
+list<T> too long
+LocationGuesser::sendNegativeDSIResponse
+LocationGuesser::sendPositiveDSIResponse
+addressRestored Reply received.
+liTryBestMatch: samsung vcard resolved
+liTryBestMatch: no matching country
+liTryBestMatch: no matching city
+liTryBestMatch: no matching street for zip code selection - try city selection
+liTryBestMatch: no matching street
+liTryBestMatch: no matching hn for zip code selection - try city selection
+liTryBestMatch: no matching hn
+hasValidResultIDs
+handleCacheSize
+clearShieldResults
+storeNextShieldSearchResult
+matchToResults
+match
+geopos2AddressResult
+appendPois
+setCity
+../../../../sw/AP_NavServices_MIB20_STD/NavServicesCommon/public/GeoPosition.h
+convertFromHmiCoordinate(%d)=%16.12f
+false
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LocationMatcher.cpp
+%s = %s
+LocationMatcher::onStarting
+%s shieldResults.size=%d is over %d - need to be reduced (reductionSize=%d)
+assertion failed: data.size() == 0 && "dsiutils Funktor0::update wrong number of params"
+%s clear cached shield results, m_currentQueryId=%d, m_shieldResults.size=%d
+isExtendedZipCode: countryIso:%ls, match.street:%ls, match.postalCode:%ls -> %d
+%s queryId=%d, pos lat %f long %f
+%s C[%ls==%ls] && T[%ls==%ls] && S[%ls==%ls] && St[%ls==%ls] && H[%ls==%ls] && J[%ls==%ls] && Z[%ls==%ls] && P[%ls==%ls] && PoiC[%d==%d] && PoiN[%ls==%ls]
+%s success shield result (lat %f long %f), currentMatch (lat %f long %f). index=%d
+%s success after ambiguation shield result (lat %f long %f), currentMatch (lat %f long %f). index=%d
+%s failed
+%s (%d,%d) C[%ls]P[%ls]T[%ls]D[%ls]S[%ls]H[%ls]J[%ls]Z[%ls]P[%ls]T[%d]N[%ls]
+LocationMatcher::match - request details for position
+LocationMatcher::match - no request details for (%d,%d)position
+LocationMatcher::liTryMatchLocation Request received!
+LocationMatcher::sendMatchRequest
+%s X,Y=%d,%d, country %d/%ls/%ls, province(state) %ls/%ls, cityName %ls/%ls/%ls, suburbName %ls/%ls/%ls, zipCode %ls, street name %ls/%ls, hn %ls, 
+LocationMatcher::match address
+LocationMatcher::match POI by IDs
+LocationMatcher::match POI
+LocationMatcher::sendDSIResponse:%d
+%s e.size=%d, e.endOfList=%d
+poiAddressRestored Reply received.
+isExtendedZipCode=true: countryIso:%ls, match.postalCode:%ls
+../../../../sw/AP_Navigation_EB/AP_DestinationSelection/DSInterface/public/NavDSList.h
+Index %d is out of boundary <0, %d).
+%s Provided suburb lays in city/city lays in suburb: T[%ls->%ls]S[%ls->%ls]
+rmImportToursFromGpxFile
+rmAbortImportToursFromGpxFile
+importRouteFromGpxFile
+de_serialize_inputstate_from
+requestCallback
+geopos2AddressResult
+setCity
+startPoiByStack
+setPoiStack
+addressRestored
+setCurrentAddress
+~LsLogic
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic.cpp
+LsLogic::unblockPoiEnteringProximityRangeUpdate
+LsLogic::ppoiDbDeactivated should be called on proxy client
+LsLogic::ppoiDbActivated should be called on proxy client
+LsLogic::%s, rmID=%d, fileName=%ls
+LsLogic::%s
+LsLogic::%s, fileName=%ls
+LsLogic::geopos2Address lola=%d,%d
+LsLogic::deactivatePoiAlert
+LsLogic::blockPoiEnteringProximityRangeUpdate for %d
+Invalid coordinate: %f
+convertToHmiCoordinate(%16.12f)=%d
+assertion failed: false && "Cannot be called, done by ProxyClients"
+assertion failed: data.size() == 2 && "dsiutils Funktor2::update wrong number of params"
+DSIUtil Funktor2::update called
+LsLogic::cancelSpellerDone
+LsLogic::updateCountryNamesList
+../public/LsLogic.h
+LsLogic::%s failed alloca
+LsLogic::%s client: %p
+LsLogic::updateSystemLanguage %S
+LsLogic::matchNVC "%ls" -> "%ls"
+LsLogic::setCountriesWithVignette[%d]
+invalid vector<bool> subscript
+activatePpoiDb path: %ls
+LsLogic::setNavDatabaseVersion: %ls
+LsLogic::verifyPoiAddress - poiName:%ls, poiType:%d, long:%d, lat:%d, LD item id %lld
+LsLogic::activatePoiAlert
+%s, used city Exonym %ls
+%s, used suburb Exonym %ls
+LsLogic::handlePoiSearch POI search cancelled due to implecitly POI search cancellation: POISEARCH_IMPLICITELY_CANCELLED, selectionCriterion=%d
+LsLogic::handlePoiSearch POI search not cancelled: POISEARCH_IMPLICITELY_CANCELLED, selectionCriterion=%d
+LsLogic::routeGuidanceActive = false -> POI along the route search is cancelled
+LsLogic::cancelSpeller
+LsLogic::setCategoryMonitoring
+Unable to save to persistency m_categoryMonitoringActive=%d !!!
+onPpoiUpdateFinished new path: %s
+LsLogic::verifyPoiAddressResult - poiName:%ls, poiType:%d, long:%d, lat:%d
+liError send to HMI due to wrongly requested POI:index=%d is no in the m_cache.poiSize=%d
+LsLogic::verifyAddress - long:%d, lat:%d, is%s geopos, countryId:%d, city:%ls, street:%ls, junction:%ls, hn:%ls, LD item id: %lld
+startPoiByStack m_poiStack[%d], listStyle=%d
+%s running the same session wait on answer: runningSessionId=%s, currentSessionId=%s
+LsLogic::setPoiStackSize size=%d
+Unable to load from persistency m_categoryMonitoringActive=%d !!!
+LsLogic::setCurrentSystemLanguage new lng: %S
+LsLogic::setPoiStack poiStack[%d]
+%s list requested for optimization:%d - no update to HMI (sessionId=%s)
+%s list requested deprecated sessionID:%s (currentSessionId=%s)
+LsLogic::getListPart Invalid InputState.spelling() %d
+LsLogic::startInputPoiChildName for InputState::POI_BY_STACK_CHILDREN, index %d, size of childrens map %d
+LsLogic::spell invalid InputState: %d
+LsLogic::removeInput invalid InputState %d
+LsLogic::backspace invalid InputState %d
+LsLogic::select Invalid InputState.spelling %d
+LsLogic::setInputState invalid state %d
+LsLogic::setInputState SPELLING_NOTHING
+LsLogic::setInputState: POI_TOP_CATEGORY restore
+LsLogic::setInputState: POI_CATEGORY restore
+LsLogic::setInputState: POI_SUB_CATEGORY restore
+LsLogic::setInputState for InputState::POI_BY_STACK_CHILDREN, index %d, size of childrens map %d
+LsLogic::setInputState for %d, searchState = %d, cache size %d
+LsLogic::LsLogic - system market code: %d, map region: %d
+DB has not changed
+NavServer is not yet fully operable
+LsLogic::verifyDMLocation - verification not needed: %s
+LsLogic::verifyDMLocation - countryId:%d, poiName:%ls, is%s geo pos
+FAILED
+SUCCESSED
+LsLogic::verifyAddressResult %s - long:%d, lat:%d, is%s geopos, countryId:%d, city:%ls, street:%ls, junction:%ls, hn:%ls
+LsLogic::spell Invalid InputState.spelling %d
+LsLogic::selectByIdent '%S' Invalid mInputState.spelling %d
+LsLogic::selectByIdent spelling %d, country iso 3-letter code %ls, country id %d, country name %ls
+LsLogic::selectByIdent spelling %d, cityName %ls, cityId %ls, streetId %ls
+LsLogic::selectByIdent (for city by zip code) spelling %d, streetName %ls, zipcode %ls, streetId %ls
+LsLogic::selectByIdent selected zip code %ls different than zip code from speech %ls
+LsLogic::selectByIdent spelling %d, streetName %ls, cityId %ls, streetId %ls
+LsLogic::selectByIdent spelling %d, [cityName %ls, zipCode %ls, zipId %ls, countyName %ls]
+LsLogic::setCurrentAddress (%ls,%ls,%ls,%ls, %ls,%ls,%ls)(%d,%d), POI name:%ls, isGeoPos:%d
+LsLogic::addressRestored invalid InputState: %d
+%s getSendBackSameLocationInLiSetCurrentLd set to true
+%s setSendBackSameLocationInLiSetCurrentLd set to true
+LsLogic::updatePoisInProximityRange e.size %d
+POI in prox range: %ls, %ls, airdist %lldm
+LsLogic::updatePoisInProximityRange poisEnteringProximityRange.size %d - update sent to HMI
+LsLogic::%s!
+poiCategorySelected
+appendPois
+assertion failed: data.size() == 5 && "dsiutils Funktor5::update wrong number of params"
+DSIUtil Funktor5::update called
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/PoiAlongRoute.cpp
+routeGuidanceActive(%s)
+PoiAlongRute Trigger POI search due to TMC on route list change
+PoiAlongRoute::filterPois POI number reduction from %d to %d
+PoiAlongRoute::sortPoisAccordingToDistancesOnRoute: item %ls is inserted before %ls
+PoiAlongRoute::PoiAlongRoute()
+PoiAlongRoute::removePoisAfterNextDest POI number reduction from %d to %d
+POI @ %lldm, %lldms (%lldm, %lldmin), %d loc, poi name: %ls
+PoiAlongRoute::updateHmi - prevent negative time in POI 3plus1 box for %ls!!(poiTime %lld, currentHorizon %lld)
+PoiAlongRoute - send update with POI along route list (%d elements), mDistanceToSendUpdate %lld, mDistanceToForceRequest %lld, mTimeToCheck %lld
+PoiAlongRute Trigger POI search due to jump of TimeToNextDest: %lld
+PoiAlongRoute::requestPoiAlongRoute3Plus1List() updateHmi() metersToNextDestination %d mDistanceToSendUpdate %lld, millisecondsToNextDestination %lld mTimeToCheck %lld
+PoiAlongRoute::requestPoiAlongRoute3Plus1List() distance %lld, time %lld, currentState %d mRouteRestarted %s
+triggerPoiSearch for split screen box
+%s mRgActive=%d, mCurrentState=%d
+PoiAlongRoute::maneuverListSize %d
+PoiAlongRoute::updateCurrentState NextDistanceToForceRequest: %lld, mDistanceToNextDestination: %lld, mCurrentState: %d
+PoiAlongRoute::appendPois() mMmillisecondsToNextDestination=%lld, mDistanceToNextDestination=%lld
+PoiAlongRoute::appendPois has no last request distance/is not enabled
+PoiAlongRoute::appendPois - poi along route auto search was cancelled/ended before
+PoiAlongRoute::appendPois(), poi auto request was interrupted/not queued
+PoiAlongRoute::appendPois fill POI (parent) list: parentIndex: %d, list index: %d, poiName: %S, poiCatNavId: %d, poiBrandNavId: %d
+LsCache::add fill POI Children list for parentIndex: %d, poiName: %S, poiCatNavId: %d, poiBrandNavId: %d
+%s, mCurrentState=%d, interrupted=%d
+PoiAlongRoute::enableRgPoiInfo(%d)
+PoiAlongRoute::enableRgPoiInfo(%d) - cancel ongoing POI auto search when guidance is ended
+poiCategoryNotSelected
+addLastElemFromVirtualDestinationInfo
+startSpecialPoiNearbyReverse
+startPoiNearbyReverse
+startSaPaLastElement
+startPoiSaPaSearchReverse
+startPoiNearby
+startPoiSaPaSearch
+startHighwayExitLastElement
+startPoiHighwayExitsReverse
+startPoiHighwayExits
+restartMotorwayInfoBoxFunctionality
+setMotorwayInfoStatusInDG
+setNavServerState
+configurePoiSaPaSearch
+currentStreetUpdate
+generalMotorwayInfoState
+languageChanged
+sortPoiIcons
+enableRgMotorwayInfo
+updateHmi
+checkIfAnySearchNeeded
+inactiveGuidanceUpdate
+updateCurrentState
+distanceToNextDestination
+geopos2AddressResult
+poiCategorySelected
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/PoiAlongRouteExt.cpp
+%s mAutoSearchState:%d, mCurrentState:%d, mSaPaAllFound:%d, mHighwayExitsAllFound:%d, mNearbyAllFound:%d, mCurrentSaPaItemsInHmi:%d, mCurrentHighwayItemsInHmi:%d, mEnabled:%d, mRgActive:%d, mMotorwayBoxActivated:%d
+%s mCoveredExits.size=%d, mCurrentCoveringExitDistance=%lld
+%s mNearbyAllFound -> mCoveredExits.size=%d, mCurrentCoveringExitDistance=%lld
+%s mCoveredExits.size=%d, mCurrentSaPaDistance=%lld, mCurrentDistanceToFinalDestination=%lld
+%s mCoveredExits.size=%d, mCurrentSaPaDistance=%lld, mCurrentDistanceToFinalDestination=%lld, mCoveredSaPas.size=%d, mCurrentSaPaItemsInHmi=%d
+%s mCurrentHighwayItemsInHmi=%d, mCoveredExits.size=%d
+%s mCurrentSaPaItemsInHmi=%d, mCoveredSaPas.size=%d
+%s mCoveredExits.size=%d, mCurrentHighwayExitDistance=%lld, mCurrentDistanceToFinalDestination=%lld
+%s mNavServerOperable:%d, mMotorwayInfoEnabled:%d
+%s fullyOpearable=%d
+triggerPoiSearch for split screen box mRgActive:%d, mEnabled:%d, mManeuverListSize:%d
+PoiAlongRouteExt::maneuverListSize %d
+%s isControlledAccessRoad=%d
+%s isActive=%d, mMotorwayBoxActivated=%d
+PoiAlongRouteExt::enableRgPoiInfo(%d)
+%s -> update 10+1 box elements in current language %ls
+%s poiIcons.size = %d -> sortedPoiIcons.size = %d
+%s isActive:%d
+PoiAlongRouteExt::PoiAlongRouteExt()
+PoiAlongRouteExt::filterPois POI number reduction from %d to %d
+%s pois.size = %d
+Not show SAPA yet - at poi.distance=%lld, mLastCoveringExitDistance=%lld
+PoiAlongRouteExt - send update with POI along route list (%d elements), mDistanceToSendUpdate %lld, mTimeToCheck %lld, mSearchDistanceToNextDestination:%lld, mCurrentMmillisecondsToNextDestination:%lld
+%s Restart motorwayinfobox functionality due to elrSuccessMaxLength result of look ahead functionality
+%s routeId:%d, distanceToDestination:%d, timeToDestinationSec:%d, timeDelay:%d, result:%d, intersName:%ls, pos(%d,%d), mAutoSearchState:%d, mCurrentState:%d, mSaPaAllFound:%d, mHighwayExitsAllFound:%d, mNearbyAllFound:%d, mCurrentSaPaItemsInHmi:%d, mCurrentHighwayItemsInHmi:%d
+%s mMotorwayInfoRestarted=%d
+%s POI exit/sapa not found at virtual destination point using poi along the route search - try to search by proximity within %d radius
+mPois_new.empty() == %d, currentCoveringExitCovered = %d
+PoiAlongRouteExt::appendPois(e.size=%d,e.sizeChildren=%d) mSearchMmillisecondsToNextDestination=%lld, mSearchDistanceToNextDestination=%lld
+PoiAlongRouteExt::appendPois - poi along route auto search was cancelled/ended before
+PoiAlongRouteExt::appendPois(), poi auto request was interrupted/not queued
+PoiAlongRouteExt::appendPois fill POI (parent) list: parentIndex:%d, list index:%d, poiName:%S/poiExonym:%S, poiCatNavId:%d, poiBrandNavId:%d, distanceOnToFinal:%ld, distanceOffRoute:%ld, time:%lld
+Don't add: rest areas which are obtained by nearby (around exits) search, and not defined POIs nearby
+%s mAutoSearchState:%d, mCurrentState:%d, mSaPaAllFound:%d, mHighwayExitsAllFound:%d, mNearbyAllFound:%d, mCurrentSaPaItemsInHmi:%d, mCurrentHighwayItemsInHmi:%d, mEnabled:%d, mRgActive:%d, mMotorwayBoxActivated:%d, metersToNextDestination:%d, metersToFinalDestination:%d, millisecondsToNextDestination:%lld, destinationIndex:%d, mCoveredExits.size=%d, mCurrentCoveringExitDistance=%lld
+PoiAlongRute Trigger POI search due to jump of TimeToFinalDest: %d, TimeToNextDest: %lld
+PoiAlongRouteExt::requestPoiAlongRoute3Plus1List() updateHmi() metersToNextDestination %d mDistanceToSendUpdate %lld, millisecondsToNextDestination %lld mTimeToCheck %lld
+VirtualDestinationName is not provided in expected language (%ls) (%ls), using category name:(%ls)
+VirtualDestinationName is not provided at all (%ls), using category name:(%ls)
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/PoiClassList.cpp
+PoiClassList::getParentCategories
+PoiClassList::PoiClassList
+PoiClassList::getChildCategories
+PoiClassList::getChildCategories: Given parent category is not a parent category!
+PoiClassList::getChildCategoriesHmiIds(parentCategory %d)
+PoiClassList::sortLists
+assertion failed: parentNames.size() == parentHmiIds.size()
+PoiClassList::setList
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/PoiTopList.cpp
+PoiTopList::PoiTopList
+PoiTopList::setList
+getCurrentPosition
+onDeactivatePoiAlert
+onPoiAlert
+onVpPosition
+onServerStopping
+onServerTermination
+mediaUnavailable
+onMercatorPos2Address
+onRequestPOIChildren
+onRequestPOI
+onDeactivatePPOI
+onActivatePPOI
+onRestorePOIAddress
+onRequestMoreItems
+onSelectPOICategory
+onRequestNvc
+onRequestList
+onRestoreAddress
+onSelectItem
+addPeriodicRequest
+addWaitingRequest
+selectZip
+selectZipAndCity
+selectJunction
+selectHouseNumber
+selectSuburbAfterStreet
+selectStreet
+selectCity
+selectState
+selectCountry
+requestMoreJunctions
+requestMoreStreetsFirst
+requestMoreHousenumbers
+requestMoreStreets
+requestMoreCitiesAfterStreet
+requestMoreSuburbsAfterStreet
+requestMoreZipAndCities
+requestMoreZip
+requestMoreStates
+requestMoreCities
+requestMoreCountries
+requestZipNvc
+requestJunctionNvc
+requestHouseNumberFts
+requestHouseNumberNvc
+requestSuburbAfterStreetList
+requestStreetNvc
+requestMatchAddress
+requestMatchAddress
+requestCityNvc
+requestStateNvc
+requestCountryNvc
+addNonWaitingRequest
+requestCallback
+sendConfiguredPoiNdsIds
+selectPOIAlongRouteManualCategoryExt
+selectPOIAlongRouteAutoCategoryExt
+selectPOIAlongRouteManualCategory
+selectPOIAlongRouteAutoCategory
+selectPOIBrandCategory
+selectPPOICategory
+selectPOICategory
+requestPoiAlongRoute
+requestPoiChildren
+requestPoiValidation
+requestPoiProximity
+requestPoiAlongRoute3Plus1List
+restorePoiAddress
+restoreAddress
+requestPoiAlongRouteExt
+requestPoiAlongRoute3Plus1ListExt
+requestMatchAddress
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/NavAdapter.cpp
+restoreAddress(NavDSAction::DS_ACTION_INIT) failed!
+Category %d
+INVALID COORDINATES !!!
+NavAdapter::%s (longitude %d latitude %d)
+%s (errorCode %d)
+%s (errorCode %d), list.size %d
+NavAdapter::%s Skipped because NavServer is not ready!
+NavAdapter::%s
+../../../../sw/AP_Navigation_EB/AP_DestinationSelection/DSInterface/public/INavDSListener.h
+assertion failed: "Implement onMatchAddress method for yourself." == 0
+assertion failed: "Implement onRequestCombinedPosition method for yourself." == 0
+assertion failed: "Implement onRequestPosition method for yourself." == 0
+assertion failed: "Implement onSelectPOIItem method for yourself." == 0
+assertion failed: "Implement onRequestPOIList method for yourself." == 0
+assertion failed: "Implement onPoiAreaSearch method for yourself." == 0
+assertion failed: "Implement onRequestPOINvc method for yourself." == 0
+assertion failed: "Implement onRequestPOICategoryList method for yourself." == 0
+assertion failed: "Implement onSelectItemByName method for yourself." == 0
+assertion failed: "Implement onMercatorPos2Address method for yourself." == 0
+assertion failed: "Implement onRestorePOIAddress method for yourself." == 0
+assertion failed: "Implement onRestoreAddress method for yourself." == 0
+assertion failed: "Implement onDeactivatePoiAlert method for yourself." == 0
+assertion failed: "Implement onPoiAlert method for yourself." == 0
+assertion failed: "Implement onRequestPOIChildren method for yourself." == 0
+assertion failed: "Implement onRequestPOI method for yourself." == 0
+assertion failed: "Implement onSelectPOICategory method for yourself." == 0
+assertion failed: "Implement onDeactivatePPOI method for yourself." == 0
+assertion failed: "Implement onActivatePPOI method for yourself." == 0
+assertion failed: "Implement onRequestNvc method for yourself." == 0
+assertion failed: "Implement onSelectItem method for yourself." == 0
+assertion failed: "Implement onRequestMoreItems method for yourself." == 0
+assertion failed: "Implement onRequestList method for yourself." == 0
+NavAdapter::geopos2AddressCmd, transactionID %d (X,Y)=(%d,%d)
+NavAdapter::deactivatePPOICmd, transactionID %d
+NavAdapter::activatePPOICmd, transactionID %d
+NavAdapter::restorePoiAddressCmd, transactionID %d, action %d
+NavAdapter::restoreAddressCmd, transactionID %d, action %d
+NavAdapter::selectPOICategoryCmd, transactionID %d, action %d
+NavAdapter::selectPOICategoryCmd (list.size() %d)
+NavAdapter::selectItemCmd, transactionID %d, action %d
+NavAdapter::requestMoreItemsCmd, transactionID %d, action %d
+NavAdapter::requestPoiChildrenCmd, transactionID %d, action %d
+NavAdapter::requestPoiCmd, transactionID %d, action %d
+NavAdapter::requestListCmd, transactionID %d, action %d
+NavAdapter::requestNvcCmd, transactionID %d, action %d
+NavAdapter::%s (errorCode %d), transactionID: %d, action %d
+NavAdapter::%s Can contains not valid values because NavServer is not ready!
+NavAdapter::%s Accept negative response!
+NavAdapter::%s Request for transactionID %d not found
+NavAdapter::%s (size of POIList: %d, POIChildrenList: %d, errorCode %d) transactionID %d, action %d
+::onRequestPOIChildren size=%d children=%d.
+NavAdapter::%s action %d is not handled in this context
+NavAdapter::%s (size of POIList: %d, POIChildrenList: %d, errorCode %d), transactionID %d, action %d
+Handle POI search cancel requested by HMI (even if POI search is not running)
+::onRequestPOI more POIs: size=%d children=%d, transID=%d
+NavAdapter::onDeactivatePPOI( errorCode: %d ), transactionID: %d, action %d
+NavAdapter::onActivatePPOI( errorCode: %d ), transactionID: %d, action %d
+NavAdapter::%s errorCode %d, transactionID: %d, action %d
+deque<T> too long
+NavAdapter::onSelectPOICategory NAV_DS_FAILURE returned by NavServer
+NavAdapter::%s (size of items: %d errorCode: %d valid Housenumber: %d), transactionID: %d, action %d
+NavAdapter::onRequestNvc NAV_DS_FAILURE returned by NavServer
+NavAdapter::%s (size of items: %d action: %d errorCode %d), transactionID: %d, action %d
+NavAdapter::onRequestList NAV_DS_FAILURE returned by NavServer
+NavAdapter::onRequestList invalid action
+NavAdapter::setCurrentSystemLanguage %ls
+%s P[%ls,%ls,%ls,%ls]T[%ls,%ls,%ls,%ls]S[%ls,%ls,%ls,%ls]Z[%ls]C[%ls]St[%ls,%ls]J[%ls,%ls]H[%ls]POS[%d,%d]CC[%d,%d]
+NavAdapter::onSelectItemByName NAV_DS_FAILURE returned by NavServer
+NavAdapter::activatePoiAlert client %p, poiList.size %d, ppoiList.size %d
+NavAdapter::deactivatePoiAlert
+NavAdapter::cancelPoiAutoSearch
+Poi along route auto cancelled by incoming new request
+assertion failed: client != NULL && command != NULL
+NavAdapter::%s client %p, command %p
+NavAdapter::geopos2Address client %p, (X,Y)=(%d,%d)
+NavAdapter::%s client: %p index: %d
+NavAdapter::%s client: %p start: %d length: %d
+NavAdapter::%s client: %p zip: %S
+NavAdapter::%s client: %p junction: %S
+NavAdapter::%s client: %p house_number: %S
+NavAdapter::%s client: %p suburb: %S
+NavAdapter::%s client: %p street: %S, length:%d
+%s client: %p currentCountryIso:%ls oneLine: %ls
+%s client: %p country_id: %d province: %S city: %S zipCode: %S street: %S houseNumber: %S useZipCodeToMatchCity: %s
+NavAdapter::%s client: %p country_id: %d city: %S, length=%d!
+NavAdapter::%s, length=%d!
+assertion failed: client != NULL
+NavAdapter::%s client: %p
+NavAdapter::cancelSpeller
+NavAdapter::deactivatePPOI
+NavAdapter::activatePPOI %S
+NavAdapter::%s client: %p, longitude: %d latitude: %d poiName: %ls poiNameInAllCategories: %ls
+NavAdapter::%s client: %p, size %d
+NavAdapter::%s client: %p longitude: %d latitude: %d poiName: %S
+NavAdapter::%s client: %p longitude: %d latitude: %d poiName: %S poiNameInAllCategories: %S
+NavAdapter::%s client: %p, longitude: %d latitude: %d 
+NavAdapter::%s poiId=%d, regionId=%d
+NavAdapter::%s 
+NavAdapter::%s client: %p, longitude: %d latitude: %d, reverseMode:%d, distanceToDest:%d, corridorLength:%d, corridorWidth:%d, tourId:%d, routeId:%d, childrenNeeded:%d 
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_PoiCategory_Select.cpp
+PoiCategory_Select::start(), mInputState.poiCategory()=%d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_PoiCategory_Start.cpp
+LsLogic::startInputPoiCategory invalid PoiContext %d
+appendPois
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_PoiSearch.cpp
+LsLogic::startPoiSelection
+PoiSearch::callback Invalid Poi Context: %d
+PoiSearch::poiCategorySelected Invalid Poi Context: %d
+LsLogic::appendPois e.size()=%d, e.sizeChildren()=%d 
+%s Restart POI proximity/along route search with string without spaces: %ls -> %ls
+%s FOUNDED_POIS_LIST_SIZE=%d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_PoiTopCategory_Select.cpp
+PoiTopCategory_Select::start multiple - fill missing NDS id for CRITERIANUMBER_CATEGORY_CHARGINGSTATION_NORMAL(%d) = %d
+PoiTopCategory_Select::start multiple - fill missing NDS id for CRITERIANUMBER_CATEGORY_CHARGINGSTATION_FAST(%d) = %d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_RequestMore.cpp
+RequestMore::send_more_items Invalid InputState %d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingState_Restore.cpp
+LsLogic::setInputState SPELLING_COUNTRY
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingCity_RequestMore.cpp
+SpellingCity_RequestMore::requestMore Invalid InputState.spelling %d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingCity_Restore.cpp
+LsLogic::setInputState SPELLING_CITY
+SpellingCity_Restore::start Invalid InputState.spelling %d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingCity_Select.cpp
+SpellingCity_Select::start Invalid InputState.spelling %d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingCity_Spell.cpp
+SpellingCity_Spell::start Invalid InputState.spelling %d
+::setZipAndCityList() - ListSize=%d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingCountry_Restore.cpp
+SpellingCountry_Spell::setCountryList e.size=%d, mSpell=%ls, country iso code=%ls (filtered out)
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingCountry_Spell.cpp
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingHousenumber_Restore.cpp
+LsLogic::setInputState SPELLING_HOUSENUMBER
+SpellingHousenumber_Restore::setHouseNumberList
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingHousenumber_Spell.cpp
+SpellingHousenumber_Spell::setHouseNumberList
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingHousenumber_Start.cpp
+SpellingHousenumber_Start::setHouseNumberList
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingJunction_Restore.cpp
+LsLogic::setInputState SPELLING_JUNCTION
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_SpellingSuburbAfterStreet_Restore.cpp
+LsLogic::setInputState SPELLING_SUBURB - request suburb list
+LsLogic::setInputState SPELLING_SUBURB - restore current state
+readTrackStatus
+start
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_RouteImport.cpp
+LsLogic::geopos2AddressResult X,Y=%d,%d, country %d/%ls/%ls, province(state) %ls, cityName %ls/%ls, suburbName %ls/%ls, zipCode %ls, street name %ls/%ls, hn %ls, 
+%s isError=%d
+%s read at DG failed, isError=%d
+%s filename=%ls
+%s file %ls doesn't contain any valid route
+setNavServerState
+abort
+start
+importFinished
+resolvingNextElement
+callback
+geopos2AddressResult
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_TourImport.cpp
+%s fullyOpearable=%d, mStatus=%d
+%s ABORT Tour import - NavServer is not fully operable , mStatus=%d
+%s mStatus=%d
+%s ABORT Tour import on HMI request mStatus=%d
+%s mStatus=%d, rmID=%d, filename=%ls
+%s mStatus=%d, mRMID=%d, mRoutes.size=%d
+%s mStatus=%d, mCurrentTourIndex=%d, mCurrentWaypointIndex=%d
+%s Start importing tour mTours.size=%d
+%s Tour can't be found/NavServer not fully operable: result:%d, mTours.size=%d, mNavServerOperable=%d
+SUCCES
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsLogic_ProxyClient_PpoiActivation.cpp
+ppoiDbDeactivated: %s
+ppoiDbActivated errorCode: %s
+printCountryList
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/InputState.cpp
+%s ID
+%s %d
+InputState::start Criterion: %d
+Fix for mixed city & suburbs in NAR: %ls, %ls
+handleCoordinatesFromVcard
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LiMatcher.cpp
+Name contains ss, new name fragment created: %ls -> %ls
+Name contains Scharf-s, new name fragment created: %ls -> %ls
+%s check unstructured field %ls, cords.size=%d
+%s check unstructured field %ls, cords.size=%d,=[%ls;%ls]->lon=%f,lat=%f (HMI %d,%d)
+LiMatcher::fragmentStreetName( %ls, %ls)
+LocationGuesser::getOneLine %ls -> %ls, current country iso code %ls(%d)
+liGetLocationDescriptionTransformResult
+deletePersonalPOIDataBasesResult
+fatalError
+liJunctionResult
+liHouseNumberAlternativesResult
+liHouseNumberResult
+liZipcodeResult
+liStreetResult
+liSuburbAfterStreetResult
+liSuburbResult
+liTownResult
+liStateResult
+liCountryResult
+liError
+rmImportToursFromGpxFileResult
+importRouteFromGpxFileResult
+setNavInternalDataToFactorySettings
+liValueListOutputMethod
+liValueListFilename
+profileResetAll
+profileReset
+profileCopy
+liSetNVCRange
+setNotification
+rmImportToursFromGpxFile
+rmAbortImportToursFromGpxFile
+importRouteFromGpxFile
+ehSetCategoryMonitoring
+setLanguage
+deletePersonalPOIDataBases
+setVirtualRouteGuidance
+enableRgMotorwayInfo
+enableRgPoiInfo
+liValueListWindowSize
+poiSetSortOrder2
+poiSelectSelectionCriteria
+poiStartSpellerAlongRoute
+poiSetListStyle
+poiSetContext
+lispUndoCharacter
+lispSetInput
+lispAddCharacter
+lispSelectByMultipleCategoryUids
+lispSelectByCategoryUid
+lispSelectListItem
+lispRequestValueListByListIndex
+lispDeleteAllCharacters
+lispCancelSpeller
+liPoiCategoryUidResult
+liPoiThesaurusResult
+liPoiResult
+liPoiCategoryResult
+liPoiTopCategoryResult
+liCountriesWithVignetteResult
+liEmptyResult
+liStartSpeller
+poiEmptyValueList
+liEmptyList
+liCurrentState
+liResetCurrentState
+liGetCurrentState
+locationToStream
+liRestoreState
+liGetState
+updateProfileState
+profileChange
+updateRmImportToursFromGpxFileStatus
+updateRgVirtualDestinationInfo
+updateRgPoiInfoCalculationHorizon
+updateLispIsSpellerActive
+setPathsToPersonalPOIDataBases
+liGetLocationDescriptionTransform
+liSetCurrentLD
+updateRgMotorwayInfo
+lispGetMatchingNVC
+lispSelectListItemByIdent
+poiGetXt9LDBs
+streamToLocation
+updateEtcAvailablePersonalPOIDataBases
+updateRgPoiInfo
+updatePOIsEnteringProximityRange
+liCurrentState
+liCurrentState
+liPoiCategoryList
+poiValueList
+liPoiTopCategoryList
+liPoiChildrenList
+liValueList
+liPoiList
+liPoiList
+liPoiChildrenList
+liJunctionList
+liDisambiguationList
+liStreetValueList
+liCountryValueList
+liPoiCategoryList
+liHnValueList
+liDummyHnValueList
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsDSIAdapter.cpp
+LsDSIAdapter::%s lola=(%d,%d)
+LsDSIAdapter::%s
+LsDSIAdapter::%s (spell %S is_full_match %d nvc %S)
+%s (spell %S is_full_match %d nvc %S)
+LsDSIAdapter::%s provide dummy response
+LsDSIAdapter::%s ignored
+%s profile=%d
+%s fromProfile=%d toProfile=%d
+LsDSIAdapter::%s nvcRange = %d
+ DSIUtil Funktor2::fireUpdate
+ DSIUtil Funktor2::update updating 2 values and valid flag
+LsDSIAdapter::%s, rmID=%d, fileName=%ls
+LsDSIAdapter::%s, fileName=%ls
+LsDSIAdapter::%s, categoryUid.size=%d, monitor.size=%d
+LsDSIAdapter::%s send_pois:%d
+LsDSIAdapter::%s (index %lld)
+LsDSIAdapter::%s (selectionCriterion %d corridor %lld length %lld)
+assertion failed: false
+LsDSIAdapter::%s( %d )
+LsDSIAdapter::%s (input %S autoSelectInput %d)
+LsDSIAdapter::%s (%S)
+%s categoryUids size: %d
+%s categoryUid: %d
+%s listIndex: %d
+LsDSIAdapter::%s (anchorIndex %d nextPage %d)
+LsDSIAdapter::%s (spell %S)
+LsDSIAdapter::%s (selectionCriterion %d removeZipCode %d removeTown %d removeStreet %d)
+LsDSIAdapter::%s unkown selectionCriterion %d
+LsDSIAdapter::%s(const OOLocation& location)
+%s status=%d, profile=%d
+LsDSIAdapter::%s (%d)
+LsDSIAdapter::%s, lola=%d,%d
+LsDSIAdapter::%s nvc = %ls
+LsDSIAdapter::%s ident: %S
+/ldb/
+LsDSIAdapter::%s LDB file name: %ls
+LsLogic::liStripLocation (%ls,%ls,%ls,%ls, %ls,%ls,%ls)(%d,%d), POI name:%ls, isGeoPos:%d, type=%d
+LsLogic::deSerialize failed alloca
+assertion failed: icons.size() == indices.size() && names.size() == indices.size()
+LsDSIAdapter::%s 
+LsDSIAdapter::%s (LsCache::Enumerator)
+../public/LsCache.h
+assertion failed: false && "no more coordinates"
+LsDSIAdapter::%s (const std::vector<OOLocation>&)
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/LsCache.cpp
+assertion failed: start <= poiSize()
+vector<bool> too long
+assertion failed: it != m_poiChildrenAddresses.end()
+assertion failed: (unsigned int)index < it->second.size()
+index: %d, size: %d
+assertion failed: (unsigned int)index < m_poiAddresses.size()
+LsCache::getIndex(%d), index over the size of vector with indices (%d)
+assertion failed: start <= size()
+LsLogic::setPoiStack poiStack parentId: %d, uniqueId: %d, poiType:%d, poiName:%ls
+LsLogic::setPoiStack - all entries were filtered out (due to invalid unique ids), as a result provide not structured POI list
+LsCache::add fill POI (parent) list: parentIndex: %d, list index: %d, poiName: %S, poiCatNavId: %d, poiBrandNavId: %d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SULocationSelection/build/../source/RequestQueue.cpp
+RequestQueue::outgoingRequest() mInOutgoingRequest %d, isWaitingOnRequest() %d, mNormalQueue.size %d
+assertion failed: mCurrentRequest != NULL
+assertion failed: mPendingRequest
+mapInitialization
+connectNavigationWithHmi
+connectRouteBlockWithHmi
+connectLandmarkPlayerWithHmi
+savePoiVisibilityToPersistency
+savePoisToPersistency
+initFlagMapping
+onFullyOperable
+loadPoiVisibilityFromPersistency
+connectZoomEngineWithHmi
+onServerStopping
+onServerTermination
+liGetLocationDescriptionTransform
+onMediaEject
+connectManeuverViewWithHmi
+goToTMCMessage
+ehGetAllCategories
+loadPoisFromPersistency
+connectMapViewerWithHmi
+SUMapDisplay
+onMessage
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUMapDisplay/build/../source/SUMapDisplay.cpp
+::mdScale(..) zoomTo='%f'
+::mdScale(..) theMdFacade->scale is trying to call 0.0 scale
+::%s!  %d
+::%s!
+Unable to save to persistency !!!
+Unable to load from persistency !!!
+../../../../sw/AP_DSI_MIB20_STD/DSIUtils/public/dsiUpdateContainer.h
+::onSUStarting(..)
+::notifyHmiOfZoomLevel(..) sending: actualZoom='%f' zoomIndex='%i' value='%f'
+::%s!  %lld
+::goToTMCMessage(messageID='%lld') i='%i' latitudeVector='%lf' longitudeVector='%lf'
+Unable to read from persistence
+SUMapDisplay destroyed!
+onSetActivMapOverlay
+onSetVisibleManeuverMap
+onCreateMapView
+onGetCoordListBounding
+onCreateMap
+onActivateMapView
+onManeuverMarkerColorsChanged
+onGetAvailableZoomLevel
+onGetSpecialPOITypID
+onQueryMapNearBy
+onManeuverMapsAreAvailable
+../public/MdGeneralListener.h
+MdGeneralListener::%s! %d  %d *******************
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUMapDisplay/build/../source/MdGeneralListener.cpp
+::%s!  %d   %d
+::%s %f
+scroll to mercator position (%d, %d)   %d, %f
+correction
+::onSetFreezeRendering(..) status='%i' mapType='%i' freezeRendering='%i'
+::%s! mapViewID='%d' status='%d' finished='%d'
+::%s! First map rendering finished!
+::%s %d, %d
+::onQueryMapNearBy() No elemets in stack
+::onQueryMapNearBy::walkThroughTheStack() No properties found on stack element
+::onQueryMapNearBy() No properties found on stack element
+onSetOverlayVisibility
+onSetMapMode
+onScrollToSpecialPos
+onQueryMapCenterPosition
+onQueryMapContentLaterDetails
+onQueryMapContent
+../public/MdListener.h
+MdListener::%s! %d  %d *******************
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUMapDisplay/build/../source/MdListener.cpp
+::onScale(scale='%f')
+::requestPoisFromStack %d  %d  %d  <%s>
+::onRenderMap(status='%i' visible='%i' handle='%i') rendering is already finished
+::onRenderMap(..) map rendering failed: status='%d'
+::%s!  %d,   %f, %f
+::walkThroughTheStack() No properties found on stack element
+::%s  %d!   <%s>
+::onQueryMapContentLaterDetails() No elemets in stack
+::%s  %d    %d!
+::onQueryMapContent() No elemets in stack
+setHotPoint
+setTemperatureScale
+setMetricSystem
+goToTMCMessage
+setGeneralPoiVisibility
+getInfoForScreenPosition
+setBrandIconStyle
+viewSetVisible
+setRouteVisibility
+setEnableSoftZoom
+setMode
+setOrientation
+setMapLayerVisible
+ehSetCategoryVisibility
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUMapDisplay/build/../source/MapViewerControl.cpp
+::%s!  %d, %d
+::viewFreeze(..) freeze='%i'
+speedandflow::showSpeedAndFlowFreeFlow %d
+speedandflow::showSpeedAndFlowCongestions %d
+::%s!,  %d
+speedandflow::showTMCMessages %d
+::setZoomLevel(..) zoomLevel='%f' zoomIndex='%d'
+::setZoomArea(..) diffX='%i' diffY='%i'
+::setLocation(..) location='%i' stopover='%i'
+::%s %d!
+::setLocationByLocation(..) longitude='%d' latitude='%d'
+::setLocationByLocation(..) travellink activ and location matched hardcoded longitude='-1176098030' latitude='475168035' so execute the centering, ticket tck_inf#91194 ([ERL] : Tapping on CCP icon doesnt locate the car)
+::setLocationByLocation(..) travellink activ, ignoring DSI call according to ticket tck_inf#91194 ([ERL] : Tapping on CCP icon doesnt locate the car)
+::showTrafficEventListView(..) no pins to be displayed
+::showTrafficEventListView(..) one pin to be displayed
+::showTrafficEventListView(..) show pins='%d'
+::showTrafficEventListView(..) lats='%d' longs='%d'
+::showTrafficEventListView(..)
+::configureFlags(..) command='COMMAND_CLEAR' flagList.size='%d'
+::configureFlags(..) command='COMMAND_REMOVE' flagList.size='%d'
+::configureFlags(..) command='COMMAND_REPLACE' flagList.size='%d'
+::configureFlags(..) command='COMMAND_ADD' flagList.size='%d'
+::configureFlags(..) unhandled command='%i' flagList.size='%d'
+::setCarPosition(..) x='%i' y='%i'
+::viewSetScreenViewport(..) x='%i' y='%i' w='%i' h='%i'
+::setViewType(..) viewType='%i'
+selectManoeuvreView
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUMapDisplay/build/../source/MapViewerManeuverView.cpp
+MapViewerManeuverView::%s!  %d   %d
+MapViewerManeuverView activate SPLIT_VIEW
+activateMap
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUMapDisplay/build/../source/MapModeInterface.cpp
+::ccpOffsetFromTheBottom() zoomArea=[%i %i %i %i] screen=[%i %i %i %i] carPos=[%i %i] hotPoint=[%i %i] getFpkActiveState='%i' outValue='%i'
+::activateMap() view parameters: zoomArea=[%i %i %i %i] screen=[%i %i %i %i] carPos=[%i %i] hotPoint=[%i %i] getFpkActiveState='%i'
+::activateMap() unknown x pos: kordX='%i'
+::activateMap() selected view by new mapping: viewID='%i'
+::activateMap() view is not on the new mapping, using standard view for 1010 FPK - FAILED
+MapModeInterface::%s! activViewID='%i' newViewID='%i'
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUMapDisplay/build/../source/ZoomAnimation.cpp
+theMdFacade->scale is trying to call 0.0 scale
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUSensorHandler/build/../source/SUSensorHandler.cpp
+[SUSensorHandler::onMessage()] : EV_NAV_VP_SWITCH_POSITION_RES<%d>
+rgSwitchToNextPossibleRoad
+[SUSensorHandler::onShData()] : mSDCardIn =|%d|
+[SUSensorHandler::onShData()] : SH heading = |%lf|
+[SUSensorHandler::onShData()] : VP heading = |%lf|
+[SUSensorHandler::onShData()] : altitude = |%lf|
+[SUSensorHandler::onShData()] : ReadInt() FAILED!
+[SUSensorHandler::onShData()] : persistedHeight =|%d|
+[SUSensorHandler::processData()] : lat: %2.6lf, lon: %3.6lf, alt:%4.0lf, speed:%3.0lf, heading: %3.0lf, sat:%d/%d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUTmc/build/../source/SUTmc.cpp
+::onTrafficMessageListChanged()
+::onActiveSource() >> |%d|
+::onTrafficMessageList() >> size=|%u|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUTmc/build/../source/SUDsiTmc.cpp
+::calculateStartPosition() >> anchors=|%d|, tmcList.size=|%d|
+::calculateStartPosition() >> Anchor=|%d|
+::calculateStartPosition() >> Anchor not found.
+::setMessageFilter() >> |%d|
+::getMessageIdsForListElement() >> NOT IMPLEMENTED!
+::getBoundingRectangleForTrafficMessages() >> NOT IMPLEMENTED!
+::enableTrafficFlowStatistics() >> NOT IMPLEMENTED!
+::enableAreaWarnings() >> NOT IMPLEMENTED!
+ DSIUtil Funktor3::fireUpdate
+assertion failed: data.size() == 3 && "dsiutils Funktor3::update wrong number of params"
+DSIUtil Funktor3::update called
+ DSIUtil Funktor3::update updating 3 values and valid flag
+::updateTrafficMessageList() >> valid=|%d|, ccp=|%d,%d|
+::updateTrafficMessageList() >> ATTR_EVENTSTOTAL, |%lld|,|%lld|
+::updateTrafficMessageList() >> ATTR_EVENTSONROUTE, |%lld|
+::uploadChildMessages() >> id=|%lld|
+::uploadLeafMessages()] >> id=|%lld|
+::uploadCombinedMessages() >> type=|%d|, id=|%lld|
+::updateTrafficList20()
+::requestTmcWindow() >> windowSize=|%d|, offset=|%d|, openedListAnchorId=|%d|
+::requestTmcWindow() >> Incorrect openedListAnchorId, |%d|
+::requestTmcWindow() >> output=|%d|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUTmc/build/../source/SUDsiTmcOnRoute.cpp
+::unblockTMCMessages() >> NOT IMPLEMENTED!
+::unblockAllTMCMessages() >> NOT IMPLEMENTED!
+::setTmcWarningMode() >> |%d|
+::blockTMCMessages() >> NOT IMPLEMENTED!
+::routeGuidanceActiveCallback() >> active=|%d|
+::getTmcMessage() >> id=|%d|, result=|%lld|
+::updateTrafficMessageList() >> X-URGENT, size=|%d|
+::updateTrafficMessageList() >> Win3+1, size=|%d|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUTmc/build/../source/TmcManager.cpp
+::computeStreetSignId() >> iso_subcountry_code=|%s|
+ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+handleTourName
+updateRmRouteList
+updateDmLastDestinationsList
+addTourListMemoryElements
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDestinationMemory/build/../source/SUDestinationMemory.cpp
+SUDestinationMemory::setNotification
+SUDestinationMemory::forcePersistenceWritedown()
+../public/Persistable.h
+Persistable<Data>::load(): size=%d
+SUDestinationMemory::setNavDatabaseVersion: %ls
+../public/PersistableList.h
+PersistableList<Data>::clear()
+Persistable<Data>::get(Data& result): store size: %d
+Persistable<Data>::get(Data& result): store is empty!!
+../public/RecentList.h
+RecentList<Data>::clear()
+%s name=%ls
+%s Y:%d, M:%d, D:%d, H:%d, M:%d, S:%d, suffix1:%ls, suffix1:%ls
+%s no valid utc time - use system time
+%s no valid system time - FAILED
+%s name=%ls->fixedName=%ls
+RecentList<Data>::remove()
+Persistable<Data>::save(): size=%d
+SUDestinationMemory::storePathToPpoiDb
+SUDestinationMemory::storePathToPpoiDb time=%ldms (with %s)
+PersistenceManager
+PersistableList<Data>::save()
+RecentList<Data>::save() sal::OByteBuffer[%d], std::vector[%d], ret = %d
+SUDestinationMemory::clearNavServicesMemory()
+SUDestinationMemory::clearNavServicesMemory() time=%ldms (with %s)
+SUDestinationMemory::updateAttribute (ATTR_RMROUTELIST)
+%s [TOUR_LIST_SIZE=%d]
+SUDestinationMemory::rmRouteDeleteAll
+SUDestinationMemory::rmRouteDeleteAll time=%ldms (with %s)
+SUDestinationMemory::rmRouteDelete
+SUDestinationMemory::rmRouteDelete time=%ldms (with %s)
+SUDestinationMemory::updateAttribute (ATTR_DMLASTDESTINATIONSLIST)
+%s LAST_DESTINATIONS_LIST_SIZE=%d
+SUDestinationMemory::dmLastDestinationsDeleteAll
+SUDestinationMemory::dmLastDestinationsDeleteAll time=%ldms (with %s)
+SUDestinationMemory::dmLastDestinationsDelete(%lld)
+SUDestinationMemory::dmLastDestinationsDelete time=%ldms (with %s)
+SUDestinationMemory::updateAttribute (ATTR_LICOUNTRYFORCITYANDSTREETHISTORY), %ls
+SUDestinationMemory::updatePathToPpoiDb
+RecentList<Data>::get()
+SUDestinationMemory::dmFlagDestinationSetName
+SUDestinationMemory::dmFlagDestinationSetName time=%ldms (with %s)
+SUDestinationMemory::dmLastDestinationsGet
+SUDestinationMemory::dmLastDestinationsGet time=%ldms (with %s)
+SUDestinationMemory::updateAttribute (ATTR_DMFLAGDESTINATION)
+SUDestinationMemory::dmFlagDestinationSet
+SUDestinationMemory::dmFlagDestinationSet time=%ldms (with %s)
+SUDestinationMemory::dmFlagDestinationRemove
+SUDestinationMemory::dmFlagDestinationRemove time=%ldms (with %s)
+RecentList<Data>::put()
+SUDestinationMemory::dmLastDestinationsReplace
+SUDestinationMemory::dmLastDestinationsReplace time=%ldms (with %s)
+PersistableList<Data>::load()
+PersistableList<Data>::load: no ids were stored
+SUDestinationMemory::liGetLastCityHistoryEntry
+SUDestinationMemory::liGetLastCityHistoryEntry time=%ldms (with %s)
+SUDestinationMemory::updateAttribute (ATTR_LICITYHISTORY)
+SUDestinationMemory::liSetHistory
+SUDestinationMemory::liSetHistory time=%ldms (with %s)
+SUDestinationMemory::liSetCountryForCityAndStreetHistory
+SUDestinationMemory::liSetCountryForCityAndStreetHistory time=%ldms (with %s)
+SUDestinationMemory::liLastCityHistoryDeleteAll
+SUDestinationMemory::liLastCityHistoryDeleteAll time=%ldms (with %s)
+SUDestinationMemory::liLastCityHistoryDelete(%lld)
+SUDestinationMemory::liLastCityHistoryDelete time=%ldms (with %s)
+SUDestinationMemory::liDeleteHistory
+SUDestinationMemory::liDeleteHistory time=%ldms (with %s)
+We already have used more than half the RecentList IDs. This cannot happen during the existence of earth, so this car was probably exported to an alien planet.
+RecentList<Data>::add() remove item: %lld
+SUDestinationMemory::liLastCityHistoryAddExtended
+SUDestinationMemory::liLastCityHistoryAddExtended time=%ldms (with %s)
+SUDestinationMemory::liLastCityHistoryAdd
+SUDestinationMemory::liLastCityHistoryAdd time=%ldms (with %s)
+SUDestinationMemory::dmLastDestinationsAddList
+SUDestinationMemory::dmLastDestinationsAddList time=%ldms (with %s)
+RecentList<Data>::load()
+RecentList<Data>::load() sal::OByteBuffer[%d], std::vector[%d]
+RecentList<Data>::load: no ids were stored
+mNextId: %d
+ADD UPDATER
+SUDestinationMemory::ehGetAllBrandsOfCategory (cat id = %d)
+PersistableList<Data>::get()
+SUDestinationMemory::ehSetBrandPreference
+PersistableList<Data>::put()
+SUDestinationMemory::ehSetBrandPreference time=%ldms (with %s)
+SUDestinationMemory::rmRouteGet
+SUDestinationMemory::rmRouteGet time=%ldms (with %s)
+SUDestinationMemory::rmRouteReplace
+SUDestinationMemory::rmRouteReplace time=%ldms (with %s)
+SUDestinationMemory::rmRouteRename
+SUDestinationMemory::rmRouteRename time=%ldms (with %s)
+%s, rmId=%d, routes.size=%d
+%s, add route:%ls with %d waypoints
+SUDestinationMemory::rmRouteAdd
+SUDestinationMemory::rmRouteAdd time=%ldms (with %s)
+SUDestinationMemory::updateAttribute (ATTR_RMPERSISTENTROUTE)
+SUDestinationMemory::updateAttribute (ATTR_RMPERSISTENTROUTE) - route list is empty
+SUDestinationMemory::updateAttribute (ATTR_RMPERSISTENTROUTE) - route list contains %d destinations (final destination is:%ls,%ls,%ls,%ls,%ls)
+SUDestinationMemory::clearPersistedRouteCallback
+SUDestinationMemory::rmMakeRoutePersistent
+SUDestinationMemory::rmMakeRoutePersistent time=%ldms (with %s)
+SUDestinationMemory::blockingInPersistedRouteCallback
+SUDestinationMemory::updatePreferredBrands
+SUDestinationMemory::onFullyOperable
+SUDestinationMemory: Unable to increase buffer size in persistency manager !!!
+SUDestinationMemory: Unable to load "dm persistency version" from persistency !!!
+SUDestinationMemory: Unable to save "dm persistency version" to persistency !!!
+SUDestinationMemory: "dm persistency version" has changed !!!
+SUDestinationMemory::onFullyOperable - load persistent data
+SUDestinationMemory::onFullyOperable - load persistent datatime=%ldms (with %s)
+SUDestinationMemory::onFullyOpearble storedNavDbVersion: %ls
+SUDestinationMemory::onFullyOpearble city history cleared, new storedNavDbVersion: %ls
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigBaseFileAccess.cpp
+ConfigBaseFileAccess::unblockUpdates
+ConfigBaseFileAccess::blockUpdates
+ConfigBaseFileAccess::~ConfigBaseFileAccess
+ConfigBaseFileAccess::ConfigBaseFileAccess
+Loading config file %ls%ls%ls
+Reading conf file %ls failed tellg -1
+Reading conf file %ls failed
+ConfigBaseFileAccess::loadConfigFile(%S): File validation failed!
+ConfigBaseFileAccess::loadConfigFile(%S): File with the same validation key already loaded!
+ConfigBaseFileAccess::triggerUpdate( %ls, %ls )
+invalidateConfigFiles
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigDataCountry.cpp
+ConfigDataCountry::isCountryIdAvailableInCurrentDatabase(%d)->true
+ConfigDataCountry::getIso3code for invalid id = %d - country name is unknown
+ConfigDataCountry::getIso3code(%d)
+ConfigDataCountry::getIso3code(%d)->%ls
+ConfigDataCountry::getIso3code(%d) failed
+ConfigDataCountry::getIsoAlpha3CodeList
+ConfigDataCountry::%s
+Sort country list, size %d
+ConfigDataCountry::setLanguage(language)
+ConfigDataCountry::loadConfigFile %S FAILED!!!
+ConfigDataCountry::getCountryHNSpellerType(%d)
+ConfigDataCountry::getItuCountryCodeList
+ConfigDataCountry::getIsoAlpha2CodeList
+ConfigDataCountry::getCarCodeList
+ConfigDataCountry::reloadConfigFiles FAILED!!!
+ConfigDataCountry::ConfigDataCountry
+ConfigDataCountry::getCountryId(%ls) -> %d
+ConfigDataCountry::getStateNameOfAbbr(%S)
+ConfigDataCountry::getCountryName for iso-3 code = %ls
+ConfigDataCountry::getCountryName for iso-3 code = %ls - country name is unknown
+ConfigDataCountry::getCountryName for invalid id = %d - country name is unknown
+ConfigDataCountry::getCountryName for id = %d
+ConfigDataCountry::getCountryName for id = %d - country name is unknown
+ConfigDataCountry::provideCountryName for iso-3 code = %ls, id = %d
+ConfigDataCountry::provideCountryName for iso-3 code = %ls, id = %d - country name is unknown use country iso-3 letter code
+ConfigDataCountry::getStreetAbbreviation(%ls,%ls)
+ConfigDataCounty::loadConfigFIle %S FAILED!!!
+ConfigDataCountry::getCountryFlagIcon(%d)
+ConfigDataCountry::getCountryCarCode(%d)
+ConfigDataCountry::getCountryCarCode(%d) - invalid country code
+ConfigDataCountry::getCountryIdFromCarCode(%ls)
+../public/ICUSorting.h
+ConfigDataCountry::setCountryIdTwoIso3CodeMapping[%d]
+ConfigDataCountry::~ConfigDataCountry
+ConfigDataCountry::setCountryNameList[%d]
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigDataLanguages.cpp
+ConfigDataLanguages::getCurrentLanguage
+ConfigDataLanguages::reloadConfigFiles
+ConfigDataLanguages::reloadConfigFiles %S FAILED!!!
+ConfigDataLanguages::hmiLanguageAvailable
+ConfigDataLanguages::setLanguage
+ConfigDataLanguages::setLanguage POI category names not configured for %ls, but configured for similar language %ls
+ConfigDataLanguages::setLanguage POI category names not configured for %ls, use default language %ls
+ConfigDataLanguages::ConfigDataLanguages
+getTypeIdOfHmiId
+getPriority
+isNearbyPoi
+getPoiConfigFileNameForEngineType
+getPoiCategoriesFor3Plus1BoxExtended
+getPoiCategoriesFor3Plus1Box
+getPoiCategoriesForMapContentSetup
+getNavMapConfig
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigDataPoi.cpp
+%s hmiId:%d->typeId:%d
+%s typeId:%d->priority:%d
+ConfigDataPoi::%s
+ConfigDataPoi::getDefaultVisiblePoiCategories
+ConfigDataPoi::getClassSortIndex Invalid class Id %d
+ConfigDataPoi::getAllBrandsNavIds
+ConfigDataPoi::getAllNavIds
+ConfigDataPoi::getPOITopCategoriesWithMembers
+ConfigDataPoi::getHmiIdOfNavId Invalid nav Id: %d
+ConfigDataPoi::updatePpoiOffset() m_currentPpoiOffset %d, m_nextPpoiOffset %d
+ConfigDataPoi::updatePpoiOffset() - invalid next PPOI offset value, use: %d
+ConfigDataPoi::updatePpoiOffset() - Not able to store m_nextPpoiOffset
+New PPOI next offset: m_currentPpoiOffset %d, m_nextPpoiOffset %d
+New PPOI current offset: m_currentPpoiOffset %d -> %d
+ConfigDataPoi::updatePpoiOffset() - Not able to store m_currentPpoiOffset
+ConfigDataPoi::setEngineType: primaryEngineType: %d, secondaryEngineType: %d
+Unable to load enigne type from persistency !!!
+Unable to save engine type to persistency !!!
+ConfigDataPoi::forcePersistenceWritedown()
+ConfigDataPoi::setEngineType: m_engineType: %d, %d
+onfigDataPoi::getAllCategoriesClass() -> %d (highestNumber %d)
+ConfigDataPoi::setPreferredBrands: preferredBrands.size=%d
+ConfigDataPoi::getHmiIdsOfClassId, %d
+ConfigDataPoi::getNavIdsOfHmiIds
+ConfigDataPoi::getNavIdsOfClassId, %d
+ConfigDataPoi::getBrandsWithoutReservedIds(%d)
+ConfigDataPoi::loadPpoiCategoryNames %ls
+ConfigDataPoi::loadPPOICategoryStructure %ls
+ConfigDataPoi::loadPersonalPoiDbConfiguration
+PPOI DB configuration %sactivated!!!
+ConfigDataPoi::getCategorySortIndex
+ConfigDataPoi::getCategorySortIndex Invalid class Id %d
+ConfigDataPoi::getCategorySortIndex Invalid category Id %d
+ConfigDataPoi::getAllPPOINavIds
+ConfigDataPoi::getIconIndexFromHmiId( hmiId %d, brandNavId %d)
+ConfigDataPoi::getIconIndexFromHmiId( hmiId %d, brandNavId %d) - found brand: index %d, subindex %d
+ConfigDataPoi::getIconIndexFromHmiId( hmiId %d, brandNavId %d) - icon not found
+personal
+ConfigDataPoi::getIconIndexFromHmiId( hmiId %d, brandNavId %d) - icon from %s DB found: index %d, subindex 0
+ConfigDataPoi::getPoiCategoryChildren
+ConfigDataPoi::getPPOICategoryName
+ConfigDataPoi::getPPOICategoryName Invalid hmi Id: %d
+ConfigDataPoi::getWarnablePPOINavIds
+ConfigDataPoi::getNavIdOfHmiId
+ConfigDataPoi::getNavIdOfHmiId Invalid hmi Id: %d
+ConfigDataPoi::splitCategoriesToRawAndPersonal(list[%d]) = raw[%d] + personal[%d]
+ConfigDataPoi::getPpoiHmiIdOfNavId Invalid nav Id: %d
+ConfigDataPoi::getBrandIdOfPoiType navId=%d, sourceId=%d
+ConfigDataPoi::getNavIdOfPoiType navId=%d, sourceId=%d
+ConfigDataPoi::getHmiIdOfNavId, navId %d, Invalid sourceId: %d
+ConfigDataPoi::getIconIndexFromNavId navId = %d, brandNavId = %d, sourceId = %d
+ConfigDataPoi::getPOICategoryName for navId %d, sourceId %d
+ConfigDataPoi::getPpoiIconFile(%d, %d)
+Icon: %ls
+No Icon found for Id (%d, %d)!
+ConfigDataPoi::reloadConfigFiles from POI folder:%ls
+ConfigDataPoi::reloadConfigFiles from POI folder:%S failed - use general POI configuration
+ConfigDataPoi::reloadConfigFiles FAILED!!!
+ConfigDataPoi::reloadConfigFiles CATEGORY_DATA Success!
+ConfigDataPoi::reloadConfigFiles from POI folder:%S failed - use general POI configuration (petrol_stations)for %ls
+ConfigDataPoi::reloadConfigFiles from POI folder:%S failed - use general POI configuration (petrol_stations) for %ls
+PPOI DB configuration not activated!!!
+ConfigDataPoi::ConfigDataPoi
+ConfigDataPoi::~ConfigDataPoi
+ConfigDataPoi::getSeparatedStrings( input %ls, separators %ls, separatedStrings.size=%d
+ConfigDataPoi::getBrandIdOfAttributes %ls
+ConfigDataPoi::getSeparatedStringsAll( input %ls, separators %ls, separatedStrings.size=%d
+ConfigDataPoi::parseExitNumber: %ls -> %ls
+ConfigDataPoi::usePpoiConfigData
+ConfigDataPoi::loadCategoryNames
+ConfigDataPoi::loadCategoryNames FAILED!!!
+ConfigDataPoi::%s, navMapConfig.size=%d
+ConfigDataPoi::getPOITopCategoryName
+ConfigDataPoi::getPOICategoryName for hmiId %d
+ConfigDataPoi::getPOICategoryName Invalid hmi Id: %d
+ConfigDataPoi::setLanguage
+synonym
+types
+search
+category
+categories
+MISSING_ICON
+invisible
+warnable
+bitmap
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigDataPpoiXmlReader.cpp
+ConfigDataPpoiXmlReader::loadPPOICategoryStructure %ls
+XML reader reads file: %s
+langCode
+ConfigDataPpoiXmlReader::loadPpoiCategoryNames %ls
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigDataRoadIcon.cpp
+ConfigDataRoadIcon::getRoadIcon(%d, %d)
+Text length (%d) too big!
+ConfigDataRoadIcon::reloadConfigFiles()
+ConfigDataRoadIcon::reloadConfigFiles %ls%ls FAILED!!!
+ConfigDataRoadIcon::ConfigDataRoadIcon
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/SUConfigData.cpp
+SUConfigData::setNotification
+Language (%ls) not availeble or config files not found
+Language (%S) information wasn't stored under %d, %d
+available languages: %d/%d
+SUConfigData::reloadEbPoiConfiguration(%ls)
+SUConfigData::onMessage %d
+CARSERV_EV_ENGINE_TYPE_REP, engineTypeP:%d, engineTypeS:%d
+en_GB
+No language information was stored under %d, %d -> use default language: %s
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/Iconrenderer.cpp
+Iconrenderer::setNotification()
+Iconrenderer::renderingInformationForExitIcon(iconReference %d,textLength %d,iconSize %d)
+Iconrenderer::resourceIdForCountryIcon()
+Iconrenderer::resourceIdForCountryIcon( %d, %d) result iconResId %d
+Iconrenderer::resourceIdForTrafficRegulationIcon()
+Iconrenderer::resourceIdForTrafficRegulationIcon( %d, %d, %d) result iconResId %d
+Iconrenderer::resourceIdForRoadClassIcon()
+Iconrenderer::resourceIdForRoadClassIcon( %d, %d, %d) result iconResId %d
+Iconrenderer::resourceIdForTMCEventIcon()
+::resourceIdForTrafficRegulationIcon() >> DSI subindex=|%d|
+::resourceIdForTrafficRegulationIcon() >> NAV subindex=|%d|
+Iconrenderer::resourceIdForTMCEventIcon( %d, %d, %d) result iconResId %d
+Iconrenderer::resourceIdForPOIIconFromRawData(countryCode=%i, catReference=%i, iconSize=%i)
+Iconrenderer::resourceIdForPOIIconFromRawData( %d, %d, %d) result iconResId %d
+Iconrenderer::resourceIdForPOIIcon(catNumber=%i, subIndex=%i)
+Iconrenderer::resourceIdForPOIIcon( %d, %d, %d) result iconResId %d or iconFileName %ls
+Iconrenderer::renderingInformationForRoadIcon(iconReference %d,textLength %d,iconSize %d)
+Iconrenderer::renderingInformationForRoadIcon result iconResId %d, text rendering info (x:%d (%d,%d,%d), y:%d (%d,%d,%d), color:%d, ref:%d, font size %d(font ID:%d))
+Iconrenderer::resourceIdForTargetIcon(%d, %d)
+Iconrenderer::resourceIdForTargetIcon( %d, %d) result iconResId %d
+Iconrenderer::resourceIdForAdditionalTurnListIcon(%d, %d, %d, %d)
+Iconrenderer::resourceIdForAdditionalTurnListIcon(%d, %d, %d, %d) result iconResId %d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigBaseIconWithSubIdx.cpp
+ConfigBaseIconWithSubIdx::getIconResId(%d, %d)
+ConfigBaseIconWithSubIdx::getIconFile(%d, %d)
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigBaseLanguageDependent.cpp
+ConfigBaseLanguageDependent::getAvailableLanguages
+ConfigBaseLanguageDependent::languageAvailable %ls
+ConfigBaseLanguageDependent::similarLanguageAvailable %ls
+ConfigBaseLanguageDependent::similarLanguageAvailable %ls -> %ls
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigDataIconWithSubIdx.cpp
+ConfigDataIconWithSubIdx::reloadConfigFiles()
+ConfigDataIconWithSubIdx::reloadConfigFiles %S FAILED!!!
+ConfigDataIconWithSubIdx::ConfigDataIconWithSubIdx
+assertion failed: false && "Set proper Icon type!!!"
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigDataTmcIcon.cpp
+ConfigDataTmcIcon::getTmcIcon(%d, %d)
+ConfigDataTmcIcon::reloadConfigFiles()
+ConfigDataTmcIcon::reloadConfigFiles %S FAILED!!!
+ConfigDataTmcIcon::ConfigDataTmcIcon
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUConfig/build/../source/ConfigDataResourceConfig.cpp
+ConfigDataResourceConfig::reloadConfigFiles()
+ConfigDataResourceConfig::reloadConfigFiles %S FAILED!!!
+ConfigDataResourceConfig::ConfigDataResourceConfig
+ConfigDataResourceConfig::getResourceId( %ls ), map size %d
+ConfigDataResourceConfig::getResourceDimension( %d ), map size %d -> Width %d, Height %d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUPNav/build/../source/SUPNav.cpp
+::onMessage() >> EV_NAVEXTPNAV_REQUEST_ROUTE_WAYPOINTS_ANS
+::onMessage() >> EV_NAVEXTPNAV_UPDATE_PREDICTED_ROUTES_ANS
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUPNav/build/../source/SUDsiPredictiveNavigation.cpp
+::setNotification() >> size=|%d|
+::navClearCacheResult() >> status=|%d|
+::setOperationMode() >> operationMode=|%d|, profile=|%d|
+::setMaxPredictions() >> predictions=|%d|
+::clearCache() >> profile=|%d|
+::restoreProfileId()
+::saveProfileId() >> restoreProfileId=|%d|
+::saveProfileId() >> hmiProfileId=|%d|
+::restoreOperationMode()
+::saveOperationMode()
+::navUpdateMaxPredictions() >> : status=|%d|, predictions=|%d|
+::navUpdateOperationMode() >> status=|%d|, mode=|%d|
+::navUpdateLikelyDestinations() >> status=|%d|, size=|%u|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUShield/build/../source/SUShield.cpp
+::onMessage() >> event=|%d|
+profileResetAll
+profileReset
+profileCopy
+profileChange
+matchToResults
+storeNextShieldSearchResult
+navSearchResult
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUShield/build/../source/SUDsiSearch.cpp
+::setSearchFilter() >> NOT IMPLEMENTED!
+::setRoutePoints() >> NOT IMPLEMENTED!
+::setRadioStations() >> NOT IMPLEMENTED!
+::setCarFunctionStates() >> NOT IMPLEMENTED!
+::resetToFactorySettings() >> NOT IMPLEMENTED!
+::resetAutocompletion() >> NOT IMPLEMENTED!
+::removeFromHistory() >> NOT IMPLEMENTED!
+::removeAllFromHistoryBySource() >> NOT IMPLEMENTED!
+::importBackupFile() >> NOT IMPLEMENTED!
+::createBackupFile() >> NOT IMPLEMENTED!
+::setNotification() >> size=|%u|
+::navClearHistoryResult() >> success=|%d|
+::navAddResultToHistoryResult() >> success=|%d|
+::navSetLanguageResult() >> success=|%d|
+::navSetEnvironmentResult() >> success=|%d|
+::navSetCurrentPositionResult() >> success=|%d|
+::navSetActiveSearchCountriesResult() >> success=|%d|
+::navSetActiveProfileResult() >> success=|%d|
+::navPrepareSourcesResult() >> success=|%d|
+::navCancelQueryResult() >> success=|%d|
+::setActiveProfile() >> |%d|
+::prepareSources() >> size=|%u|
+::cancelQuery() >> queryId=|%d|
+::removeAllFromHistory()
+::setLanguage() >> |%ls|
+::setCurrentPosition() >> lat=|%f|, lon=|%f|
+::setEnvironment() >> oem=|%ls|, region=|%ls|, countryCoding=|%ls|
+::navUpdateMapProductUrids()
+::requestSupportedCountries()
+::navUpdateSearchIsActive() >> isActive=|%d|, validity=|%d|
+::navShieldStatus() >> isEnabled=|%d|, isSearchActive=|%d|
+::search() >> queryId=|%d|
+::requestSuggestion() >> queryId=|%d|
+::mapProductIdUriIdsCallback()
+::navSearchResult() >> success=|%d|, queryId=|%d|
+RESULTRESULT:%d,%d,%d,%d,%d,%d,%d,%f,%f
+%s wordType=%d token=%ls
+::addToHistory() >> queryId=|%d|
+::setActiveSearchCountries() >> size=|%u|
+::navRequestSuggestionResult() >> success=|%d|, queryId=|%d|
+::navRequestSupportedCountriesResult() >> success=|%d|, size=|%u|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/SUDynamicGuidance.cpp
+LON=%f, LAT=%f!
+::onMessage() EV_DG_TMER!
+::onMessage() EV_DG_VPPOSITION_UPDATE!
+::onMessage() EV_DG_STOPOVER_REACHED timer!
+::onMessage() EV_DG_STOP_DEMORUNNING timer!
+::onMessage() EV_DG_WARNING_SIGN_REMOVE timer!
+EV_MIB_DSI_CLAMPSTATE clampS=%d clamp15=%d
+clamp15 switched off, disabling Demo mode
+::onServerStopping()
+::onMediaEject()
+::onServerTermination()
+::onServerConnected() - register NavServer listeners
+::onFullyOperable()
+::onFullyOperable() >> PNAV guidance resume!
+::onFullyOperable() >> No PNAV destinations!
+::onFullyOperable() >> Guidance resume.
+::onPrepareOff()
+SUDynamicGuidance::onSUStarting!
+DgController::getInstance()->createInstance() return 0!
+SUDynamicGuidance START TIMER!
+readTrack
+onRcReadTrackStatus
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/DgController.cpp
+......DgController::rgStopGuidance......
+::rgStartGuidanceCalculatedRoute(%d)
+DgController::etcSetDemoModeSpeed %d
+DgController::setNotification
+ DSIUtil UpdateContainer::invalidate for attribute %d
+::invalidateDsiAttributes()
+restoreGuidanceVoiceMode(%d) success!
+SUGuidance::rgSetRouteGuidanceMode(%d)
+DgController::afaRepeat(source=%d)
+maneuverColorMappingCallback size=%d
+assertion failed: NULL != mTrafficRegulation
+assertion failed: NULL != mCombinedRouteList
+assertion failed: NULL != mBlocking
+::getPassedTime() on event=%s, passedTime total=%ldms, relative=%ldms!
+::stamp() on event=%s, passedTime=%ld!
+::rgCalculateRoute(%d)
+rgCalculateRoute
+::unRegisterNavListeners()
+DgController::registerNavListeners()
+translateRouteOptions routeType-%d (0-fast, 1-short, 7-eco)
+translateRouteOptions    dynamic-%d (6-enable, 7-disable)
+translateRouteOptions    motorways-%d, tunnels-%d, ferries-%d  (1-use, 3-avoid)
+translateRouteOptions    cartrain-%d, trailer-%d, tollroads-%d  (1-use, 3-avoid)
+translateRouteOptions    vignette-%d (1-use, 8-exceptlist), vignListCount-%d
+[DgController::getActiveRouteReference()] : size=|%d!
+[DgController::getActiveRouteReference()] : RouteReference=|%d|
+......DgController::rgSetTurnListMode %d......
+%s gpxFileName=%ls
+[DgController::releaseRoutes()] : referenceId=|%d|
+::getNextDestLongLat() size=%d, index=%lld !
+RcNotAvailable
+RcInitiated
+RcCancelInitiated
+RcPending
+RgPredInitiated
+RgInitiated
+RgStopInitiated
+RgRunning
+RgDestinationReached
+RsDemoInitiated
+RsDemoStopInitiated
+RsDemoRunning
+RsDemoDestinationReached
+RsDemoRestart
+StateUnknown
+ChangeState to %s
+::hmiStopRg()
+DgController::etcSetDemoMode(%d)
+DgController::requestAudioTrigger(%d)
+DgController::enableRgStreetList enabled=%d!
+......DgController::rgSetPosition......
+ATTR_SOPOSPOSITIONDESCRIPTION (%ls %ls, %ls %ls)
+::hmiOnGuidanceStarted()
+[DgController::enableRgLaneGuidance()] : |%d|
+::rgStartGuidanceCalculatedRouteByUID(%d)
+::rgStartGuidanceCalculatedRouteByUID EMPTY
+::routeGuidanceError()
+::routeCalculationError() >> RG not possible in state |%s|
+::routeCalculationError() >> cancelCalculation=|%d|
+::routeCalculationError() >> RC not possible in state |%s|
+::setRcNotAvailable()
+::setRcNotAvailable() >> DEMO is still active!
+updateRouteOptionsForHMI ATTR_RGCURRENTROUTEOPTIONS ATTR_RGCURRENTROUTE
+rgSetRouteOptions
+[DgController::addToRouteReferenceList()] : |%d|
+[DgController::setActiveRouteReference] : |%d|
+releaseRoute RouteReference i=%d, ReferenceId=%d!
+assertion failed: !m_RouteReferenceList.empty()
+[DgController::setActiveRouteReference] : routeId=|%d|, referenceId=|%d|
+Invalid VP data
+Position not valid
+AirDistanceToNextDestination=%lld !
+::hmiUpdateStopoverReached()
+::hmiUpdateStopoverReached() >> indexOfCurrentDestination = |%lld|
+::hmiUpdateRouteOverview()
+STREET.startDistance=%d, endDistance=%d, streetname=%ls, roadName=%ls, additionalInfo=%ls!!
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/TrafficRegulation.cpp
+[TrafficRegulation::setWarningStatus()] : NOT IMPLEMENTED!, |%d|%d|%d|%d|
+[TrafficRegulation::setSpeedLimitWarning()] : NOT IMPLEMENTED!, |%d|%d|%d|
+showSpeedLimits(false)
+showSpeedLimits(true)
+::requestRoadClassSpeedInfoForCountry %ls, vec size = %d
+::requestRoadClassSpeedInfoForCountry - vector empty or country mismatch
+::updateTrafficSign speedLimit=%d, weatherSpeed=%d, hasPassingRestriction=%d, isTimeDependent=%d, isOnRoad=%d
+::updateTrafficSign - clean, offroad
+::removeWarningSign
+::updateTrafficSignForChina - sign %d, vehicle %d, timeDep %d
+::updateTrafficSignForChina unknown sign %d
+::updateTrafficSign warnings
+::onCountryCodeChanged(%d) still 0 return! 
+::onCountryCodeChanged(%d)
+::onCountryCodeChanged(%d) STORED - NAVSERVER IS NOT YET FULLY OPERABLE!
+::onCountryCodeChanged(%ls)
+Road class: urban;    roadClassIconReference=%d, speedLimit=%d!
+Road class: rural;    roadClassIconReference=%d, speedLimit=%d!
+Road class: rural2;    roadClassIconReference=%d, speedLimit=%d!
+Road class: highway;  roadClassIconReference=%d, speedLimit=%d!
+::update ATTR_COUNTRYSPEEDINFORMATION
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/Blocking.cpp
+[Blocking::setSpeedLimitWarning()] : NOT IMPLEMENTED!, |%u|%ls|
+[Blocking::setSpeedLimitWarning()] : NOT IMPLEMENTED!, |%u|
+[Blocking::setSpeedLimitWarning()] : NOT IMPLEMENTED!, |%lld|%lld|
+[Blocking::setSpeedLimitWarning()] : NOT IMPLEMENTED!, |%d|%d|%d|%d|
+[Blocking::blockArea()] : NOT IMPLEMENTED!, |%d|%d|%d|%d|
+[Blocking::deleteBlock()] : |%u|
+[Blocking::blockRouteBasedOnLength()] : |%d|%d|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/CombinedRouteList.cpp
+[CombinedRouteList::requestTrafficInformation()] : NOT IMPLEMENTED!, |%lld|
+[CombinedRouteList::requestPriceInfo()] : NOT IMPLEMENTED!, |%lld|
+[CombinedRouteList::setSpeedLimitWarning()] : NOT IMPLEMENTED!, |%lld|
+[CombinedRouteList::setSpeedLimitWarning()] : NOT IMPLEMENTED!, |%u|
+[CombinedRouteList::requestCombinedRouteListWindow()] : |%d|%d|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/IOMListener.cpp
+::onRegisterGOIListener - success!
+IOMListener::onOverviewAvailable goiType=%d!
+::onTrafficSignsUpdated(size = %d)
+::onSpeedLimitChanged(speedlimit = %d, weather = %d, hasPassingRestriction %d)
+::onStopoverReachedTimer() clean overviewlist
+::onStopoverReachedTimer()!
+IOMListener::onRequestAudio(%d)
+ATTR_RGINFOFORNEXTDESTINATION, dist: %d, time: %d, dir: %d, destIndex=%d
+::onCurrentNameChange(curRoadName=%ls) IGNORE - NAVSERVER IS NOT FULLY OPERABLE - data stored!
+::onCurrentNameChange curRoadName=%ls, curRoadNumber=%ls, roadNumberType=%d, onroad=%d
+Destination or Waypoint side=%0X
+offroad car heading = %d hmi=%d (%X)!
+ATTR_BAPMANEUVERDESCRIPTOR element=%d, dir=%02X
+::processLaneGuidance, %d lanes, %d missing
+::processLaneGuidance lane %d, dir %d, exitLane %d, recommended %d, forbidden %d
+::processLaneGuidance lane %d, dir %d, exitLane %d, recommended %d, forbidden %d overwrite
+::processLaneGuidance lane %d, dir %d, exitLane %d, recommended %d, forbidden %d skipped
+::processLaneGuidance - lanedata pos %d, dir %02X, isRecommended: %d
+::processLaneGuidance - lanedata inserted missing lane %d
+::onSingleLaneGuidance %d lanes
+::distance.bargraph=0, dist=%d!
+::hmiClusterDistanceUpdate bargraph=%d start with=%.2lf, mDistanceToManeuver=%d, mPreAnnDistance=%d, dist=%d!
+::hmiClusterDistanceUpdate distance.showBargraph=%d, distance.bargraph=0!
+ATTR_DISTANCETONEXTMANEUVER distance: %d, %d, bargraph: %d, %d
+onDistanceUpdate: rerouting Pending!
+onDistanceUpdate: final=%d, toDestination=%d, distanceToNextManeuver=%d!, timeToDestination=%d
+::onNewGOI type=%d, level=%d sideR=%d, exitLeg=%d, geo=%0X, distToMan=%d!, distToDest=%d!, timeToDest=%d!
+  onNewGOI roadNumber=%ls, signpost=%ls, name=%ls
+ onNewGOI() stop timer,  clean overviewlist
+Force Calculating ...
+Don't show rerouting we are still in stopover reached
+  onNewGOI mShowBarGraph==%d || newManeuver=%d!
+  onNewGOI mShowBarGraph=false!
+send update ATTR_BAPTURNTOINFO: %ls, %ls
+rerouting clean overviewlist
+REROUTING! SEND EMPTY updateRgTurnList(rgTurnList, 1); size=%d!
+REROUTING! Clear POI Stuff!
+************************ onNewGOI set mKeepManeuverList ************************
+************************ onNewGOI clear mKeepManeuverList ************************
+Start stopover reached timer
+onManList#DEST type=%d, index=%d/%d, dist=%d, time=%d, name=%ls -----------------
+onManList#sign: %ls, name: %ls, number: %ls, icon: %ls, rType: %d
+onManList  ELEMENT: %d, dist: %d, time: %d, exit: %ls, dir: 0x%X, index: %d
+onManList  ferry
+onManList  tunnel is skipped
+onManList  passing_point
+onManList  tollgate, count: %d, mask: 0x%X
+onManList  marker: %d
+onMarker maneuver color matching FAILED! --------------------------------
+onMarker sizes: %d/%d
+onMarker manId: %ls color: %d
+onMarker %ls
+onMarker --------------------------------
+onManList size=%d ------------------------
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STRcCancelInitiated.cpp
+::rgStopGuidance()
+::changeState() mStartPressed=%d!
+onRcRouteCalculationStopped(%d)
+onRcAlternativeRoutesCalculationStopped(%d)
+::onExit() - releaseRoutes
+::onEntry() >> isMultipleRouteCalulationMode=|%d|
+::rgCalculateRoute
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STRcInitiated.cpp
+[STRcInitiated::etcSetDemoMode()] : |%d|
+SEGMENTS updateAvailableRoutes CALCULATIONSTATE_CALCULATED index = %d
+updateAvailableRoutes
+onRcRouteCalculated -> statusInfo=%d!
+onRcRouteCalculated
+onRcRouteError errorCode=%d
+onRcRouteError setOffMap(true)
+onRcAlternativeRoutesCalculated(bLastRouteCalculated=%d, status=%d)
+onRcAlternativeRoutesCalculated Success mLastRouteCalculated=%d!
+rgStopGuidance() >> mLastRouteCalculated=|%d|
+rgStopGuidance() - releaseRoutes!
+ATTR_RGINFOFORNEXTDESTINATION, air distance update=%d
+::rgStartGuidanceCalculatedRoute() >> routeHandle=|%d|
+******* Unable to start route guidance! Caculation not completed ******
+assertion failed: static_cast<std::size_t>(routeOptionNo) < DgController::getInstance()->getNavDsiRoute().routelist[0].routeOptions.size()
+::sendUpdateRgCalculatedRoutes()
+==============================
+::RouteInfo count=%d
+total distance=%u!
+total Time=%u!
+Briefing:
+segment %d
+    lengthOfTollwaySegments=%u!
+    lengthOfSpecialChargeRoadSegments=%u!
+    lengthOfFerrySegments=%u!
+    lengthOfHighwaySegments=%u!
+    lengthOfTunnelSegments=%u!
+    lengthOfCarTrainSegments=%u!
+    lengthOfSeasonalRestrictedAreaSegments=%u!
+    lengthOfTimeRestrictedAreaSegments=%u!
+    timeToNextWaypoint=%d!
+    distanceToNextWaypoint=%d!
+- - - - - - - - - - - - - - - - 
+index=%d, distance=0xFFFFFFFF, ETA=0xFFFFFFFF!
+Total TIME=%d!
+Info index=%d, DISTANCE=%lld, ETA=%lld!
+update(ATTR_RGCALCULATEDROUTES)
+onRcRouteCompletelyCalculated
+demoRestart=%d, startDemoFromRunning=%d
+ROUTECOMPLETELYCALCULATED true !
+addRouteInfo
+HMI can SHOW MAP after map rendered!!!!
+ROUTECALCULATIONSTATE_READY
+onRcAlternativeRoutesCompletelyCalculated(lastCompletelyCalculated=%d, status=%d)
+onRcAlternativeRoutesCompletelyCalculated mCurrentIndex=%d, bLastRouteCompletelyCalculated=%d! route ref OK
+onRcAlternativeRoutesCalculationProgressInfo(%u, %u, %u, %d)
+progressStatus = |%d|
+onRcAlternativeRoutesCalculationProgressInfo ERROR
+onRcRouteCalculationProgressInfo(%u)
+calculating route progress=%u
+onRcRouteCalculationProgressInfo - error %d!
+Current Route index: %lld!
+Current Route index for demo restart: %lld!
+ATTR_RGCURRENTROUTE ATTR_RGROUTECALCULATIONSTATE ATTR_RGCALCULATEDROUTES ATTR_RGTURNLIST ATTR_DISTANCETONEXTMANEUVER ATTR_RGTURNTOSTREET
+::onEntry multiple routes!
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STRcNotAvailable.cpp
+::rgStopGuidance() rgStopped=true, calcState=Idle
+::rgCalculateRoute() >> numberOfAlternatives=|%d|
+::rgCalculateRoute() >> Not possible to start route calculation!
+ATTR_BAPMANEUVERDESCRIPTOR element = OFFMAP
+ATTR_RGINFOFORNEXTDESTINATION, Update air distance=%d, and direction=%X!
+cleaning ATTR_BAPMANEUVERDESCRIPTOR
+cleaning ATTR_BAPTURNTOINFO
+airDistance<=30
+mDestReached=true
+ATTR_BAPMANEUVERDESCRIPTOR element = ARRIVEDDESTINATIONOFFROAD
+setOffMap(false)
+::update ATTR_RGCURRENTROUTE( indexOfCurrentDestination = %lld)
+mDestReached=false
+::updateRgAirDistanceToNextDestination: Route object Invalid!!!
+[::rgStartGuidanceCalculatedRouteById()] : ATTR_RGCURRENTROUTE
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STRcPending.cpp
+::onRcAlternativeRoutesCalculationStopped() >> statusInfo=|%d|
+::onEntry() >> stopAlternativeRoutesCalculation()
+::onVpPositionChanged() >> ATTR_RGINFOFORNEXTDESTINATION, airDistance=|%lld|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STRgDestinationReached.cpp
+::onEntry() >> timer=|%d|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STRgInitiated.cpp
+::rgStopGuidance stopGuidance true
+::onEntry() RGFacadeProxy::getInstance()->startGuidance!!
+::onRgGuidanceStarted  nsc::nrSuccess STOP
+::onRgGuidanceStarted  nsc::nrSuccess
+onRgGuidanceStarted ERROR
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STRgPredInitiated.cpp
+::rgStopGuidance stopGuidance
+::onRgGuidanceStopped(%d)
+::onEntry startGuidanceById
+::onRgGuidanceStarted() >> statusCode=|%d|
+::onRgGuidanceStarted() >> mIsGuidanceStopped=|%d|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STRgRunning.cpp
+::onVpPositionChanged
+::onRgDestinationReached STOP GUIDANCE
+::onDGTimer()
+::onRcRouteCalculated
+DgController::rgStopGuidance
+::onRgWaypointReached
+E_INF_DG_WAYPOINT_SKIPPED, Calculating...
+::onExit()
+::rerouting()
+[STRgRunning::onCurrentDistance()] : UPDATE_LS_DISTANCE_TO_NEXT_DESTINATION=|%d|,|%lld|,|%d|,|%d|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STRgStopInitiated.cpp
+::rgStopGuidance() - pressed
+STRgStopInitiated::onExit releaseRoutes!
+::onEntry()
+STRgStopInitiated::onRgGuidanceStopped()
+setStartDemoFromRunning(true)
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STDemoInitiated.cpp
+::etcSetDemoMode() >> enable=|%d|
+::onEntry() >> START SIMULATOR
+::onRgGuidanceStarted  but stopping demo requested.
+::onRgGuidanceStarted() >> nsc::nrSuccess
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STDemoRunning.cpp
+::onVpPositionChanged()
+::onRgWaypointReached()
+::onStopDemoRunningTimer()
+::onRcRouteCalculated()
+::onRsSimulatorError() >> errorCode=|%d|
+::onRgGuidanceError() >> errorCode=|%d|
+::onIomDestinationReached() >> |STOP DEMO|
+::onRgDestinationReached() >> statusCode=|%d|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STDemoStopInitiated.cpp
+::onRcRouteReleased >> statusInfo=|%d|
+::onRgGuidanceStopped() >> statusCode=|%d|
+::onRsRouteSimulatorStopped >> errorCode=|%d|
+::STOP SIMULATOR
+::onExit() >> releaseRoutes! DemoRestart = false!
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STDemoDestinationReached.cpp
+::changeState() >> mStartPressed=|%d|
+::onEntry() >> Start TIMER!!!
+::rgCalculateRoute()
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STDemoRestart.cpp
+::onRsRouteSimulatorStopped() >> |%d|
+::onRsRouteSimulatorStopped() >> |STOP DEMO|
+::onRsRouteSimulatorStopped() >> |RESTART DEMO|
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/STBase.cpp
+::onVpPositionChanged , NOT HANDELED IN THIS STATE!
+::onIomDestinationReached , NOT HANDELED IN THIS STATE!
+::onCurrentDistance , NOT HANDELED IN THIS STATE!
+::onStopDemoRunningTimer , NOT HANDELED IN THIS STATE!
+::onDGTimer , NOT HANDELED IN THIS STATE!
+::onOverviewAvailable , NOT RUNNING STATE!
+::rerouting() , NOT HANDELED IN THIS STATE!
+::onRsWaypointReached , NOT HANDELED IN THIS STATE!
+::onRsDestinationReached , NOT HANDELED IN THIS STATE!
+::onRsRouteSimulatorPaused , NOT HANDELED IN THIS STATE!
+::onRsRouteSimulatorContinued , NOT HANDELED IN THIS STATE!
+::onRsRouteSimulatorReset , NOT HANDELED IN THIS STATE!
+::onRsCurrentManeuverSkipped , NOT HANDELED IN THIS STATE!
+::onRsRouteSimulatorActive , NOT HANDELED IN THIS STATE!
+::onRsRouteSimulatorStopped , NOT HANDELED IN THIS STATE!
+::onRsRouteSimulatorStarted , NOT HANDELED IN THIS STATE!
+::onRgWaypointReached , NOT HANDELED IN THIS STATE!
+::onRgDestinationReached , NOT HANDELED IN THIS STATE!
+::onRgGuidanceStopped , NOT HANDELED IN THIS STATE!
+::onRgGuidanceStarted , NOT HANDELED IN THIS STATE!
+::onRcReroutingStatusChanged , NOT HANDELED IN THIS STATE!
+::onRcRouteBlockingCancelled , NOT HANDELED IN THIS STATE!
+::onRcRouteBlocked , NOT HANDELED IN THIS STATE!
+::onRcRouteReleased , NOT HANDELED IN THIS STATE!
+::onRcRouteCalculationStopped , NOT HANDELED IN THIS STATE!
+::onRcRouteCompletelyCalculated , NOT HANDELED IN THIS STATE!
+::onRcRouteCalculated , NOT HANDELED IN THIS STATE!
+::onRcAlternativeRoutesCalculationStopped , NOT HANDELED IN THIS STATE!
+::onRcAlternativeRoutesCompletelyCalculated , NOT HANDELED IN THIS STATE!
+::onRcAlternativeRoutesCalculated , NOT HANDELED IN THIS STATE!
+::onRcRouteCalculationProgressInfo , NOT HANDELED IN THIS STATE!
+::onRcRouteCreated , NOT HANDELED IN THIS STATE!
+::etcSetDemoMode , NOT HANDELED IN THIS STATE!
+::rgStartGuidanceCalculatedRouteById , NOT HANDELED IN THIS STATE!
+::rgStartGuidanceCalculatedRoute , NOT HANDELED IN THIS STATE!
+::rgCalculateRoute, NOT HANDELED IN THIS STATE!
+::rgDetourRemove, NOT HANDELED IN THIS STATE!
+::rgDetourSet, NOT HANDELED IN THIS STATE!
+::rgStopGuidance, sent by HMI.
+DIRECTION carHeading=%f, bearing=%f, relative=%f, hmi=%d!
+::onRcRouteError(%d)
+STBase::setDgAbstractWaypoint location (%d,%d) is %sexact point (from map)
+junction(sideStreet) not empty and will be set
+Latitude longitude not found
+::newRouteInfo()
+ATTR_BAPMANEUVERDESCRIPTOR element = CALCROUTE
+::startRouteCalculationPressed numberOfAlternatives=%d!, route.routelist.size()=%d!
+updateDestinationCoordinates() >> ATTR_RGCURRENTROUTE
+::onRcActiveRouteInfo() >> statusInfo=|%d|
+- - - - - - - - - - - - - - - - - - - - - - - - - -
+origin:      %ls, %ls
+stopover:    %ls, %ls
+destination: %ls, %ls
+stopover distance: %u, time: %u
+total distance:    %u, time: %u
+ATTR_RGDESTINATIONINFO destinations: %d, reached: %d - - - - - - - - - - -
+::addAddresses
+START POINT FOR DEMO: 
+Unable to obtain start point for demo mode from HMI, use NavServer defaults!
+Route.routelist.size()==1 addDestination:
+Invalid Location Data for destination!
+indexOfCurrentDestination %llu, %llu!
+Invalid Location Data for this item!
+-> destination added!
+-> waypoint added!
+initializeCalculation
+DgController::calculateMultipleRoute!!! ALTERNATIVE ROUTES CONFIGURATION
+createAndCalculateAlternativeRoutes
+createAndCalculateRoute
+createAndCalculateRoute NumberOfAlternatives=%d, demoRestart=%d, fromRunning=%d.
+createRouteForTrack %s
+resumePersistentRoute NumberOfAlternatives=%d isBlockingActive=%d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/SUDynamicGuidance/build/../source/Detour.cpp
+[::doUpdate()] : |%d|
+[::onTimer()]
+[::enter()]
+[::startTimer()]
+[::exit()]
+[::remove()] : |%u|
+[::set()] : |%u|
+[::cancelBlockedRoute()] : |%d|
+[::blockRoute()] : |%d|,|%d|,|%d|
+../public/GeoPosition.h
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/NavServicesCommon/build/../source/OOLocationData.cpp
+logLocation %ls
+Position
+xy=(%d, %d), lalo=(%.12f, %.12f)
+CCPosition
+xy=(%d, %d), lalo=(%.12f, %.12f)
+Country
+%ls, %ls, %d
+Province
+City pure
+Suburb
+Suburb pure
+Street
+Intersection
+House
+Sys lang
+Option
+areStringsSimilar
+formatZipCode
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/NavServicesCommon/build/../source/OOAddressElement.cpp
+%s(%ls,%ls,%d)->true
+%s [zipList:%ls->formattedZip:%ls]
+OOAddressElement::formatDisplayName(%ls,%ls,%ls,%ls,%ls,%ls,%d,L)->%ls
+OOAddressElement::formatDisplayName(%ls,%ls,%ls,%ls,%ls,%d,%ls)->%ls
+getSpecificPoiAddressElements
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_NavServices_MIB20_STD/NavServicesCommon/build/../source/OOPoi.cpp
+%s attr=%ls, lang=%ls
+%s attr=%ls, lang=%ls SUCCESS [C:%ls][D:%ls][S:%ls][H:%ls]
+%s attr=%ls, lang=%ls FAILURE
+vector<T> too long
+vector<T> too long
+XAPP_MAIN
+XAPP_MAIN
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSITrafficRegulationImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSITmcImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSITmcOnRouteImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIStartupImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSISearchImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIPredictiveNavigationImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIBlockingImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSICombinedRouteListImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSINavigationImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+vector<bool> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIMapViewerControlImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+vector<bool> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIMapViewerLandmarkPlayerImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIMapViewerManeuverViewImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIMapViewerRouteBlockImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIMapViewerZoomEngineImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIIconExtractorImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDClient/build/../source/NavMDInterfaceClientFacade.cpp
+::setQueryMapContentPriorities() priorityList=NULL - FAILED
+This is not implemented for the functional interface, see NavMDInterfaceReceiver::onMessage(::sal::Message const& msg) -> EV_NAV_DIAGNOSISHANDLER_REQUEST
+::getCoordListBounding() Some of the points vectors pointer is NULL
+tmcTypeIDs vector pointer is NULL
+poiTypeIDs vector pointer is NULL
+specialPOIs vector pointer is NULL
+Undefined controlID %d
+vector<T> too long
+invalid map/set<T> iterator
+invalid vector<T> subscript
+map/set<T> too long
+../../../../../sw/AP_Navigation_EB/AP_MapDisplay/MDApi/public/NavMDInterfaceTypes.h
+::deserializePropertyMap(..) unknown property typ - FAILED
+onRegisterNavMDGeneralListener: startus=%d listener='0x%x' , applicationID=%d , threadID=%d 
+onCreateMap:status=%d , mapID=%d , mapType=%d , handle=%d 
+onCreateMapView:status=%d , mapViewID=%d , handle=%d 
+onAddMapToMapView:status=%d , mapViewID=%d , mapID=%d , area=[minX='%i' minY='%i' maxX='%i' maxY='%i'] , handle=%d 
+onActivateMapView:status=%d , mapViewID=%d , transition=%d , handle=%d 
+onSetTheme:status=%d , themeID=%d 
+onSetDayMode:status=%d, day=%d 
+onSetSpecialPOIs:status=%d 
+intersectionEntered junction2DAvailable=%d, junction3DAvailable=%d, laneGuidanceAvailable=%d
+intersectionPassed
+onRegisterNavMDMapListener:listener='0x%x' , applicationID=%d , threadID=%d , status=%d
+onRenderMap: status='%i' visible='%i' handle=%i completeness='%f' 
+onSetMapMode:status=%d , mapMode=%d 
+onSetTopRoute:status=%d , routeIndex=%d 
+onSetAutoScale:status=%d, autoScaleAlgorithm=%d 
+onSetNotifications:status=%d , scaleChange=%d , rotationChange=%d stopoverDirectionChange=%d
+onQueryMapCenterPosition:status=%d, worldPosition.lat=%f, worldPosition.long=%f  
+onQueryMapPosition:status=%d, worldPosition.lat=%f, worldPosition.long=%f, screenPosition.x=%d, screenPosition.y=%d
+onQueryRounteOverviewInfo:status=%d, mapCenter.lat=%f, mapCenter.long=%f, scale=%f 
+onQueryMapCenterContent: status=%d, element type=%d
+onQueryMapContent:status=%d, position.x=%d, position.y=%d, element type=%d 
+onQueryMapContent:status='%d' position.latitude='%f' position.longitude='%f' elementType='%d'
+onQueryMapContent: Unknown serialization typ='%i' - FAILED
+onQueryMapContentLaterDetails:status=%d, queryID=%s, startIndex=%u, endIndex: %u
+onScroll:status='%d' worldPosition.lat='%f' wolrdPosition.long='%f' screenPosition.x='%d' screenPosition.y='%d' state='%d'
+onScrollToSpecialPos:status='%d' worldPosition.lat='%f' worldPosition.long='%f' specialPosition='%d' state='%d'
+onScrollToWorldPosition:status='%d' worldPosition.lat='%f' worldPosition.long='%f' state='%d'
+onScrollToMercatorPosition:status='%d' mercatorPosition.x='%i' mercatorPosition.y='%i' state='%d'
+onScale:status='%d' scale='%f' state='%d'
+onRotate:status=%d, rotation=%d, state=%d 
+onChangeCameraAngle:status=%d, angle=%d, state=%d 
+onSetMapMovementSpeed:status=%d, operation=%d , speed=%d 
+onSetPOITypeVisibility:status=%d poiTypeID=%d , visible=%d 
+onSetPOITypeVisibilities: status=%d
+onSetTMCTypeVisibility:status=%d, tmcTypeID=%d , visible=%d 
+onSetTMCTypeVisibilities: status=%d
+scaleChanged:scale=%f 
+rotationChanged:rotation=%d 
+stopoverDirectionChanged:direction=%d 
+Render Reason=%d
+onGetAvailableServices status=%d
+onEnableService status=%d, serviceID=%d, enabled=%d
+onConfigureService status=%d, serviceID=%d
+onSetLargeMapElements:status=%d, mapID='%i', shouldBeLarge=%d 
+onGetSpecialPOITypID:status=%d, key='%s', keyint='%i', id='%i'
+onGetCoordListBounding:status='%d' scale='%f' pos='%i/%i'
+onAnimationSet:status=%d, mapID='%i'
+onAnimationStart:status=%d, mapID='%i'
+onAnimationProcessing:status=%d, mapID='%i'
+onAnimationClear:status=%d, mapID='%i'
+onShowMultiplePositions:status='%i', showthem='%i'
+onSetDrawingElements:status='%i', viewID='%i', mapID='%i', elementID='%i', OnOrOff='%i'
+onAutozoomScaleChanged:newAutoscaleLevel='%f'
+onAutozoomManeuverScaleChanged:newAutoscaleLevel='%f'
+onSetZoomCenter: status='%i' mapID='%i'
+onSetTrafficFlowVisibility: status='%i' mapID='%i'
+onSetQueryMapContentPriorities: status='%i'
+onSetGuidanceMapToView: status='%i' mapViewID='%i'
+::onMessage(MSG_ID_ONMANEUVERMAPSAREAVAILABLE) types.size()='%i'
+onSetVisibleManeuverMap: status='%i' typ='%i'
+::onMessage(MSG_ID_ONSETFREEZERENDERING) status='%i' mapType='%i' freezeRendering='%i'
+::onMessage(MSG_ID_ONGETAVAILABLEZOOMLEVEL) status='%i' isMetric='%i' configuredZoomLevels.size()='%i'
+::onMessage(MSG_ID_ONSETACTIVMAPOVERLAY) status='%i' overlayType='%i'
+::onMessage(MSG_ID_ONSETOVERLAYVISIBILITY) status='%i' mapID='%i' visible='%i'
+::onMessage(MSG_ID_ON_MANEUVERMARKER_COLORS_CHANGED) maneuverIDToColorMapping.size()='%i'
+::onMessage(MSG_ID_ONQUERYMAPNEARBY) status='%i' position.latitude='%f' position.longitude='%f' elementType='%d'
+::onMessage(MSG_ID_ONSETTEMPERATURSCALE) status='%i' theTemperaturScale='%i'
+::onMessage(MSG_ID_ONSETUSEDMAPFORCLUSTER) status='%i' mapID='%i'
+::onMessage(MSG_ID_ONFPKMAPACTIV) isActiv='%i'
+::onMessage(..) unknown EventId: %d
+%d.%d
+../public/../source/aafxMemoryAllocator.cpp
+d !configured
+../public/../source/aafxWatchdog.cpp
+sT !created
+../public/../source/aafxTypes.cpp
+aJ NIL PTR
+aC/I Ukn
+aC/P NIL PTR
+../public/../source/aafxThreadRepository.cpp
+gT !created/init
+../public/../source/aafxThread.cpp
+tAC NIL PTR 
+tSF NULL
+tRF NULL
+AAF Obsolete
+../public/../source/aafxCore.cpp
+fFIH !Set
+../public/../source/aafxBuilder.cpp
+iS %u %u %u / %u %u : %d
+bJCSU NIL PTR/!Core %d
+bJCSU NIL PTR
+bJTA NIL PTR
+sJ !Core
+../public/../source/aafxApplication.cpp
+bECJ NIL PTR
+../public/../ProcInfo/source/aafxProcInfo.cpp
+PI::pSI %s
+PI::pSI -
+PI::pSI
+PI::pTI
+PI::pI %s
+PI::pI -
+PI::pI
+PI::sCI
+PI::i
+MsgA.L
+MsgCnt
+MsgData
+MsgEv
+WDR/Mx
+WDState
+SpeAct
+../public/../Observer/source/aafxObserver.cpp
+i !Evs
+a !configured
+sT %u
+rT %u
+n L=%u !reg
+n L=%u %d/%d
+f L=%u %d/%d
+uT !found
+uT !created/init
+rT !free space
+rT !created/init
+n L=%u %d/%d %x
+i L=%u %d/%d
+eT busyWatched L=%u
+THREAD HANGING LogicalID=%u PhysicalID=%u R=%u/%u
+THREAD HANGING LogicalID=%u PhysicalID=%u R=%u/INFINITE
+THREAD BUSY LogicalID=%u 
+THREAD IDLE LogicalID=%u 
+THREAD UNKNOWN STATE LogicalID=%u 
+!!Aborting App Due to Hanging Thread(s)!!
+eT L=%u %d/%d
+pM L=%u %d/%d
+spW !start L=%u %d/%d
+stW !start L=%u %d/%d %u
+dtor mutex
+dtor L=%d %d/%d
+ctor mutex/!created
+ctor L=%u %d/%d
+../public/../source/aafxUtility.cpp
+Thread: AS=%u BS=%u C=%u
+Message: #%u A=%u L=%u E=%u %u:(0x)%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X.%.2X
+qJI C=%u NIL PTR
+qJI C=%u J=%u
+aNCSC !Appl J=%u %p
+aNJD !Appl J=%u
+BJRE::sS J=%u %u ~ %u
+wSpJ !core(%d)/NIL PTR
+wSpJ !J=%u
+wSpJ J=%u
+B.NBTO %d J=%u
+B.NBTO !App %d J=%u
+iTO J=%u To=%u ET=%u
+dS JL/J=%u
+dS JH/J=%u ws=%u,%u,%u,%u,%u,%u gs=%u to=%u,%u
+dS L=%u
+gP !created/init
+fETI !created/init
+nTAS %d
+gIP !created/init
+gI !done %d %d
+f !finalised
+f !created/init
+i !init
+i !created
+~dtor !deleted
+ctor !created
+gAP getschedparam P=%d - %d
+sAP setschedparam P=%d sc=%d, p=%d - %d
+sAP getschedparam P=%d, p=%d - %d
+sDP %u (%u,%u) ~ %u
+sP %u ~ %u
+sP %u
+../public/../source/aafxComponent.cpp
+aTE C=%u [L=%u P=%u]
+Thr L=%u !Started
+../public/../source/aafxActiveObject.cpp
+sp L=%u
+../public/../source/aafxSignalHandler.cpp
+lSH %u %p
+lSHE %u %p
+sTSH !done %d
+sTSH !done %d %d
+f !done %d %d
+i !done %d %d
+dtor !deleted %d %d
+../public/../source/aafxMemTracer.cpp
+MT: a=%u, p=%u, m=%u, ac=%u, rc=%u, fc=%u e=%u
+MT: a[%d]=%u
+../public/../source/aafxFile.cpp
+gI %s type %d
+gI %s ERR %d
+gI NIL
+r %s %d @%p %d ERR %d
+r %s !opened
+r %s NIL %p %u
+rn %s %d ERR %d
+r %s !closed
+rm %s %d ERR %d
+w %s %d %d ERR %d
+w %s !opened
+fW NIL Ptr/size %p %u
+%s %d %x.%x 
+s %s %d %x.%x ERR %d
+s %s !opened
+O %s %d !valid access mode
+o %s ERR %d %d %d
+o %s open
+c %s %d ERR %d
+c %s !opened 
+*****TERMINATION A=%u L=%u P=%u (%s)
+*****EXCEPTION A=%u L=%u P=%u (%s)
+*****TERMINATION
+*****EXCEPTION ANY
+*****EXCEPTION C++ %s
+*****TERMINATION 
+*****EXCEPTION/Out Of Memory
+aNACS !Appl J=%u %u
+dS CL/C=%u %x
+dS CH/C=%u as=%u/%u bs=%u
+nCJ NIL PTR C=%d/%d AS=%d BS=%d J=%d/%d r=%d #%d
+nCJ NIL PTR
+aNJSD !Appl J=%u %u C=%u
+fEC NIL PTR
+nBJW/Step J=%u %u L=%u %u
+nBJW !publish J=%u %u L=%u %u
+nBJW/CAS J=%u %u L=%u %u
+nBJW/CAS !publish J=%u %u L=%u %u
+nTAS L=%u C=%u %u ~ %u (%u)
+nTAS NIL PTR
+sC !list %u
+sC Exist %u
+sC !Capacity %u
+sC C=%u %u
+rCL !registered Size=%u
+uC NIL PTR
+uC !found
+uC C=%u %u
+rC NIL PTR
+rC !list %u
+rC !Capacity %u
+rC C=%u %u
+wCS !core(%d)/NIL PTR
+wCS Upd C=%u (%u ~ %u)
+wCS !comp/state C=%u %u %u
+wCS !job C=%u %u ~ %u
+wCS !entry J=%u %p %p C=%u %u ~ %u
+wCS Upd J=%u (%u) : %u %u / %u %u %u
+wSJ !core(%d)/NIL PTR
+wSJ J=%u
+wSJ !list J=%u
+wSJ exit J=%u
+wSJ !Capacity J=%u
+workStartJob() Set JobID=%u(%u) : %u %u / %u %u %u
+wSJ !Set J=%u (%u) : %u %u / %u %u
+rBJ !registered Size=%u
+pM L=%u E=%u
+pM !Thread L=%u/%u RD=%p/%u
+pM size=%u/%u
+pM NIL PTR L=%u/%u
+pM work=%u
+nABS A=%u %u ~ %u (%u)
+nABS NIL PTR
+nAAS A=%x %x ~ %x (%x)
+nAAS NIL PTR
+nCBS C=%u %u ~ %u (%u) !Repository
+nCBS C=%u %u ~ %u (%u)
+nCBS NIL PTR
+nCAS C=%u %u ~ %u (%u) !Repository
+nCAS C=%u %u ~ %u (%u)
+nCAS NIL PTR
+../public/../source/aafxCondVar.cpp
+w Mutex !unlocked %d
+w Mutex !locked %d
+b !broadcasted %d
+w !waiting %d
+s !Signal %d
+~CV Condvar !Destroyed %d
+~CV Mutex !Destroyed %d
+CV Mutex !Init %d
+CV Condvar !Init %d
+tRU C=%u L=%u start/NF
+tRU C=%u L=%u %u %u ~ %u
+tRU C=%u L=%u create/CST %u
+ThrCre C=%u L=%u %u/%u [L=%u P=%u]
+tRU C=%u L=%u start/CST %u
+ThrSta C=%u L=%u %u/%u [L=%u P=%u]
+tRU C=%u L=%u run/CST %u
+ThrRun C=%u L=%u P=%u %u/%u
+tRU C=%u L=%u end/CST %u
+ThrEnd C=%u L=%u P=%u %u/%u
+tRU C=%u L=%u end/CST2 %u
+tRU C=%u L=%u del/CST %u
+ThrDel C=%u L=%u %u/%u [L=%u P=%u]
+tRU C=%u L=%u %u/%u
+ThrCre C=/ L=%u [L=%u P=%u]
+ThrSta C=/ L=%u [L=%u P=%u]
+ThrRun C=/ L=%u P=%u
+ThrEnd C=/ L=%u P=%u
+ThrDel C=/ L=%u [L=%u P=%u]
+tEP NIL PTR L=%u
+L=%u # %u
+L=%u !Urgent
+Thr NIL Config
+Thr L=%u Prio=%u/%u/%u
+Thr L= %u !stk size
+AO NIL Config
+nAS C=%u %u ~ %u
+cT C=%u %u
+cT C=%u !CREATED
+cT C=%u NIL CREATE
+cT C=%u Err
+cT C=%u !DELETED
+cT C=%u NIL DELETE
+cT C=%u Err %u
+cT C=%u NIL PTR
+nBS Obsolete
+nBS Obsolete + Error
+C=%u Thread! %u %u %u
+C=%u creation %u
+aNJE !Appl J=%u %u
+cJFA !core
+cJFA !Job J=%u
+cJFA J=%u : %u ? %u %u = %u (%u)
+bJCU C=%u (%u/%u)
+bJCU NIL PTR/!Core %d
+bJCU NIL PTR
+bJCS NIL PTR %u
+bJCS NIL PTR/!Core %d
+bJCS NIL PTR
+sJ !stable %u
+wStJ !core(%d)/NIL PTR
+wSpJ !J=%u %u %u %u
+wStJ J=%u (%u = %u): %u C=%u/%u
+f L=%u
+f !Thread L=%u/%u
+f !ev/unr L=%u/%u
+i L=%u/%u
+i !Thread L=%u/%u RD=%p/%u
+i !ev/reg L=%u/%u
+cMQ L=%u WQC=%d Size=%u
+cMS Q L=%u
+cMQ Q !CREATED L=%d
+cMS Q L=%d
+dtor %s %d
+address %p already registered
+-fwtt
+-fwtt=%u
+CONF TTW r=%d msec
+-fwtt=<10th-seconds> ERROR
+-fwtr
+-fwtr=%u,%u
+CONF WTR thread=%u,maxRetry=%u
+-fwtr=%u,%u ERROR
+-fwtr=<%u,%u> ERROR
+address %p not registered
+Unknown
+BusyWD
+ctor %s
+cp %s ERR %d
+cp ERR %s
+cFID %s %s !opening
+..//public/../Observer/source/aafcObserver.c
+O.pS %u
+O.PGPS %d
+O.PGPS !found %d
+O.aS %d
+O.sC NIL ptr
+O.sC %d
+O.sC NIL PTR
+O.aC NIL PTR
+O.cAS NIL PTR
+O.cAS %d
+O.cAS !Config
+O.cS %d
+O.cCS NIL PTR %d %d
+O.cCS !Config
+O.dC %d
+O.dC NIL PTR
+O.dFAL %d
+O.dFAL NIL PTR
+O.dFAL A=%d !found
+O.dFCL %d %d
+O.dFCL NIL PTR %d %d
+Component(ID = %u) for Deletion Not Existing
+O.CGBS %d %d
+O.CGBS !found %d %d
+O.CGBS Exit
+O.CGAS %d %d
+O.CGAS !found %d %d
+O.AGBS %d
+O.AGBS A=%d !found
+O.AGAS %d
+O.AGAS A=%d !found
+..//public/../source/aafcThreadRepository.c
+TR.DS %u %u - %d
+TR.DS (%u) L=%u P=%u '%s' : %d, %u/%u/%u, %d %p, %d %p
+dTI (%u) L=%u P=%u '%s' : %d, %u/%u/%u, %d %p, %d %p
+TR.DS !avail %d %d
+TR.sTBLI !created
+Thread Repositiory: Created?=%d Initialized?=%d
+TR.FETI NIL PTR %u
+TR.FETI %d %d 0x%p
+TR.GT !found L=%u
+TR.GT %d %d L=%u
+TR.sTBPI !created
+TR.GIRBPI %d %d
+TR.GLI %d %d %p
+TR.GP !found L=%u
+TR.GP %d %d %p
+TR.sT %u
+TR.rTT %u
+TR.RT !free space L=%u %u
+TR.RT %d %d L=%u %u
+TR.RP !free space
+TR.RP %d %d %p
+TR.RPI !free space
+TR.RPI %d %d
+TR.rT %u
+TR.U !found
+TR.U %d %d
+TR.I !created/!initialised
+TR.I !created/initialised
+..//public/../source/aafcSignalHandler.c
+SH.rTH %u
+SH.sT !created
+SH.GC %d %p
+SHSC NIL PTR
+..//public/../source/aafcCommandLineParser.c
+CL.sP !created
+CL.rP %u
+CLI.UP !found %p %p
+CLI.UP %d %d
+CLI.RP !free space
+CLI.RP %p %p
+CLI.RP %d %d
+CL.I !created/!initialised
+CL.I !created/initialised
+..//public/../ProcInfo/source/aafcProcInfo.c
+ProcInfo::aafcPrintSystemInformation
+%a %b %N %p %J %B
+aafcPrintProcessInformation
+aafcPrintInformation
+F mutex
+I !mutex
+O.I !created/initialised
+O.sRTC !set
+O.I !initialised
+O.F !created/!initialised
+O.F !finalised
+O:D !created
+O.D !deleted
+TR.D !created %p
+TR.D mutex
+TR.D created/0
+SHD Mutex
+CL.D !created %p
+CL.D mutex
+CL.D created/0
+O.C %d %d %d
+O.C created!
+O.C Err %d %d %d
+TR.C created/%u
+TR.C mutex
+TR.C alloc %u
+SHC Mutex
+SHC !alloc
+SHC #Thr 0
+CL.C created/%u
+CL.C mutex
+CL.C alloc %u
+-fshe
+CONF SH Enabled
+-fshd
+CONF SH Disabled
+SH.P %d 
+TR.R !free space
+TR.R %d %d
+-ftps
+-ftps%u=%u,%u,%u
+CONF L=%u prio S=%u:%d(%s) L=%u:%d(%s) H=%u:%d(%s)
+CONF '%s' (%d) incorrect
+-ftpx
+-ftpx%u=%d,%d,%d
+CONF L=%u prio S=%u L=%u H=%u
+-ftsd
+-ftsd=%d
+CONF stk=%d
+-ftss
+-ftss%u=%d
+CONF L=%u stk=%d
+CONF '%s' (%d < %d) incorrect
+TR.P %d %d
+..//public/../source/aafcSystem.c
+munmap  vaddr 0x%08x  size 0x%08x  FAILED  <errno %d  %s>
+/proc
+/proc/%d/as
+O.PURT %d %d
+O.PURPO %d %d
+O.PURF %d
+O.PRT %d %d
+O.PRPO %d %d
+O.PRF %d
+O.CURT %d %d %d
+O.CURPO %d %d %d
+O.CURF %d %d
+O.CRT %d %d %d %d
+O.CRT type=%d
+O.CRPO %d %d %d
+O.CRPO type=%d
+O.CRF %d %d %d
+O.CRF type==%d
+O.AURT %d %d
+O.AURPO %d %d
+O.AUR %d
+O.ART %d %d %d
+O.ART type=%d
+O.ARPO %d %d %d
+oO.ARPO type=%d
+O.ARF %d %d
+O.ARF type=%d
+O.sEM %d
+O.sEM NIL PTR
+O.iC/1 %d
+O.iC/2 %d
+O.iC/3 %d
+O.iC/4 %d
+O.iC NIL PTR
+O.UPS %d %d
+O.UPS %d %d !found
+O.UPS NIL PTR
+O.UAS %d %d
+O.UAS NIL PTR
+O.UAS A=%d !found
+O.UAS NIL PTR/2
+O.UAS %d
+O.aUBS %d %d
+O.aUBS NIL PTR
+O.aUBS A=%d !found
+O.aUBS %d
+O.UAS %d %d %d %d
+O.UAS  NIL PTR
+O.UAS %d %d !found
+O.cUBSD %d %d %d
+O.cUBSD NIL PTR
+O.cUBSD !found %d %d
+O.cUBSD NIL PTR/2
+O.cUBSD %d
+O.aATC
+O.aATC already
+O.aATC MaxCB
+O.aATC NIL PTR
+O.aATL
+O.ATL already exists
+O.aATL NIL PTR
+O.aATL Max Appl
+O.hARM/1
+aO.hARM/2
+O.hARM/3
+O.hARM/4
+O.hARM %d
+O.cATCL
+O.cACTL already
+O.cACTL Max/1
+O.aCTL Max/2
+O.aCTL NIL PTR
+O.aCTL Max/3
+O.cATL
+O.cATL Exist
+O.cATL NIL PTR
+O.cATL Max
+hCRM/1
+hCRM/2
+hCRM/3
+hCRM/4
+O.hCRM %d
+O.dFCCL %d %d
+O.dFCCL %d %d !exist/1
+O.dFCCL %d %d !exist/2
+O.PM NIL PTR
+OPM !created/!initialised
+O.PM E=%d
+O.pATCL
+O.pATCL already
+O.pATCL Max CB/1
+O.pATCL Mac CB/2
+O.pATCL NIL PTR
+O.pATCL Max CB/3
+O.PM Msg %d
+O.PM !Msg
+O.dFACBl %d
+O.dFACL A=%d
+O.DFPCL %d
+O.DFPCL %d !exist
+O.DFPCL %d !exist/2
+O.PM A=%x %x ~ %x, %x ~ %x
+O.PM C=%x %x ~ %x, %x ~ %x
+O.STA %d
+O.STP %d
+aafcPrintThreadName [%s]
+TR.GI !found L=%u
+TR.GI %d %d %p
+SHUTH Mutex
+SHSTH P=%d (%u/%u)
+SHUTH P=%u
+SHUTH %d %d
+SAL_Lock_Mutex failed
+SHSTH P=%d (%u/%u) %p %p
+SHSTH %u %u
+SAL_Unlock_Mutex failed
+SHSTH P=%d %u/%u %p %p
+SHSTH %d %d
+SHF %d
+SHI %d
+No SH/Disabled %d %d
+*****SIGNAL %d (%s) A=%u L=%u P=%u (%s)
+*****SIGNAL %d A=%u L=%u P=%u (%s)
+*****IP (0x) %x ref %x code %x
+*****SIGNAL/Exit !configured
+..//public/../source/aafcConfig.c
+dEEH L=%u %u %u
+dESH L=%u %u %u
+dSH L=%u P=%u %u %p
+dE L=%u %u %u
+dA L=%u %u %u
+CL.SPF !file/parser
+CL.SPF '%s' !access
+CL.SPF '%s' line %u length %u
+CL.SPF '%s' line #%u Error
+CL.bPN NIL PTR
+CL.SPF #%u #%u '%s'
+CLI.SPF %d %d
+CLI.P %d %d
+CL.SP !arg/parser
+-fcfg
+CL.SP !-cfg argt
+CLI.SP %d %d
+CRITICAL
+SUPERVISOR
+SYSTEM
+VERY_HIGH
+ABOVE_HIGH
+BELOW_HIGH
+NORMAL
+ABOVE_LOW
+BELOW_LOW
+VERY_LOW
+INHERITED
+HC_BELOW_LOW
+HC_LOW
+HC_ABOVE_LOW
+HC_BELOW_MIDDLE
+HC_MIDDLE
+HC_ABOVE_MIDDLE
+HC_BELOW_HIGH
+HC_HIGH
+HC_ABOVE_HIGH
+HC_VERY_HIGH
+invalid
+SIGHUP
+SIGINT
+SIGQUIT
+SIGILL
+SIGTRAP
+SIGABRT
+SIGEMT;SIGDEADLK/EMT
+SIGFPE
+SIGKILL
+SIGBUS
+SIGSEGV
+SIGSYS
+SIGPIPE
+SIGALRM
+SIGTERM
+SIGUSR1
+SIGUSR2
+SIGCHLD,SIGCLD
+SIGPWR
+SIGWINCH
+SIGURG
+SIGIO;SIGPOLL
+SIGSTOP
+SIGTSTP
+SIGCONT
+SIGTTIN
+SIGTTOU
+SIGVTALRM
+SIGPROF
+SIGXCPU
+SIGXFSZ
+meminfo
+long_name
+KerCall
+PidTidField
+ThreadStartTime
+ProcessStartTime
+ProcessFlags
+ThreadFlags
+DebugFlags
+SigPending
+SigIgnore
+Pidin_local_ThreadSUtime
+ProcessCstime
+ProcessCutime
+ProcessStime
+ProcessUtime
+priority
+NumThreads
+Sibling
+Child
+parentpid
+Pidin_local_State
+Pidin_local_WhereBlocked
+couldn't fill_info
+couldn't fill_status()
+no memory for string
+/dev/zero
+no memory for object
+out of memory
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Pidin/build/../source/pidin_proc.c
+couldn't fill_mem()
+procnto
+(Loading)
+ERROR: fputc was used !!!!
+%08d-%02d
+% 8d-%02d
+couldn't seek to stack: %s
+couldn't read stack: %s
+couldn't read environment: %s
+couln't read arg: %s
+couldn't read arg: %s
+%b %d  %Y
+%b %d %H:%M
+%08x%08x
+%2ud%02uh
+%2uh%02um
+%2um%02us
+%2u.%03u
+%d-%02d #%d
+%s/net
+/net/%s/net
+Format letter '%c'(%#x) <=> '%c'(%#x) is invalid.
+(Zombie)
+%s/proc/%d/as
+/net/%s/proc/%d/as
+couldn't open %s: %s
+%s/proc
+/net/%s/proc
+/proc/%s/as
+%s/proc/%s/as
+/net/%s/proc/%s/as
+couldn't get info for %s: %s
+couldn't get memory for %s: %s
+couldn't get stat info for %s: %s
+invalid option
+MIPS 
+Unknown(%d) 
+Processors:%d 
+FreeMem:%d%cb/%d%cb 
+%b %d %T %Z %Y
+BootTime: 
+Processor%d: 
+%dMhz 
+Physical 
+Boy, you've been using QNX for a loooong time!
+toomuch
+Oh, wow. What OS are you tripping with man?
+Since we're without sin, we're casting the first stone.
+english
+Can't even spell pidgin english properly?
+Mmmm, pudding pie. Them's good eating.
+no memory for format
+invalid option '%c'
+sched_setprio: %s
+%s invalid shorthand
+d:klM:n:f:F:ho:p:P:
+pidin [-d #.1s] [-F format] [-M mem format] [-h] [-k] [-l] [-p pid]
+[-P family] [-o prio] [Arg|Env|FAm|FLags|Info|Mem|Pmem|Sig|Times|TTimes|User]
+users
+%a %N %U %V %W %X %Y %Z
+ttimes
+%a %b %N %J %t %y %z
+times
+%a %N %L %t %u %v %w %x
+signals
+%a %b %N %S %s
+%a %b %N %p %J %c %d %m
+memory
+%a %b %N %p %J     %c %d %m
+            %M @%> %? %< %=
+system
+%a %N %f
+family
+%a %N %L %P %e %G %C
+environment
+%a %N %E
+arguments
+%a %A
+Mapaddr
+Arguments
+Blocked
+child
+Debug flags
+Environment
+Thread flags
+sibling
+pid-tid
+STATE
+kernel call
+Memory
+signals ignored
+Flags
+stack
+signals pending
+start time
+utime
+stime
+cutime
+cstime
+thread start
+sutime
+trace_event
+ring0
+sys_cpupage_get
+sys_cpupage_set
+msg_sendv
+msg_sendvnc
+msg_error
+msg_receivev
+msg_replyv
+msg_readv
+msg_writev
+msg_readwritev
+msg_info
+msg_send_pulse
+msg_deliver_event
+msg_keydata
+msg_readiov
+msg_receivepulsev
+msg_verifyevent
+signal_return
+signal_fault
+signal_action
+signal_procmask
+signal_suspend
+signal_waitinfo
+channel_create
+channel_destroy
+connect_attach
+connect_detach
+connect_server_info
+connect_client_info
+connect_flags
+thread_create
+thread_destroy
+thread_destroyall
+thread_detach
+thread_join
+thread_cancel
+thread_ctl
+interrupt_attach
+interrupt_detach_func
+interrupt_detach
+interrupt_wait
+interrupt_mask
+interrupt_unmask
+clock_time
+clock_adjust
+clock_period
+clocl_id
+timer_create
+timer_destroy
+timer_settime
+timer_info
+timer_alarm
+timer_timeout
+sync_create
+sync_destroy
+sync_mutex_lock
+sync_mutex_unlock
+sync_condvar_wait
+sync_condvar_signal
+sync_sem_post
+sync_sem_wait
+sync_ctl
+sync_mutex_revive
+sched_get
+sched_set
+sched_yield
+sched_info
+net_cred
+net_vtid
+net_unblock
+net_infoscoid
+net_signal_kill
+RUNNING
+READY
+STOPPED
+RECEIVE
+STACK
+WAITTHREAD
+WAITPAGE
+SIGSUSPEND
+SIGWAITINFO
+NANOSLEEP
+MUTEX
+CONDVAR
+WAITCTX
+NET_SEND
+NET_REPLY
+                                                                         
+000000000000000000000000000000000000000000000000000000000000000
+(n/a)
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_InstructionOutputManager/IOMProxy/build/../source/NavIOMFacadeProxy.cpp
+Wrong listener index: %u
+Null listener pointer
+Only local intersection view listeners are supported
+Only local VOI listeners are supported
+NavIOMFacade already deleted
+destReachedOffMap
+setVoiceMode
+responseAudioFocus
+adjustVolume
+repeatVoiceInstruction
+unregisterGOIListener(%lx)
+unregisterGOIListener NULL handle
+unregisterGOIListener unknown listener
+registerGOIListener already registered
+registerGOIListener too many listeners
+createInstance
+NavIOMFacadeProxy already exists
+GOI listener registered
+Received EV_IOM_NEW_GOI
+Unknown SAL msg received
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DynamicGuidance/DGApi/build/../source/DGRouteConfiguration.cpp
+Current Route Options:
+AvoidFerries: %s, AvoidTunnels: %s, AvoidTollRoads: %s, AvoidSpecialChargeRoads: %s
+AvoidCarTrains: %s, AvoidSeasonalRestrictedAreas: %s, AvoidTimeRestrictedAreas: %s,
+HighwayUsageMode: %s, IPDUsageMode: %s, UnpavedRoadUsageMode: %s, RouteOptCriteria: %s, TypeOfRoute: %s, NaviMode: %s
+HOVLanes:%s, IsTrailer: %s, IsTrafficPatternConsidered: %s
+Avoid
+Prefer
+Shortest
+Extremely Short
+Highly Short
+Shorter
+Balanced
+Alternative
+Moderately Fast
+Highly Fast
+Extremely Fast
+Fastest
+Ecological
+StaticRouteWithoutRdsTmc
+ManualRouteWithRdsTmc
+DynamicRouteWithRdsTmc
+Pedestrian
+Bicycle
+MotorBike
+NoHov
+Hov2Passengers
+Hov4Passengers
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DynamicGuidance/DGApi/build/../source/DGRouteReference.cpp
++++++++++Memory error --> tourHandle = '%u' differs from verificationTourHandle = '%u' --> Needs to be analyzed!+++++++++
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DynamicGuidance/DGApi/build/../source/RCFacade.cpp
+RCFacade::ListenerRemoved (%u)
+RCFacade::ListenerAdded (%u)
+RCFacade::deleteInstance
+RCFacade::~RCFacade
+RCFacade::readTrack
+RCFacade::createRouteForTrack
+RCFacade::setTollstickerAvailability
+RCFacade::requestTollstickerCountries
+RCFacade::stopAlternativeRoutesCalculation
+RCFacade::cancelRouteBlocking
+RCFacade::getActiveRouteInfo (%u)
+RCFacade::stopRouteCalculation
+RCFacade::resumePersistentRoute
+RCFacade::createAndCalculateAlternativeRoutes (%u)
+RCFacade::createAndCalculateRoute (%u)
+RCFacade::blockCurrentRoute
+RCFacade::releaseRoute
+RCFacade::updateRouteConfiguration
+RCFacade::unregisterRcListener (%p)
+RCFacade::unregisterRcListener NULL handle
+RCFacade::registerRcListener (%p)
+RCFacade::registerRcListener NULL handle
+Route Calculation Listeners
+RCFacade::RCFacade --> NumOfListeners: %u, ReceiverThreadId: %i
+RCFacade::createInstance --> NumOfListeners: %u, ReceiverThreadId: %i
+../../../../../sw/AP_Navigation_EB/AP_DynamicGuidance/DGServer/public/DGListenerRepository.h
+Added Listener in Repository: %p, App Id: %u
+Removed Listener in Repository: %p, App Id: %u
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DynamicGuidance/DGApi/build/../source/RCPassiveObject.cpp
+ListenerPtr = 0
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DynamicGuidance/DGApi/build/../source/RGFacade.cpp
+RGFacade::ListenerRemoved --> Instruction Listener (%u)
+RGFacade::ListenerRemoved --> Guidance Listener (%u)
+RGFacade::ListenerAdded --> Instruction Listener (%u)
+RGFacade::ListenerAdded --> Guidance Listener (%u)
+RGFacade::deleteInstance
+RGFacade::~RGFacade
+setRequiredNumberOfManeuvers:%d
+enableMotorwayInfo:%d
+guidanceMode, isCompact:%d
+voiceMode, isCompact:%d
+speedWarningTolerance:%u, isMetric:%d
+RGFacade::disableSpeedWarnings
+enableSpeedWarnings, isVoiceEnabled:%d
+RGFacade::deactivateOverview
+RGFacade::activateOverview
+RGFacade::requestVoicePrompt, isTmc: %d
+RGFacade::repeatLastVoicePrompt
+RGFacade::stopGuidance
+RGFacade::startGuidanceById
+RGFacade::startGuidance
+RGFacade::unregisterRgListener (%p)
+RGFacade::unregisterRgListener NULL handle
+RGFacade::unregisterRgInstructionListener (%p)
+RGFacade::unregisterRgInstructionListener NULL handle
+RGFacade::registerRgListener (%p)
+RGFacade::registerRgListener NULL handle
+RGFacade::registerRgInstructionListener (%p)
+RGFacade::registerRgInstructionListener NULL handle
+Route Guidance Listeners
+Instruction Listeners
+RGFacade::RGFacade --> NumOfListeners: %u, ReceiverThreadId: %i
+RGFacade::createInstance --> NumOfListeners: %u, ReceiverThreadId: %i
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DynamicGuidance/DGApi/build/../source/RSFacade.cpp
+RSFacade::setSimulationSpeed - not implemented
+RSFacade::continueRouteSimulator - not implemented
+RSFacade::pauseRouteSimulator - not implemented
+RSFacade::ListenerRemoved (%u)
+RSFacade::ListenerAdded (%u)
+RSFacade::deleteInstance
+RSFacade::~RSFacade
+RSFacade::setSimulationSpeedFactor: %u
+RSFacade::jumpToNextManeuver
+RSFacade::skipCurrentManeuver
+RSFacade::resetRouteSimulator
+RSFacade::stopRouteSimulator
+RSFacade::startRouteSimulator
+RSFacade::unregisterRsListener (%p)
+RSFacade::unregisterRsListener NULL handle
+RSFacade::registerRsListener (%p)
+RSFacade::registerRsListener NULL handle
+Route Simulator Listeners
+RSFacade::RSFacade --> NumOfListeners: %u, ReceiverThreadId: %i
+RSFacade::createInstance --> NumOfListeners: %u, ReceiverThreadId: %i
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DestinationSelection/DSInterface/build/../source/NavDSADRColl.cpp
+out-of-range index at adress[%d]
+out-of-range index at child[%d]
+out-of-range index at poi[%d]
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DestinationSelection/DSInterface/build/../source/NavDSAddress.cpp
+Unsupported action %d
+NavDSAddress serialization>> problem with version %d.
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DestinationSelection/DSInterface/build/../source/NavDSPOIAddress.cpp
+NavDSPOIAddress serialization>> problem with version %d.
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DestinationSelection/DSInterface/build/../source/NavDSChild.cpp
+out-of-range index=%d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DestinationSelection/DSInterface/build/../source/NavDSConfig.cpp
+<<system language is %s, locale is %ls
+NavDSConfig<<: no setting to write!
+>>system language is %s, locale is %ls
+NavDSConfig>>: no setting to read!
+system lang string is empty
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DestinationSelection/DSInterface/build/../source/NavDSFacadeProxy.cpp
+NavDSFacadeProxy::deleteInstance()
+Unknown event number: %d
+false
+0123456789abcdefABCDEF
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DestinationSelection/DSInterface/build/../source/NavDSChnProvince.cpp
+NavDSChnProvince::deleteInstance()
+../public/NavDSList.h
+Index %d is out of boundary <0, %d).
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_DestinationSelection/DSInterface/build/../source/NavDSFrm.cpp
+unset source id
+DS_ACTION_INIT
+DS_ACTION_WORLD_POSITION
+DS_ACTION_POI_COUNTRY_CATEGORY
+DS_ACTION_POI_CITY_CATEGORY
+DS_ACTION_POI_PROXIMITY
+DS_ACTION_POI_PROXIMITY_NVC
+DS_ACTION_POI_COUNTRY_NAME
+DS_ACTION_POI_CITY_NAME
+DS_ACTION_POI_CHILDREN
+DS_ACTION_POI_ALONG_ROUTE_MANUAL
+DS_ACTION_POI_ALONG_ROUTE_MANUAL_EX
+DS_ACTION_POI_ALONG_ROUTE_AUTO
+DS_ACTION_POI_ALONG_ROUTE_AUTO_EX
+DS_ACTION_POI_RESTORATION_BASED_ON_ID
+DS_ACTION_POI_ALONG_ROUTE_MANUAL_THESAURUS
+DS_ACTION_POI_PROXIMITY_THESAURUS
+DS_ACTION_POI_PROXIMITY_THESAURUS_BRAND
+DS_ACTION_POI_ALL_CATEGORY
+DS_ACTION_POI_WARNER_ACTIVATE
+DS_ACTION_POI_WARNER_DEACTIVATE
+DS_ACTION_PPOI_CATEGORY
+DS_ACTION_POI_AREA_SEARCH
+DS_ACTION_POI_AREA_SEARCH_UPDATE
+DS_ACTION_POI_AREA_SEARCH_LIST
+DS_ACTION_POI_AREA_SEARCH_SELECT
+DS_ACTION_POI_AREA_GET_CHILDREN
+DS_ACTION_COUNTRY
+DS_ACTION_STATE
+DS_ACTION_CITY
+DS_ACTION_CITY_NEXT
+DS_ACTION_SUBURB
+DS_ACTION_STREET
+DS_ACTION_STREET_AMBIGUITY
+DS_ACTION_STREET_FIRST
+DS_ACTION_STREET_INTER
+DS_ACTION_BLDG_NO
+DS_ACTION_ZIP_CODE
+DS_ACTION_FUZZY
+DS_ACTION_ONE_SHOT
+DS_ACTION_ADDRESS_BOOK
+DS_ACTION_RESTORE_ADR
+DS_ACTION_RESTORE_POI
+DS_ACTION_RESTORE_SPEECH
+DS_ACTION_RESTORE_VCARD
+DS_ACTION_RESTORE_BY_HISTORY_STRING
+DS_ACTION_RESOLVE
+DS_ACTION_RESTORE_SHIELD
+DS_ACTION_MERCATOR_TO_ADDRESS
+no debug for this action
+SendXSALMessage
+GetSizeVIPData
+ReadSize
+ReadData
+IncreaseBufferSize
+getSizeVIPData
+ReadVIPData
+readVIPData
+WriteVIPData
+writeVIPData
+DeleteKey
+DeleteNs
+WriteData
+WriteString
+WriteBuffer
+ReadInt
+DeleteKey
+DeleteNs
+WriteByteBuffer
+WriteArray
+WriteInt
+GetDataSize
+ReadByteBuffer
+ReadString
+ReadArray
+ReadBuffer
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_PersistenceManager/PersistenceClient/build/../source/PersistenceSqFacade.cpp
+ErrorCode %d 
+%s not possible try again TryCount %d
+ Send buffer NOT success, retrying ...
+%s - Not possible to send, try to reconnect
+ Send buffer success
+%s - Access Time: %llu us
+Persistence Data exceeds the allowed limit, data will not be read, size: %d (incl HAUS_KEEPING_INFO) allowed: %d!!!
+%s to %d
+Allocated Persistence data size exceeds the allowed limit is violated , maximum allowed is: %d!
+Allocated Persistence data size exceeds, not enough memory available!
+Persistence Data exceeds the allowed limit, data will not be stored, allowed is: %d your size: %d(including HAUS_KEEPING_INFO)!!!
+Value is not in DB.
+Check SQLite Error Code %d in 'sqlite3.h'
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salActiveObject.cpp
+assertion failed: SAL_Get_Thread_Id() == getId()
+SAL_Create_Queue() failure
+SAL_Receive() failure
+Alive ActiveObject cannot be destroyed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salApplication.cpp
+assertion failed: appId > 1
+assertion failed: maxNumberOfThreads > 0
+assertion failed: appId >= std::numeric_limits<SAL_App_Id_T>::min() && appId <= std::numeric_limits<SAL_App_Id_T>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salException.cpp
+assertion failed: h != 0
+Resource fatal error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salIByteBuffer.cpp
+assertion failed: mPosition + sizeof( d ) <= mSize
+assertion failed: position < mSize
+assertion failed: mPosition + bytes <= mSize
+assertion failed: !( d == 0 && s > 0 )
+assertion failed: mPosition + s <= mSize
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salMessage.cpp
+assertion failed: msg != 0
+SAL_Destroy_Mutex() failure
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salOByteBuffer.cpp
+assertion failed: d != 0
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salSyncSender.cpp
+assertion failed: isConnected()
+assertion failed: !isConnected()
+assertion failed: serverAppId >= std::numeric_limits<SAL_App_Id_T>::min() && serverAppId <= std::numeric_limits<SAL_App_Id_T>::max()
+assign
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salThread.cpp
+assertion failed: name != 0 && ! isAlive()
+assertion failed: p!=0
+cstr != 0
+../public/salFixedString.h
+assertion failed: threadName != 0
+assertion failed: SAL_UNKNOWN_THREAD_ID == threadId || (threadId > 0 && threadId <= static_cast<int>( getMaxNumberOfThreads() ) )
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salTimer.cpp
+assertion failed: objectId >= -32768 && objectId <= 32767
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salUtils.cpp
+assertion failed: eventId >= std::numeric_limits<int16_t>::min() && eventId <= std::numeric_limits<int16_t>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salError.cpp
+Allocation fatal error
+Lock fatal error
+Resource fatal error
+list<T> too long
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DiagnosticsManager_MIB20_STD/build/../source/DiagnosticsMessage.c
+@@@ Inside secsi_finish
+@@@ secsi_/dev/fs0_OPEN_ERROR!!!
+assertion failed: NULL != buffer
+assertion failed: len > 0 ? (NULL != bytes && NULL != buffer) : true
+assertion failed: (NULL != buffer)&& ( NULL != key )
+assertion failed: (NULL != buffer) &&( NULL != p )
+assertion failed: len > 0
+assertion failed: NULL != bytes
+assertion failed: len > 0 ? (NULL != buffer) : true
+assertion failed: (NULL != buffer) && (NULL != dmsg)
+readDiagnosticsMessage prot:%x, key:%x, fid:%x, parameter.type:%x
+assertion failed: maxsize > 0 ? (NULL != buffer) : true
+assertion failed: NULL != ret
+assertion failed: NULL != dmsg
+Unregconised format to write to table using 
+   writeDiagnosticsMessageWithArgList
+   (DiagnosticsMessage* dmsg, char* format,
+   va_list ap)
+Unregconised format writeDiagnosticsMessageWithArgList
+   (DiagnosticsMessage* dmsg, char* format, va_list ap)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DiagnosticsManager_MIB20_STD/build/../source/DiagnosticsProvider.c
+responseDTCMessageDirect protocol:%i, key:%i datalength:%i
+responseDTCMessage protocol:%i, key:%i datalength:%i
+responseDiagnosticsMessage protocol:%i, key:%i, type :%i
+../public/../source/navcoreNavServerInformationHandler.cpp
+urL !present
+urL Invalid handle %d
+dI deleted!
+../public/../source/navcoreNavServerInformationFacade.cpp
+dI already deleted
+rK !sent
+uMP !sent
+sNM !sent
+uDI !sent
+uMS !sent
+uWR !sent
+sndMP %u %u %s
+sndMP %u %u -
+uI MS %d %s
+uI MS %d NIL
+uI WR %d
+cI already created
+send EV_NAVIGATION_CORE_SDK_POI_CAT_RELOAD failed
+Msg !sent
+cI NIL Ptr
+cI created!
+pM E=%d size=%u/%u A=%u L=%u
+Handler E=%u/%u
+Handler E=%u NIL msg
+Handler E=%u
+Unhandled Msg %d
+!Known event
+rL registered!
+rL NIL Ptr
+trkpt
+vector<T> too long
+map/set<T> too long
+invalid map/set<T> iterator
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_SystemTime_MIB20/SystemTime_LIB/build/../source/SystemTimeAccess.c
+SystemTime_open(): This call is obsolete - please remove in next baseline
+/SystemTimeSem
+SystemTime_get(): Open of Semaphore returned with ErrorNumber = %d
+SystemTime_get(): Meaning of this errno: %s
+SystemTime_get(): Wait for Semaphore returned with ErrorNumber = %d
+SystemTime_get(): Opening of Shared Memory failed - Return with not valid SystemTime
+SystemTime_get():  time_offset = %d
+SystemTime_get(): Closing of Shared Memory failed
+SystemTime_get(): Post of Semaphore returned with ErrorNumber = %d
+ERROR in SystemTime-LIB-Function SystemTime_get(): SystemTime has negative value
+GPSTime_get(): Open of Semaphore returned with ErrorNumber = %d
+GPSTime_get(): Meaning of this errno: %s
+GPSTime_get(): Wait for Semaphore returned with ErrorNumber = %d
+GPSTime_get(): Opening of Shared Memory failed - Return with not valid GPSTime
+GPSTime_get():  time_offset = %d
+GPSTime_get(): Closing of Shared Memory failed
+GPSTime_get(): Post of Semaphore returned with ErrorNumber = %d
+ERROR in GPSTime_get(): GPSTime has negative value!
+UTCTime_get(): Open of Semaphore returned with ErrorNumber = %d
+UTCTime_get(): Meaning of this errno: %s
+UTCTime_get(): Wait for Semaphore returned with ErrorNumber = %d
+UTCTime_get(): Opening of Shared Memory failed - Return with NULL-Pointer
+UTCTime_get(): time_offset = %d, TimezoneOffset = %d
+UTCTime_get(): DayLightSavingFlag = %d, ValidFlag = %d
+UTCTime_get(): Closing of Shared Memory failed
+UTCTime_get(): Post of Semaphore returned with ErrorNumber = %d
+ERROR in UTCTime_get(): UTCTime has negative value!
+UTCTime_get():  Hour:Minutes:Seconds = %d:%d:%d
+UTCTime_get():  Day:Month:Year = %d:%d:%d
+UTCTime_get():  TimeZoneOffset:DayLightSavingFlag = %d:%d
+ERROR in UTCTime_get(): QNX-Call gmtime_r() failed - Return with NULL-Pointer
+SystemTime_close(): This call is obsolete - please remove in next baseline
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.interp
+.note
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

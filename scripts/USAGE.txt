@@ -1,0 +1,266 @@
+Project working folder
+======================
+.
+
+All commands below run from this base folder:
+  Set-Location -LiteralPath '.'
+
+Scripts live in scripts/; analysis reports live in delphi-analysis/; acquired
+files and per-run reports live in delphi-dump/. Both collection scripts default
+to this project's delphi-dump folder regardless of the launch directory.
+Use a fresh --output directory for an independent acquisition.
+
+Delphi MIB2 software download and optional live vehicle inventory
+================================================================
+
+Prepared for the reported vehicle:
+  2019 USDM VW Golf R, Discover Media 3Q0035876B
+  MU0890 / MST2_US_VW_P0890D (P followed by zero, not the letter O)
+  Existing inventory: QNX 6.5.0, ARM little-endian, TI-DRA74X-PG1.1
+
+Vehicle identity above is user-reported context, not an automatic compatibility or identity check. Saved acquisition reports do not validate every script mode or establish live integration compatibility.
+
+Prerequisites and connection
+---------------------------
+1. Install Python 3.10 or newer for Windows, with the Python launcher (py).
+   No pip packages are required; this uses Python's standard library only.
+   In PowerShell, confirm: py -3 --version
+   If your installation provides python instead, substitute python for py -3.
+
+2. Keep delphi_inventory.py in the project scripts folder. Save test and
+   report files outside OneDrive if you do not want automatic cloud syncing.
+   The output filesystem must support hard links (normal local NTFS does).
+
+3. Park the vehicle and keep the infotainment unit powered. Connect the laptop
+   directly to the vehicle's already established Ethernet service connection.
+   This script does not enable FTP/Telnet or configure the vehicle or laptop.
+
+4. Use the working Ethernet IPv4 configuration: laptop 192.168.1.10,
+   subnet mask 255.255.255.0 (/24). A gateway or DNS server is not needed for
+   this direct connection. Record your previous Ethernet settings and restore
+   them afterward if needed. Avoid another adapter using 192.168.1.0/24.
+
+5. Default destination: 192.168.1.4. Default FTP: port 21, ftpuser / ftpuser.
+   Telnet inventory, only when requested: port 23, user root. If the server
+   asks for a password, the script prompts without displaying it; press Enter
+   if the working root password is blank. This is plain FTP/Telnet, so use the
+   direct trusted connection; these protocols do not encrypt credentials/data.
+
+Run from PowerShell in the project base folder
+-----------------------------------------------------
+Show options (no connection):
+  py -3 .\scripts\delphi_inventory.py --help
+
+Download the selected software/configuration only:
+  py -3 .\scripts\delphi_inventory.py
+
+Collect fresh vehicle inventory FIRST, then download software/configuration:
+  py -3 .\scripts\delphi_inventory.py --collect-inventory
+
+Collect fresh inventory only, with NO FTP connection/downloads:
+  py -3 .\scripts\delphi_inventory.py --inventory-only
+
+Custom output folder (recommended for a fresh independent collection):
+  py -3 .\scripts\delphi_inventory.py --collect-inventory --output "D:\CarData\delphi-dump-2026-10-28"
+
+Custom connection settings, with password prompts:
+  py -3 .\scripts\delphi_inventory.py --host 192.168.1.4 --port 21 --username ftpuser --ask-password --collect-inventory --telnet-port 23 --telnet-user root --ask-telnet-password
+
+Slower connection:
+  py -3 .\scripts\delphi_inventory.py --timeout 60 --retries 3
+
+Read the process exit code immediately afterward:
+  $LASTEXITCODE
+
+No option accepts a plaintext password on the command line. Default FTP
+credentials are built into the script as documented defaults; use
+--ask-password to supply different credentials. Credentials are redacted
+from progress/error logs. Authentication exchanges are not saved.
+
+What the optional inventory step does
+------------------------------------
+--collect-inventory and --inventory-only connect to Telnet and run ONLY:
+  uname -a
+  pidin info
+  pidin arguments
+  mount
+  ls -la /extbin/apps/bin
+  ls -la /extbin/apps/lib
+  ls -la /extbin/apps/cfg
+  ls -la /extbin/apps/hmi/HMI/config
+
+Each command is followed by a shell printf of a unique completion marker and
+the command's exit status. This writes to the Telnet output stream only.
+No remote files, mounts, permissions, firmware or services are changed.
+No arbitrary command option is provided. A failed Telnet step is reported;
+with --collect-inventory, FTP collection is still attempted afterward.
+Command-level errors make the overall result PARTIAL, even if a transcript
+was saved. Unknown login prompts fail with a timeout; commands are not guessed.
+Telnet is not retried automatically; rerun in a fresh output folder if needed.
+
+What FTP downloads
+------------------
+Only FTP list/size/read operations and connection/session setup are used.
+There are no uploads, deletes, permission changes, or remote command execution
+over FTP. Transfers use binary mode and passive FTP data connections.
+
+Individual files under /extbin/apps/bin/:
+  AndroidAuto                 AndroidAutoServices
+  CarPlay                     CarPlayServices
+  AppConnect                  ClusterServices
+  Most                        MostCanRouter
+  TransportServer             NavServices
+  NavigationServer            vwjxe.ifs
+  delphibin.ifs
+
+Individual files under /extbin/apps/lib/:
+  libautoreceiver.so          libautoreceiver.so.1
+  libScreenStream.so          libAirPlay.so
+  libAirPlaySupport.so        libiap2client.so
+  libiap2client.so.1          ipod-drvr-iap2.so
+  mss-ipodiap2.so             libRenderSystem.so
+  libNavConfigProvider.so     libclm_api.so
+
+Recursively downloaded roots, and ONLY these roots:
+  /extbin/apps/cfg/
+  /extbin/apps/hmi/HMI/config/
+
+The script lists parent directories to validate these roots but does not
+download other files from those parents. MLSD is preferred; a server reporting
+MLSD unsupported falls back to a strict Unix-style LIST parser, compatible
+with the format in the supplied inventory. Unknown listing formats fail the
+affected directory rather than guessing whether an entry is a directory.
+Names incompatible with Windows, traversal names, case collisions, known
+directory aliases and symlinks are refused/skipped. Local symlinks and Windows
+reparse points/junctions are refused as output destinations. Depth/entry limits
+also bound recursion. This relies on truthful FTP type metadata: an FTP server
+that disguises a directory link as a plain directory cannot be detected
+reliably by a read-only FTP client. Do not modify local output paths during a run.
+
+Explicitly selected individual library files can be remote file symlinks;
+RETR saves their resolved bytes under the requested filename, not a local
+symlink. Links encountered during recursive configuration collection are
+skipped, including file links. Skips make the result PARTIAL for review.
+
+Expected results and reports
+---------------------------
+By default, the project base folder receives (independent of launch directory):
+  delphi-dump\extbin\apps\bin\...
+  delphi-dump\extbin\apps\lib\...
+  delphi-dump\extbin\apps\cfg\...
+  delphi-dump\extbin\apps\hmi\HMI\config\...
+  delphi-dump\_collection_YYYYMMDD_HHMMSS_unique\
+      collection.log        Timestamped progress and sanitized errors
+      manifest.jsonl        One JSON record per listing/file/error/skip
+      summary.json          COMPLETE/PARTIAL, counts and requested scope
+      vehicle-inventory.txt Only when Telnet inventory was requested
+
+Each newly downloaded file has a relative local path, received byte count and
+SHA256 in the manifest. Recursive listings are recorded with names/types/sizes.
+Inventory transcripts also receive a byte count and SHA256 when completed.
+Logs/manifests are flushed as collection proceeds, so most evidence survives
+an interruption; forced termination may prevent writing the final summary.
+
+Exit codes:
+  0 = COMPLETE for the selected mode (inventory-only or selected download set).
+  2 = PARTIAL: failures, skips, existing destinations or Ctrl+C interruption.
+  1 = local startup/configuration problem before collection could begin.
+Argument syntax errors also use argparse's exit code 2 and show usage.
+
+A missing file (FTP 550), failed listing, transfer error, size mismatch or
+inventory command error is reported individually. Other files continue.
+Initial FTP connection/authentication failure is retried as configured and
+reported once rather than repeating the same failed login for every file.
+
+By default, each FTP operation gets up to 3 attempts (initial + 2 retries).
+Failed transfers restart at byte zero in their own uniquely named .part file.
+Only a completed FTP response and, when available, matching SIZE/listing byte
+count permit publication under the final name. The last incomplete .part file
+remains for inspection on failure; do not use it as a complete binary.
+Ctrl+C can also leave .part files. The script never treats an old .part as a
+completed download and does not resume from it.
+
+Existing final files are NEVER replaced. They are hashed locally and recorded
+as existing_not_downloaded; this is not a comparison to the current vehicle.
+Reruns in the same folder can collect previously missing files but report
+PARTIAL because existing files were skipped. For a complete fresh acquisition,
+use a new --output folder. To retry one failed run, keep its reports and either
+accept the skipped-file PARTIAL result or choose a fresh output folder.
+
+SHA256 identifies the bytes saved locally. Matching sizes and local hashes
+do not prove firmware authenticity, provenance or an unchanged source. The
+collection is sequential, not a snapshot; live configuration may change.
+Config files, command arguments and network details can contain private data;
+review the output before sharing it.
+
+The prior inventory showed vwjxe.ifs mounted at /ifs1 (Java HMI resources in
+the classpath) and delphibin.ifs mounted at /ifs2 (including runtime components).
+These files are downloaded as opaque binaries, not mounted or executed locally.
+Specific component roles remain hypotheses pending analysis; download success
+does not establish functionality or compatibility.
+
+Troubleshooting
+---------------
+* Connection timeout/refused: verify the direct cable, adapter address, correct
+  target IP, infotainment power and that the expected service is already active.
+* Login error (530): use --username and --ask-password for your working FTP
+  account. Telnet root credentials are separate.
+* FTP login works but LIST/RETR times out: inspect Windows firewall permission
+  for Python on this direct network; passive FTP needs separate data sockets.
+* Encoding error: try --encoding latin-1 if that matches the server's names.
+  Unsafe or unrepresentable paths are reported; they are not silently renamed.
+* Hard-link publication failure: choose a local NTFS output folder. The intact
+  .part may contain all bytes, but the run is still reported as failed/partial.
+* Telnet prompts unsupported: preserve the existing PuTTY inventory and collect
+  FTP alone. This client expects a conventional login/password and #/$ shell.
+
+Offline verification (never connects to the vehicle)
+---------------------------------------------------
+Run the available Python unittest modules from the project base folder:
+  py -3 -m unittest discover -s .\scripts -p "test_*.py" -v
+
+Tests use fake FTP/socket objects and temporary local directories. They cover
+binary bytes/hash, retries, retained incomplete files, size mismatch, listing
+fallback, recursion/link handling, Windows path containment, collisions,
+no-overwrite behavior, connection failures, credential redaction, Telnet
+negotiation, completion markers, and failure reports. They do not establish
+interoperability with the vehicle's actual FTP or Telnet servers.
+
+
+Additional tools in this checkout
+=================================
+Targeted runtime collection (FTP search/download only by default):
+  py -3 .\scripts\collect_delphi_runtime.py --help
+  py -3 .\scripts\collect_delphi_runtime.py --output .\delphi-runtime-fresh
+
+Optional boot-file staging:
+  py -3 .\scripts\collect_delphi_runtime.py --stage-boot-files --output .\delphi-runtime-staged
+This option uses root Telnet to create temporary copies of allowlisted boot
+files in a new /ramdisk/delphi-stage_* directory before FTP download. It writes
+temporary remote files; copies remain until reboot. Read scripts/RUNTIME-COLLECTION.txt
+for scope, timeouts, runtime-targets.json, and interpretation of partial results.
+The read-only statements above apply to delphi_inventory.py and to runtime
+collection without staging, not to the optional staging writes.
+
+Offline manifest verification and binary triage:
+  py -3 .\scripts\inspect_delphi.py
+Input ROOT is hard-coded to the project's delphi-dump folder. The script selects
+the first _collection_*/manifest.jsonl returned by glob: check the intended run
+when several manifests exist. It replaces generated verification.json,
+binary-triage.json and *.strings.txt under delphi-analysis/. It does not execute
+dump binaries or extract IFS contents.
+
+Native synthetic diagnostic checks (local host/emulator work):
+  .\scripts\test_delphi_observer.ps1
+  .\scripts\test_qnx_probe.ps1
+  py -3 .\scripts\validate_qnx_probe.py
+These require the relevant local compiler/emulator tooling. See
+delphi-analysis/NATIVE-DIAGNOSTIC-PROGRESS.txt and LAUNCH-MECHANISM-RESOLVED.txt
+for recorded results and limits. Synthetic observer success is not approval or
+instructions to load the fixture into the vehicle's AndroidAuto application.
+
+Analysis scripts such as trace_video.py, display_hmi_*.py and native_transport_*.py
+are research utilities with script-specific inputs and local tooling dependencies;
+inspect their source before rerunning. They are not all standard-library-only
+collection commands. Historical reports can be superseded by later addenda.
+

@@ -1,0 +1,116 @@
+Delphi Android Auto cluster maps: consolidated investigation status
+=================================================================
+Workspace: .
+All investigation used local copies. No patch, on-car code execution, competing
+transport writer, software installation on the car, or live loader test occurred.
+
+Confirmed from this P0890D dump
+-----------------------------
+1. Native video route: isoTX filename is passed into encoder initialization;
+   descriptor open/store, transport-buffer write, and close are traced. Stream
+   is188-byte MPEG-TS with H.264 ES PID0x11, PMT PID0x10, PCR PID0x1000.
+   Reconstructed PAT/PMT CRCs match constants in the actual binary.
+2. Transport writes copy input synchronously. Full queue yields zero bytes
+   written/EOK, not an ordinary retryable errno. One writer per channel is
+   enforced; a second independent writer cannot safely take over the channel.
+   Partial-block read and retained IOV lifetime are traced. Abnormal reader
+   close and complete MOST consumer lifecycle remain unaudited.
+3. Android Auto advertises protocol1.3. Its service registration is generic.
+   The old discovery schema lacks modern cluster display metadata. A host-only
+   wire fixture appends a secondary descriptor preserving the main bytes.
+4. Discovery marshalling uses a16-byte IoBuffer and a00 06 message prefix.
+   The downstream queue copies the message synchronously before caller cleanup.
+   A host allocator model exercises replacing only the backing buffer while
+   preserving original output on failure. This is NOT a native runtime shim.
+5. The Java HMI conversion produced19,406 classes and414 were decompiled for
+   targeted inspection. This passed ZIP/class-magic checks and selected javap
+   parsing, not full bytecode verification or recompilation.
+6. Phone-route status, cluster information state and native map-video ownership
+   are separate. InfoStates emits BAP state6 during phone guidance. A future
+   change must not globally falsify phone navigation state. DisplayManagement
+   has asynchronous activate/rate/deactivate control and MAIN-map exclusion.
+
+Important hook limitation
+------------------------
+The discovery marshaller call is through a PLT relocation, with GLOBAL/DEFAULT
+visibility and no DT_SYMBOLIC/DT_FLAGS/DT_FLAGS_1 tags. That does NOT establish
+LD_PRELOAD interception: QNX6.5 documents own-object lookup before preload
+objects for shared-object symbol resolution. Runtime loader behavior remains
+unproven. An application->library boundary or a reversible diagnostic probe
+must be evaluated before choosing a hook mechanism.
+https://www.qnx.com/developers/docs/6.5.0SP1/neutrino/lib_ref/d/dlopen.html
+
+Independent host validation
+---------------------------
+6 discovery wire-format tests,11 buffer-ownership model tests,6 native TS/PSI
+validator tests and4 targeted acquisition scope tests passed (27 total).
+These are synthetic/offline checks, not evidence of phone acceptance, complete
+receiver ABI compatibility, correct live timing, or successful cluster video.
+
+Next missing acquisition
+------------------------
+DisplayManagement's0x1693/0x1694 command pair is NOT corroborated directly in
+NavigationServer, which handles separate SCDA map events. Original inventory
+shows a screen-cda process but we did not collect its executable. It is the
+leading bridge candidate; SAL app0x55 registration is not yet proven.
+
+New scripts/collect_delphi_runtime.py searches fixed candidate directories for
+screen-cda, libscreen.so.1 and libXSAL.so, then downloads only those matching
+basenames. Exact paths are discovered, not assumed. It is read-only FTP and
+requires scripts/delphi_inventory.py beside it. See scripts/RUNTIME-COLLECTION.txt.
+This additional acquisition is now useful to close the missing control boundary;
+it is not an instruction to install or run experimental code on the vehicle.
+
+After acquisition
+-----------------
+Trace bridge app registration, commands/replies and geometry propagation.
+Then finish receiver callback/lifetime and paired-input service contracts,
+choose a verified interception mechanism, and build a diagnostic-only prototype
+that leaves primary Android Auto behavior intact. Only after those gates should
+we evaluate actual phone secondary-video acceptance and the cluster transport.
+Active dimensions/rate, codec SPS and SAL clock units still need corroboration;
+no Harman-specific800x480 setting is assumed for this Delphi system.
+
+Detailed reports
+----------------
+native-transport-findings.txt
+native-transport-backpressure-addendum.txt
+android-discovery-findings.txt
+android-discovery-buffer-contract.txt
+display-hmi-FINDINGS.txt
+display-hmi-peer-addendum.txt
+bench/BENCH-PLAN.txt (optional phone-only reference, not executed)
+
+2026-10-28 native diagnostic update
+----------------------------------
+See NATIVE-DIAGNOSTIC-PROGRESS.txt for the current gate. The QNX ARM compiler
+and synthetic observer now exist. Host baseline/linked/preloaded tests pass;
+QNX baseline and explicitly linked observer pass in QEMU. QNX LD_PRELOAD launch
+still returns ENOENT even for the plain provider. Vehicle application injection
+and a car test package remain unproven. No reconnection needed at this point.
+
+2026-10-28 launch mechanism RESOLVED (supersedes preceding preload blocker)
+------------------------------------------------------------------------
+The emulator IFS default data=uip consumed probe_main after its first execution.
+A second baseline alone reproduces ENOENT. [data=copy] fixes repeated execution;
+eight baseline/preload/repeat/linked/restoration cases pass under QNX ARM.
+See LAUNCH-MECHANISM-RESOLVED.txt and NATIVE-DIAGNOSTIC-PROGRESS.txt. This proves
+the synthetic process-scoped loader path, not yet live Delphi application binding.
+
+2026-10-28 observer CREATED
+--------------------------
+A compiled entry-only native observer and decoder are now packaged at
+native/observer/delphi-observer-v1.zip. Host and QNX ARM tests and static/package
+gates PASS. See PRODUCTION-OBSERVER-RESULTS.txt and native/observer/README.txt.
+Entry-only tail forwarding supersedes the earlier enter/leave observer design;
+no vendor C++ unwind ABI is imposed. Actual car binding/launch context and runtime
+fingerprints remain unverified. No vehicle deployment or modification occurred.
+
+2026-10-28 fresh vehicle preflight reviewed
+-----------------------------------------
+Three fresh firmware files match expected SHA256; AndroidAuto -t and its receiver
+library were active with Ethernet connected and the phone unplugged. The original
+INCOMPLETE result was a map-name truncation false negative, now corrected. See
+OBSERVER-PREFLIGHT-REVIEW.txt/.json. No rerun of the old full preflight is needed.
+A targeted -SupervisorOnly collector mode now obtains procman_core.cfg and process
+ancestry needed for a controlled launch/restart plan. No observer deployed yet.

@@ -1,0 +1,45 @@
+Observer implementation update - 2026-10-28
+
+CREATED: native/observer/release/libdelphi_observer.so (8561 bytes)
+SHA256: cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c
+Package: native/observer/delphi-observer-v1.zip
+Instructions/limitations: native/observer/README.txt
+
+This supersedes the synthetic logging model with a compiled production candidate.
+It intentionally supersedes the earlier enter/leave specification with ENTRY-ONLY
+observation and an ARM tail branch, avoiding any assumption about the vendor's
+return type or C++ unwinder. Native return and exception paths have no observer
+frame. Endpoint objects and video/discovery data are never read or altered.
+
+Capture fields: caller LR, receiver/endpoint scalar identities, PID/thread ID,
+global/per-thread accepted-record sequence. All callers are recorded. Native
+symbol address and module base are recorded in the fixed header. The logger
+uses a prefaulted shared RAM mapping, one try-lock, fixed 1024-record capacity,
+saturating/bounded-effort drop accounting, and no normal-path file I/O, allocation,
+formatting or loader calls. Imports bind eagerly. Log failures preserve forwarding.
+Original-symbol absence/wrong owner refuses startup with exit 125; see README.
+
+Validation PASS
+- Host baseline, observed, disabled-log and missing-original cases.
+- Eight QNX ARM cases: baseline, observed, disabled, repeated, existing file,
+  missing original, wrong module, direct ARM ABI capture.
+- Each primary fixture makes 2024 native calls using 8 threads, including full
+  buffers, high return bit/errno checks, C++ exceptions, siglongjmp and recursion.
+- A pre-thread-creation fork check forwards in the child without altering parent
+  records. QNX 6.5 cannot fork after pthread_create, so the fixture obeys that rule.
+- ARM register/stack arguments, r4-r11, d0-d7 and 8-byte stack alignment pass.
+- Eight binary-decoder tests, including malformed/truncated/incomplete records.
+- Static/release gates: original sample hashes, ARM32 LE EABI5, only libc.so.3
+  needed, inline atomic32, exactly two exports, nonexecutable stack, eager binding,
+  no text/unsupported relocations, reviewed tail assembly, tested-library SHA match.
+- Complete reproducible command: .\scripts\test_delphi_observer.ps1
+
+Local build correction: legacy 32-bit QNX binutils returned EOVERFLOW when stat'ing
+some Windows bind-mount inodes. Builds now occur in an isolated Linux /tmp folder
+inside the disposable container and copy the finished outputs into the workspace.
+
+Scope remains explicit: vehicle_validated=false, runtime_fingerprints_verified=false,
+deployment_ready=false in manifest.json. No car upload, restart or firmware/startup
+edit occurred. Next gate is read-only live fingerprint/arguments/environment/maps
+verification and a supervised stock-restart plan before stationary vehicle testing.
+Captured CAR logs will be stored under the common delphi-dump/observer folder.

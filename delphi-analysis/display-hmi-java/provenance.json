@@ -1,0 +1,13 @@
+{
+  "converter": "https://github.com/luka-dev/jxe2jar",
+  "converter_commit": "9eeb45bbf14bf8afe3452c7be96a4d1f0206a286",
+  "source_sha256": "648d96a955eb8c4b5b008c5844edb36086f37272ffde5d980d9b038ff38115b8",
+  "jar_sha256": "d5517f56153fdfc0c9142003dfd4b3cadd1ae120a19d2ed4fd07e34fb48bf7c5",
+  "written_classes": 19406,
+  "bad_crc_entry": null,
+  "bad_class_magic": [],
+  "skipped_class_log_lines": [],
+  "cfr_sha256": "f686e8f3ded377d7bc87d216a90e9e9512df4156e75b06c655a16648ae8765b2",
+  "validation_limit": "CRC/magic and selected javap parsing only; no complete bytecode verifier or recompilation; no vehicle classes executed",
+  "license_note": "No repository root LICENSE found at reviewed converter pin. Local analysis checkout only; do not redistribute converter or proprietary firmware classes as a release."
+}

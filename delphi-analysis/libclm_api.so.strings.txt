@@ -1,0 +1,711 @@
+_init
+_fini
+__cxa_finalize
+__deregister_frame_info
+__register_frame_info
+_Jv_RegisterClasses
+clmi_Malloc
+clmi_Free
+clmi_Realloc
+clm_atoi
+clmi_EscapeMetaChars
+strlen
+clmi_RemoveBackSlash
+strcpy
+clmi_FreeListOfTypes
+clmi_FreePreCompiledReplacementRegEx
+clmi_FreePreCompiledSplitWordRegEx
+clmi_DeleteNonPhoneChars
+memset
+strtok
+strcat
+clmi_PreCompileReplacementRegEx
+pcre_compile
+clmi_InterpretReplacementString
+pcre_fullinfo
+memcpy
+pcre_exec
+strncpy
+clmi_SearchAndReplace
+clmi_PreCompileSplitWordRegEx
+sprintf
+clmi_SplitWordInPhonemes
+pcre_copy_substring
+clm_GetVersion
+clm_GetDroppedPhonemesList
+strnicmp
+clm_ReturnBufferInfo
+clm_ReturnDestinationLanguages
+strstr
+clm_ConvertTranscription
+strncmp
+clm_UnloadSettings
+clmi_EmptyLanguageStruct
+riff_reader_ReleaseChunkData
+clmi_EnumerateLanguages
+clmi_FindSeperationRecord
+clm_LoadSettings
+riff_reader_ObjOpen
+riff_reader_OpenChunk
+riff_reader_ReadStringZ
+riff_reader_CloseChunk
+riff_reader_ObjClose
+riff_reader_DetachChunkData
+_Tolotab
+clm_FetchBufferInfo
+strchr
+clm_FetchDestinationLanguages
+strtol
+_Ctype
+clm_ObjClose
+pcre_ObjClose
+clm_ObjOpen
+pcre_ObjOpen
+clmi_FindNextRecordInBuffer
+clmi_IsSeperationRecord
+strcmp
+clmi_FindLangRecord
+clmi_FindLanguageInArray
+clmi_FindNrOfLanguages
+pcre_pattern_to_host_byte_order
+_pcre_default_tables
+_pcre_OP_lengths
+_pcre_find_bracket
+pcre_malloc
+pcre_free
+_pcre_is_newline
+memmove
+_pcre_hspace_list
+_pcre_vspace_list
+memcmp
+pcre_compile2
+pcre_config
+pcre_callout
+_pcre_xclass
+_pcre_was_newline
+__aeabi_idiv
+pcre_dfa_exec
+__aeabi_idivmod
+pcre_free_substring_list
+pcre_free_substring
+pcre_get_substring
+pcre_get_substring_list
+pcre_get_stringtable_entries
+pcre_get_stringnumber
+pcre_get_named_substring
+pcre_copy_named_substring
+pcre_stack_malloc
+pcre_stack_free
+pcre_jit_stack_alloc
+pcre_jit_stack_free
+pcre_assign_jit_stack
+pcre_maketables
+_Touptab
+_pcre_ord2utf
+fprintf
+fputc
+pcre_printint
+fputs
+fwrite
+pcre_refcount
+pcre_free_study
+pcre_study
+_pcre_ucd_records
+_pcre_ucd_stage1
+_pcre_ucd_stage2
+_pcre_ucd_caseless_sets
+_pcre_valid_utf
+pcre_version
+riff_reader_GetChunkData
+riff_reader_GetPosition
+riff_reader_GetEncryption
+riff_reader_GetAlignment
+riff_reader_GetChunkDepth
+vector_GetSize
+riff_reader_Seek
+vector_StackTop
+riff_reader_ReadWStringW
+riff_reader_ReadWStringZ
+riff_reader_ReadStringW
+riff_reader_ReadFourCC
+__aeabi_uidivmod
+vector_StackPop
+vector_ObjClose
+vector_Add
+riff_reader_FindChunk
+vector_ObjClone
+vector_GetElemAt
+vector_ObjOpen
+RIFF_CHUNK_STACK_ELEM_IT
+__aeabi_uidiv
+vector_AddGet
+vector_Clear
+vector_RemoveAddress
+vector_Remove
+vector_AddElemAt
+__udivsi3
+__div0
+__divsi3
+libc.so.3
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+libclm_api.so
+^$.[{()|+?*\/
+The Phonemeword with escape characters is out of bounds.
+Not enough memory
+Invalid RegEx to find replacement char.
+(^|[^\\])([\$][0-9]+)
+Compilation of the replacement metacharacter regex failed.
+InterpretReplacementString
+Search and replace failed.
+Output buffer too small.
+search and replace
+(%s%s*(%%%s|%%"%s+"){0,}(&%s%s*(%%%s|%%"%s+"){0,}){0,})|(%s%s%s{0,1})
+Invalid RegEx to splitup word into different phonemes.
+[!#\$&'\(\)\*\+,\-\./0123456789:;<=>\?@A-Z\[\\\]\^_`a-z{\|}\~]
+["#\$&'\.789=\?@A-Z^_a-z]
+(\\)?[!\?,\.;:]
+[0\-\+6\!~\\F`K12345<>}{:]
+SplitWordInPhonemes
+The SplitWordSize is too small
+The word cannot be splitup into seperate phonemes.
+Error extracting phoneme from word.
+Removed invalid phoneme:
+Riff Reader
+Error reading Language buffer.
+Invalid argument.
+pu32NrOfPhon
+pBufferInfo
+pDestinationLanguages
+The language cannot be found for validation:
+pSplitWord
+DroppedPhonemesList
+szSourceText
+SrcBufSize
+pDestBuffer
+DestBufSize
+Language buffer not loaded.
+Token not found.
+Empty source expression.
+Separation record not found in buffer.
+StreamInterface
+The buffer is smaller then the header.
+The conversion table is empty.
+clm_xxx.dat
+clmcfg.dic
+source_version 
+file_version 
+Index out of bounds.
+counting languages of the mapping rules
+The predefined language buffer is too small, recompile with larger MAXLANGUAGES.
+LanguageEnumeration
+PrecompiledPCREList
+ExpressionPointerList
+Error interpreting record from mapping rules or mapping table file.
+Invalid RegEx:
+ !"#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ !"#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~
+alpha
+lower
+upper
+alnum
+ascii
+blank
+cntrl
+digit
+graph
+print
+punct
+space
+xdigit
+ACCEPT
+COMMIT
+PRUNE
+no error
+\ at end of pattern
+\c at end of pattern
+unrecognized character follows \
+numbers out of order in {} quantifier
+number too big in {} quantifier
+missing terminating ] for character class
+invalid escape sequence in character class
+range out of order in character class
+nothing to repeat
+operand of unlimited repeat could match the empty string
+internal error: unexpected repeat
+unrecognized character after (? or (?-
+POSIX named classes are supported only within a class
+missing )
+reference to non-existent subpattern
+erroffset passed as NULL
+unknown option bit(s) set
+missing ) after comment
+parentheses nested too deeply
+regular expression is too large
+failed to get memory
+unmatched parentheses
+internal error: code overflow
+unrecognized character after (?<
+lookbehind assertion is not fixed length
+malformed number or name after (?(
+conditional group contains more than two branches
+assertion expected after (?(
+(?R or (?[+-]digits must be followed by )
+unknown POSIX class name
+POSIX collating elements are not supported
+this version of PCRE is compiled without UTF support
+spare error
+character value in \x{...} sequence is too large
+invalid condition (?(0)
+\C not allowed in lookbehind assertion
+PCRE does not support \L, \l, \N{name}, \U, or \u
+number after (?C is > 255
+closing ) for (?C expected
+recursive call could loop indefinitely
+unrecognized character after (?P
+syntax error in subpattern name (missing terminator)
+two named subpatterns have the same name
+invalid UTF-8 string
+support for \P, \p, and \X has not been compiled
+malformed \P or \p sequence
+unknown property name after \P or \p
+subpattern name is too long (maximum 32 characters)
+too many named subpatterns (maximum 10000)
+repeated subpattern is too long
+octal value is greater than \377 in 8-bit non-UTF-8 mode
+internal error: overran compiling workspace
+internal error: previously-checked referenced subpattern not found
+DEFINE group contains more than one branch
+repeating a DEFINE group is not allowed
+inconsistent NEWLINE options
+\g is not followed by a braced, angle-bracketed, or quoted name/number or by a plain number
+a numbered reference must not be zero
+an argument is not allowed for (*ACCEPT), (*FAIL), or (*COMMIT)
+(*VERB) not recognized or malformed
+number is too big
+subpattern name expected
+digit expected after (?+
+] is an invalid data character in JavaScript compatibility mode
+different names for subpatterns of the same number are not allowed
+(*MARK) must have an argument
+this version of PCRE is not compiled with Unicode property support
+\c must be followed by an ASCII character
+\k is not followed by a braced, angle-bracketed, or quoted name
+internal error: unknown opcode in find_fixedlength()
+\N is not supported in a class
+too many forward references
+disallowed Unicode code point (>= 0xd800 && <= 0xdfff)
+invalid UTF-16 string
+name is too long in (*MARK), (*PRUNE), (*SKIP), or (*THEN)
+character value in \u.... sequence is too large
+invalid UTF-32 string
+setting UTF is disabled by the application
+DEFINE
+UTF8)
+NO_START_OPT)
+LIMIT_MATCH=
+LIMIT_RECURSION=
+CRLF)
+BSR_ANYCRLF)
+BSR_UNICODE)
+Error text not found (please report)
+\*+?{^.$|()[
+%s%s %s%s
+%s%sclist %d%s
+\x%02x
+\x{%x}
+Close
+Callout
+*THEN
+    %s
+------------------------------------------------------------------
+    %s %d
+%3d %s
+    Cond recurse any
+    Cond recurse %d
+    Cond nrecurse any
+    Cond nrecurse %d
+    Cond def
+    %s
+ %s [^
+ %s \%d
+    %s %d %d %d
+    [
+\p{%s}
+\P{%s}
+ (neg)
+{%u,}
+{%u,%u}
+    %s 
+ %s %s
+AllAny
+Anybyte
+notprop
+extuni
+chari
+class
+nclass
+xclass
+Recurse
+KetRmax
+KetRmin
+KetRpos
+Reverse
+Assert
+Assert not
+AssertB
+AssertB not
+Once_NC
+BraPos
+CBraPos
+SBraPos
+SCBra
+SCBraPos
+SCond
+Cond ref
+Cond nref
+Cond rec
+Cond nrec
+Brazero
+Braminzero
+Braposzero
+*MARK
+*PRUNE
+*SKIP
+*COMMIT
+*FAIL
+*ACCEPT
+*ASSERT_ACCEPT
+Skip zero
+argument is not a compiled regular expression
+argument not compiled in 8 bit mode
+unknown or incorrect option bit(s) set
+internal error: opcode not recognized
+internal error: missing capturing bracket
+failed to get memory
+8.33 2013-05-28
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.symtab
+.strtab
+.shstrtab
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.note
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.debug_frame
+.ARM.attributes
+BUILDENV_qss
+VARIANT_startup
+VARIANT_v7
+VARIANT_le
+VARIANT_a
+__pic__
+__PIC__
+crtstuff.c
+__EH_FRAME_BEGIN__
+__JCR_LIST__
+__do_global_dtors_aux
+completed.4602
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+object.4617
+__frame_dummy_init_array_entry
+clmcallback.c
+clmconvert.c
+.LANCHOR0
+C.9.3515
+clmlibrary.c
+clmi_ConvertRiffError
+clmi_GiveLanguageBuffer
+clmi_ApplyRules
+clmi_RemoveInvalidPhonemes
+clmi_LoadRules
+clmload.c
+pcre_byte_order.c
+pcre_chartables.c
+pcre_compile.c
+check_escape
+first_significant_code
+find_fixedlength
+check_posix_syntax
+add_to_class
+add_not_list_to_class
+is_anchored
+is_startline
+find_firstassertedchar
+expand_workspace
+T.277
+T.278
+T.279
+T.280
+T.281
+compile_regex
+escapes
+digitab
+posix_names
+posix_name_lengths
+posix_class_maps
+CSWTCH.275
+verbs
+verbnames
+error_texts
+pcre_config.c
+pcre_dfa_exec.c
+internal_dfa_exec
+poptable
+coptable
+toptable1
+toptable2
+pcre_exec.c
+match_ref
+match
+rep_min
+rep_max
+pcre_fullinfo.c
+pcre_get.c
+get_first_set
+pcre_globals.c
+LocalPcreMalloc
+LocalPcreFree
+pcre_jit_compile.c
+pcre_maketables.c
+pcre_newline.c
+pcre_ord2utf8.c
+pcre_printint.c
+print_prop
+print_char
+.LANCHOR1
+priv_OP_lengths
+priv_OP_names
+pcre_refcount.c
+pcre_string_utils.c
+pcre_study.c
+set_table_bit
+set_start_bits
+find_minlength
+pcre_tables.c
+pcre_ucd.c
+pcre_valid_utf8.c
+pcre_version.c
+pcre_xclass.c
+riff_reader.c
+riff_loc_DataUnmap
+riff_loc_DataMap
+riff_reader_loc_DataClose
+endianWord.2516
+vector.c
+shift
+__FRAME_END__
+__JCR_END__
+_DYNAMIC
+__dso_handle
+_GLOBAL_OFFSET_TABLE_
+_pcre_ucd_stage2
+strcpy
+pcre_copy_substring
+pcre_compile2
+clmi_FindLangRecord
+pcre_dfa_exec
+_pcre_is_newline
+pcre_printint
+_pcre_ucd_caseless_sets
+memmove
+clmi_FindNextRecordInBuffer
+__exidx_end
+clmi_Free
+riff_reader_GetEncryption
+riff_reader_FindChunk
+RIFF_CHUNK_STACK_ELEM_IT
+_pcre_vspace_list
+riff_reader_ReleaseChunkData
+clmi_FreeListOfTypes
+_bss_end__
+riff_reader_Seek
+clmi_SearchAndReplace
+clm_UnloadSettings
+riff_reader_CloseChunk
+_Tolotab
+_Ctype
+memcpy
+pcre_fullinfo
+_Touptab
+_pcre_hspace_list
+__cxa_finalize
+_pcre_default_tables
+pcre_refcount
+__udivsi3
+__bss_start__
+pcre_ObjOpen
+clm_GetVersion
+_pcre_ucd_stage1
+_pcre_find_bracket
+__exidx_start
+_pcre_was_newline
+clmi_Realloc
+_pcre_valid_utf
+_init
+clmi_FreePreCompiledSplitWordRegEx
+strtol
+pcre_get_substring_list
+vector_ObjClose
+pcre_get_substring
+pcre_version
+riff_reader_ReadWStringZ
+riff_reader_GetChunkDepth
+fprintf
+pcre_free_substring
+riff_reader_GetPosition
+strcat
+vector_AddElemAt
+__deregister_frame_info
+__aeabi_idiv
+riff_reader_ObjClose
+pcre_malloc
+__bss_end__
+clmi_SplitWordInPhonemes
+strstr
+clm_ObjOpen
+strncmp
+_pcre_xclass
+strncpy
+clm_ReturnBufferInfo
+riff_reader_GetChunkData
+clm_ConvertTranscription
+pcre_get_stringtable_entries
+strtok
+memcmp
+vector_StackPop
+vector_RemoveAddress
+clmi_PreCompileSplitWordRegEx
+riff_reader_ReadStringZ
+_btext
+pcre_jit_stack_free
+clmi_Malloc
+vector_StackTop
+pcre_assign_jit_stack
+pcre_compile
+__bss_start
+memset
+__div0
+clmi_IsSeperationRecord
+__aeabi_uidiv
+vector_ObjOpen
+clmi_EscapeMetaChars
+pcre_config
+clmi_FreePreCompiledReplacementRegEx
+vector_Add
+__end__
+__divsi3
+clmi_FindSeperationRecord
+clm_atoi
+strcmp
+_fini
+vector_Remove
+sprintf
+clm_ObjClose
+riff_reader_ReadWStringW
+clm_ReturnDestinationLanguages
+clm_FetchBufferInfo
+pcre_copy_named_substring
+strnicmp
+fputc
+riff_reader_OpenChunk
+pcre_free_study
+pcre_get_named_substring
+vector_GetElemAt
+pcre_stack_malloc
+clm_LoadSettings
+clm_GetDroppedPhonemesList
+clmi_InterpretReplacementString
+__aeabi_uidivmod
+_pcre_OP_lengths
+fwrite
+_edata
+_pcre_ord2utf
+pcre_get_stringnumber
+pcre_study
+clmi_RemoveBackSlash
+clmi_FindNrOfLanguages
+riff_reader_ReadStringW
+pcre_stack_free
+pcre_free
+clmi_DeleteNonPhoneChars
+pcre_callout
+vector_GetSize
+pcre_pattern_to_host_byte_order
+riff_reader_ObjOpen
+riff_reader_ReadFourCC
+strlen
+vector_Clear
+_stack
+vector_ObjClone
+pcre_maketables
+strchr
+clm_FetchDestinationLanguages
+fputs
+riff_reader_DetachChunkData
+__data_start
+clmi_EmptyLanguageStruct
+clmi_PreCompileReplacementRegEx
+_Jv_RegisterClasses
+pcre_free_substring_list
+__aeabi_idivmod
+pcre_exec
+__register_frame_info
+pcre_jit_stack_alloc
+pcre_ObjClose
+vector_AddGet
+riff_reader_GetAlignment
+_pcre_ucd_records
+clmi_EnumerateLanguages
+clmi_FindLanguageInArray

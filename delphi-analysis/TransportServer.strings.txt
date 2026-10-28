@@ -1,0 +1,542 @@
+/usr/lib/ldqnx.so.2
+libXSAL.so
+pthread_cond_signal
+SAL_Set_Thread_Priority
+strerror
+SAL_Get_Thread_Name_Self
+getpid
+memcpy
+SAL_Wait_Ready
+SAL_Get_Thread_Priority
+__cxa_finalize
+malloc
+SAL_Run
+SAL_Get_Thread_Id
+SAL_Publish
+SAL_Create_Mutex
+SAL_Signal_Ready
+abort
+SAL_Is_Thread_Alive
+__deregister_frame_info
+SAL_Init
+SAL_Get_Max_Number_Of_Threads
+SAL_Lock_Mutex
+__get_errno_ptr
+SAL_Exit
+pthread_cond_init
+memcmp
+memset
+SAL_Destroy_Mutex
+pthread_mutex_unlock
+DTS_Client_Get_Frontend
+_fini
+sprintf
+SAL_Wait_Destroyed
+SAL_Sleep
+pthread_mutex_destroy
+pthread_mutex_lock
+SAL_Create_Thread
+pthread_cond_wait
+SAL_Get_App_Id
+SAL_Unlock_Mutex
+SAL_Send
+pthread_cond_destroy
+pthread_mutex_init
+_Jv_RegisterClasses
+SAL_Try_Lock_Mutex
+__register_frame_info
+SAL_Get_Config
+libDebugTrace.so
+memmove
+_Tolotab
+strrchr
+DTS_System_Init
+DTS_Set_Thread_Name_Func_Getter
+strncmp
+__aeabi_uidiv
+strlen
+DTS_Client_Prepare_Name
+libTSD.so
+libUtilities.so
+_ZNSt5ctypeIcED1Ev
+_ZNKSt5ctypeIcE10do_tolowerEPcPKc
+_Znaj
+_ZNKSt11logic_error4whatEv
+_ZdaPv
+_ZNSs5_GrowEjb
+_ZNKSt5ctypeIcE10do_toupperEPcPKc
+_ZTVNSt6locale5facetE
+_ZNSt12length_errorD0Ev
+_ZNSt10ctype_baseD1Ev
+_ZdlPv
+__aeabi_atexit
+_ZNKSt5ctypeIcE10do_tolowerEc
+_ZNSt6_WinitC1Ev
+__assert
+_ZNSs5eraseEjj
+_ZNSt5ctypeIcED0Ev
+_ZNKSt5ctypeIcE9do_narrowEPKcS2_cPc
+_ZNKSt12_String_base5_XlenEv
+_ZTVSt11logic_error
+_ZNSt6locale5facetD1Ev
+_ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb
+_ZTVSt10ctype_base
+_ZNKSt12_String_base5_XranEv
+_ZNSt11logic_errorD1Ev
+_ZNSt8ios_base4InitD1Ev
+_ZNKSt5ctypeIcE9do_narrowEcc
+_ZTVSt12length_error
+_ZNSt6locale5facetD0Ev
+_ZNKSt5ctypeIcE10do_toupperEc
+_ZNSt6_WinitD1Ev
+_ZNSt9_FacetptrISt5ctypeIcEE6_PsaveE
+_ZNSt8ios_base4InitC1Ev
+_ZNSt12length_errorD1Ev
+_ZTVSt5ctypeIcE
+_ZNSt10ctype_baseD0Ev
+_ZNSt9exceptionD2Ev
+_Touptab
+_ZNKSt12length_error8_DoraiseEv
+_ZNKSt11logic_error8_DoraiseEv
+strstr
+_ZNSs6assignERKSsjj
+_ZNSt11logic_errorD0Ev
+_ZNKSt9exception6_RaiseEv
+_Znwj
+_ZSt6_ThrowRKSt9exception
+_ZNKSt5ctypeIcE8do_widenEPKcS2_Pc
+_ZNKSt5ctypeIcE8do_widenEc
+libcpp-ne.so.4
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecb
+_Locale
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev
+_ZNSt9_FacetptrISt8numpunctIcEE6_PsaveE
+_ZTVSt8numpunctIcE
+_ZTv0_n12_NSdD0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsgetnEPci
+_ZNSt15basic_streambufIcSt11char_traitsIcEED1Ev
+_ZNSt6locale5facet9_RegisterEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5_LockEv
+_ZTVSd
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcjjjj
+_ZNKSt8numpunctIcE11do_truenameEv
+_ZNSs6insertEjjc
+_ZNSt6_MutexD1Ev
+_ZNSt8numpunctIcED0Ev
+_ZTv0_n12_NSoD0Ev
+_ZNSsC1EPKc
+_ZTTSd
+_ZNSiD0Ev
+_ZNSt9basic_iosIcSt11char_traitsIcEED0Ev
+_ZTVSt12out_of_range
+_ZNSt9_FacetptrISt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEE6_PsaveE
+_ZThn8_NSdD1Ev
+_ZTVSo
+_ZSt7_BADOFF
+_ZNKSt8numpunctIcE12do_falsenameEv
+_ZTVSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basece
+_ZSt9use_facetISt8numpunctIcEERKT_RKSt6locale
+_ZNSt12out_of_rangeD0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5uflowEv
+_ZNSt4fposI9_MbstatetE4_StzE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9showmanycEv
+_ZNSt6localeC1Ev
+__cxa_pure_virtual
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZNSt8_LocinfoD1Ev
+_ZGVNSt8numpunctIcE2idE
+_ZTVSt9basic_iosIcSt11char_traitsIcEE
+_ZNSt6locale2id7_Id_cntE
+_ZGVNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecy
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecm
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNSt12out_of_rangeD1Ev
+_ZTTSo
+_ZNKSt8numpunctIcE16do_thousands_sepEv
+_Locksyslock
+_ZNSt6_Mutex7_UnlockEv
+_ZNKSt12out_of_range8_DoraiseEv
+_ZNSdD0Ev
+_ZSt4_Fpz
+_ZNSt9basic_iosIcSt11char_traitsIcEED1Ev
+_ZNSt8numpunctIcED1Ev
+_ZNSt6_MutexC1Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecx
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecl
+_ZNSoD0Ev
+_ZTVSt15basic_streambufIcSt11char_traitsIcEE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecd
+_ZNSdD1Ev
+_ZTCSd0_Si
+_ZNSiD1Ev
+_ZNSt6localeD1Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9underflowEv
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IputES3_RSt8ios_basecPcj
+_ZNSt8numpunctIcE2idE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9pbackfailEi
+_ZNKSt8numpunctIcE16do_decimal_pointEv
+_ZNSt8ios_baseD2Ev
+_ZTVSi
+_ZTv0_n12_NSdD1Ev
+strcspn
+_ZNSt15basic_streambufIcSt11char_traitsIcEED0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci
+_Unlocksyslock
+memchr
+_ZTv0_n12_NSoD1Ev
+_ZNKSt6locale9_GetfacetEj
+_ZNSs5_TidyEbj
+_ZNSt15basic_streambufIcSt11char_traitsIcEE4syncEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6setbufEPci
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5imbueERKSt6locale
+_ZNSt8ios_base5_InitEv
+_ZTv0_n12_NSiD0Ev
+_ZThn8_NSdD0Ev
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPKv
+_ZNSt8_LocinfoC1EPKc
+_ZNKSt8numpunctIcE11do_groupingEv
+_ZTTSi
+_Getctyptab
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7_UnlockEv
+_ZNSt6locale2idcvjEv
+_ZNSt6locale5facet7_IncrefEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE8overflowEi
+_ZNSt5ctypeIcE2idE
+_ZNSoD1Ev
+_ZTv0_n12_NSiD1Ev
+_ZTCSd8_So
+_ZNSt6_Mutex5_LockEv
+libc.so.3
+dispatch_handler
+_init_array
+iofunc_attr_init
+errno
+_preinit_array
+dispatch_unblock
+thread_pool_create
+resmgr_attach
+resmgr_msgread
+iofunc_unlock_ocb_default
+iofunc_stat_default
+iofunc_open_default
+thread_pool_destroy
+iofunc_attr_lock
+dispatch_destroy
+iofunc_attr_unlock
+dispatch_context_alloc
+resmgr_pathname
+sigaction
+_init_libc
+pthread_barrier_init
+iofunc_read_verify
+_fini_array
+dispatch_context_free
+iofunc_close_ocb_default
+pthread_barrier_wait
+iofunc_write_verify
+resmgr_detach
+dispatch_create
+iofunc_lock_ocb_default
+thread_pool_start
+iofunc_func_init
+dispatch_block
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+_ZTVN3sal6ThreadE
+_ZN3sal6Thread14threadFunctionEPv
+_ZTVN3sal11ApplicationE
+raB3G
+raB3G
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/Main.cpp
+"transportserver"
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/App.cpp
+%s: [pid: %d] - Logger activated (compilation %s %s)
+Jun 26 2018
+18:29:21
+AppImpl
+execute
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/AppImpl.cpp
+io_stat
+io_stat
+io_unlock_ocb
+io_unlock_ocb
+io_lock_ocb
+io_lock_ocb
+io_read
+io_open
+getPath2
+getPath
+io_write
+io_open
+io_close_ocb
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/Handlers.cpp
+%s : %s : %s
+isConnectCombineClose
+isConnectCombine
+isConnectOpen
+unknown message
+false
+resmgr_context_t :
+rcvid : 
+info : 
+msg : 
+dpp : 
+msg_max_size : 
+status : 
+offset : 
+iofunc_ocb_t:
+*attr : 
+ioflag : 
+sflag : 
+flags : 
+resmgr_attr_t :
+nparts_max : 
+*other_func : 
+_msg_info:
+srcnd : 
+pid : 
+chid : 
+scoid : 
+srcmsglen : 
+dstmsglen : 
+priority : 
+reserved : 
+stat : 
+st_dev : 
+st_ino : 
+st_mode : 
+st_nlink : 
+st_uid : 
+st_gid : 
+st_rdev : 
+st_size : 
+st_blksize : 
+st_blocks : 
+st_atime : 
+st_mtime : 
+st_ctime : 
+iofunc_attr_t : 
+*mount : 
+lock_tid : 
+lock_count : 
+rcount : 
+wcount : 
+rlocks : 
+wlocks : 
+*mmap_list : 
+*lock_list : 
+nbytes : 
+inode : 
+_io_connect : 
+subtype : 
+file_type : 
+reply_max : 
+entry_max : 
+key : 
+handle : 
+access : 
+zero : 
+path_len : 
+eflag : 
+extra_type : 
+extra_len : 
+tryPop
+waitPop2
+waitPop
+finit
+tryPush
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/Queue2.cpp
+deque<T> too long
+destroy
+create
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/DppManager.cpp
+invalid map/set<T> iterator
+map/set<T> too long
+all went wrong
+all good
+begin
+resource manager : inconsistent
+configuration : max queue size invalid
+configuration : mount point in invalid invalid
+configuration : mount point out invalid invalid
+queue : can not init
+queue : size : 
+dispatch manager : can not create dispatch handle
+dispatch manager : can not destroy dispatch handle
+dispatch manager : dispatch handle id already exist
+dispatch manager : dispatch handle id invalid
+dispatch manager : dispatch handle is null
+dispatch manager : dispatch interface created
+dispatch manager : dispatch interface destroyed
+read manager : connection id already exists
+read manager : connection id invalid
+read manager : reader handle is null
+writer manager : connection id already exists
+writer manager : connection id invalid
+writer manager : writer handle is null
+channel : no bytes read from channel
+channel : already open for write
+channel : already open for read
+channel : already open for read / write
+channel : already closed for write
+channel : already closed for read
+channel : already closed for read / write
+channel : already shut down for write
+channel : already shut down for read
+channel : already shut down for read / write
+channel : unknown ioflag (open mode)
+channel manager : connection id already exists
+channel manager : connection id invalid
+channel manager : channel handle already exists
+channel manager : channel handle is null
+channel manager : channel handle invalid
+device manager : can not attach name
+device manager : can not detach name
+device manager : device exists
+device manager : device invalid
+device manager : registered device name 
+device manager : unregistered device name 
+device manager : initialized
+device manager : finalized
+mount point manager : can not attach name
+mount point manager : can not detach name
+mount point manager : mount point exists
+mount point manager : mount point invalid
+mount point manager : registered mount point name
+mount point manager : unregistered mount point name
+mount point manager : initialized
+mount point manager : finalized
+thread pool manager : inconsistent
+thread pool manager : can not create pool
+thread pool manager : can not destroy pool
+thread pool manager : can not start pool
+thread pool manager : pool created
+thread pool manager : pool destroyed
+thread pool manager : pool started
+queue manager : connection id already exists
+queue manager : connection id invalid
+queue manager : queue handle is null
+queue : full
+requests handlers : received combine message
+requests handlers : unknown ioflag (open mode)
+unknown error
+/dev/mnt1/in/
+/dev/mnt1/out/
+/dev/mnt2/in/
+/dev/mnt2/out/
+maxQueueSize
+mountPoint1In
+mountPoint2Out
+Configuration:
+maxQueueSize : 
+mountPoint1In   : 
+mountPoint2Out   : 
+finit
+unregister
+registe
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/DevManager.cpp
+finit
+unregister
+registe
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/MntManager.cpp
+start
+finit
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/ThPoolManager.cpp
+write
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/Channel.cpp
+%s : %s %u
+Channel :
+mData.coidWr : 
+mData.coidRd : 
+mData.path : 
+detach
+attach
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/ChannelManager.cpp
+list<T> too long
+sigHandler
+registerSigHandlers
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ClusterServices_MIB20_STD/TransportServer/build/../source/SigHandlers.cpp
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salApplication.cpp
+assertion failed: appId > 1
+assertion failed: maxNumberOfThreads > 0
+assertion failed: appId >= std::numeric_limits<SAL_App_Id_T>::min() && appId <= std::numeric_limits<SAL_App_Id_T>::max()
+SAL_Destroy_Mutex() failure
+assign
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salThread.cpp
+assertion failed: SAL_Get_Thread_Id() == getId()
+assertion failed: name != 0 && ! isAlive()
+assertion failed: p!=0
+cstr != 0
+../public/salFixedString.h
+assertion failed: threadName != 0
+assertion failed: SAL_UNKNOWN_THREAD_ID == threadId || (threadId > 0 && threadId <= static_cast<int>( getMaxNumberOfThreads() ) )
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salUtils.cpp
+assertion failed: eventId >= std::numeric_limits<int16_t>::min() && eventId <= std::numeric_limits<int16_t>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salError.cpp
+Allocation fatal error
+Lock fatal error
+Resource fatal error
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salException.cpp
+assertion failed: h != 0
+Resource fatal error: %s
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.interp
+.note
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

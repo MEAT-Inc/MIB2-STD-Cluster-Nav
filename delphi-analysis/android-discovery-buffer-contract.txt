@@ -1,0 +1,145 @@
+Delphi Android Auto discovery: marshaller / IoBuffer contract
+============================================================
+Offline follow-up, 2026-10-28. No vehicle connection or hook implementation.
+Applies only to the acquired libautoreceiver.so and AndroidAuto executable.
+Evidence: android-discovery-libautoreceiver.so.assembly.txt, reproduced by
+scripts/android_discovery_trace.py using ELF relocations and ARM disassembly.
+
+Recovered marshaller contract
+-----------------------------
+MessageRouter::marshallProto(unsigned short message_id,
+                            const google::protobuf::MessageLite& message,
+                            IoBuffer* output)
+  VA0x7f600, size0x70. Implicit C++ this is r0; arguments are r1/r2/r3.
+  Return r0 is left directly from MessageLite::SerializeToArray (normally a
+  bool). A hook must preserve the native result; do not declare it void based
+  merely on the mangled name, which does not encode its return type.
+
+Observed operations:
+  0x7f610-0x7f61c: calls message vtable slot+0x24 -> payload ByteSize.
+  0x7f624: total = payload_size + 2.
+  0x7f628-0x7f62c: frees the pre-existing output backing pointer with libc free.
+  0x7f630: stores total at output+4.
+  0x7f634-0x7f640: malloc(total), stores pointer at output+0.
+  0x7f644-0x7f64c: output+8=0; output+12=total.
+  0x7f650-0x7f658: stores high then low message-id bytes at backing[0:2].
+  0x7f660-0x7f668: SerializeToArray(backing+2,payload_size).
+The function contains no explicit malloc-null or integer-overflow checks.
+That is observed native behavior, not behavior to reproduce in new code.
+
+IoBuffer is a 16-byte nonvirtual data object on this 32-bit ARM build:
+  +0x00  backing pointer (malloc/free owned)
+  +0x04  backing capacity in bytes
+  +0x08  start/read offset
+  +0x0c  end/write offset
+The names capacity/start/end are inferred from their uses, not debug fields.
+Marshaller output has start=0 and capacity=end=payload_size+2.
+IoBuffer::~IoBuffer0x76938 frees backing then zeroes all four words.
+
+Discovery caller ownership and framing
+-------------------------------------
+Controller::sendServiceDiscoveryResponse0x756c4 owns a stack IoBuffer at sp+0x58.
+It initializes all four words to zero at0x7619c-0x761ac, calls the marshaller
+with message_id6 at0x761b4/0x761c0, and then (if controller-ready) queues:
+  data = backing + start
+  length = end - start
+  channel = Controller byte+5
+  router = Controller pointer+8
+through MessageRouter::queueOutgoing at0x761ec.
+It calls libc free(backing) at0x761f4 and clears the four stack words.
+It ignores the marshaller return value on this observed path.
+
+The marshalled discovery packet starts 00 06 followed immediately by raw
+ServiceDiscoveryResponse protobuf bytes. These two bytes are the AAP message
+ID, not the lower transport/channel frame header. A wire rewriter must retain
+that prefix. Channel transport framing and fragmentation happen downstream.
+
+Synchronous copy before outgoing return
+--------------------------------------
+MessageRouter::queueOutgoing0x7f5d8 fetches ChannelManager at router+0x4fc and
+delegates to ChannelManager::queueOutgoing.
+The six-argument implementation0x73c68 resolves/locks the channel and calls
+ChannelManager::messageToFrames at0x73d28 (or returns -5 if unavailable).
+
+ChannelManager::messageToFrames0x727a0:
+  0x727b8-0x727dc: new IoBuffer(16), malloc(input_length), capacity=end=length,
+                    start=0, separate new refcount word initialized to1.
+  0x7280c-0x72818: memcpy(new_backing,input_pointer,input_length).
+  0x72820 onward: fragment size at most0x3f00 (16128) bytes.
+  0x72864 onward: each frame gets a separately allocated 0x14-byte Frame.
+  0x72930-0x7294c: frame retains copied IoBuffer/refcount and increments it.
+  0x729b8: enqueueOutgoing(frame shared_ptr).
+  Cleanup releases the local shared ownership; queued frames retain theirs.
+Thus data is copied BEFORE queueOutgoing returns, on the observed successful
+path. Caller backing can be freed after that return, as stock discovery does.
+Do not pass a pointer whose lifetime ends before the queue call completes.
+
+Reference-count distinction
+--------------------------
+The discovery caller's stack IoBuffer is NOT a shared_ptr itself.
+shared_ptr<IoBuffer> is a separate 8-byte holder: +0 refcount pointer,
++4 IoBuffer pointer. putRef0x74538 decrements the count and at1 frees buffer
+backing, deletes IoBuffer, then deletes the refcount word. That applies to
+copied/received frame buffers; it does not authorize deleting the discovery
+caller's stack object. Rewriting only that object's backing pointer needs
+no fabricated shared_ptr or refcount changes.
+
+Candidate wire-rewrite contract (specification only)
+----------------------------------------------------
+The narrow candidate interception point is the exported marshallProto function,
+after delegating to native marshalling, gated to message_id6 and a successfully
+validated ServiceDiscoveryResponse. It is called via PLT in the discovery path.
+
+1. Preserve original return result and output if marshalling failed or any
+   pointer/offset/capacity invariant cannot be established.
+2. Verify start<=end<=capacity, native discovery start0 and a valid00 06 prefix;
+   impose a conservative host-tested maximum, plus signed/unsigned overflow
+   guards. Do not rewrite other message IDs or unrelated discovery instances.
+3. Parse only protobuf bytes following the two-byte prefix. Maintain primary
+   services byte-for-byte and reject channel-ID collisions/ambiguous templates.
+   A proposed secondary descriptor needs a corresponding live registered
+   endpoint (and paired input endpoint), not just bytes advertising one.
+4. Allocate a new backing buffer with the SAME runtime libc allocator family.
+   Build and validate the complete replacement before changing output. On any
+   parse/allocate/validation failure, free only temporary storage and leave the
+   original four output words and its original backing untouched.
+5. Only after success, publish replacement backing/capacity/start0/end and free
+   original backing exactly once. Do not free or reallocate the caller's stack
+   IoBuffer. Preserve the native marshaller return result.
+6. Let the stock queue path compute outer framing/fragment lengths. Its
+   synchronous copy permits stock caller cleanup to free replacement backing.
+
+Do not use a new[]/delete[] allocation for this backing store, nor mix host or
+injected runtime heaps with the vehicle libc heap. Do not use raw in-object
+protobuf unknown-field writes: the Delphi generated object layout differs from
+MHI2 as documented in android-discovery-findings.txt.
+
+Remaining smallest ABI questions / gates
+----------------------------------------
+The buffer field layout and synchronous-copy lifetime are now instruction-
+backed. The next smallest unresolved hook ABI question is whether this QNX
+loader/interposition route resolves both malloc/free and the marshaller shim
+against the same runtime symbols while keeping RTLD_NEXT recursion/return ABI
+correct; ELF call relocations alone cannot prove live loader behavior.
+A host buffer/allocator model can validate transactional rewrite invariants
+without a car. A disposable diagnostic-only interposition probe (no descriptor
+changes) would be a later on-car gate, after a reversible launch mechanism and
+rollback are designed. No reconnect is required for more offline work now.
+
+Separate protocol blockers remain: endpoint construction/destruction and
+callback ABI, unused service-ID assignment, paired input endpoint behavior,
+phone acceptance under protocol1.3, focus/ack lifecycle and video transport.
+This contract solves neither those nor native-map ownership. Keep HMI overlay
+suppression separate from native map video lifecycle; do not falsify global
+navigation state to make discovery look successful.
+
+Host ownership model validation
+-------------------------------
+scripts/android_discovery_buffer_model.py is a synthetic allocator model, NOT
+native code and NOT a loadable shim. Eleven tests pass for00 06 packet handling:
+primary-prefix preservation, single old-buffer free on success, native failure
+return preservation, parse/allocation failure keeping original, temporary-copy
+failure freeing only temporary allocation, wrong-message pass-through, invalid
+bounds, exact maximum boundary, growth rejection, queued-copy survival after
+caller free, and double-free detection in the model. These tests validate the
+proposed transaction rules, not the QNX loader, real allocator or pointer ABI.

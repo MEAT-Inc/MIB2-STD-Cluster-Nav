@@ -1,0 +1,150 @@
+Delphi native cluster transport: offline investigation checkpoint
+==============================================================
+Source: NavigationServer / TransportServer / Most from supplied P0890D dump.
+All addresses below are ELF virtual addresses for this exact dump, not patches.
+No vehicle connection, acquired-binary execution or firmware modification.
+
+Main result
+-----------
+The native map's isoTX path has now been traced to descriptor assignment,
+packetization, payload write and descriptor teardown. The payload is 188-byte
+MPEG transport stream with independently verified fixed PAT/PMT metadata.
+This is enough to design a host-side packet inspection gate; it is NOT enough
+to open the live endpoint or claim that phone video can already be displayed.
+
+Descriptor and filename data flow
+---------------------------------
+NavigationServer's MDCore event dispatcher loads the literal
+/dev/transport_server/spawn/isoTX at 0x1b428c, wraps it in std::string and calls
+initializeFPKMap_onOpenChannel at 0x21eaac (call at 0x1b42b0).
+The success callback serializes that filename at 0x21ebc8-0x21ebd0, followed by
+five mapWindow-derived values from object offsets +8,+0xc,+0x10,+0x14,+0x18.
+At 0x21ec60-0x21ec78 it sends SAL event 0xf6a to destination app/thread 0x1d.
+
+MDEncoderThread's onMessage routine at 0x1fa2f4 dispatches that event to
+0x1fa420. It deserializes std::string plus five integer values, calls initFPK
+at 0x1fa4cc -> 0x1ee460, and returns result event 0xf6b at 0x1fa520.
+
+initFPK saves its std::string filename argument to this+0xc4 at
+0x1ee6ec-0x1ee6f4. It obtains that same string from the encoder singleton
+(global pointer at 0x5aeab0), calls imported open(path,1) at 0x1ee75c,
+and stores the returned descriptor at this+0x128 at 0x1ee760.
+The open flags immediate is 1 (write-only); no nonblocking flag is passed.
+
+The transportStreamPackagesReady callback starts at 0x22ccd0. It resolves
+the same singleton, tests its nonempty filename and descriptor != -1,
+and iterates an array of 8-byte {pointer,length} entries. For each nonempty
+entry it calls imported write(fd,ptr,len) at 0x22cdb4 using fd at +0x128.
+The callback updates byte statistics but does not retry a short/failed write
+or compare the return to the requested length before advancing the vector.
+After a normal nonempty-vector pass, it returns 1. Thus a prototype needs
+explicit backpressure/error instrumentation instead of assuming this helper
+provides robust retry semantics.
+
+releaseFPK at 0x1ee24c calls imported close(fd) at 0x1ee308, stores -1 at
++0x128 at 0x1ee314, clears the filename and releases its mux configuration.
+A separate MDCore releaseFPKMap_onCloseChannel callback is at 0x1e4744.
+Do not confuse that MOST/control-plane completion with the payload descriptor.
+
+Packet format: instruction evidence and independent CRC verification
+-------------------------------------------------------------------
+initFPK allocates a 0x2c-byte ES_To_TS configuration at 0x1ee58c onward:
+  +0x00 u16 PMT PID             = 0x0010
+  +0x02 u16 PCR PID             = 0x1000
+  +0x04 u16 video ES PID        = 0x0011
+  +0x06 u8  stream type         = 0x1b (AVC/H.264)
+  +0x08 ptr ES descriptor bytes = 0x51d120
+  +0x0c u16 ES descriptor length= 15
+  +0x10 u32 fixed PMT CRC value = 0x981fe6fe (stored little-endian)
+  +0x14 callback               = 0x22ccd0
+  +0x18 owner/context pointer  = address of this+0x124 (callback ignores it
+                                  except for non-null validation and logs)
+  +0x1c,+0x1d,+0x1e continuity counters; +0x20,+0x24,+0x28 timestamps.
+
+The native descriptor bytes are:
+  2a077fff000005dddf28044280323f
+These are advertised metadata, not proof of the actual encoded SPS profile.
+
+ES-to-TS routine 0x1f535c constructs sync byte0x47, four-byte TS headers,
+184-byte payload capacity0xb8, final packet padded to total0xbc=188 bytes,
+with payload-unit-start indicator, adaptation stuffing and continuity counts.
+It emits scatter/gather pointer/length vectors through callback+0x14.
+A file containing 192-byte M2TS framing is not this native output format.
+
+At 0x1f5928 the native encoder completion path obtains SAL_Clock and calls
+ES-to-TS with encoded buffer, produced size, timestamp and configuration.
+The PES timestamp calculation multiplies the clock value by90. With the
+expected millisecond SAL clock this is the MPEG 90-kHz time base. Clock units
+should still be confirmed before using actual elapsed-time capture results.
+
+PAT helper 0x1ed8d0 checks SAL_Delta_Time >0x14c (332), then calls PAT packet
+constructor0x1c6b00 and submits one188-byte packet. PMT helper0x1ed948 has
+same repeat threshold and calls constructor0x1c6bb0. PCR helper0x1ed9ec checks
+SAL_Delta_Time >0x20 (32) and emits an adaptation-only packet on PCR PID0x1000.
+Intervals are clock ticks; interpreting them as milliseconds depends on SAL.
+
+Recovered fixed PSI sections including CRC (spaces omitted):
+PAT: 00b00d0000c100000001e0102d50981b
+PMT: 02b0210001c10000f000f0001be011f00f2a077fff000005dddf28044280323ffee61f98
+
+Independent bitwise MPEG-2 CRC32 calculation (polynomial0x04c11db7,
+initial0xffffffff, no reflection/final XOR) matches native constants:
+  PAT CRC 0x2d50981b; complete-section residue0
+  PMT CRC 0xfee61f98; complete-section residue0
+This confirms transport_stream_id0, program_number1 -> PMT PID0x10,
+PCR PID0x1000, H.264 ES PID0x11 and the recovered descriptor blob. The
+separate PCR PID is unusual but is verified by native packet constructors
+AND both CRC constants, not inferred from a variable name.
+
+Dimensions/rate/bitrate and backpressure limits
+---------------------------------------------
+No hardcoded800x480 or universal frame rate has been established. initFPK
+receives window width/height and backing-buffer dimensions from the native
+mapWindow via event0xf6a; the actual values are runtime/configuration-derived.
+The startFPK/newRate flow is separate from codec initialization. Public Harman
+values must not be substituted for Delphi. Target bitrate/frame-rate constants
+or rate-to-encoder mapping remain to be recovered from startFPK.
+
+TransportServer is a QNX resource manager with spawn/connect namespaces and
+queue-manager logic. Acquired strings include maximum-queue configuration,
+tryPush, waitPop, queue-full and single-writer/open-mode errors. Those strings
+alone do not establish whether a saturated write blocks, returns short, or
+fails. Most contains /dev/transport_server and isoTX and an MLB isochronous-TX
+protocol-error diagnostic, consistent with a consuming MOST path. The full
+resource-manager io_write/read implementation and MOST consumer setup remain
+unrecovered. No additional files are indispensable for continuing that work.
+
+Artifacts and validation
+------------------------
+scripts/native_transport_inspect.py -> native-transport-snippets.txt
+scripts/native_transport_functions.py -> native-transport-functions.txt
+  Function starts/ends use ARM prologue heuristics. The .ARM.exidx table does
+  not cover the early application routines; literal pools after returns may
+  appear as bogus instructions in snippets. Do not treat those as executed.
+scripts/native_transport_packet_reference.py -> host-only188-byte TS/PSI
+  validator, native PAT/PMT reference construction, command-line JSON report.
+scripts/native_transport_packet_reference_tests.py ->6 tests passed:
+  native fixed CRCs; PAT/PMT program/PID/descriptors; corrupted CRC rejected;
+  wrong192-byte stride rejected; continuity wrap/gap; adaptation overflow.
+delphi-analysis/native-transport-reference-validation.json -> reference result.
+
+Re-run from project root:
+  python -m unittest discover -s scripts -p native_transport_packet_reference_tests.py -v
+  python scripts/native_transport_packet_reference.py
+  python scripts/native_transport_packet_reference.py --validate-ts LOCAL_FILE.ts
+
+Validator scope: complete188-byte packet alignment/header/continuity checks
+and native single-packet PAT/PMT parsing with CRC. It does NOT reassemble
+multi-packet PSI/PES, check H.264 SPS, validate PCR timing, emulate MOST, or
+certify a stream as suitable for a vehicle. It makes no network connection.
+
+Next concrete offline gates
+---------------------------
+1. Trace startFPK rate mapping and codec parameters without assuming a profile.
+2. Recover TransportServer io_write/backpressure and Most isoTX consumer setup.
+3. Extend the host validator with captured-stream timing and SPS inspection
+   when a known-good native stream can be obtained through a documented
+   read-only capture. Do not create a competing writer while native mapping
+   owns the endpoint.
+4. Integrate with Android Auto agent's negotiated second-display endpoint only
+   after framing, ownership, focus and rollback lifecycle are understood.

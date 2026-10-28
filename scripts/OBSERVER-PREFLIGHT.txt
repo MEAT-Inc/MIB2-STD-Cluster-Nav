@@ -1,0 +1,40 @@
+Observer vehicle preflight
+
+1. Park the car, turn the infotainment on and reconnect the laptop using the
+   same network connection used for previous collections.
+2. Connect the phone and open stock Android Auto so its process and receiver
+   library are active. Leave it open during the collection.
+3. In PowerShell from the workspace:
+     .\scripts\collect_observer_preflight.ps1
+   Default car address: 192.168.1.4. If different:
+     .\scripts\collect_observer_preflight.ps1 -HostAddress <address>
+   Use -AskPassword only for a non-default FTP password. Telnet asks for its
+   password interactively if the unit requests one. Credentials are not saved.
+
+The collector reads nine fixed shell commands and three fresh FTP files.
+It saves all results into a unique delphi-dump/_observer_preflight_* directory,
+compares the freshly downloaded files against the observer release manifest,
+and reports READY FOR REVIEW or INCOMPLETE. Existing dump files are not reused.
+No vehicle file write, upload, process termination or restart is issued.
+This is a read-only preflight, not the observer launch.
+
+Even INCOMPLETE results should be reviewed before retrying; individual command
+exit codes, partial response files and transfer failures are retained. A timed-out
+Telnet session is stopped rather than reused. The process environment is stored
+locally for launch review and is not printed to the terminal.
+
+Python stdlib only. The wrapper tries bundled Python, then py -3, then python.
+If run on another laptop, copy the new preflight directory back into this
+workspace's delphi-dump folder for review.
+
+Review must establish fresh firmware matches, the actual AndroidAuto process and
+receiver maps, original arguments/environment and a reversible supervised stock
+restart plan before a stationary observer test is prepared.
+QNX pidin syntax reference:
+https://qnx.com/developers/docs/6.5.0SP1.update/com.qnx.doc.neutrino_utilities/p/pidin.html
+
+After the first full preflight, the targeted startup-policy capture is:
+  .\scripts\collect_observer_preflight.ps1 -SupervisorOnly
+It skips FTP and firmware hashing, collecting procman_core.cfg and process-family,
+procman and AndroidAuto details. A supervisor-only result does not claim that
+firmware hashes were freshly checked again. This mode is still read-only.

@@ -1,0 +1,46 @@
+.text
+.globl _ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase
+.type _ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase,@function
+_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase:
+    push %rax
+    push %rcx
+    push %rdx
+    push %rsi
+    push %rdi
+    push %r8
+    push %r9
+    push %r10
+    push %r11
+    sub $128,%rsp
+    movdqu %xmm0,0(%rsp)
+    movdqu %xmm1,16(%rsp)
+    movdqu %xmm2,32(%rsp)
+    movdqu %xmm3,48(%rsp)
+    movdqu %xmm4,64(%rsp)
+    movdqu %xmm5,80(%rsp)
+    movdqu %xmm6,96(%rsp)
+    movdqu %xmm7,112(%rsp)
+    mov 200(%rsp),%rdx
+    call delphi_observer_enter
+    mov %rax,128(%rsp)
+    movdqu 0(%rsp),%xmm0
+    movdqu 16(%rsp),%xmm1
+    movdqu 32(%rsp),%xmm2
+    movdqu 48(%rsp),%xmm3
+    movdqu 64(%rsp),%xmm4
+    movdqu 80(%rsp),%xmm5
+    movdqu 96(%rsp),%xmm6
+    movdqu 112(%rsp),%xmm7
+    add $128,%rsp
+    pop %r11
+    pop %r10
+    pop %r9
+    pop %r8
+    pop %rdi
+    pop %rsi
+    pop %rdx
+    pop %rcx
+    pop %rax
+    jmp *%r11
+.size _ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase,.-_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase
+.section .note.GNU-stack,"",@progbits

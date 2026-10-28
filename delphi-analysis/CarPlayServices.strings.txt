@@ -1,0 +1,657 @@
+/usr/lib/ldqnx.so.2
+libXSAL.so
+SAL_Set_Thread_Priority
+SAL_Stat_Queue
+SAL_Undeclare_Urgent
+SAL_Get_Thread_Name_Self
+SAL_Subscribe
+getpid
+SAL_Wait_Ready
+SAL_Get_Thread_Priority
+__cxa_finalize
+malloc
+SAL_Run
+SAL_Get_Thread_Id
+SAL_Publish
+SAL_Signal_Ready
+abort
+SAL_Receive
+_init
+SAL_Is_Thread_Alive
+__deregister_frame_info
+SAL_Init
+SAL_Get_Max_Number_Of_Threads
+SAL_Unsubscribe
+SAL_Exit
+SAL_Sync_Send_VS
+DTS_Client_Get_Frontend
+_fini
+sprintf
+SAL_Wait_Destroyed
+SAL_Sleep
+SAL_Declare_Urgent
+SAL_Create_Thread
+SAL_Disconnect
+SAL_Connect
+SAL_Get_App_Id
+SAL_Create_Queue
+SAL_Send
+_Jv_RegisterClasses
+__register_frame_info
+close
+SAL_Get_Config
+libTSD.so
+tsd_access_get_us
+__aeabi_unwind_cpp_pr0
+__aeabi_unwind_cpp_pr1
+libDebugTrace.so
+_Tolotab
+DTS_System_Init
+DTS_Set_Thread_Name_Func_Getter
+realloc
+strlen
+DTS_Client_Prepare_Name
+libXMLLib.so
+xml2LoadA
+xml2GetRootNode
+xml2GetNodeNameA
+xml2GetNextChildNode
+xml2GetFirstChildNode
+xml2FindAttributeA
+libcpp-ne.so.4
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecb
+_Locale
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev
+_ZNSt5ctypeIcED1Ev
+_ZNSt9_FacetptrISt8numpunctIcEE6_PsaveE
+_ZTVSt8numpunctIcE
+_ZTv0_n12_NSdD0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsgetnEPci
+_ZNSt15basic_streambufIcSt11char_traitsIcEED1Ev
+_ZNSt6locale5facet9_RegisterEv
+_ZNKSt5ctypeIcE10do_tolowerEPcPKc
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5_LockEv
+_Znaj
+_ZTVSd
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcjjjj
+_ZNKSt8numpunctIcE11do_truenameEv
+_ZNSbIwSt11char_traitsIwESaIwEE5eraseEjj
+_ZNKSt11logic_error4whatEv
+_ZNSs6insertEjjc
+_ZdaPv
+_ZNSt6_MutexD1Ev
+_ZNSt8numpunctIcED0Ev
+_ZTv0_n12_NSoD0Ev
+_ZNSs5_GrowEjb
+_ZNSsC1EPKc
+_ZTTSd
+_ZNKSt5ctypeIcE10do_toupperEPcPKc
+_ZNSt5ctypeIcE7_GetcatEPPKNSt6locale5facetE
+_ZTVNSt6locale5facetE
+_ZNSiD0Ev
+_ZNSt12length_errorD0Ev
+_ZNSt9basic_iosIcSt11char_traitsIcEED0Ev
+_ZTVSt12out_of_range
+_ZNSt10ctype_baseD1Ev
+_ZdlPv
+_ZNSt9_FacetptrISt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEE6_PsaveE
+_ZThn8_NSdD1Ev
+_ZTVSo
+_ZSt7_BADOFF
+_ZNKSt8numpunctIcE12do_falsenameEv
+_ZTVSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basece
+_ZNSbIwSt11char_traitsIwESaIwEE5_TidyEbj
+_ZSt9use_facetISt8numpunctIcEERKT_RKSt6locale
+wmemmove
+_ZTVSt9exception
+_ZNSt12out_of_rangeD0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5uflowEv
+_ZNSt4fposI9_MbstatetE4_StzE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9showmanycEv
+_ZNSt6localeC1Ev
+__cxa_pure_virtual
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZNSt8_LocinfoD1Ev
+_ZNKSt5ctypeIcE10do_tolowerEc
+_ZGVNSt8numpunctIcE2idE
+_ZTVSt9basic_iosIcSt11char_traitsIcEE
+_ZNSt6locale2id7_Id_cntE
+_ZGVNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecy
+_ZNSt8ios_base7_AddstdEv
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecm
+_ZNSs5eraseEjj
+_ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_jj
+_ZNSt5ctypeIcED0Ev
+_ZNKSt5ctypeIcE9do_narrowEPKcS2_cPc
+_ZNKSt12_String_base5_XlenEv
+_ZTVSt11logic_error
+_ZNSt6locale5facetD1Ev
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb
+_ZNSt12out_of_rangeD1Ev
+_ZTTSo
+_ZNKSt8numpunctIcE16do_thousands_sepEv
+_Locksyslock
+_ZTVSt10ctype_base
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetE
+_ZNSt6_Mutex7_UnlockEv
+_ZNKSt12_String_base5_XranEv
+_ZNKSt12out_of_range8_DoraiseEv
+_ZNSt11logic_errorD1Ev
+_ZNSdD0Ev
+_ZSt4_Fpz
+_ZNSt9basic_iosIcSt11char_traitsIcEED1Ev
+_ZNKSt5ctypeIcE9do_narrowEcc
+_ZNSt8numpunctIcED1Ev
+_ZNSt6_MutexC1Ev
+_ZTVSt12length_error
+_ZNSt6locale5facetD0Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecx
+_ZNKSt5ctypeIcE10do_toupperEc
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecl
+_ZNSoD0Ev
+_ZNSs6appendERKSsjj
+_ZTVSt15basic_streambufIcSt11char_traitsIcEE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecd
+_ZNSdD1Ev
+_ZTCSd0_Si
+_ZNSiD1Ev
+_ZNSt6localeD1Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9underflowEv
+wmemset
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IputES3_RSt8ios_basecPcj
+_ZNSt9_FacetptrISt5ctypeIcEE6_PsaveE
+_ZNSt8numpunctIcE2idE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9pbackfailEi
+_ZNKSt8numpunctIcE16do_decimal_pointEv
+_ZNSs6appendEjc
+_ZNSt8ios_baseD2Ev
+_ZTVSi
+_ZNSbIwSt11char_traitsIwESaIwEE6appendEjw
+_ZTv0_n12_NSdD1Ev
+_ZNSt12length_errorD1Ev
+strcspn
+_ZTVSt5ctypeIcE
+_ZNSt10ctype_baseD0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEED0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci
+_ZNSt9exceptionD2Ev
+_Unlocksyslock
+memchr
+_ZTv0_n12_NSoD1Ev
+_Touptab
+_ZNSs6assignEPKc
+_ZTVSt8ios_base
+_ZNKSt6locale9_GetfacetEj
+_ZNSs5_TidyEbj
+_ZNKSt12length_error8_DoraiseEv
+_ZNKSt11logic_error8_DoraiseEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE4syncEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+strcmp
+_ZNSs6assignERKSsjj
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6setbufEPci
+_ZNSt8numpunctIcE7_GetcatEPPKNSt6locale5facetE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5imbueERKSt6locale
+_ZNSt8ios_base5_InitEv
+_ZTv0_n12_NSiD0Ev
+_ZNSt11logic_errorD0Ev
+_ZThn8_NSdD0Ev
+wmemcpy
+_ZNKSt9exception6_RaiseEv
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPKv
+_ZNSt8_LocinfoC1EPKc
+_ZNKSt8numpunctIcE11do_groupingEv
+_ZTTSi
+_Znwj
+_ZSt6_ThrowRKSt9exception
+_Getctyptab
+_ZNSt19ostreambuf_iteratorIcSt11char_traitsIcEEaSEc
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7_UnlockEv
+_ZNSt6locale2idcvjEv
+_ZNSt6locale5facet7_IncrefEv
+_ZNKSt5ctypeIcE8do_widenEPKcS2_Pc
+_ZNSt15basic_streambufIcSt11char_traitsIcEE8overflowEi
+_ZNSt5ctypeIcE2idE
+_ZNSoD1Ev
+_ZNKSt5ctypeIcE8do_widenEc
+_ZNSt8numpunctIcE5_InitERKSt8_Locinfo
+_ZTv0_n12_NSiD1Ev
+_ZTCSd8_So
+_ZNSt6_Mutex5_LockEv
+libc.so.3
+_init_array
+errno
+_preinit_array
+tolower
+optarg
+__stackavail
+stricmp
+_init_libc
+getopt
+_fini_array
+atexit
+localeconv
+wmemcmp
+toupper
+__assert
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+oldtimeStamp
+_ZN12AppArguments11spoInstanceE
+_ZTVSt18basic_stringstreamIcSt11char_traitsIcESaIcEE
+_ZTVN3sal6ThreadE
+_ZTVN3dsi8IFunktorE
+_ZTVSt19basic_ostringstreamIcSt11char_traitsIcESaIcEE
+_ZTTSt18basic_stringstreamIcSt11char_traitsIcESaIcEE
+_ZTV15CarPlayListener
+_ZN3sal6Thread14threadFunctionEPv
+_ZTV16ConfigFileParser
+_ZTVN3sal11ApplicationE
+_ZN6Config11spoInstanceE
+_ZTVSt15basic_stringbufIcSt11char_traitsIcESaIcEE
+_ZTV19PersistenceSqFacade
+_ZN13CarPlayClient11spoInstanceE
+_ZTV11Persistence
+_ZTVN3dsi8Funktor1IRKSt6vectorIN7carplay9CallStateESaIS3_EENS2_14DSICarplayImplEMS8_FvS7_iEEE
+_ZN19PresistenceSqFacade10mpInstanceE
+_ZTV11Diagnostics
+_ZTVN3dsi8Funktor1IRKN7carplay10DeviceInfoENS1_14DSICarplayImplEMS5_FvS4_iEEE
+_ZTTSt19basic_ostringstreamIcSt11char_traitsIcESaIcEE
+_ZTVN3dsi8Funktor1IRKN7carplay12PlaybackInfoENS1_14DSICarplayImplEMS5_FvS4_iEEE
+_ZN19PersistenceSqFacade10mpInstanceE
+_ZTVN3dsi8Funktor1IRKN6global15ResourceLocatorEN7carplay14DSICarplayImplEMS6_FvS4_iEEE
+_ZTVN3dsi8Funktor1IiN7carplay14DSICarplayImplEMS2_FviiEEE
+_ZTVN7carplay10DSICarplayE
+_ZTVN3dsi15UpdateContainerIN7carplay14DSICarplayImplEEE
+_ZTV12AppArguments
+_ZTVN3sal12ActiveObjectE
+_ZTV19PresistenceSqFacade
+_ZTVN3sal13PassiveObjectE
+_ZTVN3dsi8Funktor2IRKSt6vectorIN7carplay8ResourceESaIS3_EERKS1_INS2_8AppStateESaIS8_EENS2_14DSICarplayImplEMSD_FvS7_SC_iEEE
+_ZTV9SUCarPlay
+_ZTV13CarPlayClient
+_ZTV6Config
+_ZTVN3dsi8Funktor1IRKN7carplay14TelephonyStateENS1_14DSICarplayImplEMS5_FvS4_iEEE
+_ZN9SUCarPlay11spoInstanceE
+_ZTVN3dsi8Funktor1IRKN7carplay9TrackDataENS1_14DSICarplayImplEMS5_FvS4_iEEE
+raB3G
+raB3G
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlayServices_MIB20_STD/Application/build/../source/Application.cpp
+parseCommandLineArgs - configuration file "%s"
+parseCommandLineArgs - manufacturing mode detected
+g:l:t:e:N:v:c:y
+"carplayservices"
+%s: [pid: %d] - Logger activated (compilation %s %s)
+Jun 26 2018
+18:35:53
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlayServices_MIB20_STD/Application/build/../source/Dispatcher.cpp
+Dispatcher::onStartingExecute: EV_APP_INITIALIZED published
+invalid map/set<T> iterator
+../../../../sw/AP_XSALcpp/public/salTemplateDispatcher.h
+TemplateDispatcher::onMessage(),No passive object avaliable with id: %d
+assertion failed: isRegistered( passive )
+map/set<T> too long
+../../../../sw/AP_DSI_MIB20_STD/DSIUtils/public/dsiFunktor.h
+ DSIUtil IFunktor::setNotification
+controller
+accessory
+speech
+phoneCall
+turnByTurn
+speaking
+recognizing
+AppState [ 
+AppID=
+owner=
+speechMode=
+screen
+audio
+Resource [ 
+resourceID=
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlayServices_MIB20_STD/SUCarPlay/build/../source/SUCarPlay.cpp
+SUCarPlay::SUCarPlay - MANUFACTURING MODE - no DSI objects registered
+SUCarPlay::onSUStarting - mpoDSIImpl is NULL - possible manufacturing mode startup
+SUCarPlay::onSUStarting - registration status: DSICarPlayImpl %d, SUCarPlay %d, Client %d
+SUCarPlay::onMessage() - event id %d
+Registering for shutdown events
+Event EV_PERSISTENCE_READY Received
+Event EV_PREPARE_OFF_APP Received
+Event EV_PREPARE_OFF_FAST Received
+Event EV_PREPARE_OFF_APP_CANCEL Received
+Event EV_PREPARE_OFF_EMERGENCY Received
+SUCarPlay::onMessage() - unhandled event with id %d
+SUCarPlay::postButtonEvent - aiButton=%d aiButtonState=%d
+SUCarPlay::postButtonEvent - unknown Button Type %d
+SUCarPlay::postCharacterEvent - aiNumberOfAlternatives=%d 
+SUCarPlay::postRotaryEvent - aiTicks=%d 
+SUCarPlay::postRotaryEvent - DDS support disabled
+SUCarPlay::postTouchEvent - aiTouchSource=%d aiNumberOfFingers=%d
+SUCarPlay::requestModeChange 
+SUCarPlay::requestNightMode abUseNightMode=%d
+SUCarPlay::requestSIRIAction aiSiriAction=%d
+SUCarPlay::requestSIRIAction - unknown Siri Action Type %d
+SUCarPlay::requestUI aiUiScreenID=%d
+SUCarPlay::requestUI - unknown Screen UI Type %d
+SUCarPlay::requestUI2()
+SUCarPlay::responseBTDeactivation 
+SUCarPlay::responseUpdateMainAudioType = %d 
+SUCarPlay::responseUpdateMainAudioType - unknown type %d
+SUCarPlay::responseUpdateMode 
+SUCarPlay::startService
+SUCarPlay::onRegisterListener - registration result %d
+SUCarPlay::onDayNightMode - night mode %d
+SUCarPlay::onPlaybackData - Title %ls, Album %ls, TrackNr %d, TrackCount %d, DiscNr %d, DiscCount %d, Artist %ls, Genre %ls, Composer %ls, Duration %d
+SUCarPlay::onCoverArt - File Name %ls
+SUCarPlay::onPlayPosition - Current Play Position %d
+SUCarPlay::onTextInputState - state = %d
+SUCarPlay::onCallState - callerName %ls, direction %d, phoneNumber %ls, callStatus %d, uniqueCallID %ls
+SUCarPlay::onDeviceInfo
+SUCarPlay::onAudioAvailability - available = %d, stream type %d, audio type %d
+SUCarPlay::onAudioAvailability - unknown audio type %d
+SUCarPlay::onAudioAvailability - HMI updated with main audio type %d
+SUCarPlay::onUpdateMode
+<%d> %s
+SUCarPlay::onResponseModeChange
+SUCarPlay::onPlaybackState - playbackApp %ls, repeatMode %d, shuffleMode %d, playbackStatus %d
+SUCarPlay::onTelephonyState - airplaneMode %d, mobileOperator %ls, telRegStatus %d, signalStrength %d
+SUCarPlay::onVersionInfo - "%s" + "%s" + "%s"
+112_1451
+SUCarPlay::onDuckAudio - duration = %d, volume = %d
+SUCarPlay::onUnduckAudio - duration = %d
+SUCarPlay::onOemAppSelected
+SUCarPlay::onRequestBTDeactivation aiValidFlag=%d
+SUCarPlay::mapDsi2CarPlay_ResourceId - unknown DSI resource id %d
+SUCarPlay::mapCarPlay2Dsi_ResourceId - unknown resource id %d
+SUCarPlay::mapDsi2CarPlay_ResourceOwner - unknown DSI resource Owner %d
+SUCarPlay::mapCarPlay2Dsi_ResourceOwner - unknown resource Owner %d
+SUCarPlay::mapDsi2CarPlay_TransferType - unknown DSI resource transfer type %d
+SUCarPlay::mapCarPlay2Dsi_TransferType - unknown resource transfer type %d
+SUCarPlay::mapDsi2CarPlay_TransferPriority - unknown DSI resource transfer priority %d
+SUCarPlay::mapCarPlay2Dsi_TransferPriority - unknown resource transfer priority %d
+SUCarPlay::mapDsi2CarPlay_TransferConstraint - unknown DSI resource transfer constraint %d
+SUCarPlay::mapCarPlay2Dsi_TransferConstraint - unknown resource transfer constraint %d
+SUCarPlay::mapDsi2CarPlay_AppId - unknown DSI app ID %d
+SUCarPlay::mapCarPlay2Dsi_AppId - unknown app ID %d
+SUCarPlay::mapDsi2CarPlay_AppOwner - unknown DSI app Owner %d
+SUCarPlay::mapCarPlay2Dsi_AppOwner - unknown app Owner %d
+SUCarPlay::mapDsi2CarPlay_SpeechMode - unknown DSI speech mode %d
+SUCarPlay::mapCarPlay2Dsi_SpeechMode - unknown speech mode %d
+SUCarPlay::mapCarPlay2Dsi_CallDirection - unknown direction %d
+SUCarPlay::mapCarPlay2Dsi_CallStatus - unknown status %d
+SUCarPlay::mapCarPlay2Dsi_TelephoneRegistrationStatus - unknown status %d
+SUCarPlay::mapCarPlay2Dsi_TextInputStatus - unknown status %d
+SUCarPlay::mapCarPlay2Dsi_RepeatMode - unknown mode %d
+SUCarPlay::mapCarPlay2Dsi_ShuffleMode - unknown mode %d
+SUCarPlay::mapCarPlay2Dsi_PlaybackStatus - unknown status %d
+../../../../sw/AP_DSI_MIB20_STD/DSIUtils/public/dsiUpdateContainer.h
+ DSIUtil UpdateContainer::addUpdater for attribute %d
+assertion failed: mListener != 0
+ DSIUtil UpdateContainer::setNotification for attribute %d
+ DSIUtil UpdateContainer::update for attribute %d
+vector<T> too long
+map/set<T> too long
+invalid map/set<T> iterator
+assertion failed: data.size() == 1 && "dsiutils Funktor1::update wrong number of params"
+DSIUtil Funktor::update called
+ DSIUtil Funktor::update updating value and valid flag
+ DSIUtil Funktor1::fireUpdate
+assertion failed: data.size() == 2 && "dsiutils Funktor2::update wrong number of params"
+DSIUtil Funktor2::update called
+ DSIUtil Funktor2::update updating 2 values and valid flag
+ DSIUtil Funktor2::fireUpdate
+112_1451
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlayServices_MIB20_STD/SUCarPlay/build/../source/Diagnostics.cpp
+%s - event id %d
+%s - unhandled event with id %d
+%s - message [ %d.%d.%d ]
+%s - unhandled FID %d
+%s - retrieving diagnostics message failed
+    App:
+ Srv:
+FALSE
+%s - MK_EM_CP_DDS_CONTROL - value=%s
+%s - unhandled message with key %d
+%s - protocol %d is not ENGINEERING_MENU and skipped
+map/set<T> too long
+onDiagnosticsCommand
+onDiagnosticsRequest
+onDiagnosticsMessage
+onMessage
+../cfg/CarPlayServices.xml
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlayServices_MIB20_STD/SUCarPlay/build/../source/Config.cpp
+Config::Config() - configuration file not specified, using default file path "%s"
+Config::getValue(%d)- key undefined in persistence
+Config::getValue(%d)- key undefined in configuration file
+Config::getValue(%d)- unhandled key
+FALSE
+Config::getValue(%d) returns %s
+Config::setValue(%d, %s)
+Config::setValue(%d)- key undefined in persistence
+Config::setValue(%d)- unhandled key
+Config::getValue(%d) returns %d
+Config::setValue(%d, %d)
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlayServices_MIB20_STD/SUCarPlay/build/../source/ConfigFileParser.cpp
+ConfigFileParser:parseFile - xml2Load success
+ConfigFileParser:parseFile - xml2GetRootNode success
+ConfigFileParser:parseFile - xml2GetFirstChildNode success
+ConfigFileParser:parseFile - xml2GetNodeName success
+CfgItem
+XYZ_Support
+value
+FALSE
+ConfigFileParser:parseFile - %s = %s
+ConfigFileParser:parseFile - tag "%s" not found for "%s"
+ConfigFileParser:parseFile - unknown configuration item "%s"
+ConfigFileParser:parseFile - tag "%s" not found
+ConfigFileParser:parseFile - failed to obtain XML root node
+ConfigFileParser:parseFile - failed to load file "%s" with error %d)
+false
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlayServices_MIB20_STD/SUCarPlay/build/../source/Persistence.cpp
+Persistence::loadDefaults - entry
+Persistence::loadDefaults - exit
+Persistence::storeValue - key %d, value %d)
+Persistence::storeValue(%d, %d) failed
+Persistence Access Denied
+Persistence::retrieveValue(%d) failed
+Persistence::retrieveValue(%d) returns %d
+FALSE
+Persistence::storeValue - key %d, value %s)
+Persistence::storeValue(%d, %s) failed
+Persistence::retrieveValue(%d) returns %s
+Persistence::readVehicleModel - size=%zu
+Unable to read ADPT_0600_CODING from vip persistency
+SKODA
+BENTLEY
+VW-NFZ
+PORSCHE
+UNKNOWN
+Entered persistance to read ITEM_ADPT_NHTSA_PROPERTIES 
+Unable to read ITEM_ADPT_NHTSA_PROPERTIES from vip persistency
+Settings value from persisitance %d
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Client/build/../source/CarPlayClient.cpp
+CarPlayClient::~CarPlayClient()
+CarPlayClient::onMessage - unexpected message with event id: %d
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/Client/build/../source/CarPlayListener.cpp
+CarPlayListener::~CarPlayListener()
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlayServices_MIB20_STD/Utils/build/../source/AppArguments.cpp
+AppArguments::getOptionArgument - no arguments found for option "%s"
+map/set<T> too long
+invalid map/set<T> iterator
+SendXSALMessage
+GetSizeVIPData
+ReadSize
+ReadData
+IncreaseBufferSize
+getSizeVIPData
+ReadVIPData
+readVIPData
+WriteVIPData
+writeVIPData
+DeleteKey
+DeleteNs
+WriteData
+WriteString
+WriteBuffer
+ReadInt
+DeleteKey
+DeleteNs
+WriteByteBuffer
+WriteArray
+WriteInt
+GetDataSize
+ReadByteBuffer
+ReadString
+ReadArray
+ReadBuffer
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_PersistenceManager/PersistenceClient/build/../source/PersistenceSqFacade.cpp
+ErrorCode %d 
+%s not possible try again TryCount %d
+ Send buffer NOT success, retrying ...
+%s - Not possible to send, try to reconnect
+ Send buffer success
+%s - Access Time: %llu us
+Persistence Data exceeds the allowed limit, data will not be read, size: %d (incl HAUS_KEEPING_INFO) allowed: %d!!!
+%s to %d
+Allocated Persistence data size exceeds the allowed limit is violated , maximum allowed is: %d!
+Allocated Persistence data size exceeds, not enough memory available!
+Persistence Data exceeds the allowed limit, data will not be stored, allowed is: %d your size: %d(including HAUS_KEEPING_INFO)!!!
+Value is not in DB.
+Check SQLite Error Code %d in 'sqlite3.h'
+vector<T> too long
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DiagnosticsManager_MIB20_STD/build/../source/DiagnosticsMessage.c
+@@@ Inside secsi_finish
+@@@ secsi_/dev/fs0_OPEN_ERROR!!!
+assertion failed: NULL != buffer
+assertion failed: len > 0 ? (NULL != bytes && NULL != buffer) : true
+assertion failed: (NULL != buffer)&& ( NULL != key )
+assertion failed: (NULL != buffer) &&( NULL != p )
+assertion failed: len > 0
+assertion failed: NULL != bytes
+assertion failed: len > 0 ? (NULL != buffer) : true
+assertion failed: (NULL != buffer) && (NULL != dmsg)
+readDiagnosticsMessage prot:%x, key:%x, fid:%x, parameter.type:%x
+assertion failed: maxsize > 0 ? (NULL != buffer) : true
+assertion failed: NULL != ret
+assertion failed: NULL != dmsg
+Unregconised format to write to table using 
+   writeDiagnosticsMessageWithArgList
+   (DiagnosticsMessage* dmsg, char* format,
+   va_list ap)
+Unregconised format writeDiagnosticsMessageWithArgList
+   (DiagnosticsMessage* dmsg, char* format, va_list ap)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DiagnosticsManager_MIB20_STD/build/../source/DiagnosticsProvider.c
+responseDTCMessageDirect protocol:%i, key:%i datalength:%i
+responseDTCMessage protocol:%i, key:%i datalength:%i
+responseDiagnosticsMessage protocol:%i, key:%i, type :%i
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salActiveObject.cpp
+assertion failed: SAL_Get_Thread_Id() == getId()
+SAL_Create_Queue() failure
+SAL_Receive() failure
+Alive ActiveObject cannot be destroyed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salApplication.cpp
+assertion failed: appId > 1
+assertion failed: maxNumberOfThreads > 0
+assertion failed: appId >= std::numeric_limits<SAL_App_Id_T>::min() && appId <= std::numeric_limits<SAL_App_Id_T>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salException.cpp
+assertion failed: h != 0
+Resource fatal error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salIByteBuffer.cpp
+assertion failed: mPosition + sizeof( d ) <= mSize
+assertion failed: position < mSize
+assertion failed: mPosition + bytes <= mSize
+assertion failed: !( d == 0 && s > 0 )
+assertion failed: mPosition + s <= mSize
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salMessage.cpp
+assertion failed: msg != 0
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salOByteBuffer.cpp
+assertion failed: d != 0
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salSyncSender.cpp
+assertion failed: isConnected()
+assertion failed: !isConnected()
+assertion failed: serverAppId >= std::numeric_limits<SAL_App_Id_T>::min() && serverAppId <= std::numeric_limits<SAL_App_Id_T>::max()
+assign
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salThread.cpp
+assertion failed: name != 0 && ! isAlive()
+assertion failed: p!=0
+cstr != 0
+../public/salFixedString.h
+assertion failed: threadName != 0
+assertion failed: SAL_UNKNOWN_THREAD_ID == threadId || (threadId > 0 && threadId <= static_cast<int>( getMaxNumberOfThreads() ) )
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salUtils.cpp
+assertion failed: eventId >= std::numeric_limits<int16_t>::min() && eventId <= std::numeric_limits<int16_t>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salError.cpp
+Allocation fatal error
+Lock fatal error
+Resource fatal error
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSICarplayImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.interp
+.note
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

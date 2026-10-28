@@ -1,0 +1,50 @@
+.syntax unified
+.arch armv7-a
+.fpu vfpv3-d16
+.arm
+.text
+.align 2
+.global fixture_abi_call
+.type fixture_abi_call,%function
+fixture_abi_call:
+    push {r4-r11,lr}
+    sub sp,sp,#12
+    mov r1,r0
+    ldr r0,=0xeeee0004
+    ldr r2,=0x5a5a1234
+    ldr r3,=0xa5a55678
+    ldr r12,=0x13572468
+    str r12,[sp]
+    ldr r12,=0x24681357
+    str r12,[sp,#4]
+    adr r12,vfp_patterns
+    vldmia r12,{d0-d7}
+    mov r4,#0x44
+    mov r5,#0x55
+    mov r6,#0x66
+    mov r7,#0x77
+    mov r8,#0x88
+    mov r9,#0x99
+    mov r10,#0xaa
+    mov r11,#0xbb
+    bl _ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase
+    cmp r4,#0x44
+    cmpeq r5,#0x55
+    cmpeq r6,#0x66
+    cmpeq r7,#0x77
+    cmpeq r8,#0x88
+    cmpeq r9,#0x99
+    cmpeq r10,#0xaa
+    cmpeq r11,#0xbb
+    moveq r0,#1
+    movne r0,#0
+    add sp,sp,#12
+    pop {r4-r11,pc}
+.align 3
+vfp_patterns:
+    .quad 0x1122334400000000,0x1122334400000001
+    .quad 0x1122334400000002,0x1122334400000003
+    .quad 0x1122334400000004,0x1122334400000005
+    .quad 0x1122334400000006,0x1122334400000007
+.size fixture_abi_call,.-fixture_abi_call
+.section .note.GNU-stack,"",%progbits

@@ -1,0 +1,11 @@
+
+.tools/
+
+scripts/__pycache__/
+
+# Generated logs and identifying device/phone captures stay local
+*.log
+*.log.*
+/delphi-analysis/control-runtime/captured-discovery-*.bin
+/delphi-analysis/control-runtime/*-aa-events.txt
+/native/secondary-display/build/

@@ -1,0 +1,39 @@
+Peer-side boundary addendum
+==========================
+Offline check of existing NavigationServer and original runtime inventory.
+No car connection, firmware patch, or newly executed vehicle code.
+
+Confirmed:
+- DisplayManagement sends event0x1693 with8-byte {command,rate} to SAL
+  destination registers app0x55/thread1; receives event0x1694 with12 bytes
+  interpreted as {command,newRate,result}.
+- NavigationServer has distinct SCDA map-event handler branches:
+  ACTIVATE log xref0x1b4018 -> singleton accessor0x1b5374 -> call0x1f29dc.
+  DEACTIVATE log xref0x1b40c0 -> accessor -> call0x1e4ae0.
+  RATE log xref0x1b4164 -> deserialize32-bit rate at0x1b41a0 -> rate0 calls
+  0x1e4e68; nonzero calls0x1e45bc.
+- The bounded immediate-instruction scan found no0x1693/0x1694 in
+  NavigationServer. This does not prove complete absence of a computed or
+  table-driven dispatch, but it does NOT corroborate a direct peer linkage.
+- Original process inventory includes screen-cda with arguments:
+  -a /persistence/splash/splash.xml
+  -A /extbin/apps/splash/splash_default.xml -z
+  Its executable is not in the selected acquisition. Its runtime path was
+  not captured. SCDA naming and this process make it the leading bridge
+  candidate, not proof of SAL application registration0x55.
+
+Needed to close the boundary:
+- Locate and copy executable basename screen-cda using shallow runtime
+  directory listings. Do not present an assumed /proc/boot path as observed.
+- libscreen.so.1 and libXSAL.so are observed ELF dependency basenames with
+  unknown runtime paths; they are useful if the bridge delegates its dispatch.
+- /etc/procman_core.cfg is an observed process argument and can help startup
+  context, but screen-cda appears before procman in the original inventory.
+- Corroborate app0x55 registration, translation from external-layer commands
+  into SCDA map events, response fields, and geometry propagation before a
+  sender prototype. Current geometry evidence is mapWindow-derived values
+  passed later into encoder initialization (see native transport report),
+  not an established fixed800x480 or a verified SCDA geometry ABI.
+
+Evidence: display-hmi-peer-event-scan.txt and scripts/display_hmi_peer.py.
+The full control/HMI findings remain in display-hmi-FINDINGS.txt.

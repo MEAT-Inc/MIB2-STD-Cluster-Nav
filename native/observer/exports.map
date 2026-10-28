@@ -1,0 +1,4 @@
+{
+ global: _ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase; delphi_observer_view;
+ local: *;
+};

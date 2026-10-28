@@ -1,0 +1,2270 @@
+
+SEED 0x1ee75c; prologue-heuristic interval 0x1ee460..0x1ee944
+001ee460 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}       
+001ee464 vpush    {d8}                                       
+001ee468 sub      sp, sp, #0x6c                              
+001ee46c mov      r5, r1                                     
+001ee470 mov      sl, r2                                     
+001ee474 mov      sb, r3                                     
+001ee478 mov      r4, r0                                     
+001ee47c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee480 mov      r1, #5                                     
+001ee484 ldr      r3, [r0, #0x1c]                            
+001ee488 mov      r0, #0x10                                  
+001ee48c blx      r3                                         
+001ee490 cmp      r0, #0                                     
+001ee494 beq      #0x1ee4f0                                  
+001ee498 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee49c ldr      r8, [r5, #0x18]                            
+001ee4a0 ldr      ip, [r0, #0x2c]                            
+001ee4a4 cmp      r8, #0xf                                   
+001ee4a8 ldr      r2, [sp, #0xa0]                            
+001ee4ac ldrhi    r8, [r5, #4]                               
+001ee4b0 mov      r1, #0x110                                 
+001ee4b4 ldr      r0, [pc, #0x44c]                            literal=0x52e996 ::initFPK(newFileName='%s' windowWidth='%i' windowHeight='%i' bufferWidth='%i' bufferHeight='%i' bufferPaddedPixels='%i')
+001ee4b8 addls    r8, r5, #4                                 
+001ee4bc ldr      r7, [sp, #0x98]                            
+001ee4c0 ldr      r6, [sp, #0x9c]                            
+001ee4c4 str      r2, [sp, #0x1c]                            
+001ee4c8 str      r1, [sp]                                   
+001ee4cc stmib    sp, {r0, r8, sl}                           
+001ee4d0 str      sb, [sp, #0x10]                            
+001ee4d4 str      r7, [sp, #0x14]                            
+001ee4d8 str      r6, [sp, #0x18]                            
+001ee4dc mov      r0, #0x10                                  
+001ee4e0 mov      r1, #5                                     
+001ee4e4 ldr      r2, [pc, #0x420]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee4e8 ldr      r3, [pc, #0x420]                            literal=0x57b653 
+001ee4ec blx      ip                                         
+001ee4f0 mul      fp, sl, sb                                 
+001ee4f4 add      r2, r4, #0x124                             
+001ee4f8 add      r1, r4, #0xe4                              
+001ee4fc add      r0, r4, #0xec                              
+001ee500 add      ip, r4, #0xe8                              
+001ee504 add      r3, r4, #0xf0                              
+001ee508 add      lr, r4, #0xc4                              
+001ee50c vmov     s16, fp                                    
+001ee510 str      r2, [sp, #0x34]                            
+001ee514 str      r1, [sp, #0x30]                            
+001ee518 str      r0, [sp, #0x2c]                            
+001ee51c str      ip, [sp, #0x28]                            
+001ee520 str      r3, [sp, #0x24]                            
+001ee524 add      r6, r5, #4                                 
+001ee528 str      lr, [sp, #0x20]                            
+001ee52c add      fp, r4, #0xc8                              
+001ee530 mov      r8, #0                                     
+001ee534 b        #0x1ee8d8                                  
+001ee538 ldr      r7, [r4, #0x124]                           
+001ee53c cmp      r7, #0                                     
+001ee540 bne      #0x1ee640                                  
+001ee544 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee548 mov      r1, #5                                     
+001ee54c ldr      r3, [r0, #0x1c]                            
+001ee550 mov      r0, #0x10                                  
+001ee554 blx      r3                                         
+001ee558 cmp      r0, #0                                     
+001ee55c beq      #0x1ee58c                                  
+001ee560 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee564 mov      r2, #0x120                                 
+001ee568 ldr      r1, [pc, #0x3a4]                            literal=0x52ea10 ::initFPK(..) initialize ES_To_TS...
+001ee56c str      r2, [sp]                                   
+001ee570 str      r1, [sp, #4]                               
+001ee574 ldr      r2, [pc, #0x390]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee578 ldr      ip, [r0, #0x2c]                            
+001ee57c mov      r1, #5                                     
+001ee580 mov      r0, #0x10                                  
+001ee584 ldr      r3, [pc, #0x384]                            literal=0x57b653 
+001ee588 blx      ip                                         
+001ee58c mov      r0, #0x2c                                  
+001ee590 bl       #0x12350c                                  _Znwj [PLT]
+001ee594 ldr      r7, [sp, #0x34]                            
+001ee598 mov      r2, #0x10                                  
+001ee59c str      r7, [r0, #0x18]                            
+001ee5a0 strh     r2, [r0]                                   
+001ee5a4 mov      r7, #0                                     
+001ee5a8 mov      r1, #0x1000                                
+001ee5ac add      r2, r7, #0x1b                              
+001ee5b0 strb     r7, [r0, #0x1c]                            
+001ee5b4 strb     r7, [r0, #0x1d]                            
+001ee5b8 strb     r7, [r0, #0x1e]                            
+001ee5bc strb     r2, [r0, #6]                               
+001ee5c0 strh     r1, [r0, #2]                               
+001ee5c4 mov      ip, #0x11                                  
+001ee5c8 ldr      r1, [pc, #0x348]                            literal=0x51d120 
+001ee5cc strh     ip, [r0, #4]                               
+001ee5d0 mov      r3, #0xf                                   
+001ee5d4 ldr      ip, [pc, #0x340]                            literal=0x981fe6fe 
+001ee5d8 strh     r3, [r0, #0xc]                             
+001ee5dc str      r7, [r0, #0x28]                            
+001ee5e0 ldr      r3, [pc, #0x338]                            literal=0x22ccd0 
+001ee5e4 str      r7, [r0, #0x20]                            
+001ee5e8 str      r7, [r0, #0x24]                            
+001ee5ec str      r1, [r0, #8]                               
+001ee5f0 str      ip, [r0, #0x10]                            
+001ee5f4 str      r3, [r0, #0x14]                            
+001ee5f8 str      r0, [r4, #0x124]                           
+001ee5fc bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee600 mov      r1, #5                                     
+001ee604 ldr      r7, [r0, #0x1c]                            
+001ee608 mov      r0, #0x10                                  
+001ee60c blx      r7                                         
+001ee610 cmp      r0, #0                                     
+001ee614 beq      #0x1ee640                                  
+001ee618 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee61c movw     r1, #0x125                                 
+001ee620 ldr      r3, [pc, #0x2fc]                            literal=0x52ea35 ::initFPK(..) initialize ES_To_TS done
+001ee624 stm      sp, {r1, r3}                               
+001ee628 mov      r1, #5                                     
+001ee62c ldr      ip, [r0, #0x2c]                            
+001ee630 ldr      r2, [pc, #0x2d4]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee634 mov      r0, #0x10                                  
+001ee638 ldr      r3, [pc, #0x2d0]                            literal=0x57b653 
+001ee63c blx      ip                                         
+001ee640 ldr      r0, [pc, #0x2e0]                            literal=0x1faf7c 
+001ee644 add      r1, sp, #0x3c                              
+001ee648 mov      r2, #0                                     
+001ee64c ldr      lr, [sp, #0x30]                            
+001ee650 ldr      r7, [sp, #0x24]                            
+001ee654 str      lr, [sp, #0x3c]                            
+001ee658 ldr      r3, [sp, #0x2c]                            
+001ee65c ldr      ip, [sp, #0x28]                            
+001ee660 str      r7, [sp, #0x48]                            
+001ee664 add      lr, r2, #0xb                               
+001ee668 str      r3, [sp, #0x40]                            
+001ee66c str      ip, [sp, #0x44]                            
+001ee670 str      r2, [sp, #0x5c]                            
+001ee674 str      r2, [sp, #0x60]                            
+001ee678 str      r2, [sp, #0x64]                            
+001ee67c str      r2, [sp, #0x58]                            
+001ee680 str      lr, [sp, #0x4c]                            
+001ee684 bl       #0x253544                                  
+001ee688 mov      r7, r0                                     
+001ee68c str      r0, [r4, #0xf4]                            
+001ee690 cmp      r0, #0                                     
+001ee694 beq      #0x1ee770                                  
+001ee698 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee69c mov      r1, #4                                     
+001ee6a0 ldr      r2, [r0, #0x1c]                            
+001ee6a4 mov      r0, #0x10                                  
+001ee6a8 blx      r2                                         
+001ee6ac cmp      r0, #0                                     
+001ee6b0 beq      #0x1ee6ec                                  
+001ee6b4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee6b8 ldr      r3, [r5, #0x18]                            
+001ee6bc ldr      ip, [r0, #0x2c]                            
+001ee6c0 cmp      r3, #0xf                                   
+001ee6c4 mov      r1, #0x138                                 
+001ee6c8 ldrhi    r6, [r5, #4]                               
+001ee6cc ldr      r0, [pc, #0x258]                            literal=0x52ea5c ::initFPK() encoder initialized: newFileName='%s' - OKAY
+001ee6d0 str      r1, [sp]                                   
+001ee6d4 stmib    sp, {r0, r6}                               
+001ee6d8 mov      r0, #0x10                                  
+001ee6dc mov      r1, #4                                     
+001ee6e0 ldr      r2, [pc, #0x224]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee6e4 ldr      r3, [pc, #0x224]                            literal=0x57b653 
+001ee6e8 blx      ip                                         
+001ee6ec mov      r1, r5                                     
+001ee6f0 ldr      r0, [sp, #0x20]                            
+001ee6f4 bl       #0x1baafc                                  _ZNSsaSERKSs
+001ee6f8 vmov     s0, sb                                     
+001ee6fc vcvt.f64.u32 d18, s0                                    
+001ee700 vmov     s15, sl                                    
+001ee704 vmov.f64 d16, #5.000000e-01                         
+001ee708 ldr      r3, [sp, #0x98]                            
+001ee70c vcvt.f64.u32 d17, s15                                   
+001ee710 str      r3, [r4, #0x100]                           
+001ee714 vcvt.f64.u32 d8, s16                                    
+001ee718 ldr      r1, [sp, #0x9c]                            
+001ee71c vmul.f64 d16, d18, d16                              
+001ee720 str      r1, [r4, #0x104]                           
+001ee724 ldr      r0, [sp, #0xa0]                            
+001ee728 ldr      ip, [pc, #0x200]                            literal=0x5aeab0 
+001ee72c str      r0, [r4, #0x108]                           
+001ee730 str      sl, [r4, #0xf8]                            
+001ee734 ldr      r0, [ip]                                   
+001ee738 str      sb, [r4, #0xfc]                            
+001ee73c ldr      r2, [r0, #0xdc]                            
+001ee740 mov      r1, #1                                     
+001ee744 cmp      r2, #0xf                                   
+001ee748 ldrhi    r0, [r0, #0xc8]                            
+001ee74c vmla.f64 d8, d17, d16                               
+001ee750 addls    r0, r0, #0xc8                              
+001ee754 vcvt.u32.f64 s16, d8                                    
+001ee758 vstr     s16, [r4, #0xf0]                           
+001ee75c bl       #0x123848                                  open [PLT]
+001ee760 str      r0, [r4, #0x128]                           
+001ee764 mov      r0, #1                                     
+001ee768 strb     r0, [r4, #0xc0]                            
+001ee76c b        #0x1ee8ec                                  
+001ee770 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee774 mov      r1, #2                                     
+001ee778 ldr      r2, [r0, #0x1c]                            
+001ee77c mov      r0, r7                                     
+001ee780 blx      r2                                         
+001ee784 cmp      r0, #0                                     
+001ee788 beq      #0x1ee8e8                                  
+001ee78c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee790 ldr      r3, [r5, #0x18]                            
+001ee794 ldr      ip, [r0, #0x2c]                            
+001ee798 cmp      r3, #0xf                                   
+001ee79c movw     r1, #0x14e                                 
+001ee7a0 ldrhi    r6, [r5, #4]                               
+001ee7a4 ldr      r0, [pc, #0x188]                            literal=0x52ea95 ::initFPK(..) VE_InitializeProxy(..) is NOT okay: newFileName='%s' - FAILED
+001ee7a8 str      r1, [sp]                                   
+001ee7ac stmib    sp, {r0, r6}                               
+001ee7b0 mov      r0, #0                                     
+001ee7b4 mov      r1, #2                                     
+001ee7b8 ldr      r2, [pc, #0x14c]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee7bc ldr      r3, [pc, #0x14c]                            literal=0x57b653 
+001ee7c0 blx      ip                                         
+001ee7c4 b        #0x1ee8e8                                  
+001ee7c8 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee7cc mov      r1, #3                                     
+001ee7d0 ldr      r7, [r0, #0x1c]                            
+001ee7d4 mov      r0, #0                                     
+001ee7d8 blx      r7                                         
+001ee7dc cmp      r0, #0                                     
+001ee7e0 beq      #0x1ee834                                  
+001ee7e4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee7e8 ldr      r1, [r4, #0xdc]                            
+001ee7ec ldr      r3, [r5, #0x18]                            
+001ee7f0 ldr      ip, [r0, #0x2c]                            
+001ee7f4 cmp      r3, #0xf                                   
+001ee7f8 mov      r0, #0x154                                 
+001ee7fc ldrhi    r2, [r5, #4]                               
+001ee800 movls    r2, r6                                     
+001ee804 ldr      r3, [pc, #0x104]                            literal=0x57b653 
+001ee808 cmp      r1, #0xf                                   
+001ee80c ldrhi    r1, [r4, #0xc8]                            
+001ee810 movls    r1, fp                                     
+001ee814 str      r2, [sp, #8]                               
+001ee818 str      r1, [sp, #0xc]                             
+001ee81c ldr      r2, [pc, #0x114]                            literal=0x52eae1 ::initFPK(..) encoder already initialised, release it first: newFileName='%s' currentFileName='%s'
+001ee820 stm      sp, {r0, r2}                               
+001ee824 mov      r0, #0                                     
+001ee828 mov      r1, #3                                     
+001ee82c ldr      r2, [pc, #0xd8]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee830 blx      ip                                         
+001ee834 mov      r0, r4                                     
+001ee838 bl       #0x1ee24c                                  
+001ee83c subs     r7, r0, #0                                 
+001ee840 bne      #0x1ee890                                  
+001ee844 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee848 mov      r1, #2                                     
+001ee84c ldr      ip, [r0, #0x1c]                            
+001ee850 mov      r0, r7                                     
+001ee854 blx      ip                                         
+001ee858 cmp      r0, #0                                     
+001ee85c beq      #0x1ee8e8                                  
+001ee860 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee864 movw     r1, #0x157                                 
+001ee868 ldr      r2, [pc, #0xcc]                             literal=0x52eb44 ::initFPK(..) release wasnt okay... unable to recover - FAILED
+001ee86c stm      sp, {r1, r2}                               
+001ee870 mov      r1, #2                                     
+001ee874 ldr      ip, [r0, #0x2c]                            
+001ee878 ldr      r2, [pc, #0x8c]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee87c mov      r0, r7                                     
+001ee880 ldr      r3, [pc, #0x88]                             literal=0x57b653 
+001ee884 blx      ip                                         
+001ee888 mov      r0, r7                                     
+001ee88c b        #0x1ee8ec                                  
+001ee890 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee894 mov      r1, #4                                     
+001ee898 ldr      r3, [r0, #0x1c]                            
+001ee89c mov      r0, #0x10                                  
+001ee8a0 blx      r3                                         
+001ee8a4 cmp      r0, #0                                     
+001ee8a8 beq      #0x1ee8f8                                  
+001ee8ac bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee8b0 movw     r1, #0x159                                 
+001ee8b4 ldr      r2, [pc, #0x84]                             literal=0x52eb83 ::initFPK(..) encoder re-initilized after crash or something - OKAY
+001ee8b8 stm      sp, {r1, r2}                               
+001ee8bc mov      r1, #4                                     
+001ee8c0 ldr      ip, [r0, #0x2c]                            
+001ee8c4 ldr      r2, [pc, #0x40]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee8c8 mov      r0, #0x10                                  
+001ee8cc ldr      r3, [pc, #0x3c]                             literal=0x57b653 
+001ee8d0 blx      ip                                         
+001ee8d4 b        #0x1ee8f8                                  
+001ee8d8 ldrb     lr, [r4, #0xc0]                            
+001ee8dc cmp      lr, #0                                     
+001ee8e0 beq      #0x1ee538                                  
+001ee8e4 b        #0x1ee7c8                                  
+001ee8e8 mov      r0, #0                                     
+001ee8ec add      sp, sp, #0x6c                              
+001ee8f0 vpop     {d8}                                       
+001ee8f4 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}       
+001ee8f8 add      r8, r8, #1                                 
+001ee8fc cmp      r8, #5                                     
+001ee900 beq      #0x1ee8e8                                  
+001ee904 b        #0x1ee8d8                                  
+001ee908 .byte    0x96, 0xe9, 0x52, 0x00                     
+001ee90c subseq   r5, r2, sp, asr #21                        
+001ee910 subseq   fp, r7, r3, asr r6                         
+001ee914 subseq   lr, r2, r0, lsl sl                         
+001ee918 subseq   sp, r1, r0, lsr #2                         
+001ee91c ldmdals  pc, {r1, r2, r3, r4, r5, r6, r7, sb, sl, sp, lr, pc} 
+001ee920 .byte    0xd0, 0xcc, 0x22, 0x00                     
+001ee924 subseq   lr, r2, r5, lsr sl                         
+001ee928 andseq   sl, pc, ip, ror pc                         
+001ee92c subseq   lr, r2, ip, asr sl                         
+001ee930 ldrheq   lr, [sl], #-0xa0                           
+001ee934 .byte    0x95, 0xea, 0x52, 0x00                     
+001ee938 subseq   lr, r2, r1, ror #21                        
+001ee93c subseq   lr, r2, r4, asr #22                        
+001ee940 subseq   lr, r2, r3, lsl #23                        
+INCOMING DIRECT CALLS to interval start:
+001fa4cc bl       #0x1ee460                                  
+
+SEED 0x1ee308; prologue-heuristic interval 0x1ee24c..0x1ee460
+001ee24c push     {r0, r1, r2, r4, r5, lr}                   
+001ee250 mov      r4, r0                                     
+001ee254 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee258 mov      r1, #5                                     
+001ee25c ldr      r3, [r0, #0x1c]                            
+001ee260 mov      r0, #0x10                                  
+001ee264 blx      r3                                         
+001ee268 cmp      r0, #0                                     
+001ee26c beq      #0x1ee29c                                  
+001ee270 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee274 movw     r2, #0x163                                 
+001ee278 ldr      r1, [pc, #0x1c4]                            literal=0x52e8b8 ::releaseFPK()
+001ee27c str      r2, [sp]                                   
+001ee280 str      r1, [sp, #4]                               
+001ee284 ldr      r2, [pc, #0x1bc]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee288 ldr      ip, [r0, #0x2c]                            
+001ee28c mov      r1, #5                                     
+001ee290 mov      r0, #0x10                                  
+001ee294 ldr      r3, [pc, #0x1b0]                            literal=0x57b653 
+001ee298 blx      ip                                         
+001ee29c ldrb     r5, [r4, #0xc0]                            
+001ee2a0 cmp      r5, #0                                     
+001ee2a4 beq      #0x1ee3d0                                  
+001ee2a8 ldr      r0, [r4, #0xf4]                            
+001ee2ac bl       #0x25388c                                  
+001ee2b0 cmp      r0, #0                                     
+001ee2b4 moveq    r5, #1                                     
+001ee2b8 beq      #0x1ee304                                  
+001ee2bc bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee2c0 mov      r1, #2                                     
+001ee2c4 ldr      r5, [r0, #0x1c]                            
+001ee2c8 mov      r0, #0                                     
+001ee2cc blx      r5                                         
+001ee2d0 subs     r5, r0, #0                                 
+001ee2d4 beq      #0x1ee304                                  
+001ee2d8 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee2dc movw     r1, #0x16f                                 
+001ee2e0 ldr      r3, [pc, #0x168]                            literal=0x52e8c7 ::initFPK(..) VE_UnInitializeProxy(..) is NOT okay - FAILED
+001ee2e4 stm      sp, {r1, r3}                               
+001ee2e8 mov      r1, #2                                     
+001ee2ec ldr      ip, [r0, #0x2c]                            
+001ee2f0 ldr      r2, [pc, #0x150]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee2f4 mov      r0, #0                                     
+001ee2f8 ldr      r3, [pc, #0x14c]                            literal=0x57b653 
+001ee2fc blx      ip                                         
+001ee300 mov      r5, #0                                     
+001ee304 ldr      r0, [r4, #0x128]                           
+001ee308 bl       #0x123a94                                  close [PLT]
+001ee30c mvn      r2, #0                                     
+001ee310 add      r0, r4, #0xc4                              
+001ee314 str      r2, [r4, #0x128]                           
+001ee318 ldr      r1, [pc, #0x12c]                            literal=0x57b653 
+001ee31c bl       #0x13ba30                                  _ZNSsaSEPKc
+001ee320 mov      r3, #0                                     
+001ee324 ldrb     r0, [r4, #0xc2]                            
+001ee328 str      r3, [r4, #0xf8]                            
+001ee32c str      r3, [r4, #0xfc]                            
+001ee330 str      r3, [r4, #0x100]                           
+001ee334 str      r3, [r4, #0x104]                           
+001ee338 str      r3, [r4, #0x108]                           
+001ee33c strb     r3, [r4, #0xc0]                            
+001ee340 cmp      r0, r3                                     
+001ee344 beq      #0x1ee35c                                  
+001ee348 add      lr, r3, #1                                 
+001ee34c strb     r3, [r4, #0xc2]                            
+001ee350 strb     lr, [r4, #0xc3]                            
+001ee354 add      r0, r4, #0x12c                             
+001ee358 bl       #0x3e21c8                                  
+001ee35c ldr      r0, [r4, #0x124]                           
+001ee360 cmp      r0, #0                                     
+001ee364 beq      #0x1ee374                                  
+001ee368 bl       #0x122ca8                                  _ZdlPv [PLT]
+001ee36c mov      ip, #0                                     
+001ee370 str      ip, [r4, #0x124]                           
+001ee374 cmp      r5, #0                                     
+001ee378 beq      #0x1ee424                                  
+001ee37c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee380 mov      r1, #4                                     
+001ee384 ldr      r3, [r0, #0x1c]                            
+001ee388 mov      r0, #0x10                                  
+001ee38c blx      r3                                         
+001ee390 cmp      r0, #0                                     
+001ee394 beq      #0x1ee41c                                  
+001ee398 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee39c ldr      r1, [pc, #0xb0]                             literal=0x52e903 ::releaseFPK() encoder un-initialized - OKAY
+001ee3a0 movw     r2, #0x18e                                 
+001ee3a4 str      r1, [sp, #4]                               
+001ee3a8 str      r2, [sp]                                   
+001ee3ac mov      r1, #4                                     
+001ee3b0 ldr      ip, [r0, #0x2c]                            
+001ee3b4 mov      r0, #0x10                                  
+001ee3b8 b        #0x1ee410                                  
+001ee3bc bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee3c0 movw     ip, #0x18f                                 
+001ee3c4 ldr      r3, [pc, #0x8c]                             literal=0x52e930 ::releaseFPK() error encoder un-initialize - FAILED
+001ee3c8 str      ip, [sp]                                   
+001ee3cc b        #0x1ee400                                  
+001ee3d0 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee3d4 mov      r1, #2                                     
+001ee3d8 ldr      r3, [r0, #0x1c]                            
+001ee3dc mov      r0, r5                                     
+001ee3e0 blx      r3                                         
+001ee3e4 cmp      r0, #0                                     
+001ee3e8 moveq    r5, r0                                     
+001ee3ec beq      #0x1ee41c                                  
+001ee3f0 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee3f4 movw     r1, #0x193                                 
+001ee3f8 ldr      r3, [pc, #0x5c]                             literal=0x52e964 ::releaseFPK(..) encoder not initialised - FAILED
+001ee3fc str      r1, [sp]                                   
+001ee400 str      r3, [sp, #4]                               
+001ee404 mov      r1, #2                                     
+001ee408 ldr      ip, [r0, #0x2c]                            
+001ee40c mov      r0, r5                                     
+001ee410 ldr      r2, [pc, #0x30]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001ee414 ldr      r3, [pc, #0x30]                             literal=0x57b653 
+001ee418 blx      ip                                         
+001ee41c mov      r0, r5                                     
+001ee420 pop      {r1, r2, r3, r4, r5, pc}                   
+001ee424 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001ee428 mov      r1, #2                                     
+001ee42c ldr      r2, [r0, #0x1c]                            
+001ee430 mov      r0, r5                                     
+001ee434 blx      r2                                         
+001ee438 cmp      r0, #0                                     
+001ee43c bne      #0x1ee3bc                                  
+001ee440 b        #0x1ee41c                                  
+001ee444 ldrheq   lr, [r2], #-0x88                           
+001ee448 subseq   r5, r2, sp, asr #21                        
+001ee44c subseq   fp, r7, r3, asr r6                         
+001ee450 subseq   lr, r2, r7, asr #17                        
+001ee454 subseq   lr, r2, r3, lsl #18                        
+001ee458 subseq   lr, r2, r0, lsr sb                         
+001ee45c subseq   lr, r2, r4, ror #18                        
+INCOMING DIRECT CALLS to interval start:
+001ee838 bl       #0x1ee24c                                  
+001fa540 bl       #0x1ee24c                                  
+
+SEED 0x22cdb4; prologue-heuristic interval 0x22ccd0..0x22d1e8
+0022ccd0 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}       
+0022ccd4 sub      sp, sp, #0xec                              
+0022ccd8 mov      r5, r1                                     
+0022ccdc mov      r8, r2                                     
+0022cce0 mov      r7, r0                                     
+0022cce4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022cce8 mov      r1, #7                                     
+0022ccec ldr      r3, [r0, #0x1c]                            
+0022ccf0 mov      r0, #0x10                                  
+0022ccf4 blx      r3                                         
+0022ccf8 cmp      r0, #0                                     
+0022ccfc beq      #0x22cd34                                  
+0022cd00 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022cd04 movw     r2, #0x316                                 
+0022cd08 ldr      r1, [pc, #0x488]                            literal=0x53dd8d ::transportStreamPackagesReady(buffers='0x%p' buffers_count='%i' convertedBuffer='0x%p')
+0022cd0c str      r2, [sp]                                   
+0022cd10 stmib    sp, {r1, r7}                               
+0022cd14 str      r5, [sp, #0xc]                             
+0022cd18 str      r8, [sp, #0x10]                            
+0022cd1c mov      r1, #7                                     
+0022cd20 ldr      ip, [r0, #0x2c]                            
+0022cd24 ldr      r2, [pc, #0x470]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+0022cd28 mov      r0, #0x10                                  
+0022cd2c ldr      r3, [pc, #0x46c]                            literal=0x57b653 
+0022cd30 blx      ip                                         
+0022cd34 cmp      r8, #0                                     
+0022cd38 cmpne    r7, #0                                     
+0022cd3c moveq    r4, #0                                     
+0022cd40 movne    r4, #1                                     
+0022cd44 beq      #0x22d128                                  
+0022cd48 cmp      r5, #0                                     
+0022cd4c beq      #0x22d0d4                                  
+0022cd50 ldr      r4, [pc, #0x44c]                            literal=0x5aeab0 
+0022cd54 ldr      r1, [pc, #0x444]                            literal=0x57b653 
+0022cd58 ldr      r0, [r4]                                   
+0022cd5c add      r0, r0, #0xc4                              
+0022cd60 bl       #0x2002c8                                  _ZSteqIcSt11char_traitsIcESaIcEEbRKSbIT_T0_T1_EPKS3_
+0022cd64 subs     r6, r0, #0                                 
+0022cd68 bne      #0x22d084                                  
+0022cd6c add      sl, sp, #0x44                              
+0022cd70 add      r3, sp, #0xcc                              
+0022cd74 mov      r8, r6                                     
+0022cd78 add      lr, r3, #4                                 
+0022cd7c add      fp, sl, #8                                 
+0022cd80 str      lr, [sp, #0x3c]                            
+0022cd84 str      r6, [sp, #0x1c]                            
+0022cd88 b        #0x22d070                                  
+0022cd8c ldr      sb, [r4]                                   
+0022cd90 ldr      r0, [sb, #0x128]                           
+0022cd94 cmn      r0, #1                                     
+0022cd98 beq      #0x22d000                                  
+0022cd9c add      ip, r7, r6                                 
+0022cda0 ldr      sb, [ip, #4]                               
+0022cda4 cmp      sb, #0                                     
+0022cda8 beq      #0x22cfb8                                  
+0022cdac mov      r2, sb                                     
+0022cdb0 ldr      r1, [r7, r6]                               
+0022cdb4 bl       #0x12308c                                  write [PLT]
+0022cdb8 mov      r8, r0                                     
+0022cdbc asr      sb, r8, #0x1f                              
+0022cdc0 strd     r8, sb, [sp, #0x30]                        
+0022cdc4 ldr      ip, [r4]                                   
+0022cdc8 add      r3, ip, #0x170                             
+0022cdcc ldrd     r2, r3, [r3]                               
+0022cdd0 ldr      r0, [ip, #0x148]                           
+0022cdd4 adds     r2, r2, r8                                 
+0022cdd8 adc      r3, r3, sb                                 
+0022cddc add      sb, ip, #0x178                             
+0022cde0 ldrd     r8, sb, [sb]                               
+0022cde4 str      r2, [ip, #0x170]                           
+0022cde8 str      r3, [ip, #0x174]                           
+0022cdec ldrd     r2, r3, [sp, #0x30]                        
+0022cdf0 adds     r8, r8, r2                                 
+0022cdf4 adc      sb, sb, r3                                 
+0022cdf8 str      r8, [ip, #0x178]                           
+0022cdfc str      sb, [ip, #0x17c]                           
+0022ce00 bl       #0x40dd1c                                  
+0022ce04 ldr      r3, [r4]                                   
+0022ce08 mov      sb, r0                                     
+0022ce0c ldr      r2, [r3, #0x14c]                           
+0022ce10 rsb      r1, r2, r0                                 
+0022ce14 movw     r0, #0x1387                                
+0022ce18 cmp      r1, r0                                     
+0022ce1c ble      #0x22d060                                  
+0022ce20 mov      r0, sl                                     
+0022ce24 bl       #0x22b0e4                                  
+0022ce28 ldr      r1, [pc, #0x378]                            literal=0x53dde6 FPK statistic: slotSize='
+0022ce2c mov      r0, fp                                     
+0022ce30 bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022ce34 movw     r1, #0x1388                                
+0022ce38 bl       #0x17d608                                  
+0022ce3c ldr      r1, [pc, #0x368]                            literal=0x53de00 ms' 
+0022ce40 bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022ce44 ldr      r1, [pc, #0x364]                            literal=0x53de05 slot=[frames='
+0022ce48 mov      r0, fp                                     
+0022ce4c bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022ce50 ldr      r3, [r4]                                   
+0022ce54 add      r3, r3, #0x150                             
+0022ce58 ldrd     r2, r3, [r3]                               
+0022ce5c bl       #0x1f99ac                                  
+0022ce60 ldr      r1, [pc, #0x34c]                            literal=0x53de14 ' forced='
+0022ce64 bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022ce68 ldr      r3, [r4]                                   
+0022ce6c add      r3, r3, #0x160                             
+0022ce70 ldrd     r2, r3, [r3]                               
+0022ce74 bl       #0x1f99ac                                  
+0022ce78 ldr      r1, [pc, #0x338]                            literal=0x53de1f ' stuffed='
+0022ce7c bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022ce80 ldr      r3, [r4]                                   
+0022ce84 add      r3, r3, #0x180                             
+0022ce88 ldrd     r2, r3, [r3]                               
+0022ce8c bl       #0x1f99ac                                  
+0022ce90 ldr      r1, [pc, #0x324]                            literal=0x53de2b ' writtendata='
+0022ce94 bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022ce98 ldr      r3, [r4]                                   
+0022ce9c add      r3, r3, #0x170                             
+0022cea0 ldrd     r2, r3, [r3]                               
+0022cea4 bl       #0x1f99ac                                  
+0022cea8 ldr      r1, [pc, #0x310]                            literal=0x53de3b 
+0022ceac bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022ceb0 ldr      r1, [pc, #0x30c]                            literal=0x53de3f total=[frames='
+0022ceb4 mov      r0, fp                                     
+0022ceb8 bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022cebc ldr      r3, [r4]                                   
+0022cec0 add      r3, r3, #0x158                             
+0022cec4 ldrd     r2, r3, [r3]                               
+0022cec8 bl       #0x1f99ac                                  
+0022cecc ldr      r1, [pc, #0x2e0]                            literal=0x53de14 ' forced='
+0022ced0 bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022ced4 ldr      r3, [r4]                                   
+0022ced8 add      r3, r3, #0x168                             
+0022cedc ldrd     r2, r3, [r3]                               
+0022cee0 bl       #0x1f99ac                                  
+0022cee4 ldr      r1, [pc, #0x2cc]                            literal=0x53de1f ' stuffed='
+0022cee8 bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022ceec ldr      r3, [r4]                                   
+0022cef0 add      r3, r3, #0x188                             
+0022cef4 ldrd     r2, r3, [r3]                               
+0022cef8 bl       #0x1f99ac                                  
+0022cefc ldr      r1, [pc, #0x2b8]                            literal=0x53de2b ' writtendata='
+0022cf00 bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022cf04 ldr      r3, [r4]                                   
+0022cf08 add      r3, r3, #0x178                             
+0022cf0c ldrd     r2, r3, [r3]                               
+0022cf10 bl       #0x1f99ac                                  
+0022cf14 ldr      r1, [pc, #0x2ac]                            literal=0x5339b5 
+0022cf18 bl       #0x139624                                  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+0022cf1c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022cf20 mov      r1, #4                                     
+0022cf24 ldr      r3, [r0, #0x1c]                            
+0022cf28 mov      r0, #0x10                                  
+0022cf2c blx      r3                                         
+0022cf30 cmp      r0, #0                                     
+0022cf34 beq      #0x22cf90                                  
+0022cf38 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022cf3c add      r1, sl, #0xc                               
+0022cf40 ldr      r3, [r0, #0x2c]                            
+0022cf44 add      r0, sp, #0xcc                              
+0022cf48 str      r3, [sp, #0x24]                            
+0022cf4c bl       #0x13e3a8                                  
+0022cf50 ldr      r2, [sp, #0xe4]                            
+0022cf54 mov      r0, #0x33c                                 
+0022cf58 cmp      r2, #0xf                                   
+0022cf5c str      r0, [sp]                                   
+0022cf60 ldrls    r2, [sp, #0x3c]                            
+0022cf64 ldrhi    r2, [sp, #0xd0]                            
+0022cf68 ldr      r1, [pc, #0x25c]                            literal=0x513c45 
+0022cf6c stmib    sp, {r1, r2}                               
+0022cf70 mov      r0, #0x10                                  
+0022cf74 ldr      ip, [sp, #0x24]                            
+0022cf78 mov      r1, #4                                     
+0022cf7c ldr      r2, [pc, #0x218]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+0022cf80 ldr      r3, [pc, #0x218]                            literal=0x57b653 
+0022cf84 blx      ip                                         
+0022cf88 add      r0, sp, #0xcc                              
+0022cf8c bl       #0x1265dc                                  _ZNSsD1Ev
+0022cf90 ldr      lr, [r4]                                   
+0022cf94 vldr     d16, [pc, #0x1f4]                          
+0022cf98 str      sb, [lr, #0x14c]                           
+0022cf9c vstr     d16, [lr, #0x160]                          
+0022cfa0 vstr     d16, [lr, #0x150]                          
+0022cfa4 vstr     d16, [lr, #0x170]                          
+0022cfa8 vstr     d16, [lr, #0x180]                          
+0022cfac mov      r0, sl                                     
+0022cfb0 bl       #0x1527c8                                  _ZNSt18basic_stringstreamIcSt11char_traitsIcESaIcEED1Ev
+0022cfb4 b        #0x22d060                                  
+0022cfb8 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022cfbc mov      r1, #2                                     
+0022cfc0 ldr      ip, [r0, #0x1c]                            
+0022cfc4 mov      r0, sb                                     
+0022cfc8 blx      ip                                         
+0022cfcc cmp      r0, #0                                     
+0022cfd0 beq      #0x22d060                                  
+0022cfd4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022cfd8 movw     r8, #0x371                                 
+0022cfdc ldr      r1, [sp, #0x1c]                            
+0022cfe0 str      r8, [sp]                                   
+0022cfe4 str      r1, [sp, #8]                               
+0022cfe8 ldr      r8, [pc, #0x1e0]                            literal=0x53de4f ::transportStreamPackagesReady(..) package is empty, avoid to write it to the MOST sink: packageCnt='%i' packagesSize='%i' - FAILED
+0022cfec str      r5, [sp, #0xc]                             
+0022cff0 str      r8, [sp, #4]                               
+0022cff4 ldr      ip, [r0, #0x2c]                            
+0022cff8 mov      r0, sb                                     
+0022cffc b        #0x22d050                                  
+0022d000 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022d004 mov      r1, #2                                     
+0022d008 ldr      sb, [r0, #0x1c]                            
+0022d00c mov      r0, #0                                     
+0022d010 blx      sb                                         
+0022d014 cmp      r0, #0                                     
+0022d018 beq      #0x22d060                                  
+0022d01c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022d020 ldr      r8, [pc, #0x1ac]                            literal=0x53ded3 ::transportStreamPackagesReady(..) can't open outputfile: currentFileName='%s' - FAILED
+0022d024 ldr      r3, [r4]                                   
+0022d028 ldr      ip, [r0, #0x2c]                            
+0022d02c ldr      r2, [r3, #0xdc]                            
+0022d030 movw     r0, #0x376                                 
+0022d034 cmp      r2, #0xf                                   
+0022d038 ldrhi    r3, [r3, #0xc8]                            
+0022d03c addls    r3, r3, #0xc8                              
+0022d040 str      r0, [sp]                                   
+0022d044 str      r3, [sp, #8]                               
+0022d048 str      r8, [sp, #4]                               
+0022d04c mov      r0, #0                                     
+0022d050 mov      r1, #2                                     
+0022d054 ldr      r2, [pc, #0x140]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+0022d058 ldr      r3, [pc, #0x140]                            literal=0x57b653 
+0022d05c blx      ip                                         
+0022d060 ldr      lr, [sp, #0x1c]                            
+0022d064 add      r6, r6, #8                                 
+0022d068 add      sb, lr, #1                                 
+0022d06c str      sb, [sp, #0x1c]                            
+0022d070 ldr      ip, [sp, #0x1c]                            
+0022d074 cmp      ip, r5                                     
+0022d078 blo      #0x22cd8c                                  
+0022d07c mov      r0, #1                                     
+0022d080 b        #0x22d184                                  
+0022d084 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022d088 mov      r1, #2                                     
+0022d08c ldr      r3, [r0, #0x1c]                            
+0022d090 mov      r0, #0                                     
+0022d094 blx      r3                                         
+0022d098 cmp      r0, #0                                     
+0022d09c beq      #0x22d180                                  
+0022d0a0 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022d0a4 str      r8, [sp, #8]                               
+0022d0a8 movw     r2, #0x382                                 
+0022d0ac ldr      r1, [pc, #0x124]                            literal=0x53df2b ::transportStreamPackagesReady(..) can't get filename for context: ctx='0x%p' - FAILED
+0022d0b0 str      r2, [sp]                                   
+0022d0b4 str      r1, [sp, #4]                               
+0022d0b8 ldr      r2, [pc, #0xdc]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+0022d0bc ldr      ip, [r0, #0x2c]                            
+0022d0c0 mov      r1, #2                                     
+0022d0c4 mov      r0, #0                                     
+0022d0c8 ldr      r3, [pc, #0xd0]                             literal=0x57b653 
+0022d0cc blx      ip                                         
+0022d0d0 b        #0x22d180                                  
+0022d0d4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022d0d8 mov      r1, #2                                     
+0022d0dc ldr      r3, [r0, #0x1c]                            
+0022d0e0 mov      r0, r5                                     
+0022d0e4 blx      r3                                         
+0022d0e8 cmp      r0, #0                                     
+0022d0ec beq      #0x22d180                                  
+0022d0f0 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022d0f4 str      r5, [sp, #8]                               
+0022d0f8 movw     r2, #0x387                                 
+0022d0fc ldr      r1, [pc, #0xd8]                             literal=0x53df82 ::transportStreamPackagesReady(..) no packages generated: buffers_count='%i' - FAILED
+0022d100 str      r2, [sp]                                   
+0022d104 str      r1, [sp, #4]                               
+0022d108 ldr      r2, [pc, #0x8c]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+0022d10c ldr      ip, [r0, #0x2c]                            
+0022d110 mov      r1, #2                                     
+0022d114 mov      r0, r5                                     
+0022d118 ldr      r3, [pc, #0x80]                             literal=0x57b653 
+0022d11c blx      ip                                         
+0022d120 mov      r0, r5                                     
+0022d124 b        #0x22d184                                  
+0022d128 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022d12c mov      r1, #2                                     
+0022d130 ldr      r3, [r0, #0x1c]                            
+0022d134 mov      r0, r4                                     
+0022d138 blx      r3                                         
+0022d13c cmp      r0, #0                                     
+0022d140 beq      #0x22d180                                  
+0022d144 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0022d148 str      r7, [sp, #8]                               
+0022d14c str      r8, [sp, #0xc]                             
+0022d150 mov      r2, #0x38c                                 
+0022d154 ldr      r1, [pc, #0x84]                             literal=0x53dfd8 ::transportStreamPackagesReady(..) NULL pointer input: buffers='0x%p' ctx='0x%p' - FAILED
+0022d158 str      r2, [sp]                                   
+0022d15c str      r1, [sp, #4]                               
+0022d160 ldr      r2, [pc, #0x34]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+0022d164 ldr      ip, [r0, #0x2c]                            
+0022d168 mov      r1, #2                                     
+0022d16c mov      r0, r4                                     
+0022d170 ldr      r3, [pc, #0x28]                             literal=0x57b653 
+0022d174 blx      ip                                         
+0022d178 mov      r0, r4                                     
+0022d17c b        #0x22d184                                  
+0022d180 mov      r0, #0                                     
+0022d184 add      sp, sp, #0xec                              
+0022d188 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}       
+0022d18c mov      r0, r0                                     
+0022d190 andeq    r0, r0, r0                                 
+0022d194 andeq    r0, r0, r0                                 
+0022d198 subseq   sp, r3, sp, lsl #27                        
+0022d19c subseq   r5, r2, sp, asr #21                        
+0022d1a0 subseq   fp, r7, r3, asr r6                         
+0022d1a4 ldrheq   lr, [sl], #-0xa0                           
+0022d1a8 subseq   sp, r3, r6, ror #27                        
+0022d1ac subseq   sp, r3, r0, lsl #28                        
+0022d1b0 subseq   sp, r3, r5, lsl #28                        
+0022d1b4 subseq   sp, r3, r4, lsl lr                         
+0022d1b8 subseq   sp, r3, pc, lsl lr                         
+0022d1bc subseq   sp, r3, fp, lsr #28                        
+0022d1c0 subseq   sp, r3, fp, lsr lr                         
+0022d1c4 subseq   sp, r3, pc, lsr lr                         
+0022d1c8 ldrheq   r3, [r3], #-0x95                           
+0022d1cc subseq   r3, r1, r5, asr #24                        
+0022d1d0 subseq   sp, r3, pc, asr #28                        
+0022d1d4 ldrsbeq  sp, [r3], #-0xe3                           
+0022d1d8 subseq   sp, r3, fp, lsr #30                        
+0022d1dc subseq   sp, r3, r2, lsl #31                        
+0022d1e0 ldrsbeq  sp, [r3], #-0xf8                           
+0022d1e4 mov      r0, r0                                     
+INCOMING DIRECT CALLS to interval start:
+
+SEED 0x21eaac; prologue-heuristic interval 0x21eaac..0x21ee10
+0021eaac push     {r4, r5, r6, r7, lr}                       
+0021eab0 sub      sp, sp, #0x24                              
+0021eab4 mov      r6, r1                                     
+0021eab8 mov      r4, r2                                     
+0021eabc mov      r5, r0                                     
+0021eac0 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021eac4 mov      r1, #7                                     
+0021eac8 ldr      r3, [r0, #0x1c]                            
+0021eacc mov      r0, #0x10                                  
+0021ead0 blx      r3                                         
+0021ead4 cmp      r0, #0                                     
+0021ead8 beq      #0x21eb1c                                  
+0021eadc bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021eae0 ldr      r2, [r4, #0x18]                            
+0021eae4 ldr      ip, [r0, #0x2c]                            
+0021eae8 cmp      r2, #0xf                                   
+0021eaec movw     r1, #0x121b                                
+0021eaf0 ldrhi    r2, [r4, #4]                               
+0021eaf4 addls    r2, r4, #4                                 
+0021eaf8 ldr      r0, [pc, #0x2f0]                            literal=0x53a2b8 ::initializeFPKMap_onOpenChannel(isOkay='%i' filename='%s')
+0021eafc str      r2, [sp, #0xc]                             
+0021eb00 str      r1, [sp]                                   
+0021eb04 stmib    sp, {r0, r6}                               
+0021eb08 mov      r0, #0x10                                  
+0021eb0c mov      r1, #7                                     
+0021eb10 ldr      r2, [pc, #0x2dc]                            literal=0x525b6f c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDCore.cpp
+0021eb14 ldr      r3, [pc, #0x2dc]                            literal=0x57b653 
+0021eb18 blx      ip                                         
+0021eb1c ldrb     r7, [r5, #0x122]                           
+0021eb20 cmp      r7, #0                                     
+0021eb24 beq      #0x21ed8c                                  
+0021eb28 mov      lr, #0                                     
+0021eb2c cmp      r6, #0                                     
+0021eb30 strb     lr, [r5, #0x122]                           
+0021eb34 beq      #0x21ed04                                  
+0021eb38 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021eb3c mov      r1, #4                                     
+0021eb40 ldr      r6, [r0, #0x1c]                            
+0021eb44 mov      r0, #0x10                                  
+0021eb48 blx      r6                                         
+0021eb4c cmp      r0, #0                                     
+0021eb50 beq      #0x21eb7c                                  
+0021eb54 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021eb58 movw     r1, #0x1222                                
+0021eb5c ldr      r3, [pc, #0x298]                            literal=0x53a2f4 ::initializeFPKMap_onOpenChannel(..) now initialise the encoder
+0021eb60 stm      sp, {r1, r3}                               
+0021eb64 mov      r1, #4                                     
+0021eb68 ldr      ip, [r0, #0x2c]                            
+0021eb6c ldr      r2, [pc, #0x280]                            literal=0x525b6f c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDCore.cpp
+0021eb70 mov      r0, #0x10                                  
+0021eb74 ldr      r3, [pc, #0x27c]                            literal=0x57b653 
+0021eb78 blx      ip                                         
+0021eb7c bl       #0x216280                                  
+0021eb80 ldr      r1, [r5, #0x11c]                           
+0021eb84 ldr      r6, [r0]                                   
+0021eb88 ldr      r2, [r6, #0x3c]                            
+0021eb8c blx      r2                                         
+0021eb90 subs     r6, r0, #0                                 
+0021eb94 beq      #0x21ecb8                                  
+0021eb98 ldr      lr, [r6]                                   
+0021eb9c ldr      r1, [r5, #0x11c]                           
+0021eba0 ldr      ip, [lr, #0x38]                            
+0021eba4 blx      ip                                         
+0021eba8 subs     r6, r0, #0                                 
+0021ebac beq      #0x21ec88                                  
+0021ebb0 bl       #0x1bb84c                                  
+0021ebb4 ldr      r1, [r5, #0x11c]                           
+0021ebb8 add      r6, sp, #0x10                              
+0021ebbc bl       #0x211ee0                                  
+0021ebc0 mov      r0, r6                                     
+0021ebc4 bl       #0x3e129c                                  
+0021ebc8 mov      r1, r4                                     
+0021ebcc mov      r0, r6                                     
+0021ebd0 bl       #0x1dc84c                                  
+0021ebd4 bl       #0x1bb84c                                  
+0021ebd8 ldr      r1, [r5, #0x11c]                           
+0021ebdc bl       #0x1c170c                                  
+0021ebe0 mov      r2, r0                                     
+0021ebe4 mov      r0, r6                                     
+0021ebe8 ldr      r1, [r2, #8]                               
+0021ebec bl       #0x15a28c                                  
+0021ebf0 bl       #0x1bb84c                                  
+0021ebf4 ldr      r1, [r5, #0x11c]                           
+0021ebf8 bl       #0x1c170c                                  
+0021ebfc mov      r3, r0                                     
+0021ec00 mov      r0, r6                                     
+0021ec04 ldr      r1, [r3, #0xc]                             
+0021ec08 bl       #0x15a28c                                  
+0021ec0c bl       #0x1bb84c                                  
+0021ec10 ldr      r1, [r5, #0x11c]                           
+0021ec14 bl       #0x1c170c                                  
+0021ec18 mov      ip, r0                                     
+0021ec1c mov      r0, r6                                     
+0021ec20 ldr      r1, [ip, #0x10]                            
+0021ec24 bl       #0x15a28c                                  
+0021ec28 bl       #0x1bb84c                                  
+0021ec2c ldr      r1, [r5, #0x11c]                           
+0021ec30 bl       #0x1c170c                                  
+0021ec34 mov      r2, r0                                     
+0021ec38 mov      r0, r6                                     
+0021ec3c ldr      r1, [r2, #0x14]                            
+0021ec40 bl       #0x15a28c                                  
+0021ec44 bl       #0x1bb84c                                  
+0021ec48 ldr      r1, [r5, #0x11c]                           
+0021ec4c bl       #0x1c170c                                  
+0021ec50 mov      r3, r0                                     
+0021ec54 mov      r0, r6                                     
+0021ec58 ldr      r1, [r3, #0x18]                            
+0021ec5c bl       #0x15a28c                                  
+0021ec60 mov      r1, #8                                     
+0021ec64 movw     r2, #0xf6a                                 
+0021ec68 ldr      r3, [sp, #0x10]                            
+0021ec6c mov      r0, #0x1d                                  
+0021ec70 ldr      ip, [sp, #0x14]                            
+0021ec74 str      ip, [sp]                                   
+0021ec78 bl       #0x12347c                                  SAL_Send [PLT]
+0021ec7c mov      r0, r6                                     
+0021ec80 bl       #0x3e1814                                  
+0021ec84 b        #0x21ede8                                  
+0021ec88 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021ec8c mov      r1, #2                                     
+0021ec90 ldr      ip, [r0, #0x1c]                            
+0021ec94 mov      r0, r6                                     
+0021ec98 blx      ip                                         
+0021ec9c cmp      r0, #0                                     
+0021eca0 beq      #0x21ede8                                  
+0021eca4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021eca8 movw     r1, #0x1238                                
+0021ecac ldr      r3, [pc, #0x14c]                            literal=0x53a334 ::initializeFPKMap_onOpenChannel(..) mapWindow is NULL - FAILED
+0021ecb0 str      r1, [sp]                                   
+0021ecb4 b        #0x21ece4                                  
+0021ecb8 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021ecbc mov      r1, #2                                     
+0021ecc0 ldr      r3, [r0, #0x1c]                            
+0021ecc4 mov      r0, r6                                     
+0021ecc8 blx      r3                                         
+0021eccc cmp      r0, #0                                     
+0021ecd0 beq      #0x21ede8                                  
+0021ecd4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021ecd8 movw     r2, #0x123d                                
+0021ecdc ldr      r3, [pc, #0x120]                            literal=0x53a374 ::initializeFPKMap_onOpenChannel(..) view is NULL - FAILED
+0021ece0 str      r2, [sp]                                   
+0021ece4 str      r3, [sp, #4]                               
+0021ece8 mov      r1, #2                                     
+0021ecec ldr      ip, [r0, #0x2c]                            
+0021ecf0 ldr      r2, [pc, #0xfc]                             literal=0x525b6f c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDCore.cpp
+0021ecf4 mov      r0, r6                                     
+0021ecf8 ldr      r3, [pc, #0xf8]                             literal=0x57b653 
+0021ecfc blx      ip                                         
+0021ed00 b        #0x21ede8                                  
+0021ed04 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021ed08 mov      r1, #2                                     
+0021ed0c ldr      r3, [r0, #0x1c]                            
+0021ed10 mov      r0, r6                                     
+0021ed14 blx      r3                                         
+0021ed18 cmp      r0, #0                                     
+0021ed1c beq      #0x21ed64                                  
+0021ed20 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021ed24 movw     r2, #0x1242                                
+0021ed28 ldr      ip, [r0, #0x2c]                            
+0021ed2c ldr      r1, [pc, #0xd4]                             literal=0x53a3af ::initializeFPKMap_onOpenChannel(..) unable to open channel: isOkay='%i' filename='%s' - FAILED
+0021ed30 ldr      r0, [r4, #0x18]                            
+0021ed34 ldr      r3, [pc, #0xbc]                             literal=0x57b653 
+0021ed38 cmp      r0, #0xf                                   
+0021ed3c mov      r0, #0                                     
+0021ed40 ldrhi    r4, [r4, #4]                               
+0021ed44 addls    r4, r4, #4                                 
+0021ed48 str      r2, [sp]                                   
+0021ed4c str      r1, [sp, #4]                               
+0021ed50 str      r4, [sp, #0xc]                             
+0021ed54 str      r0, [sp, #8]                               
+0021ed58 mov      r1, #2                                     
+0021ed5c ldr      r2, [pc, #0x90]                             literal=0x525b6f c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDCore.cpp
+0021ed60 blx      ip                                         
+0021ed64 mov      ip, #1                                     
+0021ed68 add      r3, sp, #0x20                              
+0021ed6c mov      r1, ip                                     
+0021ed70 str      ip, [r3, #-4]!                             
+0021ed74 movw     r2, #0x1696                                
+0021ed78 mov      r0, #0x55                                  
+0021ed7c mov      lr, #4                                     
+0021ed80 str      lr, [sp]                                   
+0021ed84 bl       #0x12347c                                  SAL_Send [PLT]
+0021ed88 b        #0x21ede8                                  
+0021ed8c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021ed90 mov      r1, #2                                     
+0021ed94 ldr      r3, [r0, #0x1c]                            
+0021ed98 mov      r0, r7                                     
+0021ed9c blx      r3                                         
+0021eda0 cmp      r0, #0                                     
+0021eda4 beq      #0x21ede8                                  
+0021eda8 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+0021edac movw     r2, #0x124d                                
+0021edb0 ldr      ip, [r0, #0x2c]                            
+0021edb4 ldr      r1, [pc, #0x50]                             literal=0x53a40f ::initializeFPKMap_onOpenChannel(..) unexpected call: isOkay='%i' filename='%s' - FAILED
+0021edb8 ldr      r0, [r4, #0x18]                            
+0021edbc ldr      r3, [pc, #0x34]                             literal=0x57b653 
+0021edc0 cmp      r0, #0xf                                   
+0021edc4 mov      r0, #0                                     
+0021edc8 ldrhi    r4, [r4, #4]                               
+0021edcc addls    r4, r4, #4                                 
+0021edd0 str      r2, [sp]                                   
+0021edd4 stmib    sp, {r1, r6}                               
+0021edd8 str      r4, [sp, #0xc]                             
+0021eddc mov      r1, #2                                     
+0021ede0 ldr      r2, [pc, #0xc]                              literal=0x525b6f c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDCore.cpp
+0021ede4 blx      ip                                         
+0021ede8 add      sp, sp, #0x24                              
+0021edec pop      {r4, r5, r6, r7, pc}                       
+0021edf0 ldrheq   sl, [r3], #-0x28                           
+0021edf4 subseq   r5, r2, pc, ror #22                        
+0021edf8 subseq   fp, r7, r3, asr r6                         
+0021edfc ldrsheq  sl, [r3], #-0x24                           
+0021ee00 subseq   sl, r3, r4, lsr r3                         
+0021ee04 subseq   sl, r3, r4, ror r3                         
+0021ee08 subseq   sl, r3, pc, lsr #7                         
+0021ee0c subseq   sl, r3, pc, lsl #8                         
+INCOMING DIRECT CALLS to interval start:
+001b42b0 bl       #0x21eaac                                  
+
+SEED 0x1e4744; prologue-heuristic interval 0x1e4744..0x1e496c
+001e4744 push     {r4, r5, r6, r7, lr}                       
+001e4748 sub      sp, sp, #0x1c                              
+001e474c mov      r6, r1                                     
+001e4750 mov      r4, r2                                     
+001e4754 mov      r5, r0                                     
+001e4758 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001e475c mov      r1, #7                                     
+001e4760 ldr      r3, [r0, #0x1c]                            
+001e4764 mov      r0, #0x10                                  
+001e4768 blx      r3                                         
+001e476c cmp      r0, #0                                     
+001e4770 beq      #0x1e47b4                                  
+001e4774 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001e4778 ldr      r2, [r4, #0x18]                            
+001e477c ldr      ip, [r0, #0x2c]                            
+001e4780 cmp      r2, #0xf                                   
+001e4784 movw     r1, #0x12a5                                
+001e4788 ldrhi    r2, [r4, #4]                               
+001e478c addls    r2, r4, #4                                 
+001e4790 ldr      r0, [pc, #0x1bc]                            literal=0x52af7f ::releaseFPKMap_onCloseChannel(isOkay='%i' filename='%s')
+001e4794 str      r2, [sp, #0xc]                             
+001e4798 str      r1, [sp]                                   
+001e479c stmib    sp, {r0, r6}                               
+001e47a0 mov      r0, #0x10                                  
+001e47a4 mov      r1, #7                                     
+001e47a8 ldr      r2, [pc, #0x1a8]                            literal=0x525b6f c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDCore.cpp
+001e47ac ldr      r3, [pc, #0x1a8]                            literal=0x57b653 
+001e47b0 blx      ip                                         
+001e47b4 ldrb     r7, [r5, #0x123]                           
+001e47b8 cmp      r7, #0                                     
+001e47bc beq      #0x1e48f4                                  
+001e47c0 mov      lr, #0                                     
+001e47c4 cmp      r6, #0                                     
+001e47c8 strb     lr, [r5, #0x123]                           
+001e47cc beq      #0x1e483c                                  
+001e47d0 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001e47d4 mov      r1, #4                                     
+001e47d8 ldr      r4, [r0, #0x1c]                            
+001e47dc mov      r0, #0x10                                  
+001e47e0 blx      r4                                         
+001e47e4 cmp      r0, #0                                     
+001e47e8 beq      #0x1e4814                                  
+001e47ec bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001e47f0 movw     r1, #0x12ac                                
+001e47f4 ldr      r3, [pc, #0x164]                            literal=0x52afb9 ::releaseFPKMap_onCloseChannel(..) now notify the screenCDA
+001e47f8 stm      sp, {r1, r3}                               
+001e47fc mov      r1, #4                                     
+001e4800 ldr      ip, [r0, #0x2c]                            
+001e4804 ldr      r2, [pc, #0x14c]                            literal=0x525b6f c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDCore.cpp
+001e4808 mov      r0, #0x10                                  
+001e480c ldr      r3, [pc, #0x148]                            literal=0x57b653 
+001e4810 blx      ip                                         
+001e4814 mov      r4, #0                                     
+001e4818 add      r3, sp, #0x18                              
+001e481c mov      r1, #1                                     
+001e4820 str      r4, [r3, #-4]!                             
+001e4824 movw     r2, #0x1698                                
+001e4828 mov      r0, #0x55                                  
+001e482c mov      lr, #4                                     
+001e4830 str      lr, [sp]                                   
+001e4834 bl       #0x12347c                                  SAL_Send [PLT]
+001e4838 b        #0x1e48c4                                  
+001e483c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001e4840 mov      r1, #2                                     
+001e4844 ldr      r2, [r0, #0x1c]                            
+001e4848 mov      r0, r6                                     
+001e484c blx      r2                                         
+001e4850 cmp      r0, #0                                     
+001e4854 beq      #0x1e489c                                  
+001e4858 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001e485c movw     r3, #0x12c1                                
+001e4860 ldr      ip, [r0, #0x2c]                            
+001e4864 mov      r1, #2                                     
+001e4868 ldr      r0, [r4, #0x18]                            
+001e486c ldr      r2, [pc, #0xe4]                             literal=0x525b6f c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDCore.cpp
+001e4870 cmp      r0, #0xf                                   
+001e4874 mov      r0, #0                                     
+001e4878 ldrhi    r4, [r4, #4]                               
+001e487c addls    r4, r4, #4                                 
+001e4880 str      r3, [sp]                                   
+001e4884 str      r4, [sp, #0xc]                             
+001e4888 str      r0, [sp, #8]                               
+001e488c ldr      r4, [pc, #0xd0]                             literal=0x52aff5 ::releaseFPKMap_onCloseChannel(..) unable to close the channel: isOkay='%i' filename='%s' - FAILED
+001e4890 ldr      r3, [pc, #0xc4]                             literal=0x57b653 
+001e4894 str      r4, [sp, #4]                               
+001e4898 blx      ip                                         
+001e489c mov      r2, #1                                     
+001e48a0 add      r3, sp, #0x18                              
+001e48a4 mov      r1, r2                                     
+001e48a8 str      r2, [r3, #-4]!                             
+001e48ac mov      r0, #0x55                                  
+001e48b0 movw     r2, #0x1698                                
+001e48b4 mov      lr, #4                                     
+001e48b8 mov      r4, #0                                     
+001e48bc str      lr, [sp]                                   
+001e48c0 bl       #0x12347c                                  SAL_Send [PLT]
+001e48c4 ldrb     r1, [r5, #0x126]                           
+001e48c8 strb     r4, [r5, #0x120]                           
+001e48cc cmp      r1, r4                                     
+001e48d0 beq      #0x1e494c                                  
+001e48d4 mov      r0, #0x1d                                  
+001e48d8 mov      r1, #8                                     
+001e48dc movw     r2, #0xf5d                                 
+001e48e0 mov      r3, r4                                     
+001e48e4 str      r4, [sp]                                   
+001e48e8 bl       #0x12347c                                  SAL_Send [PLT]
+001e48ec strb     r4, [r5, #0x126]                           
+001e48f0 b        #0x1e494c                                  
+001e48f4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001e48f8 mov      r1, #2                                     
+001e48fc ldr      ip, [r0, #0x1c]                            
+001e4900 mov      r0, r7                                     
+001e4904 blx      ip                                         
+001e4908 cmp      r0, #0                                     
+001e490c beq      #0x1e494c                                  
+001e4910 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001e4914 ldr      r2, [r4, #0x18]                            
+001e4918 ldr      ip, [r0, #0x2c]                            
+001e491c cmp      r2, #0xf                                   
+001e4920 movw     r0, #0x12d8                                
+001e4924 ldrhi    r4, [r4, #4]                               
+001e4928 ldr      r3, [pc, #0x38]                             literal=0x52b058 ::releaseFPKMap_onCloseChannel(..) unexpected call: isOkay='%i' filename='%s' - FAILED
+001e492c addls    r4, r4, #4                                 
+001e4930 stm      sp, {r0, r3, r6}                           
+001e4934 str      r4, [sp, #0xc]                             
+001e4938 mov      r0, #0                                     
+001e493c mov      r1, #2                                     
+001e4940 ldr      r2, [pc, #0x10]                             literal=0x525b6f c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDCore.cpp
+001e4944 ldr      r3, [pc, #0x10]                             literal=0x57b653 
+001e4948 blx      ip                                         
+001e494c add      sp, sp, #0x1c                              
+001e4950 pop      {r4, r5, r6, r7, pc}                       
+001e4954 subseq   sl, r2, pc, ror pc                         
+001e4958 subseq   r5, r2, pc, ror #22                        
+001e495c subseq   fp, r7, r3, asr r6                         
+001e4960 ldrheq   sl, [r2], #-0xf9                           
+001e4964 ldrsheq  sl, [r2], #-0xf5                           
+001e4968 subseq   fp, r2, r8, asr r0                         
+INCOMING DIRECT CALLS to interval start:
+001b439c bl       #0x1e4744                                  
+
+SEED 0x1f593c; prologue-heuristic interval 0x1f56cc..0x1f5c18
+001f56cc push     {r4, r5, r6, r7, lr}                       
+001f56d0 sub      sp, sp, #0x4c                              
+001f56d4 mov      r5, r1                                     
+001f56d8 mov      r6, r2                                     
+001f56dc mov      r7, r3                                     
+001f56e0 mov      r4, r0                                     
+001f56e4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f56e8 mov      r1, #7                                     
+001f56ec ldr      r3, [r0, #0x1c]                            
+001f56f0 mov      r0, #0x10                                  
+001f56f4 blx      r3                                         
+001f56f8 cmp      r0, #0                                     
+001f56fc beq      #0x1f572c                                  
+001f5700 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5704 movw     r2, #0x276                                 
+001f5708 ldr      r1, [pc, #0x4ac]                            literal=0x52fb91 ::renderedFPK(isOkay='%i' isCompleteMapRendered='%i' convertedBuffer='0x%p')
+001f570c str      r2, [sp]                                   
+001f5710 stmib    sp, {r1, r5, r6, r7}                       
+001f5714 mov      r1, #7                                     
+001f5718 ldr      ip, [r0, #0x2c]                            
+001f571c ldr      r2, [pc, #0x49c]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001f5720 mov      r0, #0x10                                  
+001f5724 ldr      r3, [pc, #0x498]                            literal=0x57b653 
+001f5728 blx      ip                                         
+001f572c ldrb     r0, [r4, #0xc2]                            
+001f5730 cmp      r0, #0                                     
+001f5734 beq      #0x1f5b14                                  
+001f5738 mov      lr, #0                                     
+001f573c add      r0, r4, #0x12c                             
+001f5740 strb     lr, [r4, #0xc2]                            
+001f5744 bl       #0x3e21c8                                  
+001f5748 cmp      r5, #0                                     
+001f574c beq      #0x1f5ac4                                  
+001f5750 ldrb     r3, [r4, #0xc1]                            
+001f5754 cmp      r3, #0                                     
+001f5758 beq      #0x1f5a84                                  
+001f575c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5760 mov      r1, #5                                     
+001f5764 ldr      r5, [r0, #0x1c]                            
+001f5768 mov      r0, #0x10                                  
+001f576c blx      r5                                         
+001f5770 cmp      r0, #0                                     
+001f5774 beq      #0x1f57a4                                  
+001f5778 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f577c ldr      r7, [pc, #0x444]                            literal=0x52fbde ::renderFPK() render map okay
+001f5780 mov      ip, #0x280                                 
+001f5784 str      r7, [sp, #4]                               
+001f5788 str      ip, [sp]                                   
+001f578c mov      r1, #5                                     
+001f5790 ldr      r6, [r0, #0x2c]                            
+001f5794 ldr      r2, [pc, #0x424]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001f5798 mov      r0, #0x10                                  
+001f579c ldr      r3, [pc, #0x420]                            literal=0x57b653 
+001f57a0 blx      r6                                         
+001f57a4 add      r1, r4, #0x158                             
+001f57a8 ldrd     r0, r1, [r1]                               
+001f57ac mov      r2, #5                                     
+001f57b0 mov      r3, #0                                     
+001f57b4 bl       #0x123590                                  __aeabi_uldivmod [PLT]
+001f57b8 orrs     r3, r2, r3                                 
+001f57bc bne      #0x1f57c8                                  
+001f57c0 mov      r0, r4                                     
+001f57c4 bl       #0x1edcd0                                  
+001f57c8 ldr      r3, [r4, #0x120]                           
+001f57cc ldr      r6, [r4, #0xe4]                            
+001f57d0 str      r3, [sp, #0x2c]                            
+001f57d4 str      r6, [sp, #0x28]                            
+001f57d8 ldr      lr, [r4, #0xf0]                            
+001f57dc ldr      r5, [r4, #0xe8]                            
+001f57e0 str      lr, [sp, #0x34]                            
+001f57e4 ldr      r0, [pc, #0x3e0]                            literal=0x5aea64 
+001f57e8 str      r5, [sp, #0x30]                            
+001f57ec ldr      r1, [r0]                                   
+001f57f0 str      r1, [sp, #0x24]                            
+001f57f4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f57f8 mov      r1, #5                                     
+001f57fc ldr      r2, [r0, #0x1c]                            
+001f5800 mov      r0, #0x10                                  
+001f5804 blx      r2                                         
+001f5808 cmp      r0, #0                                     
+001f580c beq      #0x1f5838                                  
+001f5810 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5814 mov      r2, #0x290                                 
+001f5818 ldr      ip, [pc, #0x3b0]                            literal=0x52fbfc ::renderedFPK(..) VE_Encode(..) ...
+001f581c stm      sp, {r2, ip}                               
+001f5820 mov      r1, #5                                     
+001f5824 ldr      r7, [r0, #0x2c]                            
+001f5828 ldr      r2, [pc, #0x390]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001f582c mov      r0, #0x10                                  
+001f5830 ldr      r3, [pc, #0x38c]                            literal=0x57b653 
+001f5834 blx      r7                                         
+001f5838 ldr      r0, [r4, #0xf4]                            
+001f583c add      r1, sp, #0x24                              
+001f5840 add      r2, sp, #0x38                              
+001f5844 movw     r3, #0x1388                                
+001f5848 bl       #0x2540d0                                  
+001f584c subs     r5, r0, #0                                 
+001f5850 bne      #0x1f598c                                  
+001f5854 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5858 mov      r1, #5                                     
+001f585c ldr      r3, [r0, #0x1c]                            
+001f5860 mov      r0, #0x10                                  
+001f5864 blx      r3                                         
+001f5868 cmp      r0, #0                                     
+001f586c beq      #0x1f58c4                                  
+001f5870 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5874 ldr      r1, [pc, #0x350]                            literal=0x5aea64 
+001f5878 mov      r3, #0x298                                 
+001f587c ldr      r5, [r1]                                   
+001f5880 ldr      r2, [pc, #0x34c]                            literal=0x52fc20 ::renderedFPK(..) VE_Encode(..) is okay: frameNr='%i' bytes2Encode='%i' outputSize='%i' encRsp.producedBytes='%i' encRsp.consumedBytes='%i' - OKAY
+001f5884 str      r3, [sp]                                   
+001f5888 stmib    sp, {r2, r5}                               
+001f588c ldr      r1, [sp, #0x3c]                            
+001f5890 ldr      ip, [r4, #0x120]                           
+001f5894 ldr      r6, [sp, #0x40]                            
+001f5898 str      ip, [sp, #0xc]                             
+001f589c ldr      r2, [pc, #0x31c]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001f58a0 ldr      r7, [r4, #0xf0]                            
+001f58a4 ldr      r3, [pc, #0x318]                            literal=0x57b653 
+001f58a8 str      r1, [sp, #0x18]                            
+001f58ac str      r7, [sp, #0x10]                            
+001f58b0 str      r6, [sp, #0x14]                            
+001f58b4 mov      r1, #5                                     
+001f58b8 ldr      r5, [r0, #0x2c]                            
+001f58bc mov      r0, #0x10                                  
+001f58c0 blx      r5                                         
+001f58c4 ldr      r0, [r4, #0xe8]                            
+001f58c8 cmp      r0, #0                                     
+001f58cc beq      #0x1f59e0                                  
+001f58d0 ldr      lr, [sp, #0x40]                            
+001f58d4 cmp      lr, #0                                     
+001f58d8 beq      #0x1f59e0                                  
+001f58dc bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f58e0 mov      r1, #5                                     
+001f58e4 ldr      r6, [r0, #0x1c]                            
+001f58e8 mov      r0, #0x10                                  
+001f58ec blx      r6                                         
+001f58f0 cmp      r0, #0                                     
+001f58f4 beq      #0x1f5920                                  
+001f58f8 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f58fc mov      r2, #0x2b4                                 
+001f5900 ldr      ip, [pc, #0x2d0]                            literal=0x52fcb3 ::renderedFPK(..) write ts file...
+001f5904 stm      sp, {r2, ip}                               
+001f5908 mov      r1, #5                                     
+001f590c ldr      r7, [r0, #0x2c]                            
+001f5910 ldr      r2, [pc, #0x2a8]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001f5914 mov      r0, #0x10                                  
+001f5918 ldr      r3, [pc, #0x2a4]                            literal=0x57b653 
+001f591c blx      r7                                         
+001f5920 ldr      r6, [r4, #0xe8]                            
+001f5924 ldr      r5, [sp, #0x40]                            
+001f5928 bl       #0x122f30                                  SAL_Clock [PLT]
+001f592c mov      r1, r5                                     
+001f5930 mov      r2, r0                                     
+001f5934 ldr      r3, [r4, #0x124]                           
+001f5938 mov      r0, r6                                     
+001f593c bl       #0x1f535c                                  
+001f5940 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5944 mov      r1, #5                                     
+001f5948 ldr      r3, [r0, #0x1c]                            
+001f594c mov      r0, #0x10                                  
+001f5950 blx      r3                                         
+001f5954 cmp      r0, #0                                     
+001f5958 beq      #0x1f59e0                                  
+001f595c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5960 movw     ip, #0x2b6                                 
+001f5964 ldr      r1, [pc, #0x270]                            literal=0x52fcd6 ::renderedFPK(..) write ts file okay
+001f5968 str      ip, [sp]                                   
+001f596c str      r1, [sp, #4]                               
+001f5970 ldr      r2, [pc, #0x248]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001f5974 ldr      r7, [r0, #0x2c]                            
+001f5978 mov      r1, #5                                     
+001f597c mov      r0, #0x10                                  
+001f5980 ldr      r3, [pc, #0x23c]                            literal=0x57b653 
+001f5984 blx      r7                                         
+001f5988 b        #0x1f59e0                                  
+001f598c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5990 mov      r1, #2                                     
+001f5994 ldr      r2, [r0, #0x1c]                            
+001f5998 mov      r0, #0                                     
+001f599c blx      r2                                         
+001f59a0 cmp      r0, #0                                     
+001f59a4 beq      #0x1f59e0                                  
+001f59a8 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f59ac movw     r6, #0x2bb                                 
+001f59b0 str      r5, [sp, #0xc]                             
+001f59b4 ldr      r1, [pc, #0x210]                            literal=0x5aea64 
+001f59b8 ldr      r3, [pc, #0x220]                            literal=0x52fcfb ::renderedFPK(..) VE_Encode(..) is NOT okay: frameNr='%i' status='%i' - FAILED
+001f59bc ldr      r7, [r1]                                   
+001f59c0 ldr      r2, [pc, #0x1f8]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001f59c4 stmib    sp, {r3, r7}                               
+001f59c8 str      r6, [sp]                                   
+001f59cc mov      r1, #2                                     
+001f59d0 ldr      r5, [r0, #0x2c]                            
+001f59d4 ldr      r3, [pc, #0x1e8]                            literal=0x57b653 
+001f59d8 mov      r0, #0                                     
+001f59dc blx      r5                                         
+001f59e0 add      r3, r4, #0x150                             
+001f59e4 ldrd     r2, r3, [r3]                               
+001f59e8 add      r1, r4, #0x158                             
+001f59ec ldrd     r0, r1, [r1]                               
+001f59f0 ldr      r5, [pc, #0x1d4]                            literal=0x5aea64 
+001f59f4 mov      r6, #1                                     
+001f59f8 mov      r7, #0                                     
+001f59fc adds     r0, r0, r6                                 
+001f5a00 ldr      lr, [pc, #0x1dc]                            literal=0x5aeab0 
+001f5a04 adc      r1, r1, r7                                 
+001f5a08 ldr      ip, [lr]                                   
+001f5a0c adds     r2, r2, r6                                 
+001f5a10 str      r0, [r4, #0x158]                           
+001f5a14 str      r1, [r4, #0x15c]                           
+001f5a18 adc      r3, r3, r7                                 
+001f5a1c ldr      r0, [ip, #0x148]                           
+001f5a20 str      r2, [r4, #0x150]                           
+001f5a24 str      r3, [r4, #0x154]                           
+001f5a28 ldr      r3, [r5]                                   
+001f5a2c add      lr, r3, #1                                 
+001f5a30 str      lr, [r5]                                   
+001f5a34 bl       #0x40dd1c                                  
+001f5a38 ldr      r1, [r4, #0xe0]                            
+001f5a3c mov      r5, r0                                     
+001f5a40 cmp      r1, #9                                     
+001f5a44 movw     r0, #0x4e2                                 
+001f5a48 addle    r1, r1, #2                                 
+001f5a4c bl       #0x123b9c                                  __aeabi_uidiv [PLT]
+001f5a50 ldr      r2, [r4, #0x144]                           
+001f5a54 add      ip, r4, #0x138                             
+001f5a58 rsb      r1, r2, r5                                 
+001f5a5c cmp      r1, r0                                     
+001f5a60 movhi    r1, #0                                     
+001f5a64 rsbls    r1, r1, r0                                 
+001f5a68 movhi    r0, ip                                     
+001f5a6c movhi    r2, r1                                     
+001f5a70 movls    r0, ip                                     
+001f5a74 movls    r2, #0                                     
+001f5a78 bl       #0x3e2248                                  
+001f5a7c str      r5, [r4, #0x144]                           
+001f5a80 b        #0x1f5bb4                                  
+001f5a84 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5a88 mov      r1, #4                                     
+001f5a8c ldr      r2, [r0, #0x1c]                            
+001f5a90 mov      r0, #0x10                                  
+001f5a94 blx      r2                                         
+001f5a98 cmp      r0, #0                                     
+001f5a9c beq      #0x1f5bb4                                  
+001f5aa0 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5aa4 ldr      r1, [pc, #0x13c]                            literal=0x52fd4a ::renderedFPK(..) we are already stopped
+001f5aa8 mov      r3, #0x2d8                                 
+001f5aac str      r1, [sp, #4]                               
+001f5ab0 str      r3, [sp]                                   
+001f5ab4 mov      r1, #4                                     
+001f5ab8 ldr      ip, [r0, #0x2c]                            
+001f5abc mov      r0, #0x10                                  
+001f5ac0 b        #0x1f5ba8                                  
+001f5ac4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5ac8 mov      r1, #2                                     
+001f5acc ldr      ip, [r0, #0x1c]                            
+001f5ad0 mov      r0, r5                                     
+001f5ad4 blx      ip                                         
+001f5ad8 cmp      r0, #0                                     
+001f5adc beq      #0x1f5b08                                  
+001f5ae0 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5ae4 movw     r1, #0x2dd                                 
+001f5ae8 ldr      r2, [pc, #0xfc]                             literal=0x52fd73 ::renderedFPK(..) requested rendering was not okay, try again... - FAILED
+001f5aec stm      sp, {r1, r2}                               
+001f5af0 mov      r1, #2                                     
+001f5af4 ldr      ip, [r0, #0x2c]                            
+001f5af8 ldr      r2, [pc, #0xc0]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001f5afc mov      r0, r5                                     
+001f5b00 ldr      r3, [pc, #0xbc]                             literal=0x57b653 
+001f5b04 blx      ip                                         
+001f5b08 mov      r0, r4                                     
+001f5b0c bl       #0x1e42ac                                  
+001f5b10 b        #0x1f5bb4                                  
+001f5b14 ldrb     r5, [r4, #0xc3]                            
+001f5b18 cmp      r5, #0                                     
+001f5b1c beq      #0x1f5b70                                  
+001f5b20 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5b24 mov      r1, #4                                     
+001f5b28 ldr      r3, [r0, #0x1c]                            
+001f5b2c mov      r0, #0x10                                  
+001f5b30 blx      r3                                         
+001f5b34 cmp      r0, #0                                     
+001f5b38 beq      #0x1f5b64                                  
+001f5b3c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5b40 movw     r1, #0x2e7                                 
+001f5b44 ldr      r2, [pc, #0x9c]                             literal=0x52fd4a ::renderedFPK(..) we are already stopped
+001f5b48 stm      sp, {r1, r2}                               
+001f5b4c mov      r1, #4                                     
+001f5b50 ldr      ip, [r0, #0x2c]                            
+001f5b54 ldr      r2, [pc, #0x64]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001f5b58 mov      r0, #0x10                                  
+001f5b5c ldr      r3, [pc, #0x60]                             literal=0x57b653 
+001f5b60 blx      ip                                         
+001f5b64 mov      r0, #0                                     
+001f5b68 strb     r0, [r4, #0xc3]                            
+001f5b6c b        #0x1f5bb4                                  
+001f5b70 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5b74 mov      r1, #2                                     
+001f5b78 ldr      r3, [r0, #0x1c]                            
+001f5b7c mov      r0, r5                                     
+001f5b80 blx      r3                                         
+001f5b84 cmp      r0, #0                                     
+001f5b88 beq      #0x1f5bb4                                  
+001f5b8c bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001f5b90 ldr      ip, [pc, #0x58]                             literal=0x52fdbd ::renderedFPK(..) rendering not triggered, strange call - FAILED
+001f5b94 mov      r2, #0x2ec                                 
+001f5b98 stm      sp, {r2, ip}                               
+001f5b9c mov      r1, #2                                     
+001f5ba0 ldr      ip, [r0, #0x2c]                            
+001f5ba4 mov      r0, r5                                     
+001f5ba8 ldr      r2, [pc, #0x10]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001f5bac ldr      r3, [pc, #0x10]                             literal=0x57b653 
+001f5bb0 blx      ip                                         
+001f5bb4 add      sp, sp, #0x4c                              
+001f5bb8 pop      {r4, r5, r6, r7, pc}                       
+001f5bbc .byte    0x91, 0xfb, 0x52, 0x00                     
+001f5bc0 subseq   r5, r2, sp, asr #21                        
+001f5bc4 subseq   fp, r7, r3, asr r6                         
+001f5bc8 ldrsbeq  pc, [r2], #-0xbe                           
+001f5bcc subseq   lr, sl, r4, ror #20                        
+001f5bd0 ldrsheq  pc, [r2], #-0xbc                           
+001f5bd4 subseq   pc, r2, r0, lsr #24                        
+001f5bd8 ldrheq   pc, [r2], #-0xc3                           
+001f5bdc ldrsbeq  pc, [r2], #-0xc6                           
+001f5be0 ldrsheq  pc, [r2], #-0xcb                           
+001f5be4 ldrheq   lr, [sl], #-0xa0                           
+001f5be8 subseq   pc, r2, sl, asr #26                        
+001f5bec subseq   pc, r2, r3, ror sp                         
+001f5bf0 ldrheq   pc, [r2], #-0xdd                           
+001f5bf4 cmp      r1, #0                                     
+001f5bf8 bxeq     lr                                         
+001f5bfc ldr      r2, [r0, #8]                               
+001f5c00 ldr      r3, [r0, #0x28]                            
+001f5c04 orr      r1, r1, r2                                 
+001f5c08 cmp      r3, #0                                     
+001f5c0c mov      r2, #0                                     
+001f5c10 orreq    r1, r1, #4                                 
+001f5c14 b        #0x123e24                                  _ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb [PLT]
+INCOMING DIRECT CALLS to interval start:
+001fa6c4 bl       #0x1f56cc                                  
+
+SEED 0x1fa4cc; prologue-heuristic interval 0x1fa2f4..0x1fa768
+001fa2f4 push     {r4, r5, r6, r7, r8, lr}                   
+001fa2f8 ldr      r2, [r1]                                   
+001fa2fc sub      sp, sp, #0x68                              
+001fa300 ldrb     r3, [r2, #0x12]                            
+001fa304 mov      r8, r1                                     
+001fa308 mov      r4, r0                                     
+001fa30c cmp      r3, #0x1d                                  
+001fa310 bne      #0x1fa750                                  
+001fa314 ldr      r3, [r2, #0x14]                            
+001fa318 cmp      r3, #7                                     
+001fa31c beq      #0x1fa338                                  
+001fa320 cmp      r3, #6                                     
+001fa324 beq      #0x1fa338                                  
+001fa328 cmp      r3, #8                                     
+001fa32c beq      #0x1fa338                                  
+001fa330 cmp      r3, #9                                     
+001fa334 bne      #0x1fa750                                  
+001fa338 ldr      ip, [r2, #0xc]                             
+001fa33c sub      r1, ip, #0xf50                             
+001fa340 sub      r0, r1, #0xd                               
+001fa344 cmp      r0, #0x18                                  
+001fa348 ldrls    pc, [pc, r0, lsl #2]                       
+001fa34c b        #0x1fa6fc                                  
+001fa350 ldrheq   sl, [pc], -r4                               literal=0x1fa6fc 
+001fa354 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa358 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa35c ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa360 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa364 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa368 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa36c ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa370 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa374 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa378 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa37c ldrsheq  sl, [pc], -ip                               literal=0x1fa420 
+001fa380 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa384 andseq   sl, pc, r0, lsr #8                         
+001fa388 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa38c andseq   sl, pc, r8, lsr r5                         
+001fa390 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa394 andseq   sl, pc, ip, lsl #11                        
+001fa398 ldrsheq  sl, [pc], -ip                               literal=0x1fa6fc 
+001fa39c andseq   sl, pc, r4, lsl r6                         
+001fa3a0 ldrsheq  sl, [pc], -ip                               literal=0x1fa6cc 
+001fa3a4 ldrsheq  sl, [pc], -ip                               literal=0x1fa6e4 
+001fa3a8 andseq   sl, pc, ip, asr #13                        
+001fa3ac andseq   sl, pc, r4, ror #13                        
+001fa3b0 andseq   sl, pc, r0, ror #12                        
+001fa3b4 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001fa3b8 mov      r1, #5                                     
+001fa3bc ldr      r2, [r0, #0x1c]                            
+001fa3c0 mov      r0, #0x10                                  
+001fa3c4 blx      r2                                         
+001fa3c8 cmp      r0, #0                                     
+001fa3cc beq      #0x1fa3f8                                  
+001fa3d0 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001fa3d4 mov      r1, #0x9c                                  
+001fa3d8 ldr      r3, [pc, #0x378]                            literal=0x530e37 ::onMessage(MSG_ID_MD_THREAD_STOP) recieved stop thread message
+001fa3dc stm      sp, {r1, r3}                               
+001fa3e0 mov      r1, #5                                     
+001fa3e4 ldr      ip, [r0, #0x2c]                            
+001fa3e8 ldr      r2, [pc, #0x36c]                            literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001fa3ec mov      r0, #0x10                                  
+001fa3f0 ldr      r3, [pc, #0x368]                            literal=0x57b653 
+001fa3f4 blx      ip                                         
+001fa3f8 add      r3, sp, #0x68                              
+001fa3fc mov      r0, #8                                     
+001fa400 mov      r1, #6                                     
+001fa404 str      r0, [r3, #-4]!                             
+001fa408 movw     r2, #0xf5e                                 
+001fa40c mov      r0, #0x1d                                  
+001fa410 mov      lr, #4                                     
+001fa414 str      lr, [sp]                                   
+001fa418 bl       #0x12347c                                  SAL_Send [PLT]
+001fa41c b        #0x1fa750                                  
+001fa420 add      r5, sp, #0x2c                              
+001fa424 ldr      r1, [pc, #0x334]                            literal=0x57b653 
+001fa428 mov      r0, r5                                     
+001fa42c add      r8, r8, #4                                 
+001fa430 bl       #0x13a698                                  _ZNSsC1EPKc
+001fa434 mov      r1, r5                                     
+001fa438 mov      r0, r8                                     
+001fa43c mov      r6, #0                                     
+001fa440 str      r6, [sp, #0x54]                            
+001fa444 str      r6, [sp, #0x64]                            
+001fa448 str      r6, [sp, #0x60]                            
+001fa44c str      r6, [sp, #0x5c]                            
+001fa450 str      r6, [sp, #0x58]                            
+001fa454 bl       #0x1a3cc0                                  
+001fa458 add      r1, sp, #0x64                              
+001fa45c mov      r0, r8                                     
+001fa460 bl       #0x1a881c                                  
+001fa464 add      r1, sp, #0x60                              
+001fa468 mov      r0, r8                                     
+001fa46c add      r7, sp, #0x10                              
+001fa470 bl       #0x1a881c                                  
+001fa474 add      r1, sp, #0x5c                              
+001fa478 mov      r0, r8                                     
+001fa47c add      r6, sp, #0x48                              
+001fa480 bl       #0x1a881c                                  
+001fa484 add      r1, sp, #0x58                              
+001fa488 mov      r0, r8                                     
+001fa48c bl       #0x1a881c                                  
+001fa490 add      r1, sp, #0x54                              
+001fa494 mov      r0, r8                                     
+001fa498 bl       #0x1a881c                                  
+001fa49c mov      r1, r5                                     
+001fa4a0 mov      r0, r7                                     
+001fa4a4 bl       #0x13bb70                                  _ZNSsC1ERKSs
+001fa4a8 ldr      r2, [sp, #0x64]                            
+001fa4ac ldr      r3, [sp, #0x60]                            
+001fa4b0 mov      r1, r7                                     
+001fa4b4 mov      r0, r4                                     
+001fa4b8 ldr      ip, [sp, #0x58]                            
+001fa4bc ldr      r8, [sp, #0x5c]                            
+001fa4c0 stm      sp, {r8, ip}                               
+001fa4c4 ldr      r8, [sp, #0x54]                            
+001fa4c8 str      r8, [sp, #8]                               
+001fa4cc bl       #0x1ee460                                  
+001fa4d0 mov      r8, r0                                     
+001fa4d4 mov      r0, r7                                     
+001fa4d8 bl       #0x1265dc                                  _ZNSsD1Ev
+001fa4dc mov      r0, r6                                     
+001fa4e0 bl       #0x3e129c                                  
+001fa4e4 mov      r0, r6                                     
+001fa4e8 mov      r1, r8                                     
+001fa4ec bl       #0x3e1598                                  
+001fa4f0 mov      r1, r5                                     
+001fa4f4 mov      r0, r6                                     
+001fa4f8 bl       #0x1dc84c                                  
+001fa4fc ldr      r1, [r4, #0xe4]                            
+001fa500 mov      r0, r6                                     
+001fa504 bl       #0x1dc77c                                  
+001fa508 mov      r1, #6                                     
+001fa50c movw     r2, #0xf6b                                 
+001fa510 ldr      r3, [sp, #0x48]                            
+001fa514 mov      r0, #0x1d                                  
+001fa518 ldr      ip, [sp, #0x4c]                            
+001fa51c str      ip, [sp]                                   
+001fa520 bl       #0x12347c                                  SAL_Send [PLT]
+001fa524 mov      r0, r6                                     
+001fa528 bl       #0x3e1814                                  
+001fa52c mov      r0, r5                                     
+001fa530 bl       #0x1265dc                                  _ZNSsD1Ev
+001fa534 b        #0x1fa750                                  
+001fa538 mov      r0, r4                                     
+001fa53c add      r5, sp, #0x48                              
+001fa540 bl       #0x1ee24c                                  
+001fa544 mov      r6, r0                                     
+001fa548 mov      r0, r5                                     
+001fa54c bl       #0x3e129c                                  
+001fa550 mov      r0, r5                                     
+001fa554 mov      r1, r6                                     
+001fa558 bl       #0x3e1598                                  
+001fa55c add      r1, r4, #0xc4                              
+001fa560 mov      r0, r5                                     
+001fa564 bl       #0x1dc84c                                  
+001fa568 mov      r1, #6                                     
+001fa56c movw     r2, #0xf6d                                 
+001fa570 ldr      r3, [sp, #0x48]                            
+001fa574 mov      r0, #0x1d                                  
+001fa578 ldr      ip, [sp, #0x4c]                            
+001fa57c str      ip, [sp]                                   
+001fa580 bl       #0x12347c                                  SAL_Send [PLT]
+001fa584 mov      r0, r5                                     
+001fa588 b        #0x1fa60c                                  
+001fa58c mov      r2, #4                                     
+001fa590 add      r1, sp, #0x68                              
+001fa594 add      r0, r8, #4                                 
+001fa598 mov      r5, #0                                     
+001fa59c str      r5, [r1, #-0x14]!                          
+001fa5a0 add      r6, sp, #0x48                              
+001fa5a4 bl       #0x3e0f44                                  
+001fa5a8 ldr      r1, [sp, #0x54]                            
+001fa5ac mov      r0, r4                                     
+001fa5b0 bl       #0x1f9b64                                  
+001fa5b4 mov      r5, r0                                     
+001fa5b8 mov      r0, r6                                     
+001fa5bc bl       #0x3e129c                                  
+001fa5c0 subs     r1, r5, #0                                 
+001fa5c4 movne    r1, #1                                     
+001fa5c8 mov      r0, r6                                     
+001fa5cc bl       #0x3e1598                                  
+001fa5d0 ldr      r1, [sp, #0x54]                            
+001fa5d4 mov      r0, r6                                     
+001fa5d8 bl       #0x15a28c                                  
+001fa5dc mov      r0, #0x1d                                  
+001fa5e0 mov      r1, #6                                     
+001fa5e4 movw     r2, #0xf6f                                 
+001fa5e8 ldr      r3, [sp, #0x48]                            
+001fa5ec ldr      ip, [sp, #0x4c]                            
+001fa5f0 str      ip, [sp]                                   
+001fa5f4 bl       #0x12347c                                  SAL_Send [PLT]
+001fa5f8 cmp      r5, #1                                     
+001fa5fc bne      #0x1fa608                                  
+001fa600 mov      r0, r4                                     
+001fa604 bl       #0x1e42ac                                  
+001fa608 add      r0, sp, #0x48                              
+001fa60c bl       #0x3e1814                                  
+001fa610 b        #0x1fa750                                  
+001fa614 mov      r1, #0                                     
+001fa618 mov      r0, r4                                     
+001fa61c bl       #0x1ee054                                  
+001fa620 add      r4, sp, #0x48                              
+001fa624 mov      r5, r0                                     
+001fa628 mov      r0, r4                                     
+001fa62c bl       #0x3e129c                                  
+001fa630 mov      r0, r4                                     
+001fa634 mov      r1, r5                                     
+001fa638 bl       #0x3e1598                                  
+001fa63c mov      r1, #6                                     
+001fa640 movw     r2, #0xf71                                 
+001fa644 ldr      r3, [sp, #0x48]                            
+001fa648 mov      r0, #0x1d                                  
+001fa64c ldr      ip, [sp, #0x4c]                            
+001fa650 str      ip, [sp]                                   
+001fa654 bl       #0x12347c                                  SAL_Send [PLT]
+001fa658 mov      r0, r4                                     
+001fa65c b        #0x1fa60c                                  
+001fa660 add      r5, r8, #4                                 
+001fa664 add      r6, sp, #0x64                              
+001fa668 mov      r0, r5                                     
+001fa66c mov      r1, r6                                     
+001fa670 mov      r2, #1                                     
+001fa674 mov      lr, #0                                     
+001fa678 str      lr, [sp, #0x54]                            
+001fa67c bl       #0x3e0f44                                  
+001fa680 mov      r1, r6                                     
+001fa684 mov      r0, r5                                     
+001fa688 mov      r2, #1                                     
+001fa68c ldrsb    r3, [sp, #0x64]                            
+001fa690 subs     r6, r3, #0                                 
+001fa694 movne    r6, #1                                     
+001fa698 bl       #0x3e0f44                                  
+001fa69c add      r1, sp, #0x54                              
+001fa6a0 mov      r0, r5                                     
+001fa6a4 ldrsb    r2, [sp, #0x64]                            
+001fa6a8 subs     r5, r2, #0                                 
+001fa6ac movne    r5, #1                                     
+001fa6b0 bl       #0x1a881c                                  
+001fa6b4 mov      r0, r4                                     
+001fa6b8 mov      r1, r6                                     
+001fa6bc mov      r2, r5                                     
+001fa6c0 ldr      r3, [sp, #0x54]                            
+001fa6c4 bl       #0x1f56cc                                  
+001fa6c8 b        #0x1fa750                                  
+001fa6cc ldrb     r1, [r4, #0xc2]                            
+001fa6d0 cmp      r1, #0                                     
+001fa6d4 beq      #0x1fa750                                  
+001fa6d8 mov      r0, r4                                     
+001fa6dc bl       #0x1ede00                                  
+001fa6e0 b        #0x1fa750                                  
+001fa6e4 ldrb     r0, [r4, #0xc1]                            
+001fa6e8 cmp      r0, #0                                     
+001fa6ec beq      #0x1fa750                                  
+001fa6f0 mov      r0, r4                                     
+001fa6f4 bl       #0x1e42ac                                  
+001fa6f8 b        #0x1fa750                                  
+001fa6fc bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001fa700 mov      r1, #2                                     
+001fa704 ldr      ip, [r0, #0x1c]                            
+001fa708 mov      r0, #0                                     
+001fa70c blx      ip                                         
+001fa710 cmp      r0, #0                                     
+001fa714 beq      #0x1fa750                                  
+001fa718 bl       #0x1233b0                                  DTS_Client_Get_Frontend [PLT]
+001fa71c ldr      r3, [r8]                                   
+001fa720 mov      ip, #0x108                                 
+001fa724 ldr      r1, [pc, #0x38]                             literal=0x530e77 ::onMessage() Event not recognized: %i
+001fa728 str      ip, [sp]                                   
+001fa72c str      r1, [sp, #4]                               
+001fa730 mov      r1, #2                                     
+001fa734 ldr      r2, [r3, #0xc]                             
+001fa738 ldr      r3, [pc, #0x20]                             literal=0x57b653 
+001fa73c str      r2, [sp, #8]                               
+001fa740 ldr      r2, [pc, #0x14]                             literal=0x525acd c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Navigation_EB/AP_MapDisplay/MDControl/build/../source/MDEncoderThread.cpp
+001fa744 ldr      ip, [r0, #0x2c]                            
+001fa748 mov      r0, #0                                     
+001fa74c blx      ip                                         
+001fa750 add      sp, sp, #0x68                              
+001fa754 pop      {r4, r5, r6, r7, r8, pc}                   
+001fa758 subseq   r0, r3, r7, lsr lr                         
+001fa75c subseq   r5, r2, sp, asr #21                        
+001fa760 subseq   fp, r7, r3, asr r6                         
+001fa764 subseq   r0, r3, r7, ror lr                         
+INCOMING DIRECT CALLS to interval start:
+
+SEED 0x1f535c; prologue-heuristic interval 0x1f535c..0x1f56cc
+001f535c push     {r4, r5, r6, r7, r8, sl, lr}               
+001f5360 mov      r7, r1                                     
+001f5364 sub      sp, sp, #0xf4                              
+001f5368 mov      r1, r3                                     
+001f536c mov      r5, r0                                     
+001f5370 mov      r0, r2                                     
+001f5374 mov      r8, r2                                     
+001f5378 mov      r4, r3                                     
+001f537c bl       #0x1ed8d0                                  
+001f5380 mov      r0, r8                                     
+001f5384 mov      r1, r4                                     
+001f5388 mvn      r6, #0x7f                                  
+001f538c bl       #0x1ed948                                  
+001f5390 mov      r0, r8                                     
+001f5394 mov      r1, r4                                     
+001f5398 mvn      sl, #0x1f                                  
+001f539c bl       #0x1ed9ec                                  
+001f53a0 ldr      r1, [pc, #0x318]                            literal=0x51ca48 
+001f53a4 mov      r2, #3                                     
+001f53a8 add      r0, sp, #0xd8                              
+001f53ac add      r3, r6, #0x40                              
+001f53b0 strb     sl, [sp, #0xdb]                            
+001f53b4 add      ip, r3, #0x4a                              
+001f53b8 strb     r3, [sp, #0xdf]                            
+001f53bc strb     r6, [sp, #0xde]                            
+001f53c0 strb     ip, [sp, #0xe0]                            
+001f53c4 mvn      sl, #0                                     
+001f53c8 bl       #0x1234e8                                  memcpy [PLT]
+001f53cc mov      r6, #0                                     
+001f53d0 cmp      r7, #0x10000                               
+001f53d4 mov      ip, #0                                     
+001f53d8 addls    r3, r7, #0xd                               
+001f53dc movhi    r3, #0                                     
+001f53e0 uxthls   r3, r3                                     
+001f53e4 strbhi   r3, [sp, #0xdd]                            
+001f53e8 strbls   r3, [sp, #0xdd]                            
+001f53ec mov      r0, #0x5a                                  
+001f53f0 asrls    r3, r3, #8                                 
+001f53f4 umull    r0, r1, r8, r0                             
+001f53f8 strb     r3, [sp, #0xdc]                            
+001f53fc and      r0, r0, sl                                 
+001f5400 and      r1, r1, r6                                 
+001f5404 mov      r3, #1                                     
+001f5408 lsr      r6, r1, #0xf                               
+001f540c adds     r2, r3, r0                                 
+001f5410 adc      sl, ip, r1                                 
+001f5414 lsl      r8, r2, #1                                 
+001f5418 lsr      r3, sl, #7                                 
+001f541c lsr      ip, sl, #0xf                               
+001f5420 orr      r8, r8, #1                                 
+001f5424 strb     r8, [sp, #0xe5]                            
+001f5428 lsr      r8, r2, #7                                 
+001f542c orr      r8, r8, sl, lsl #25                        
+001f5430 lsr      r2, r8, #8                                 
+001f5434 strb     r8, [sp, #0xe4]                            
+001f5438 orr      r8, r2, r3, lsl #24                        
+001f543c lsr      sl, r8, #7                                 
+001f5440 orr      ip, sl, ip, lsl #25                        
+001f5444 ubfx     r2, ip, #8, #2                             
+001f5448 strb     ip, [sp, #0xe2]                            
+001f544c lsl      sl, r2, #1                                 
+001f5450 lsl      r2, r8, #1                                 
+001f5454 orr      ip, sl, #0x31                              
+001f5458 orr      r3, r2, #1                                 
+001f545c lsl      sl, r0, #1                                 
+001f5460 lsr      r2, r1, #7                                 
+001f5464 orr      r8, sl, #1                                 
+001f5468 strb     ip, [sp, #0xe1]                            
+001f546c strb     r3, [sp, #0xe3]                            
+001f5470 lsr      ip, r0, #7                                 
+001f5474 strb     r8, [sp, #0xea]                            
+001f5478 orr      ip, ip, r1, lsl #25                        
+001f547c lsr      r3, ip, #8                                 
+001f5480 strb     ip, [sp, #0xe9]                            
+001f5484 orr      r8, r3, r2, lsl #24                        
+001f5488 lsr      r1, r8, #7                                 
+001f548c orr      r0, r1, r6, lsl #25                        
+001f5490 lsl      r1, r8, #1                                 
+001f5494 ubfx     sl, r0, #8, #2                             
+001f5498 strb     r0, [sp, #0xe7]                            
+001f549c lsl      r6, sl, #1                                 
+001f54a0 orr      r0, r1, #1                                 
+001f54a4 orr      r2, r6, #0x11                              
+001f54a8 ldr      r8, [pc, #0x214]                            literal=0x5aeb80 
+001f54ac strb     r2, [sp, #0xe6]                            
+001f54b0 ldr      r3, [r8]                                   
+001f54b4 strb     r0, [sp, #0xe8]                            
+001f54b8 add      r6, r7, #0x13                              
+001f54bc tst      r3, #1                                     
+001f54c0 bne      #0x1f54e8                                  
+001f54c4 mov      r0, r8                                     
+001f54c8 bl       #0x123380                                  __cxa_guard_acquire [PLT]
+001f54cc cmp      r0, #0                                     
+001f54d0 beq      #0x1f54e8                                  
+001f54d4 mov      lr, #0xb8                                  
+001f54d8 ldr      r1, [pc, #0x1e8]                            literal=0x5aece0 
+001f54dc mov      r0, r8                                     
+001f54e0 str      lr, [r1]                                   
+001f54e4 bl       #0x123824                                  __cxa_guard_release [PLT]
+001f54e8 ldr      sl, [pc, #0x1d8]                            literal=0x5aece0 
+001f54ec ldr      r3, [sl]                                   
+001f54f0 cmp      r3, r6                                     
+001f54f4 movhi    r7, #0                                     
+001f54f8 bhi      #0x1f55e8                                  
+001f54fc ldrh     lr, [r4, #4]                               
+001f5500 str      r5, [sp, #0xd0]                            
+001f5504 strb     lr, [sp, #0xee]                            
+001f5508 sub      r6, r3, #0x13                              
+001f550c ubfx     r3, lr, #8, #5                             
+001f5510 str      r6, [sp, #0xd4]                            
+001f5514 orr      r8, r3, #0x40                              
+001f5518 ldrb     ip, [r4, #0x1e]                            
+001f551c mov      lr, #0x13                                  
+001f5520 add      r0, ip, #1                                 
+001f5524 mov      r3, #0x47                                  
+001f5528 and      r1, r0, #0xf                               
+001f552c add      ip, sp, #0xec                              
+001f5530 orr      r2, r1, #0x10                              
+001f5534 mov      r0, #4                                     
+001f5538 strb     r2, [sp, #0xef]                            
+001f553c str      r0, [sp, #0xc4]                            
+001f5540 ldr      r2, [r4, #0x18]                            
+001f5544 add      r1, sp, #0xd8                              
+001f5548 strb     r8, [sp, #0xed]                            
+001f554c str      ip, [sp, #0xc0]                            
+001f5550 str      r1, [sp, #0xc8]                            
+001f5554 ldr      ip, [r4, #0x14]                            
+001f5558 add      r8, sp, #0xc0                              
+001f555c str      lr, [sp, #0xcc]                            
+001f5560 strb     r3, [sp, #0xec]                            
+001f5564 mov      r0, r8                                     
+001f5568 mov      r1, #3                                     
+001f556c blx      ip                                         
+001f5570 rsb      r6, r6, r7                                 
+001f5574 ldrb     r2, [sp, #0xed]                            
+001f5578 ldr      r7, [sp, #0xd4]                            
+001f557c bic      r0, r2, #0x40                              
+001f5580 add      r5, r5, r7                                 
+001f5584 strb     r0, [sp, #0xed]                            
+001f5588 b        #0x1f55b4                                  
+001f558c strb     ip, [sp, #0xef]                            
+001f5590 str      r5, [sp, #0xc8]                            
+001f5594 str      r2, [sp, #0xcc]                            
+001f5598 ldr      ip, [r4, #0x14]                            
+001f559c ldr      r2, [r4, #0x18]                            
+001f55a0 blx      ip                                         
+001f55a4 ldr      r3, [sp, #0xcc]                            
+001f55a8 ldr      r7, [sl]                                   
+001f55ac add      r5, r5, r3                                 
+001f55b0 rsb      r6, r7, r6                                 
+001f55b4 ldrb     r3, [sp, #0xef]                            
+001f55b8 mov      r0, r8                                     
+001f55bc bic      r2, r3, #0xf                               
+001f55c0 add      r7, r3, #1                                 
+001f55c4 mov      r1, #2                                     
+001f55c8 and      lr, r7, #0xf                               
+001f55cc orr      ip, lr, r2                                 
+001f55d0 ldr      r2, [sl]                                   
+001f55d4 cmp      r2, r6                                     
+001f55d8 bls      #0x1f558c                                  
+001f55dc and      r1, r3, #0xf                               
+001f55e0 mov      r7, #1                                     
+001f55e4 strb     r1, [r4, #0x1e]                            
+001f55e8 cmp      r6, #0                                     
+001f55ec beq      #0x1f56b8                                  
+001f55f0 add      r8, sp, #4                                 
+001f55f4 mov      r1, #0xff                                  
+001f55f8 add      r0, r8, #6                                 
+001f55fc mov      r2, #0xb6                                  
+001f5600 ldrh     r3, [r4, #4]                               
+001f5604 cmp      r7, #0                                     
+001f5608 strb     r3, [sp, #6]                               
+001f560c moveq    ip, #0x40                                  
+001f5610 ldrb     lr, [r4, #0x1e]                            
+001f5614 movne    ip, #0                                     
+001f5618 ubfx     r3, r3, #8, #5                             
+001f561c add      lr, lr, #1                                 
+001f5620 and      lr, lr, #0xf                               
+001f5624 orr      lr, lr, #0x30                              
+001f5628 strb     lr, [sp, #7]                               
+001f562c orr      lr, ip, r3                                 
+001f5630 mov      r3, #0x47                                  
+001f5634 strb     lr, [sp, #5]                               
+001f5638 strb     r3, [sp, #4]                               
+001f563c mvn      lr, #0x48                                  
+001f5640 mov      r3, #0                                     
+001f5644 rsb      ip, r6, lr                                 
+001f5648 strb     r3, [sp, #9]                               
+001f564c strb     ip, [sp, #8]                               
+001f5650 bl       #0x122f3c                                  memset [PLT]
+001f5654 ldrb     r0, [sp, #8]                               
+001f5658 str      r8, [sp, #0xc0]                            
+001f565c add      r3, r0, #5                                 
+001f5660 cmp      r7, #0                                     
+001f5664 str      r3, [sp, #0xc4]                            
+001f5668 rsbne    r2, r3, #0xbc                              
+001f566c strne    r5, [sp, #0xc8]                            
+001f5670 strne    r2, [sp, #0xcc]                            
+001f5674 movne    r1, #2                                     
+001f5678 bne      #0x1f569c                                  
+001f567c mov      r1, #0x13                                  
+001f5680 rsb      ip, r3, #0xa9                              
+001f5684 add      r0, sp, #0xd8                              
+001f5688 str      r1, [sp, #0xcc]                            
+001f568c str      r5, [sp, #0xd0]                            
+001f5690 str      ip, [sp, #0xd4]                            
+001f5694 str      r0, [sp, #0xc8]                            
+001f5698 mov      r1, #3                                     
+001f569c ldr      r2, [r4, #0x18]                            
+001f56a0 ldr      ip, [r4, #0x14]                            
+001f56a4 add      r0, sp, #0xc0                              
+001f56a8 blx      ip                                         
+001f56ac ldrb     r2, [sp, #7]                               
+001f56b0 and      r3, r2, #0xf                               
+001f56b4 strb     r3, [r4, #0x1e]                            
+001f56b8 add      sp, sp, #0xf4                              
+001f56bc pop      {r4, r5, r6, r7, r8, sl, pc}               
+001f56c0 subseq   ip, r1, r8, asr #20                        
+001f56c4 subseq   lr, sl, r0, lsl #23                        
+001f56c8 subseq   lr, sl, r0, ror #25                        
+INCOMING DIRECT CALLS to interval start:
+001f593c bl       #0x1f535c                                  
+
+SEED 0x1ed8d0; prologue-heuristic interval 0x1ed8d0..0x1ed948
+001ed8d0 push     {r4, r5, r6, lr}                           
+001ed8d4 mov      r4, r1                                     
+001ed8d8 sub      sp, sp, #0xc8                              
+001ed8dc mov      r1, r0                                     
+001ed8e0 mov      r5, r0                                     
+001ed8e4 ldr      r0, [r4, #0x20]                            
+001ed8e8 bl       #0x12269c                                  SAL_Delta_Time [PLT]
+001ed8ec cmp      r0, #0x14c                                 
+001ed8f0 ble      #0x1ed940                                  
+001ed8f4 ldrb     lr, [r4, #0x1c]                            
+001ed8f8 add      r6, sp, #4                                 
+001ed8fc add      r2, lr, #1                                 
+001ed900 ldrh     r1, [r4]                                   
+001ed904 uxtb     r2, r2                                     
+001ed908 mov      r0, r6                                     
+001ed90c bl       #0x1c6b00                                  
+001ed910 add      r0, sp, #0xc8                              
+001ed914 mov      r1, #0xbc                                  
+001ed918 str      r6, [r0, #-8]!                             
+001ed91c str      r1, [sp, #0xc4]                            
+001ed920 ldr      ip, [r4, #0x14]                            
+001ed924 mov      r1, #1                                     
+001ed928 ldr      r2, [r4, #0x18]                            
+001ed92c blx      ip                                         
+001ed930 str      r5, [r4, #0x20]                            
+001ed934 ldrb     r0, [sp, #7]                               
+001ed938 and      r3, r0, #0xf                               
+001ed93c strb     r3, [r4, #0x1c]                            
+001ed940 add      sp, sp, #0xc8                              
+001ed944 pop      {r4, r5, r6, pc}                           
+INCOMING DIRECT CALLS to interval start:
+001edaf8 bl       #0x1ed8d0                                  
+001f537c bl       #0x1ed8d0                                  
+
+SEED 0x1ed948; prologue-heuristic interval 0x1ed948..0x1ed9ec
+001ed948 push     {r4, r5, r6, lr}                           
+001ed94c mov      r4, r1                                     
+001ed950 sub      sp, sp, #0xe0                              
+001ed954 mov      r1, r0                                     
+001ed958 mov      r5, r0                                     
+001ed95c ldr      r0, [r4, #0x24]                            
+001ed960 bl       #0x12269c                                  SAL_Delta_Time [PLT]
+001ed964 cmp      r0, #0x14c                                 
+001ed968 ble      #0x1ed9e4                                  
+001ed96c ldrb     r3, [r4, #6]                               
+001ed970 ldrh     r1, [r4]                                   
+001ed974 ldrh     r2, [r4, #2]                               
+001ed978 add      r6, sp, #0x1c                              
+001ed97c mov      r0, r6                                     
+001ed980 ldrh     lr, [r4, #4]                               
+001ed984 str      lr, [sp]                                   
+001ed988 ldr      ip, [r4, #8]                               
+001ed98c str      ip, [sp, #4]                               
+001ed990 ldrh     lr, [r4, #0xc]                             
+001ed994 str      lr, [sp, #8]                               
+001ed998 ldr      ip, [r4, #0x10]                            
+001ed99c str      ip, [sp, #0xc]                             
+001ed9a0 ldrb     lr, [r4, #0x1d]                            
+001ed9a4 add      ip, lr, #1                                 
+001ed9a8 uxtb     lr, ip                                     
+001ed9ac str      lr, [sp, #0x10]                            
+001ed9b0 bl       #0x1c6bb0                                  
+001ed9b4 add      r0, sp, #0xe0                              
+001ed9b8 mov      r1, #0xbc                                  
+001ed9bc str      r6, [r0, #-8]!                             
+001ed9c0 str      r1, [sp, #0xdc]                            
+001ed9c4 ldr      ip, [r4, #0x14]                            
+001ed9c8 mov      r1, #1                                     
+001ed9cc ldr      r2, [r4, #0x18]                            
+001ed9d0 blx      ip                                         
+001ed9d4 str      r5, [r4, #0x24]                            
+001ed9d8 ldrb     r0, [sp, #0x1f]                            
+001ed9dc and      r3, r0, #0xf                               
+001ed9e0 strb     r3, [r4, #0x1d]                            
+001ed9e4 add      sp, sp, #0xe0                              
+001ed9e8 pop      {r4, r5, r6, pc}                           
+INCOMING DIRECT CALLS to interval start:
+001edb04 bl       #0x1ed948                                  
+001f538c bl       #0x1ed948                                  
+
+SEED 0x1ed9ec; prologue-heuristic interval 0x1ed9ec..0x1edadc
+001ed9ec push     {r4, r5, r6, r8, sb, sl, fp, lr}           
+001ed9f0 mov      r4, r1                                     
+001ed9f4 sub      sp, sp, #0xc8                              
+001ed9f8 mov      r1, r0                                     
+001ed9fc mov      r5, r0                                     
+001eda00 ldr      r0, [r4, #0x28]                            
+001eda04 bl       #0x12269c                                  SAL_Delta_Time [PLT]
+001eda08 cmp      r0, #0x20                                  
+001eda0c ble      #0x1edad4                                  
+001eda10 add      r6, sp, #4                                 
+001eda14 mov      r1, #0xff                                  
+001eda18 mov      r2, #0xb0                                  
+001eda1c add      r0, r6, #0xc                               
+001eda20 ldrh     sb, [r4, #2]                               
+001eda24 mvn      r3, #0x48                                  
+001eda28 ubfx     sl, sb, #8, #5                             
+001eda2c add      fp, r3, #0x59                              
+001eda30 strb     sb, [sp, #6]                               
+001eda34 strb     sl, [sp, #5]                               
+001eda38 mov      ip, #0x47                                  
+001eda3c mov      lr, #0x20                                  
+001eda40 strb     ip, [sp, #4]                               
+001eda44 strb     lr, [sp, #7]                               
+001eda48 strb     r3, [sp, #8]                               
+001eda4c strb     fp, [sp, #9]                               
+001eda50 mvn      r8, #0                                     
+001eda54 mov      sb, #0                                     
+001eda58 mov      sl, #0x5a                                  
+001eda5c umull    sl, fp, r5, sl                             
+001eda60 and      sl, sl, r8                                 
+001eda64 and      fp, fp, sb                                 
+001eda68 lsrs     sb, fp, #1                                 
+001eda6c rrx      r8, sl                                     
+001eda70 lsl      sl, sl, #7                                 
+001eda74 lsr      r3, sb, #8                                 
+001eda78 strb     r8, [sp, #0xd]                             
+001eda7c orr      sl, sl, #0x7e                              
+001eda80 lsr      ip, r8, #8                                 
+001eda84 strb     sl, [sp, #0xe]                             
+001eda88 orr      ip, ip, sb, lsl #24                        
+001eda8c lsr      lr, ip, #8                                 
+001eda90 strb     ip, [sp, #0xc]                             
+001eda94 orr      r3, lr, r3, lsl #24                        
+001eda98 mov      ip, #0                                     
+001eda9c lsr      lr, r3, #8                                 
+001edaa0 strb     r3, [sp, #0xb]                             
+001edaa4 strb     lr, [sp, #0xa]                             
+001edaa8 strb     ip, [sp, #0xf]                             
+001edaac bl       #0x122f3c                                  memset [PLT]
+001edab0 add      r0, sp, #0xc8                              
+001edab4 mov      r1, #0xbc                                  
+001edab8 str      r6, [r0, #-8]!                             
+001edabc str      r1, [sp, #0xc4]                            
+001edac0 ldr      r3, [r4, #0x14]                            
+001edac4 mov      r1, #1                                     
+001edac8 ldr      r2, [r4, #0x18]                            
+001edacc blx      r3                                         
+001edad0 str      r5, [r4, #0x28]                            
+001edad4 add      sp, sp, #0xc8                              
+001edad8 pop      {r4, r5, r6, r8, sb, sl, fp, pc}           
+INCOMING DIRECT CALLS to interval start:
+001edb14 bl       #0x1ed9ec                                  
+001f539c bl       #0x1ed9ec                                  
+
+SEED 0x1c6b00; prologue-heuristic interval 0x1c6b00..0x1c6bb0
+001c6b00 push     {r0, r1, r4, lr}                           
+001c6b04 mov      ip, #0x40                                  
+001c6b08 mov      r4, r0                                     
+001c6b0c strb     r1, [r0, #0x10]                            
+001c6b10 strb     ip, [r4, #1]                               
+001c6b14 and      lr, r2, #0xf                               
+001c6b18 mvn      ip, #0x3e                                  
+001c6b1c mov      r2, #0                                     
+001c6b20 strb     ip, [r4, #0xa]                             
+001c6b24 strb     r2, [r0, #0xd]                             
+001c6b28 strb     r2, [r0, #2]                               
+001c6b2c strb     r2, [r0, #4]                               
+001c6b30 strb     r2, [r0, #5]                               
+001c6b34 strb     r2, [r0, #8]                               
+001c6b38 strb     r2, [r0, #9]                               
+001c6b3c strb     r2, [r0, #0xb]                             
+001c6b40 strb     r2, [r0, #0xc]                             
+001c6b44 orr      r3, lr, #0x10                              
+001c6b48 mov      r2, #4                                     
+001c6b4c strb     r3, [r0, #3]                               
+001c6b50 mvn      lr, #0x4f                                  
+001c6b54 add      r3, sp, #8                                 
+001c6b58 strb     lr, [r4, #6]                               
+001c6b5c mov      r0, #0x47                                  
+001c6b60 strb     r0, [r4]                                   
+001c6b64 add      r0, lr, #0x5d                              
+001c6b68 add      lr, ip, #0x40                              
+001c6b6c strb     r0, [r4, #7]                               
+001c6b70 strb     lr, [r4, #0xe]                             
+001c6b74 mvn      r0, #0x1f                                  
+001c6b78 orr      ip, r0, r1, lsr #8                         
+001c6b7c ldr      r1, [pc, #0x28]                             literal=0x1b98502d 
+001c6b80 strb     ip, [r4, #0xf]                             
+001c6b84 add      r0, r4, #0x11                              
+001c6b88 str      r1, [r3, #-4]!                             
+001c6b8c mov      r1, r3                                     
+001c6b90 bl       #0x1234e8                                  memcpy [PLT]
+001c6b94 add      r0, r4, #0x15                              
+001c6b98 mov      r1, #0xff                                  
+001c6b9c mov      r2, #0xa7                                  
+001c6ba0 bl       #0x122f3c                                  memset [PLT]
+001c6ba4 mov      r0, r4                                     
+001c6ba8 pop      {r2, r3, r4, pc}                           
+001c6bac blne     #0xfe7dac68                                
+INCOMING DIRECT CALLS to interval start:
+001ed90c bl       #0x1c6b00                                  
+
+SEED 0x1c6bb0; prologue-heuristic interval 0x1c6bb0..0x1c6cc8
+001c6bb0 push     {r4, r5, r6, lr}                           
+001c6bb4 mov      r4, r0                                     
+001c6bb8 strb     r3, [r0, #0x11]                            
+001c6bbc strb     r1, [r0, #2]                               
+001c6bc0 strb     r2, [r0, #0xe]                             
+001c6bc4 mov      r0, #0                                     
+001c6bc8 strb     r0, [r4, #0x10]                            
+001c6bcc strb     r0, [r4, #4]                               
+001c6bd0 strb     r0, [r4, #8]                               
+001c6bd4 strb     r0, [r4, #0xb]                             
+001c6bd8 strb     r0, [r4, #0xc]                             
+001c6bdc ldrh     r5, [sp, #0x18]                            
+001c6be0 strb     r5, [r4, #0x15]                            
+001c6be4 cmp      r5, r0                                     
+001c6be8 ldrh     r0, [sp, #0x10]                            
+001c6bec strb     r0, [r4, #0x13]                            
+001c6bf0 ldrb     lr, [sp, #0x20]                            
+001c6bf4 and      ip, lr, #0xf                               
+001c6bf8 mov      lr, #0x47                                  
+001c6bfc orr      r3, ip, #0x10                              
+001c6c00 strb     lr, [r4]                                   
+001c6c04 ubfx     ip, r1, #8, #5                             
+001c6c08 add      lr, r5, #0x12                              
+001c6c0c mov      r1, #2                                     
+001c6c10 strb     r3, [r4, #3]                               
+001c6c14 strb     r1, [r4, #5]                               
+001c6c18 orr      r3, ip, #0x40                              
+001c6c1c uxth     ip, lr                                     
+001c6c20 strb     r3, [r4, #1]                               
+001c6c24 strb     ip, [r4, #7]                               
+001c6c28 ubfx     r3, ip, #8, #4                             
+001c6c2c mvn      lr, r3                                     
+001c6c30 mov      r3, #1                                     
+001c6c34 and      ip, lr, #0x4f                              
+001c6c38 strb     r3, [r4, #9]                               
+001c6c3c mvn      r1, ip                                     
+001c6c40 asr      lr, r2, #8                                 
+001c6c44 strb     r1, [r4, #6]                               
+001c6c48 mvn      ip, lr, lsl #27                            
+001c6c4c mvn      r1, #0x3e                                  
+001c6c50 mvn      r2, ip, lsr #27                            
+001c6c54 add      r3, r1, #0x2f                              
+001c6c58 asr      lr, r0, #8                                 
+001c6c5c strb     r1, [r4, #0xa]                             
+001c6c60 strb     r2, [r4, #0xd]                             
+001c6c64 strb     r3, [r4, #0xf]                             
+001c6c68 mvn      ip, lr, lsl #27                            
+001c6c6c ubfx     r1, r5, #8, #2                             
+001c6c70 mvn      r2, ip, lsr #27                            
+001c6c74 mvn      r0, r1, lsl #28                            
+001c6c78 strb     r2, [r4, #0x12]                            
+001c6c7c mvn      r3, r0, lsr #28                            
+001c6c80 strb     r3, [r4, #0x14]                            
+001c6c84 beq      #0x1c6c98                                  
+001c6c88 ldr      r1, [sp, #0x14]                            
+001c6c8c add      r0, r4, #0x16                              
+001c6c90 mov      r2, r5                                     
+001c6c94 bl       #0x1234e8                                  memcpy [PLT]
+001c6c98 add      r3, r4, r5                                 
+001c6c9c add      r1, sp, #0x1c                              
+001c6ca0 add      r0, r3, #0x16                              
+001c6ca4 mov      r2, #4                                     
+001c6ca8 bl       #0x1234e8                                  memcpy [PLT]
+001c6cac add      r1, r4, r5                                 
+001c6cb0 rsb      r2, r5, #0xa2                              
+001c6cb4 add      r0, r1, #0x1a                              
+001c6cb8 mov      r1, #0xff                                  
+001c6cbc bl       #0x122f3c                                  memset [PLT]
+001c6cc0 mov      r0, r4                                     
+001c6cc4 pop      {r4, r5, r6, pc}                           
+INCOMING DIRECT CALLS to interval start:
+001ed9b0 bl       #0x1c6bb0                                  

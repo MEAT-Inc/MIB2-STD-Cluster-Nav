@@ -1,0 +1,1079 @@
+public class de.vw.mib.asl.internal.androidauto.target.RequestHandler {
+  de.vw.mib.asl.internal.androidauto.target.AndroidAutoTarget target;
+
+  private de.vw.mib.asl.internal.androidauto.target.AudioHandler audioHandler;
+
+  private de.vw.mib.asl.internal.androidauto.target.NavigationListener navigationHandler;
+
+  private de.vw.mib.asl.internal.androidauto.target.AndroidAutoGlobalProperties properties;
+
+  private de.vw.mib.asl.internal.androidauto.target.SpeechHandler speechHandler;
+
+  private de.vw.mib.asl.internal.androidauto.target.StartupHandler startupHandler;
+
+  private de.vw.mib.asl.internal.androidauto.target.TimerHandler timerHandler;
+
+  private de.vw.mib.asl.internal.androidauto.api.impl.ExboxGuidanceListenerImpl exboxGuidanceListenerImpl;
+
+  public de.vw.mib.asl.internal.androidauto.target.RequestHandler(de.vw.mib.asl.internal.androidauto.target.AndroidAutoTarget, de.vw.mib.asl.internal.androidauto.target.AndroidAutoGlobalProperties, de.vw.mib.asl.internal.androidauto.target.StartupHandler, de.vw.mib.asl.internal.androidauto.target.AudioHandler, de.vw.mib.asl.internal.androidauto.target.SpeechHandler);
+    Code:
+       0: aload_0
+       1: invokespecial #87                 // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #89                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       9: aload_0
+      10: aload_2
+      11: putfield      #90                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      14: aload_0
+      15: aload_3
+      16: putfield      #91                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.startupHandler:Lde/vw/mib/asl/internal/androidauto/target/StartupHandler;
+      19: aload_0
+      20: aload         4
+      22: putfield      #92                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.audioHandler:Lde/vw/mib/asl/internal/androidauto/target/AudioHandler;
+      25: aload_0
+      26: aload         5
+      28: putfield      #93                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.speechHandler:Lde/vw/mib/asl/internal/androidauto/target/SpeechHandler;
+      31: aload_0
+      32: aconst_null
+      33: putfield      #94                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.navigationHandler:Lde/vw/mib/asl/internal/androidauto/target/NavigationListener;
+      36: aload_0
+      37: aconst_null
+      38: putfield      #95                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.timerHandler:Lde/vw/mib/asl/internal/androidauto/target/TimerHandler;
+      41: aload_0
+      42: aconst_null
+      43: putfield      #96                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.exboxGuidanceListenerImpl:Lde/vw/mib/asl/internal/androidauto/api/impl/ExboxGuidanceListenerImpl;
+      46: return
+      47: nop
+
+  public void initTimerHandler(de.vw.mib.asl.internal.androidauto.target.TimerHandler);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #95                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.timerHandler:Lde/vw/mib/asl/internal/androidauto/target/TimerHandler;
+       5: return
+       6: nop
+       7: nop
+
+  public void initNavigationListener(de.vw.mib.asl.internal.androidauto.target.NavigationListener);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #94                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.navigationHandler:Lde/vw/mib/asl/internal/androidauto/target/NavigationListener;
+       5: return
+       6: nop
+       7: nop
+
+  public void initExBoxNavServices(de.vw.mib.asl.internal.androidauto.api.impl.ExboxGuidanceListenerImpl);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #96                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.exboxGuidanceListenerImpl:Lde/vw/mib/asl/internal/androidauto/api/impl/ExboxGuidanceListenerImpl;
+       5: return
+       6: nop
+       7: nop
+
+  public void performVideoFocusRequestNotification(int);
+    Code:
+       0: aload_0
+       1: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       4: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+       7: ifeq          36
+      10: aload_0
+      11: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: new           #97                 // class java/lang/StringBuffer
+      17: dup
+      18: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+      21: ldc           #3                  // String RequestHandler::performVideoFocusRequestNotification - videoFocusMode =
+      23: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+      26: iload_1
+      27: invokevirtual #55                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+      30: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+      33: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      36: iload_1
+      37: lookupswitch  { // 2
+                     1: 64
+                     2: 141
+               default: 218
+          }
+      64: aload_0
+      65: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      68: invokevirtual #58                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.getVideoFocusState:()I
+      71: iconst_2
+      72: if_icmpne     105
+      75: getstatic     #4                  // Field de/vw/mib/asl/framework/internal/framework/ServiceManager.mGenericEventFactory:Lde/vw/mib/genericevents/EventFactory;
+      78: ldc           #5                  // int 6100018
+      80: invokeinterface #98,  2           // InterfaceMethod de/vw/mib/genericevents/EventFactory.newEvent:(I)Lde/vw/mib/genericevents/EventGeneric;
+      85: astore_2
+      86: aload_0
+      87: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      90: aload_2
+      91: invokevirtual #59                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.sendSafe:(Lde/vw/mib/genericevents/EventGeneric;)V
+      94: aload_0
+      95: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      98: iconst_1
+      99: invokevirtual #60                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setVideoFocusState:(I)V
+     102: goto          124
+     105: aload_0
+     106: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     109: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+     112: ifeq          124
+     115: aload_0
+     116: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     119: ldc           #6                  // String => VideoFocus is already projected...
+     121: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+     124: aload_0
+     125: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     128: invokevirtual #61                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.getDSIAndroidAuto2:()Lorg/dsi/ifc/androidauto2/DSIAndroidAuto2;
+     131: iconst_1
+     132: iconst_0
+     133: invokeinterface #99,  3           // InterfaceMethod org/dsi/ifc/androidauto2/DSIAndroidAuto2.videoFocusNotification:(IZ)V
+     138: goto          249
+     141: aload_0
+     142: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+     145: invokevirtual #58                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.getVideoFocusState:()I
+     148: iconst_1
+     149: if_icmpne     182
+     152: getstatic     #4                  // Field de/vw/mib/asl/framework/internal/framework/ServiceManager.mGenericEventFactory:Lde/vw/mib/genericevents/EventFactory;
+     155: ldc           #7                  // int 6100019
+     157: invokeinterface #98,  2           // InterfaceMethod de/vw/mib/genericevents/EventFactory.newEvent:(I)Lde/vw/mib/genericevents/EventGeneric;
+     162: astore_2
+     163: aload_0
+     164: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     167: aload_2
+     168: invokevirtual #59                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.sendSafe:(Lde/vw/mib/genericevents/EventGeneric;)V
+     171: aload_0
+     172: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+     175: iconst_2
+     176: invokevirtual #60                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setVideoFocusState:(I)V
+     179: goto          201
+     182: aload_0
+     183: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     186: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+     189: ifeq          201
+     192: aload_0
+     193: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     196: ldc           #8                  // String => VideoFocus is already native...
+     198: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+     201: aload_0
+     202: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     205: invokevirtual #61                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.getDSIAndroidAuto2:()Lorg/dsi/ifc/androidauto2/DSIAndroidAuto2;
+     208: iconst_2
+     209: iconst_0
+     210: invokeinterface #99,  3           // InterfaceMethod org/dsi/ifc/androidauto2/DSIAndroidAuto2.videoFocusNotification:(IZ)V
+     215: goto          249
+     218: aload_0
+     219: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     222: new           #97                 // class java/lang/StringBuffer
+     225: dup
+     226: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+     229: ldc           #9                  // String VideoFocusMode
+     231: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     234: iload_1
+     235: invokevirtual #55                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+     238: ldc           #10                 // String  is invalid!
+     240: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     243: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+     246: invokevirtual #62                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.warn:(Ljava/lang/String;)V
+     249: return
+     250: nop
+     251: nop
+
+  public void performVideoAvailable(boolean);
+    Code:
+       0: aload_0
+       1: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       4: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+       7: ifeq          36
+      10: aload_0
+      11: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: new           #97                 // class java/lang/StringBuffer
+      17: dup
+      18: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+      21: ldc           #11                 // String RequestHandler::performVideoAvailable - videoAvailable =
+      23: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+      26: iload_1
+      27: invokevirtual #63                 // Method java/lang/StringBuffer.append:(Z)Ljava/lang/StringBuffer;
+      30: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+      33: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      36: iload_1
+      37: ifeq          85
+      40: aload_0
+      41: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      44: iconst_1
+      45: invokevirtual #64                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setVideoStreamAvailable:(Z)V
+      48: aload_0
+      49: getfield      #51                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.timerHandler:Lde/vw/mib/asl/internal/androidauto/target/TimerHandler;
+      52: invokevirtual #65                 // Method de/vw/mib/asl/internal/androidauto/target/TimerHandler.isVideoAvailableTimerStarted:()Z
+      55: ifeq          65
+      58: aload_0
+      59: getfield      #51                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.timerHandler:Lde/vw/mib/asl/internal/androidauto/target/TimerHandler;
+      62: invokevirtual #66                 // Method de/vw/mib/asl/internal/androidauto/target/TimerHandler.stopVideoAvailableTimer:()V
+      65: getstatic     #12                 // Field de/vw/mib/asl/framework/internal/framework/ServiceManager.aslPropertyManager:Lde/vw/mib/asl/ASLPropertyManager;
+      68: ldc           #13                 // int 2910002
+      70: aload_0
+      71: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      74: invokevirtual #67                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.isVideoStreamAvailable:()Z
+      77: invokeinterface #100,  3          // InterfaceMethod de/vw/mib/asl/ASLPropertyManager.valueChangedBoolean:(IZ)V
+      82: goto          93
+      85: aload_0
+      86: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      89: iconst_0
+      90: invokevirtual #64                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setVideoStreamAvailable:(Z)V
+      93: return
+      94: nop
+      95: nop
+
+  public void videoAvailableTimerExpired();
+    Code:
+       0: aload_0
+       1: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       4: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+       7: ifeq          19
+      10: aload_0
+      11: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: ldc           #14                 // String RequestHandler::videoAvailableTimerExpired
+      16: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      19: getstatic     #12                 // Field de/vw/mib/asl/framework/internal/framework/ServiceManager.aslPropertyManager:Lde/vw/mib/asl/ASLPropertyManager;
+      22: ldc           #13                 // int 2910002
+      24: iconst_0
+      25: invokeinterface #100,  3          // InterfaceMethod de/vw/mib/asl/ASLPropertyManager.valueChangedBoolean:(IZ)V
+      30: return
+      31: nop
+
+  public void performAudioFocusRequestNotification(int);
+    Code:
+       0: aload_0
+       1: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       4: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+       7: ifeq          132
+      10: aload_0
+      11: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: new           #97                 // class java/lang/StringBuffer
+      17: dup
+      18: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+      21: ldc           #15                 // String RequestHandler::performAudioFocusRequestNotification - audioFocusRequestType =
+      23: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+      26: iload_1
+      27: invokevirtual #55                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+      30: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+      33: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      36: aload_0
+      37: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      40: new           #97                 // class java/lang/StringBuffer
+      43: dup
+      44: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+      47: ldc           #16                 // String =====> properties.isUserMuteStarted() =
+      49: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+      52: aload_0
+      53: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      56: invokevirtual #68                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.isUserMuteStarted:()Z
+      59: invokevirtual #63                 // Method java/lang/StringBuffer.append:(Z)Ljava/lang/StringBuffer;
+      62: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+      65: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      68: aload_0
+      69: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      72: new           #97                 // class java/lang/StringBuffer
+      75: dup
+      76: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+      79: ldc           #17                 // String =====> properties.isUserMuteActive() =
+      81: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+      84: aload_0
+      85: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      88: invokevirtual #69                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.isUserMuteActive:()Z
+      91: invokevirtual #63                 // Method java/lang/StringBuffer.append:(Z)Ljava/lang/StringBuffer;
+      94: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+      97: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+     100: aload_0
+     101: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     104: new           #97                 // class java/lang/StringBuffer
+     107: dup
+     108: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+     111: ldc           #18                 // String =====> properties.isAudible() =
+     113: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     116: aload_0
+     117: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+     120: invokevirtual #70                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.isAudible:()Z
+     123: invokevirtual #63                 // Method java/lang/StringBuffer.append:(Z)Ljava/lang/StringBuffer;
+     126: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+     129: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+     132: iload_1
+     133: tableswitch   { // 1 to 4
+                     1: 164
+                     2: 182
+                     3: 200
+                     4: 218
+               default: 236
+          }
+     164: aload_0
+     165: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+     168: iconst_1
+     169: invokevirtual #71                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setCurrentAudioFocusRequest:(I)V
+     172: aload_0
+     173: getfield      #48                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.audioHandler:Lde/vw/mib/asl/internal/androidauto/target/AudioHandler;
+     176: invokevirtual #72                 // Method de/vw/mib/asl/internal/androidauto/target/AudioHandler.performAudioFocusRequestGain:()V
+     179: goto          267
+     182: aload_0
+     183: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+     186: iconst_2
+     187: invokevirtual #71                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setCurrentAudioFocusRequest:(I)V
+     190: aload_0
+     191: getfield      #48                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.audioHandler:Lde/vw/mib/asl/internal/androidauto/target/AudioHandler;
+     194: invokevirtual #73                 // Method de/vw/mib/asl/internal/androidauto/target/AudioHandler.performAudioFocusRequestGainTransient:()V
+     197: goto          267
+     200: aload_0
+     201: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+     204: iconst_3
+     205: invokevirtual #71                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setCurrentAudioFocusRequest:(I)V
+     208: aload_0
+     209: getfield      #48                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.audioHandler:Lde/vw/mib/asl/internal/androidauto/target/AudioHandler;
+     212: invokevirtual #74                 // Method de/vw/mib/asl/internal/androidauto/target/AudioHandler.performAudioFocusRequestGainTransientMayDuck:()V
+     215: goto          267
+     218: aload_0
+     219: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+     222: iconst_4
+     223: invokevirtual #71                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setCurrentAudioFocusRequest:(I)V
+     226: aload_0
+     227: getfield      #48                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.audioHandler:Lde/vw/mib/asl/internal/androidauto/target/AudioHandler;
+     230: invokevirtual #75                 // Method de/vw/mib/asl/internal/androidauto/target/AudioHandler.performAudioFocusRequestRelease:()V
+     233: goto          267
+     236: aload_0
+     237: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     240: new           #97                 // class java/lang/StringBuffer
+     243: dup
+     244: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+     247: ldc           #19                 // String AudioFocusRequestType
+     249: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     252: iload_1
+     253: invokevirtual #55                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+     256: ldc           #10                 // String  is invalid!
+     258: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     261: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+     264: invokevirtual #62                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.warn:(Ljava/lang/String;)V
+     267: return
+
+  public void performVoiceSessionNotification(int);
+    Code:
+       0: aload_0
+       1: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       4: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+       7: ifeq          36
+      10: aload_0
+      11: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: new           #97                 // class java/lang/StringBuffer
+      17: dup
+      18: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+      21: ldc           #20                 // String RequestHandler::performVoiceSessionNotification - voiceSessionStatus =
+      23: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+      26: iload_1
+      27: invokevirtual #55                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+      30: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+      33: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      36: iload_1
+      37: lookupswitch  { // 2
+                     1: 64
+                     2: 93
+               default: 122
+          }
+      64: aload_0
+      65: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      68: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+      71: ifeq          83
+      74: aload_0
+      75: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      78: ldc           #21                 // String ===> forceStartGALSpeech()
+      80: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      83: aload_0
+      84: getfield      #49                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.speechHandler:Lde/vw/mib/asl/internal/androidauto/target/SpeechHandler;
+      87: invokevirtual #76                 // Method de/vw/mib/asl/internal/androidauto/target/SpeechHandler.forceStartGALSpeech:()V
+      90: goto          153
+      93: aload_0
+      94: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      97: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+     100: ifeq          112
+     103: aload_0
+     104: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     107: ldc           #22                 // String ===> forceStopGALSpeech()
+     109: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+     112: aload_0
+     113: getfield      #49                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.speechHandler:Lde/vw/mib/asl/internal/androidauto/target/SpeechHandler;
+     116: invokevirtual #77                 // Method de/vw/mib/asl/internal/androidauto/target/SpeechHandler.forceStopGALSpeech:()V
+     119: goto          153
+     122: aload_0
+     123: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     126: new           #97                 // class java/lang/StringBuffer
+     129: dup
+     130: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+     133: ldc           #23                 // String VoiceSessionStatus
+     135: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     138: iload_1
+     139: invokevirtual #55                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+     142: ldc           #10                 // String  is invalid!
+     144: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     147: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+     150: invokevirtual #62                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.warn:(Ljava/lang/String;)V
+     153: return
+     154: nop
+     155: nop
+
+  public void voiceSessionStartDelayTimerExpired();
+    Code:
+       0: aload_0
+       1: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       4: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+       7: ifeq          19
+      10: aload_0
+      11: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: ldc           #24                 // String RequestHandler::voiceSessionStartDelayTimerExpired
+      16: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      19: aload_0
+      20: getfield      #49                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.speechHandler:Lde/vw/mib/asl/internal/androidauto/target/SpeechHandler;
+      23: invokevirtual #76                 // Method de/vw/mib/asl/internal/androidauto/target/SpeechHandler.forceStartGALSpeech:()V
+      26: return
+      27: nop
+
+  public void performMicrophoneRequestNotification(int);
+    Code:
+       0: aload_0
+       1: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       4: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+       7: ifeq          36
+      10: aload_0
+      11: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: new           #97                 // class java/lang/StringBuffer
+      17: dup
+      18: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+      21: ldc           #25                 // String RequestHandler::performMicrophoneRequestNotification - micModeStatus =
+      23: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+      26: iload_1
+      27: invokevirtual #55                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+      30: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+      33: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      36: iload_1
+      37: lookupswitch  { // 2
+                     1: 64
+                     2: 74
+               default: 84
+          }
+      64: aload_0
+      65: getfield      #48                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.audioHandler:Lde/vw/mib/asl/internal/androidauto/target/AudioHandler;
+      68: invokevirtual #78                 // Method de/vw/mib/asl/internal/androidauto/target/AudioHandler.performMicrophoneRequestMicrophoneOpen:()V
+      71: goto          115
+      74: aload_0
+      75: getfield      #48                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.audioHandler:Lde/vw/mib/asl/internal/androidauto/target/AudioHandler;
+      78: invokevirtual #79                 // Method de/vw/mib/asl/internal/androidauto/target/AudioHandler.performMicrophoneRequestMicrophoneClose:()V
+      81: goto          115
+      84: aload_0
+      85: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      88: new           #97                 // class java/lang/StringBuffer
+      91: dup
+      92: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+      95: ldc           #26                 // String MicModeStatus
+      97: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     100: iload_1
+     101: invokevirtual #55                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+     104: ldc           #10                 // String  is invalid!
+     106: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     109: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+     112: invokevirtual #62                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.warn:(Ljava/lang/String;)V
+     115: return
+
+  public void performNavFocusRequestNotification(int);
+    Code:
+       0: aload_0
+       1: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       4: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+       7: ifeq          36
+      10: aload_0
+      11: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: new           #97                 // class java/lang/StringBuffer
+      17: dup
+      18: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+      21: ldc           #27                 // String RequestHandler::performNavFocusRequestNotification - navFocusType =
+      23: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+      26: iload_1
+      27: invokevirtual #55                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+      30: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+      33: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      36: iload_1
+      37: lookupswitch  { // 2
+                     1: 64
+                     2: 134
+               default: 240
+          }
+      64: getstatic     #12                 // Field de/vw/mib/asl/framework/internal/framework/ServiceManager.aslPropertyManager:Lde/vw/mib/asl/ASLPropertyManager;
+      67: ldc           #28                 // int 2910005
+      69: iconst_0
+      70: invokeinterface #100,  3          // InterfaceMethod de/vw/mib/asl/ASLPropertyManager.valueChangedBoolean:(IZ)V
+      75: aload_0
+      76: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      79: iconst_0
+      80: invokevirtual #80                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setAndroidAutoNavigationActive:(Z)V
+      83: aload_0
+      84: getfield      #47                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.startupHandler:Lde/vw/mib/asl/internal/androidauto/target/StartupHandler;
+      87: invokevirtual #81                 // Method de/vw/mib/asl/internal/androidauto/target/StartupHandler.isDeviceConnected:()Z
+      90: ifeq          117
+      93: aload_0
+      94: getfield      #47                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.startupHandler:Lde/vw/mib/asl/internal/androidauto/target/StartupHandler;
+      97: invokevirtual #82                 // Method de/vw/mib/asl/internal/androidauto/target/StartupHandler.isDSI2Registered:()Z
+     100: ifeq          117
+     103: aload_0
+     104: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     107: invokevirtual #61                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.getDSIAndroidAuto2:()Lorg/dsi/ifc/androidauto2/DSIAndroidAuto2;
+     110: iconst_1
+     111: iconst_0
+     112: invokeinterface #101,  3          // InterfaceMethod org/dsi/ifc/androidauto2/DSIAndroidAuto2.navFocusNotification:(IZ)V
+     117: aload_0
+     118: getfield      #52                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.exboxGuidanceListenerImpl:Lde/vw/mib/asl/internal/androidauto/api/impl/ExboxGuidanceListenerImpl;
+     121: ifnull        271
+     124: aload_0
+     125: getfield      #52                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.exboxGuidanceListenerImpl:Lde/vw/mib/asl/internal/androidauto/api/impl/ExboxGuidanceListenerImpl;
+     128: invokevirtual #83                 // Method de/vw/mib/asl/internal/androidauto/api/impl/ExboxGuidanceListenerImpl.setSmartphoneGuidanceInactive:()V
+     131: goto          271
+     134: aload_0
+     135: getfield      #50                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.navigationHandler:Lde/vw/mib/asl/internal/androidauto/target/NavigationListener;
+     138: invokevirtual #84                 // Method de/vw/mib/asl/internal/androidauto/target/NavigationListener.isGuidanceActive:()Z
+     141: ifeq          170
+     144: aload_0
+     145: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     148: invokevirtual #53                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+     151: ifeq          163
+     154: aload_0
+     155: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     158: ldc           #29                 // String RequestHandler::performNavFocusRequestNotification ==> sending stopGuidance() to native navigation...
+     160: invokevirtual #57                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+     163: aload_0
+     164: getfield      #50                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.navigationHandler:Lde/vw/mib/asl/internal/androidauto/target/NavigationListener;
+     167: invokevirtual #85                 // Method de/vw/mib/asl/internal/androidauto/target/NavigationListener.stopGuidance:()V
+     170: getstatic     #12                 // Field de/vw/mib/asl/framework/internal/framework/ServiceManager.aslPropertyManager:Lde/vw/mib/asl/ASLPropertyManager;
+     173: ldc           #28                 // int 2910005
+     175: iconst_1
+     176: invokeinterface #100,  3          // InterfaceMethod de/vw/mib/asl/ASLPropertyManager.valueChangedBoolean:(IZ)V
+     181: aload_0
+     182: getfield      #46                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+     185: iconst_1
+     186: invokevirtual #80                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setAndroidAutoNavigationActive:(Z)V
+     189: aload_0
+     190: getfield      #47                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.startupHandler:Lde/vw/mib/asl/internal/androidauto/target/StartupHandler;
+     193: invokevirtual #81                 // Method de/vw/mib/asl/internal/androidauto/target/StartupHandler.isDeviceConnected:()Z
+     196: ifeq          223
+     199: aload_0
+     200: getfield      #47                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.startupHandler:Lde/vw/mib/asl/internal/androidauto/target/StartupHandler;
+     203: invokevirtual #82                 // Method de/vw/mib/asl/internal/androidauto/target/StartupHandler.isDSI2Registered:()Z
+     206: ifeq          223
+     209: aload_0
+     210: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     213: invokevirtual #61                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.getDSIAndroidAuto2:()Lorg/dsi/ifc/androidauto2/DSIAndroidAuto2;
+     216: iconst_2
+     217: iconst_0
+     218: invokeinterface #101,  3          // InterfaceMethod org/dsi/ifc/androidauto2/DSIAndroidAuto2.navFocusNotification:(IZ)V
+     223: aload_0
+     224: getfield      #52                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.exboxGuidanceListenerImpl:Lde/vw/mib/asl/internal/androidauto/api/impl/ExboxGuidanceListenerImpl;
+     227: ifnull        271
+     230: aload_0
+     231: getfield      #52                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.exboxGuidanceListenerImpl:Lde/vw/mib/asl/internal/androidauto/api/impl/ExboxGuidanceListenerImpl;
+     234: invokevirtual #86                 // Method de/vw/mib/asl/internal/androidauto/api/impl/ExboxGuidanceListenerImpl.setSmartphoneGuidanceActive:()V
+     237: goto          271
+     240: aload_0
+     241: getfield      #45                 // Field de/vw/mib/asl/internal/androidauto/target/RequestHandler.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+     244: new           #97                 // class java/lang/StringBuffer
+     247: dup
+     248: invokespecial #88                 // Method java/lang/StringBuffer."<init>":()V
+     251: ldc           #30                 // String NavFocusType
+     253: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     256: iload_1
+     257: invokevirtual #55                 // Method java/lang/StringBuffer.append:(I)Ljava/lang/StringBuffer;
+     260: ldc           #10                 // String  is invalid!
+     262: invokevirtual #54                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+     265: invokevirtual #56                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+     268: invokevirtual #62                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.warn:(Ljava/lang/String;)V
+     271: return
+}
+public class de.vw.mib.asl.internal.androidauto.target.NavigationListener extends de.vw.mib.asl.api.navigation.AbstractASLNavigationServicesListener {
+  private de.vw.mib.asl.internal.androidauto.target.AndroidAutoTarget target;
+
+  private de.vw.mib.asl.internal.androidauto.target.StartupHandler startupHandler;
+
+  private de.vw.mib.asl.internal.androidauto.target.AndroidAutoGlobalProperties properties;
+
+  private de.vw.mib.asl.api.navigation.ASLNavigationServices navServices;
+
+  private boolean stopGuidancePending;
+
+  public de.vw.mib.asl.internal.androidauto.target.NavigationListener(de.vw.mib.asl.internal.androidauto.target.AndroidAutoTarget, de.vw.mib.asl.internal.androidauto.target.AndroidAutoGlobalProperties, de.vw.mib.asl.internal.androidauto.target.StartupHandler);
+    Code:
+       0: aload_0
+       1: invokespecial #32                 // Method de/vw/mib/asl/api/navigation/AbstractASLNavigationServicesListener."<init>":()V
+       4: aload_0
+       5: iconst_0
+       6: putfield      #34                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.stopGuidancePending:Z
+       9: aload_0
+      10: aload_1
+      11: putfield      #35                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: aload_0
+      15: aload_2
+      16: putfield      #36                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      19: aload_0
+      20: aload_3
+      21: putfield      #37                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.startupHandler:Lde/vw/mib/asl/internal/androidauto/target/StartupHandler;
+      24: return
+      25: nop
+      26: nop
+      27: nop
+
+  public void initNavServices(de.vw.mib.asl.api.navigation.ASLNavigationServices);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #38                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.navServices:Lde/vw/mib/asl/api/navigation/ASLNavigationServices;
+       5: return
+       6: nop
+       7: nop
+
+  public void updateGuidanceActive(boolean);
+    Code:
+       0: aload_0
+       1: getfield      #18                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       4: invokevirtual #22                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+       7: ifeq          36
+      10: aload_0
+      11: getfield      #18                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: new           #39                 // class java/lang/StringBuffer
+      17: dup
+      18: invokespecial #33                 // Method java/lang/StringBuffer."<init>":()V
+      21: ldc           #3                  // String NavigationHandler::updateGuidanceActive - flag =
+      23: invokevirtual #23                 // Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+      26: iload_1
+      27: invokevirtual #24                 // Method java/lang/StringBuffer.append:(Z)Ljava/lang/StringBuffer;
+      30: invokevirtual #25                 // Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+      33: invokevirtual #26                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      36: iload_1
+      37: ifeq          93
+      40: getstatic     #4                  // Field de/vw/mib/asl/framework/internal/framework/ServiceManager.aslPropertyManager:Lde/vw/mib/asl/ASLPropertyManager;
+      43: ldc           #5                  // int 2910005
+      45: iconst_0
+      46: invokeinterface #40,  3           // InterfaceMethod de/vw/mib/asl/ASLPropertyManager.valueChangedBoolean:(IZ)V
+      51: aload_0
+      52: getfield      #19                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.properties:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties;
+      55: iconst_0
+      56: invokevirtual #27                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.setAndroidAutoNavigationActive:(Z)V
+      59: aload_0
+      60: getfield      #20                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.startupHandler:Lde/vw/mib/asl/internal/androidauto/target/StartupHandler;
+      63: invokevirtual #28                 // Method de/vw/mib/asl/internal/androidauto/target/StartupHandler.isDSI2Registered:()Z
+      66: ifeq          93
+      69: aload_0
+      70: getfield      #20                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.startupHandler:Lde/vw/mib/asl/internal/androidauto/target/StartupHandler;
+      73: invokevirtual #29                 // Method de/vw/mib/asl/internal/androidauto/target/StartupHandler.isDeviceConnected:()Z
+      76: ifeq          93
+      79: aload_0
+      80: getfield      #18                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      83: invokevirtual #30                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.getDSIAndroidAuto2:()Lorg/dsi/ifc/androidauto2/DSIAndroidAuto2;
+      86: iconst_1
+      87: iconst_1
+      88: invokeinterface #41,  3           // InterfaceMethod org/dsi/ifc/androidauto2/DSIAndroidAuto2.navFocusNotification:(IZ)V
+      93: return
+      94: nop
+      95: nop
+
+  public void updateServiceAvailable(boolean);
+    Code:
+       0: iload_1
+       1: ifeq          20
+       4: aload_0
+       5: getfield      #17                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.stopGuidancePending:Z
+       8: ifeq          20
+      11: aload_0
+      12: iconst_0
+      13: putfield      #34                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.stopGuidancePending:Z
+      16: aload_0
+      17: invokevirtual #31                 // Method de/vw/mib/asl/internal/androidauto/target/NavigationListener.stopGuidance:()V
+      20: return
+      21: nop
+      22: nop
+      23: nop
+
+  public void stopGuidance();
+    Code:
+       0: aload_0
+       1: getfield      #18                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+       4: invokevirtual #22                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+       7: ifeq          19
+      10: aload_0
+      11: getfield      #18                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      14: ldc           #6                  // String NavigationHandler::stopGuidance
+      16: invokevirtual #26                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      19: aload_0
+      20: getfield      #21                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.navServices:Lde/vw/mib/asl/api/navigation/ASLNavigationServices;
+      23: invokeinterface #42,  1           // InterfaceMethod de/vw/mib/asl/api/navigation/ASLNavigationServices.isServiceAvailable:()Z
+      28: ifeq          46
+      31: aload_0
+      32: getfield      #21                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.navServices:Lde/vw/mib/asl/api/navigation/ASLNavigationServices;
+      35: bipush        6
+      37: invokeinterface #43,  2           // InterfaceMethod de/vw/mib/asl/api/navigation/ASLNavigationServices.stopGuidance:(I)I
+      42: pop
+      43: goto          70
+      46: aload_0
+      47: iconst_1
+      48: putfield      #34                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.stopGuidancePending:Z
+      51: aload_0
+      52: getfield      #18                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      55: invokevirtual #22                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.isTraceEnabled:()Z
+      58: ifeq          70
+      61: aload_0
+      62: getfield      #18                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.target:Lde/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget;
+      65: ldc           #7                  // String NavigationListener::stopGuidance() = isServiceAvailable false
+      67: invokevirtual #26                 // Method de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.trace:(Ljava/lang/String;)V
+      70: return
+      71: nop
+
+  public boolean isGuidanceActive();
+    Code:
+       0: aload_0
+       1: getfield      #21                 // Field de/vw/mib/asl/internal/androidauto/target/NavigationListener.navServices:Lde/vw/mib/asl/api/navigation/ASLNavigationServices;
+       4: invokeinterface #44,  1           // InterfaceMethod de/vw/mib/asl/api/navigation/ASLNavigationServices.isGuidanceActive:()Z
+       9: ireturn
+      10: nop
+      11: nop
+}
+public final class de.vw.mib.bap.mqbab2.navsd.functions.InfoStates extends de.vw.mib.bap.mqbab2.common.api.stages.Function implements de.vw.mib.bap.functions.Property,de.vw.mib.bap.mqbab2.navsd.api.ASLNavSDConstants,de.vw.mib.bap.mqbab2.common.api.navigation.NavigationServiceListener,de.vw.mib.bap.mqbab2.common.api.carplay.CarPlayServiceListener,de.vw.mib.bap.mqbab2.common.api.carlife.CarLifeServiceListener,de.vw.mib.bap.mqbab2.common.api.androidauto.AndroidAutoServiceListener {
+  protected static final int[] NAVIGATION_LISTENER_IDS;
+
+  protected static final int[] CAR_PLAY_LISTENER_IDS;
+
+  protected static final int[] CAR_LIFE_LISTENER_IDS;
+
+  protected static final int[] ANDROID_AUTO_LISTENER_IDS;
+
+  static java.lang.Class class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$InfoStates_Status;
+
+  public de.vw.mib.bap.mqbab2.navsd.functions.InfoStates();
+    Code:
+       0: aload_0
+       1: invokespecial #36                 // Method de/vw/mib/bap/mqbab2/common/api/stages/Function."<init>":()V
+       4: return
+       5: nop
+       6: nop
+       7: nop
+
+  public de.vw.mib.bap.datatypes.BAPEntity init(de.vw.mib.bap.mqbab2.common.api.stages.BAPStageInitializer);
+    Code:
+       0: aload_0
+       1: invokevirtual #27                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getNavigationService:()Lde/vw/mib/bap/mqbab2/common/api/navigation/NavigationService;
+       4: aload_0
+       5: getstatic     #5                  // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.NAVIGATION_LISTENER_IDS:[I
+       8: invokeinterface #44,  3           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/navigation/NavigationService.addNavigationServiceListener:(Lde/vw/mib/bap/mqbab2/common/api/navigation/NavigationServiceListener;[I)V
+      13: aload_0
+      14: invokevirtual #28                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getCarPlayService:()Lde/vw/mib/bap/mqbab2/common/api/carplay/CarPlayService;
+      17: aload_0
+      18: getstatic     #6                  // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.CAR_PLAY_LISTENER_IDS:[I
+      21: invokeinterface #45,  3           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/carplay/CarPlayService.addCarPlayServiceListener:(Lde/vw/mib/bap/mqbab2/common/api/carplay/CarPlayServiceListener;[I)V
+      26: aload_0
+      27: invokevirtual #29                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getCarLifeService:()Lde/vw/mib/bap/mqbab2/common/api/carlife/CarLifeService;
+      30: aload_0
+      31: getstatic     #7                  // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.CAR_LIFE_LISTENER_IDS:[I
+      34: invokeinterface #46,  3           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/carlife/CarLifeService.addCarLifeServiceListener:(Lde/vw/mib/bap/mqbab2/common/api/carlife/CarLifeServiceListener;[I)V
+      39: aload_0
+      40: invokevirtual #30                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getAndroidAutoService:()Lde/vw/mib/bap/mqbab2/common/api/androidauto/AndroidAutoService;
+      43: aload_0
+      44: getstatic     #8                  // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.ANDROID_AUTO_LISTENER_IDS:[I
+      47: invokeinterface #47,  3           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/androidauto/AndroidAutoService.addAndroidAutoServiceListener:(Lde/vw/mib/bap/mqbab2/common/api/androidauto/AndroidAutoServiceListener;[I)V
+      52: aconst_null
+      53: areturn
+      54: nop
+      55: nop
+
+  protected de.vw.mib.bap.mqbab2.generated.navsd.serializer.InfoStates_Status dequeueBAPEntity();
+    Code:
+       0: aload_0
+       1: getfield      #31                 // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.context:Lde/vw/mib/bap/mqbab2/common/api/stages/BAPStageContext;
+       4: aload_0
+       5: getstatic     #9                  // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$InfoStates_Status:Ljava/lang/Class;
+       8: ifnonnull     23
+      11: ldc           #10                 // String de.vw.mib.bap.mqbab2.generated.navsd.serializer.InfoStates_Status
+      13: invokestatic  #11                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.class$:(Ljava/lang/String;)Ljava/lang/Class;
+      16: dup
+      17: putstatic     #41                 // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$InfoStates_Status:Ljava/lang/Class;
+      20: goto          26
+      23: getstatic     #9                  // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$InfoStates_Status:Ljava/lang/Class;
+      26: invokeinterface #48,  3           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/stages/BAPStageContext.dequeueBAPEntity:(Lde/vw/mib/bap/mqbab2/common/api/stages/BAPStage;Ljava/lang/Class;)Lde/vw/mib/bap/datatypes/BAPEntity;
+      31: checkcast     #12                 // class de/vw/mib/bap/mqbab2/generated/navsd/serializer/InfoStates_Status
+      34: areturn
+      35: nop
+
+  public void setFunctionData(de.vw.mib.bap.mqbab2.common.api.stages.BAPStage, java.lang.Object);
+    Code:
+       0: return
+       1: nop
+       2: nop
+       3: nop
+
+  public int getFunctionId();
+    Code:
+       0: bipush        38
+       2: ireturn
+       3: nop
+
+  public void process(int);
+    Code:
+       0: aload_0
+       1: invokespecial #42                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getCurrentBAPInfoState:()I
+       4: istore_2
+       5: aload_0
+       6: invokevirtual #32                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.dequeueBAPEntity:()Lde/vw/mib/bap/mqbab2/generated/navsd/serializer/InfoStates_Status;
+       9: astore_3
+      10: aload_3
+      11: iload_2
+      12: putfield      #49                 // Field de/vw/mib/bap/mqbab2/generated/navsd/serializer/InfoStates_Status.states:I
+      15: aload_0
+      16: invokevirtual #33                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getDelegate:()Lde/vw/mib/bap/functions/BAPFunctionControllerDelegate;
+      19: aload_0
+      20: invokeinterface #50,  2           // InterfaceMethod de/vw/mib/bap/functions/BAPFunctionControllerDelegate.getPropertyListener:(Lde/vw/mib/bap/functions/BAPFunctionController;)Lde/vw/mib/bap/functions/PropertyListener;
+      25: aload_3
+      26: aload_0
+      27: invokeinterface #51,  3           // InterfaceMethod de/vw/mib/bap/functions/PropertyListener.statusProperty:(Lde/vw/mib/bap/datatypes/BAPEntity;Lde/vw/mib/bap/functions/Property;)Z
+      32: pop
+      33: return
+      34: nop
+      35: nop
+
+  private int getCurrentBAPInfoState();
+    Code:
+       0: aload_0
+       1: invokevirtual #28                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getCarPlayService:()Lde/vw/mib/bap/mqbab2/common/api/carplay/CarPlayService;
+       4: invokeinterface #52,  1           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/carplay/CarPlayService.isCarPlayRouteGuidanceActive:()Z
+       9: ifne          36
+      12: aload_0
+      13: invokevirtual #30                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getAndroidAutoService:()Lde/vw/mib/bap/mqbab2/common/api/androidauto/AndroidAutoService;
+      16: invokeinterface #53,  1           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/androidauto/AndroidAutoService.isAndroidAutoRouteGuidanceActive:()Z
+      21: ifne          36
+      24: aload_0
+      25: invokevirtual #29                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getCarLifeService:()Lde/vw/mib/bap/mqbab2/common/api/carlife/CarLifeService;
+      28: invokeinterface #54,  1           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/carlife/CarLifeService.isCarLifeRouteGuidanceActive:()Z
+      33: ifeq          42
+      36: bipush        6
+      38: istore_1
+      39: goto          120
+      42: aload_0
+      43: invokevirtual #27                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getNavigationService:()Lde/vw/mib/bap/mqbab2/common/api/navigation/NavigationService;
+      46: astore_2
+      47: aload_2
+      48: invokeinterface #55,  1           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/navigation/NavigationService.getNavigationStatus:()I
+      53: tableswitch   { // 0 to 2
+                     0: 80
+                     1: 108
+                     2: 113
+               default: 118
+          }
+      80: aload_2
+      81: invokeinterface #56,  1           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/navigation/NavigationService.isGPSSignalAvailable:()Z
+      86: ifne          103
+      89: aload_2
+      90: invokeinterface #57,  1           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/navigation/NavigationService.isNavigationDemoModeActive:()Z
+      95: ifne          103
+      98: iconst_3
+      99: istore_1
+     100: goto          120
+     103: iconst_0
+     104: istore_1
+     105: goto          120
+     108: iconst_1
+     109: istore_1
+     110: goto          120
+     113: iconst_2
+     114: istore_1
+     115: goto          120
+     118: iconst_0
+     119: istore_1
+     120: iload_1
+     121: ireturn
+     122: nop
+     123: nop
+
+  public void getProperty(de.vw.mib.bap.datatypes.BAPEntity, de.vw.mib.bap.functions.PropertyListener);
+    Code:
+       0: aload_2
+       1: bipush        65
+       3: aload_0
+       4: invokeinterface #58,  3           // InterfaceMethod de/vw/mib/bap/functions/PropertyListener.requestError:(ILde/vw/mib/bap/functions/BAPFunction;)V
+       9: return
+      10: nop
+      11: nop
+
+  public void requestAcknowledge();
+    Code:
+       0: return
+       1: nop
+       2: nop
+       3: nop
+
+  public void errorAcknowledge();
+    Code:
+       0: return
+       1: nop
+       2: nop
+       3: nop
+
+  public void initialize(boolean);
+    Code:
+       0: return
+       1: nop
+       2: nop
+       3: nop
+
+  public void uninitialize();
+    Code:
+       0: aload_0
+       1: invokevirtual #27                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getNavigationService:()Lde/vw/mib/bap/mqbab2/common/api/navigation/NavigationService;
+       4: aload_0
+       5: getstatic     #5                  // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.NAVIGATION_LISTENER_IDS:[I
+       8: invokeinterface #59,  3           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/navigation/NavigationService.removeNavigationServiceListener:(Lde/vw/mib/bap/mqbab2/common/api/navigation/NavigationServiceListener;[I)V
+      13: aload_0
+      14: invokevirtual #28                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getCarPlayService:()Lde/vw/mib/bap/mqbab2/common/api/carplay/CarPlayService;
+      17: aload_0
+      18: getstatic     #6                  // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.CAR_PLAY_LISTENER_IDS:[I
+      21: invokeinterface #60,  3           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/carplay/CarPlayService.removeCarPlayServiceListener:(Lde/vw/mib/bap/mqbab2/common/api/carplay/CarPlayServiceListener;[I)V
+      26: aload_0
+      27: invokevirtual #29                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getCarLifeService:()Lde/vw/mib/bap/mqbab2/common/api/carlife/CarLifeService;
+      30: aload_0
+      31: getstatic     #7                  // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.CAR_LIFE_LISTENER_IDS:[I
+      34: invokeinterface #61,  3           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/carlife/CarLifeService.removeCarLifeServiceListener:(Lde/vw/mib/bap/mqbab2/common/api/carlife/CarLifeServiceListener;[I)V
+      39: aload_0
+      40: invokevirtual #30                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.getAndroidAutoService:()Lde/vw/mib/bap/mqbab2/common/api/androidauto/AndroidAutoService;
+      43: aload_0
+      44: getstatic     #8                  // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.ANDROID_AUTO_LISTENER_IDS:[I
+      47: invokeinterface #62,  3           // InterfaceMethod de/vw/mib/bap/mqbab2/common/api/androidauto/AndroidAutoService.removeAndroidAutoServiceListener:(Lde/vw/mib/bap/mqbab2/common/api/androidauto/AndroidAutoServiceListener;[I)V
+      52: return
+      53: nop
+      54: nop
+      55: nop
+
+  public void indicationError(int, de.vw.mib.bap.functions.BAPFunctionListener);
+    Code:
+       0: return
+       1: nop
+       2: nop
+       3: nop
+
+  public void setGetProperty(de.vw.mib.bap.datatypes.BAPEntity, de.vw.mib.bap.functions.PropertyListener);
+    Code:
+       0: aload_2
+       1: bipush        65
+       3: aload_0
+       4: invokeinterface #58,  3           // InterfaceMethod de/vw/mib/bap/functions/PropertyListener.requestError:(ILde/vw/mib/bap/functions/BAPFunction;)V
+       9: return
+      10: nop
+      11: nop
+
+  public void ackProperty(de.vw.mib.bap.datatypes.BAPEntity, de.vw.mib.bap.functions.PropertyListener);
+    Code:
+       0: aload_2
+       1: bipush        65
+       3: aload_0
+       4: invokeinterface #58,  3           // InterfaceMethod de/vw/mib/bap/functions/PropertyListener.requestError:(ILde/vw/mib/bap/functions/BAPFunction;)V
+       9: return
+      10: nop
+      11: nop
+
+  public void processHMIEvent(int);
+    Code:
+       0: return
+       1: nop
+       2: nop
+       3: nop
+
+  public void updateAndroidAutoData(de.vw.mib.bap.mqbab2.common.api.androidauto.AndroidAutoService, int);
+    Code:
+       0: aload_0
+       1: iconst_m1
+       2: invokevirtual #34                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.process:(I)V
+       5: return
+       6: nop
+       7: nop
+
+  public void updateCarPlayData(de.vw.mib.bap.mqbab2.common.api.carplay.CarPlayService, int);
+    Code:
+       0: aload_0
+       1: iconst_m1
+       2: invokevirtual #34                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.process:(I)V
+       5: return
+       6: nop
+       7: nop
+
+  public void updateCarLifeData(de.vw.mib.bap.mqbab2.common.api.carlife.CarLifeService, int);
+    Code:
+       0: aload_0
+       1: iconst_m1
+       2: invokevirtual #34                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.process:(I)V
+       5: return
+       6: nop
+       7: nop
+
+  public void updateNavigationData(de.vw.mib.bap.mqbab2.common.api.navigation.NavigationService, int);
+    Code:
+       0: aload_0
+       1: iconst_m1
+       2: invokevirtual #34                 // Method de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.process:(I)V
+       5: return
+       6: nop
+       7: nop
+
+  static java.lang.Class class$(java.lang.String);
+    Code:
+       0: aload_0
+       1: invokestatic  #2                  // Method java/lang/Class.forName:(Ljava/lang/String;)Ljava/lang/Class;
+       4: areturn
+       5: astore_1
+       6: new           #43                 // class java/lang/NoClassDefFoundError
+       9: dup
+      10: invokespecial #35                 // Method java/lang/NoClassDefFoundError."<init>":()V
+      13: aload_1
+      14: invokevirtual #26                 // Method java/lang/NoClassDefFoundError.initCause:(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+      17: athrow
+      18: nop
+      19: nop
+    Exception table:
+       from    to  target type
+           0     4     5   Class java/lang/ClassNotFoundException
+
+  static {};
+    Code:
+       0: iconst_3
+       1: newarray       int
+       3: dup
+       4: iconst_0
+       5: sipush        734
+       8: iastore
+       9: dup
+      10: iconst_1
+      11: sipush        733
+      14: iastore
+      15: dup
+      16: iconst_2
+      17: sipush        3937
+      20: iastore
+      21: putstatic     #37                 // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.NAVIGATION_LISTENER_IDS:[I
+      24: iconst_1
+      25: newarray       int
+      27: dup
+      28: iconst_0
+      29: ldc           #13                 // int -2147475646
+      31: iastore
+      32: putstatic     #38                 // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.CAR_PLAY_LISTENER_IDS:[I
+      35: iconst_1
+      36: newarray       int
+      38: dup
+      39: iconst_0
+      40: ldc           #14                 // int 2910031
+      42: iastore
+      43: putstatic     #39                 // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.CAR_LIFE_LISTENER_IDS:[I
+      46: iconst_1
+      47: newarray       int
+      49: dup
+      50: iconst_0
+      51: ldc           #15                 // int 2910005
+      53: iastore
+      54: putstatic     #40                 // Field de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.ANDROID_AUTO_LISTENER_IDS:[I
+      57: return
+      58: nop
+      59: nop
+}

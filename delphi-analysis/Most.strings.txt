@@ -1,0 +1,3333 @@
+/usr/lib/ldqnx.so.2
+libTSAPIL.so
+TSAPIL_WaitForData
+__register_frame_info
+_Jv_RegisterClasses
+TSAPIL_CreateLinkHandle
+_fini
+strcat
+TSAPIL_STATUS_OK
+__cxa_finalize
+malloc
+__get_errno_ptr
+strlen
+TSAPIL_IsConnected
+DTS_Client_Get_Frontend
+TSAPIL_Connect
+TSAPIL_IsStatusOK
+TSAPIL_NoTimeout
+TSAPIL_STATUS_TRANSFER_INCOMPLETE
+TSAPIL_Receive
+strerror
+TSAPIL_DestroyConnectionHandle
+TSAPIL_DestroyLinkHandle
+__deregister_frame_info
+libm.so.2
+__aeabi_unwind_cpp_pr0
+abort
+__aeabi_uidiv
+__aeabi_uidivmod
+__aeabi_unwind_cpp_pr1
+libcpp-ne.so.4
+_ZNKSt12codecvt_base16do_always_noconvEv
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecb
+_Locale
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED0Ev
+_ZNSt5ctypeIcED1Ev
+_ZNSt9_FacetptrISt8numpunctIcEE6_PsaveE
+_ZTVSt8numpunctIcE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsgetnEPci
+_ZNSt15basic_streambufIcSt11char_traitsIcEED1Ev
+_ZNSt6locale5facet9_RegisterEv
+_ZNKSt5ctypeIcE10do_tolowerEPcPKc
+calloc
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5_LockEv
+_ZNKSt19istreambuf_iteratorIcSt11char_traitsIcEEdeEv
+_ZTVSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE
+_Znaj
+_ZZNSt13basic_filebufIcSt11char_traitsIcEE5_InitEP6_FiletNS2_7_InitflEE7_Stinit
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_FputES3_RSt8ios_basecPKcjjjj
+_ZTVSt7codecvtIcc9_MbstatetE
+fwrite
+_ZNSt13basic_filebufIcSt11char_traitsIcEE5imbueERKSt6locale
+_ZNKSt8numpunctIcE11do_truenameEv
+_ZNSbIwSt11char_traitsIwESaIwEE5eraseEjj
+_ZNSt19istreambuf_iteratorIcSt11char_traitsIcEEppEv
+_ZNKSt11logic_error4whatEv
+_ZNSs6insertEjjc
+_ZdaPv
+_ZNSt6_MutexD1Ev
+_ZGVNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERd
+_ZNSt8numpunctIcED0Ev
+_ZSt7_FiopenPKcNSt5_IosbIiE9_OpenmodeEi
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERl
+_ZTv0_n12_NSoD0Ev
+realloc
+pthread_mutex_init
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERx
+_ZNSs5_GrowEjb
+_ZNSsC1EPKc
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERt
+_ZNSt7codecvtIcc9_MbstatetED1Ev
+_ZNKSt5ctypeIcE10do_toupperEPcPKc
+_ZNSt5ctypeIcE7_GetcatEPPKNSt6locale5facetE
+pthread_key_create
+_ZTVNSt6locale5facetE
+_ZNSiD0Ev
+_ZNSt12length_errorD0Ev
+_ZNSt9basic_iosIcSt11char_traitsIcEED0Ev
+_ZTVSt12out_of_range
+_ZNKSt7codecvtIcc9_MbstatetE10do_unshiftERS0_PcS3_RS3_
+_Stdout
+_ZNSt10ctype_baseD1Ev
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetifldEPcRS3_S6_NSt5_IosbIiE9_FmtflagsERKSt6locale
+__cxa_guard_release
+_ZdlPv
+_ZNSt9_FacetptrISt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEE6_PsaveE
+_ZTVSo
+_ZSt7_BADOFF
+_ZNKSt8numpunctIcE12do_falsenameEv
+strncmp
+_ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED0Ev
+_ZNSt7codecvtIcc9_MbstatetED0Ev
+_ZTVSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basece
+_ZNSbIwSt11char_traitsIwESaIwEE5_TidyEbj
+_ZSt9use_facetISt8numpunctIcEERKT_RKSt6locale
+wmemmove
+_ZGVNSt7codecvtIcc9_MbstatetE2idE
+_ZTVSt9exception
+_ZNSt12out_of_rangeD0Ev
+pthread_mutex_lock
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5uflowEv
+_ZNSt4fposI9_MbstatetE4_StzE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9showmanycEv
+_ZNKSt7codecvtIcc9_MbstatetE5do_inERS0_PKcS4_RS4_PcS6_RS6_
+_ZNSt6localeC1Ev
+_ZNSt13basic_filebufIcSt11char_traitsIcEE9underflowEv
+__cxa_pure_virtual
+__aeabi_atexit
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZNSt8_LocinfoD1Ev
+_ZNKSt5ctypeIcE10do_tolowerEc
+_ZNSt13basic_filebufIcSt11char_traitsIcEE5uflowEv
+_ZGVNSt8numpunctIcE2idE
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERPv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE7seekposESt4fposI9_MbstatetENSt5_IosbIiE9_OpenmodeE
+_ZTVSt9basic_iosIcSt11char_traitsIcEE
+_ZNSt6locale2id7_Id_cntE
+_ZGVNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecy
+_ZNSt8ios_base7_AddstdEv
+_ZNSt6_WinitC1Ev
+_ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecm
+_ZSteqIcSt11char_traitsIcEEbRKSt19istreambuf_iteratorIT_T0_ES7_
+pthread_getspecific
+_ZNSs5eraseEjj
+_ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_jj
+_ZNSt5ctypeIcED0Ev
+_ZNKSt5ctypeIcE9do_narrowEPKcS2_cPc
+fclose
+_ZNSt7codecvtIcc9_MbstatetE2idE
+_ZNKSt12_String_base5_XlenEv
+_ZTVSt11logic_error
+pthread_mutexattr_destroy
+_ZNSt6locale5facetD1Ev
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNSt8ios_base5clearENSt5_IosbIiE8_IostateEb
+fopen
+_Stoulx
+_ZNSt12out_of_rangeD1Ev
+_ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev
+_ZTTSo
+_ZNKSt8numpunctIcE16do_thousands_sepEv
+fgetc
+_Locksyslock
+_ZTVSt10ctype_base
+setvbuf
+_ZTVSt12codecvt_base
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetE
+_Stofx
+_ZNSt6_Mutex7_UnlockEv
+_ZNKSt12_String_base5_XranEv
+fputc
+_ZNKSt12out_of_range8_DoraiseEv
+_ZNSt11logic_errorD1Ev
+_ZNSt8ios_base4InitD1Ev
+_ZSt4_Fpz
+_Ctype
+_ZNSt13basic_filebufIcSt11char_traitsIcEE9pbackfailEi
+_ZNSt9basic_iosIcSt11char_traitsIcEED1Ev
+_ZNKSt5ctypeIcE9do_narrowEcc
+pthread_mutexattr_init
+_ZNSt8numpunctIcED1Ev
+_ZNSt6_MutexC1Ev
+_ZTVSt12length_error
+_ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEED1Ev
+_ZNSt6locale5facetD0Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecx
+__cxa_guard_acquire
+_ZNKSt5ctypeIcE10do_toupperEc
+_ZNSt12codecvt_baseD0Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecl
+fputs
+_Stoldx
+_ZNSoD0Ev
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERb
+_ZTVSt13basic_filebufIcSt11char_traitsIcEE
+_ZNSs6appendERKSsjj
+_ZTVSt15basic_streambufIcSt11char_traitsIcEE
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecd
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERj
+_ZNSt6_WinitD1Ev
+_Stderr
+_ZNKSt7codecvtIcc9_MbstatetE6do_outERS0_PKcS4_RS4_PcS6_RS6_
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERf
+_ZNKSt7codecvtIcc9_MbstatetE9do_lengthERKS0_PKcS5_j
+fsetpos
+_Stodx
+_ZNSiD1Ev
+_Stollx
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE8_GetffldEPcRS3_S6_RKSt6locale
+_ZNSt6localeD1Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9underflowEv
+fflush
+wmemset
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE5_IputES3_RSt8ios_basecPcj
+_ZNKSt12codecvt_base13do_max_lengthEv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE6setbufEPci
+_ZNSt9_FacetptrISt5ctypeIcEE6_PsaveE
+_ZNSt8numpunctIcE2idE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9pbackfailEi
+_ZNKSt8numpunctIcE16do_decimal_pointEv
+_ZNSt8ios_base4InitC1Ev
+_ZNSs6appendEjc
+_ZNSt8ios_baseD2Ev
+_Tolotab
+_ZNSt9_FacetptrISt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEE6_PsaveE
+_ZTVSi
+_ZNSt12length_errorD1Ev
+strcspn
+_ZNSt13basic_filebufIcSt11char_traitsIcEE4syncEv
+sprintf
+_ZTVSt5ctypeIcE
+_ZNSt10ctype_baseD0Ev
+_ZNSt15basic_streambufIcSt11char_traitsIcEED0Ev
+fseek
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci
+_ZNSt9exceptionD2Ev
+_Unlocksyslock
+memchr
+_ZTv0_n12_NSoD1Ev
+_ZNSt7codecvtIcc9_MbstatetE7_GetcatEPPKNSt6locale5facetE
+_Touptab
+_ZNSs6assignEPKc
+_ZNKSt12codecvt_base11do_encodingEv
+_ZSt4setwi
+_Stolx
+_ZTVSt8ios_base
+_ZNKSt6locale9_GetfacetEj
+_ZNSs5_TidyEbj
+_ZNSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetE
+pthread_mutex_unlock
+_ZNKSt12length_error8_DoraiseEv
+_ZNKSt11logic_error8_DoraiseEv
+fgetpos
+pthread_key_delete
+_ZNSt15basic_streambufIcSt11char_traitsIcEE4syncEv
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+strcmp
+_ZNSs6assignERKSsjj
+_ZNSt15basic_streambufIcSt11char_traitsIcEE6setbufEPci
+_ZNSt13basic_filebufIcSt11char_traitsIcEE7seekoffElNSt5_IosbIiE8_SeekdirENS4_9_OpenmodeE
+_ZNSt8numpunctIcE7_GetcatEPPKNSt6locale5facetE
+_ZNSt15basic_streambufIcSt11char_traitsIcEE5imbueERKSt6locale
+_ZNSt19istreambuf_iteratorIcSt11char_traitsIcEE5_PeekEv
+_ZNSt8ios_base5_InitEv
+_ZTv0_n12_NSiD0Ev
+_ZNSt11logic_errorD0Ev
+wmemcpy
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERe
+_ZNKSt9exception6_RaiseEv
+ungetc
+_ZNSt13basic_filebufIcSt11char_traitsIcEED0Ev
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERm
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEED1Ev
+_ZNKSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_basecPKv
+_ZNSt8_LocinfoC1EPKc
+_ZNSt12codecvt_baseD1Ev
+_ZNKSt8numpunctIcE11do_groupingEv
+_ZNSt13basic_filebufIcSt11char_traitsIcEE8overflowEi
+_ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateERy
+_ZTTSi
+_Znwj
+_ZSt6_ThrowRKSt9exception
+_Getctyptab
+_ZNSt19ostreambuf_iteratorIcSt11char_traitsIcEEaSEc
+_ZNSt15basic_streambufIcSt11char_traitsIcEE7_UnlockEv
+_ZNSt6locale2idcvjEv
+pthread_setspecific
+_ZNSt6locale5facet7_IncrefEv
+_ZNSt9_FacetptrISt7codecvtIcc9_MbstatetEE6_PsaveE
+_ZNKSt5ctypeIcE8do_widenEPKcS2_Pc
+_ZNSt15basic_streambufIcSt11char_traitsIcEE8overflowEi
+_Stoullx
+_ZNSt5ctypeIcE2idE
+_ZNSoD1Ev
+_ZNKSt5ctypeIcE8do_widenEc
+_ZNSt8numpunctIcE5_InitERKSt8_Locinfo
+strcpy
+_ZTv0_n12_NSiD1Ev
+_ZNSt6_Mutex5_LockEv
+_ZNSbIwSt11char_traitsIwESaIwEE6insertEjjw
+_ZNSsC1Ejc
+__div0
+__gnu_uldivmod_helper
+pthread_once
+libc.so.3
+mphys
+clock_gettime
+ConnectAttach_r
+InterruptMask
+_init_array
+pthread_attr_destroy
+ConnectDetach_r
+MsgSendvs_r
+pthread_create
+sigemptyset
+pthread_attr_init
+pthread_exit
+sem_timedwait
+gettid
+munmap
+shm_open
+timer_create
+getenv
+errno
+pthread_setname_np
+usleep
+getpid
+_preinit_array
+InterruptUnmask
+pthread_cancel
+MsgSend_r
+__aeabi_uldivmod
+sem_destroy
+tolower
+timer_delete
+vsnprintf
+sem_wait
+mmap_device_io
+sem_post
+atomic_clr_value
+__stackavail
+ftruncate
+sigaddset
+InterruptWait
+MsgReply_r
+strtol
+pthread_getschedparam
+pthread_setcancelstate
+strrchr
+MsgSendv_r
+nanosleep
+atomic_clr
+fstat
+__aeabi_idiv
+sigwaitinfo
+pthread_setschedparam
+sem_init
+pthread_kill
+flock
+signal
+MsgReplyv_r
+pthread_attr_setstacksize
+mmap_device_memory
+MsgSendsv_r
+strncpy
+atomic_add_value
+strcasecmp
+atomic_set_value
+strtok
+strncat
+sem_trywait
+sigaction
+_init_libc
+localtime
+ChannelDestroy_r
+MsgRead_r
+pthread_mutexattr_setpshared
+_fini_array
+__divsi3
+MsgSendPulse_r
+shm_unlink
+ThreadCtl
+munmap_device_memory
+pthread_self
+pthread_setcanceltype
+MsgReceive_r
+sopen
+pthread_mutexattr_setrecursive
+localeconv
+wmemcmp
+ftime
+pthread_mutex_destroy
+munmap_device_io
+pthread_attr_setschedpolicy
+toupper
+strchr
+InterruptDetach
+pthread_attr_setdetachstate
+ChannelCreate_r
+__aeabi_idivmod
+timer_settime
+atomic_set
+InterruptAttachEvent
+sigprocmask
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+oldtimeStamp
+_ZTV19PersistenceSqFacade
+_ZN19PresistenceSqFacade10mpInstanceE
+_ZN19PersistenceSqFacade10mpInstanceE
+_ZTV19PresistenceSqFacade
+raB3G
+raB3G
+../bb_most150/Lld/source/lld.c
+INIC Reset %sACTIVE!
+FOT Reset %sACTIVE!
+%s already initialized
+%s when not interface not started!
+%s when lld not started yet!
+Unable to send data over control MLB - length too big!
+Unable to send data over asynchronous MLB - length too big!
+The received message is of data type MEP
+%s: incoming async msg when INIC not attached - discard msg
+Unable to map GPIO for INIC reset
+Unable to map GPIO for FOT reset
+lld_sec_ctrl_reception
+lld_async_reception
+lld_ctrl_reception
+lld_on_buf_freed
+lld_async_transmit
+lld_ctrl_transmit
+lld_stop_interfaces
+lld_start_interfaces
+../bb_most150/Lld/source/ns_lld.c
+Most_INIC_Reset()
+INIC firmware state: %u
+NS_LLD_TxFotReset
+FBlock EnhancedTestability
+NetBlock
+NetworkMaster
+1.0.2
+3.0.2
+not used
+NOT MOST EVENT ID!
+EV_MOST_EVENT_FIRST_PUBLIC
+EVP_MOST_APP_NETWORK_STARTUP
+EVP_MOST_APP_NETWORK_SHUTDOWN
+EVP_MOST_APP_NETWORK_FAST_SHUTDOWN
+EVP_MOST_APP_NETWORK_EMERGENCY_SHUTDOWN
+EVP_MOST_APP_NETWORK_SHUTDOWN_CANCEL
+EVP_MOST_APP_MOST_MESSAGE
+EVP_MOST_APP_NETWORK_STARTUP_RESULT
+EVP_MOST_APP_NETWORK_SHUTDOWN_RESULT
+EVP_MOST_APP_EXT_AMPLIFIER_STATUS
+EVP_MOST_APP_RESET_FOT_TX
+EVP_MOST_APP_RBD_START
+EVP_MOST_APP_RING_BREAK_RBD_START
+EVP_MOST_APP_START_ALIVE_TEST
+EVP_MOST_APP_DIAG_GET_RBD_STATUS
+EVP_MOST_APP_DIAG_GET_RBD_STATUS_RESP
+EVP_MOST_APP_DIAG_RBD_COMPLETE
+EVP_MOST_APP_DIAG_GET_VERBAU_LIST
+EVP_MOST_APP_DIAG_GET_Device_Suspend_List
+EVP_MOST_APP_DIAG_GET_RBD_LINE_STATUS
+EVP_MOST_APP_DIAG_GET_RBD_LINE_STATUS_RESP
+EVP_MOST_FOT_ACTIVATION_SET
+EVP_MOST_GET_FOT_SELF_TEST_RESULT
+EVP_MOST_FOT_SELFTEST_REPORT
+EVP_MOST_LOOP_BACK_TEST_GET
+EVP_MOST_LOOP_BACK_TEST_RESP
+EVP_MOST_APP_DIAG_GET_VERBAU_LIST_RESP
+EVP_MOST_APP_DIAG_GET_Dev_SUSP_LIST_RESP
+EVP_MOST_APP_DIAG_GET_INIC_STATUS
+EVP_MOST_APP_DIAG_GET_INIC_STATUS_RESP
+EVP_MOST_APP_DIAG_GET_NET_STATUS
+EVP_MOST_APP_DIAG_GET_NET_STATUS_RESP
+EVP_MOST_APP_DIAG_GET_CONFIG_STATUS
+EVP_MOST_APP_DIAG_GET_CONFIG_STATUS_RESP
+EVP_MOST_APP_DIAG_GET_CODING_ERR_STATUS
+EVP_MOST_APP_DIAG_GET_CODING_ERR_STATUS_RESP
+EVP_MOST_APP_DIAG_GET_LAST_NODE_CONFIG_STATUS
+EVP_MOST_APP_DIAG_GET_LAST_NODE_CONFIG_STATUS_RESP
+EV_MOST_APP_LIGHT_STATUS
+EVP_MOST_APP_DIAG_GET_MOST_INFO
+EVP_MOST_APP_DIAG_GET_MOST_INFO_RESP
+EVP_MOST_APP_DIAG_DATABUS_BREAK_DTC
+EVP_MOST_APP_DIAG_DATABUS_BREAK_WAKEUP_DTC
+EVP_MOST_APP_DIAG_DATABUS_BREAK_SPORADIC_ZR_DTC
+EVP_MOST_APP_DIAG_DATABUS_BREAK_SPORADIC_SOUND_DTC
+EVP_MOST_APP_DIAG_DATABUS_BREAK_SPORADIC_CD_DTC
+EVP_MOST_APP_DIAG_DATABUS_BREAK_SPORADIC_KOMBI_DTC
+EVP_MOST_APP_DIAG_RBD_BREAK_ZR_DTC
+EVP_MOST_APP_DIAG_RBD_BREAK_SOUND_DTC
+EVP_MOST_APP_DIAG_RBD_BREAK_CD_DTC
+EVP_MOST_APP_DIAG_RBD_BREAK_TV_DTC
+EVP_MOST_APP_DIAG_RBD_BREAK_KOMBI_DTC
+EVP_MOST_APP_DIAG_RBD_BREAK_RSE_DTC
+EVP_MOST_APP_DIAG_RBD_SHORT_GROUND_DTC
+EVP_MOST_APP_DIAG_CLEAR_SSO_ROUT_MOST_RESULT
+EVP_MOST_APP_PM_START_TIMER
+EVP_MOST_APP_DIAG_IRC_MOST_BUSRESET
+EVP_MOST_APP_DIAG_IRC_MOST_CONFIGSTATE
+EVP_MOST_APP_DIAG_IRC_MOST_STATE
+EVP_MOST_APP_DIAG_IRC_MOST_NCE_EVENT
+EVP_MOST_APP_DIAG_IRC_MOST_SHUTDOWN
+EVP_MOST_APP_DIAG_IRC_MOST_DIAG
+EVP_MOST_APP_INIC_PROG_MODE_ENTER
+EVP_MOST_APP_INIC_PROG_MODE_CONFIRM
+EVP_MOST_APP_MOST_SERVICE
+EVP_MOST_APP_CONTROL_STATE
+EVP_MOST_APP_VIDEO_TRANSMISSION_STATE
+EVP_MOST_APP_VIDEO_TRANSMISSION_STATE_RESP
+EVP_MOST_APP_SOLLVERBAU_LIST_REPORT
+EVP_MOST_APP_SUBSYSTEMACTIVE
+EVP_MOST_APP_INIC_RESET_EMERGENCY_MUTE
+EVP_MOST_APP_NET_STATE
+EVP_MOST_APP_CONFIG_STATE
+EVG_MOST_APP_MOST_SHUTDOWN_QUERY
+EVG_MOST_APP_MOST_SHUTDOWN_EXECUTE
+EVG_MOST_APP_PROCESS_STARTED
+EVG_MOST_APP_PROCESS_TERMINATED
+EV_MOST_EVENT_LAST_PUBLIC
+EV_MOST_EVENT_FIRST_PRIVATE
+EV_MOST_APP_MSM_SHUTDOWM_RESULT
+EV_MOST_APP_MSM_STARTUP_RESULT
+EV_MOST_APP_RBD_COMPLETE
+EV_MOST_APP_MIN_NET_ON_TIMER_ELAPSED
+EV_MOST_APP_MIN_NET_RESTART_TIMER_ELAPSED
+EV_MOST_APP_MONITOR_TRIGGER
+EV_MOST_APP_AUTOWAKEUP_REQUEST
+EV_MOST_APP_DIAG_MBR_CHANGED
+EV_MOST_APP_PS_RUNNING
+EV_MOST_APP_SCM_ERROR
+EV_MOST_APP_DIAG_THREAD_READY
+EV_MOST_APP_DEBUG_TIMER
+EV_MOST_APP_READY_TIMER
+EV_MOST_APP_STARTUP_DELAYED_TIMER
+EV_MOST_APP_SSO_DELAY_TIMER
+EV_MOST_APP_SSO_UVFLAG_TIMER
+EV_MOST_APP_ECL_TRIGGER_TIMER
+EV_MOST_APP_NETSERVICE_STOPPED
+EV_MOST_APP_NETWORK_SHUTDOWN_FORCED
+EV_MOST_APP_DIAG_SSO_REPORT
+EV_MOST_APP_DIAG_INIC_FW_STATUS
+EV_MOST_APP_AUTOMATIC_RBD_REJECTED
+EV_MOST_APP_MHP_CONFIG
+EV_MOST_EVENT_LAST_PRIVATE
+../bb_most150/App/include/invalid_comlink.h
+Trying to use invalid ComLink to send message
+Trying to use invalid ComLink to receive message
+../bb_most150/App/source/most_app.cpp
+%s : FAILED to create MostApp instance
+Invalid ComLink request.
+deque<T> too long
+create
+../bb_most150/App/source/most_app_init.cpp
+exit_code=%u
+manufacturing_mode=%u
+%s( %u %u %u)
+"MOST"
+%s: [pid: %d] - Logger activated (compilation %s %s)
+Jun 26 2018
+18:31:14
+FAILED to set sigprocmask
+NetServices version: v%u.%u.%u.%u
+Most events:
+ EV_MOST_EVENT_FIRST_PUBLIC = %u
+ EV_MOST_EVENT_LAST_PUBLIC = %u
+ EV_MOST_EVENT_FIRST_PRIVATE = %u
+ EV_MOST_EVENT_LAST_PRIVATE = %u
+%s - configuring for MOST loopback connector
+%s (prio=%u) running...
+MOST is coded %s in this HW
+FAILED to start most application
+MOST App init: SAL init failed
+-most_app-CALS_Activated-
+-most_app-CALS_Terminated-
+most_thread_unblock_sig_hdlr
+start_most_app_threads
+../bb_most150/App/source/most_app_ps.cpp
+assertion failed: node_config != __null
+%s - count: %u, first address: 0x%04x
+%s failed - not allowed value for node size =%u
+PS is not ready when using function %s !!!
+assertion failed: vc_info != __null
+%s autorbd=%u sporbrkdet=%u optwake=%u
+%s failed - not recognized value to initialize =%u
+%s failed - not recognized value =%u
+%s failed - not recognized value initialize =%u
+assertion failed: ehc_reset_option != __null
+%s option=%u
+%s - autorbd==%u spor==%u optwakeup=%u
+%s - sw_ver=%s sw_partno=%s
+hw:%02x fw:%x.%x.%x (date: %x.%x.%x) cs:%x.%x.%x ns:%x.%x.%x.%x inicapi:%x.%x.%x
+%s %s
+%s: %02X
+%s - MostOn=%u
+%s - MOSTON read failed!
+%s - AutoRBD VC read failed!
+%s - SSOCU VC read failed!
+%s - OptWUP VC read failed!
+%s - Failed to read NB Device info from VIP!
+assertion failed: p_msg
+assertion failed: p_msg->data
+PS Update (MOSTON)
+PS Update-(AUTO_RBD)
+PS Update-(SPOR_RBD)
+PS Update-(OPT_WAKEUP)
+../../../../sw/AP_MOST_MIB20_STD/PersistentStorage/public/persistent.h
+Reading %s from persistent storage
+%s was not in persistent storage, using default
+PS_SECTION_MOST
+PS_SECTION_MOST_VC
+PS_SECTION_MOST_EHC_RST
+PS_SECTION_MOST_SSO_RESULT
+Default
+Default
+Default
+Default
+Most_PS_Cache_Init_FromVIP
+Most_PS_Cache_Persistence_Updated
+Most_PS_Read_NB_DevInfo_FromVIP
+Most_PS_Read_VC_OptWUP_FromVIP
+Most_PS_Read_VC_SSOCU_FromVIP
+Most_PS_Read_VC_AutoRBD_FromVIP
+Most_PS_Read_MOSTON_FromVIP
+Most_PS_Cache_Put_MostOn
+Most_PS_Get_INICFwStatus
+Most_PS_Put_INICFwStatus
+Most_PS_Get_SSOResult
+Most_PS_Put_SSOResult
+Most_PS_Cache_Put_Most_Info
+Most_PS_Cache_Put_Nb_DevInfo
+Most_PS_Cache_Put_VC
+Most_PS_Cache_Get_VC
+Most_PS_Cache_Get_MostInfo
+Most_PS_Get_NbDevInfo
+Most_PS_Get_EHC_Reset_Option
+Most_PS_Put_EHC_Reset_Option
+Most_PS_OpticalWakeup_Enabled
+Most_PS_Get_VariantCoding
+Most_PS_Put_VariantCoding
+Most_PS_Get_Node_Config
+Most_PS_Put_Node_Config
+../bb_most150/App/include/most_addresshandler.h
+MOST_AddressRegister_C::debugPrint: Registry size: %u
+%2u: F:%02x I:%02x T:%s A:%08x L:%s S:%08X St:%d
+../bb_most150/App/source/most_addresshandler.cpp
+ConfigStateChanged %d->%d
+ConfigStateChanged setstatus last_config_state:%d state:%d
+%s for shadow %02X.%02X=%02X -%08X
+%s - sending list of own server fblocks
+AH::SUB:(%X-link-%d), %02X.%02X,shId:%02x, addr:%08X
+Subscribe - lastCOnfigState:%d
+MOST_AddressRegister_C::Subscribe - NOT MOST_INTERNAL_COMM_ALLOWED_IN_CONFIG_NOK
+Subscribe FB:%02x In:%02x RealFBlock addr/client_id:%04x link type:%s addr:%04x idx:%d
+Subscribe FB:%02x In:%02x ShadowFblock addr/client_id:%04x ShadowIn:%04x
+Subscribe FB:%02x In:%02x InternalFblock idx:%02x
+Unsubscribe FB:%02x In:%02x Type:%d Link %d Addr:%08X, ShInst %X
+%s: record found
+Unsubscribe: FB: 0x%02x Inst: 0x%02x Type: RealFBlock (index: 0x%02x)
+Unsubscribe: FB: 0x%02x Inst: 0x%02x Type: ShadowFblock (Shadow Inst Id: 0x%04x, index: 0x%02x)
+Unsubscribe: FB: 0x%02x Inst: 0x%02x Type: InternalFblock (index: 0x%02x)
+%s: record not found
+%s failed - Message is NULL
+Route - fb: 0x%02x, instID: 0x%02x, link:%u, addr: 0x%x, A:%x, SA: 0x%x, Func: 0x%x OP: %01X
+%s failed - Message copy is NULL
+BEGIN
+Request
+AH::Route-Cannot alloc msg copy
+MOST_AddressRegister_C::Route - Sender found
+MOST_AddressRegister_C::Route - Sender not found
+MOST_AddressRegister_C::Route - no server fblock registered for fb: 0x%02x instid: 0x%02x
+%s called
+%s - reporting %02x.%02d
+%s - number of reported client server fblocks: %d
+Invalidate addr:%02x In:%02x
+Unable to allocate memory!
+MOST_AddressRegister_C::ChangeInstId  - changing FB: 0x%02x InstID: 0x%02x to FB: 0x%02x InstID: 0x%02x
+ChangeInstId  - index %d
+MOST_AddressRegister_C::MissingDevice(%04X)
+MOST_AddressRegister_C::NotificationDelay(%d)
+ConnectionLost
+%s (most address ready) called
+%s - changing timeout value for %01x.%01x.%02x
+%s for %02X.%02X=%02X -%08X
+Sending new connection status
+MOST_AddressRegister_C::Update FB:%x, InstID:%x, Type:%s, Status:%d
+Update: index %d, address: 0x%04x
+%s - fblock: %02x, inst: %02x, shadowInst: %04x, oldStatus: %d, newStatus: %d
+%s - FB:%x, InstID:%x, server idx:%d
+UpdateFblockIndex
+UpdateShadowFBlockStatus
+Update
+SetServerFunctionExpirationTimeout
+RemoveServerRequest
+SendFBlockIds2NM
+ImplementedFBlocks
+Route
+Unsubscribe
+ConfigStateChanged
+../bb_most150/App/source/most_request_record.cpp
+RequestRecord_C::RequestRecord_C - addr: %02x, func: %02x, op: %01x, sh: %02x
+%s called for fnc: %04x.%02x sh: %04x
+false
+%s requires timeout: %s
+%s called for fnc: %03x.%02x sh: %04x
+UpdateTimeout
+IsExpired
+IsTimedOut
+Invalid
+../bb_most150/App/include/comlink.h
+Link:%s Address:%08x
+../bb_most150/App/source/most_address_record.cpp
+%s - number of INSERTED functions: %u
+%s - number of INSERTED properties: %u
+Most_AddressRecord_C::AddRequest - fb: 0x%02x, instID: 0x%02x
+AddressRecord_C::AddRequest - %02x.%02x.%03x.%01x
+AddressRecord_C::AddRequest - from address: %04x
+AddressRecord_C::AddRequest - adding %02x.%02x.%03x.%01x
+AddressRecord_C::AddRequest - from address: %04x, sh: %04x, msg_id: %02x
+AddressRecord_C::AddRequest - request vector's size increased from %u to %u
+AddressRecord_C::AddRequest - for %02x.%02x.%03x
+AddressRecord_C::AddRequest - received next segment of the MHP message, but cannot find the initial request
+AddressRecord_C::AddRequest - invalid message segment received (0x%02x)
+AddressRecord_C::FindRequestIndex - %02x.%02x.%03x.%01x
+AddressRecord_C::FindRequestIndex - sender handle: %04x, msg_id: %02x
+AddressRecord_C::FindRequestIndex - msg found at index: %d
+AddressRecord_C::FindRequestIndex - msg mismatch: %04x.%02x.%01x sh: %04x
+AddressRecord_C::FindRequestIndex - msg id: %02x
+AddressRecord_C::FindRequestIndex - compared request: %04x.%02x.%01x sh: %04x
+AddressRecord_C::FindExistReqMsgId - %02x.%02x.%03x.%01x
+AddressRecord_C::FindExistReqMsgId - found matching msg id: %02x at idx: %02x
+AddressRecord_C::RemoveRequest - %02x.%02x.%03x.%01x
+AddressRecord_C::RemoveRequest - response for client address: %04x, sh: %04x
+AddressRecord_C::RemoveRequest - updating timestamp for %02x.%02x.%03x.%01x
+AddressRecord_C::RemoveRequest - from client address: %04x, sh: %04x, msg_id: %02x
+AddressRecord_C::RemoveRequest - discarding %02x.%02x.%03x.%01x
+AddressRecord_C::RemoveRequest - routing MHP segmented message packet %02x.%02x.%03x.%01x
+AddressRecord_C::RemoveRequest - from client address: %04x, sh: %04x, msg_id: %02x, MHP segment type: %02x
+AddressRecord_C::RemoveRequest - removing %02x.%02x.%03x.%01x
+%s called
+SetFunctionExpirationTimeout - expiration timeout for %02x.%01x.%02x changed to %u ms
+ServiceRequests - removing expired request %02x.%02x.%03x.%01x
+ServiceRequests - from client address: %04x, sh: %04x, msg_id: %02x, expiration timeout: %u ms
+ServiceRequests - FAILED to send msg for expired request %02x.%02x.%03x.%01x
+ServiceRequests - from client address: %04x, sh: %04x, msg_id: %02x
+ServiceRequests - sending processing/processing_ack for request %02x.%02x.%03x.%01x
+%s - F:0x%x
+HasShadowRequest Result: %d
+Function: %03X
+HasShadowNotification Result: %d
+invalid map/set<T> iterator
+map/set<T> too long
+vector<T> too long
+invalid vector<T> subscript
+Real FBlock
+Hidden Real Fblock
+Hidden Real FBlock All Inst ID
+Shadow Fblock
+Unknown FBlock Type
+RemoveShadowNotification
+HasShadowRequest
+AddShadowNotification
+AddShadowRequest
+SetFunctionExpirationTimeout
+RemoveAllExternalRequests
+RemoveAllRequests
+Most_AddressRecord_C
+vector<T> too long
+../bb_most150/App/source/most_fblock.cpp
+Unable to send a null pointer
+../bb_most150/App/source/most_layer_if.cpp
+most_send_lower_front - %02x.%02x.%02x.%02x
+deque<T> too long
+../bb_most150/App/source/most_client_thread.cpp
+%s - SAL_Create_Queue() failed 
+%s (prio=%u) running...
+%s - EV_SHUTDOWN_APP received
+%s - unknown event received %s (%u)
+%s end
+%s called
+%s - sender app id: %d, tid: %d
+%s - app id: %u, tid: %u
+%s app id is zero! tid: %u
+SAL_Send failed in %s
+%s - app id: %d tid: %d terminated
+ClientDisconnect
+SendMessage
+ReceiveMessage
+Start
+../bb_most150/App/source/most_fblock_f0.cpp
+%s - fblock: %02x, type: %d
+Unable to allocate memory!
+%s - length too large to send message %0u
+%s: Wrong message len
+%s: No connection manager
+%s - received MOST_F0_MethodExpireTimeout for fblock: %02x, type: %d
+FBlock_F0_C::HandleMsg - failed to change expiration timeout value to %u ms for %01x.%01x.%02x
+Handle_MethodExpireTimeout
+Handle_SinkDisconnect
+Handle_SinkConnect
+Handle_SourceDeallocate
+Handle_SourceAllocate
+Handle_Unsubscribe
+Handle_Subscribe
+../bb_most150/App/source/most_fblock_f1.cpp
+FBlock_F1::HandleMsg: %03x.%01x.%03x
+FBlock_F1_C::NBFBlockIDs_Get
+%s - length too large to send message %0u
+%s called
+SendFBlockIDsStatus2NM_Start
+NBFBlockIDs_Get
+../bb_most150/App/source/most_msg.cpp
+Unable to allocate memory!
+0x%04x.0x%02x.0x%02x.0x%03x.0x%01x.0x%03x [
+0x%02x
+ 0x%02x
+ ....
+EnhanchedTestability
+1.7.2
+3.0.1
+3.0.1
+../bb_most150/App/source/most_time_stat.cpp
+Time module init
+Time to NS init complete: %dms, Since InitNetServices=%ums
+Time to NWM startup complete: %dms
+Time to IOC configuration complete: %dms
+Time to persistence ready: %d ms
+Time to NET_ON: %dms, Since InitNetServices=%dms
+NS service
+../bb_most150/App/source/most_net.c
+%s called from different than MOST_NS_SERVICE_TID thread context %u
+ns_state %s->%s
+SAL_Send failed in %s
+%s started
+%s - SAL_Create_Queue() failed. Most application exiting ...
+The '%s' (id=%u) not ready!
+%s - waiting for %u threads at startup timeout !
+%s (prio=%u) running...
+Error - received most events [%x] in NS_STATE_NOT_INITIALIZED or NS_STATE_STOPPED state!
+EV_SHUTDOWN_APP shutting down ...
+%s - wait for send and msmm threads failed [timeout]!
+%s - most net thread ending failed [timeout]!
+%s end
+msd %u a=%u t=%s
+%s in %s (threadid=%u name=%s)
+...pending start/stop=%u
+NetServices info (WDT=%ums, max=%u):
+hw: v%u
+fw: v%u.%u.%u
+CS: v%u.%u.%u
+NS: v%u.%u.%u.%u
+API: v%u.%u.%u
+ fwdate: y%u.m%u.d%u
+MNS_RETIMEDBYPASS_MASTER
+unknow mode!
+MNS_RETIMEDBYPASS_SLAVE
+MNS_MASTER
+MNS_SLAVE
+The current mode is %s! Maybe ET.PhysicalLayer in the background? Changing mode to MNS_MASTER...
+MostSetDevMode( MNS_MASTER ) failed, ret = %u
+... the MNS_MASTER mode set successful!
+%s - real net state: %d
+The %s called in wrong ns state %s !
+MOST_SCHED_EVENT_INIT by thread %u
+%s - unknown recover option %u
+%s sending IRC message for INIC reattach
+REATTACH_INIC
+%s sending IRC message for INIC NO_COMM
+NO_COMM_INIC
+NS_INIT_NORMAL
+NS_INIT_SILENT
+%s( %s )
+Failed to set packet retry time: %d, result: 0x%X
+assertion failed: 0 == p_msg->data
+assertion failed: 0 != p_msg->data
+assertion failed: sizeof( MOST_SchedEvent_T ) == p_msg->data_size
+assertion failed: (*p_events) != MOST_SCHED_EVENT_SERVICE
+ Not handled event %s (id=%u) in MOST NET THREAD!
+Init event queued in %s
+Init event called in %s - ignoring
+Stop event queued in %s
+Prevent go to ns_state=NS_STATE_STOPPED because current state is %s
+Unknown event received in ns hsm %u
+In programming mode net services are stopped - cannot process any event!
+Received not allowed event [=%x] in state NS_STATE_STOPPED or NS_STATE_NOT_INITIALIZED. Here only MOST_SCHED_EVENT_INITMOST_SCHED_EVENT_GO_STOP or MOST_SCHED_EVENT_STOP or MOST_SCHED_EVENT_SHUTDOWN are available
+Not known ns_state %u in most_service
+most_hsm
+on_ns_stopped
+NS_STATE_NOT_INITIALIZED
+NS_STATE_INITIALIZING_SILENT
+NS_STATE_INITIALIZING
+NS_STATE_READY
+NS_STATE_STOPPING_SILENT
+NS_STATE_STOPPING
+NS_STATE_STOPPED
+NS_STATE_STOPPED_IN_PROG
+NS_STATE_ERROR
+NS_STATE_APP_SHUTDOWN
+!!ERR_NOT_KNOWN_STATE!!
+ns_state_stop
+ns_state_initialize
+most_ns_reset_cbk
+send_NO_COMM_IRC_event
+send_reattach_IRC_event
+most_net_on_error
+most_net_init_complete
+most_net_thread
+MOST_PWR_MOD_TID
+MOST_DIAG_TID
+MOST_MSMM_SERVICE_TID
+most_net_init
+../bb_most150/App/source/most_cm/most_cm_mgr.cpp
+ --- MOST_CM -Created instance
+%s : FAILED to initialize Connection Manager
+SAL_Send failed in %s
+CM RCV thread Timeout
+CM HDLR thread Timeout - try %d
+%s called
+%s src_id:0x%02x
+%s: connHandle:%u
+Memory allocation failed
+%s starting connection manager thread
+%s - connection manager thread create failed
+%s started
+%s - SAL_Create_Queue() failed 
+%s (prio=%u) running...
+%s Event received:%d(%s)
+EVP_MOST_APP_CONFIG_STATE %s
+System config state NOK - clearing all connection info
+EV_MOST_APP_SCM_ERROR received code:0x%02x handle:0x%02x
+EV_MOST_APP_SCM_ERROR - received NSR_E_MOST_DEALLOCATED_ALL
+L1: Scm_Error NSR_E_MEDIALB_BANDWIDTH
+L1: Scm_Error: 0x%x
+%s - EV_SHUTDOWN_APP
+%s - unknown event received %s (%u)
+%s end
+%s : Request:%x
+%s: MOST_CM_REQUEST_ALLOC
+%s: Connection label:%x
+%s: Socket not found
+%s: MOST_CM_REQUEST_CONNECT
+%s : Searching connection
+%s : attempting to deallocate/disconnect already removed connection
+%s - Invalid request type
+%s - Invalid request
+%s: Try %d
+%s: Connection created, connection handle:%u
+%s: Connection index is invalid
+%s - Invalid socket id
+%s: socket:%x
+invalid map/set<T> iterator
+map/set<T> too long
+deque<T> too long
+GetSocketFromRequest
+DoCreateConnection
+CreateConnection
+RequestHandlerThread
+RequestReceiverThread
+Start
+SinkDisconnect
+SinkConnect
+SourceDeallocate
+SourceAllocate
+ClearConnections
+SendEvent
+Destroy
+Create
+../bb_most150/App/source/most_cm/most_cm_request.cpp
+%s: fblockInstId:0x%x
+Unable to allocate memory!
+%s: MostApp not exists
+Alloc %s: error_code:%d
+Dealloc %s: error_code:%d
+Connect %s: error_code:%d
+Disconnect %s: error_code:%d
+deque<T> too long
+Complete
+Complete
+Complete
+Complete
+Respond
+MostCM_Request
+../bb_most150/App/source/most_cm/most_cm_netservices_callback.cpp
+%s : SAL_Create_Semaphore failed
+%s : SAL_Destroy_Semaphore failed
+%s : SAL_Signal_Semaphore failed
+MostCM_StdCb::Callback: result:%u
+MostCM_StdCb::ReportResult: result:%u
+MostCM_CreateSocketCb::Callback: result:%u, socket_handle:%u
+MostCM_CreateSocketCb::ReportResult: result:%u, socket_handle:%u
+MostCM_ConnectSocketsCB::Callback: result:%u, connection_handle:%u
+MostCM_ConnectSocketsCB::ReportResult: result:%u, connection_handle:%u
+SignalResult
+~MostCM_BaseCb
+MostCM_BaseCb
+../bb_most150/App/source/most_cm/most_cm_socket_i2s.cpp
+CMSocketI2S_C::GenerateConfig: portid:%u, interfaceid:%u, offset:%u, freqref:%u
+GenerateConfig
+../bb_most150/App/source/most_cm/most_cm_socket_mlb.cpp
+GenerateConfig
+../bb_most150/App/source/most_cm/most_cm_socket_most.cpp
+GenerateConfig
+../bb_most150/App/source/most_cm/most_cm_socket.cpp
+CMSocket_C::GenerateConfig: dir:%u, blkw:%u, portid:%u, datatype:%u
+%s: Try %d
+%s: Creating socket...
+ScmCreateSocket failed (error = %02X)
+%s: Waiting for result...
+%s: Result:%d
+%s: Socket opened
+%s: Netservice callback failed
+%s: Already opened...
+%s: Destroying socket...
+ScmDestroySocket failed (error = %02X)
+%s: Socket destroyed
+%s: Socket not opened...
+DoDestroy
+DoCreate
+Destroy
+Create
+GenerateConfig
+../bb_most150/App/source/most_cm/most_cm_port.cpp
+%s: Try %d
+%s: Opening port...
+ScmOpenPort failed (error = %02X)
+%s Result:%d
+%s: Netservice callback failed
+%s: Already opened...
+DoOpen
+../bb_most150/App/source/most_cm/most_cm_port_i2s.cpp
+GenerateConfig
+CMPortI2S_C
+../bb_most150/App/source/most_cm/most_cm_port_mlb.cpp
+GenerateConfig
+CMPortMLB_C
+../bb_most150/App/source/most_cm/most_cm_port_most.cpp
+CMPortMOST_C
+../bb_most150/App/source/most_cm/most_cm_error.cpp
+%s: error unknown error code:%04X
+NSR_S_OK
+NSR_S_CE_INIC
+NSR_S_CE_EXT_ONGOING
+NSR_S_CE_EXT_RESULT
+NSR_E_FAILED
+NSR_E_BUSY
+NSR_E_INIC_VERSION
+NSR_E_REATTACH
+NSR_E_NO_COMM
+NSR_E_NOT_SUPPORTED
+NSR_E_PARAM
+NSR_E_WRONG_PROTOCOL_CFG
+NSR_E_MCM_RX_CHANNEL
+NSR_E_CRS_INVALID_PORT_ID
+NSR_E_CRS_PORT_NOT_OPENED
+NSR_E_CRS_NET_OFF
+NSR_E_CRS_INVALID_DATA_TYPE
+NSR_E_CRS_INVALID_DIRECTION
+NSR_E_CRS_SOCKET_TABLE_FULL
+NSR_E_CRS_INVALID_BLOCKWIDTH
+NSR_E_CRS_INVALID_PREALLOC
+NSR_E_CRS_INVALID_REQCHANLIST
+NSR_E_CRS_BUF_PTR
+NSR_E_CRS_INVALID_MEDIALB_ADDR
+NSR_E_CRS_INVALID_MEDIALB_POS
+NSR_E_CRS_INVALID_LIST
+NSR_E_CRS_EXISTS_DIFFERENT
+NSR_E_CRS_INVALID_OFFSET_SERIAL
+NSR_E_CRS_MASTER_BUSY
+NSR_E_CRS_NOT_ENOUGH_CHANNELS
+NSR_E_CRS_INVALID_OFFSET_MEDIALB
+NSR_E_CRS_INVALID_BLOCKWIDTH_EXT
+NSR_E_CRS_DATA_FRAME_BLOCKWIDTH
+NSR_E_CRS_DATA_SAMPLE_FREQ_REF
+NSR_E_CRS_INSUFFICIENT_ISOC_RES
+NSR_E_CRS_COMM
+NSR_E_CRS_INIT
+NSR_E_CRS_TIMEOUT
+NSR_E_DYS_BUF_PTR
+NSR_E_DYS_INVALID_HANDLE
+NSR_E_DYS_HANDLE_USED
+NSR_E_DYS_INTERNAL
+NSR_E_DYS_MEDIALB_BANDWIDTH
+NSR_E_DYS_NET_UNLOCKED
+NSR_E_DYS_MASTER_BUSY
+NSR_E_DYS_WRONG_LABEL
+NSR_E_DYS_COMM
+NSR_E_DYS_INIT
+NSR_E_DYS_TIMEOUT
+NSR_E_CNS_INVALID_HANDLE_IN
+NSR_E_CNS_INVALID_HANDLE_OUT
+NSR_E_CNS_INVALID_CON
+NSR_E_CNS_INVALID_PTR
+NSR_E_CNS_NET_OFF
+NSR_E_CNS_INVALID_BLOCKWIDTH
+NSR_E_CNS_TABLE_FULL
+NSR_E_CNS_DATA_SAMPLE_FREQ_REF
+NSR_E_DNS_INVALID_HANDLE
+NSR_E_DNS_NET_OFF
+NSR_E_MAO_FAILED
+NSR_E_MAO_MEDIALB_FULL
+NSR_E_MDO_INTERNAL
+NSR_E_NAO_NET_OFF
+NSR_E_NAO_TOO_MUCH
+NSR_E_NAO_INTERNAL
+NSR_E_NAO_MASTER_BUSY
+NSR_E_NAO_FULL
+NSR_E_NAO_COMM
+NSR_E_NAO_INIT
+NSR_E_NAO_TIMEOUT
+NSR_E_NDO_INTERNAL
+NSR_E_NDO_USED
+NSR_E_NDO_INVALID_LABEL
+NSR_E_NDO_MASTER_BUSY
+NSR_E_NDO_WRONG_LABEL
+NSR_E_NDO_COMM
+NSR_E_NDO_INIT
+NSR_E_NDO_TIMEOUT
+NSR_E_MUC_NET_OFF
+NSR_E_DMC_NET_OFF
+NSR_E_SOURCE_DROP
+NSR_E_MEDIALB_BANDWIDTH
+NSR_E_MOST_BANDWIDTH
+NSR_E_MOST_DEALLOCATED_ALL
+NSR_E_PACKET_IN
+NSR_E_PACKET_OUT
+NSR_E_SRC_NET_OFF
+NSR_E_SRC_UNUSED
+NSR_E_SRC_INFO_TEMP_NOT_AVAIL
+NSR_E_INVALID_RETRY_CONFIG
+NSR_E_INVALID_REMOTE_ACCESS_CONFIG
+NSR_E_INVALID_WATCHDOG_MODE_CONFIG
+NSR_E_BIST_MEM_CONTENT
+NSR_E_BIST_MEMORY
+NSR_E_BIST_CONF_STRING
+NSR_E_BIST_PCODE
+NSR_E_BIST_DATA_MEMORY
+NSR_EI_RESET
+NSR_EI_SYNC_FAILED
+NSR_EI_SYNC
+NSR_E_INIT_TIMEOUT
+NSR_E_INVALID_SEG_MODE_CONFIG
+NSR_E_SEG_MODE_CONFLICT
+NSR_E_INVALID_MID_LEVEL_RETRIES_CONFIG
+NSR_EM_NONE
+NSR_EM_CRITICAL_UNLOCK
+NSR_EM_EHC_SHUTDOWN
+NSR_EM_EHC_SLO
+NSR_EM_WAKEUP
+NSR_EM_PROTECTED
+NSR_E_MEMORY_BUF_OV
+NSRToCMError
+false
+../bb_most150/App/source/most_mhp_queue.cpp
+Q limit
+NET not initialized
+::H, failed to send msg %s, msg deleted, r=%s
+::P, Conn already open, msg deleted, q=%d
+::P, failed to send msg %s, retries to make %d
+::P, failed to send msg %s, msg deleted, qs=%d
+::P, msg %s deleted, qs=%d
+::PS, st=0x%X, len=%d
+::PS, no action, set retries to %d
+::PS, retry %d times %s
+::PS, retries left=%d, msg deleted, qs=%d
+::PS, reestablish DIAGNOSIS connection %s
+::PS, unable to reestablish DIAGNOSIS connection
+::PS, connection %s closed
+::POCS ptr: 0x%X
+::POCS, MhpOpenCon msg deleted, qs=%d
+::E, queued %s: qs=%d
+::E, unable to allocate memory for the message queue
+map/set<T> too long
+deque<T> too long
+invalid map/set<T> iterator
+most_mhp_queue_retry_expired
+../bb_most150/App/source/most_method_monitor.cpp
+%s started
+%s - SAL_Create_Queue() failed 
+%s - wait for threads startup timeout
+%s - SAL_Create_Timer() failed 
+%s (prio=%u) running...
+%s - no MostApp object available
+%s - received EVP_MOST_APP_CONFIG_STATE %s
+%s - unknown event received: %s (evid=%u)
+%s end
+most_method_monitor_thread
+../bb_most150/App/source/most_app_diag.c
+%s - number of MOST coding errors: %u
+%s - cannot get MOST coding errors count (error code: 0x%02x)
+%s %u %u %u
+%s - %u diag=%u
+%s - initial config OK
+%s - initial config NOK
+%s - config event
+%s - increasing config event counter to %d
+%s - config OK, waiting for %d before starting counting
+%s - config NOK
+%s count = %u
+%u addr:0x%02x
+%s - retrieving node config info from PS (count = %u)
+%s failed to read PS
+%s - failed to get MOST coding errors number (unable to register callback, error code: 0x%01x)
+%s - failed to get MOST coding errors number (detached from the INIC)
+most_app_diag_get_coding_err_status
+most_app_diag_set_rbd_status
+most_diag_node_config_read
+most_diag_node_config_write
+most_diag_config_state
+most_diag_net_state
+most_app_coding_err_cb
+../bb_most150/App/source/most_register_debug.c
+Register server FB: %02x InstId: %u from MOST address: 0x%04x at index: %u
+Register server FB: %02x InstId: %u from SAL app_id: %u SAL tid: %u
+at index: %u
+Register client FB: %02x InstId: %u from SAL app_id: %u SAL tid: %u
+../bb_most150/App/source/most_pwr_mod_if.c
+%s starting power moding thread, compilation time: %s
+18:31:42
+Shutdown Request Type mutex creation failed
+Shutdown State mutex creation failed
+Hisip control mutex creation failed
+%s - power moding thread create failed
+%s - result: %02x, current state: %02x
+SLAVE_WKUP (MOST:%d;OWU:%d;MM:%d)
+%s - canceling shutdown after reattach
+set_pwr_state %s (%u)
+MOST_PWR_ON
+%s - re-triggering shutdown after reattach
+SAL_Send failed in %s
+SLAVE_WKUP while NET not initialized
+%s - beginning pending shutdown
+%s - received MOST_PM_NETWORK_STARTUP_ERROR_RBD_FAILED (failed to complete RBD within %d s)
+MOST_PWR_STARTING_UP_PENDING_OFF
+MOST_PWR_STARTING_UP
+MOST_PWR_OFF
+MOST_PM_NETWORK_STARTUP_ERROR ignored due to ongoing RBD process
+MOST_PM_NETWORK_STARTUP_ERROR in MMI state where MOST shall not work. Restart skipped...
+EVP_MOST_APP_NETWORK_STARTUP deferred till RBD finishes
+MOST_PM_NETWORK_STARTUP_ERROR. Restart in %u ms pending...
+MOST_PWR_RBD
+%s %02x (devID=%04x), current state: %02x
+%s starting the Most min net restart timer
+%s restart network if was ON and critical UNLOCK occurred
+Shutdown completed in programming mode
+Shutdown completed. Stopping NS... Most published keep NOT alive
+suspend list update=%d
+%s Invalid device ID
+Critical Unlock
+%s invoked
+%s - sending Power Master ECL Pulse - rbd length
+%s - sending Power Master ECL Pulse - normal length
+%s - net state error (is off, should be on)
+%s - net state error (is off and requested to be on, starting up)
+%s - net state error (shutting down but net is already off, synchronizing)
+%s - net state error (starting up but net is off, restarting)
+%s - net state error (starting up with pending off and net is off, synchronizing)
+%s sending EVP_MOST_APP_NETWORK_STARTUP param = %d tuabs=%u
+%s MostStartUp in MNS_DEVMODE_AUTO
+%s param = %d tuabs=%u
+NS Ready Timeout - Cannot Start Network!!!
+%s timestamp = 0x%x sec
+assertion failed: 8 == i
+PENDING
+%s: %s
+most_ecl_set_test_type failed
+most_net_shutting_down: %d
+AP_SYSTEMMANAGER ready. Request MMI state ...
+AP_SYSTEMMANAGER ready. Register to shutdown handshake
+APP_SYSTEMMANAGER NOT ready !
+AP_PERSISTENCEMANAGER ready. Request persistence initialized...
+AP_PERSISTENCEMANAGER NOT ready !
+%s - SAL_Create_Timer queue failed
+assertion failed: 0
+%s - retry (max=%u) exceeded!
+   ... appid=%u not ready!
+   ... appid=%u ready but not initialized (persistence)!
+%s wrong find appid=%u
+%s - app=%u state=%u
+%s - appid=%u is ready!
+%s - appid=%u received ready more than once 
+%s - appid=%u received not running state! 
+%s - not requested app state received for appid=%u state=%u !
+ %s failed in SAL_Send(EV_GET_APP_STATE) for appid=%u
+%s(ppid=%u)
+%s SAL_Send error
+RBD_TEST
+ALIVE_TEST
+NO_TEST
+%s - when pwr state=%u
+Unable to start MOST network -> MOST is not supported in this HW ! Request skipped...
+Unable to start MOST network -> MOSTON is OFF for this system. To turn on type: 'VIPCmd ee bc 747 1'. Request skipped...
+MOST_SCHED_EVENT_INIT by thread %u
+MOST_PWR_NS_WAIT
+Try to start network master but persistence not ready yet !(VIP gets up faster then peristence). Wait for peristence...
+MNS_RETIMEDBYPASS_MASTER
+unknow mode!
+MNS_RETIMEDBYPASS_SLAVE
+MNS_MASTER
+MNS_SLAVE
+%s - failed to start network, current mode=%s (1. if state is NS_STATE_NOT_INITIALIZED the only one way here is we received not requested publish from VIP).2. If network is started by slave wakeup. Trying again start MOST...
+%s - MOST bus is already ON
+%s - MOST bus is OFF, restarting in %d ms
+%s - MOST already ON
+%s - startup already requested and pending
+%s - already starting up, canceling scheduled shutdown
+%s - Startup Request ignored in state ---%d ---
+%s (current state: %d)
+Shutting down and pending startup, removing startup from the schedule
+MOST_PWR_SHUTTING_DOWN
+Attempt to shutdown network before Min NET_ON time
+MOST_PWR_ON_PENDING_OFF
+Power Master Shutdown Cancel request received
+Power Master - Shutdown Cancelled
+Power Master - Shutdown Cancel FAILED - scheduled restart
+MOST_PWR_SHUTTING_DOWN_PENDING_ON
+Power Master - Shutdown Cancel request queued
+Power Master Forced Shutdown Request
+%s: Skipping shutdown due to current state: %d
+KEEP_%sALIVE SENT
+%s (%u)
+Power Master Startup Result %02X
+%s(%u). Current MMI_State = %s (%u)
+MMI_State MIB_POWERMODE_HMI_RTC dropped ...
+MMI_State MIB_POWERMODE_HMI_PHONE dropped ...
+MMI_State MIB_POWERMODE_UNINITIALIZED dropped ...
+%s - received MMI_State=0x%02x not recognized!. MMI_State dropped ...
+%s Broadcasting MMI_State = %s (%u) failed send !
+%s Broadcasting last MMI_State = %s (%u) succeeded
+%s Broadcasting Operation State failed!
+%s Broadcasting Operation State succeeded
+Failed to send Shutdown.Start(Execute)
+%s: msm_PM_NetworkShutDown(1, 0) result %d
+%s failed [code=%u]! ... RAM default loaded! MOST start by default.
+%s success
+PS is not ready when using function %s
+Received MOST On Network Status before persistence ready, startup MOST network
+Received MOST Light Status before persistence ready, send Light Status to VIP
+%s (%u) when persistence already initialized with success
+%s called
+assertion failed: sizeof( MIB_Powermode_T ) == p_msg_ptr->data_size
+assertion failed: p_msg_ptr->data != 0
+EV_MIB_POWERMODE(%x) received
+unexpected EVP_MOST_APP_CONFIG_STATE from app %d
+assertion failed: sizeof( bool_t ) == p_msg_ptr->data_size
+%s send initial MMI_State!
+assertion failed: sizeof( EV_MOST_Nodes_T ) == p_msg_ptr->data_size
+%s next = %u
+%s - SAL_Create_Timer() failed. Most application exiting ...
+allowed
+not allowed
+%s, timeout:%d
+%s: %s shutdown starts...
+msm_PM_NetworkShutDown() failed, current state: %d
+most_pm_emergency_shutdown() failed, current state: %d
+%s Unknown shutdown_request_type %d
+%s: %s shutdown overrides %s shutdown
+%s: Canceling previous shutdown
+%s: Unable to cancel previous shutdown
+most_pm_fast_shutdown() failed, current state: %d
+%s: shutdown already pending - ignore new request
+%s Unknown shutdown_state %d
+%s: Stop optical wake up during shutdown
+%s: %s Shutdown
+%s: received %s SHUTDOWN request in ns state MOST_PWR_STARTING_UP_PENDING_OFF, ignoring
+%s: received %s SHUTDOWN request in ns state: %d, ignoring
+FILTERED
+ALLOWED
+%s: 0x%X
+%s started (exitcode=%u alwayson=%u manufacturing mode=%u)
+%s - SAL_Create_Queue() failed. Most application exiting ...
+The '%s' (id=%u) not ready!
+%s - waiting for %u threads at startup timeout !
+%s (prio=%u) running...
+EV_PERSISTENCE_READY received!
+EV_PERSISTENCE_VIP_INIT_DONE received!
+EV_PERSISTENCE_VIP_INIT_NOT_DONE received!
+assertion failed: sizeof( NS_State_T ) == p_msg->data_size
+assertion failed: p_msg->data != 0
+NS Ready received. Retrigger startup ...
+%s delay: %d, diagnosis: %d, duration: %d
+%s - EV_GET_KEEP_ALIVE_STATUS
+%s - EV_SHUTDOWN_APP received
+Received EV_PREPARE_OFF_APP_CANCEL
+%s - EVP_MOST_APP_NETWORK_STARTUP received from (thrid=%u) !
+EVP_MOST_APP_NETWORK_STARTUP delayed - waiting for most_min_net_restart_timer expires...
+EVP_MOST_APP_NETWORK_STARTUP. Startup cancelled due to autowakeup ban
+%s - EV_MOST_APP_STARTUP_DELAYED_TIMER received when pwr_state=%u
+Received EV_PREPARE_OFF_FAST
+Publish EV_PREPARE_OFF_APP_DONE
+Received EV_PREPARE_OF
+EVP_MOST_APP_NETWORK_SHUTDOWN in state %02X, A:%d, T:%d
+EVP_MOST_APP_NETWORK_FAST_SHUTDOWN in state %02X, A:%d, T:%d
+EVP_MOST_APP_NETWORK_EMERGENCY_SHUTDOWN in state %02X, A:%d, T:%d
+%s EV_MOST_APP_MSM_STARTUP_RESULT event recieved
+%s EV_MOST_APP_MSM_SHUTDOWN_RESULT event recieved from aid=%d tid=%d
+%s Most min net on timer elapsed
+%s Most min net restart timer elapsed ... EVP_MOST_APP_NETWORK_STARTUP send
+%s: Stop optical wake up during RBD
+%s Failed to read variant coding!
+Shutdown pending, RBD request cancelled
+EV_MOST_APP_AUTOMATIC_RBD_REJECTED
+%s Turning Most FOT ON!
+%s Turning Most FOT OFF!
+EVP_MOST_APP_RESET_FOT_TX
+%s Sending suspend list!
+%s - EVP_MOST_APP_PM_START_TIMER event received
+%s - EVP_MOST_APP_INIC_PROG_MODE_ENTER event received - switching off MOST...
+SWDL programming mode - emergency shutdown
+EVP_MOST_APP_INIC_PROG_MODE_CONFIRM to appid=%u...
+MOST_PWR_OFF_PROGRAMMING
+Publish EV_PREPARE_OFF_FAST_DONE
+EVP_MOST_APP_VIDEO_TRANSMISSION_STATE received
+Received EV_DM_MANUFACTURNG_ACTIVE - enabling MOST for Manufacturing Diagnosis!
+%s - unknown event received: %s (evid=%u)
+MOST Thread termination Timeout
+Thread termination Timeout [%d] id- %d
+%s end
+Shutdown Request Type mutex destroy failed
+Shutdown State mutex destroy failed
+Hisip control mutex destroy failed
+MOST Threads terminated
+RBD started
+ErrorShutdown
+most_pwr_mod_thread
+MOST_CM_RECEIVER_TID
+MOST_MSG_RECEIVE_TID
+MOST_MSG_SEND_TID
+MOST_NS_SERVICE_TID
+MOST_MSMM_SERVICE_TID
+MOST_CLIENT_MGR_TID
+MOST_METHOD_MONITOR_TID
+MOST_DIAG_TID
+MOST_CM_HANDLER_TID
+MOST_HISIP_HANDLER_THREAD_TID
+MOST_SIGNAL_THREAD_TID
+NORMAL
+EMERGENCY
+UNKNOWN
+most_set_sollverbau_list
+most_shutdown_suspend_timer_init
+most_set_shutdown_suspend_filter
+most_shutdown_request
+most_do_shutdown_device
+most_diag_wakeup_timer_stop
+most_diag_wakeup_timer_start
+most_ecl_trigger_timer_stop
+most_ecl_trigger_timer_start
+is_startup_allowed_by_autowakeup
+most_autowakeup_init
+most_pwr_mod_init_timers
+sw_timer_service_request
+OnConfigState
+most_pwr_mod_on_persistence_not_ready
+most_pwr_mod_on_persistence_ready
+most_pm_fast_shutdown
+send_operation_state
+send_MMI_state
+MMI_OFF
+MMI_IOC
+MMI_STDBY
+MMI_ON
+MMI_STDBY_PWR_SAVE
+MMI_STDBY_RESTR
+MMI_ON_DIAG
+MMI_ON_TEL
+MMI_ON_SWDL
+MMI_STDBY_CUST_SWDL
+MMI_ONLINE_IOC
+MMI_ONLINE
+MMI_IOC_PHONE
+MMI_RSVD_0D
+MMI_RSVD_0E
+MMI_RSVD_0F
+MMI_STDBY_PWR_SAVE_1
+MMI_STDBY_PWR_SAVE_2
+MMI_STDBY_PWR_SAVE_3
+!!ERR_NOT_KNOWN_STATE!!
+map_MMI_state
+most_update_MMI_state
+most_pm_send_shutdown_result
+most_pm_send_startup_result
+most_pm_Update_Most_Light_State
+most_pm_evt_rbd_complete
+most_pm_evt_fast_shutdown
+most_pm_evt_shutdown
+most_pm_evt_startup
+most_ecl_set_test_type
+pm_asm_send_get_persman_initilalized
+pm_asm_send_get_appstate
+pm_asm_update
+pm_asm_getappready
+pm_asm_request
+pm_asm_init
+pm_asm_ev_app_timer_cbk
+pm_asm_persistence_initialized
+most_ecl_set_operation_state
+most_ecl_is_ready_to_use
+sw_sso_tx_timer_cbk
+sw_timer_shutdown_suspend_cbk
+sw_timer_diag_wakeup_cbk
+sw_timer_ecl_activity_cbk
+sw_timer_ecl_trigger_cbk
+sw_timer_user_cbk2
+sw_timer_fot_tx_reset_cbk
+sw_timer_autowakeup_duration_cbk
+sw_timer_autowakeup_delay_cbk
+most_pm_verify_power_state
+most_pm_ecl_pulse
+most_pm_shutdown_result
+most_pm_startup_result
+start_pwr_mod_thread
+../bb_most150/App/source/most_hisip_handler.c
+AP_ECD ready. Subscribe to ECD ...
+AP_ECD NOT ready !
+ %s failed in SAL_Send(EV_GET_APP_STATE) for appid=%u
+%s - SAL_Create_Timer queue failed
+assertion failed: 0
+%s - app=%u state=%u
+%s - appid=%u is ready!
+%s - appid=%u received ready more than once 
+%s - appid=%u received not running state! 
+%s - not requested app state received for appid=%u state=%u !
+%s subscribing for ECD HiSIP!
+%s sending version report!
+%s Requesting HiSIP Version!
+%s Requesting ECL Line Status!
+%s HiSIP Message MOST_Get_HiSIP_Version received!
+%s HiSIP Message MOST_Rep_HiSIP_Version received from HKP!
+First byte of HKP HiSIP ver:%d
+Second byte of HKP HiSIP ver:%d
+%s HiSIP Message MOST_Rep_Alive_Test received!
+Alive test result:%d
+%s HiSIP Message MOST_Rep_RBD_Test received!
+RBD test result:%d
+SAL_Send failed in %s
+%s HiSIP Message MOST_Rep_ECL_Test received!
+ECL Line Status:%d
+MostStartUp start optical RBD...MNS_DEVMODE_AUTO
+MostStartUp not executed - just short ground RBD ...
+%s HiSIP Message MOST_FOR_Selftest_Report received!
+FOT self test resutl:%d
+%s HiSIP Message MOST_RBD_TEST_STATUS rejected@!
+%s HiSIP Message MOST_RBD_TEST_STATUS accepted
+%s HiSIP Message Function ID = %d not found!
+%s HiSIP Message MOST_Rep_HiSIP_Version received from VIP!
+First byte of VIP HiSIP ver:%d
+Second byte of VIP HiSIP ver:%d
+%s Sending Net State to VIP!
+%s Sending Ext Amp status to VIP!
+EMERGENCY RESTART Notification
+Received under/over voltage power state from VIP
+Received transport mode on from VIP
+Received MOST ON state from VIP
+Received MOST Diagnostic Shutdown - Fast Shutdown
+Received MOST Emergency Shutdown from VIP
+MOST Fast Shutdown due to wrong power state
+MOST Fast Shutdown due to transport mode on
+Received MOST OFF state from VIP
+Persistence not ready - store most network status received from VIP
+%s HiSIP Message Recieved from Unknown Sender, Unable to handle!
+%s - SAL_Create_Queue() failed.
+Most hisip control mutex creation failed
+%s (prio=%u) running...
+The '%s' (id=%u) not ready!
+%s - waiting for %u threads at startup timeout !
+EV_SHUTDOWN_APP Message Received! 
+%s HiSIP Message Recived send=%x aid=%x fid=%02X !
+%s HiSIP subscribe request confirmed!
+%s HiSIP subscribe request rejected!
+HiSIP subscribe Special request rejected!
+Check MOST network status after PS Update.
+%s EVP_MOST_APP_DIAG_GET_RBD_LINE_STATUS event recieved!
+%s - unknown event received: %s (evid=%u)
+%s end on timeout
+Most hisip control mutex destroy failed
+%s end
+LIGHT_STATE sent: %02X
+Try to start network master but persistence not ready yet ! Wait for peristence...
+%s Requesting FOT self Test!
+%s Sending External Amplifire Status to VIP!
+%s Requesting RBD start!
+%s Requesting Alive test start!
+%s sending system active=%u
+%s Sending Over Temperaute(Slave) Report to HKP
+%s, counter:%d, comm_state:%d
+%s node class %d (ecl_test_result idx=%d, bit=%d) ... alive=%u!
+%s Unavailable node class (%d)!
+%s RBD resutlt not available!
+%s Null pointer passed to ecl test result query!
+%s Sending Network State to VIP!
+send_net_state
+ecl_test_result_query
+MsgSend_HiSIP_temp_shutdown_report
+MsgSend_HiSIP_Sub_System_Active
+MsgSend_HiSIP_Start_Alive_Test
+MsgSend_HiSIP_Start_RBD
+send_ext_amp_status
+MsgSend_Start_FOT_self_test
+most_hisip_thread
+MOST_NS_SERVICE_TID
+MOST_DIAG_TID
+MOST_PWR_MOD_TID
+HandleMessage
+most_check_if_startup_necessary
+MsgSend_HiSIP_PwrMode_Req
+MsgSend_HiSIP_Get_ECL_Status
+MsgSend_HiSIP_Version_Req
+MsgSend_HiSIP_Version_Report
+Subscribe_ECD
+app_state_update
+init_and_request_for_app_state
+/extbin/apps/cfg/most_deviceinfo.cfg
+../bb_most150/App/source/most_ns_if.cpp
+%s - config file path: %s
+%s - using default cfg file path: most_deviceinfo.cfg
+most_deviceinfo.cfg
+Sending message when config is not ok!
+most_ns_if_send_2_most - unable to send message, no n/s buffer free
+%s - FAILED to send: %04x.%02x.%02x
+%03x.%01x.%03x
+most_ns_if_send_2_most - unable to send message, n/s not initialized
+most_ns_if_send_2_most: %04x.%02x.%02x.%03x
+%01x.%03x
+Unable to allocate memory
+SAL_Send failed in %s
+%s end
+%s - FAILED to create %d thread
+Forced MostOn=1 by software
+APP_SYSTEMMANAGER not ready when asking for MOST state!
+Coding MostOn=0, ManufacturingMode=%u
+mhpcon status %u adr=%x inst=%x
+Closing all mhpcon connections
+ ...new  fb=%02x ad=%03x inst=%2x
+%s - MHP message not created
+ ...invalid fb=%02x inst=%2x
+[close=%u]=Closing  mhpcon for fblock=%03x adr=%03x inst=%x
+[close=%u]=Closing  mhpcon for fblock=%03x adr=%03x inst=%x failed!
+cannot find mhp connection when closing mhpcon for fblock=%03x inst=%x !
+%s node_cnt=%u
+%s cannot be called in config ok (ns callback context). Check your code!
+%s invalid address for node position %u. Probably config NOK ... (config_ok=%u, currentStateOk=%u)
+%s - MostGetMaxPos failed!
+%s state=%u
+SSO CU Trigger analysis
+Setting Notification Delay Timer %d
+Start (Execute)
+Start (Query)
+Result(Suspend)
+Result (Temperature)
+%s invoked
+is not
+%s - INIC %s ready to shutdown
+ShutdownAnalysis Error - Unusable shutdownReason data
+Notification Delay Timer expired
+ShutdownAnalysis Error: device (pos- %d) %04X answered "No_Result_Avail"
+ShutdownAnalysis Error: device (pos- %d) %04X answered with Error
+ShutdownAnalysis Error: device (pos- %d) %04X didn't answer
+SSOAnalysis dev-%04X, res-%02X, diagID-%02X
+SSO reported for node %d
+CU reported for node %d
+NO_FAULT reported for node %d
+Invalid SSO/CU result %02X reported by %d
+sso_reported-%d - cu_reported-%d
+ShutdownReasonClear Error: device (pos- %d) %04X answered with Error
+ShutdownReasonClear Error: device (pos- %d) %04X didn't answer
+ShutdownReasonClear Error: device (pos- %d) %04X Answered %02X
+SSO: msm_PM_ShutDownAnalysis failed to start, state: %d, cnt: %d
+%s MHP delay timer expired!
+Using default notification delay=%dms.
+Notification delay=%dms read from calibrations.
+%s started
+%s - wait for client mgr thread startup timeout
+%s (prio=%u) running...
+%s - most_send_service_semaphore create failed
+%s - most send thread end timeout
+%s: %s
+assertion failed: p_app
+%i NS FBlock %x InstID %x addr=%x
+%s MsgSend used when ns not initialized yet/anymore!
+%s MhpSend used when ns not initialized yet/anymore!
+%s MhpOpenCon used when ns not initialized yet/anymore!
+%s msm_SM_Init must be called before InitNetServices!
+deque<T> too long
+most_ns_if_most_on_stop_netservices
+most_ns_if_msm_SM_Init
+most_ns_if_MhpOpenCon
+most_ns_if_MhpSend
+most_ns_if_MsgSend
+most_signal_thread
+MostMessageSendThread
+MostMessageReceiveThread
+most_mhp_expired
+most_sso_procedure_expired
+send_SSOCU_IRC
+most_ns_if_set_power_state
+most_ns_if_on_ns_init
+send_shutdown_Result_IRC_event
+most_ns_if_shutdown_query
+most_ns_if_shutdown_execute
+most_ns_if_config_state
+most_ns_update_diag_mbr_nodes
+most_vag_config_mhpconn
+most_send_MPR_change_IRC
+most_ns_if_stop_mhp_retry_timer
+most_ns_if_start_mhp_retry_timer
+most_ns_if_start_thread
+most_ns_if_stop
+most_ns_if_send_2_most
+CallKeyValLoad
+../bb_most150/App/source/most_cm/most_cm_connection.cpp
+%s: Connect sockets failed. Destroying sockets...
+%s: Output socket failed. Destroying input socket...
+%s: Input socket failed
+%s - Sockets can't be NULL
+%s - Connection already opened
+%s: MostApp not exists
+%s: Socket disconnect failed
+%s: Output socket destroy failed
+%s: Input socket destroy failed
+%s: Connection already closed
+%s: Try %d
+%s: ScmConnectSockets failed (error: %d)
+%s: ScmConnectSockets failed.
+%s: ScmDisconnectSockets failed (error: %d)
+DoDisconnectSockets
+DoConnectSockets
+DisconnectSockets
+ConnectSockets
+Destroy
+SendConnectionDestroyedToFb
+Create
+../bb_most150/App/source/most_comlink.cpp
+MOST_ComLink_C::Received - msg %02x.%02x.%03x.%01x cannot be routed
+MOST_ComLink_C::Received - from address: 0x%04x
+Unable to allocate memory.
+MOST_ComLink
+Client_ComLink
+Local_ComLink
+../bb_most150/App/source/comlink.cpp
+Unable to route message, invalid link (Ad=%04x in=%u FB=%03x fktid=%04x) 
+../bb_most150/App/source/client_comlink.cpp
+%s - address: 0x%04x, fb: 0x%02x, instID: 0x%02x
+fnc: 0x%04x, op: 0x%02x
+Client_ComLink_C::SendMessage - msg %02x.%02x.%03x.%01x cannot be delivered
+Client_ComLink_C::SendMessage - to client id: 0x%04x
+SendMessage - target queue is full and cannot route a reply error msg: %02x.%02x.%02x.9[sh=%02x%02x.41]
+Unable to allocate memory.
+SendMessage - target queue is full and cannot route a reply error msg: %02x.%02x.%02x.F[41]
+SendMessage - FAILED to send msg: 0x0150.0x%02x.0x%02x.0x%02x.0x%02x
+SendMessage - to client 0x%04x
+fnc: 0x%03x, op: 0x%02x (tx_st: 0x%02x)
+Received
+SendMessage
+../user_most150/App/source/most_diag_thread.c
+%s started
+%s - SAL_Create_Queue() failed 
+Failed to create SSO delay timer
+Failed to create SSO undervoltage flag timer
+Most_Diag_Method_Init (RBD) not properly initializated
+Most_Diag_Method_Init (SSO_RESET) not properly initializated
+%s (prio=%u) running...
+EV_SHUTDOWN_APP
+EV_MOST_APP_PS_RUNNING received
+Most_Variant_Init not properly initializated
+Message %s [evid=%u] received but not handled !
+%s exiting
+data NULL or length too big
+RESP key:%u, type:%u, length:%u, fid:%u
+assertion failed: me != 0
+assertion failed: pvalue!= 0
+%s %02X
+%s INIC Update state %u
+%s: %d
+assertion failed: p_dmsg
+assertion failed: p_dmsg->parameter.data
+DTC_COND_STATUS: %sOK
+SSO Start UV timer 
+SSO UV flag SET
+%s - key:%u, length:%u, fid:%u
+%s requesting pwr mod for ecl line status!
+%s - unsupported parameter 0 = %u
+%s - unexpected data
+SSO Result read from Diag %02X
+%s: Invalid param len %d
+INIC Update Result read from Diag %02X
+assertion failed: p_sal_msg
+assertion failed: p_sal_msg->data
+%s-Invalid length - %d
+SSOResult %02X
+SSO Delay expired UV INIT:%d, UV FLAG:%d
+Store SSOResult %02X
+SSO Report Ignored-UV FLAG set or not initialized
+SSO UV TM expired
+SSO UV FLAG CLEARED, was %d
+%s evid=%u [%s]
+RBD test result:%d
+assertion failed: dmsg.parameter.data
+MOST_DATABUS_BREAK - DTC ACTIVE
+MOST_DATABUS_BREAK_WAKEUP - DTC ACTIVE
+MOST_Wakeup_DTC_Handler - Automatic RBD rejected
+MOST_DATABUS_BREAK_SPORADIC_ZR - DTC ACTIVE
+MOST_DATABUS_BREAK_SPORADIC_SOUND - DTC ACTIVE
+MOST_DATABUS_BREAK_SPORADIC_CD - DTC ACTIVE
+MOST_DATABUS_BREAK_SPORADIC_KOMBI - DTC ACTIVE
+MOST_RBD_BREAK_ZR - DTC ACTIVE
+MOST_RBD_BREAK_SOUND - DTC ACTIVE
+MOST_RBD_BREAK_CD - DTC ACTIVE
+MOST_RBD_BREAK_TV_TUNER - DTC ACTIVE
+MOST_RBD_BREAK_KOMBI - DTC ACTIVE
+MOST_RBD_BREAK_RSE - DTC ACTIVE
+MOST_RBD_SHORT_GROUND - DTC ACTIVE
+%sMost bus reset,Diag triggered
+%sMost config state IRC,Diag triggered
+%sMOSTState IRC,Diag triggered
+%sMost MPR IRC,Diag triggered
+%sMost Shutdown IRC,Diag triggered
+%sMOST ShutdownReason SSOCU,Diag triggered
+SSO Clear finished %04X
+assertion failed: sizeof( most_address ) == p_sal_msg->data_size
+%s - DTC discarded
+MOST_LOOPBACK_TEST_Handler_Err
+MOST_FOT_SELFTEST_Handler_Err
+MOST_INIC_Fw_Update_Send_Status_Handler_Err
+MOST_CLEAR_SSO_ROUT_RESULT_Handler_Err
+MOST_SHUTDOWN_IRC_Handler_Err
+MOST_OCCURANCE_IRC_Handler_Err
+MOST_REATTACH_IRC_Handler_Err
+MOST_STATE_IRC_Handler_Err
+MOST_NCE_IRC_Handler_Err
+MOST_BUS_RESET_IRC_Handler_Err
+MOST_RBD_Short_Gnd_DTC_Handler_Err
+MOST_RBD_RSE_DTC_Handler_Err
+MOST_RBD_KOMBI_DTC_Handler_Err
+MOST_RBD_TV_DTC_Handler_Err
+MOST_RBD_CD_DTC_Handler_Err
+MOST_RBD_Sound_DTC_Handler_Err
+MOST_RBD_ZR_DTC_Handler_Err
+MOST_Sporadic_Kombi_DTC_Handler_Err
+MOST_Sporadic_CD_DTC_Handler_Err
+MOST_Sporadic_Sound_DTC_Handler_Err
+MOST_Sporadic_ZR_DTC_Handler_Err
+MOST_Wakeup_DTC_Handler_Err
+MOST_Databus_DTC_Handler_Err
+MOST_Info_Handler_Err
+MOST_Last_Node_Status_Handler_Err
+MOST_Coding_Error_Status_Handler_Err
+MOST_Config_Status_Handler_Err
+MOST_Net_Status_Handler_Err
+MOST_Inic_Status_Handler_Err
+MOST_suspend_device_list_Handler_Err
+MOST_Verbau_List_Handler_Err
+MOST_RBD_Line_Status_Handler_Err
+MOST_RBD_Complete_Handler_Err
+MOST_RBD_Status_Handler_Err
+MOST_LOOPBACK_TEST_Handler_Guard
+MOST_FOT_SELFTEST_Handler_Guard
+MOST_SHUTDOWN_IRC_Handler_Guard
+MOST_OCCURANCE_IRC_Handler_Guard
+MOST_REATTACH_IRC_Handler_Guard
+MOST_STATE_IRC_Handler_Guard
+MOST_NCE_IRC_Handler_Guard
+MOST_BUS_RESET_IRC_Handler_Guard
+MOST_RBD_Short_Gnd_DTC_Handler_Guard
+MOST_RBD_RSE_DTC_Handler_Guard
+MOST_RBD_KOMBI_DTC_Handler_Guard
+MOST_RBD_TV_DTC_Handler_Guard
+MOST_RBD_CD_DTC_Handler_Guard
+MOST_RBD_Sound_DTC_Handler_Guard
+MOST_RBD_ZR_DTC_Handler_Guard
+MOST_Sporadic_CD_DTC_Handler_Guard
+MOST_Sporadic_Kombi_DTC_Handler_Guard
+MOST_Sporadic_Sound_DTC_Handler_Guard
+MOST_Sporadic_ZR_DTC_Handler_Guard
+Most_Diag_RBD_DTC_Guard
+MOST_Wakeup_DTC_Handler_Guard
+MOST_Databus_DTC_Handler_Guard
+MOST_Info_Handler_Guard
+MOST_Last_Node_Status_Handler_Guard
+MOST_Coding_Error_Status_Handler_Guard
+MOST_Config_Status_Handler_Guard
+MOST_Net_Status_Handler_Guard
+MOST_suspend_device_list_Handler_Guard
+MOST_Verbau_List_Handler_Guard
+MOST_Inic_Status_Handler_Guard
+MOST_RBD_Line_Status_Handler_Guard
+MOST_RBD_Complete_Handler_Guard
+MOST_RBD_Status_Handler_Guard
+MOST_Info_Handler
+MOST_Last_Node_Status_Handler
+MOST_Coding_Error_Status_Handler
+MOST_Config_Status_Handler
+MOST_LOOPBACK_TEST_Handler
+MOST_FOT_SELFTEST_Handler
+MOST_SHUTDOWN_IRC_Handler
+MOST_OCCURANCE_IRC_Handler
+MOST_REATTACH_IRC_Handler
+MOST_STATE_IRC_Handler
+MOST_NCE_IRC_Handler
+MOST_BUS_RESET_IRC_Handler
+MOST_RBD_Short_Gnd_DTC_Handler
+MOST_RBD_RSE_DTC_Handler
+MOST_RBD_KOMBI_DTC_Handler
+MOST_RBD_TV_DTC_Handler
+MOST_RBD_CD_DTC_Handler
+MOST_RBD_Sound_DTC_Handler
+MOST_RBD_ZR_DTC_Handler
+MOST_Sporadic_Kombi_DTC_Handler
+MOST_Sporadic_CD_DTC_Handler
+MOST_Sporadic_Sound_DTC_Handler
+MOST_Sporadic_ZR_DTC_Handler
+MOST_Wakeup_DTC_Handler
+MOST_Databus_DTC_Handler
+MOST_Net_Status_Handler
+MOST_Inic_Status_Handler
+MOST_suspend_device_list_Handler
+MOST_Verbau_List_Handler
+MOST_RBD_Line_Status_Handler
+MOST_RBD_Complete_Handler
+MOST_RBD_Status_Handler
+MOST_SSO_Report_Handler
+MK_MD_PARAM_0X030_HW_ID_INIC_MOST_GET_MD_ERR
+MK_MD_PARAM_0X025_SWID_INIC_GET_MD_ERR
+MK_MD_PARAM_0X0ED_MOST_DIAGNOSTICS_GET_MD_ERR
+MK_MD_PARAM_0X0EC_MOST_FOT_ACTIVATION_SET_MD_ERR
+MK_MD_PARAM_0X0EC_MOST_FOT_ACTIVATION_GET_MD_ERR
+MK_CD_MOST_DIAG_ROUT_STORE_INIC_FW_STATUS_SET_ERR
+MK_CD_MOST_DIAG_ROUT_READ_INIC_FW_STATUS_SET_ERR
+MK_CD_MOST_DIAG_ROUT_READ_SSO_RESULT_SET_ERR
+MK_CD_MOST_DIAG_ROUT_STORE_SSO_RESULT_SET_ERR
+MK_CD_MOST_DIAG_ROUT_SSO_RESET_GET_ERR
+MK_CD_MOST_DIAG_ROUT_SSO_RESET_START_ERR
+MK_CD_MOST_DIAG_ROUT_RBD_GET_ERR
+MK_CD_MOST_DIAG_ROUT_RBD_START_ERR
+MK_CD_MOST_DIAG_ADAPT_OPTICAL_WAKEUP_SET_ERR
+MK_CD_MOST_DIAG_ADAPT_OPTICAL_WAKEUP_GET_ERR
+MK_CD_MOST_DIAG_ADAPT_SPORADIC_BRK_DET_SET_ERR
+MK_CD_MOST_DIAG_ADAPT_SPORADIC_BRK_DET_GET_ERR
+MK_CD_MOST_DIAG_ADAPT_AUTOMATIC_RBD_SET_ERR
+MK_CD_MOST_DIAG_ADAPT_AUTOMATIC_RBD_GET_ERR
+MK_CD_MVB_MOST_GET_ERR
+MK_CD_DTC_COND_STATUS_SET_ERR
+MK_MD_PARAM_0X030_HW_ID_INIC_MOST_GET_MD_GUARD
+MK_MD_PARAM_0X025_SWID_INIC_GET_MD_GUARD
+MK_MD_PARAM_0X0ED_MOST_DIAGNOSTICS_GET_MD_GUARD
+MK_MD_PARAM_0X0EC_MOST_FOT_ACTIVATION_SET_MD_GUARD
+MK_MD_PARAM_0X0EC_MOST_FOT_ACTIVATION_GET_MD_GUARD
+MK_CD_MOST_DIAG_ROUT_RBD_GET_GUARD
+MK_CD_MOST_DIAG_ROUT_RBD_START_GUARD
+MK_CD_MOST_DIAG_ADAPT_OPTICAL_WAKEUP_SET_GUARD
+MK_CD_MOST_DIAG_ADAPT_OPTICAL_WAKEUP_GET_GUARD
+MK_CD_MOST_DIAG_ADAPT_SPORADIC_BRK_DET_SET_GUARD
+MK_CD_MOST_DIAG_ADAPT_SPORADIC_BRK_DET_GET_GUARD
+MK_CD_MOST_DIAG_ADAPT_AUTOMATIC_RBD_SET_GUARD
+MK_CD_MOST_DIAG_ADAPT_AUTOMATIC_RBD_GET_GUARD
+MK_CD_MVB_MOST_GET_GUARD
+MK_CD_DTC_COND_STATUS_SET_GUARD
+MK_MD_PARAM_0X030_HW_ID_INIC_MOST_GET_MD
+MK_MD_PARAM_0X025_SWID_INIC_GET_MD
+MK_MD_PARAM_0X0ED_MOST_DIAGNOSTICS_GET_MD
+MK_MD_PARAM_0X0EC_MOST_FOT_ACTIVATION_SET_MD
+MK_MD_PARAM_0X0EC_MOST_FOT_ACTIVATION_GET_MD
+MK_CD_MOST_DIAG_ROUT_STORE_INIC_FW_STATUS_SET
+MK_CD_MOST_DIAG_ROUT_READ_INIC_FW_STATUS_SET
+MK_CD_MOST_DIAG_ROUT_READ_SSO_RESULT_SET
+MK_CD_MOST_DIAG_ROUT_STORE_SSO_RESULT_SET
+MK_CD_MOST_DIAG_ROUT_SSO_RESET_GET
+MK_CD_MOST_DIAG_ROUT_SSO_RESET_START
+MK_CD_MOST_DIAG_ROUT_RBD_GET
+MK_CD_MOST_DIAG_ROUT_RBD_START
+MK_CD_MOST_DIAG_ADAPT_OPTICAL_WAKEUP_SET
+MK_CD_MOST_DIAG_ADAPT_OPTICAL_WAKEUP_GET
+MK_CD_MOST_DIAG_ADAPT_SPORADIC_BRK_DET_SET
+MK_CD_MOST_DIAG_ADAPT_SPORADIC_BRK_DET_GET
+MK_CD_MOST_DIAG_ADAPT_AUTOMATIC_RBD_SET
+MK_CD_MOST_DIAG_ADAPT_AUTOMATIC_RBD_GET
+MK_CD_MVB_MOST_GET
+Most_App_Diag_Set_Service_State
+MOST_INIC_Fw_Update_Send_Status_Handler
+Most_Diag_Send_INICFwStatus
+Most_Diag_Req_INICFwStatus
+Most_Diag_Send_SSOResult_2_Diag
+Most_Diag_Req_SSOResult
+Most_Variant_Init
+most_diag_thread
+PS_SECTION_MOST
+PS_SECTION_MOST_VC
+PS_SECTION_MOST_EHC_RST
+PS_SECTION_MOST_SSO_RESULT
+Unknown section!
+../../PersistentStorage/source/ps_wrapper.cpp
+%s failed in section %s (%u)
+1. Read failed in section %s (%u)
+2. The buffer size_dst=%u to small! (read_bytes=%u) when read section %s (%u)
+%s readVIPData failed of item = %u
+Persistence_Read_VIPData
+Persistence_Write
+../bb_most150/App/source/most_real_fblock.cpp
+MOST_AddressRegister_C::Route - Fb: 0x%02x InstId: 0x%02x (address/client_id: 0x%04x, link: 0x%02x)
+MOST_AddressRegister_C::Route unable to find link for F0 BC message:
+MOST_AddressRegister_C::Route incorrect idx msg: %u
+../bb_most150/App/source/most_shadow_fblock.cpp
+MOST_ShadowFblock_C::Route Unable to route msg, operation (%d) is invalid)
+MOST_ShadowFblock_C::Route Unable to route msg, instIds don't match (msg->instid: 0x%02x, instId: 0x%02x)
+MOST_ShadowFblock_C::Route Unable to route msg from server to client, status is false (0x%02x.0x%02x)
+MOST_ShadowFblock_C::Route Shadow %02X.%02X already routed
+MOST_AddressRegister_C::Route Unable to route msg on/to !MOST, incorrect address: 0x%02x
+MOST_ShadowFblock_C::HandleRequest
+%s - C:0x%x
+MOST_ShadowFblock_C::HandleRequest - invalid control method in notification function
+%s: msg.OP:%02x, fb:%02x %02x, instId:%02x %02x
+MOST_ShadowFblock_C::isRequest: record %08x, sender %08x
+MOST_AddressRegister_C::Route - shadow Fb: 0x%02x InstId: 0x%02x (Shadow Inst Id: 0x%04x)
+isRequest
+HandleRequest
+../bb_most150/App/source/most_video_ctrl.cpp
+%s - SAL_Create_Queue() failed.
+%s (prio=%u) running...
+%s end
+%s - FAILED to create %d thread
+VIDEO_TX_CMD: TX NOT Allowed
+VIDEO_TX_CMD: Allowed
+Unknown command received %d from %d:%d
+most_video_start_ctrl_thread
+most_video_control_thread
+../bb_most150/App/source/most_video_stream.cpp
+Unable to unmask signal for video TX thread
+%s (prio=%u) running...
+%s - transmission: not allowed due to Config NotOK
+%s - connection lost, perform reconnection
+%s end
+/dev/transport_server
+%s - client connection try %d
+%s - client connected and ready
+%s - client connection failed, do retry...
+isoTX
+%s - retries exhausted - msg length %d dropped
+%s - a try to send msg length 0 - msg dropped
+assertion failed: p_msg->data != __null
+EVP_MOST_APP_VIDEO_TRANSMISSION_STATE: CREATE received
+%s - FAILED to create %d thread, try: %d
+assertion failed: false
+most_video_set_state: invalid entry parameter
+most_video_evt_transmission_state_create
+most_video_transmit_data
+most_video_connect_client
+most_video_transmission_thread
+../../Util/source/UtilMutex.cpp
+%s - failed to create mutex
+%s - failed to destroy mutex
+~Mutex
+Mutex
+../../Util/source/UtilThread.cpp
+%s - FAILED to create tid %d
+%s - tid: %d stopped
+%s - tid: %d termination wait timeout
+Start
+../../Util/source/KeyValueCfg.cpp
+Could not load configuration file: %s
+map/set<T> too long
+invalid map/set<T> iterator
+../../Util/source/sw_timer.c
+assertion failed: 0 != fptr_request_service
+assertion failed: 0 != fptr_get_time
+assertion failed: true == module_initialized
+%s but no callback for timer %u. See sm_timer.h for timer ids.
+%s cannot be recursive called!!!
+%s tid=%u ms=%u per=%u
+%s called on not defined timer id=%u! Use SW_TIMER_DEFINE( you_timer_id ) 
+%s tid=%u ms=%u per=%u rtg=%u
+%s tid=%u
+SW_Timer_Stop
+SW_Timer_Start2
+SW_Timer_Start
+SW_Timer_Service
+SW_Timer_Init
+../../Util/source/util_time_stat.cpp
+%s every total=%d ms, every per=%d ms
+assertion failed: p_time_now != __null
+assertion failed: m_tot_count_services
+The time overlapped... timeSinceReport = %d
+%s %s %u %dcalls/%u.%usec SVC[us] %u %u %u in %02d:%02d:%02d:%03dms svc=%u, INT[ms] %u %u %u in %02d:%02d:%02d:%03dms svc=%u
+time_error now.tv_sec(%d) < prev_now.tv_sec(%d)
+time_error now.tv_nsec(%ld) < prev_now.tv_nsec(%ld)
+time_error service_time_us = %d
+CallTimeStat
+../../Util/source/string_res.c
+copy_display_string called with NULL pointer
+assertion failed: ((dest != 0) && (buf != 0))
+start_of_next_word called with NULL pointer
+assertion failed: ((buf != 0) && (str_char_is_blank != 0))
+length_next_word called with NULL pointer
+NULL C string pointer
+assertion failed: (s != 0)
+Length of buffer contents larger than buffer size
+assertion failed: (dest_length <= dest_size)
+NULL destination string pointer
+assertion failed: (dest != 0)
+NULL source string pointer
+assertion failed: (src != 0)
+Str_Get_Sub_String called with NULL pointer
+assertion failed: ((dest_str != 0) && (src_str != 0) && (str_char_is_blank != 0))
+Str_Is_Blank_String called with NULL pointer
+NULL string pointer
+assertion failed: (str != 0)
+memexch called with NULL pointer
+assertion failed: ((src1 != 0) && (src2 != 0))
+util_stricmp called with NULL pointer
+assertion failed: ((s1 != 0) && (s2 != 0))
+../../PersistentStorage/source/ps_proxy.cpp
+Invalid section index %d
+assertion failed: (PS_Section < PERSISTENT_NUMBER_OF_SECTIONS)
+NULL persistent storage key
+assertion failed: (name != __null)
+Empty persistent storage key
+assertion failed: (name[0] != '\0')
+NULL persistent storage data ptr
+assertion failed: (data_src != __null)
+No persistent storage data
+assertion failed: (size_src > 0)
+Request Write PS Section: %d Name: %s size: %d
+%s used when peristence ready message has not been received [sub_section_name=%s]!
+assertion failed: (sub_section_name != __null)
+assertion failed: (data_dst != __null)
+Request Read PS Section: %d Name: %s size: %d
+%s used when PS not ready [sub_section_name=%s]!
+Request Read_VIPData %d size: %d
+assertion failed: (data != __null)
+%s used when persistence message has not been received!
+PS_Read_VIPData
+PS_Read
+PS_Write
+../user_most150/NetServices/source/ns_cb_l1.c
+L1: Scm_Error NSR_E_MOST_BANDWIDTH
+L1: Scm_Error NSR_E_MOST_DEALLOCATED_ALL
+L1: Scm_Error NSR_E_MEDIALB_BANDWIDTH
+L1: Scm_Error: 0x%x
+Scm_Bandwidth_Changed current: %d
+Mns_On_Error: NSR_E_INIC_VERSION
+Mns_On_Error: NSR_E_REATTACH when NS_STATE_STOPPING...
+Mns_On_Error: NSR_E_REATTACH
+Mns_On_Error: NSR_E_NO_COMM
+%s - first NSR_E_NO_COMM
+%s - second NSR_E_NO_COMM
+Most_EHC_Reset_Option_Set: failed to write option
+%s - EV_REBOOT_SYSTEM request
+Mns_On_Error: NSR_E_INIT_TIMEOUT
+Mns_On_Error: NSR_E_BIST_MEMORY
+Mns_On_Error: NSR_E_BIST_CONF_STRING
+Mns_On_Error: NSR_E_BIST_PCODE
+Mns_On_Error: NSR_E_BIST_DATA_MEMORY
+Mns_On_Error: NSR_E_INVALID_MID_LEVEL_RETRIES_CONFIG
+Mns_On_Error: NSR_E_INVALID_SEG_MODE_CONFIG
+Mns_On_Error: NSR_E_INVALID_REMOTE_ACCESS_CONFIG
+Mns_On_Error: NSR_E_INVALID_RETRY_CONFIG
+Mns_On_Error: NSR_E_INVALID_WATCHDOG_MODE_CONFIG
+Mns_On_Error: NSR_EI_RESET
+Mns_On_Error: NSR_EI_SYNC_FAILED
+Mns_On_Error: NSR_EI_SYNC
+Mns_On_Error: result: 0x%02x
+%s Probably MsgSend called before ns init completed (INIC not attached yet)!
+Msg_Tx_Status - configuration status
+%d/%d address: 0x%04X, Fb: %02X, Inst: %02X
+Config %d, Fblocks CR=%u tot=%u
+Msg_Tx_Status: 0x%02X
+Msval_State_Changed: MSVAL_S_OFF
+SAL_Send failed in %s
+Msval_State_Changed: MSVAL_S_INIT
+Msval_State_Changed: MSVAL_S_RBD
+Msval_State_Changed: MSVAL_S_ON
+Msval_State_Changed: state: 0x%02x
+Msval_Error: MSVAL_ERR_UNLOCK_SHORT
+Msval_Error: MSVAL_ERR_UNLOCK_CRITICAL
+Msval_Error: MSVAL_ERR_INIT_ERROR
+Msval_Error: MSVAL_ERR_STARTUP_FAILED
+Msval_Error: MSVAL_ERR_STARTUP_BUSY
+Msval_Error: MSVAL_ERR_SHUTDOWN_FAILED
+Msval_Error: MSVAL_ERR_SHUTDOWN_BUSY
+Msval_Error: error 0x%02x
+Msval_Event: MSVAL_E_NETON
+Msval_Event: MSVAL_E_SHUTDOWN
+Msval_Event: MSVAL_E_UNLOCK
+Msval_Event: MSVAL_E_LOCKSTABLE
+Msval_Event: MSVAL_E_MPR
+Msval_Event: MSVAL_E_NPR
+Msval_Event: MSVAL_E_MPRDEL_EQUAL [%d]
+Msval_Event: MSVAL_E_MPRDEL_DEC [%d][%d]
+Msval_Event: MSVAL_E_MPRDEL_INC [%d][%d]
+Msval_Event: event 0x%02x
+Msval_Diag_Result %d
+Pmistate_Changed: state: 0x%02x, events: 0x%02x
+Detected old INIC HW. Read configuration status.
+assertion failed: me != 0
+%s, option: %d
+Most_EHC_Reset_Option_Set
+Most_EHC_Reset_Option_Init
+Msval_State_Changed
+Msg_Tx_Status
+Mns_On_Error
+../user_most150/NetServices/source/ns_cb_l2.c
+SystemCommunicationInit %u
+CmdRx: %04x.%02x.%02x.%03x
+%01x.%03x
+%s Shutdown.Suspend filtered
+OVERTEMP SHUTDOWN
+Shutdown canceled, MOST shutdown state:  %u
+NetBlock.Shutdown(Query)
+NetBlock.Shutdown(Query): Cancel NORMAL shutdown due to EMERGENCY request
+NetBlock.Shutdown(Execute)
+%s: delay: %d, diag: %d, duration: %d
+%s: Failed to get Tx msg pointer!
+%s: unable to send response
+%s: unable to send error response
+ET_ECLTrigger_Request
+ET_AutoWakeup_Request
+CmdRxFilter
+MHP_RX_SUCCESS
+MHP_RX_ERROR_NFRAME
+MHP_RX_ERROR_FRAME
+MHP_RX_ERROR_NOREADY
+MHP_RX_ERROR_KILLED
+MHP_RX_ERROR_NOBUF
+MHP_RX_KILLED_RX
+MHP_RX_UNKNOWN_07
+MHP_RX_UNKNOWN_08
+MHP_RX_UNKNOWN_09
+MHP_RX_UNKNOWN_0A
+MHP_RX_UNKNOWN_0B
+MHP_RX_UNKNOWN_0C
+MHP_RX_UNKNOWN_0D
+MHP_RX_UNKNOWN_0E
+MHP_RX_UNKNOWN_0F
+MHP_RX_CLOSE
+MHP_DBG_STATE_RX
+MHP_DBG_NFRAME_RX
+MHP_DBG_NEGACK_RX
+MHP_DBG_ACKNOBUF_RX
+MHP_DBG_DATAFR_RX
+MHP_DBG_REQCON_RX
+MHP_TX_SUCCESS
+MHP_TX_ERROR_NAC
+MHP_TX_ERROR_KILLED
+MHP_TX_ERROR_BUILDCON
+MHP_TX_ERROR_PRIO
+MHP_TX_ERROR_SCALE
+MHP_TX_ERROR_NOBUF
+MHP_TX_ERROR_TOKEN
+MHP_TX_KILLED_TX
+MHP_TX_ERROR_NDF
+MHP_TX_UNKNOWN_0A
+MHP_TX_UNKNOWN_0B
+MHP_TX_UNKNOWN_0C
+MHP_TX_UNKNOWN_0D
+MHP_TX_UNKNOWN_0E
+MHP_TX_UNKNOWN_0F
+MHP_TX_UNKNOWN_10
+MHP_TX_UNKNOWN_11
+MHP_TX_UNKNOWN_12
+MHP_TX_UNKNOWN_13
+MHP_TX_UNKNOWN_14
+MHP_TX_UNKNOWN_15
+MHP_TX_UNKNOWN_16
+MHP_TX_UNKNOWN_17
+MHP_TX_UNKNOWN_18
+MHP_TX_UNKNOWN_19
+MHP_TX_UNKNOWN_1A
+MHP_TX_UNKNOWN_1B
+MHP_TX_UNKNOWN_1C
+MHP_TX_UNKNOWN_1D
+MHP_TX_UNKNOWN_1E
+MHP_TX_UNKNOWN_1F
+MHP_TX_UNKNOWN_20
+MHP_TX_LEN_ZERO
+MHP_TX_END_READY
+MHP_TX_KILLED_RX
+MHP_TX_UNKNOWN_24
+MHP_TX_CONFIG_NOTOK
+MHP_TX_LEN_TOO_BIG
+MHP_DBG_STATE_TX
+MHP_DBG_NEGACK_TX
+MHP_DBG_FINACK_TX
+MHP_DBG_NOTACK_TX
+MHP_DBG_ACKNOTACTIVE_TX
+MHP_DBG_GETTXPTR_TX
+MHP_DBG_STCON_TX
+MHP_DBG_CON_HOLD
+../user_most150/NetServices/source/ns_cb_mh.c
+MhpTxStatus - %s
+MhpTxStatus - MHP_TX_UNKNOWN_%02x
+MhpRxComplete - %s
+MhpRxComplete - UNKNOWN_%02x
+MhpRxComplete - releasing memory %08x
+MhpGetBufIntf - allocating memory %08x
+MhpGetBufIntf (ET request) - failed to allocate buffer of %u size
+MhpGetBufIntf - failed to allocate buffer of %u size
+MhpGetBufIntf - do not allocate buffer in Configuration NOK -> reject message
+%s: delay - %d, current frame - %d
+%s: air_tx %d, air_rx %d, ratio %d
+MhpDebugInfoTx: 0x%04x.0x%02x.0x%02x.0x%03x.0x%01x: 
+MhpDebugInfoTx: 
+UNKNOWN [0x%02x
+ 0x%02x
+MhpDebugInfoRx: 0x%04x.0x%04x.0x%02x.0x%03x.0x%01x: 
+MhpDebugInfoRx: 
+%s: timer_create - %d
+%s: timer created successfully
+%s: clock_gettime - %d
+%s: timer_settime - %d
+Mhp_Run_Delay_Timer
+Mhp_Init_Delay_Timer
+MhpTxEstablishDelay
+MhpTxDelay
+../bb_most150/NetServices/source/msm_cb.c
+---- Network Startup Result: %02X ---- 
+Network Shutdown Result:  %02x [devID %04x]
+Shutdown Result of device %04x: %02x
+../bb_most150/App/source/most_et_mhp.c
+most_et_mhp_request - MHP DSO requested!
+most_et_mhp_tx_status - wait 4 timeout!
+most_et_mhp_tx_status - kill conection!
+most_et_mhp_tx_status - send next package [directly]
+most_et_mhp_tx_status - all packages sent
+most_et_mhp_tx_status - send next package [after tx_killed]
+most_et_mhp_tx_status - send next package [after tx_time_out]
+most_et_mhp_tx_status - tx status bad (%d) - DSO aborted!
+most_et_mhp_dis_message - MOST_MHP_SINGLE_BLOCK (%x bytes)
+most_et_mhp_dis_message - MOST_MHP_FIRST_BLOCK (%x bytes)
+most_et_mhp_dis_message - MOST_MHP_CONSECUTIVE_BLOCK (%x bytes)
+most_et_mhp_dis_message - MOST_MHP_LAST_BLOCK (%x bytes)
+MHP_RX_CLOSE,finalise crc32..., src:%x, oper:%x, func:%x, dsi_ix:%x
+send_next_dso_package - package # %d queued
+send_next_dso_package - unable to send message, MhpSend return %d
+send_next_dso_package - unable to send message, no memory buffer free
+send_next_dso_package - unable to send message, device busy
+send_next_dso_package - unable to send message, n/s not initialized
+send_next_dso_package - all packages sent
+finalise_crc32_and_send_result - result sent!
+finalise_crc32_and_send_result - unable to send result, no AMS buffer free
+../bb_most150/App/source/most_msmm.c
+%s - initializing MSMM
+%s - MSMM init state: %d
+%s started
+%s (prio=%u) running...
+%s end
+most_msmm_thread
+most_msmm_set_init_state
+most_msmm_initialize
+../user_most150/App/source/most_app_diag_callouts.c
+MOST_App_Diag_RBD_Status
+DETACHED
+UNKNOWN
+ATTACHED
+INIC Status: %s number of DETACH events: %d
+NET_UNLOCK
+NET_OFF
+NET_ON
+MOST NET Status: %s number of NET_UNLOCKSs=%d
+Current Config Status: %s number of CONFIG events: %d
+Number of MOST coding errors: %u
+Last known node configuration, number of nodes: %u
+pos: %u address: 0x%04x
+%s, diagID %02X, ssoResult: %02X
+%s Failed to read variant coding, Will set SSO/CU to Yes!
+%s, DATABUS_BREAK_SPORADIC_ZR_DTC - %04X
+%s, DATABUS_BREAK_SPORADIC_SOUND_DTC - %04X
+%s, DATABUS_BREAK_SPORADIC_CD_DTC - %04X
+%s, DATABUS_BREAK_SPORADIC_KOMBI_DTC - %04X
+MOST_App_Diag_SSO_Result
+PWR_MOD_TID
+CM_RECEIVER_TID
+CM_HANDLER_TID
+NS_SERVICE_TID
+MSMM_SERVICE_TID
+MSG_RECEIVE_TID
+MSG_SEND_TID
+CLIENT_MGR_TID
+METHOD_MONITOR_TID
+DIAG_TID
+SIGNAL_THREAD_TID
+HISIP_HANDLER
+VID_CTRL
+VID_TX
+../user_most150/App/source/most_app_xsal_attr_callouts.c
+%s - EVG_MOST_APP_PROCESS_STARTED published
+%s - publishing EVG_MOST_APP_PROCESS_TERMINATED
+Most_App_Terminated
+Most_App_Initialized
+DefApp
+default
+DTS [%s (pid %d, tid %d)] %s: [%s] TraceClient lib mismatch, please recompile with correct one, logging disabled!
+DTS [%s (pid %d, tid %d)] %s: [%s] Couldn't load %s backend, skipping.
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: path != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Can not open file %s! Errno: %d=%s
+DTS [%s (pid %d, tid %d)] %s: [%s] Can not stat file %s! Errno: %d=%s
+DTS [%s (pid %d, tid %d)] %s: [%s] Error reading file %s! Errno: %d=%s
+DTS [%s (pid %d, tid %d)] %s: [%s] File sizes are different! %u!=%u, Errno: %d=%s
+DTS [%s (pid %d, tid %d)] %s: [%s] Invalid level %d
+fatal
+error
+warning
+always_on
+DTS [%s (pid %d, tid %d)] %s: [%s] Invalid enum to translate %d 
+DTS [%s (pid %d, tid %d)] %s: [%s] trace_config.json parsing failed
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: json_string != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] trace_config.json not present, reading default config!
+DTS [%s (pid %d, tid %d)] %s: [%s] presets.json parsing failed
+DTS [%s (pid %d, tid %d)] %s: [%s] presets.json not present, aborting!
+client
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: config != 0
+default
+settings
+server
+filters
+channels
+threads
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: out_enable != 0
+enabled
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: config->config_json != 0
+backends
+frontends
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: source_config != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: object_name != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: output_config != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: out_int != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: out_config != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: out_string != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: cfg.config_json != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: source_config->config_json != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: name != 0
+TRACE_CONFIG_PATH
+%s%c%s
+trace_config.json
+DTS [%s (pid %d, tid %d)] %s: [%s] Path to trace_config.json too long!
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: filters_array != 0
+levels
+                     {                                                          "client" : {                                                                                                    "default": {                                                     "enabled": true,                                     "levels": {                                              "channels": {                                           "*": "info"                                     },                                                     "threads": {                                             "*": "info"                                    }                                                  },                                                     "backends": {                                            "SerialBackend": {                                       "enabled": true                                  }                                                  }                                          }                                                  }                                                  }                                                            
+filters
+default
+DTS [%s (pid %d, tid %d)] %s: [%s] Observer doesn't handle specified action!
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: tm != 0
+ShmemBackend
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmBackend Init failed! Logging is not going to be enabled.
+DTS [%s (pid %d, tid %d)] %s: [%s] Unhandled state, error occured when formating data!
+SerialBackend
+DefChn
+DT_MAIN
+DT_SAL
+DT_JSAL
+DT_XML
+DT_MOST
+DT_CAR_REF
+DT_LAYERMANAGER
+DT_AAF
+DT_VIP
+DT_SYSTEMTIME
+DT_DSICPP
+DT_PERSISTENCE
+DT_MEDIA
+DT_MEDIA_AFP
+DT_NAVEBA
+DT_NAVMD
+DT_NAVDG
+DT_NAVTMC
+DT_NAVPNAV
+DT_UPNP_RND
+DT_PERFORMANCE
+DT_DIAGNOSTICS
+DT_POWERMODE
+DT_KEYPANEL
+DT_SWUPDATE
+DT_SPEECH
+DT_TESTFRAMEWORK
+DT_NAVVP
+DT_NAVDS
+DT_NAVCORE
+DT_NAVIOM
+DT_SENSORHANDLER
+DT_AUDIOMANAGER
+DT_MEDIA_SRV
+DT_MEDIA_FFT
+DT_UPNP_CTRL
+DT_TUNER_AMFM
+DT_TUNER_ANNOUNCE
+DT_TUNER_STARTUP
+DT_TUNER_DAB_APP
+DT_TUNER_DAB_FE
+DT_NAVTEST
+DT_MCR
+DT_TUNER_SDARS_DRV
+DT_TUNER_SDARS_APP
+DT_UPNP_SRV
+DTS_COMMON_LAST
+procman
+test1
+test2
+test3
+test5
+copyimages
+displaymanagement
+audiomanager
+DiagnosticsManager
+sysservices
+persistenceservices
+persistencemanager
+systemmanager
+MediaHandler
+carservices
+MediaServer
+dsplogger
+keysim
+speechservices
+GenericRecorder
+vipmisc
+persistenceshell
+InfotainmentRecorder
+mostswitchapp
+imageloader
+sensorhandler
+gpsdriver
+cddriver
+im_hkpupdate
+viplogger
+debugmanager
+APP_SDSsdstartTART
+phoneserver
+navservices
+waveplayer
+pictureservices
+ttihandler
+APP_PSD
+powermodetool
+mirrorlinkapp
+installationmanager
+MostCan
+btstart
+im_btupdate
+im_abtupdate
+APUpdate
+applicationtestframework
+onlineservices
+im_inicupdate
+PRIOWD
+vipcmd
+hkpcmd
+im_mostupdate
+hkplogger
+rearviewcam
+SysTime
+installationservices
+moststart
+i2cstart
+exlap
+setupnavigation
+im_packageupdate
+mirrorlink_setup
+cpumonitor
+startupsynctool
+im_gpsupdate
+im_sxmupdate
+startupsynctool2
+startupsynctool3
+startupsynctool4
+startupsynctool5
+positionhandler
+tcs_tcpip_manager
+splashscreen
+SDARS_TM
+netfrontnx
+screencda
+thermalmanager
+carplay
+carplayservices
+androidauto
+androidautoservices
+connectmcp
+security
+stressserver
+ols_ca_updater
+upnpmanager
+upnpservices
+clusterservices
+appconnect
+transportserver
+decodeandsave
+carlife
+carlifeservices
+VPController
+DABSimClient
+HDUtil
+DefApp
+default
+DTS [%s (pid %d, tid %d)] %s: [%s] Could not allcate new thread - maximal number of threads reached. Please increase DTS_TRACE_MODEL_MAX_THREADS_TOTAL param
+DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel(ERROR): unknown thread index %d returned to pool app: %d, %s
+DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel(ERROR): thread idx %d already in free pool
+DTS [%s (pid %d, tid %d)] %s: [%s] Could not allcate new thread - maximal number of thread per app reached. Please increase DTS_TRACE_MODEL_MAX_THREADS_PER_APP param
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: filters_num <= 64
+DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel: application with name '%s' already exists in model, clearing %d threads
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: amodel != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: amodel->id == DEFAULT_APP_ID
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: thread_model != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: thread_model->id == DEFAULT_THREAD_INDEX
+DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel: Could not register new client - max number of clients reached in model.
+DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel: cannot register new channel %s, max is reached %u, or channel is already registered in app %s.
+DTS [%s (pid %d, tid %d)] %s: [%s] Failed to allocate shared mem block for Trace Model, aborting!
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: model != 0
+trace_model_shared_mtx
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: data_model->process_shared_mtx != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel: tid %u out of range, app: %d, %s, using default tid = %d
+DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel: ch_id %u out of range, app: %d, %s
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: dts_false
+DTS [%s (pid %d, tid %d)] %s: [%s] Level out of range: %d
+DTS [%s (pid %d, tid %d)] %s: [%s] Can not set if prev value was not 0 or different then being set prev: %u value: %u
+DTS [%s (pid %d, tid %d)] %s: [%s] Invalid level %d
+fatal
+error
+warning
+always_on
+DTS [%s (pid %d, tid %d)] %s: [%s] Unknown DTS_Filter_Level_T!
+%02d:%02d:%02d.%03d
+max_msg_size
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: pthread_mutex_init(&mutex->mtx.object, &attr) == 0
+FileBackend
+config
+DTS [%s (pid %d, tid %d)] %s: [%s] Failed to open specified file! FileBackend will be disabled!
+Error
+DTS [%s (pid %d, tid %d)] %s: [%s] Path for FileBackend config not present! FileBackend will be disabled!
+DTS [%s (pid %d, tid %d)] %s: [%s] Config for FileBackend not present! FileBackend will be disabled!
+u%04x
+false
+DefApp
+DTS [%s (pid %d, tid %d)] %s: [%s] Channel ID not allocated: %s: %d, num: %d;
+DTS [%s (pid %d, tid %d)] %s: [%s] Channel ID out of bound: %s: %d, num: %d;
+DefApp
+DTS [%s (pid %d, tid %d)] %s: [%s] Could not register given backend - %s !
+DTS [%s (pid %d, tid %d)] %s: [%s] Could not register backend: %p. Number of registered backends is: %d
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: dts_false
+DTS [%s (pid %d, tid %d)] %s: [%s] Failed to get shared mem block for Backend Filter Model, aborting!
+file_name_printing
+func_name_printing
+line_nr_printing
+disable
+%s: %u-[%s]-%c-
+%02x 
+DTS [%s (pid %d, tid %d)] %s: [%s] Wriitng to buffer returned %d. Error occured!
+DTS [%s (pid %d, tid %d)] %s: [%s] Unhandled state, error occured when formating data!
+DTS [%s (pid %d, tid %d)] %s: [%s] Can not set if prev value was not 0 or different then being set prev: %u value: %u
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: pos->current_addr >= cbuf_begin
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: pos->current_addr < cbuf_end
+DTS [%s (pid %d, tid %d)] %s: [%s] Shm alloc failure of %d bytes, needed: %d, max: %d
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: instance != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: instance->cbuf != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: (max_elements & (max_elements - 1)) == 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Opening Shm_Buffer failed!
+DTS [%s (pid %d, tid %d)] %s: [%s] SHmem ERROR: shared memory cannot be deinitialized
+DTS [%s (pid %d, tid %d)] %s: [%s] SHmem ERROR: Opened shmem with different size - shmem is: %u, requested is: %u
+DTS [%s (pid %d, tid %d)] %s: [%s] Resizing shmem buffer failed!
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend: Thread ID: %d, search start position: 0x%08x, current position: 0x%08x, index at current position: 0x%08x, write index: 0x%08x
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(WARN): Timeout waiting for SYNCED_VALUE at current position
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(WARN): Couldn't find new data max_search_pos:0x%x
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(INFO): Found SYNCED_VALUE at position 0x%08x
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(DEBUG): Reader too fast - sync value ok, but index from previous round
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(ERROR): Gave up waiting for proper index, while sync value ok - skipping one entry
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(ERROR): Sync value ok, but index invalid - skipping one entry
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(ERROR): Trace buffer overflow
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(ERROR): Sync value ok, but index too big - skipping one entry
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(INFO): Reader too slow - skipped %d positions, %d entries
+DTS [%s (pid %d, tid %d)] %s: [%s] Shmem: cannot read data, output buffer too small, data size is %d bytes
+DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(INFO): Data changed while reading at index 0x%08x - retrying
+trace_buffer_size
+DTS [%s (pid %d, tid %d)] %s: [%s] Trace buffer size from JSON file is not divisible by 2*DTS_CACHE_LINE_SIZE, using default value: %u!
+DTS [%s (pid %d, tid %d)] %s: [%s] Settings not present in JSON file, using default value: %u!
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle->data != 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle->size > 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle->key >= 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Close_Shmem/munmap, name=[%d], error: %s
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: key >= 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Cannot resize SHM file: %s
+DTS [%s (pid %d, tid %d)] %s: [%s] Create_Shmem/mmap error: %s
+DTS [%s (pid %d, tid %d)] %s: [%s] Create_Shmem/shm_open (%s) error: %s
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle->size != size
+DTS [%s (pid %d, tid %d)] %s: [%s] Resizing shared memory from: %d to size: %d
+DTS [%s (pid %d, tid %d)] %s: [%s] DTS_Resize_Opened_Shared_Memory/ftruncate, Cannot resize SHM file: %s
+DTS [%s (pid %d, tid %d)] %s: [%s] DTS_Resize_Opened_Shared_Memory/mmap error: %s
+DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle->fd >= 0
+DTS [%s (pid %d, tid %d)] %s: [%s] Close_Shmem/close, name=[%d], error: %s
+/DTS_Shm_
+SendXSALMessage
+GetSizeVIPData
+ReadSize
+ReadData
+IncreaseBufferSize
+getSizeVIPData
+ReadVIPData
+readVIPData
+WriteVIPData
+writeVIPData
+DeleteKey
+DeleteNs
+WriteData
+WriteString
+WriteBuffer
+ReadInt
+DeleteKey
+DeleteNs
+WriteByteBuffer
+WriteArray
+WriteInt
+GetDataSize
+ReadByteBuffer
+ReadString
+ReadArray
+ReadBuffer
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_PersistenceManager/PersistenceClient/build/../source/PersistenceSqFacade.cpp
+ErrorCode %d 
+%s not possible try again TryCount %d
+ Send buffer NOT success, retrying ...
+%s - Not possible to send, try to reconnect
+ Send buffer success
+%s - Access Time: %llu us
+Persistence Data exceeds the allowed limit, data will not be read, size: %d (incl HAUS_KEEPING_INFO) allowed: %d!!!
+%s to %d
+Allocated Persistence data size exceeds the allowed limit is violated , maximum allowed is: %d!
+Allocated Persistence data size exceeds, not enough memory available!
+Persistence Data exceeds the allowed limit, data will not be stored, allowed is: %d your size: %d(including HAUS_KEEPING_INFO)!!!
+Value is not in DB.
+Check SQLite Error Code %d in 'sqlite3.h'
+vector<T> too long
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salIByteBuffer.cpp
+assertion failed: mPosition + sizeof( d ) <= mSize
+assertion failed: position < mSize
+assertion failed: mPosition + bytes <= mSize
+assertion failed: !( d == 0 && s > 0 )
+assertion failed: mPosition + s <= mSize
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salOByteBuffer.cpp
+assertion failed: d != 0
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salSyncSender.cpp
+assertion failed: isConnected()
+assertion failed: !isConnected()
+assertion failed: serverAppId >= std::numeric_limits<SAL_App_Id_T>::min() && serverAppId <= std::numeric_limits<SAL_App_Id_T>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salError.cpp
+Allocation fatal error
+Lock fatal error
+Resource fatal error
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_rpc_qnx.c
+SAL_PRE(receive_id != NULL)
+SAL_Sync_Reply error: %s
+SAL_PRE(((reply_buffers != NULL) && (number_of_buffers > 0)) || ((reply_buffers == NULL) && (number_of_buffers == 0)))
+SAL_Sync_Reply_V error: %s
+SAL_PRE(buffer != NULL)
+SAL_PRE(buffer_size > 0)
+SAL_PRE(received_message_size != NULL)
+SAL_Sync_Read error: %s
+SAL_PRE(channel != NULL)
+SAL_PRE(message_size != NULL)
+SAL_PRE(is_pulse != NULL)
+SAL_Sync_Receive error: %s
+SAL_PRE(connection != NULL)
+SAL_PRE(message != NULL)
+SAL_PRE(reply_buffers != NULL)
+SAL_Sync_Send_SV error: %s
+SAL_PRE(message_buffers != NULL)
+SAL_PRE(number_of_buffers > 0)
+SAL_PRE(reply_status != NULL)
+SAL_Sync_Send_VS error: %s
+SAL_PRE(message_size > 0)
+SAL_Sync_Send error: %s
+SAL_Send_Pulse error: %s
+SAL_Disconnect error: %s
+SAL_Create_Connection error: %s
+SAL_Destroy_Channel error: %s
+SAL_Create_Channel error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_mutex.c
+SAL_PRE(mutex != NULL)
+SAL_Create_Mutex error: %s
+SAL_POST(status == EOK)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_mutex.c
+SAL_Destroy_Mutex error: %s
+SAL_PRE(status != EINVAL)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_lock_mutex.c
+SAL_Lock_Mutex error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_unlock_mutex.c
+SAL_Unlock_Mutex error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_semaphore.c
+SAL_PRE(sem != NULL)
+SAL_Create_Semaphore error: %s
+SAL_POST(status == 0)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_semaphore.c
+SAL_Destroy_Semaphore error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_signal_semaphore.c
+SAL_Signal_Semaphore error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_semaphore.c
+SAL_Wait_Semaphore error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_semaphore_timeout.c
+SAL_Wait_Semaphore_Timeout error: %s
+SAL_Wait_Semaphore_Timeout timeout(%d)
+SAL_POST((status == 0) || (err == ETIMEDOUT))
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_alloc.c
+SAL_Alloc(%d)=%p
+SAL_Alloc() failed to allocate %d bytes
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_free.c
+SAL_Free(%p)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init_thread_attr.c
+SAL_PRE(attr != NULL)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_thread.c
+SAL_PRE((attr == NULL) || (attr->id > 0) || (attr->id == SAL_UNKNOWN_THREAD_ID))
+SAL_PRE((attr == NULL) || (attr->id <= (SAL_Thread_Id_T)SAL_I_Max_Number_Of_Threads))
+SAL_PRE(thread_attr->thread_id == SAL_UNKNOWN_THREAD_ID)
+SAL_%d
+Thread_Create %d failed. Error: %d
+SAL_POST_FAILED()
+SAL_PRE_FAILED()
+SAL_PRE(thread_attr->current_message == NULL)
+SAL_PRE(thread_attr->selected_count == 0)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_get_thread_name.c
+SAL_PRE(thread_id >= SAL_ROUTER_THREAD_ID)
+SAL_PRE((size_t)thread_id <= SAL_I_Max_Number_Of_Threads)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_get_thread_priority.c
+SAL_I_Get_Thread_Priority failed/pthread_getschedparam [%d], %s
+SAL_PRE(thread_id >= 0)
+SAL_I_Get_Thread_Priority: thread %d is not running
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_signal_ready.c
+SAL_PRE(thread_attr != NULL)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_ready.c
+SAL_PRE(tid >= 0)
+SAL_PRE((size_t)tid <= SAL_I_Max_Number_Of_Threads)
+SAL_POST(status)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_ready_timeout.c
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_destroyed_timeout.c
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_queue.c
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_receive_timeout.c
+SAL_PRE(queue_owner_thread != NULL)
+SAL_PRE(queue_owner_thread->thread_id > 0)
+SAL_PRE((size_t)queue_owner_thread->thread_id <= SAL_I_Max_Number_Of_Threads)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_send.c
+SAL_PRE(app_id < APP_LAST_ID)
+SAL_PRE(msg.event_id >= 0)
+SAL_PRE((data != NULL) || (data_size == 0u))
+SAL_Send from (%d,%d) to (%d,%d) EV %d OBJ %d data size %d
+SAL_Send fail, reopen connection the application %d
+SAL_Send: Couldn't send to app %d
+SAL_Send: Couldn't connect to app %d
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_publish.c
+SAL_I_Local_Publish: to thread %d
+SAL_I_Local_Publish to (%d,%d) EV %d OBJ %d size %d
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_publish.c
+SAL_PRE(msg.event_id >= EV_FIRST_EVENT_ID)
+SAL_PRE(msg.event_id < EV_LAST_EVENT_ID)
+SAL_Publish from (%d,%d) EV %d OBJ %d size %d
+SAL_Publish: to app %d
+SAL_Publish fail, reopen connection the application %d
+SAL_Publish: couldn't send to app %d EV %d OBJ %d data 0x%p size %d
+SAL_Publish: couldn't connect to app %d EV %d OBJ %d data 0x%p size %d
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_subscribe.c
+SAL_PRE(tid > 0)
+SAL_PRE(tid <= (SAL_Thread_Id_T)SAL_I_Max_Number_Of_Threads)
+SAL_PRE((event_id_list != NULL) || (number_of_events == 0))
+SAL_PRE(ev_id >= EV_FIRST_EVENT_ID)
+SAL_PRE(ev_id < EV_LAST_EVENT_ID)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_timer.c
+SAL_PRE(timer_id != NULL)
+SAL_PRE(timer->event_id == -1)
+Too many timers were created.
+Increase max number of timer is the SAL configuration (see SAL_Init)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_timer.c
+SAL_PRE(timer_id >= 0)
+SAL_PRE((size_t)timer_id < SAL_I_Max_Number_Of_Timers)
+SAL_PRE(timer->event_id != -1)
+SAL_PRE(timer->thread_id == tid)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_start_timer.c
+SAL_PRE((interval_msec != 0) || (!is_periodic))
+SAL_PRE(timer->thread_id == SAL_I_Get_Thread_Id())
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_stop_timer.c
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init.c
+XSAL 134 1442 2014-10-16
+SAL_PRE(SAL_I_App_Id == 0)
+SAL_PRE(sal_config != NULL)
+SAL_PRE(sal_config->app_id > 0)
+SAL_PRE(sal_config->app_id < APP_LAST_ID)
+SAL_PRE(sal_config->max_number_of_threads > 0u)
+SAL_PRE(sal_config->first_unknown_thread_id > 0)
+SAL_PRE(sal_config->first_unknown_thread_id <= (SAL_Thread_Id_T)sal_config->max_number_of_threads)
+Application has different number of the Channels, App IDs or Event IDs then the Name Server.
+Re-compile your application or Process Manager.
+SAL_Init: SAL_NS_Init_Proxy failed. Check if Process Manager is running.
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_run.c
+SAL_Run: no user threads were created
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_ns_proxy.c
+SAL_PRE(SAL_I_NS_Proxy_Data != NULL)
+SAL_PRE(app_id >= APP_FIRST_ID)
+NS_Unsubscribe_App failed
+SAL_PRE(reply_app_id_list != NULL)
+Name_Server_Get_Running_Apps
+NS_Unbind_App error
+NS_Resolve_Channel
+NS_Unbind_Channel error
+NS_Bind_Channel error
+SAL_PRE(event_id_list != NULL)
+SAL_PRE(number_of_events > 0)
+NS_Unsubscribe
+NS_Subscribe
+SAL_PRE(SAL_I_NS_Sh_Mem_Handle.data != NULL)
+SAL_PRE(SAL_I_NS_Proxy_Data == NULL)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_connections.c
+SAL_PRE(app_id > 0)
+SAL_PRE(app_id <= SAL_MAX_APPS)
+SAL_Init: SAL_I_Connection_Id_Mutex
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_run.c
+%s: thread %d doesn't have a queue
+%s: thread's %d queue is full
+%s: There is no free memory
+%s: Too small buffer in thread's %d queue
+%s: Communication error
+Invalid RouterThread command %d
+RT Message data is too large
+SAL_Run: received pulse: %d, %d
+SAL_Run: received message: from(%d, %d) to (%d, %d), EV %d OBJ %d, message size %d
+Process_Publish
+Read error. Message was dropped
+Received unknown event: %d
+Process_Send: Invalid message size
+Process_Send: SAL_Sync_Read error
+Process_Send
+Received event with invalid receiver thread Id : %d
+ERROR SAL_Receive
+SAL_I_Before_Run/SAL_Bind() failed
+SAL_I_Before_Run/SAL_Create_Connection() failed
+SAL_I_Before_Run/SAL_Create_Channel() failed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_try_wait_semaphore.c
+SAL_Try_Wait_Semaphore error: %s
+SAL_POST((status == 0) || (err == EAGAIN))
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_buffer_pools.c
+SAL_PRE(SAL_I_Buffer_Pools_Tab != NULL)
+SAL_PRE(SAL_I_Buffer_Pools_Tab == NULL)
+SAL_I_Init_Buffer_Pools/SAL_Create_Mutex() failed
+SAL_Init_Buffer_Pools/malloc() failed
+SAL_I_Init_Buffer_Pools: max number of buffer pools == 0
+SAL_I_Init_Buffer_Pools failed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_thread.c
+SAL_I_Set_Thread_Priority failed: setschedparam [tid=%d, sc=%d, prio=%d], %s
+SAL_I_Set_Thread_Priority failed: getschedparam [tid=%d, prio=%d], %s
+Destroy_Thread_Itself %d
+SAL_I_TLS_Set_Specific(%d, %p) error: %s
+SAL_I_TLS_Key_Delete error: %s
+SAL_I_TLS_Create error: %s
+SAL_I_Init_Threads_Module: SAL_Create_Mutex
+Cannot allocate memory for thread attributes table
+Cannot create semaphore for thread startup synchronization
+Cannot initialize queue structure
+Init_Threads_Module: couldn't create or initialize TLS
+XSAL-RT
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_message_queue.c
+SAL_PRE(q != NULL)
+SAL_PRE(queue != NULL)
+assertion failed: queue->end_marker->message.data == NULL
+SAL_PRE(queue_size > 0u)
+SAL_PRE(queue->node_tab == NULL)
+SAL_I_Create_Message_Queue: Couldn't allocate memory for queue data
+SAL_I_Create_Message_Queue: Couldn't create semaphore
+Queue is full and a new urgent message has arived. The last non-urgent message is removed from queue
+Queue is full of urgent message. The new urgent message is dropped.
+SAL_PRE(err != NULL)
+SAL_I_Post_Message: queue is not created
+SAL_I_Post_Message: queue is full
+SAL_I_Post_Message: there is no free memory
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_event_property.c
+SAL_PRE(SAL_I_Event_Property != NULL)
+SAL_I_Init_Event_Property_Module/calloc() failed
+SAL_I_Init_Event_Property_Module/SAL_Create_Mutex() failed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_receive_from_timeout.c
+SAL_PRE(calling_thread != NULL)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_timer_pulse.c
+SAL_I_Destroy_Timer(%d) error: %s
+SAL_I_Create_Timer: Timer for event_id=%d not created
+SAL_I_Create_Timer: Get thread's priority error
+SAL_PRE(status)
+SAL_PRE(SAL_I_Timers == NULL)
+SAL_I_Init_Timer_Module: memory allocation failed
+SAL_I_Init_Timer_Module/SAL_Create_Mutex() failed
+SAL_I_Init_Timer_Module: max number of timers == 0
+SAL_I_Init_Timer_Module failed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_timer.c
+Dropped timer event: TID=%d, EV_ID=%d
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_open_shared_memory.c
+SAL_PRE(handle != NULL)
+SAL_PRE(key >= 0)
+SAL_PRE(subkey >= 0)
+SAL_Open_Shared_Memory/mmap error: %s
+SAL_Open_Shared_Memory/fstat error: %s
+SAL_Open_Shared_Memory/shm_open (%s) error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_close_shared_memory.c
+SAL_PRE(handle->data != NULL)
+SAL_PRE(handle->size > 0)
+SAL_PRE(handle->fd >= 0)
+SAL_PRE(handle->key >= 0)
+SAL_PRE(handle->subkey >= 0)
+SAL_Close_Shared_Memory/munmap, name=[%d, %d], error: %s
+SAL_Close_Shared_Memory/close, name=[%d, %d], error: %s
+SAL_Close_Shared_Memory/shm_unlink (%s) error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init_semaphore_attr.c
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_pend_message_timeout.c
+SAL_PRE(queue->node_tab != NULL)
+SAL_I_Pend_Message_Timeout: No messages in the queue
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_stat_queue.c
+SAL_PRE(thread_id > 0)
+SAL_PRE(queue_stat != NULL)
+%s%d_%d
+%s%s_%d_%d
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_shared_memory.c
+Too long value of the environment variable: %s 
+XSAL_INSTANCE_NAME
+/XSAL_Shm_
+TSDriver: error i/o memory mapping
+/home/root/platformrestart_yes
+/home/root/platformrestart_no
+/home/root/tracescope_yes
+/home/root/tracescope_no
+MLB Control Rx protocol error
+MLB Control Rx break from transmitter
+MLB Asynchronous Rx protocol error
+MLB Asynchronous Rx break from transmitter
+MLB Isochronous Tx protocol error
+MLB Secondary Control Rx protocol error
+MLB Secondary Control Rx break from transmitter
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_MOST_MIB20_STD/MLBDriver/build/../source/mlb.c
+ThreadCtl: %s
+MLB already initialized
+MLB threads waiting timeout!
+MLB threads ready!
+Unable to initialize MLB module
+assertion failed: 0
+MLB_Stop
+%s - failed in a function to control a thread: %s
+%s - failed to mask DMA interrupt: %s
+%s - failed to mask MLB interrupt: %s
+%s Unable to transmit MLB ctrl data - param wrong
+%s mlb not ready!
+Unable to transmit MLB async data - param wrong
+Unable to transmit MLB isoc data - param wrong
+MLB threads are being created
+MLB DMA
+MLB DMA thread creation failed
+MLBSS
+MLBSS thread creation failed
+FAILED to set SCHED_SPORADIC for most_net_thread, error: %d 
+MLB thread termination timeout [%d] id- %d
+MLB_DMA thread canceled (ret: %d)
+MLBSS thread canceled (ret: %d)
+MLB_Create_Mutexes
+MLB DMA mutexes creation failed
+MLB_Destroy_Mutexes
+MLB DMA mutexes destroy failed
+munmap: %s
+FAILED to set SCHED_SPORADIC for %s, error: %d 
+MLB_DMA_Thread ready
+InterruptUnmask: %s
+InterruptWait: %s
+DMA ctrl rx %d error
+DMA ctrl tx %d error
+DMA secondary ctrl rx %d error
+DMA async rx %d error
+DMA async tx %d error
+DMA isoc tx %d error
+InterruptDetach: %s
+InterruptAttachEvent: %s
+DMA thread is being killed
+MLB_MLBSS_Thread ready
+Unhandled MLB error, channel: 0x%X
+MLBSS thread is being killed
+MLB_VAR_Init
+MLB_HW_Init
+MLB_RFB_Init
+MLB_DMA_Init
+Unable to enable DMA channel - param wrong
+Unable to reprogram DMA - param wrong
+Unable to clear DMA status - param wrong
+Unable to write MIF data - param wrong
+Unable to read MIF data - param wrong
+Unable to transfer MIF data - timeout
+%s %d times
+%s another 10000 times
+Unable to unmask %d signal for MLB termination
+MLB_DMA_Thread
+MLB_Transmit_Async_Data
+MLB_Transmit_Ctrl_Data
+MLB_HW_Prepare_Off
+MLB_Init
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DiagnosticsManager_MIB20_STD/build/../source/DiagnosticsMessage.c
+@@@ Inside secsi_finish
+@@@ secsi_/dev/fs0_OPEN_ERROR!!!
+assertion failed: NULL != buffer
+assertion failed: len > 0 ? (NULL != bytes && NULL != buffer) : true
+assertion failed: (NULL != buffer)&& ( NULL != key )
+assertion failed: (NULL != buffer) &&( NULL != p )
+assertion failed: len > 0
+assertion failed: NULL != bytes
+assertion failed: len > 0 ? (NULL != buffer) : true
+assertion failed: (NULL != buffer) && (NULL != dmsg)
+readDiagnosticsMessage prot:%x, key:%x, fid:%x, parameter.type:%x
+assertion failed: maxsize > 0 ? (NULL != buffer) : true
+assertion failed: NULL != ret
+assertion failed: NULL != dmsg
+Unregconised format to write to table using 
+   writeDiagnosticsMessageWithArgList
+   (DiagnosticsMessage* dmsg, char* format,
+   va_list ap)
+Unregconised format writeDiagnosticsMessageWithArgList
+   (DiagnosticsMessage* dmsg, char* format, va_list ap)
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DiagnosticsManager_MIB20_STD/build/../source/DiagnosticsProvider.c
+responseDTCMessageDirect protocol:%i, key:%i datalength:%i
+responseDTCMessage protocol:%i, key:%i datalength:%i
+responseDiagnosticsMessage protocol:%i, key:%i, type :%i
+false
+0123456789abcdefABCDEF
+vector<T> too long
+vector<T> too long
+vector<T> too long
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_MOSTLib_MIB20_STD/build/../source/MostMessage.cpp
+%s bufferSize (=%d) < HEADER_SIZE (=%d) !
+Message
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.interp
+.note
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

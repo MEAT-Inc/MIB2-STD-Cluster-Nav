@@ -1,0 +1,333 @@
+_fini
+__cxa_finalize
+__deregister_frame_info
+__register_frame_info
+_Jv_RegisterClasses
+NALStartCode
+gLogCategory_ScreenStream
+Callback_DecoderError
+DTS_Client_Get_Frontend
+Callback_OutputReady
+Callback_Log
+ScreenStreamInitialize
+ScreenStreamGetContext
+calloc
+ScreenStreamSetContext
+ScreenStreamFinalize
+CFRelease
+_ScreenStreamSetProperty
+CFEqual
+CFGetTypeID
+CFDataGetTypeID
+CFStringGetCStringPtr
+CFRetain
+CFGetInt64
+ScreenStreamStart
+VP_InitializeProxy
+VP_Open
+gfxInitInstanceOnce
+VP_UnInitializeProxy
+ScreenStreamStop
+VP_Close
+gfxUninitInstanceOnce
+ScreenStreamProcessData
+CFDataGetLength
+CFDataGetBytePtr
+H264ConvertAVCCtoAnnexBHeader
+memcpy
+H264GetNextNALUnit
+VP_Decode
+gfxDisplayFrame
+screen_create_context
+screen_create_window
+strlen
+screen_set_window_property_cv
+screen_get_context_property_iv
+screen_get_context_property_pv
+screen_get_display_property_iv
+screen_set_window_property_pv
+screen_set_window_property_iv
+screen_create_window_buffers
+screen_get_window_property_pv
+screen_get_buffer_property_pv
+screen_get_buffer_property_iv
+access
+gfxDestroy
+screen_destroy_window
+screen_destroy_context
+memset
+screen_post_window
+showFPS
+clock_gettime
+gfxAddFullRangeTestPattern
+gfxGetDisplayID
+gfxSetDisplayID
+gfxGetVisible
+gfxSetVisible
+screen_flush_context
+gfxGetZOrder
+gfxSetZOrder
+fopen
+fclose
+sprintf
+sem_init
+VP_QueueOpen
+sem_destroy
+VP_Handshake
+VP_CreateVideoPlayerNotificationThread
+proxy_dummyLog
+Proxy_CheckAndLock
+EasyLink_alloc
+EasyLink_put
+Proxy_CheckResponse
+EasyLink_free
+munmap_device_memory
+sem_wait
+VP_QueueClose
+remove
+VP_Reset
+EasyLink_openReader
+EasyLink_get
+EasyLink_openWriter
+EasyLink_closeReader
+EasyLink_closeWriter
+Map2ArmPhysicalAddress
+mmap_device_memory
+VP_NotificationReceiver
+VP_VideoPlayerNotificationThread
+sem_post
+pthread_attr_init
+pthread_attr_setdetachstate
+pthread_attr_destroy
+pthread_self
+pthread_getschedparam
+sched_get_priority_min
+sched_get_priority_max
+pthread_attr_setinheritsched
+pthread_attr_setschedparam
+pthread_attr_setschedpolicy
+pthread_create
+error_fp
+loggedLines
+usleep
+fscanf
+EasyLink_channelCreate
+__get_errno_ptr
+EasyLink_fprintf
+strerror
+EasyLink_connectAttach
+getpid
+strncpy
+EasyLink_msgSend
+TimerTimeout
+EasyLink_msgReceive
+EasyLink_SpaceAvailable
+PutMessage
+EasyLink_msgSendPulse
+GetMessage
+EasyLink_connectDetach
+ChannelCreate
+ConnectAttach
+ConnectDetach
+MsgReceive
+EasyLink_getPrio
+MsgSendPulse
+MsgSend
+EasyLink_msgReply
+MsgReply
+getprio
+EasyLink_getReturnCodeString
+OpenErrorLogFile
+mkdir
+rewind
+vfprintf
+fflush
+libscreen.so.1
+libcpp-ne.so.4
+libc.so.3
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+ScreenStream
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/ScreenStream/build/../source/ScreenStream.c
+Callback_DecoderError - consumed bytes %d, token %d
+Callback_OutputReady - frame %d, consumed bytes %d, produced bytes %d, token %d
+[VP_ERR] %s
+[VP_WRN] %s
+[VP_INF] %s
+[VP_DBG] %s
+Callback_Log - invalid trace level %d
+ScreenStreamInitialize - entry
+ScreenStreamInitialize - exit
+ScreenStreamFinalize - entry
+ScreenStreamFinalize
+ScreenStreamFinalize - exit
+_ScreenStreamSetProperty
+_ScreenStreamSetProperty - invalid value for "%s"
+_ScreenStreamSetProperty - "%s" = <binary data>
+widthPixels
+_ScreenStreamSetProperty - "%s" = %d
+_ScreenStreamSetProperty - unable to retrieve data for "%s"
+heightPixels
+_ScreenStreamSetProperty - unhandled property "%s"
+ScreenStreamStart - entry
+ScreenStreamStart - VP_InitializeProxy() succeeded. Input buffer size %d, output buffer 1 size %d, output buffer 2 size %d
+ScreenStreamStart - VP_Open(VP_CODEC_H264, %d, %d, SYNCHRONOUS, VP_YUV_420SP, VP_MEMTYPE_RAW) succeeded.
+ScreenStreamStart - VP_Open(VP_CODEC_H264, %d, %d, SYNCHRONOUS, VP_YUV_420SP, VP_MEMTYPE_RAW) failed with error %d
+ScreenStreamStart - VP_InitializeProxy() returned NULL
+ScreenStreamStart - exit
+ScreenStreamStop - entry
+ScreenStreamStop - VP_Close() succeeded
+ScreenStreamStop - VP_Close() failed with error %d
+ScreenStreamStop - VP_UnInitializeProxy() succeeded
+ScreenStreamStop - VP_UnInitializeProxy() failed with error %d
+ScreenStreamStop - exit
+ScreenStreamProcessData - inData=0x%p, inLen=%zu, (moAvccData == NULL)=%d
+ScreenStreamProcessData - H264ConvertAVCCtoAnnexBHeader(avccLen=%zu avccPtr=0x%p) returned [ headerLen=%zu mzNALSize=%zu ]
+ScreenStreamProcessData - H264ConvertAVCCtoAnnexBHeader(avccLen=%zu, avccPtr=0x%p) failed with error %d
+ScreenStreamProcessData - invalid AVCC data: length=%d, ptr=0x%p
+ScreenStreamProcessData - VP_Decode() returned %d with consumed bytes %d, produced bytes %d, frame number %d, token %d
+ScreenStreamProcessData - VP_Decode() failed with error %d consumed %d
+DPY_EXTERNAL_SMARTPHONE_CP
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_CarPlay/ScreenStream/build/../source/Graphics.c
+gfxInitInstanceOnce(): entry
+/home/root/carplay_fps_yes
+/home/root/carplay_fullrange_test_yes
+BT601Full
+BT601
+gfxInitInstanceOnce(): display of fps %sabled / fullRange %d / colSpace %s / pipe %d / id %s / testPattern %d
+gfxInitInstanceOnce(): exit
+gfxDestroy() - entry
+gfxUninitInstanceOnce() - entry
+gfxUninitInstanceOnce() - exit
+showFPS() - %d / %5dms -> %4.1ffps
+gfxDisplayFrame(%d %d)
+/tmp/mcp_decoder_locked.txt
+MCP decoder instance already initialized, unintialize before attempting again!
+Failed to open MCP decoder locked file (%s)!
+CRITICAL ERROR IN VIDEO PLAYER PROXY: Failed to allocate memory!
+Initializing video player proxy
+VPlayerCmd_Ap2McpQueue
+VPlayerRsp_Mcp2ApQueue
+VPlayerNtf_Mcp2ApQueue
+Initializing video player communication...
+Initialization OK!
+Handshaking...
+Handshaking OK!
+Starting notification thread...
+Notification thread started OK!
+UnInitializing video player proxy
+[VideoPlayer] Failed to allocate EasyLink message
+[VideoPlayer] Failed to put EasyLink message
+[VideoPlayer] Failed to free EasyLink message
+Unable to remove decoder locked file (%s)!
+VP_Open
+VP_Close
+VP_Decode
+[VideoPlayer] Invalid decode response pointer passed
+VP_Reset
+Could not open reader queue
+Flushed %d messages
+Could not open writer queue
+Could not close reader queue
+Could not close writer queue
+Could not close notification reader queue
+VP_Handshake
+Failed to allocate message for VP_Handshake
+Failed to put message for VP_Handshake
+VideoPlayer AP<->MCP interface mismatch!
+AP interface version: %d
+MCP interface version: %d
+Mapping input address (0x%08x) failed!
+Mapping output1 address (0x%08x) failed!
+Mapping output2 address (0x%08x) failed!
+EasyLink_free failed!
+EasyLink_get failed for VP_NotificationReceiver
+Warning, no handler registered for output ready!
+Warning, no handler registered for decode errors!
+Unknown VideoPlayer notification: %d
+Failed to free notification message
+Failed to open notification reader queue
+pthread_attr_setdetachstate failed
+pthread_getschedparam failed
+Setting scheduling parameters failed
+Could not set priority, not in valid interval. Min: %d, Max: %d, Used: %d
+Failed to create VP_VideoPlayerNotificationThread
+Wrong sequence number returned from DSP, %d, expected %d. Message discarded
+Wrong message id returned from DSP, %d, expected %d. Message discarded
+[Proxy] Failed to free EasyLink message
+/tmp/EasyLinkReady.lock
+EasyLink.c: Warning !! Could not open %s
+EasyLink.c: Warning !! Could not open %s, Exiting
+/tmp/EasyLinkReady.txt
+failed to open file %s
+%d %d
+/tmp/easylink_error_log_%d
+[EasyLink] EasyLink_channelCreate failed 0x%08x
+That means: %s
+[EasyLink] ConnectAttach failed in EasyLink_open() with chId: %d pid: %d
+[EasyLink] EasyLink_msgSend failed 0x%08x
+[EasyLink] EasyLink_msgReceive (PID %d) failed 0x%08x
+[EasyLink] EasyLink_put (PID %d) - EasyLink_msgSendPulse failed 0x%08x
+[EasyLink] EasyLink_get (PID %d) - ERROR! readIdx %d is out of bounds!
+[EasyLink] EasyLink_get (PID %d) - ERROR! magic header overwritten 0x%08x
+[EasyLink] EasyLink_get (PID %d) - ERROR! readIdx+dataSize+header %d > bufferLen %d
+[EasyLink] EasyLink_free (PID %d) - EasyLink_msgSendPulse failed 0x%08x
+[EasyLink] EasyLink_free (PID %d) - Invalid message pointer: 0x%08x
+[EasyLink] EasyLink_closeReader - MsgSend failed 0x%08x
+[EasyLink] EasyLink_closeReader - ConnectDetach failed 0x%08x
+[EasyLink] EasyLink_closeReader - munmap_device_memory failed for 0x%08x with length %d
+[EasyLink] EasyLink_closeWriter - MsgSend failed 0x%08x
+[EasyLink] EasyLink_closeWriter - ConnectDetach failed 0x%08x
+[EasyLink] EasyLink_closeWriter - munmap_device_memory failed for 0x%08x with length %d
+[EasyLink] EasyLink_startTimer (PID %d) - clock_gettime failed 0x%08x
+[EasyLink] EasyLink_timeElapsed (PID %d) - clock_gettime failed 0x%08x
+Call completed successfully
+Call timed out
+Error occurred while receiving internal message
+Error occurred while sending internal pulse
+Error occurred while sending message
+The requested size is not available in the buffer
+Error occurred while placing the message into the buffer
+Error occurred while retrieving message from buffer
+Pointer to message passed is not within the buffer area
+Detaching connection from the ELM failed
+Un-mapping of shared memory failed
+/tmp/
+ERROR! Failed to create error log file %s!
+ERROR! %s created! pid: %d tid: %d date: Jun 26 2018 time: 18:06:11
+EasyLink error log %d - pid: %d tid: %d date: Jun 26 2018 time: 18:06:11
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.note
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

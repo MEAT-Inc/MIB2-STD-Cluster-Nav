@@ -1,0 +1,1924 @@
+
+{"instruction": "0x1117e0", "string_va": "0x1283e4", "text": "::switchContextCluster(): contextId %d / sessionID %d [r%s] --> handle FPK map", "candidate_function_start": "0x111784"}
+001117a4 ldr      r3, [r3, #0x1c]                          
+001117a8 mov      r0, #1                                   
+001117ac mov      r1, #4                                   
+001117b0 blx      r3                                       
+001117b4 mov      r3, r0                                   
+001117b8 cmp      r3, #0                                   
+001117bc beq      #0x111818                                
+001117c0 bl       #0x101aec                                DTS_Client_Get_Frontend
+001117c4 mov      r3, r0                                   
+001117c8 ldr      r4, [r3, #0x2c]                          
+001117cc bl       #0x11a930                                
+001117d0 mov      r2, r0                                   
+001117d4 movw     r3, #0x2df                               
+001117d8 str      r3, [sp]                                 
+001117dc movw     r3, #0x83e4                              
+001117e0 movt     r3, #0x12                                
+001117e4 str      r3, [sp, #4]                             
+001117e8 ldr      r3, [sp, #0x28]                          
+001117ec str      r3, [sp, #8]                             
+001117f0 ldr      r3, [sp, #0x20]                          
+001117f4 str      r3, [sp, #0xc]                           
+001117f8 str      r2, [sp, #0x10]                          
+001117fc mov      r0, #1                                   
+00111800 mov      r1, #4                                   
+00111804 movw     r2, #0x77c8                              
+00111808 movt     r2, #0x12                                
+0011180c movw     r3, #0x7848                              
+00111810 movt     r3, #0x12                                
+00111814 blx      r4                                       
+00111818 movw     r3, #0xea4c                              
+0011181c movt     r3, #0x12                                
+00111820 ldr      r3, [r3]                                 
+00111824 cmp      r3, #0                                   
+00111828 beq      #0x111bd0                                
+0011182c mvn      r3, #0                                   
+00111830 str      r3, [sp, #0x30]                          
+00111834 mov      r3, #0                                   
+00111838 str      r3, [sp, #0x34]                          
+0011183c mov      r3, #0                                   
+00111840 str      r3, [sp, #0x34]                          
+00111844 b        #0x111888                                
+00111848 movw     r3, #0xea4c                              
+0011184c movt     r3, #0x12                                
+00111850 ldr      r2, [r3]                                 
+00111854 ldr      r3, [sp, #0x34]                          
+00111858 lsl      r3, r3, #3                               
+0011185c add      r3, r2, r3                               
+00111860 ldr      r2, [r3]                                 
+00111864 ldr      r3, [sp, #0x28]                          
+00111868 cmp      r2, r3                                   
+
+{"instruction": "0x111928", "string_va": "0x128434", "text": "::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d -> deactivate CLUSTER layer (no action)", "candidate_function_start": "0x111784"}
+001118ec bl       #0x101aec                                DTS_Client_Get_Frontend
+001118f0 mov      r3, r0                                   
+001118f4 ldr      r3, [r3, #0x1c]                          
+001118f8 mov      r0, #1                                   
+001118fc mov      r1, #4                                   
+00111900 blx      r3                                       
+00111904 mov      r3, r0                                   
+00111908 cmp      r3, #0                                   
+0011190c beq      #0x111964                                
+00111910 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111914 mov      r3, r0                                   
+00111918 ldr      ip, [r3, #0x2c]                          
+0011191c movw     r3, #0x2f5                               
+00111920 str      r3, [sp]                                 
+00111924 movw     r3, #0x8434                              
+00111928 movt     r3, #0x12                                
+0011192c str      r3, [sp, #4]                             
+00111930 ldr      r3, [sp, #0x28]                          
+00111934 str      r3, [sp, #8]                             
+00111938 ldr      r3, [sp, #0x20]                          
+0011193c str      r3, [sp, #0xc]                           
+00111940 ldr      r3, [sp, #0x38]                          
+00111944 str      r3, [sp, #0x10]                          
+00111948 mov      r0, #1                                   
+0011194c mov      r1, #4                                   
+00111950 movw     r2, #0x77c8                              
+00111954 movt     r2, #0x12                                
+00111958 movw     r3, #0x7848                              
+0011195c movt     r3, #0x12                                
+00111960 blx      ip                                       
+00111964 ldr      r0, [sp, #0x2c]                          
+00111968 ldr      r1, [sp, #0x28]                          
+0011196c ldr      r2, [sp, #0x24]                          
+00111970 ldr      r3, [sp, #0x20]                          
+00111974 bl       #0x112278                                
+00111978 b        #0x111c40                                
+0011197c ldr      r3, [sp, #0x38]                          
+00111980 cmp      r3, #1                                   
+00111984 bne      #0x111ae0                                
+00111988 movw     r3, #0xea4c                              
+0011198c movt     r3, #0x12                                
+00111990 ldr      r2, [r3]                                 
+00111994 ldr      r3, [sp, #0x34]                          
+00111998 lsl      r3, r3, #3                               
+0011199c add      r3, r2, r3                               
+001119a0 ldr      r3, [r3, #4]                             
+001119a4 add      r3, r3, #4                               
+001119a8 ldr      r3, [r3]                                 
+001119ac str      r3, [sp, #0x3c]                          
+001119b0 ldr      r3, [sp, #0x3c]                          
+
+{"instruction": "0x1119f8", "string_va": "0x1284ac", "text": "::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d -> activate CLUSTER MAPVIEWER (no action)", "candidate_function_start": "0x111784"}
+001119bc bl       #0x101aec                                DTS_Client_Get_Frontend
+001119c0 mov      r3, r0                                   
+001119c4 ldr      r3, [r3, #0x1c]                          
+001119c8 mov      r0, #1                                   
+001119cc mov      r1, #4                                   
+001119d0 blx      r3                                       
+001119d4 mov      r3, r0                                   
+001119d8 cmp      r3, #0                                   
+001119dc beq      #0x111a34                                
+001119e0 bl       #0x101aec                                DTS_Client_Get_Frontend
+001119e4 mov      r3, r0                                   
+001119e8 ldr      ip, [r3, #0x2c]                          
+001119ec movw     r3, #0x301                               
+001119f0 str      r3, [sp]                                 
+001119f4 movw     r3, #0x84ac                              
+001119f8 movt     r3, #0x12                                
+001119fc str      r3, [sp, #4]                             
+00111a00 ldr      r3, [sp, #0x28]                          
+00111a04 str      r3, [sp, #8]                             
+00111a08 ldr      r3, [sp, #0x20]                          
+00111a0c str      r3, [sp, #0xc]                           
+00111a10 ldr      r3, [sp, #0x38]                          
+00111a14 str      r3, [sp, #0x10]                          
+00111a18 mov      r0, #1                                   
+00111a1c mov      r1, #4                                   
+00111a20 movw     r2, #0x77c8                              
+00111a24 movt     r2, #0x12                                
+00111a28 movw     r3, #0x7848                              
+00111a2c movt     r3, #0x12                                
+00111a30 blx      ip                                       
+00111a34 ldr      r0, [sp, #0x2c]                          
+00111a38 ldr      r1, [sp, #0x28]                          
+00111a3c ldr      r2, [sp, #0x24]                          
+00111a40 ldr      r3, [sp, #0x20]                          
+00111a44 bl       #0x112278                                
+00111a48 b        #0x111c40                                
+00111a4c bl       #0x101aec                                DTS_Client_Get_Frontend
+00111a50 mov      r3, r0                                   
+00111a54 ldr      r3, [r3, #0x1c]                          
+00111a58 mov      r0, #0                                   
+00111a5c mov      r1, #3                                   
+00111a60 blx      r3                                       
+00111a64 mov      r3, r0                                   
+00111a68 cmp      r3, #0                                   
+00111a6c beq      #0x111c34                                
+00111a70 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111a74 mov      r3, r0                                   
+00111a78 ldr      r4, [r3, #0x2c]                          
+00111a7c ldr      r0, [sp, #0x3c]                          
+00111a80 bl       #0x110af0                                
+
+{"instruction": "0x111a94", "string_va": "0x128528", "text": "::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d cid %d < %s > (expected MAPVIEWER)", "candidate_function_start": "0x111784"}
+00111a58 mov      r0, #0                                   
+00111a5c mov      r1, #3                                   
+00111a60 blx      r3                                       
+00111a64 mov      r3, r0                                   
+00111a68 cmp      r3, #0                                   
+00111a6c beq      #0x111c34                                
+00111a70 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111a74 mov      r3, r0                                   
+00111a78 ldr      r4, [r3, #0x2c]                          
+00111a7c ldr      r0, [sp, #0x3c]                          
+00111a80 bl       #0x110af0                                
+00111a84 mov      r2, r0                                   
+00111a88 movw     r3, #0x30a                               
+00111a8c str      r3, [sp]                                 
+00111a90 movw     r3, #0x8528                              
+00111a94 movt     r3, #0x12                                
+00111a98 str      r3, [sp, #4]                             
+00111a9c ldr      r3, [sp, #0x28]                          
+00111aa0 str      r3, [sp, #8]                             
+00111aa4 ldr      r3, [sp, #0x20]                          
+00111aa8 str      r3, [sp, #0xc]                           
+00111aac ldr      r3, [sp, #0x38]                          
+00111ab0 str      r3, [sp, #0x10]                          
+00111ab4 ldr      r3, [sp, #0x3c]                          
+00111ab8 str      r3, [sp, #0x14]                          
+00111abc str      r2, [sp, #0x18]                          
+00111ac0 mov      r0, #0                                   
+00111ac4 mov      r1, #3                                   
+00111ac8 movw     r2, #0x77c8                              
+00111acc movt     r2, #0x12                                
+00111ad0 movw     r3, #0x7848                              
+00111ad4 movt     r3, #0x12                                
+00111ad8 blx      r4                                       
+00111adc b        #0x111c40                                
+00111ae0 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111ae4 mov      r3, r0                                   
+00111ae8 ldr      r3, [r3, #0x1c]                          
+00111aec mov      r0, #0                                   
+00111af0 mov      r1, #3                                   
+00111af4 blx      r3                                       
+00111af8 mov      r3, r0                                   
+00111afc cmp      r3, #0                                   
+00111b00 beq      #0x111c3c                                
+00111b04 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111b08 mov      r3, r0                                   
+00111b0c ldr      ip, [r3, #0x2c]                          
+00111b10 movw     r3, #0x30f                               
+00111b14 str      r3, [sp]                                 
+00111b18 movw     r3, #0x859c                              
+00111b1c movt     r3, #0x12                                
+
+{"instruction": "0x111b1c", "string_va": "0x12859c", "text": "::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d (expected 0 or 1)", "candidate_function_start": "0x111784"}
+00111ae0 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111ae4 mov      r3, r0                                   
+00111ae8 ldr      r3, [r3, #0x1c]                          
+00111aec mov      r0, #0                                   
+00111af0 mov      r1, #3                                   
+00111af4 blx      r3                                       
+00111af8 mov      r3, r0                                   
+00111afc cmp      r3, #0                                   
+00111b00 beq      #0x111c3c                                
+00111b04 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111b08 mov      r3, r0                                   
+00111b0c ldr      ip, [r3, #0x2c]                          
+00111b10 movw     r3, #0x30f                               
+00111b14 str      r3, [sp]                                 
+00111b18 movw     r3, #0x859c                              
+00111b1c movt     r3, #0x12                                
+00111b20 str      r3, [sp, #4]                             
+00111b24 ldr      r3, [sp, #0x28]                          
+00111b28 str      r3, [sp, #8]                             
+00111b2c ldr      r3, [sp, #0x20]                          
+00111b30 str      r3, [sp, #0xc]                           
+00111b34 ldr      r3, [sp, #0x38]                          
+00111b38 str      r3, [sp, #0x10]                          
+00111b3c mov      r0, #0                                   
+00111b40 mov      r1, #3                                   
+00111b44 movw     r2, #0x77c8                              
+00111b48 movt     r2, #0x12                                
+00111b4c movw     r3, #0x7848                              
+00111b50 movt     r3, #0x12                                
+00111b54 blx      ip                                       
+00111b58 b        #0x111c40                                
+00111b5c bl       #0x101aec                                DTS_Client_Get_Frontend
+00111b60 mov      r3, r0                                   
+00111b64 ldr      r3, [r3, #0x1c]                          
+00111b68 mov      r0, #0                                   
+00111b6c mov      r1, #2                                   
+00111b70 blx      r3                                       
+00111b74 mov      r3, r0                                   
+00111b78 cmp      r3, #0                                   
+00111b7c beq      #0x111c40                                
+00111b80 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111b84 mov      r3, r0                                   
+00111b88 ldr      ip, [r3, #0x2c]                          
+00111b8c mov      r3, #0x314                               
+00111b90 str      r3, [sp]                                 
+00111b94 movw     r3, #0x8600                              
+00111b98 movt     r3, #0x12                                
+00111b9c str      r3, [sp, #4]                             
+00111ba0 ldr      r3, [sp, #0x28]                          
+00111ba4 str      r3, [sp, #8]                             
+
+{"instruction": "0x111b98", "string_va": "0x128600", "text": "::switchContextCluster(): contextId %d / sessionID %d - not found in context list", "candidate_function_start": "0x111784"}
+00111b5c bl       #0x101aec                                DTS_Client_Get_Frontend
+00111b60 mov      r3, r0                                   
+00111b64 ldr      r3, [r3, #0x1c]                          
+00111b68 mov      r0, #0                                   
+00111b6c mov      r1, #2                                   
+00111b70 blx      r3                                       
+00111b74 mov      r3, r0                                   
+00111b78 cmp      r3, #0                                   
+00111b7c beq      #0x111c40                                
+00111b80 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111b84 mov      r3, r0                                   
+00111b88 ldr      ip, [r3, #0x2c]                          
+00111b8c mov      r3, #0x314                               
+00111b90 str      r3, [sp]                                 
+00111b94 movw     r3, #0x8600                              
+00111b98 movt     r3, #0x12                                
+00111b9c str      r3, [sp, #4]                             
+00111ba0 ldr      r3, [sp, #0x28]                          
+00111ba4 str      r3, [sp, #8]                             
+00111ba8 ldr      r3, [sp, #0x20]                          
+00111bac str      r3, [sp, #0xc]                           
+00111bb0 mov      r0, #0                                   
+00111bb4 mov      r1, #2                                   
+00111bb8 movw     r2, #0x77c8                              
+00111bbc movt     r2, #0x12                                
+00111bc0 movw     r3, #0x7848                              
+00111bc4 movt     r3, #0x12                                
+00111bc8 blx      ip                                       
+00111bcc b        #0x111c40                                
+00111bd0 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111bd4 mov      r3, r0                                   
+00111bd8 ldr      r3, [r3, #0x1c]                          
+00111bdc mov      r0, #0                                   
+00111be0 mov      r1, #2                                   
+00111be4 blx      r3                                       
+00111be8 mov      r3, r0                                   
+00111bec cmp      r3, #0                                   
+00111bf0 beq      #0x111c40                                
+00111bf4 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111bf8 mov      r3, r0                                   
+00111bfc ldr      ip, [r3, #0x2c]                          
+00111c00 movw     r3, #0x319                               
+00111c04 str      r3, [sp]                                 
+00111c08 movw     r3, #0x8654                              
+00111c0c movt     r3, #0x12                                
+00111c10 str      r3, [sp, #4]                             
+00111c14 mov      r0, #0                                   
+00111c18 mov      r1, #2                                   
+00111c1c movw     r2, #0x77c8                              
+00111c20 movt     r2, #0x12                                
+
+{"instruction": "0x111c0c", "string_va": "0x128654", "text": "::switchContextCluster(): layerContextList == NULL", "candidate_function_start": "0x111784"}
+00111bd0 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111bd4 mov      r3, r0                                   
+00111bd8 ldr      r3, [r3, #0x1c]                          
+00111bdc mov      r0, #0                                   
+00111be0 mov      r1, #2                                   
+00111be4 blx      r3                                       
+00111be8 mov      r3, r0                                   
+00111bec cmp      r3, #0                                   
+00111bf0 beq      #0x111c40                                
+00111bf4 bl       #0x101aec                                DTS_Client_Get_Frontend
+00111bf8 mov      r3, r0                                   
+00111bfc ldr      ip, [r3, #0x2c]                          
+00111c00 movw     r3, #0x319                               
+00111c04 str      r3, [sp]                                 
+00111c08 movw     r3, #0x8654                              
+00111c0c movt     r3, #0x12                                
+00111c10 str      r3, [sp, #4]                             
+00111c14 mov      r0, #0                                   
+00111c18 mov      r1, #2                                   
+00111c1c movw     r2, #0x77c8                              
+00111c20 movt     r2, #0x12                                
+00111c24 movw     r3, #0x7848                              
+00111c28 movt     r3, #0x12                                
+00111c2c blx      ip                                       
+00111c30 b        #0x111c40                                
+00111c34 mov      r0, r0                                   
+00111c38 b        #0x111c40                                
+00111c3c mov      r0, r0                                   
+00111c40 add      sp, sp, #0x40                            
+00111c44 pop      {r4, pc}                                 
+00111c48 sub      r0, r0, #8                               
+00111c4c b        #0x111c50                                
+00111c50 push     {r4, r5, lr}                             
+00111c54 sub      sp, sp, #0x4c                            
+00111c58 str      r0, [sp, #0x2c]                          
+00111c5c str      r1, [sp, #0x28]                          
+00111c60 str      r2, [sp, #0x24]                          
+00111c64 str      r3, [sp, #0x20]                          
+00111c68 ldr      r3, [sp, #0x24]                          
+00111c6c cmp      r3, #4                                   
+00111c70 bne      #0x111c8c                                
+00111c74 ldr      r0, [sp, #0x2c]                          
+00111c78 ldr      r1, [sp, #0x28]                          
+00111c7c ldr      r2, [sp, #0x24]                          
+00111c80 ldr      r3, [sp, #0x20]                          
+00111c84 bl       #0x111784                                
+00111c88 b        #0x112188                                
+00111c8c ldr      r3, [sp, #0x24]                          
+00111c90 cmp      r3, #0                                   
+00111c94 bne      #0x1120e4                                
+
+{"instruction": "0x116838", "string_va": "0x12a268", "text": "::getDisplayType(): displayID %d (%s) - returning DISPLAYTYPE_LVDS", "candidate_function_start": "0x1167d4"}
+001167fc mov      r0, #1                                   
+00116800 mov      r1, #4                                   
+00116804 blx      r3                                       
+00116808 mov      r3, r0                                   
+0011680c cmp      r3, #0                                   
+00116810 beq      #0x116868                                
+00116814 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116818 mov      r3, r0                                   
+0011681c ldr      r4, [r3, #0x2c]                          
+00116820 ldr      r0, [sp, #0x18]                          
+00116824 bl       #0x110c10                                
+00116828 mov      r2, r0                                   
+0011682c movw     r3, #0x71c                               
+00116830 str      r3, [sp]                                 
+00116834 movw     r3, #0xa268                              
+00116838 movt     r3, #0x12                                
+0011683c str      r3, [sp, #4]                             
+00116840 ldr      r3, [sp, #0x18]                          
+00116844 str      r3, [sp, #8]                             
+00116848 str      r2, [sp, #0xc]                           
+0011684c mov      r0, #1                                   
+00116850 mov      r1, #4                                   
+00116854 movw     r2, #0x77c8                              
+00116858 movt     r2, #0x12                                
+0011685c movw     r3, #0x7848                              
+00116860 movt     r3, #0x12                                
+00116864 blx      r4                                       
+00116868 ldr      r3, [sp, #0x1c]                          
+0011686c ldr      r3, [r3, #0xc]                           
+00116870 ldr      r3, [r3]                                 
+00116874 add      r3, r3, #0x2c                            
+00116878 ldr      r3, [r3]                                 
+0011687c ldr      r2, [sp, #0x1c]                          
+00116880 ldr      r2, [r2, #0xc]                           
+00116884 mov      r0, r2                                   
+00116888 ldr      r1, [sp, #0x18]                          
+0011688c mov      r2, #1                                   
+00116890 blx      r3                                       
+00116894 b        #0x116a00                                
+00116898 ldr      r3, [sp, #0x18]                          
+0011689c cmp      r3, #4                                   
+001168a0 bne      #0x11694c                                
+001168a4 bl       #0x101aec                                DTS_Client_Get_Frontend
+001168a8 mov      r3, r0                                   
+001168ac ldr      r3, [r3, #0x1c]                          
+001168b0 mov      r0, #1                                   
+001168b4 mov      r1, #4                                   
+001168b8 blx      r3                                       
+001168bc mov      r3, r0                                   
+001168c0 cmp      r3, #0                                   
+
+{"instruction": "0x1168ec", "string_va": "0x12a2ac", "text": "::getDisplayType(): displayID %d (%s) - returning DISPLAYTYPE_H264_MOST", "candidate_function_start": "0x1167d4"}
+001168b0 mov      r0, #1                                   
+001168b4 mov      r1, #4                                   
+001168b8 blx      r3                                       
+001168bc mov      r3, r0                                   
+001168c0 cmp      r3, #0                                   
+001168c4 beq      #0x11691c                                
+001168c8 bl       #0x101aec                                DTS_Client_Get_Frontend
+001168cc mov      r3, r0                                   
+001168d0 ldr      r4, [r3, #0x2c]                          
+001168d4 ldr      r0, [sp, #0x18]                          
+001168d8 bl       #0x110c10                                
+001168dc mov      r2, r0                                   
+001168e0 movw     r3, #0x721                               
+001168e4 str      r3, [sp]                                 
+001168e8 movw     r3, #0xa2ac                              
+001168ec movt     r3, #0x12                                
+001168f0 str      r3, [sp, #4]                             
+001168f4 ldr      r3, [sp, #0x18]                          
+001168f8 str      r3, [sp, #8]                             
+001168fc str      r2, [sp, #0xc]                           
+00116900 mov      r0, #1                                   
+00116904 mov      r1, #4                                   
+00116908 movw     r2, #0x77c8                              
+0011690c movt     r2, #0x12                                
+00116910 movw     r3, #0x7848                              
+00116914 movt     r3, #0x12                                
+00116918 blx      r4                                       
+0011691c ldr      r3, [sp, #0x1c]                          
+00116920 ldr      r3, [r3, #0xc]                           
+00116924 ldr      r3, [r3]                                 
+00116928 add      r3, r3, #0x2c                            
+0011692c ldr      r3, [r3]                                 
+00116930 ldr      r2, [sp, #0x1c]                          
+00116934 ldr      r2, [r2, #0xc]                           
+00116938 mov      r0, r2                                   
+0011693c ldr      r1, [sp, #0x18]                          
+00116940 mov      r2, #2                                   
+00116944 blx      r3                                       
+00116948 b        #0x116a00                                
+0011694c bl       #0x101aec                                DTS_Client_Get_Frontend
+00116950 mov      r3, r0                                   
+00116954 ldr      r3, [r3, #0x1c]                          
+00116958 mov      r0, #0                                   
+0011695c mov      r1, #2                                   
+00116960 blx      r3                                       
+00116964 mov      r3, r0                                   
+00116968 cmp      r3, #0                                   
+0011696c beq      #0x1169d4                                
+00116970 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116974 mov      r3, r0                                   
+
+{"instruction": "0x1169a0", "string_va": "0x12a2f4", "text": "::getDisplayType(): displayID %d (%s) %s - returning DISPLAYTYPE_UNDEFINED", "candidate_function_start": "0x1167d4"}
+00116964 mov      r3, r0                                   
+00116968 cmp      r3, #0                                   
+0011696c beq      #0x1169d4                                
+00116970 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116974 mov      r3, r0                                   
+00116978 ldr      r4, [r3, #0x2c]                          
+0011697c ldr      r0, [sp, #0x18]                          
+00116980 bl       #0x110c10                                
+00116984 mov      r1, r0                                   
+00116988 movw     r3, #0xe7b4                              
+0011698c movt     r3, #0x12                                
+00116990 ldr      r2, [r3]                                 
+00116994 movw     r3, #0x726                               
+00116998 str      r3, [sp]                                 
+0011699c movw     r3, #0xa2f4                              
+001169a0 movt     r3, #0x12                                
+001169a4 str      r3, [sp, #4]                             
+001169a8 ldr      r3, [sp, #0x18]                          
+001169ac str      r3, [sp, #8]                             
+001169b0 str      r1, [sp, #0xc]                           
+001169b4 str      r2, [sp, #0x10]                          
+001169b8 mov      r0, #0                                   
+001169bc mov      r1, #2                                   
+001169c0 movw     r2, #0x77c8                              
+001169c4 movt     r2, #0x12                                
+001169c8 movw     r3, #0x7848                              
+001169cc movt     r3, #0x12                                
+001169d0 blx      r4                                       
+001169d4 ldr      r3, [sp, #0x1c]                          
+001169d8 ldr      r3, [r3, #0xc]                           
+001169dc ldr      r3, [r3]                                 
+001169e0 add      r3, r3, #0x2c                            
+001169e4 ldr      r3, [r3]                                 
+001169e8 ldr      r2, [sp, #0x1c]                          
+001169ec ldr      r2, [r2, #0xc]                           
+001169f0 mov      r0, r2                                   
+001169f4 ldr      r1, [sp, #0x18]                          
+001169f8 mov      r2, #0                                   
+001169fc blx      r3                                       
+00116a00 add      sp, sp, #0x20                            
+00116a04 pop      {r4, pc}                                 
+00116a08 str      lr, [sp, #-4]!                           
+00116a0c sub      sp, sp, #0x14                            
+00116a10 str      r0, [sp, #0xc]                           
+00116a14 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116a18 mov      r3, r0                                   
+00116a1c ldr      r3, [r3, #0x1c]                          
+00116a20 mov      r0, #1                                   
+00116a24 mov      r1, #4                                   
+00116a28 blx      r3                                       
+
+{"instruction": "0x116a50", "string_va": "0x12a340", "text": "::initExtLayerStates(): reset own FPK states to MMOff / rate 0", "candidate_function_start": "0x116a08"}
+00116a14 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116a18 mov      r3, r0                                   
+00116a1c ldr      r3, [r3, #0x1c]                          
+00116a20 mov      r0, #1                                   
+00116a24 mov      r1, #4                                   
+00116a28 blx      r3                                       
+00116a2c mov      r3, r0                                   
+00116a30 cmp      r3, #0                                   
+00116a34 beq      #0x116a74                                
+00116a38 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116a3c mov      r3, r0                                   
+00116a40 ldr      ip, [r3, #0x2c]                          
+00116a44 mov      r3, #0x730                               
+00116a48 str      r3, [sp]                                 
+00116a4c movw     r3, #0xa340                              
+00116a50 movt     r3, #0x12                                
+00116a54 str      r3, [sp, #4]                             
+00116a58 mov      r0, #1                                   
+00116a5c mov      r1, #4                                   
+00116a60 movw     r2, #0x77c8                              
+00116a64 movt     r2, #0x12                                
+00116a68 movw     r3, #0x7848                              
+00116a6c movt     r3, #0x12                                
+00116a70 blx      ip                                       
+00116a74 ldr      r3, [sp, #0xc]                           
+00116a78 mov      r2, #0                                   
+00116a7c str      r2, [r3, #0x30]                          
+00116a80 ldr      r3, [sp, #0xc]                           
+00116a84 mov      r2, #0                                   
+00116a88 str      r2, [r3, #0x34]                          
+00116a8c ldr      r3, [sp, #0xc]                           
+00116a90 mov      r2, #0                                   
+00116a94 str      r2, [r3, #0x38]                          
+00116a98 ldr      r0, [sp, #0xc]                           
+00116a9c bl       #0x117d68                                
+00116aa0 add      sp, sp, #0x14                            
+00116aa4 ldm      sp!, {pc}                                
+00116aa8 push     {r4, lr}                                 
+00116aac sub      sp, sp, #0x20                            
+00116ab0 str      r0, [sp, #0x14]                          
+00116ab4 str      r1, [sp, #0x10]                          
+00116ab8 ldr      r0, [sp, #0x10]                          
+00116abc bl       #0x10ebf0                                
+00116ac0 mov      r3, r0                                   
+00116ac4 cmp      r3, #0xc                                 
+00116ac8 movne    r3, #0                                   
+00116acc moveq    r3, #1                                   
+00116ad0 uxtb     r3, r3                                   
+00116ad4 cmp      r3, #0                                   
+00116ad8 beq      #0x116b10                                
+
+{"instruction": "0x116b58", "string_va": "0x12a380", "text": "::handleMessageSCDAExternalLayerResponse(): received SCDA_EV_EXT_LAYER_RES - msgSize mismatch %d/%d", "candidate_function_start": "0x116aa8"}
+00116b1c mov      r0, #0                                   
+00116b20 mov      r1, #2                                   
+00116b24 blx      r3                                       
+00116b28 mov      r3, r0                                   
+00116b2c cmp      r3, #0                                   
+00116b30 beq      #0x116b88                                
+00116b34 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116b38 mov      r3, r0                                   
+00116b3c ldr      r4, [r3, #0x2c]                          
+00116b40 ldr      r0, [sp, #0x10]                          
+00116b44 bl       #0x10ebf0                                
+00116b48 mov      r2, r0                                   
+00116b4c movw     r3, #0x744                               
+00116b50 str      r3, [sp]                                 
+00116b54 movw     r3, #0xa380                              
+00116b58 movt     r3, #0x12                                
+00116b5c str      r3, [sp, #4]                             
+00116b60 str      r2, [sp, #8]                             
+00116b64 mov      r3, #0xc                                 
+00116b68 str      r3, [sp, #0xc]                           
+00116b6c mov      r0, #0                                   
+00116b70 mov      r1, #2                                   
+00116b74 movw     r2, #0x77c8                              
+00116b78 movt     r2, #0x12                                
+00116b7c movw     r3, #0x7848                              
+00116b80 movt     r3, #0x12                                
+00116b84 blx      r4                                       
+00116b88 add      sp, sp, #0x20                            
+00116b8c pop      {r4, pc}                                 
+00116b90 str      lr, [sp, #-4]!                           
+00116b94 sub      sp, sp, #0x2c                            
+00116b98 str      r0, [sp, #0x24]                          
+00116b9c str      r1, [sp, #0x20]                          
+00116ba0 str      r2, [sp, #0x1c]                          
+00116ba4 str      r3, [sp, #0x18]                          
+00116ba8 ldr      r3, [sp, #0x24]                          
+00116bac ldrb     r3, [r3, #0x3d]                          
+00116bb0 cmp      r3, #0                                   
+00116bb4 beq      #0x11713c                                
+00116bb8 ldr      r3, [sp, #0x20]                          
+00116bbc cmp      r3, #1                                   
+00116bc0 beq      #0x116f80                                
+00116bc4 cmp      r3, #2                                   
+00116bc8 beq      #0x116d0c                                
+00116bcc cmp      r3, #0                                   
+00116bd0 bne      #0x1170d0                                
+00116bd4 ldr      r3, [sp, #0x18]                          
+00116bd8 cmp      r3, #0                                   
+00116bdc bne      #0x116c70                                
+00116be0 bl       #0x101aec                                DTS_Client_Get_Frontend
+
+{"instruction": "0x116c24", "string_va": "0x12a3e4", "text": "::handleExtLayerCmdResponse(): MAP_ACTIVATE result OK -> requesting MAP_RATE (requested rate %d) [->MMRunRequested]", "candidate_function_start": "0x116b90"}
+00116be8 ldr      r3, [r3, #0x1c]                          
+00116bec mov      r0, #1                                   
+00116bf0 mov      r1, #4                                   
+00116bf4 blx      r3                                       
+00116bf8 mov      r3, r0                                   
+00116bfc cmp      r3, #0                                   
+00116c00 beq      #0x116c4c                                
+00116c04 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116c08 mov      r3, r0                                   
+00116c0c ldr      ip, [r3, #0x2c]                          
+00116c10 ldr      r3, [sp, #0x24]                          
+00116c14 ldr      r2, [r3, #0x38]                          
+00116c18 movw     r3, #0x752                               
+00116c1c str      r3, [sp]                                 
+00116c20 movw     r3, #0xa3e4                              
+00116c24 movt     r3, #0x12                                
+00116c28 str      r3, [sp, #4]                             
+00116c2c str      r2, [sp, #8]                             
+00116c30 mov      r0, #1                                   
+00116c34 mov      r1, #4                                   
+00116c38 movw     r2, #0x77c8                              
+00116c3c movt     r2, #0x12                                
+00116c40 movw     r3, #0x7848                              
+00116c44 movt     r3, #0x12                                
+00116c48 blx      ip                                       
+00116c4c ldr      r3, [sp, #0x24]                          
+00116c50 ldr      r3, [r3, #0x38]                          
+00116c54 mov      r0, #2                                   
+00116c58 mov      r1, r3                                   
+00116c5c bl       #0x11dba0                                
+00116c60 ldr      r3, [sp, #0x24]                          
+00116c64 mov      r2, #3                                   
+00116c68 str      r2, [r3, #0x30]                          
+00116c6c b        #0x117210                                
+00116c70 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116c74 mov      r3, r0                                   
+00116c78 ldr      r3, [r3, #0x1c]                          
+00116c7c mov      r0, #0                                   
+00116c80 mov      r1, #2                                   
+00116c84 blx      r3                                       
+00116c88 mov      r3, r0                                   
+00116c8c cmp      r3, #0                                   
+00116c90 beq      #0x116cdc                                
+00116c94 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116c98 mov      r3, r0                                   
+00116c9c ldr      ip, [r3, #0x2c]                          
+00116ca0 ldr      r3, [sp, #0x24]                          
+00116ca4 ldr      r2, [r3, #0x38]                          
+00116ca8 movw     r3, #0x75c                               
+00116cac str      r3, [sp]                                 
+
+{"instruction": "0x116cb4", "string_va": "0x12a458", "text": "::handleExtLayerCmdResponse(): MAP_ACTIVATE result NOK (requested rate %d) [->MMOff]", "candidate_function_start": "0x116b90"}
+00116c78 ldr      r3, [r3, #0x1c]                          
+00116c7c mov      r0, #0                                   
+00116c80 mov      r1, #2                                   
+00116c84 blx      r3                                       
+00116c88 mov      r3, r0                                   
+00116c8c cmp      r3, #0                                   
+00116c90 beq      #0x116cdc                                
+00116c94 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116c98 mov      r3, r0                                   
+00116c9c ldr      ip, [r3, #0x2c]                          
+00116ca0 ldr      r3, [sp, #0x24]                          
+00116ca4 ldr      r2, [r3, #0x38]                          
+00116ca8 movw     r3, #0x75c                               
+00116cac str      r3, [sp]                                 
+00116cb0 movw     r3, #0xa458                              
+00116cb4 movt     r3, #0x12                                
+00116cb8 str      r3, [sp, #4]                             
+00116cbc str      r2, [sp, #8]                             
+00116cc0 mov      r0, #0                                   
+00116cc4 mov      r1, #2                                   
+00116cc8 movw     r2, #0x77c8                              
+00116ccc movt     r2, #0x12                                
+00116cd0 movw     r3, #0x7848                              
+00116cd4 movt     r3, #0x12                                
+00116cd8 blx      ip                                       
+00116cdc ldr      r3, [sp, #0x24]                          
+00116ce0 mov      r2, #0                                   
+00116ce4 str      r2, [r3, #0x30]                          
+00116ce8 ldr      r3, [sp, #0x24]                          
+00116cec mov      r2, #0                                   
+00116cf0 str      r2, [r3, #0x34]                          
+00116cf4 ldr      r3, [sp, #0x24]                          
+00116cf8 mov      r2, #0                                   
+00116cfc str      r2, [r3, #0x38]                          
+00116d00 ldr      r0, [sp, #0x24]                          
+00116d04 bl       #0x117d68                                
+00116d08 b        #0x117210                                
+00116d0c ldr      r3, [sp, #0x24]                          
+00116d10 ldr      r2, [sp, #0x1c]                          
+00116d14 str      r2, [r3, #0x34]                          
+00116d18 ldr      r0, [sp, #0x24]                          
+00116d1c bl       #0x117d68                                
+00116d20 ldr      r3, [sp, #0x24]                          
+00116d24 ldr      r2, [r3, #0x38]                          
+00116d28 ldr      r3, [sp, #0x1c]                          
+00116d2c cmp      r2, r3                                   
+00116d30 bne      #0x116e54                                
+00116d34 ldr      r3, [sp, #0x1c]                          
+00116d38 cmp      r3, #0                                   
+00116d3c bne      #0x116dd0                                
+
+{"instruction": "0x116d84", "string_va": "0x12a4b0", "text": "::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) OK -> trigger deactivate [->MMOffRequested]", "candidate_function_start": "0x116b90"}
+00116d48 ldr      r3, [r3, #0x1c]                          
+00116d4c mov      r0, #1                                   
+00116d50 mov      r1, #4                                   
+00116d54 blx      r3                                       
+00116d58 mov      r3, r0                                   
+00116d5c cmp      r3, #0                                   
+00116d60 beq      #0x116db4                                
+00116d64 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116d68 mov      r3, r0                                   
+00116d6c ldr      ip, [r3, #0x2c]                          
+00116d70 ldr      r3, [sp, #0x24]                          
+00116d74 ldr      r2, [r3, #0x38]                          
+00116d78 movw     r3, #0x776                               
+00116d7c str      r3, [sp]                                 
+00116d80 movw     r3, #0xa4b0                              
+00116d84 movt     r3, #0x12                                
+00116d88 str      r3, [sp, #4]                             
+00116d8c str      r2, [sp, #8]                             
+00116d90 ldr      r3, [sp, #0x1c]                          
+00116d94 str      r3, [sp, #0xc]                           
+00116d98 mov      r0, #1                                   
+00116d9c mov      r1, #4                                   
+00116da0 movw     r2, #0x77c8                              
+00116da4 movt     r2, #0x12                                
+00116da8 movw     r3, #0x7848                              
+00116dac movt     r3, #0x12                                
+00116db0 blx      ip                                       
+00116db4 mov      r0, #1                                   
+00116db8 mov      r1, #0                                   
+00116dbc bl       #0x11dba0                                
+00116dc0 ldr      r3, [sp, #0x24]                          
+00116dc4 mov      r2, #1                                   
+00116dc8 str      r2, [r3, #0x30]                          
+00116dcc b        #0x117210                                
+00116dd0 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116dd4 mov      r3, r0                                   
+00116dd8 ldr      r3, [r3, #0x1c]                          
+00116ddc mov      r0, #1                                   
+00116de0 mov      r1, #4                                   
+00116de4 blx      r3                                       
+00116de8 mov      r3, r0                                   
+00116dec cmp      r3, #0                                   
+00116df0 beq      #0x116e44                                
+00116df4 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116df8 mov      r3, r0                                   
+00116dfc ldr      ip, [r3, #0x2c]                          
+00116e00 ldr      r3, [sp, #0x24]                          
+00116e04 ldr      r2, [r3, #0x38]                          
+00116e08 movw     r3, #0x77f                               
+00116e0c str      r3, [sp]                                 
+
+{"instruction": "0x116e14", "string_va": "0x12a524", "text": "::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) OK -> fully up and running [->MMRun]", "candidate_function_start": "0x116b90"}
+00116dd8 ldr      r3, [r3, #0x1c]                          
+00116ddc mov      r0, #1                                   
+00116de0 mov      r1, #4                                   
+00116de4 blx      r3                                       
+00116de8 mov      r3, r0                                   
+00116dec cmp      r3, #0                                   
+00116df0 beq      #0x116e44                                
+00116df4 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116df8 mov      r3, r0                                   
+00116dfc ldr      ip, [r3, #0x2c]                          
+00116e00 ldr      r3, [sp, #0x24]                          
+00116e04 ldr      r2, [r3, #0x38]                          
+00116e08 movw     r3, #0x77f                               
+00116e0c str      r3, [sp]                                 
+00116e10 movw     r3, #0xa524                              
+00116e14 movt     r3, #0x12                                
+00116e18 str      r3, [sp, #4]                             
+00116e1c str      r2, [sp, #8]                             
+00116e20 ldr      r3, [sp, #0x1c]                          
+00116e24 str      r3, [sp, #0xc]                           
+00116e28 mov      r0, #1                                   
+00116e2c mov      r1, #4                                   
+00116e30 movw     r2, #0x77c8                              
+00116e34 movt     r2, #0x12                                
+00116e38 movw     r3, #0x7848                              
+00116e3c movt     r3, #0x12                                
+00116e40 blx      ip                                       
+00116e44 ldr      r3, [sp, #0x24]                          
+00116e48 mov      r2, #4                                   
+00116e4c str      r2, [r3, #0x30]                          
+00116e50 b        #0x117210                                
+00116e54 ldr      r3, [sp, #0x1c]                          
+00116e58 cmp      r3, #0                                   
+00116e5c ble      #0x116ee4                                
+00116e60 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116e64 mov      r3, r0                                   
+00116e68 ldr      r3, [r3, #0x1c]                          
+00116e6c mov      r0, #0                                   
+00116e70 mov      r1, #2                                   
+00116e74 blx      r3                                       
+00116e78 mov      r3, r0                                   
+00116e7c cmp      r3, #0                                   
+00116e80 beq      #0x116ed4                                
+00116e84 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116e88 mov      r3, r0                                   
+00116e8c ldr      ip, [r3, #0x2c]                          
+00116e90 ldr      r3, [sp, #0x24]                          
+00116e94 ldr      r2, [r3, #0x38]                          
+00116e98 movw     r3, #0x789                               
+00116e9c str      r3, [sp]                                 
+
+{"instruction": "0x116ea4", "string_va": "0x12a590", "text": "::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) NOK -> rate mismatch [->MMRun]", "candidate_function_start": "0x116b90"}
+00116e68 ldr      r3, [r3, #0x1c]                          
+00116e6c mov      r0, #0                                   
+00116e70 mov      r1, #2                                   
+00116e74 blx      r3                                       
+00116e78 mov      r3, r0                                   
+00116e7c cmp      r3, #0                                   
+00116e80 beq      #0x116ed4                                
+00116e84 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116e88 mov      r3, r0                                   
+00116e8c ldr      ip, [r3, #0x2c]                          
+00116e90 ldr      r3, [sp, #0x24]                          
+00116e94 ldr      r2, [r3, #0x38]                          
+00116e98 movw     r3, #0x789                               
+00116e9c str      r3, [sp]                                 
+00116ea0 movw     r3, #0xa590                              
+00116ea4 movt     r3, #0x12                                
+00116ea8 str      r3, [sp, #4]                             
+00116eac str      r2, [sp, #8]                             
+00116eb0 ldr      r3, [sp, #0x1c]                          
+00116eb4 str      r3, [sp, #0xc]                           
+00116eb8 mov      r0, #0                                   
+00116ebc mov      r1, #2                                   
+00116ec0 movw     r2, #0x77c8                              
+00116ec4 movt     r2, #0x12                                
+00116ec8 movw     r3, #0x7848                              
+00116ecc movt     r3, #0x12                                
+00116ed0 blx      ip                                       
+00116ed4 ldr      r3, [sp, #0x24]                          
+00116ed8 mov      r2, #4                                   
+00116edc str      r2, [r3, #0x30]                          
+00116ee0 b        #0x117210                                
+00116ee4 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116ee8 mov      r3, r0                                   
+00116eec ldr      r3, [r3, #0x1c]                          
+00116ef0 mov      r0, #0                                   
+00116ef4 mov      r1, #2                                   
+00116ef8 blx      r3                                       
+00116efc mov      r3, r0                                   
+00116f00 cmp      r3, #0                                   
+00116f04 beq      #0x116f58                                
+00116f08 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116f0c mov      r3, r0                                   
+00116f10 ldr      ip, [r3, #0x2c]                          
+00116f14 ldr      r3, [sp, #0x24]                          
+00116f18 ldr      r2, [r3, #0x38]                          
+00116f1c movw     r3, #0x794                               
+00116f20 str      r3, [sp]                                 
+00116f24 movw     r3, #0xa5f4                              
+00116f28 movt     r3, #0x12                                
+00116f2c str      r3, [sp, #4]                             
+
+{"instruction": "0x116f28", "string_va": "0x12a5f4", "text": "::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) NOK -> rate mismatch [->MMOff]", "candidate_function_start": "0x116b90"}
+00116eec ldr      r3, [r3, #0x1c]                          
+00116ef0 mov      r0, #0                                   
+00116ef4 mov      r1, #2                                   
+00116ef8 blx      r3                                       
+00116efc mov      r3, r0                                   
+00116f00 cmp      r3, #0                                   
+00116f04 beq      #0x116f58                                
+00116f08 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116f0c mov      r3, r0                                   
+00116f10 ldr      ip, [r3, #0x2c]                          
+00116f14 ldr      r3, [sp, #0x24]                          
+00116f18 ldr      r2, [r3, #0x38]                          
+00116f1c movw     r3, #0x794                               
+00116f20 str      r3, [sp]                                 
+00116f24 movw     r3, #0xa5f4                              
+00116f28 movt     r3, #0x12                                
+00116f2c str      r3, [sp, #4]                             
+00116f30 str      r2, [sp, #8]                             
+00116f34 ldr      r3, [sp, #0x1c]                          
+00116f38 str      r3, [sp, #0xc]                           
+00116f3c mov      r0, #0                                   
+00116f40 mov      r1, #2                                   
+00116f44 movw     r2, #0x77c8                              
+00116f48 movt     r2, #0x12                                
+00116f4c movw     r3, #0x7848                              
+00116f50 movt     r3, #0x12                                
+00116f54 blx      ip                                       
+00116f58 ldr      r3, [sp, #0x24]                          
+00116f5c mov      r2, #0                                   
+00116f60 str      r2, [r3, #0x30]                          
+00116f64 ldr      r3, [sp, #0x24]                          
+00116f68 mov      r2, #0                                   
+00116f6c str      r2, [r3, #0x34]                          
+00116f70 ldr      r3, [sp, #0x24]                          
+00116f74 mov      r2, #0                                   
+00116f78 str      r2, [r3, #0x38]                          
+00116f7c b        #0x117210                                
+00116f80 ldr      r3, [sp, #0x24]                          
+00116f84 ldr      r3, [r3, #0x38]                          
+00116f88 cmp      r3, #0                                   
+00116f8c ble      #0x11703c                                
+00116f90 bl       #0x101aec                                DTS_Client_Get_Frontend
+00116f94 mov      r3, r0                                   
+00116f98 ldr      r3, [r3, #0x1c]                          
+00116f9c mov      r0, #1                                   
+00116fa0 mov      r1, #4                                   
+00116fa4 blx      r3                                       
+00116fa8 mov      r3, r0                                   
+00116fac cmp      r3, #0                                   
+00116fb0 beq      #0x117020                                
+
+{"instruction": "0x116ff4", "string_va": "0x12a66c", "text": "::handleExtLayerCmdResponse(): MAP_DEACTIVATE %s -> requested rate now %d -> requesting MAP_ACTIVATE [->MMReadyRequested]", "candidate_function_start": "0x116b90"}
+00116fb8 mov      r3, r0                                   
+00116fbc ldr      ip, [r3, #0x2c]                          
+00116fc0 ldr      r3, [sp, #0x18]                          
+00116fc4 cmp      r3, #0                                   
+00116fc8 bne      #0x116fd8                                
+00116fcc movw     r3, #0xa658                              
+00116fd0 movt     r3, #0x12                                
+00116fd4 b        #0x116fe0                                
+00116fd8 movw     r3, #0xa65c                              
+00116fdc movt     r3, #0x12                                
+00116fe0 ldr      r2, [sp, #0x24]                          
+00116fe4 ldr      r1, [r2, #0x38]                          
+00116fe8 movw     r2, #0x7a5                               
+00116fec str      r2, [sp]                                 
+00116ff0 movw     r2, #0xa66c                              
+00116ff4 movt     r2, #0x12                                
+00116ff8 str      r2, [sp, #4]                             
+00116ffc str      r3, [sp, #8]                             
+00117000 str      r1, [sp, #0xc]                           
+00117004 mov      r0, #1                                   
+00117008 mov      r1, #4                                   
+0011700c movw     r2, #0x77c8                              
+00117010 movt     r2, #0x12                                
+00117014 movw     r3, #0x7848                              
+00117018 movt     r3, #0x12                                
+0011701c blx      ip                                       
+00117020 mov      r0, #0                                   
+00117024 mov      r1, #0                                   
+00117028 bl       #0x11dba0                                
+0011702c ldr      r3, [sp, #0x24]                          
+00117030 mov      r2, #2                                   
+00117034 str      r2, [r3, #0x30]                          
+00117038 b        #0x117210                                
+0011703c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117040 mov      r3, r0                                   
+00117044 ldr      r3, [r3, #0x1c]                          
+00117048 mov      r0, #1                                   
+0011704c mov      r1, #4                                   
+00117050 blx      r3                                       
+00117054 mov      r3, r0                                   
+00117058 cmp      r3, #0                                   
+0011705c beq      #0x1170c0                                
+00117060 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117064 mov      r3, r0                                   
+00117068 ldr      ip, [r3, #0x2c]                          
+0011706c ldr      r3, [sp, #0x18]                          
+00117070 cmp      r3, #0                                   
+00117074 bne      #0x117084                                
+00117078 movw     r3, #0xa658                              
+0011707c movt     r3, #0x12                                
+
+{"instruction": "0x117098", "string_va": "0x12a6e8", "text": "::handleExtLayerCmdResponse(): MAP_DEACTIVATE %s [->MMOff]", "candidate_function_start": "0x116b90"}
+0011705c beq      #0x1170c0                                
+00117060 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117064 mov      r3, r0                                   
+00117068 ldr      ip, [r3, #0x2c]                          
+0011706c ldr      r3, [sp, #0x18]                          
+00117070 cmp      r3, #0                                   
+00117074 bne      #0x117084                                
+00117078 movw     r3, #0xa658                              
+0011707c movt     r3, #0x12                                
+00117080 b        #0x11708c                                
+00117084 movw     r3, #0xa65c                              
+00117088 movt     r3, #0x12                                
+0011708c movw     r2, #0x7ae                               
+00117090 str      r2, [sp]                                 
+00117094 movw     r2, #0xa6e8                              
+00117098 movt     r2, #0x12                                
+0011709c str      r2, [sp, #4]                             
+001170a0 str      r3, [sp, #8]                             
+001170a4 mov      r0, #1                                   
+001170a8 mov      r1, #4                                   
+001170ac movw     r2, #0x77c8                              
+001170b0 movt     r2, #0x12                                
+001170b4 movw     r3, #0x7848                              
+001170b8 movt     r3, #0x12                                
+001170bc blx      ip                                       
+001170c0 ldr      r3, [sp, #0x24]                          
+001170c4 mov      r2, #0                                   
+001170c8 str      r2, [r3, #0x30]                          
+001170cc b        #0x117210                                
+001170d0 bl       #0x101aec                                DTS_Client_Get_Frontend
+001170d4 mov      r3, r0                                   
+001170d8 ldr      r3, [r3, #0x1c]                          
+001170dc mov      r0, #0                                   
+001170e0 mov      r1, #2                                   
+001170e4 blx      r3                                       
+001170e8 mov      r3, r0                                   
+001170ec cmp      r3, #0                                   
+001170f0 beq      #0x117210                                
+001170f4 bl       #0x101aec                                DTS_Client_Get_Frontend
+001170f8 mov      r3, r0                                   
+001170fc ldr      ip, [r3, #0x2c]                          
+00117100 ldr      r2, [sp, #0x20]                          
+00117104 movw     r3, #0x7b6                               
+00117108 str      r3, [sp]                                 
+0011710c movw     r3, #0xa724                              
+00117110 movt     r3, #0x12                                
+00117114 str      r3, [sp, #4]                             
+00117118 str      r2, [sp, #8]                             
+0011711c mov      r0, #0                                   
+00117120 mov      r1, #2                                   
+
+{"instruction": "0x117110", "string_va": "0x12a724", "text": "::handleExtLayerCmdResponse(): unknown cmd %d", "candidate_function_start": "0x116b90"}
+001170d4 mov      r3, r0                                   
+001170d8 ldr      r3, [r3, #0x1c]                          
+001170dc mov      r0, #0                                   
+001170e0 mov      r1, #2                                   
+001170e4 blx      r3                                       
+001170e8 mov      r3, r0                                   
+001170ec cmp      r3, #0                                   
+001170f0 beq      #0x117210                                
+001170f4 bl       #0x101aec                                DTS_Client_Get_Frontend
+001170f8 mov      r3, r0                                   
+001170fc ldr      ip, [r3, #0x2c]                          
+00117100 ldr      r2, [sp, #0x20]                          
+00117104 movw     r3, #0x7b6                               
+00117108 str      r3, [sp]                                 
+0011710c movw     r3, #0xa724                              
+00117110 movt     r3, #0x12                                
+00117114 str      r3, [sp, #4]                             
+00117118 str      r2, [sp, #8]                             
+0011711c mov      r0, #0                                   
+00117120 mov      r1, #2                                   
+00117124 movw     r2, #0x77c8                              
+00117128 movt     r2, #0x12                                
+0011712c movw     r3, #0x7848                              
+00117130 movt     r3, #0x12                                
+00117134 blx      ip                                       
+00117138 b        #0x117210                                
+0011713c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117140 mov      r3, r0                                   
+00117144 ldr      r3, [r3, #0x1c]                          
+00117148 mov      r0, #0                                   
+0011714c mov      r1, #3                                   
+00117150 blx      r3                                       
+00117154 mov      r3, r0                                   
+00117158 cmp      r3, #0                                   
+0011715c beq      #0x117210                                
+00117160 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117164 mov      r3, r0                                   
+00117168 ldr      ip, [r3, #0x2c]                          
+0011716c ldr      r0, [sp, #0x20]                          
+00117170 ldr      r3, [sp, #0x20]                          
+00117174 cmp      r3, #0                                   
+00117178 beq      #0x1171a4                                
+0011717c ldr      r3, [sp, #0x20]                          
+00117180 cmp      r3, #1                                   
+00117184 bne      #0x117194                                
+00117188 movw     r3, #0xa754                              
+0011718c movt     r3, #0x12                                
+00117190 b        #0x11719c                                
+00117194 movw     r3, #0xa764                              
+00117198 movt     r3, #0x12                                
+
+{"instruction": "0x1171d8", "string_va": "0x12a784", "text": "::handleExtLayerCmdResponse(): cmd %d < %s > newRate %d result %s -> no HMI request so far -> ignoring external layer cmd response", "candidate_function_start": "0x116b90"}
+0011719c mov      r2, r3                                   
+001171a0 b        #0x1171ac                                
+001171a4 movw     r2, #0xa770                              
+001171a8 movt     r2, #0x12                                
+001171ac ldr      r3, [sp, #0x18]                          
+001171b0 cmp      r3, #0                                   
+001171b4 bne      #0x1171c4                                
+001171b8 movw     r3, #0xa658                              
+001171bc movt     r3, #0x12                                
+001171c0 b        #0x1171cc                                
+001171c4 movw     r3, #0xa780                              
+001171c8 movt     r3, #0x12                                
+001171cc movw     r1, #0x7bd                               
+001171d0 str      r1, [sp]                                 
+001171d4 movw     r1, #0xa784                              
+001171d8 movt     r1, #0x12                                
+001171dc str      r1, [sp, #4]                             
+001171e0 str      r0, [sp, #8]                             
+001171e4 str      r2, [sp, #0xc]                           
+001171e8 ldr      r2, [sp, #0x1c]                          
+001171ec str      r2, [sp, #0x10]                          
+001171f0 str      r3, [sp, #0x14]                          
+001171f4 mov      r0, #0                                   
+001171f8 mov      r1, #3                                   
+001171fc movw     r2, #0x77c8                              
+00117200 movt     r2, #0x12                                
+00117204 movw     r3, #0x7848                              
+00117208 movt     r3, #0x12                                
+0011720c blx      ip                                       
+00117210 add      sp, sp, #0x2c                            
+00117214 ldm      sp!, {pc}                                
+00117218 str      lr, [sp, #-4]!                           
+0011721c sub      sp, sp, #0x24                            
+00117220 str      r0, [sp, #0x1c]                          
+00117224 str      r1, [sp, #0x18]                          
+00117228 ldr      r3, [sp, #0x1c]                          
+0011722c mov      r2, #1                                   
+00117230 strb     r2, [r3, #0x3d]                          
+00117234 ldr      r3, [sp, #0x1c]                          
+00117238 ldr      r3, [r3, #0x30]                          
+0011723c cmp      r3, #4                                   
+00117240 ldrls    pc, [pc, r3, lsl #2]                     
+00117244 b        #0x1176bc                                
+00117248 andseq   r7, r1, ip, asr r2                       
+0011724c andseq   r7, r1, ip, lsr #11                      
+00117250 andseq   r7, r1, r4, lsl #7                       
+00117254 andseq   r7, r1, r8, lsl #8                       
+00117258 andseq   r7, r1, r0, lsl #9                       
+0011725c ldr      r3, [sp, #0x18]                          
+00117260 cmp      r3, #0                                   
+
+{"instruction": "0x1172ac", "string_va": "0x12a808", "text": "::handleExtLayerHMIRequest(): requested rate %d / state MMOff (current rate %d) -> requesting MAP_ACTIVATE", "candidate_function_start": "0x117218"}
+00117270 ldr      r3, [r3, #0x1c]                          
+00117274 mov      r0, #1                                   
+00117278 mov      r1, #4                                   
+0011727c blx      r3                                       
+00117280 mov      r3, r0                                   
+00117284 cmp      r3, #0                                   
+00117288 beq      #0x1172dc                                
+0011728c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117290 mov      r3, r0                                   
+00117294 ldr      ip, [r3, #0x2c]                          
+00117298 ldr      r3, [sp, #0x1c]                          
+0011729c ldr      r2, [r3, #0x34]                          
+001172a0 movw     r3, #0x7cc                               
+001172a4 str      r3, [sp]                                 
+001172a8 movw     r3, #0xa808                              
+001172ac movt     r3, #0x12                                
+001172b0 str      r3, [sp, #4]                             
+001172b4 ldr      r3, [sp, #0x18]                          
+001172b8 str      r3, [sp, #8]                             
+001172bc str      r2, [sp, #0xc]                           
+001172c0 mov      r0, #1                                   
+001172c4 mov      r1, #4                                   
+001172c8 movw     r2, #0x77c8                              
+001172cc movt     r2, #0x12                                
+001172d0 movw     r3, #0x7848                              
+001172d4 movt     r3, #0x12                                
+001172d8 blx      ip                                       
+001172dc mov      r0, #0                                   
+001172e0 mov      r1, #0                                   
+001172e4 bl       #0x11dba0                                
+001172e8 ldr      r3, [sp, #0x1c]                          
+001172ec mov      r2, #2                                   
+001172f0 str      r2, [r3, #0x30]                          
+001172f4 ldr      r3, [sp, #0x1c]                          
+001172f8 ldr      r2, [sp, #0x18]                          
+001172fc str      r2, [r3, #0x38]                          
+00117300 b        #0x117750                                
+00117304 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117308 mov      r3, r0                                   
+0011730c ldr      r3, [r3, #0x1c]                          
+00117310 mov      r0, #0                                   
+00117314 mov      r1, #3                                   
+00117318 blx      r3                                       
+0011731c mov      r3, r0                                   
+00117320 cmp      r3, #0                                   
+00117324 beq      #0x117378                                
+00117328 bl       #0x101aec                                DTS_Client_Get_Frontend
+0011732c mov      r3, r0                                   
+00117330 ldr      ip, [r3, #0x2c]                          
+00117334 ldr      r3, [sp, #0x1c]                          
+
+{"instruction": "0x117348", "string_va": "0x12a874", "text": "::handleExtLayerHMIRequest(): requested rate %d / state MMOff (current rate %d) -> no action", "candidate_function_start": "0x117218"}
+0011730c ldr      r3, [r3, #0x1c]                          
+00117310 mov      r0, #0                                   
+00117314 mov      r1, #3                                   
+00117318 blx      r3                                       
+0011731c mov      r3, r0                                   
+00117320 cmp      r3, #0                                   
+00117324 beq      #0x117378                                
+00117328 bl       #0x101aec                                DTS_Client_Get_Frontend
+0011732c mov      r3, r0                                   
+00117330 ldr      ip, [r3, #0x2c]                          
+00117334 ldr      r3, [sp, #0x1c]                          
+00117338 ldr      r2, [r3, #0x34]                          
+0011733c movw     r3, #0x7d5                               
+00117340 str      r3, [sp]                                 
+00117344 movw     r3, #0xa874                              
+00117348 movt     r3, #0x12                                
+0011734c str      r3, [sp, #4]                             
+00117350 ldr      r3, [sp, #0x18]                          
+00117354 str      r3, [sp, #8]                             
+00117358 str      r2, [sp, #0xc]                           
+0011735c mov      r0, #0                                   
+00117360 mov      r1, #3                                   
+00117364 movw     r2, #0x77c8                              
+00117368 movt     r2, #0x12                                
+0011736c movw     r3, #0x7848                              
+00117370 movt     r3, #0x12                                
+00117374 blx      ip                                       
+00117378 ldr      r0, [sp, #0x1c]                          
+0011737c bl       #0x117d68                                
+00117380 b        #0x117750                                
+00117384 ldr      r3, [sp, #0x1c]                          
+00117388 ldr      r2, [sp, #0x18]                          
+0011738c str      r2, [r3, #0x38]                          
+00117390 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117394 mov      r3, r0                                   
+00117398 ldr      r3, [r3, #0x1c]                          
+0011739c mov      r0, #0                                   
+001173a0 mov      r1, #3                                   
+001173a4 blx      r3                                       
+001173a8 mov      r3, r0                                   
+001173ac cmp      r3, #0                                   
+001173b0 beq      #0x117744                                
+001173b4 bl       #0x101aec                                DTS_Client_Get_Frontend
+001173b8 mov      r3, r0                                   
+001173bc ldr      ip, [r3, #0x2c]                          
+001173c0 ldr      r3, [sp, #0x1c]                          
+001173c4 ldr      r2, [r3, #0x34]                          
+001173c8 mov      r3, #0x7e0                               
+001173cc str      r3, [sp]                                 
+001173d0 movw     r3, #0xa8d4                              
+
+{"instruction": "0x1173d4", "string_va": "0x12a8d4", "text": "::handleExtLayerHMIRequest(): requested rate %d / state MMReadyRequested (current rate %d) -> update requested rate", "candidate_function_start": "0x117218"}
+00117398 ldr      r3, [r3, #0x1c]                          
+0011739c mov      r0, #0                                   
+001173a0 mov      r1, #3                                   
+001173a4 blx      r3                                       
+001173a8 mov      r3, r0                                   
+001173ac cmp      r3, #0                                   
+001173b0 beq      #0x117744                                
+001173b4 bl       #0x101aec                                DTS_Client_Get_Frontend
+001173b8 mov      r3, r0                                   
+001173bc ldr      ip, [r3, #0x2c]                          
+001173c0 ldr      r3, [sp, #0x1c]                          
+001173c4 ldr      r2, [r3, #0x34]                          
+001173c8 mov      r3, #0x7e0                               
+001173cc str      r3, [sp]                                 
+001173d0 movw     r3, #0xa8d4                              
+001173d4 movt     r3, #0x12                                
+001173d8 str      r3, [sp, #4]                             
+001173dc ldr      r3, [sp, #0x18]                          
+001173e0 str      r3, [sp, #8]                             
+001173e4 str      r2, [sp, #0xc]                           
+001173e8 mov      r0, #0                                   
+001173ec mov      r1, #3                                   
+001173f0 movw     r2, #0x77c8                              
+001173f4 movt     r2, #0x12                                
+001173f8 movw     r3, #0x7848                              
+001173fc movt     r3, #0x12                                
+00117400 blx      ip                                       
+00117404 b        #0x117750                                
+00117408 bl       #0x101aec                                DTS_Client_Get_Frontend
+0011740c mov      r3, r0                                   
+00117410 ldr      r3, [r3, #0x1c]                          
+00117414 mov      r0, #0                                   
+00117418 mov      r1, #3                                   
+0011741c blx      r3                                       
+00117420 mov      r3, r0                                   
+00117424 cmp      r3, #0                                   
+00117428 beq      #0x11774c                                
+0011742c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117430 mov      r3, r0                                   
+00117434 ldr      ip, [r3, #0x2c]                          
+00117438 ldr      r3, [sp, #0x1c]                          
+0011743c ldr      r2, [r3, #0x34]                          
+00117440 movw     r3, #0x7e7                               
+00117444 str      r3, [sp]                                 
+00117448 movw     r3, #0xa948                              
+0011744c movt     r3, #0x12                                
+00117450 str      r3, [sp, #4]                             
+00117454 ldr      r3, [sp, #0x18]                          
+00117458 str      r3, [sp, #8]                             
+0011745c str      r2, [sp, #0xc]                           
+
+{"instruction": "0x11744c", "string_va": "0x12a948", "text": "::handleExtLayerHMIRequest(): requested rate %d / state MMRunRequested (current rate %d) -> ignore, as last rate request not yet completed", "candidate_function_start": "0x117218"}
+00117410 ldr      r3, [r3, #0x1c]                          
+00117414 mov      r0, #0                                   
+00117418 mov      r1, #3                                   
+0011741c blx      r3                                       
+00117420 mov      r3, r0                                   
+00117424 cmp      r3, #0                                   
+00117428 beq      #0x11774c                                
+0011742c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117430 mov      r3, r0                                   
+00117434 ldr      ip, [r3, #0x2c]                          
+00117438 ldr      r3, [sp, #0x1c]                          
+0011743c ldr      r2, [r3, #0x34]                          
+00117440 movw     r3, #0x7e7                               
+00117444 str      r3, [sp]                                 
+00117448 movw     r3, #0xa948                              
+0011744c movt     r3, #0x12                                
+00117450 str      r3, [sp, #4]                             
+00117454 ldr      r3, [sp, #0x18]                          
+00117458 str      r3, [sp, #8]                             
+0011745c str      r2, [sp, #0xc]                           
+00117460 mov      r0, #0                                   
+00117464 mov      r1, #3                                   
+00117468 movw     r2, #0x77c8                              
+0011746c movt     r2, #0x12                                
+00117470 movw     r3, #0x7848                              
+00117474 movt     r3, #0x12                                
+00117478 blx      ip                                       
+0011747c b        #0x117750                                
+00117480 ldr      r3, [sp, #0x1c]                          
+00117484 ldr      r2, [r3, #0x34]                          
+00117488 ldr      r3, [sp, #0x18]                          
+0011748c cmp      r2, r3                                   
+00117490 bne      #0x117514                                
+00117494 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117498 mov      r3, r0                                   
+0011749c ldr      r3, [r3, #0x1c]                          
+001174a0 mov      r0, #0                                   
+001174a4 mov      r1, #3                                   
+001174a8 blx      r3                                       
+001174ac mov      r3, r0                                   
+001174b0 cmp      r3, #0                                   
+001174b4 beq      #0x117508                                
+001174b8 bl       #0x101aec                                DTS_Client_Get_Frontend
+001174bc mov      r3, r0                                   
+001174c0 ldr      ip, [r3, #0x2c]                          
+001174c4 ldr      r3, [sp, #0x1c]                          
+001174c8 ldr      r2, [r3, #0x34]                          
+001174cc movw     r3, #0x7ef                               
+001174d0 str      r3, [sp]                                 
+001174d4 movw     r3, #0xa9d4                              
+
+{"instruction": "0x1174d8", "string_va": "0x12a9d4", "text": "::handleExtLayerHMIRequest(): requested rate %d / state MMRun (current rate %d) -> no action", "candidate_function_start": "0x117218"}
+0011749c ldr      r3, [r3, #0x1c]                          
+001174a0 mov      r0, #0                                   
+001174a4 mov      r1, #3                                   
+001174a8 blx      r3                                       
+001174ac mov      r3, r0                                   
+001174b0 cmp      r3, #0                                   
+001174b4 beq      #0x117508                                
+001174b8 bl       #0x101aec                                DTS_Client_Get_Frontend
+001174bc mov      r3, r0                                   
+001174c0 ldr      ip, [r3, #0x2c]                          
+001174c4 ldr      r3, [sp, #0x1c]                          
+001174c8 ldr      r2, [r3, #0x34]                          
+001174cc movw     r3, #0x7ef                               
+001174d0 str      r3, [sp]                                 
+001174d4 movw     r3, #0xa9d4                              
+001174d8 movt     r3, #0x12                                
+001174dc str      r3, [sp, #4]                             
+001174e0 ldr      r3, [sp, #0x18]                          
+001174e4 str      r3, [sp, #8]                             
+001174e8 str      r2, [sp, #0xc]                           
+001174ec mov      r0, #0                                   
+001174f0 mov      r1, #3                                   
+001174f4 movw     r2, #0x77c8                              
+001174f8 movt     r2, #0x12                                
+001174fc movw     r3, #0x7848                              
+00117500 movt     r3, #0x12                                
+00117504 blx      ip                                       
+00117508 ldr      r0, [sp, #0x1c]                          
+0011750c bl       #0x117d68                                
+00117510 b        #0x117750                                
+00117514 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117518 mov      r3, r0                                   
+0011751c ldr      r3, [r3, #0x1c]                          
+00117520 mov      r0, #1                                   
+00117524 mov      r1, #4                                   
+00117528 blx      r3                                       
+0011752c mov      r3, r0                                   
+00117530 cmp      r3, #0                                   
+00117534 beq      #0x117588                                
+00117538 bl       #0x101aec                                DTS_Client_Get_Frontend
+0011753c mov      r3, r0                                   
+00117540 ldr      ip, [r3, #0x2c]                          
+00117544 ldr      r3, [sp, #0x1c]                          
+00117548 ldr      r2, [r3, #0x34]                          
+0011754c movw     r3, #0x7f5                               
+00117550 str      r3, [sp]                                 
+00117554 movw     r3, #0xaa34                              
+00117558 movt     r3, #0x12                                
+0011755c str      r3, [sp, #4]                             
+00117560 ldr      r3, [sp, #0x18]                          
+
+{"instruction": "0x117558", "string_va": "0x12aa34", "text": "::handleExtLayerHMIRequest(): requested rate %d / state MMRun (current rate %d) -> requesting MAP_RATE", "candidate_function_start": "0x117218"}
+0011751c ldr      r3, [r3, #0x1c]                          
+00117520 mov      r0, #1                                   
+00117524 mov      r1, #4                                   
+00117528 blx      r3                                       
+0011752c mov      r3, r0                                   
+00117530 cmp      r3, #0                                   
+00117534 beq      #0x117588                                
+00117538 bl       #0x101aec                                DTS_Client_Get_Frontend
+0011753c mov      r3, r0                                   
+00117540 ldr      ip, [r3, #0x2c]                          
+00117544 ldr      r3, [sp, #0x1c]                          
+00117548 ldr      r2, [r3, #0x34]                          
+0011754c movw     r3, #0x7f5                               
+00117550 str      r3, [sp]                                 
+00117554 movw     r3, #0xaa34                              
+00117558 movt     r3, #0x12                                
+0011755c str      r3, [sp, #4]                             
+00117560 ldr      r3, [sp, #0x18]                          
+00117564 str      r3, [sp, #8]                             
+00117568 str      r2, [sp, #0xc]                           
+0011756c mov      r0, #1                                   
+00117570 mov      r1, #4                                   
+00117574 movw     r2, #0x77c8                              
+00117578 movt     r2, #0x12                                
+0011757c movw     r3, #0x7848                              
+00117580 movt     r3, #0x12                                
+00117584 blx      ip                                       
+00117588 ldr      r3, [sp, #0x1c]                          
+0011758c ldr      r2, [sp, #0x18]                          
+00117590 str      r2, [r3, #0x38]                          
+00117594 ldr      r3, [sp, #0x1c]                          
+00117598 ldr      r3, [r3, #0x38]                          
+0011759c mov      r0, #2                                   
+001175a0 mov      r1, r3                                   
+001175a4 bl       #0x11dba0                                
+001175a8 b        #0x117750                                
+001175ac ldr      r3, [sp, #0x18]                          
+001175b0 cmp      r3, #0                                   
+001175b4 ble      #0x11763c                                
+001175b8 bl       #0x101aec                                DTS_Client_Get_Frontend
+001175bc mov      r3, r0                                   
+001175c0 ldr      r3, [r3, #0x1c]                          
+001175c4 mov      r0, #1                                   
+001175c8 mov      r1, #4                                   
+001175cc blx      r3                                       
+001175d0 mov      r3, r0                                   
+001175d4 cmp      r3, #0                                   
+001175d8 beq      #0x11762c                                
+001175dc bl       #0x101aec                                DTS_Client_Get_Frontend
+001175e0 mov      r3, r0                                   
+
+{"instruction": "0x1175fc", "string_va": "0x12aa9c", "text": "::handleExtLayerHMIRequest(): requested rate %d / state MMOffRequested (current rate %d) -> store requested rate", "candidate_function_start": "0x117218"}
+001175c0 ldr      r3, [r3, #0x1c]                          
+001175c4 mov      r0, #1                                   
+001175c8 mov      r1, #4                                   
+001175cc blx      r3                                       
+001175d0 mov      r3, r0                                   
+001175d4 cmp      r3, #0                                   
+001175d8 beq      #0x11762c                                
+001175dc bl       #0x101aec                                DTS_Client_Get_Frontend
+001175e0 mov      r3, r0                                   
+001175e4 ldr      ip, [r3, #0x2c]                          
+001175e8 ldr      r3, [sp, #0x1c]                          
+001175ec ldr      r2, [r3, #0x34]                          
+001175f0 movw     r3, #0x806                               
+001175f4 str      r3, [sp]                                 
+001175f8 movw     r3, #0xaa9c                              
+001175fc movt     r3, #0x12                                
+00117600 str      r3, [sp, #4]                             
+00117604 ldr      r3, [sp, #0x18]                          
+00117608 str      r3, [sp, #8]                             
+0011760c str      r2, [sp, #0xc]                           
+00117610 mov      r0, #1                                   
+00117614 mov      r1, #4                                   
+00117618 movw     r2, #0x77c8                              
+0011761c movt     r2, #0x12                                
+00117620 movw     r3, #0x7848                              
+00117624 movt     r3, #0x12                                
+00117628 blx      ip                                       
+0011762c ldr      r3, [sp, #0x1c]                          
+00117630 ldr      r2, [sp, #0x18]                          
+00117634 str      r2, [r3, #0x38]                          
+00117638 b        #0x117750                                
+0011763c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117640 mov      r3, r0                                   
+00117644 ldr      r3, [r3, #0x1c]                          
+00117648 mov      r0, #1                                   
+0011764c mov      r1, #4                                   
+00117650 blx      r3                                       
+00117654 mov      r3, r0                                   
+00117658 cmp      r3, #0                                   
+0011765c beq      #0x1176b0                                
+00117660 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117664 mov      r3, r0                                   
+00117668 ldr      ip, [r3, #0x2c]                          
+0011766c ldr      r3, [sp, #0x1c]                          
+00117670 ldr      r2, [r3, #0x34]                          
+00117674 movw     r3, #0x80c                               
+00117678 str      r3, [sp]                                 
+0011767c movw     r3, #0xab10                              
+00117680 movt     r3, #0x12                                
+00117684 str      r3, [sp, #4]                             
+
+{"instruction": "0x117680", "string_va": "0x12ab10", "text": "::handleExtLayerHMIRequest(): requested rate %d / state MMOffRequested (current rate %d) -> requested rate 0 == current rate -> confirm rate 0 to HMI", "candidate_function_start": "0x117218"}
+00117644 ldr      r3, [r3, #0x1c]                          
+00117648 mov      r0, #1                                   
+0011764c mov      r1, #4                                   
+00117650 blx      r3                                       
+00117654 mov      r3, r0                                   
+00117658 cmp      r3, #0                                   
+0011765c beq      #0x1176b0                                
+00117660 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117664 mov      r3, r0                                   
+00117668 ldr      ip, [r3, #0x2c]                          
+0011766c ldr      r3, [sp, #0x1c]                          
+00117670 ldr      r2, [r3, #0x34]                          
+00117674 movw     r3, #0x80c                               
+00117678 str      r3, [sp]                                 
+0011767c movw     r3, #0xab10                              
+00117680 movt     r3, #0x12                                
+00117684 str      r3, [sp, #4]                             
+00117688 ldr      r3, [sp, #0x18]                          
+0011768c str      r3, [sp, #8]                             
+00117690 str      r2, [sp, #0xc]                           
+00117694 mov      r0, #1                                   
+00117698 mov      r1, #4                                   
+0011769c movw     r2, #0x77c8                              
+001176a0 movt     r2, #0x12                                
+001176a4 movw     r3, #0x7848                              
+001176a8 movt     r3, #0x12                                
+001176ac blx      ip                                       
+001176b0 ldr      r0, [sp, #0x1c]                          
+001176b4 bl       #0x117d68                                
+001176b8 b        #0x117750                                
+001176bc bl       #0x101aec                                DTS_Client_Get_Frontend
+001176c0 mov      r3, r0                                   
+001176c4 ldr      r3, [r3, #0x1c]                          
+001176c8 mov      r0, #0                                   
+001176cc mov      r1, #2                                   
+001176d0 blx      r3                                       
+001176d4 mov      r3, r0                                   
+001176d8 cmp      r3, #0                                   
+001176dc beq      #0x117750                                
+001176e0 bl       #0x101aec                                DTS_Client_Get_Frontend
+001176e4 mov      r3, r0                                   
+001176e8 ldr      ip, [r3, #0x2c]                          
+001176ec ldr      r3, [sp, #0x1c]                          
+001176f0 ldr      r3, [r3, #0x30]                          
+001176f4 mov      r1, r3                                   
+001176f8 ldr      r3, [sp, #0x1c]                          
+001176fc ldr      r2, [r3, #0x34]                          
+00117700 movw     r3, #0x814                               
+00117704 str      r3, [sp]                                 
+00117708 movw     r3, #0xaba8                              
+
+{"instruction": "0x11770c", "string_va": "0x12aba8", "text": "::handleExtLayerHMIRequest(): requested rate %d --> unknown state %d (current rate %d)", "candidate_function_start": "0x117218"}
+001176d0 blx      r3                                       
+001176d4 mov      r3, r0                                   
+001176d8 cmp      r3, #0                                   
+001176dc beq      #0x117750                                
+001176e0 bl       #0x101aec                                DTS_Client_Get_Frontend
+001176e4 mov      r3, r0                                   
+001176e8 ldr      ip, [r3, #0x2c]                          
+001176ec ldr      r3, [sp, #0x1c]                          
+001176f0 ldr      r3, [r3, #0x30]                          
+001176f4 mov      r1, r3                                   
+001176f8 ldr      r3, [sp, #0x1c]                          
+001176fc ldr      r2, [r3, #0x34]                          
+00117700 movw     r3, #0x814                               
+00117704 str      r3, [sp]                                 
+00117708 movw     r3, #0xaba8                              
+0011770c movt     r3, #0x12                                
+00117710 str      r3, [sp, #4]                             
+00117714 ldr      r3, [sp, #0x18]                          
+00117718 str      r3, [sp, #8]                             
+0011771c str      r1, [sp, #0xc]                           
+00117720 str      r2, [sp, #0x10]                          
+00117724 mov      r0, #0                                   
+00117728 mov      r1, #2                                   
+0011772c movw     r2, #0x77c8                              
+00117730 movt     r2, #0x12                                
+00117734 movw     r3, #0x7848                              
+00117738 movt     r3, #0x12                                
+0011773c blx      ip                                       
+00117740 b        #0x117750                                
+00117744 mov      r0, r0                                   
+00117748 b        #0x117750                                
+0011774c mov      r0, r0                                   
+00117750 add      sp, sp, #0x24                            
+00117754 ldm      sp!, {pc}                                
+00117758 sub      r0, r0, #8                               
+0011775c b        #0x117760                                
+00117760 push     {r4, lr}                                 
+00117764 sub      sp, sp, #0x28                            
+00117768 str      r0, [sp, #0x24]                          
+0011776c str      r1, [sp, #0x20]                          
+00117770 str      r2, [sp, #0x1c]                          
+00117774 ldr      r3, [sp, #0x20]                          
+00117778 cmp      r3, #4                                   
+0011777c bne      #0x1179b4                                
+00117780 ldr      r3, [sp, #0x1c]                          
+00117784 cmp      r3, #0                                   
+00117788 bne      #0x117810                                
+0011778c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117790 mov      r3, r0                                   
+00117794 ldr      r3, [r3, #0x1c]                          
+
+{"instruction": "0x1177c8", "string_va": "0x12ac00", "text": "::setUpdateRate(): CLUSTER updaterate %d -> disable FPK map", "candidate_function_start": "0x117760"}
+0011778c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117790 mov      r3, r0                                   
+00117794 ldr      r3, [r3, #0x1c]                          
+00117798 mov      r0, #1                                   
+0011779c mov      r1, #4                                   
+001177a0 blx      r3                                       
+001177a4 mov      r3, r0                                   
+001177a8 cmp      r3, #0                                   
+001177ac beq      #0x1177f4                                
+001177b0 bl       #0x101aec                                DTS_Client_Get_Frontend
+001177b4 mov      r3, r0                                   
+001177b8 ldr      ip, [r3, #0x2c]                          
+001177bc movw     r3, #0x822                               
+001177c0 str      r3, [sp]                                 
+001177c4 movw     r3, #0xac00                              
+001177c8 movt     r3, #0x12                                
+001177cc str      r3, [sp, #4]                             
+001177d0 ldr      r3, [sp, #0x1c]                          
+001177d4 str      r3, [sp, #8]                             
+001177d8 mov      r0, #1                                   
+001177dc mov      r1, #4                                   
+001177e0 movw     r2, #0x77c8                              
+001177e4 movt     r2, #0x12                                
+001177e8 movw     r3, #0x7848                              
+001177ec movt     r3, #0x12                                
+001177f0 blx      ip                                       
+001177f4 ldr      r3, [sp, #0x24]                          
+001177f8 mov      r2, #1                                   
+001177fc strb     r2, [r3, #0x3c]                          
+00117800 ldr      r0, [sp, #0x24]                          
+00117804 ldr      r1, [sp, #0x1c]                          
+00117808 bl       #0x117218                                
+0011780c b        #0x117b2c                                
+00117810 ldr      r3, [sp, #0x1c]                          
+00117814 cmp      r3, #0                                   
+00117818 ble      #0x117948                                
+0011781c ldr      r3, [sp, #0x24]                          
+00117820 ldrb     r3, [r3, #0x2c]                          
+00117824 cmp      r3, #0                                   
+00117828 beq      #0x1178c4                                
+0011782c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117830 mov      r3, r0                                   
+00117834 ldr      r3, [r3, #0x1c]                          
+00117838 mov      r0, #0                                   
+0011783c mov      r1, #2                                   
+00117840 blx      r3                                       
+00117844 mov      r3, r0                                   
+00117848 cmp      r3, #0                                   
+0011784c beq      #0x117894                                
+00117850 bl       #0x101aec                                DTS_Client_Get_Frontend
+
+{"instruction": "0x117868", "string_va": "0x12ac3c", "text": "::setUpdateRate(): CLUSTER updaterate %d -> enable FPK map -> rejecting as MAPVIEWER is part of current context on MAIN display + sending updateRateResult(0)", "candidate_function_start": "0x117760"}
+0011782c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117830 mov      r3, r0                                   
+00117834 ldr      r3, [r3, #0x1c]                          
+00117838 mov      r0, #0                                   
+0011783c mov      r1, #2                                   
+00117840 blx      r3                                       
+00117844 mov      r3, r0                                   
+00117848 cmp      r3, #0                                   
+0011784c beq      #0x117894                                
+00117850 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117854 mov      r3, r0                                   
+00117858 ldr      ip, [r3, #0x2c]                          
+0011785c mov      r3, #0x830                               
+00117860 str      r3, [sp]                                 
+00117864 movw     r3, #0xac3c                              
+00117868 movt     r3, #0x12                                
+0011786c str      r3, [sp, #4]                             
+00117870 ldr      r3, [sp, #0x1c]                          
+00117874 str      r3, [sp, #8]                             
+00117878 mov      r0, #0                                   
+0011787c mov      r1, #2                                   
+00117880 movw     r2, #0x77c8                              
+00117884 movt     r2, #0x12                                
+00117888 movw     r3, #0x7848                              
+0011788c movt     r3, #0x12                                
+00117890 blx      ip                                       
+00117894 ldr      r3, [sp, #0x24]                          
+00117898 ldr      r3, [r3, #0xc]                           
+0011789c ldr      r3, [r3]                                 
+001178a0 add      r3, r3, #0x58                            
+001178a4 ldr      r3, [r3]                                 
+001178a8 ldr      r2, [sp, #0x24]                          
+001178ac ldr      r2, [r2, #0xc]                           
+001178b0 mov      r0, r2                                   
+001178b4 ldr      r1, [sp, #0x20]                          
+001178b8 mov      r2, #0                                   
+001178bc blx      r3                                       
+001178c0 b        #0x117b2c                                
+001178c4 bl       #0x101aec                                DTS_Client_Get_Frontend
+001178c8 mov      r3, r0                                   
+001178cc ldr      r3, [r3, #0x1c]                          
+001178d0 mov      r0, #1                                   
+001178d4 mov      r1, #4                                   
+001178d8 blx      r3                                       
+001178dc mov      r3, r0                                   
+001178e0 cmp      r3, #0                                   
+001178e4 beq      #0x11792c                                
+001178e8 bl       #0x101aec                                DTS_Client_Get_Frontend
+001178ec mov      r3, r0                                   
+001178f0 ldr      ip, [r3, #0x2c]                          
+
+{"instruction": "0x117900", "string_va": "0x12acdc", "text": "::setUpdateRate(): CLUSTER updaterate %d -> enable FPK map", "candidate_function_start": "0x117760"}
+001178c4 bl       #0x101aec                                DTS_Client_Get_Frontend
+001178c8 mov      r3, r0                                   
+001178cc ldr      r3, [r3, #0x1c]                          
+001178d0 mov      r0, #1                                   
+001178d4 mov      r1, #4                                   
+001178d8 blx      r3                                       
+001178dc mov      r3, r0                                   
+001178e0 cmp      r3, #0                                   
+001178e4 beq      #0x11792c                                
+001178e8 bl       #0x101aec                                DTS_Client_Get_Frontend
+001178ec mov      r3, r0                                   
+001178f0 ldr      ip, [r3, #0x2c]                          
+001178f4 movw     r3, #0x835                               
+001178f8 str      r3, [sp]                                 
+001178fc movw     r3, #0xacdc                              
+00117900 movt     r3, #0x12                                
+00117904 str      r3, [sp, #4]                             
+00117908 ldr      r3, [sp, #0x1c]                          
+0011790c str      r3, [sp, #8]                             
+00117910 mov      r0, #1                                   
+00117914 mov      r1, #4                                   
+00117918 movw     r2, #0x77c8                              
+0011791c movt     r2, #0x12                                
+00117920 movw     r3, #0x7848                              
+00117924 movt     r3, #0x12                                
+00117928 blx      ip                                       
+0011792c ldr      r3, [sp, #0x24]                          
+00117930 mov      r2, #1                                   
+00117934 strb     r2, [r3, #0x3c]                          
+00117938 ldr      r0, [sp, #0x24]                          
+0011793c ldr      r1, [sp, #0x1c]                          
+00117940 bl       #0x117218                                
+00117944 b        #0x117b2c                                
+00117948 bl       #0x101aec                                DTS_Client_Get_Frontend
+0011794c mov      r3, r0                                   
+00117950 ldr      r3, [r3, #0x1c]                          
+00117954 mov      r0, #0                                   
+00117958 mov      r1, #2                                   
+0011795c blx      r3                                       
+00117960 mov      r3, r0                                   
+00117964 cmp      r3, #0                                   
+00117968 beq      #0x117b2c                                
+0011796c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117970 mov      r3, r0                                   
+00117974 ldr      ip, [r3, #0x2c]                          
+00117978 mov      r3, #0x840                               
+0011797c str      r3, [sp]                                 
+00117980 movw     r3, #0xad18                              
+00117984 movt     r3, #0x12                                
+00117988 str      r3, [sp, #4]                             
+
+{"instruction": "0x117984", "string_va": "0x12ad18", "text": "::setUpdateRate(): CLUSTER updaterate %d -> negative value", "candidate_function_start": "0x117760"}
+00117948 bl       #0x101aec                                DTS_Client_Get_Frontend
+0011794c mov      r3, r0                                   
+00117950 ldr      r3, [r3, #0x1c]                          
+00117954 mov      r0, #0                                   
+00117958 mov      r1, #2                                   
+0011795c blx      r3                                       
+00117960 mov      r3, r0                                   
+00117964 cmp      r3, #0                                   
+00117968 beq      #0x117b2c                                
+0011796c bl       #0x101aec                                DTS_Client_Get_Frontend
+00117970 mov      r3, r0                                   
+00117974 ldr      ip, [r3, #0x2c]                          
+00117978 mov      r3, #0x840                               
+0011797c str      r3, [sp]                                 
+00117980 movw     r3, #0xad18                              
+00117984 movt     r3, #0x12                                
+00117988 str      r3, [sp, #4]                             
+0011798c ldr      r3, [sp, #0x1c]                          
+00117990 str      r3, [sp, #8]                             
+00117994 mov      r0, #0                                   
+00117998 mov      r1, #2                                   
+0011799c movw     r2, #0x77c8                              
+001179a0 movt     r2, #0x12                                
+001179a4 movw     r3, #0x7848                              
+001179a8 movt     r3, #0x12                                
+001179ac blx      ip                                       
+001179b0 b        #0x117b2c                                
+001179b4 ldr      r3, [sp, #0x20]                          
+001179b8 cmp      r3, #0                                   
+001179bc bne      #0x117a70                                
+001179c0 bl       #0x101aec                                DTS_Client_Get_Frontend
+001179c4 mov      r3, r0                                   
+001179c8 ldr      r3, [r3, #0x1c]                          
+001179cc mov      r0, #0                                   
+001179d0 mov      r1, #3                                   
+001179d4 blx      r3                                       
+001179d8 mov      r3, r0                                   
+001179dc cmp      r3, #0                                   
+001179e0 beq      #0x117a40                                
+001179e4 bl       #0x101aec                                DTS_Client_Get_Frontend
+001179e8 mov      r3, r0                                   
+001179ec ldr      r4, [r3, #0x2c]                          
+001179f0 ldr      r0, [sp, #0x20]                          
+001179f4 bl       #0x110c10                                
+001179f8 mov      r2, r0                                   
+001179fc movw     r3, #0x845                               
+00117a00 str      r3, [sp]                                 
+00117a04 movw     r3, #0xad54                              
+00117a08 movt     r3, #0x12                                
+00117a0c str      r3, [sp, #4]                             
+
+{"instruction": "0x117a08", "string_va": "0x12ad54", "text": "::setUpdateRate(): displayID %d (%s) updaterate %d - changing of updaterate not supported in STD2 - returning 60 (Hz)", "candidate_function_start": "0x117760"}
+001179cc mov      r0, #0                                   
+001179d0 mov      r1, #3                                   
+001179d4 blx      r3                                       
+001179d8 mov      r3, r0                                   
+001179dc cmp      r3, #0                                   
+001179e0 beq      #0x117a40                                
+001179e4 bl       #0x101aec                                DTS_Client_Get_Frontend
+001179e8 mov      r3, r0                                   
+001179ec ldr      r4, [r3, #0x2c]                          
+001179f0 ldr      r0, [sp, #0x20]                          
+001179f4 bl       #0x110c10                                
+001179f8 mov      r2, r0                                   
+001179fc movw     r3, #0x845                               
+00117a00 str      r3, [sp]                                 
+00117a04 movw     r3, #0xad54                              
+00117a08 movt     r3, #0x12                                
+00117a0c str      r3, [sp, #4]                             
+00117a10 ldr      r3, [sp, #0x20]                          
+00117a14 str      r3, [sp, #8]                             
+00117a18 str      r2, [sp, #0xc]                           
+00117a1c ldr      r3, [sp, #0x1c]                          
+00117a20 str      r3, [sp, #0x10]                          
+00117a24 mov      r0, #0                                   
+00117a28 mov      r1, #3                                   
+00117a2c movw     r2, #0x77c8                              
+00117a30 movt     r2, #0x12                                
+00117a34 movw     r3, #0x7848                              
+00117a38 movt     r3, #0x12                                
+00117a3c blx      r4                                       
+00117a40 ldr      r3, [sp, #0x24]                          
+00117a44 ldr      r3, [r3, #0xc]                           
+00117a48 ldr      r3, [r3]                                 
+00117a4c add      r3, r3, #0x58                            
+00117a50 ldr      r3, [r3]                                 
+00117a54 ldr      r2, [sp, #0x24]                          
+00117a58 ldr      r2, [r2, #0xc]                           
+00117a5c mov      r0, r2                                   
+00117a60 ldr      r1, [sp, #0x20]                          
+00117a64 mov      r2, #0x3c                                
+00117a68 blx      r3                                       
+00117a6c b        #0x117b2c                                
+00117a70 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117a74 mov      r3, r0                                   
+00117a78 ldr      r3, [r3, #0x1c]                          
+00117a7c mov      r0, #0                                   
+00117a80 mov      r1, #2                                   
+00117a84 blx      r3                                       
+00117a88 mov      r3, r0                                   
+00117a8c cmp      r3, #0                                   
+00117a90 beq      #0x117b00                                
+
+{"instruction": "0x117ac4", "string_va": "0x12adcc", "text": "::setUpdateRate(): displayID %d (%s) updaterate %d - %s - returning 60 (Hz)", "candidate_function_start": "0x117760"}
+00117a88 mov      r3, r0                                   
+00117a8c cmp      r3, #0                                   
+00117a90 beq      #0x117b00                                
+00117a94 bl       #0x101aec                                DTS_Client_Get_Frontend
+00117a98 mov      r3, r0                                   
+00117a9c ldr      r4, [r3, #0x2c]                          
+00117aa0 ldr      r0, [sp, #0x20]                          
+00117aa4 bl       #0x110c10                                
+00117aa8 mov      r1, r0                                   
+00117aac movw     r3, #0xe7b4                              
+00117ab0 movt     r3, #0x12                                
+00117ab4 ldr      r2, [r3]                                 
+00117ab8 movw     r3, #0x84a                               
+00117abc str      r3, [sp]                                 
+00117ac0 movw     r3, #0xadcc                              
+00117ac4 movt     r3, #0x12                                
+00117ac8 str      r3, [sp, #4]                             
+00117acc ldr      r3, [sp, #0x20]                          
+00117ad0 str      r3, [sp, #8]                             
+00117ad4 str      r1, [sp, #0xc]                           
+00117ad8 ldr      r3, [sp, #0x1c]                          
+00117adc str      r3, [sp, #0x10]                          
+00117ae0 str      r2, [sp, #0x14]                          
+00117ae4 mov      r0, #0                                   
+00117ae8 mov      r1, #2                                   
+00117aec movw     r2, #0x77c8                              
+00117af0 movt     r2, #0x12                                
+00117af4 movw     r3, #0x7848                              
+00117af8 movt     r3, #0x12                                
+00117afc blx      r4                                       
+00117b00 ldr      r3, [sp, #0x24]                          
+00117b04 ldr      r3, [r3, #0xc]                           
+00117b08 ldr      r3, [r3]                                 
+00117b0c add      r3, r3, #0x58                            
+00117b10 ldr      r3, [r3]                                 
+00117b14 ldr      r2, [sp, #0x24]                          
+00117b18 ldr      r2, [r2, #0xc]                           
+00117b1c mov      r0, r2                                   
+00117b20 ldr      r1, [sp, #0x20]                          
+00117b24 mov      r2, #0x3c                                
+00117b28 blx      r3                                       
+00117b2c add      sp, sp, #0x28                            
+00117b30 pop      {r4, pc}                                 
+00117b34 sub      r0, r0, #8                               
+00117b38 b        #0x117b3c                                
+00117b3c push     {r4, lr}                                 
+00117b40 sub      sp, sp, #0x20                            
+00117b44 str      r0, [sp, #0x1c]                          
+00117b48 str      r1, [sp, #0x18]                          
+00117b4c ldr      r3, [sp, #0x18]                          

@@ -1,0 +1,131 @@
+Delphi MST2_US_VW_P0890D: extraction and video trace, 2026-10-28
+================================================================
+
+All work is local to ..
+No connection to the car, binary execution, firmware patch or vehicle write.
+
+Completed extraction
+--------------------
+vwjxe.ifs -> 48,802,492 decoded bytes -> 2 regular files:
+  delphi-analysis/extracted/vwjxe/delphi.jxe
+  delphi-analysis/extracted/vwjxe/MIBHMI.jxe
+delphibin.ifs -> 24,014,636 decoded bytes -> 57 regular files:
+  delphi-analysis/extracted/delphibin/...
+Each decoded size equals its startup header's imagefs_size. Both decoded
+images' 32-bit little-endian word sums including trailer equal zero.
+SHA256 hashes, source hashes and nonregular entry metadata are recorded in
+extraction-manifest.json. Symlinks are recorded rather than created. Files
+outside image payload bounds and unsafe paths are rejected by the wrapper.
+The two JXE containers are ZIP-readable, but their main content is IBM J9
+rom.classes, NOT ordinary Java class files. Readable strings were extracted;
+Java bytecode conversion/decompilation is not yet done.
+
+Tools/provenance
+----------------
+.tools/dumpifs/dumpifs.py and LICENSE fetched from Laurent Clevy's project:
+https://github.com/lclevy/dumpifs (BSD-2-Clause).
+The wrapper imports its parser, substituting the compatible decompress-only
+API from dissect.util; it does not run extracted vehicle executables.
+Local Python libraries: dissect.util 3.24, pyelftools 0.33, capstone 5.0.9.
+QNX reference: https://www.qnx.com/developers/docs/6.5.0SP1/neutrino/utilities/d/dumpifs.html
+
+Native map path: evidence
+-------------------------
+1. DisplayManagement has no ELF section table; its ELF program headers and
+   PT_DYNAMIC are intact. Missing section-based symbols is NOT encryption.
+   Strings explicitly identify DISPLAYID_CLUSTER, DISPLAYTYPE_H264_MOST,
+   MAP_ACTIVATE/MAP_RATE/MAP_DEACTIVATE, cluster context switching, and update
+   rate arbitration. It can reject the cluster map when MAPVIEWER is on MAIN.
+   Evidence: DisplayManagement.decoded.strings.txt, especially lines 390-426.
+
+2. NavigationServer references /dev/transport_server/spawn/isoTX at virtual
+   addresses 0x1b428c and 0x1b4378. These paths dispatch into internal routines
+   0x21eaac and 0x1e4744. Their complete ownership/lifecycle is not recovered.
+   Evidence: protocol-and-xrefs.txt lines 60-157.
+
+3. NavigationServer's FPK path has VE_Open/VE_Encode diagnostics. Its
+   transportStreamPackagesReady callback reaches the imported POSIX write
+   at virtual address 0x22cdb4. Before that call, r0 is loaded from context
+   offset +0x128 (descriptor), r1 from the current buffer pointer and r2 from
+   its byte count. This is direct instruction evidence for a payload writer,
+   stronger than string matching alone. The descriptor's binding to isoTX
+   still requires tracing its open/assignment path end to end.
+   Evidence: targeted-disassembly.txt, RANGE 0x22ccd8, especially 0x22cd8c-
+   0x22cdb4. PLT labels use the observed ARM PLT layout and ELF relocations.
+
+4. ClusterServices has MOST GfxStreamSink controls for connection, data rate,
+   synchronization and fade. A string xref to its registration is at
+   0x115978. Control and payload transmission are separate concerns.
+
+Working model, not yet a runtime-proven reconstruction:
+  Display/HMI ownership + cluster sink connection
+    -> native map render -> FPK video encoder -> TS packaging
+    -> transport descriptor -> TransportServer/isoTX -> MOST -> cluster
+
+Android Auto discovery: evidence
+--------------------------------
+libautoreceiver.so retains its full symbol table. Key local virtual addresses:
+  VideoSink::addDiscoveryInfo                        0x8dc90
+  VideoSink::addSupportedConfiguration               0x8df74
+  MediaSinkService::SerializeWithCachedSizes         0xbbabc
+  VideoConfiguration::SerializeWithCachedSizes       0xbc3cc
+  Controller::sendVersionRequest                     0x74fc0
+
+The MediaSinkService serializer at 0xbbabc explicitly emits only:
+  field 1 available_type
+  field 2 audio_type
+  field 3 audio_configs
+  field 4 video_configs
+  field 5 available_while_in_call
+The generated VideoConfiguration message emits fields 1-8 for resolution,
+frame rate, margins, density, depth, viewing distance and pixel aspect ratio.
+Viewing distance field 7 is a DIFFERENT message from media sink display_type.
+No modern media-sink display_type field is implemented in this serializer.
+This follows from its actual serialization instructions and field constants,
+not merely the absence of a symbol name. Unknown-field or alternate serializer
+paths have not been audited exhaustively.
+
+The modern reverse-engineered Android Auto reference identifies media sink
+field 7 as display_type and CLUSTER=1:
+https://github.com/mrmees/open-android-auto/blob/main/docs/channels/display-routing.md
+That source concerns newer phone versions. Its compatibility with this old
+head-unit protocol handshake must be established experimentally.
+
+Implication: true dual-display navigation likely needs an outbound discovery
+extension, a distinct video channel/endpoint and isolated callbacks/focus,
+plus a route into the cluster video path. Changing resolution alone does not
+advertise a cluster screen. InstrumentClusterInput/NavigationStatus names in
+the older library do not establish map-video support. This is a likely
+implementation direction, not a finished patch or impossibility proof.
+
+Remaining work and gates
+------------------------
+A. Trace where the +0x128 descriptor is opened/assigned and how the isoTX
+   spawn/connect protocol handles setup, teardown, backpressure and ownership.
+B. Recover TS packetization, timing, stream metadata, supported resolution and
+   codec requirements. A phone H.264 byte stream cannot be written blindly
+   to this endpoint; the existing writer submits packaged transport buffers.
+C. Inspect AndroidAuto application construction of VideoSink and Controller,
+   recover the advertised protocol version, and map second-endpoint allocation,
+   registration, acknowledgments and focus/teardown semantics.
+D. Convert relevant J9 ROM classes to inspect HMI navigation arbitration.
+   Extracted strings alone are not a substitute for recovered Java logic.
+E. Build a host-side discovery serialization prototype and decode it with an
+   independent protocol parser. Do this before any vehicle hook.
+F. First on-car prototype, only after recovery and rollback exist: prove one
+   known-good test video through the stock cluster pipeline while parked.
+   Full Android Auto projection follows only after that gate.
+
+No additional acquisition is required to pursue A-C immediately. Dependencies
+such as libXSAL.so and libTSD.so are not in this selected download set; if a
+specific call requires them, request their observed runtime paths rather than
+assuming they live under /extbin/apps/lib.
+
+Re-run from the project root using the bundled Python executable:
+  python scripts/extract_and_inspect.py
+  python scripts/trace_video.py
+  python scripts/trace_targeted.py
+These scripts load host analysis libraries from .tools/python. They never
+execute the acquired binaries. The broad xref script can take about a minute.
+All addresses are specific to the supplied binaries and are NOT patch offsets
+for other firmware, nor authorization to write to those addresses on a car.

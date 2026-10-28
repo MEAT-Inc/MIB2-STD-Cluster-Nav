@@ -1,0 +1,966 @@
+001000f4 /usr/lib/ldqnx.so.2
+001014e1 libXMLLib.so
+001014ee memcpy
+001014f5 __aeabi_uldivmod
+00101506 __cxa_finalize
+00101515 malloc
+0010151c xml2GetAttributeValueA
+00101533 __deregister_frame_info
+0010154b xml2FreeDoc
+00101557 xml2GetAttributeValueAsInt
+00101572 xml2LoadA
+0010157c xml2GetRootNode
+0010158c xml2GetNodeNameA
+0010159d xml2GetAttributeNameA
+001015b3 memset
+001015ba xml2GetNextAttribute
+001015cf __aeabi_uidiv
+001015dd xml2GetFirstAttribute
+001015f3 DTS_Client_Get_Frontend
+0010160b _fini
+00101611 xml2GetNextChildNode
+00101626 xml2GetFirstChildNode
+0010163c _Jv_RegisterClasses
+00101650 __register_frame_info
+0010166b libpng.so
+00101675 longjmp
+0010167d strerror
+00101686 png_set_strip_alpha
+0010169a png_get_rowbytes
+001016ab png_set_longjmp_fn
+001016be png_sig_cmp
+001016ca png_create_read_struct
+001016e1 png_set_sig_bytes
+001016f3 png_get_image_height
+00101708 png_get_image_width
+0010171c png_set_read_fn
+0010172c png_get_io_ptr
+0010173b png_set_gray_to_rgb
+0010174f png_set_IHDR
+0010175c png_get_gAMA
+00101769 png_read_png
+00101776 fprintf
+0010177e png_get_valid
+0010178c png_set_scale_16
+0010179d png_get_rows
+001017aa png_create_write_struct
+001017c2 png_set_bgr
+001017ce __get_errno_ptr
+001017de png_write_info
+001017ed png_set_expand
+001017fc fread
+00101802 fopen
+00101808 fclose
+0010180f png_write_end
+0010181d png_get_IHDR
+0010182a png_read_info
+00101838 fputc
+0010183e png_destroy_read_struct
+00101856 __sigjmp_prolog
+00101866 fwrite
+0010186d png_write_image
+0010187d png_read_update_info
+00101892 png_read_image
+001018a1 png_create_info_struct
+001018b8 _setjmp
+001018c0 strlen
+001018c7 png_destroy_write_struct
+001018e0 png_set_gamma
+001018ee png_init_io
+001018fa libzlib.so
+00101905 strcpy
+0010190c sprintf
+00101914 libDebugTrace.so
+00101925 snprintf
+0010192e usleep
+00101935 getpid
+0010193c calloc
+00101943 DTS_System_Init
+00101953 tsd_access_open
+00101963 DTS_Set_Thread_Name_Func_Getter
+00101983 tsd_access_get_utc
+0010199b __emutls_get_address
+001019b0 DTS_Client_Prepare_Name
+001019c8 libXSAL.so
+001019d3 clock_gettime
+001019e1 pthread_attr_destroy
+001019f6 SAL_Destroy_Channel
+00101a0a pthread_create
+00101a19 pthread_attr_init
+00101a2b SAL_Create_Channel
+00101a3e pthread_setname_np
+00101a51 SAL_Subscribe
+00101a5f SAL_Close_Shared_Memory
+00101a77 SAL_Wait_Ready
+00101a86 SAL_Run
+00101a8e SAL_Get_Thread_Id
+00101aa0 SAL_Publish
+00101aac SAL_Signal_Ready
+00101abd SAL_Receive
+00101ac9 SAL_Sync_Receive
+00101ada SAL_Create_Shared_Memory
+00101af3 SAL_Init
+00101afc SAL_Sync_Reply
+00101b0b pthread_attr_setstacksize
+00101b25 SAL_Bind
+00101b2e SAL_Sync_Read
+00101b3c SAL_Sleep
+00101b46 pthread_self
+00101b53 ftime
+00101b59 SAL_Create_Thread
+00101b6b SAL_Get_App_Id
+00101b7a SAL_Create_Queue
+00101b8b SAL_Send
+00101b94 pthread_attr_setdetachstate
+00101bb0 SAL_Get_Config
+00101bbf libWFD.so.1
+00101bcb wfdGetPortModeAttribf
+00101be1 wfdGetPortModeAttribi
+00101bf7 wfdGetPortAttribi
+00101c09 wfdDestroyDevice
+00101c1a wfdSetDeviceAttribi
+00101c2e wfdCreateSourceFromImage
+00101c47 wfdGetPortModes
+00101c57 wfdCreateDevice
+00101c67 wfdGetError
+00101c73 wfdGetPortAttribiv
+00101c86 __stackavail
+00101c93 wfdDestroyPort
+00101ca2 wfdCreateWFDEGLImagesQNX
+00101cbb wfdDestroyPipeline
+00101cce wfdCreatePipeline
+00101ce0 wfdDestroyWFDEGLImagesQNX
+00101cfa wfdDestroySource
+00101d0b wfdBindPipelineToPort
+00101d21 dlopen
+00101d28 wfdEnumeratePorts
+00101d3a wfdIsExtensionSupported
+00101d52 wfdEnumerateDevices
+00101d66 wfdDeviceCommit
+00101d76 wfdSetPipelineAttribiv
+00101d8d dlsym
+00101d93 wfdEnumeratePipelines
+00101da9 strcmp
+00101db0 wfdBindSourceToPipeline
+00101dc8 wfdWaitForVSyncQNX
+00101ddb wfdSetPortMode
+00101dea wfdCreatePort
+00101df8 libscreen.so.1
+00101e07 screen_set_pixmap_property_cv
+00101e25 screen_get_pixmap_property_pv
+00101e43 screen_get_window_property_pv
+00101e61 screen_set_window_property_pv
+00101e7f screen_destroy_pixmap
+00101e95 screen_flush_context
+00101eaa screen_get_buffer_property_iv
+00101ec8 screen_read_window
+00101edb screen_get_display_property_pv
+00101efa screen_get_buffer_property_pv
+00101f18 screen_create_event
+00101f2c screen_set_window_property_iv
+00101f4a screen_get_event
+00101f5b screen_get_event_property_pv
+00101f78 screen_read_display
+00101f8c screen_create_pixmap_buffer
+00101fa8 screen_get_window_property_cv
+00101fc6 screen_get_window_property_iv
+00101fe4 screen_set_display_property_iv
+00102003 screen_get_event_property_iv
+00102020 screen_create_context
+00102036 screen_get_context_property_pv
+00102055 screen_get_display_property_iv
+00102074 screen_create_pixmap
+00102089 screen_set_pixmap_property_iv
+001020a7 screen_get_context_property_iv
+001020c6 libm.so.2
+001020d0 libTSD.so
+001020da tsd_access_get
+001020e9 mmap_device_io
+001020f8 munmap_device_io
+00102109 libc.so.3
+00102113 _init_array
+0010211f errno
+00102125 _preinit_array
+00102134 system
+0010213b optarg
+00102142 readdir
+0010214a pthread_detach
+00102159 fseek
+0010215f strstr
+00102166 mmap_device_memory
+00102179 unlink
+00102180 getprio
+00102188 sscanf
+0010218f _init_libc
+0010219a getopt
+001021a6 ftell
+001021ac opendir
+001021b4 _fini_array
+001021c0 name_attach
+001021cc atexit
+001021d3 ThreadCtl
+001021dd munmap_device_memory
+001021f2 access
+001021f9 pthread_setschedprio
+0010220e closedir
+00102217 _btext
+0010221e __exidx_start
+0010222c __exidx_end
+00102238 __data_start
+00102245 _edata
+0010224c __bss_start
+00102258 __bss_start__
+00102266 __bss_end__
+00102272 __end__
+0010227a _stack
+00127270 c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDA/build/../source/color.c
+001272c8 %s: display %d - enter
+001272e0 %s: display id %d not supported
+00127300 %s: display %d - leave
+0012731c %s: file opened ok < %s > size %ld
+00127340 %s: tag %02d/%02d %c%c%c%c : offset %6d size %6d %c
+00127374 %s: invalid number of tags %d (remaining data allows max %d)
+001273b4 %s: enough bytes for vcgt entry (pos %d + numRequired %d = %d <-> fileSize %ld) tagSizeVCGT %d
+00127414 %s: unsupported table type (numChannels %d / entrySize %d / numEntries %d / tagSize %d)
+0012746c %s: unsupported gamma type %d
+0012748c %s: unsupported content of table vcgt (starting with 0x%08x)
+001274cc %s: could not read all bytes for vcgt entry (pos %d + numRequired %d = %d <-> fileSize %ld) tagSizeVCGT %d
+00127538 %s: vcgt entry for gamma table not found
+00127564 %s: failed to read all bytes from file (read %d <-> fileSize %ld
+001275a8 %s: failed to alloc %ld bytes : error %d (%s)
+001275d8 %s: unexpected file size %ld
+001275f8 %s: open file failed < %s > : error %d (%s)
+00127624 /extbin/apps/cfg/%d.icm
+0012763c /extbin/apps/cfg/%d.icc
+00127654 %s: display id %d -> color profile found < %s >
+00127684 %s: display id %d -> color profile NOT found < %s | %s >
+001276c0 %s: leave [%dms]
+001276d4 /tmp/gammainfo.html
+001276ec <html>
+001276f4 <head>
+001276fc <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+00127758 <script type="text/javascript">
+0012777c google.charts.load('current', {'packages':['corechart']});
+001277b8 google.charts.setOnLoadCallback(drawChart);
+001277e8 function drawChart() {
+00127800 %s: Gamma Table Display %d
+0012781c var data%d = google.visualization.arrayToDataTable([
+00127854   ['index', 'R', 'G', 'B'],
+00127874 %s:   ['index', 'R', 'G', 'B'],
+00127894   ['%3d', %3d, %3d, %3d], ['%3d', %3d, %3d, %3d], ['%3d', %3d, %3d, %3d], ['%3d', %3d, %3d, %3d], 
+001278fc %s: %s
+0012790c var options%d = {title: 'Gamma Table Display %d', legend: { position: 'bottom' }, colors:['red','green','blue']};
+00127980 var chart%d = new google.visualization.LineChart(document.getElementById('curve_chart_%d'));
+001279e0 chart%d.draw(data%d, options%d);
+00127a08 </script>
+00127a14 </head>
+00127a20 <body><table class="columns"><tr>
+00127a44   <td><div id="curve_chart_%d" style="width: 500px; height: 500px"></div></td>
+00127a94 </tr></table></body>
+00127aac </html>
+00127ab8 %s: stored gamma data into file < %s >
+00127ae0 %s: failed to create file < %s >
+00127b04 dumpGammaTables
+00127b14 loadGammaTablesFromFiles
+00127b30 loadGammaTableFromProfile
+00127b4c tgcvuploadGammaTable
+00127b64 c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDA/build/../source/display.c
+00127bc0 %s: starting init of display info
+00127be4 %s: display %d/%d : id %d w %4d h %4d (mode %2u of [0..%2d])
+00127c24 %s: calloc(%d,%d) failed : error %d (%s)
+00127c50 %s: SCREEN_PROPERTY_DISPLAY_COUNT 0
+00127c74 %s: screen_ctx NULL
+00127c88 %s: repeated call of dispInit -> IGNORED
+00127cb4 INTERNAL
+00127cc0 COMPOSITE
+00127ccc SVIDEO
+00127cd4 COMPONENT_YPbPr
+00127ce8 RGBHV
+00127cfc DISPLAYPORT
+00127d08 OTHER
+00127d10 UNKNOWN
+00127d18 %s: screen_display NULL -> return first available display (id %d)
+00127d5c %s: returned display %d (id %d)
+00127d7c %s: no entry found matching display handle <0x%08x>
+00127db0 %s: display info not available or numOfDisplays == 0 -> call dispInit() before (numOfDisplays %d)
+00127e14 %s: return first available display (id %d)
+00127e40 %s: displayId (%d) < 1 -> return first available display (id %d)
+00127e84 %s: no entry found matching display id %d
+00127eb0 dispGetDisplayFromId
+00127ec8 dispGetDefaultDisplay
+00127ee0 dispGetDisplayFromHandle
+00127efc dispInit
+00127f10 screen-mgr.so
+00127f20 screen_main
+00127f30 INTERNAL
+00127f3c COMPOSITE
+00127f48 SVIDEO
+00127f50 COMPONENT_YPbPr
+00127f64 RGBHV
+00127f78 DISPLAYPORT
+00127f84 OTHER
+00127f8c UNKNOWN
+00127f94 c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDA/build/../source/graphics.c
+00127ff0 %s: mismatch: portSize old 0x%08x w %d h %d -> new 0x%08x w %d h %d
+00128034 %s: portSize 0x%08x : w %d h %d
+00128054 %s: mmap_device_io of DISPC regs failed : error %d (%s)
+0012808c %s: wfdEnumerateDevices: %d device(s) available
+001280bc %s: wfdEnumerateDevices #%d : id %d
+001280e0 %s: wfdEnumeratePorts: %d ports/displays available
+00128114 %s: wfdEnumeratePorts #%d : id %d
+00128138 %s: wfdEnumeratePipelines: %d pipelines available
+0012816c %s: wfdEnumeratePipelines #%d : id %d
+00128194 %s: port %d: %d modes available (port type: 0x%04x <%s>)
+001281d0 %s: mode %2d: %4d x %4d @ %f
+001281f0 %s: alloca(%d) failed -> no output of mode list
+00128220 %s: port %d: %d pipes bindable
+00128240 %s: pipe #%d: %d
+00128254 %s: port %d: %d modes available
+00128274 %s: using mode #%d -> %d x %d @ %f
+00128298 %s: using mode #%d -> %d x %d @ %f (no mode found for refresh %d)
+001282dc %s: no suitable mode found!
+001282f8 %s: invalid mode number %d (number of modes %d)
+00128328 %s: using mode #%d (num of modes %d) -> %d x %d @ %d
+00128360 %s: wfdGetPortModes() failed - error %#x
+0012838c %s: wfdGetPortModes() - no valid mode specified/detected
+001283c8 %s: alloca(%d) for portModes failed
+001283ec %s: wfdBindPipelineToPort() OK (dev %d port %d %dx%d pipe %d %dx%d)
+00128430 %s: wfdSetPipelineAttribiv(WFD_PIPELINE_SOURCE_RECTANGLE) failed - error %#x
+00128480 %s: wfdSetPipelineAttribiv(WFD_PIPELINE_DESTINATION_RECTANGLE) failed - error %#x
+001284d4 %s: wfdBindPipelineToPort() failed (dev %d port %d pipe %d) - error %#x
+0012851c %s: wfdCreatePipeline() failed (dev %d port %d pipe %d) - error %#x
+00128560 %s: gfxSetPortMode() failed
+0012857c %s: wfdCreatePort() failed (dev %d port %d) - error %#x
+001285b4 %s: wfdCreateDevice() failed (dev %d) - error %#x
+001285e8 %s: wfdCreateWFDEGLImagesQNX() - wfdFormat %d num %d w %d h %d
+00128628 %s: wfdCreateSourceFromImage() failed - error %#x
+0012865c %s: wfdCreateWFDEGLImagesQNX() - %d OK  win_image_t* 0x%08x source 0x%08x
+001286a8 %s: wfdCreateWFDEGLImagesQNX() failed - error %#x
+001286dc %s: wfdCreateWFDEGLImagesQNX() failed - error %#x rc %#x
+0012871c screen-core
+00128728 %s: failed to load %s - error %s
+0012874c %s: '%s' symbol not found in '%s'
+00128770 WFD_QNX_cda_handover
+00128788 %s: WFD_QNX_cda_handover is not supported, make sure graphics.conf includes wfd-dlls and cda-wfd-dlls. Error = %#x
+001287fc %s: WFD_QNX_cda_handover supported!
+00128820 %s: WFD not available -> no check for WFD_QNX_cda_handover
+00128868 screen-sl
+00128874 %s: starting screen - configPath <%s>
+0012889c %s: loaded (%d ms) -> screen_main [%s]
+001288c4 %s: %s() returned %d
+001288dc %s: screen is no longer running... exiting...
+0012890c %s: screenThread created with tid %d stack size %d kB
+00128944 %s: pthread_create() failed - error %s
+0012896c J6rev1
+00128974 J6revx
+0012897c %s: LVDS enable (%s): baseAddr 0x%08x val 0x%08x
+001289b0 %s: LVDS disable (%s): baseAddr 0x%08x val 0x%08x
+001289e4 %s: mmap_device_memory() physAddr 0x%08x mappedAddr 0x%08x size %d OK -> set ap_display_ready = %u
+00128a48 %s: mmap_device_memory() physAddr 0x%08x size %d failed : error %d (%s)
+00128a90 gfxPublishDisplayReady
+00128aa8 gfxLvdsEnable
+00128ab8 gfxScreenInit
+00128ac8 screenThread
+00128ad8 gfxCreateBuffers
+00128aec gfxInit
+00128af4 gfxSetPortMode
+00128b04 gfxInfoPort
+00128b10 gfxInfoPipelines
+00128b24 gfxInfoPorts
+00128b34 gfxInfoDevices
+00128b44 checkDSSPortSize
+0012a784 c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDA/build/../source/image.c
+0012a7dc %s: <%s> file <%s>
+0012a7f0 %s: <%s>
+0012a7fc 1.6.1
+0012a804 %s: w %d h %d stride %d
+0012a81c %s: png_get_rows() returned NULL
+0012a840 %s: clear requested + image does not cover dstBuffer -> clear! - img: %3dx%3d size %d buf: %3dx%3d stride %d size %d x %3d y %3d
+0012a8c4 %s: image size/pos (partly) outside of dstBuffer - img: %3dx%3d size %d buf: %3dx%3d stride %d size %d x %3d y %3d - ignore image
+0012a948 %s: image size/pos (partly) outside of dstBuffer - dig: %3dx%3d buf: %3dx%3d stride %d size %d x %3d y %3d - ignore image
+0012a9c4 %s: digit %d out of range [0..9]
+0012a9f4 %s: png loading failed
+0012aa0c %s: file %s w %d h %d colorType %d (org %d) bitDepth %d (org %d)
+0012aa50 %s: cannot allocate memory for image data (%d bytes)
+0012aa88 %s: cannot allocate memory for array of row-pointers (%d bytes)
+0012aac8 %s: invalid img characteristics: imgW %d imgH %d bitDepth %d
+0012ab08 %s: png_create_info_struct failed
+0012ab2c %s: png_create_read_struct failed
+0012ab50 %s: file %s is not recognized as a png file
+0012ab7c %s: failed to read header of file %s (needed %d bytes)
+0012abb4 %s: open file <%s> failed
+0012abd0 %s: filename NULL
+0012abe4 decode_png_file2mem
+0012abf8 drawDigit
+0012ac04 copyImgData
+0012ac10 decode_png_mem2mem
+0012ac24 scda_png_warning
+0012ac38 scda_png_error
+0012ac54 c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDA/build/../source/layermgr.c
+0012acb0 %s: list already initialized (size %d) - resetting it
+0012ace8 %s: list already initialized (size %d) - reset done
+0012ad1c %s: malloc(%d) failed
+0012ad34 %s: invalid list size requested (%d)
+0012ad5c %s: *** automatic synching of layer request disabled ***
+0012ada8 %s: %2d : %s dim %d (%3d %3d) sm %d (%2d) pos %d (%3d %3d) crp %d (%3d %3d %3d %3d / %3d %3d %3d %3d) opc %d (%3d) id %2d ( %s )
+0012ae2c %s: id %d unknown
+0012ae40 DPY_INVALID
+0012ae4c %s: adding after POST event - missed CREATE event before xxxGFXMARKxxx
+0012ae94 %s: no free entry for new window (%08x) - max entries %d xxxGFXMARKxxx
+0012aedc %s: received too many CREATE events for window (num %d vs. num_of_displays %d) xxxGFXMARKxxx
+0012af3c %s: received CREATE event for window (num %d vs. num_of_displays %d) - OK!
+0012af88 %s: CREATE event %d -> skip updates
+0012afac %s: received POST event for a window already tracked (win %08x) - OK!
+0012aff4 %s: removing - win not found - missed CREATE + POST events before xxxGFXMARKxxx
+0012b044 %s: found layer %s / window id string %s -> id %2d
+0012b078 %s: layer %s / window id string %s cannot be matched to more than 3 layers -> id %2d (already matched A %2d B %2d C %2d)
+0012b0fc %2d %2d %2d
+0012b108 %2d %2d --
+0012b114 %2d -- --
+0012b120 ?? ?? ??
+0012b12c %s: w %08x pid%9d d%d p%d z%03d v%d t%d op%03d u%04x f%02x cs%d x/y %4d %4d (v %4d %4d c %4d %4d) w/h %4d %4d (b %4d %4d v %4d %4d c %4d %4d) id %s ( %d%s %s )
+0012b1cc %s: w %08x pid%9d (e%d)
+0012b1ec SMARTPHONE
+0012b1fc %s: layer <%s> no scaleMode set - using default CLIP_TOP_LEFT
+0012b23c FULLSCREEN
+0012b248 %s: layer <%s> fullscreenWin %d scaleFactor w %f h %f
+0012b280 %s: layer <%s> scaleMode ASPECT_RATIO - buf w %d h %d / win w %d h %d / view x %d y %d w %d h %d
+0012b2e4 %s: layer <%s> scaleMode FIT_HORIZONTAL - buf w %d h %d / win w %d h %d / view x %d y %d w %d h %d
+0012b348 %s: layer <%s> scaleMode FIT_VERTICAL - buf w %d h %d / win w %d h %d / view x %d y %d w %d h %d
+0012b3ac (fullScreenWin)
+0012b3bc %s: layer <%s> - scaleMode CLIP_TOP_LEFT - buf w %d h %d / win w %d h %d / view x %d y %d w %d h %d clip w %d h %d %s %s
+0012b438 %s: layer <%s> - scaleMode CLIP_MIDDLE - buf w %d h %d / win w %d h %d / view x %d y %d w %d h %d
+0012b49c %s: layer <%s> - scaleMode %d unknown - skip setDimension
+0012b4d8 %s: invalid scaled win size w %f h %f - factor w %f h %f (display w %d h %d buf w %d h %d)
+0012b534 %s: invalide scale factor w %f h %f (display w %d h %d buf w %d h %d)
+0012b57c %s: invalid size of render buffer - win w %d h %d / buf w %d h %d
+0012b5c0 %s: invalid arguments win 0x%08x win w %d h %d
+0012b5f0 %s: layer <%s> src x %3d y %3d w %3d h %3d dst x %3d y %3d w %3d h %3d
+0012b638 %s: invalid argument win 0x%08x
+0012b658 MANCTRL
+0012b668 SPLASH
+0012b670 FFMPEG
+0012b678 android
+0012b680 gears
+0012b688 %s: showing window ( %s ) after POST (splash allowed %d)
+0012b6c4 <UNNAMED>
+0012b6d8 CREATE
+0012b6e0 %s: hiding  window ( %s ) after %s (splash allowed %d)
+0012b71c %s: set opacity  %3d (%3d%%)  id %2d ( %s )
+0012b748 %s: set position x %3d y %3d id %2d ( %s )
+0012b774 %s: set size     w %3d h %3d id %2d ( %s )
+0012b7a0 %s: set cropping src x %3d y %3d w %3d h %3d dst x %3d y %3d w %3d h %3d id %2d ( %s )
+0012b7f8 %s: %d/%d %s
+0012b808 TOPMOST
+0012b810 %s: set vis %d z %3d          id A %2d ( %s ) B %2d ( %s ) C %2d ( %s )
+0012b858 %s: set vis %d z %3d          id A %2d ( %s ) B %2d ( %s )
+0012b894 %s: set vis %d z %3d          id A %2d ( %s )
+0012b8c4 %s: win <%s> - skip setting of visibility + zorder
+0012b8f8 %s: num of layers to be enabled %d != num of enabled layers %d
+0012b938 %s: num of layers to be enabled %d == num of enabled layers %d
+0012b978 %s: hiding ( %s ) (splash allowed %d)
+0012b9a0 %s: listOfEnabledLayers NULL
+0012b9c0 %s: NOT synching layer requests -> animation running
+0012b9f8 %s: synching of layer requests had been disabled
+0012ba2c %s: verbosity %d
+0012ba40 dts -nscreencda -cDT_MAIN -e0 -u
+0012ba64 %s: spawn dts cmd: < %s >
+0012ba80 dts -nscreencda -cDefChn,DT_MAIN -t-1 -e1 -l%d
+0012bab0 %s: missing request xxxGFXMARKxxx
+0012bad4 %s: synching of layer requests disabled
+0012bafc %s: synching of layer requests enabled
+0012bb24 %s: %2d/%2d : id %2d name %s
+0012bb44 %s: layerInfo NULL xxxGFXMARKxxx
+0012bb68 %s: [%s] %d/%d (ctx %d disp %d s %d) %s
+0012bb90 %s: msgData/layerInfo NULL xxxGFXMARKxxx
+0012bbbc %s: screen_flush_context ok
+0012bbd8 %s: screen_flush_context failed : error %d (%s)
+0012bc08 %s: screen_ctx == NULL -> ignoring flush request
+0012bc3c %s: displayId %d LOCK
+0012bc54 %s: displayId %d UNLOCK
+0012bc6c %s: w %3d h %3d id   %2d ( %s ) (displayId %d)
+0012bc9c %s: displayId %d layerName %s w %d h %d - not found in native window list
+0012bce8 %s: layerId %d not found in request list
+0012bd14 %s: displayId %d layerName %s w %d h %d
+0012bd3c %s: displayId %d layerName %s w %d h %d - missing in native window list or request list
+0012bd94 %s: displayId %d layerId %d --> w %d h %d
+0012bdc0 %s: screen_get_window_property_iv SCREEN_PROPERTY_SIZE failed (win %08x) : error %d (%s)
+0012be1c %s: native handle for layer %d (%s) not found
+0012be4c %s: screen_get_window_property_iv SCREEN_PROPERTY_BUFFER_SIZE failed (win %08x) : error %d (%s)
+0012beac %s: id   %2d ( %s ) (displayId %d)
+0012bed0 %s: displayId %d layerName %s - not found in native window list
+0012bf10 UNKNOWN
+0012bf18 unknown
+0012bf20 %s: displayId %d layerName %s
+0012bf40 %s: id   -- ( %s ) (displayId %d)
+0012bf64 %s: displayId %d src x %d y %d w %d h %d dst x %d y %d w %d h %d
+0012bfa8 %s: src x %3d y %3d w %3d h %3d dst x %3d y %3d w %3d h %3d id   %2d ( %s ) (displayId %d)
+0012c004 %s: displayId %d layerName %s src x %d y %d w %d h %d dst x %d y %d w %d h %d
+0012c054 %s: displayId %d layerName %s - missing in native window list or request list
+0012c0a4 %s:   %3d (%3d%%)  id   %2d ( %s ) (displayId %d)
+0012c0d8 %s: displayId %d layerName %s opacity %d - not found in native window list
+0012c124 %s: displayId %d layerName %s opacity %d
+0012c150 %s: opacity %3d (%3d%%) ( %s ) (displayId %d)
+0012c180 %s: displayId %d layerId %d opacity %d time %dms - not supported
+0012c1c4 %s: displayId %d layerName %s opacity %d time %dms - not supported
+0012c208 %s:  x %3d y %3d id   %2d ( %s ) (displayId %d)
+0012c238 %s: displayId %d layerName %s x %d y %d - not found in native window list
+0012c284 %s: displayId %d layerName %s x %d y %d
+0012c2ac %s: x %d y %d ( %s ) (displayId %d)
+0012c2d0 %s: displayId %d layerId %d scaleMode %d
+0012c2fc %s: invalid scaleMode %d [%d..%d]
+0012c320 %s: displayId %d layerName %s scaleMode %d
+0012c34c %s: changed entry %2d : %s dim %d (%4d %4d) sm %d (%2d) pos %d (%4d %4d) opc %d (%3d) id %2d ( %s )
+0012c3b0 %s: displayId %d layerName %s visibility %d
+0012c3dc %s: visibility %d ( %s ) (displayId %d)
+0012c404 %s: displayId %d layerName %s visibility %d - not found in native window list
+0012c454 %s: set triggers to hide splash
+0012c474 %s: found visible RearView window
+0012c498 %s: displayId %d layerName %s zorder %d
+0012c4c0 %s: zorder %d ( %s ) (displayId %d)
+0012c4e4 %s: displayId %d layerName %s zorder %d - not found in native window list
+0012c530 %s: SCDA_ELCMD_MAP_ACTIVATE -> PUBLISH SCDA_EV_EXT_MAP_ACTIVATE_REQ()
+0012c578 %s: SCDA_ELCMD_MAP_DEACTIVATE -> PUBLISH SCDA_EV_EXT_MAP_DEACTIVATE_REQ()
+0012c5c4 %s: SCDA_ELCMD_MAP_RATE -> PUBLISH SCDA_EV_EXT_MAP_RATE_REQ( %d )
+0012c608 %s: unknown cmd %d xxxGFXMARKxxx
+0012c62c SCDA_OK
+0012c634 SCDA_Failed
+0012c640 %s: MapActivate -> PUBLISH SCDA_EV_EXT_LAYER_RES( SCDA_ELCMD_MAP_ACTIVATE, %s, %d )
+0012c694 %s: missing response xxxGFXMARKxxx
+0012c6b8 %s: MapDeactivate -> PUBLISH SCDA_EV_EXT_LAYER_RES( SCDA_ELCMD_MAP_DEACTIVATE, %s, %d )
+0012c710 %s: MapRate -> PUBLISH SCDA_EV_EXT_LAYER_RES( SCDA_ELCMD_MAP_RATE, SCDA_OK, %d )
+0012c764 %s: request w %d h %d
+0012c77c %s: retrieved window size w %d h %d
+0012c7a0 %s: created shared mem - subkey 0x%08x
+0012c7c8 %s: SAL_Create_Shared_Memory key 0x%08x / %d  subkey 0x%08x / %d failed
+0012c810 %s: calc of screenshot window failed - x %d y %d w %d h %d
+0012c84c %s: using full display size w %d h %d
+0012c874 %s: native handle for display %d not found
+0012c8a0 %s: system in shutdown mode -> writing of files forbidden / ignoring request
+0012c8f0 %s: saveScreenDisplay id %d x %d y %d w %d h %d OK
+0012c924 %s: saveScreenDisplay id %d x %d y %d w %d h %d failed
+0012c95c %s: saveScreenWindow x %d y %d w %d h %d OK
+0012c988 %s: saveScreenWindow x %d y %d w %d h %d failed
+0012c9b8 %s: screen_get_window_property_iv SCREEN_PROPERTY_BUFFER_SIZE failed : error %d (%s)
+0012ca10 %s: saveScreenWindow failed to look up window
+0012ca40 %s: saveScreenWindow failed - filename not specified
+0012ca78 %s: hiding all layers to show animation
+0012caa0 %s: REARVIEW active -> ignore trigger to restart animation
+0012cae4 %s: switching LVDS %s
+0012cafc SCREEN_EVENT_NONE
+0012cb10 SCREEN_EVENT_CREATE
+0012cb24 SCREEN_EVENT_PROPERTY
+0012cb3c SCREEN_EVENT_CLOSE
+0012cb50 SCREEN_EVENT_INPUT
+0012cb64 SCREEN_EVENT_JOG
+0012cb78 SCREEN_EVENT_POINTER
+0012cb90 SCREEN_EVENT_KEYBOARD
+0012cba8 SCREEN_EVENT_USER
+0012cbbc SCREEN_EVENT_POST
+0012cbd0 SCREEN_EVENT_EFFECT_COMPLETE
+0012cbf0 SCREEN_EVENT_DISPLAY
+0012cc08 SCREEN_EVENT_IDLE
+0012cc1c SCREEN_EVENT_UNREALIZE
+0012cc34 SCREEN_EVENT_GAMEPAD
+0012cc4c SCREEN_EVENT_JOYSTICK
+0012cc64 SCREEN_EVENT_DEVICE
+0012cc78 SCREEN_EVENT_MTOUCH_TOUCH
+0012cc94 SCREEN_EVENT_MTOUCH_MOVE
+0012ccb0 SCREEN_EVENT_MTOUCH_RELEASE
+0012ccd0 UNKNOWN EVENT TYPE
+0012cce4 %s: CREATE (win %08x pid %9d) [%s]
+0012cd08 %s: POST (  win %08x pid %9d) [%s]
+0012cd2c %s: CLOSE ( win %08x pid %9d) [%s]
+0012cd50 POST  
+0012cd58 CLOSE 
+0012cd60 %s: %s (win %08x pid %9d)
+0012cd7c %s: %s (win handle NULL)
+0012cd98 %s: %s (win handle NULL) xxxGFXMARKxxx
+0012cdc0 %s: %s screen_get_event_property_iv() SCREEN_PROPERTY_WINDOW failed xxxGFXMARKxxx : error %d (%s)
+0012ce24 %s: DEVICE (change of input device detected)
+0012ce54 %s: ignoring SCREEN_EVENT_PROPERTY (name %3d window %08x pid %9d)
+0012ce98 %s: ignoring SCREEN_EVENT_PROPERTY (name %3d display)
+0012ced0 %s: ignoring SCREEN_EVENT_PROPERTY (name %3d objType %d)
+0012cf0c %s: ignoring event of type %3d (%s)
+0012cf30 %s: screen_get_event_property_iv() SCREEN_PROPERTY_TYPE failed xxxGFXMARKxxx : error %d (%s)
+0012cf90 %s: screen_get_event() failed - %d : error %d (%s)
+0012cfcc false
+0012cfd4 %s: someViewEnabledByHMI [%s] rearViewDisplayRequested [%s] someViewPosted [%s] -> set scdaKeepSplashVisible = false
+0012d04c %s: someViewEnabledByHMI [%s] rearViewDisplayRequested [%s] someViewPosted [%s] -> set scdaKeepSplashVisible = true
+0012d0c0 %s: animationStatus == SCDA_AS_END -> restore layer setup
+0012d0fc %s: useColorProfiles set -> load file gamma tables
+0012d130 %s: useColorProfiles NOT set -> load 1:1 gamma tables
+0012d168 %s: useColorProfiles < %s > -> no displays available yet -> skip loading of gamma tables
+0012d1c8 scda-event-mon
+0012d1d8 %s: started [%s]
+0012d1ec %s: screen not yet running
+0012d208 %s: failed to create screen event
+0012d22c %s: dispInit() failed
+0012d244 screen-cda-lm
+0012d254 %s: name_attach(%s) failed: %s
+0012d274 %s: connected to screen (defDisplay: %dx%d id %d numOfDisplays %d) [%s]
+0012d2bc %s: deactivate gamma table adjustment
+0012d2e4 %s: activate gamma table adjustment
+0012d308 %s: load gamma tables from files + activate adjustment
+0012d340 %s: load 1:1 gamma tables + activate adjustment
+0012d370 %s: invert current gamma tables + activate adjustment
+0012d3a8 %s: dump current gamma tables
+0012d3c8 %s: unknown cmd %d
+0012d3dc %s: wait for SAL event thread (prio %d) [%s] 
+0012d40c %s: start reading screen events (waited %dms for SAL)
+0012d444 %s: chkScreenQ() failed - exit screenEventThread
+0012d478 %s: register for shutdown events
+0012d49c %s: APP_SYSTEMMANAGER initialized
+0012d4c0 %s: appId %d
+0012d4d0 %s: APP_SYSTEMMANAGER running
+0012d4f4 scda-XSAL-async-loop
+0012d50c %s: starting thread %s
+0012d524 %s: ready for async requests [%s]
+0012d548 %s: info about normal shutdown -> publish EV_PREPARE_OFF_APP_DONE
+0012d58c %s: info about fast shutdown -> publish EV_PREPARE_OFF_FAST_DONE
+0012d5d0 %s: info about emergency shutdown -> no reply expected
+0012d608 %s: info about shutdown cancelled -> no reply expected
+0012d640 %s: SCDA_EV_DEBUG_SET_VERBOSITY_REQ: msgSize mismatch - expected %d vs. received %d
+0012d694 %s: SCDA_EV_DEBUG_SHOW_WINDOW_INFO_REQ: msgSize mismatch - expected %d vs. received %d
+0012d6ec %s: SCDA_EV_LOCK_DISPLAY_REQ: msgSize mismatch - expected %d vs. received %d
+0012d73c %s: SCDA_EV_SET_DIMENSION_REQ: msgSize mismatch - expected %d vs. received %d
+0012d78c %s: SCDA_EV_SET_DIMENSION_BY_NAME_REQ: msgSize mismatch - expected %d vs. received %d
+0012d7e4 %s: SCDA_EV_SET_CROPPING_REQ: msgSize mismatch - expected %d vs. received %d
+0012d834 %s: SCDA_EV_SET_CROPPING_BY_NAME_REQ: msgSize mismatch - expected %d vs. received %d
+0012d88c %s: SCDA_EV_SET_OPACITY_REQ: msgSize mismatch - expected %d vs. received %d
+0012d8d8 %s: SCDA_EV_SET_OPACITY_BY_NAME_REQ: msgSize mismatch - expected %d vs. received %d
+0012d92c %s: SCDA_EV_FADE_TO_OPACITY_REQ: msgSize mismatch - expected %d vs. received %d
+0012d97c %s: SCDA_EV_FADE_TO_OPACITY_BY_NAME_REQ: msgSize mismatch - expected %d vs. received %d
+0012d9d4 %s: SCDA_EV_SET_POSITION_REQ: msgSize mismatch - expected %d vs. received %d
+0012da24 %s: SCDA_EV_SET_POSITION_BY_NAME_REQ: msgSize mismatch - expected %d vs. received %d
+0012da7c %s: SCDA_EV_SET_SCALE_MODE_REQ: msgSize mismatch - expected %d vs. received %d
+0012dacc %s: SCDA_EV_SET_SCALE_MODE_BY_NAME_REQ: msgSize mismatch - expected %d vs. received %d
+0012db24 %s: SCDA_EV_SET_VISIBILITY_BY_NAME_REQ: msgSize mismatch - expected %d vs. received %d
+0012db7c %s: SCDA_EV_SET_ZORDER_BY_NAME_REQ: msgSize mismatch - expected %d vs. received %d
+0012dbd0 %s: SCDA_EV_ENABLE_REQUEST_SYNCH_REQ: msgSize mismatch - expected %d vs. received %d
+0012dc28 %s: SCDA_EV_WINDOW_INFO_IND: msgSize mismatch - expected %d vs. received %d
+0012dc74 %s: SCDA_EV_LVDS_ENABLE_REQ: msgSize mismatch - expected %d vs. received %d
+0012dcc0 %s: SCDA_EV_SET_DISPLAY_REQ: msgSize mismatch - expected %d vs. received %d
+0012dd0c %s: SCDA_EV_SET_DISPLAY_BY_NAME_REQ: msgSize mismatch - expected %d vs. received %d
+0012dd60 %s: SCDA_EV_EXT_LAYER_REQ: msgSize mismatch - expected %d vs. received %d
+0012ddac %s: SCDA_EV_EXT_MAP_ACTIVATE_RES: msgSize mismatch - expected %d vs. received %d
+0012de00 %s: SCDA_EV_EXT_MAP_DEACTIVATE_RES: msgSize mismatch - expected %d vs. received %d
+0012de54 %s: SCDA_EV_EXT_MAP_RATE_RES: msgSize mismatch - expected %d vs. received %d
+0012dea4 %s: SCDA_EV_COLOR_ADJUSTMENT_REQ: msgSize mismatch - expected %d vs. received %d
+0012def8 %s: received EV_DEFINE_LAYERS from app %d
+0012df24 %s: SCDA_EV_DEFINE_LAYERS_REQ: msgSize mismatch - expected >0 vs. received %d
+0012df74 %s: received EV_ENABLE_LAYERS from app %d
+0012dfa0 %s: SCDA_EV_ENABLE_LAYERS_REQ: msgSize mismatch - expected >0 vs. received %d
+0012dff0 %s: triggered restart of splash animation (msgAge %dms)
+0012e028 %s: skip restart of splash animation, trigger outdated (msgAge %dms)
+0012e070 %s: received unexpected SCDA event %d msgSize %d sender AID %9d - to be triggered via sync mode (EV_SCREENCDA_FIRST = %d)
+0012e0ec %s: received unexpected XSAL event %d msgSize %d sender AID %9d (EV_SCREENCDA_FIRST = %d)
+0012e14c scda-XSAL-sync-loop
+0012e160 %s: SAL_Create_Channel() and SAL_Bind() successful
+0012e194 %s: SAL_Bind() failed
+0012e1ac %s: SAL_Create_Channel() failed
+0012e1cc %s: ready for sync requests [%s]
+0012e1f0 %s: req #%d SCDA_EV_GET_LAYER_CONTENT_REQ (id %d)
+0012e224 %s: req #%d SCDA_EV_GET_LAYER_CONTENT_REQ (%d/%d) - msgSize mismatch
+0012e26c %s: req #%d SCDA_EV_GET_DISPLAY_CONTENT_REQ
+0012e298 %s: req #%d SCDA_EV_GET_DISPLAY_CONTENT_REQ (%d/%d) - msgSize mismatch
+0012e2e0 %s: req #%d SCDA_EV_SAVE_SCREENSHOT_REQ
+0012e308 %s: req #%d SCDA_EV_SAVE_SCREENSHOT_REQ (%d/%d) - msgSize mismatch
+0012e34c %s: req #%d SCDA_EV_GET_DIMENSION_REQ (id %d)
+0012e37c %s: req #%d SCDA_EV_GET_DIMENSION_REQ (%d/%d) - msgSize mismatch
+0012e3c0 %s: req #%d SCDA_EV_GET_EXTENT_REQ (id %d)
+0012e3ec %s: req #%d SCDA_EV_GET_EXTENT_REQ (%d/%d) - msgSize mismatch
+0012e42c %s: req #%d unexpected XSAL event %d msgSize %d isPulse %d (EV_SCREENCDA_FIRST = %d)
+0012e484 %s: SAL_Sync_Receive() failed
+0012e4a4 %s: leaving thread - not possible to receive sync events without SAL channel
+0012e4f8 scda-XSAL-router
+0012e50c %s: XSAL: waiting for procman [%s]
+0012e530 %s: waiting for start of procman
+0012e554 /tmp/XSAL_Shm_0_0
+0012e568 %s: XSAL: waiting for SAL_Init [%s]
+0012e58c %s: XSAL up and running [%s]
+0012e5ac %s: SAL_Init failed
+0012e5c0 %s: SAL_Create_Thread for handler of <async events> failed
+0012e5fc %s: SAL_Create_Thread for handler of <async events> returned id %d
+0012e640 %s: SAL_Create_Thread for handler of <sync events> failed
+0012e67c %s: SAL_Create_Thread for handler of <sync events> returned id %d
+0012e6c0 %s: SAL_Run() exited with code %d
+0012e6e4 %s: cmdline option 'k' set: windows without ID will not be hidden or re-ordered
+0012e734 %s: cmdline option 'u' set: HMI requests will not automatically be synched
+0012e780 %s: pthread_create() xsalInitThread failed : error %d (%s)
+0012e7bc %s: pthread_create() screenEventThread failed : error %d (%s)
+0012e7fc layerManagerInit
+0012e810 xsalInitThread
+0012e840 xsalSyncEventThread
+0012e854 xsalEventThread
+0012e880 handleMessageAppState
+0012e898 handleMessageAppInitialized
+0012e8b4 registerAtSystemManager
+0012e8cc screenEventThread
+0012e8e4 handleColorAdjustment
+0012e8fc setupScreenConnection
+0012e914 setupDisplays
+0012e924 checkIfSomeViewShown
+0012e93c chkScreenQ
+0012e948 handleScreenEvent
+0012e95c lvdsEnable
+0012e968 triggerAnimationRestart
+0012e980 lmSaveScreenshot
+0012e994 lmGetDisplayContent
+0012e9a8 lmGetLayerContent
+0012e9bc externalMapRateResponse
+0012e9d4 externalMapDeactivateResponse
+0012e9f4 externalMapActivateResponse
+0012ea10 externalLayerRequest
+0012ea28 setZOrderByName
+0012ea38 rearViewActive
+0012ea48 setVisibilityByName
+0012ea5c setScaleModeByName
+0012ea70 setScaleMode
+0012ea80 setPositionByName
+0012ea94 setPosition
+0012eaa0 fadeToOpacityByName
+0012eab4 fadeToOpacity
+0012eac4 setOpacityByName
+0012ead8 setOpacity
+0012eae4 setCroppingByName
+0012eaf8 setCropping
+0012eb04 setDisplayByName
+0012eb18 setDisplay
+0012eb24 lmGetExtent
+0012eb30 lmGetDimension
+0012eb40 setDimensionByName
+0012eb54 setDimension
+0012eb64 lockDisplay
+0012eb70 flushUpdates
+0012eb80 publishEnableLayersReport
+0012eb9c enableLayers
+0012ebac defineLayers
+0012ebbc enableRequestSynch
+0012ebd0 debugShowWindowInfo
+0012ebe4 debugSetVerbosity
+0012ebf8 synch
+0012ec00 synchRequest
+0012ec10 setVisibilityOfNewWindow
+0012ec2c setScreenWindowCropping
+0012ec44 setScreenWindowSize
+0012ec60 updateLayerIds
+0012ec70 removeWindowEntry
+0012ec84 addWindowEntry
+0012ec94 getLayerRequestListIndex
+0012ecb0 dmpReqList
+0012ecbc initLayerRequestList
+0012ecd8 %ux%u@%u
+0012ece4 c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDA/build/../source/screen-cda.c
+0012ed44 %s: opt < %s > w %d h %d r %d
+0012ed64 %s: opt < %s > scan failed (%d != 3)
+0012ed8c %s: option 'y' specified: startup in manufacturing mode -> no special handling of this in screen-cda
+0012edf4 v:g:tel:N:f:F:d:s:w:a:A:YID:L:M:P:q:zc:p:x:nEkuyW:H:m:oR
+0012ee30 %s: command line invalid
+0012ee4c %s: splash mode SCRIPT
+0012ee64 %s: splash mode FILE
+0012ee7c %s: splash mode FOLDER
+0012ee94 %s: splash mode DELPHI
+0012eeac %s: splash mode NONE
+0012eec8 scda-main-loop
+0012eed8 %s: could not set HW access rights / ThreadCtl() failed : error %d (%s)
+0012ef20 %s: no splash requested -> not starting WFD graphics
+0012ef58 %s: gfxInit() failed - WFD graphics not available - splash will not be shown
+0012efa8 /home/root/scda_lvdsdbg_yes
+0012efcc disabled
+0012efd8 %s: posted [%s] (display %d mode %d %dx%d@%d pipe %d %dx%d | spl md %d to %d wt %d | lm %d prio mn %d er %d dispRdy2VIP %s LVDSinit %s [%s])
+0012f068 %s: no early wfd [%s] (lm %d prio mn %d er %d)
+0012f098 screen-cda
+0012f0a4 %s: name_attach(%s) failed: %s
+0012f0c4 %s: layerManagerInit(%d) failed
+0012f0e4 %s: started without layer manager
+0012f108 %s: gfxScreenInit() failed: %s
+0012f128 /dev/screen
+0012f134 %s: no early wfd [%s] screenIsUp %d waited %dms dispRdy2VIP %s LVDSinit %s [%s])
+0012f188 %s: animation already running
+0012f1a8 %s: ignore splash animation trigger (static mode)
+0012f1dc %s: ignore splash animation trigger (disabled via cmdLine option)
+0012f220 %s: set flag to cancel animation
+0012f244 %s: ignore cancel animation trigger (static mode)
+0012f278 %s: [%s] animationStatus OFF
+0012f298 %s: [%s] animationStatus RUNNING
+0012f2bc %s: [%s] animationStatus END
+0012f2dc %s: [%s] animationStatus unknown (%d)
+0012f304 %s: SAL not yet up -> no publish of animation status
+0012f33c %s: load %dms + show %dms = %dms
+0012f360 %s: finish script animation
+0012f37c %s: restart script animation
+0012f39c %s: finish folder animation
+0012f3b8 %s: restart folder animation
+0012f3d8 %s: WFD graphics not available --> splash cannot be shown
+0012f414 %s: await timeOut %d
+0012f42c %s: timeOut %d passed - hide splash now
+0012f454 %s: some non-splash view available -> hide splash now [%s]
+0012f490 %s: no other view available -> show splash again [%s]
+0012f4c8 updateSplashVisibility
+0012f4e0 splashLoop
+0012f4ec splashFirstFrame
+0012f500 updateAnimationStatus
+0012f518 cancelAnimation
+0012f528 restartAnimation
+0012f544 handleOptions
+0012f554 handleOptionVideoMode
+0012f56c c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDA/build/../source/screenshot.c
+0012f5cc %s: pixmap created
+0012f5e0 %s: screen_create_pixmap_buffer failed : error %d (%s)
+0012f618 SCDA_SCREENSHOT_PIXMAP
+0012f630 %s: pixmap destroyed
+0012f648 %s: enter - w %3d h %3d bit_depth 0x%02x color_type 0x%02x stride %3d file_name <%s>
+0012f6a4 1.6.1
+0012f6ac %s: png_init_io failed - leave
+0012f6cc %s: writing header failed - leave
+0012f6f0 %s: png_write_image failed - leave
+0012f714 %s: png_write_end failed - leave
+0012f738 %s: malloc(%d) failed : error %d (%s)
+0012f760 %s: png_create_info_struct failed
+0012f784 %s: png_create_write_struct failed
+0012f7a8 %s: file <%s> could not be opened for writing : error %d (%s)
+0012f7e8 %s: leave
+0012f7f4 %s: screen_read_display returned error - err %d : error %d (%s)
+0012f834 %s: createPixmap() failed
+0012f850 %s: display or filename NULL
+0012f870 %s: screen_read_window returned error - err %d : error %d (%s)
+0012f8b0 %s: window or filename NULL
+0012f8cc saveScreenWindow
+0012f8e0 readScreenWindow
+0012f8f4 saveScreenDisplay
+0012f908 readScreenDisplay
+0012f91c write_png_file
+0012f92c destroyPixmap
+0012f93c createPixmap
+0012f9a8 -PLTE
+0012f9b9 !!!---999BBBRRRwww
+0012f9e1 FIDATx
+0012fe29 rwx 3
+0012fe64 r5Qx 
+0012ffa3 H_3iJ
+00130032 nLY +
+00130128 PIK51y
+0013013c /dev/shmem/splash_done
+00130158 FINISHED
+00130164 c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDA/build/../source/splash.c
+001301c0 %s: marker file <%s> created
+001301e0 %s: fopen for <%s> failed : error %d (%s)
+0013020c %s: marker file <%s> removed
+0013022c %s: unlink <%s> failed : error %d (%s)
+00130254 %s: regular config file %s
+00130270 %s: loading of regular file <%s> failed, try default <%s>
+001302ac %s: loading of default file <%s> failed - no animation config available
+001302f4 %s: confFileNameRegular not specified
+0013031c %s: done [%d ms]
+00130330 /home/root/scda_splashdbg_yes
+00130350 %s: frame #%02d id %2d time %3d ms copy %d imgCnt %d
+00130388 %s: %02d fill new frame with copy of former frame
+001303bc %s/%s.%s
+001303c8 %s: %02d load image <%-64s> and copy to %3d / %3d
+001303fc - load failed!
+0013040c %s: %02d load image <%-64s> and copy to %3d / %3d - %3d ms %s
+0013044c %s: [%6d] #%2d prepared : last post %5d showTime %4d -> passed %4d / delay post till %5d ms (by %4d ms)
+001304b4 %s: [%6d] #%2d prepared : last post %5d showTime %4d -> passed %4d / next post delayed by %3d ms
+00130518 %s: [%6d] #%2d posted   : show for %4d ms
+00130544 %s: [%6d] wait after last frame for %4d ms
+00130570 (cancelled!)
+00130580 %s: [%6d] animation frames (0..%d) done [%5d..%5d] showTime %d rq %d ms %s
+001305cc %s: animation not loaded
+001305f0 %s/%s
+001305f8 %s: skipping first image <%s>
+00130618 %s: stopping folder animation after first image
+00130648 %s: skipping image <%s>
+00130660 %s: sleeping %dms
+00130674 %s: animation %d images (%d ms/img %3.1f fps) done [%d ms]
+001306b0 %s: opendir() failed - error %d <%s>
+001306d8 %s: regular image file %s
+001306f4 %s: regular image file not specified
+0013071c %s: default image file %s
+00130738 %s: default image file not specified
+00130760 %s: image loaded / posted [%d ms]
+0013078c %s: loading of splash image failed (regular <%s> default <%s>)
+001307cc %s: start:
+001307d8 %s: LVDS enabled [%6d ms]
+001307f4 %s: first post after startup [%6d ms] - first post of this sequence [%6d ms]
+00130844 %s: gfxGetBackBuffer()->image failed
+0013086c %s: done
+00130878 splashTestLVDS
+00130888 showSplashDelphi
+0013089c showSplash
+001308a8 showFolderAnimation
+001308bc showScriptAnimation
+001308d0 loadScriptAnimation
+001308e4 setMarkerAnimationFinished
+00130904 c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDA/build/../source/splashload.c
+00130960 %s: malloc(%d) failed
+00130978 XML2_OK
+00130980 XML2_NOMATCH
+00130990 XML2_ERR_FILENOTFOUND
+001309a8 XML2_ERR_ILLEGALPARA
+001309c0 XML2_ERR_ILLEGALPARA1
+001309d8 XML2_ERR_ILLEGALPARA2
+001309f0 XML2_ERR_FILEREAD
+00130a04 XML2_ERR_MEMORY
+00130a14 XML2_ERR_FORMAT
+00130a24 XML2_ERR_FILECREATE
+00130a38 XML2_ERR_MISSALIGN
+00130a4c XML2_ERR_FILEWRITE
+00130a60 XML2_ERR_FILETYPE
+00130a74 XML2_ERR_FILEFORMAT
+00130a88 XML2_ERR_ALLREADYEXIST
+00130aa0 XML2_ERR_NOMORECHILDS
+00130ab8 XML2_ERR_NOMOREATTRIBS
+00130ad0 XML2_ERR_MOREMEMORY
+00130ae4 XML2_ERR_NOTFOUND
+00130af8 XML2_ERR_ROOTNODEEXISTS
+00130b14 unknown XML error
+00130b28 %s: enter
+00130b34 %s: animation not loaded
+00130b50 %s: leave
+00130b5c %s: splash version %d name (%d) %s path %s extension %s x (%d) %3d y (%d) %3d time (%d) %d frmCnt %d
+00130bc4 %s:    frame #%02d id (%d) %2d time %3d copy (%d) %d imgCnt %d
+00130c04 %s:       image #%02d id (%d) %2d x %3d y %3d name %s
+00130c3c %s: file %s - enter
+00130c50 %s: xml2Load ok
+00130c60 splash
+00130c68 %s: unexpected element %s
+00130c84 %s: xml2GetNodeName failed
+00130ca0 %s: xml2GetRootNode failed
+00130cbc %s: file %s not found
+00130cd4 %s: file %s - xml2Load failed with error 0x%08x (%s)
+00130d0c %s: file %s - lsr %d - leave
+00130d2c version
+00130d50 frmCnt
+00130d58 %s: unexpected attribute %s
+00130d74 %s: missing mandatory attribute (%s | %s | %s | %s)
+00130da8 %s: version mismatch - code supports version <%d> | file coded to version <%d>
+00130dfc %s: frameCount %d != number of parsed frames %d
+00130e2c %s: splash does not contain frames - frameCount %d
+00130e64 imgCnt
+00130e70 %s: missing mandatory attribute (%s | %s)
+00130e9c %s: frame id (%d) %2d time %3d copy (%d) %d imgCnt %d
+00130ed8 %s: imageCount %d != number of parsed images %d
+00130f08 %s: frame does not contain images - imageCount %d
+00130f3c %s: missing mandatory attribute (%s | %s | %s)
+00130f6c %s: image name empty
+00130f84 %s:      image id (%d) %2d x %3d y %3d name %s
+00130fb4 loadImageFromXMLNode
+00130fcc loadFrameFromXMLNode
+00130fe4 loadSplashFromXMLNode
+00130ffc loadSplashFromXMLFile
+00131014 dumpSplash
+00131020 unloadSplash
+00131030 rdAttStr
+00131040 t%d:%02d:%02d.%03d
+00131070 r%d:%02d:%02d.%03d
+001310a4 %02d%s
+001310b0 "screencda"
+001310bc c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDA/build/../source/util.c
+00131114 %s: [pid: %d] - Logger activated (compilation %s %s)
+0013114c Jun 26 2018
+00131158 18:15:16
+00131168 /home/root/platformrestart_yes
+00131188 /home/root/platformrestart_no
+001311b0 /home/root/tracescope_yes
+001311cc /home/root/tracescope_no

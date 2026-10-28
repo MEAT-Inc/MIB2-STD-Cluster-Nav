@@ -1,0 +1,46 @@
+Latest runtime collection review
+===============================
+Reviewed _collection_20261028_120356_9c6a0071 and
+_collection_20261028_120523_8f97aa62.
+The latter successfully acquired libscreen.so.1 from
+/extbin/apps/usr/lib/graphics/libscreen.so.1:110740 bytes.
+Its current local SHA256 matches its manifest:
+d4cdc15e210c47e01ce589a8d1a99ee768c7b7fb6bd761f31ed00b7aac7c2abd
+
+Both boot-target failures occurred while establishing RAM-disk staging.
+staging-actions.txt was empty because the old script wrote commands/output
+only AFTER receiving a completion marker. The first session timed out; the
+second target then reused that unusable session and timed out again. The
+stage transcript being created shows authentication had reached a shell,
+but does not prove mkdir or cp ran successfully. The exact on-car reason the
+old completion marker was not received cannot be determined from those logs.
+The missing /usr/lib/graphics candidate is unrelated to that Telnet failure.
+
+Changes
+-------
+- Short echo-based completion marker instead of printf/line-ending matching.
+  Echoed input contains literal $? and cannot count as a successful status.
+- Completion detection accepts CRLF, CR-NUL, doubled CR and fragmented replies.
+- Commands are logged/flushed BEFORE transmission; decoded response chunks
+  are saved immediately with escaped bytes in staging-actions.txt.
+- Connection/login/shell-ready/command progress now appears on the console.
+- Separate default10-second Telnet timeout (--telnet-timeout), FTP stays30.
+- One staging failure stops further commands on that session, while normal
+  FTP files continue. The failed session is closed at collection finish.
+- runtime-targets.json reports target_availability and all_targets_available,
+  separate from discovery's missing_basenames list.
+- Both collectors still use the same project delphi-dump folder. Existing
+  successful files are preserved, and each attempt keeps separate manifests.
+
+Validation
+----------
+9 mocked Telnet/timeout/availability regression tests and6 collection scope/
+command-construction tests pass. No live vehicle transfer has been tested.
+Failure/timeout output should now identify the actual shell stage and retain
+received bytes, instead of requiring guesses from an empty transcript.
+
+Retry with BOTH updated scripts/delphi_inventory.py and
+scripts/collect_delphi_runtime.py on the connected laptop:
+  py -3 .\scripts\collect_delphi_runtime.py --stage-boot-files
+No firmware changes or service restarts. Only new temporary RAM-disk copies
+are created when staging is enabled. Original files are not changed.

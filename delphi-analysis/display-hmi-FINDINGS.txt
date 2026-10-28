@@ -1,0 +1,144 @@
+Delphi display/HMI control investigation
+=======================================
+Firmware: supplied MST2_US_VW_P0890D dump. Offline only; no vehicle connection,
+no execution of acquired firmware, no deployed patch.
+
+Java conversion and provenance
+------------------------------
+Converted MIBHMI.jxe to analysis MIBHMI.jar using luka-dev/jxe2jar commit
+9eeb45bbf14bf8afe3452c7be96a4d1f0206a286. 19,406 classes written, zero logged
+skipped classes, ZIP CRC passes, all class headers CAFEBABE. These are structural
+checks, NOT proof every reconstructed bytecode method is correct. No full JVM
+verification/recompilation was performed. Selected phone-navigation methods and
+InfoStates were additionally parsed with javap -c -p. A 414-class subset was
+locally decompiled with CFR0.152. Decompiled names may differ from original local
+names; no constant un-inlining was used, so numeric constants remain numeric.
+
+See display-hmi-java/provenance.json for source/JAR/CFR hashes and validation
+limits. Converter checkout is .tools/display-hmi-jxe2jar. No repository root
+LICENSE found at reviewed pin: keep it and proprietary outputs local; do not
+publish these classes/converter as a release without resolving rights.
+
+Main Java findings: three independent control concerns
+-----------------------------------------------------
+1. Cluster's 'phone navigation' info state:
+   Decompiled de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.java:
+   getFunctionId() = 38.
+   getCurrentBAPInfoState() returns 6 whenever ANY of
+     CarPlayService.isCarPlayRouteGuidanceActive()
+     AndroidAutoService.isAndroidAutoRouteGuidanceActive()
+     CarLifeService.isCarLifeRouteGuidanceActive()
+   Otherwise it derives ordinary states0/1/2/3 from native navigation/GPS/demo.
+   AA listener property2910005; CarPlay listener property-2147475646.
+   This is a concrete BAP status gate. That state6 means a particular visible
+   overlay is an interpretation consistent with intended behavior, not an
+   on-car observation from this investigation.
+   Evidence: display-hmi-java/decompiled/de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.java
+   Corroboration: phone-navigation-bytecode.txt final InfoStates listing.
+
+2. Native/phone ROUTE guidance and focus:
+   AndroidAuto target RequestHandler.performNavFocusRequestNotification(int):
+   type1 -> property2910005 false, stored AA navigation false, phone callback
+   navFocusNotification(1,false) if connected/DSI2 registered, EXBOX inactive.
+   type2 -> if native route guidance active, NavigationListener.stopGuidance();
+   then property2910005 true, stored AA navigation true, callback
+   navFocusNotification(2,false), EXBOX smartphone guidance active.
+   NavigationListener.stopGuidance() calls navServices.stopGuidance(6), or queues
+   it until service availability. Reverse callback updateGuidanceActive(true)
+   clears AA navigation status and sends navFocusNotification(1,true).
+   This is actual control flow, not a guess based on class names. It does not
+   establish that stopGuidance alone tears down cluster map VIDEO.
+   CarPlayModeHandling similarly stops native guidance(6) when phone nav takes
+   ownership, sets property2910009 true, and handles native/inactive transitions.
+   Evidence: RequestHandler.java190-225, NavigationListener.java31-66,
+   CarPlayModeHandling.java190-237, plus phone-navigation-bytecode.txt.
+
+3. Native map-location state/HMI requests:
+   MapViewerMapSwitchStateWork handles switch events1074841939 and3499074;
+   event3400029 carries map switch state (3->ABT,5->Kombi),3499072 finishes a
+   switch and executes queued next-switch direction. It coordinates asynchronous
+   state rather than just flipping a visibility flag.
+   ASLNavigationServiceMainMapTarget.lockMapViewer() may move native map from
+   Kombi to center display when feature flag139 set, saving zoom/perspective/
+   orientation. unlockMapViewer() restores related settings. Its generic
+   'mapExternalConfigured' flag is a locked client map-service state, NOT proof
+   of a ready-made phone-video injection API. Do not conflate those.
+
+Native DisplayManagement: recovered code contracts
+--------------------------------------------------
+Sectionless ELF was inspected via PT_DYNAMIC/DT_SYMTAB/DT_JMPREL. 84 imported
+PLT entries recovered; script annotates ARM PLT targets from instructions and
+relocations. MOVW/MOVT address construction identifies 37 relevant string refs.
+Data/literal-pool bytes also appear as instructions in the full linear dump;
+use the cited code windows/control flow, not arbitrary lines as functions.
+
+Key addresses (local VAs specific to the acquired file):
+  0x111784 switchContextCluster (context validates0/1 displayables; expects map)
+  0x1167d4 getDisplayType (center LVDS vs cluster H264_MOST)
+  0x116a08 initExtLayerStates
+  0x116aa8 handleMessageSCDAExternalLayerResponse
+  0x116b90 handleExtLayerCmdResponse
+  0x117218 handleExtLayerHMIRequest
+  0x117760 setUpdateRate
+  0x11dba0 external layer command sender
+  0x117d68 forward update-rate callback helper
+
+setUpdateRate(r0=this,r1=displayID,r2=rate):
+  compare displayID with4 at0x117778 identifies CLUSTER.
+  rate0 calls handleExtLayerHMIRequest to disable; rate<0 rejects.
+  positive rate with byte this+0x2c nonzero rejects and invokes callback with
+  rate0. Associated log says MAPVIEWER is already in current MAIN context.
+  positive rate with that flag clear calls handleExtLayerHMIRequest.
+  This is a native ownership restriction even if Java BAP state6 is bypassed.
+
+External command helper0x11dba0:
+  stores two 32-bit words on stack {command,rate}.
+  SAL_Send called at0x11dc54 with r0=0x55,r1=1,r2=0x1693,r3=payload;
+  fifth stack argument payload_size=8. App/thread semantics rely on SAL API;
+  register values/payload shape are directly recovered.
+  Command0=MAP_ACTIVATE,1=MAP_DEACTIVATE,2=MAP_RATE, from caller branches/logs.
+  This is an observed native ABI, NOT a command to send blindly from Telnet.
+
+Response event0x1694 is compared at0x10ff88; dispatch0x110460 calls0x116aa8.
+It requires payload length12, loads words0/4/8 and passes them to0x116b90 as
+command/newRate/result. MAP_ACTIVATE checks result0 as success and then requests
+MAP_RATE at the desired rate. MAP_RATE handles returned/desired-rate mismatch.
+These fields/lifecycle need independent peer-side corroboration before use.
+
+Relevant object offsets from the native methods:
+  +0x30 state; +0x34 actual/current rate; +0x38 requested rate;
+  +0x3c/+0x3d boolean pending/request flags (full callback semantics not finished).
+State IDs verified by switch table0x117248 and associated diagnostics:
+  0 MMOff;1 MMOffRequested;2 MMReadyRequested;3 MMRunRequested;4 MMRun.
+Start from MMOff positive request -> ACTIVATE -> MMReadyRequested;
+success reply -> RATE(desired) -> MMRunRequested;
+rate reply matching positive desired -> MMRun;
+rate reply matching zero -> DEACTIVATE -> MMOffRequested;
+deactivate response returns Off or reactivates if a new positive rate arrived.
+Updates during intermediate states are stored/ignored according to state; a
+patch must preserve this asynchronous lifecycle and callbacks.
+
+Implementation guidance (proposal, not tested patch)
+---------------------------------------------------
+- Keep phone route focus/status truthful. Do not globally falsify AA property
+  2910005 merely to suppress BAP state6; it feeds focus, EXBOX and other consumers.
+- If a prototype has actually acquired and started custom cluster video, gate
+  ONLY the incompatible cluster info-state output under that owned-session flag.
+  Outside the owned session, preserve InfoStates stock behavior.
+- Treat map-video activation, source replacement and BAP overlay suppression as
+  separate operations. Retain DisplayManagement's asynchronous rate/session
+  lifecycle, and account for MAIN MAPVIEWER conflict.
+- On phone disconnect/error/camera/sleep/shutdown, release only resources owned
+  by the custom session, restore original info-state output and map location/
+  visibility through existing callbacks. Do not resume a previously stopped
+  native route without knowing what the user intended.
+- No on-car reconnect is needed yet. Peer-side SAL message handler, actual sink
+  ownership and recovery behavior remain to be corroborated offline first.
+
+Reproduce
+---------
+Bundled Python scripts/display_hmi_pipeline.py (converter checkout required).
+Bundled Python scripts/display_hmi_native.py (uses .tools/python).
+Artifacts: display-hmi-java/decompiled (414 classes), MIBHMI.jar, targeted.jar,
+phone-navigation-bytecode.txt, provenance.json; display-hmi-native-assembly.txt,
+display-hmi-native-xrefs.json, display-hmi-native-xref-windows.txt and summary.

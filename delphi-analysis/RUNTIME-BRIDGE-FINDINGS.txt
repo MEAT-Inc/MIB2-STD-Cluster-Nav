@@ -1,0 +1,40 @@
+Runtime bridge: first confirmed trace
+====================================
+Source: latest successful runtime collection, manifest hashes verified.
+No car connection, deployed code or live SAL messages.
+
+screen-cda is the missing external-map control bridge:
+- SAL_Get_Config at0x11d6a0, config application byte set0x55 at0x11d6a4/6a8,
+  config passed to SAL_Init at0x11d880-0x11d888.
+- Dispatcher compares event0x1693 at0x11afe4, dispatches to0x11c0c4.
+- Handler checks payload length8 at0x11c0cc and calls0x116cf0.
+- That function branches on command word0/1/2, as DisplayManagement expects.
+  Command0 publishes event0x1695 (activate) with no payload at0x116d98-6da4.
+  Command1 publishes event0x1697 (deactivate) at0x116e18-6e24.
+  Command2 reads rate word+4 and publishes event0x1699, length4, at0x116eb0-6ec0.
+  The adjacent native diagnostic strings explicitly name the SCDA map requests.
+- Response paths publish event0x1694 with12-byte payload at0x11708c,
+  0x1171e4 and0x117318. Detailed result/rate data flow remains to be audited.
+
+This corroborates the formerly uncertain application0x55 boundary and its
+request shape. NavigationServer handles the SCDA requests, not a direct
+DisplayManagement0x1693 message. No fixed active cluster geometry is proven.
+
+Next implementation gates
+-------------------------
+1. Finish response/result/rate and map geometry propagation; use libXSAL to
+   corroborate message layout and timing units.
+2. Finish receiver endpoint/callback lifetime and choose a hook mechanism
+   proven compatible with this QNX loader; do not transplant Harman offsets.
+3. Build a reversible diagnostic-only prototype which logs existing behavior
+   before changing discovery or sending cluster video.
+4. Separately prove second-display phone video reception and native-format
+   stream compatibility before replacing the cluster map source.
+
+Artifacts:
+scripts/inspect_runtime_bridge.py reproduces this offline first pass.
+runtime-bridge-index.json records source paths, hashes, symbols and dependencies.
+screen-cda.runtime-assembly.txt / .runtime-strings.txt
+libXSAL.so.runtime-assembly.txt / .runtime-strings.txt
+Linear disassembly includes headers/literal pools as data; cited functions and
+call edges, not arbitrary disassembly lines, support the conclusions above.

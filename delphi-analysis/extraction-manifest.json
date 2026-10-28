@@ -1,0 +1,403 @@
+[
+  {
+    "source": "delphi-dump\\extbin\\apps\\bin\\vwjxe.ifs",
+    "source_sha256": "129ba5897421c1b933450ab4439fd7f6406f15da05ba23f98cff04a646027449",
+    "expected_bytes": 48802492,
+    "decoded_bytes": 48802492,
+    "image_checksum_sum32": "0x0",
+    "files": [
+      {
+        "name": "MIBHMI.jxe",
+        "bytes": 42324412,
+        "sha256": "648d96a955eb8c4b5b008c5844edb36086f37272ffde5d980d9b038ff38115b8",
+        "magic": "504b0304140000000000000000001045"
+      },
+      {
+        "name": "delphi.jxe",
+        "bytes": 6400955,
+        "sha256": "a3008c4261b813204a57d3ca713dfef91bceb2757d715fd9bbfae839a8456a87",
+        "magic": "504b030414000000000000000000aaa1"
+      }
+    ],
+    "other_entries": [
+      {
+        "mode": "755",
+        "gid": 0,
+        "uid": 0,
+        "ino": 1,
+        "name": "",
+        "type": 16384
+      }
+    ]
+  },
+  {
+    "source": "delphi-dump\\extbin\\apps\\bin\\delphibin.ifs",
+    "source_sha256": "047a2e0c5dff1f3a20c71ebd7141b9a09edb897121f8a1b7090ee973e742c26d",
+    "expected_bytes": 24014636,
+    "decoded_bytes": 24014636,
+    "image_checksum_sum32": "0x0",
+    "files": [
+      {
+        "name": "j9",
+        "bytes": 46272,
+        "sha256": "13d2a14d7a941acea9ea6175c9b90f5f18551fd464abf5f2daa57ff2580531ca",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "java.properties",
+        "bytes": 25396,
+        "sha256": "6176da128b0965ffa1f918ef1ca0c224dd3ccfe1d20011c99f39185b2e1cbd8b",
+        "magic": "23576564204175672033312031333a34"
+      },
+      {
+        "name": "libiverel23.so",
+        "bytes": 60560,
+        "sha256": "1e3f6c400ade2317c97dcfc9a66b768574d95d0a3130b93e36572b634f00ba1a",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9bcv23.so",
+        "bytes": 75824,
+        "sha256": "b31db0abad7071dabf8ae08b1cda3f59e4c820ce4f4c833db6c8003382b80624",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9dbg23.so",
+        "bytes": 155348,
+        "sha256": "9ef07414e12a4a5643214d12c5d87487f9df92855898062143e2b7308067ee04",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9dyn23.so",
+        "bytes": 121460,
+        "sha256": "8fe72ea901382a2c69949dd1d73c671f2a0829c95e16f099c9e62b812c0d92b5",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9fdm23.so",
+        "bytes": 25720,
+        "sha256": "883cf09c363d8b696107858ca8e5e80f1b83d284a546ba1e0c89c307c65a521c",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9gc23.so",
+        "bytes": 320380,
+        "sha256": "76c3718382d025f9bdf603d1ff3ca8b0c152c88badd120cc1912d1d41f0e741a",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9gcchk23.so",
+        "bytes": 61988,
+        "sha256": "235c5760a2ffe5976db46075218325ea764216ee5dd3febb2459fac4f4de5b30",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9hookable23.so",
+        "bytes": 9572,
+        "sha256": "cd5830b71f4c9aef1602e7eaf1182b640308b94aa8b20183522811065ec62f77",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9jpi23.so",
+        "bytes": 53004,
+        "sha256": "70bb952efb57c6ed0fcef3fc0112cf1e57da62e2e4ec50e15d3cc044979883ad",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9mjit23.so",
+        "bytes": 147304,
+        "sha256": "c912d4d7cc5908e78ec6d724b6d576deea614db468cda5a05cfa37c582bd59f3",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9mjitd23.so",
+        "bytes": 63900,
+        "sha256": "69a065151906751be577e70764e3a2dc27183b5d2418707417c4ed8b3b4c50e8",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9prf23.so",
+        "bytes": 55852,
+        "sha256": "b47eaad3b57878b0ca35a6e1d7228abfd64c6eaa14c9b3a6c8ff956877f0af2e",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9prt23.so",
+        "bytes": 63832,
+        "sha256": "83d246ba3719e4e2a7e15af0a62673763b3fc59ba25b6293e958b00fc7fc0372",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9thr23.so",
+        "bytes": 40252,
+        "sha256": "d9d680f0ef074ce105b2f9464abefc74d69ab77395f505f68c4773d67b62949a",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9vm23.so",
+        "bytes": 382792,
+        "sha256": "e3119964320a328857f35effb6e6d71793e8512d4694d373d67a5115b9e3c01f",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9vrb23.so",
+        "bytes": 97244,
+        "sha256": "7f4b5439e4ba4e92f5d29b7691c2cebe67f0ed802531f72bbdd1e6434847c74f",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libj9zlib23.so",
+        "bytes": 61504,
+        "sha256": "0be005f48bb6af46836fd8359746975eee09b08b4439119eff4867caa79b7807",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libjclfoun11_23.so",
+        "bytes": 417572,
+        "sha256": "d4e21c2ad8b400542d071e11475c9e25552cad21a7cdb8cee50540300a3b19c4",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libjsr231.so",
+        "bytes": 92508,
+        "sha256": "c7dedffdda2199234e1f0febf41e24e695f06e9f51a805a735ee6416de8aab48",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libjsr231gl.so",
+        "bytes": 53649,
+        "sha256": "f8feafa674a96cd678ba7ee8d4e312e013309cc67d21b8aef0a271b5d09ed6fc",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libjsr231nw.so",
+        "bytes": 5996,
+        "sha256": "3e492808e2de940f50d3f7b3c8121e2022db2ca060a755071fb29eb8fe5c1322",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libjsr231nwx.so",
+        "bytes": 8996,
+        "sha256": "860dced5475aa28434fd30d2d3b7653c4cb307b60e28debc2067ae96463dca21",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libnio.so",
+        "bytes": 12900,
+        "sha256": "cec77bea653862d93df9a64b7abd6360411291c3cb3eea6d024781d0b810d77f",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libJSAL.so",
+        "bytes": 28256,
+        "sha256": "60886bb6f06aca4ec2508bf10a1b0cc1a9726d0b11229cf0f0aebb8129dd88b0",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libDebugSPI.so",
+        "bytes": 14728,
+        "sha256": "b88c0182509a6c2d74cd200b5e400b645330fbb7712e273a4992fcce84f77356",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libDisplaySPI.so",
+        "bytes": 26652,
+        "sha256": "659cba8f46f5ebc82bdbc31d390c20b58eeb4340f15c97f957cc0bc842b9ca22",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libFileSPI.so",
+        "bytes": 34612,
+        "sha256": "b4ff944bf678c7be8f6196439752451c2afcb20a44b23c8967fe150d9a9c73dd",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libFontSPI.so",
+        "bytes": 35908,
+        "sha256": "40514ec94d13b515a15d3dfb3db199bfc51f10f6f29833c5f096f79b69c6f7d7",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libFontSPILayout.so",
+        "bytes": 23552,
+        "sha256": "688f4b866d784307a7a9251228df8687f49a1b89c3a3f17f9f648bf741c9b218",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libExtendedStartupSPI.so",
+        "bytes": 5732,
+        "sha256": "29fb4d4966b0ce8270f69417236a80295918d99f6b764265bdc10e0184c021fd",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libTimerSPI.so",
+        "bytes": 8536,
+        "sha256": "a1586fe0aa28167b8f7167f187d1c731685891d58a2e71a1bb5f062f881ddd00",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libImageSPI.so",
+        "bytes": 102176,
+        "sha256": "2257aef85d7809b7fb7a21c69a3c28d284ba238fee0d97278793e3819803f872",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libicudata.so",
+        "bytes": 5263684,
+        "sha256": "839a359c87587b267c2b11e4a2c898f6c4fe5e0b96e8219899c092aaa9ff04a8",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libicui18n.so",
+        "bytes": 1799040,
+        "sha256": "b0aa6d53dc0a4c46456d8ee3064cf834d85d61ff0ed5398a620741e9a15b4490",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libicuuc.so",
+        "bytes": 1208360,
+        "sha256": "68b05bb51013b6ef34d63462b7cbd70d9031c6002c9c9d6a545262ed5d4738b7",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "libcpp-ne.so.4",
+        "bytes": 328643,
+        "sha256": "d820d2749b2b7a886a6b5f1b8f4ed854c50b454e8d5c1b62070ebbc5deefd628",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "on",
+        "bytes": 24737,
+        "sha256": "1286026c9f77d0bc4f7fb22c9d001fdd0fdcb1fb48ddba19397dcc696a0f9644",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "gzip",
+        "bytes": 104230,
+        "sha256": "d829fc4c77bf47c914f9b11bd2714318465f5d1dbc16b017eee7b294c70110c1",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "WavePlayer",
+        "bytes": 98948,
+        "sha256": "fbccdd020d60e2ca413b4e3337fa4c170512102e042cc4cd382ac46f3fbb4006",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "ImageLoader",
+        "bytes": 98332,
+        "sha256": "f3b2bbdd78d905a20daa90ccfe954d1e60d1129bb93963e12789dc26aa12846e",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "PictureServices",
+        "bytes": 96104,
+        "sha256": "c7f1a2be446acc5b443b66c6bfe01a5715936cac1bccc62dda5e3de84036b371",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "CarServices",
+        "bytes": 4115972,
+        "sha256": "3589edd4b4333adc8c1991d6f9713eb9b383e1f2ffd155d58623fa13dcbbaa7c",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "SWaP",
+        "bytes": 752444,
+        "sha256": "cb9040a244e534871b3f393d93db070bc3cdf0bb002bb8a4c586fb59c2ff1b0d",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "PersistenceManager",
+        "bytes": 465492,
+        "sha256": "bf6020872c334f91478307b0e40878b6a8fc45a2c678cd7cebb5ed481e1325ad",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "AudioManager",
+        "bytes": 2591664,
+        "sha256": "16133f2e48b32dada5b7dcd106cdf38425a3c9305eee5a12015cb81e060faf50",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "PersistenceServices",
+        "bytes": 371964,
+        "sha256": "e9772948817b958f94deb88167c2aaf64ee582dcae42f7e99f3e44068839df6d",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "CPUMonitor",
+        "bytes": 13600,
+        "sha256": "f03dbd3cde42c73557a056fe569cff144c99e1f98e51572636097abdac26e5ae",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "RearViewCam",
+        "bytes": 339608,
+        "sha256": "902cb66f960397d21df554b42ffb7f84dec32efbc282db39761d49ea49fe2fb6",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "InfotainmentRecorder",
+        "bytes": 447384,
+        "sha256": "5ec218ccc15681c583950f07b4292ef2004d52f24bf1adb8394ac83ae28d1808",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "LoadCount",
+        "bytes": 37196,
+        "sha256": "7779f8b93cdbab9d553b356f76ff78aa59125b6a1901846ee4fe3da3d545d487",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "TraceServer",
+        "bytes": 687968,
+        "sha256": "397c85daf2b2c045181bd2042e95869dc02c7c9951193076daca27070df5df1f",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "DisplayManagement",
+        "bytes": 190972,
+        "sha256": "88cac47cba3e6a79b09ea8eabe8035dddf1e33dd733392dd14f04f47a9e16125",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "StartupSyncTool",
+        "bytes": 158612,
+        "sha256": "161e5a182238d24e5d68310e0c9d928a41f7ea30f1d8a8e0d0a76a85ffed5262",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "io-pkt-v4",
+        "bytes": 663720,
+        "sha256": "b97d648b64063b0bb5b28b5f3a33c5006614f7306c32dfdf5838754d1e9e41df",
+        "magic": "7f454c46010101000000000000000000"
+      },
+      {
+        "name": "io-pkt-v6-hc",
+        "bytes": 1294377,
+        "sha256": "1c9d2838d5e6c235b3c6773b32e85fafcf4462c886ba73ef59dd1b28a555bed2",
+        "magic": "7f454c46010101000000000000000000"
+      }
+    ],
+    "other_entries": [
+      {
+        "mode": "755",
+        "gid": 0,
+        "uid": 0,
+        "ino": 1,
+        "name": "",
+        "type": 16384
+      },
+      {
+        "mode": "777",
+        "gid": 0,
+        "uid": 0,
+        "ino": 3221225512,
+        "name": "libcpp-ne.so",
+        "type": 40960,
+        "dst": "ibcpp-ne.so.4"
+      }
+    ]
+  }
+]

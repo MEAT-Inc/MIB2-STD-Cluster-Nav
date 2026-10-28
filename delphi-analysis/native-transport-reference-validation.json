@@ -1,0 +1,32 @@
+{
+  "reference": {
+    "packet_size": 188,
+    "packets": 2,
+    "pid_counts": {
+      "0": 1,
+      "16": 1
+    },
+    "pat": {
+      "transport_stream_id": 0,
+      "programs": {
+        "1": 16
+      }
+    },
+    "pmts": {
+      "16": {
+        "program_number": 1,
+        "pcr_pid": 4096,
+        "streams": [
+          {
+            "stream_type": 27,
+            "pid": 17,
+            "descriptors": "2a077fff000005dddf28044280323f"
+          }
+        ]
+      }
+    },
+    "limitation": "No multi-packet PSI/PES reassembly, SPS check, PCR timing analysis or vehicle compatibility validation."
+  },
+  "pat_crc": "0x2d50981b",
+  "pmt_crc": "0xfee61f98"
+}

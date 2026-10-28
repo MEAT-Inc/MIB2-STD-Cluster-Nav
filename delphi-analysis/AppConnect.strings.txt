@@ -1,0 +1,521 @@
+/usr/lib/ldqnx.so.2
+libXMLLib.so
+__cxa_finalize
+abort
+_init
+__deregister_frame_info
+DTS_Client_Get_Frontend
+_fini
+_Jv_RegisterClasses
+__register_frame_info
+malloc
+libXSAL.so
+SAL_Set_Thread_Priority
+SAL_Stat_Queue
+SAL_Undeclare_Urgent
+snprintf
+SAL_Get_Thread_Name_Self
+SAL_Destroy_Timer
+SAL_Subscribe
+getpid
+SAL_Wait_Ready
+SAL_Get_Thread_Priority
+SAL_Run
+SAL_Get_Thread_Id
+SAL_Publish
+SAL_Signal_Ready
+SAL_Start_Timer_Ex
+SAL_Receive
+SAL_Is_Thread_Alive
+SAL_Create_Timer
+SAL_Init
+SAL_Get_Max_Number_Of_Threads
+SAL_Unsubscribe
+SAL_Stop_Timer
+SAL_Exit
+SAL_Wait_Destroyed
+SAL_Sleep
+SAL_Declare_Urgent
+SAL_Create_Thread
+SAL_Get_App_Id
+SAL_Create_Queue
+SAL_Start_Timer
+SAL_Send
+SAL_Get_Config
+libTSD.so
+libDebugTrace.so
+DTS_System_Init
+DTS_Set_Thread_Name_Func_Getter
+realloc
+strlen
+DTS_Client_Prepare_Name
+libUtilities.so
+_Znaj
+_ZNKSt11logic_error4whatEv
+_ZdaPv
+_ZNSs5_GrowEjb
+_ZNSt12length_errorD0Ev
+_ZdlPv
+wmemmove
+__aeabi_atexit
+_Z7wcs2mbsRKSbIwSt11char_traitsIwESaIwEE
+__assert
+_ZNSs5eraseEjj
+_ZNKSt12_String_base5_XlenEv
+_ZTVSt11logic_error
+_ZNKSt12_String_base5_XranEv
+_ZNSt11logic_errorD1Ev
+_ZTVSt12length_error
+_ZNSt12length_errorD1Ev
+_ZNSt9exceptionD2Ev
+_Z7mbs2wcsRKSs
+_ZNKSt12length_error8_DoraiseEv
+_ZNKSt11logic_error8_DoraiseEv
+_ZNSs6assignERKSsjj
+_ZNSt11logic_errorD0Ev
+wmemcpy
+_ZNKSt9exception6_RaiseEv
+_Znwj
+_ZSt6_ThrowRKSt9exception
+wcslen
+libthreadutil.so
+libusbdi.so.2
+libcpp-ne.so.4
+_ZNSbIwSt11char_traitsIwESaIwEE5eraseEjj
+_ZNSsC1EPKc
+_ZTVSt12out_of_range
+_ZNSbIwSt11char_traitsIwESaIwEE5_TidyEbj
+_ZTVSt9exception
+_ZNSt12out_of_rangeD0Ev
+__cxa_pure_virtual
+_ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_jj
+_ZNSt12out_of_rangeD1Ev
+_ZNKSt12out_of_range8_DoraiseEv
+_ZNSbIwSt11char_traitsIwESaIwEE6assignEPKwj
+_ZNSs6assignEPKc
+_ZNSs5_TidyEbj
+libc.so.3
+_init_array
+errno
+_preinit_array
+system
+optarg
+setenv
+_init_libc
+getopt
+_fini_array
+wmemcmp
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+_ZN10SWaPClient10mpInstanceE
+_ZTV12SWaPListener
+_ZTVN3sal6ThreadE
+_ZN3sal6Thread14threadFunctionEPv
+_ZTVN3sal11ApplicationE
+_ZTVN3sal12ActiveObjectE
+_ZTV8SWaPItem
+_ZTVN3sal13PassiveObjectE
+_ZTV10SWaPClient
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/Application/build/../source/Application.cpp
+%s - entry
+parseCommandLineArgs - config file %s
+g:l:t:e:N:v:c:
+%s - exit
+"appconnect"
+%s: [pid: %d] - Logger activated (compilation %s %s)
+Jun 26 2018
+18:21:54
+parseCommandLineArgs
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/Application/build/../source/Dispatcher.cpp
+Dispatcher::onStartingExecute: EV_APP_INITIALIZED published
+invalid map/set<T> iterator
+../../../../sw/AP_XSALcpp/public/salTemplateDispatcher.h
+TemplateDispatcher::onMessage(),No passive object avaliable with id: %d
+assertion failed: isRegistered( passive )
+map/set<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/SUSmartphoneIntegration/build/../source/SmartAppMediaInterface.cpp
+Started passive obj SmartAppMI
+SmartAppMI::onMessage - unhandled event with id %d
+SmartAppMI::Requesting MH for AdvancedConfig info for device %d
+SmartAppMI::Requesting MH for RoleSwitch for ML for device %d
+SmartAppMI::Requesting MH for RoleSwitch for CP for device %d
+SmartAppMI::Requesting MH for RoleSwitch for AA for device %d
+SmartAppMI::Requesting MH for EAP RoleSwitch for CL for device %d
+SmartAppMI::Requesting MH for RoleSwitch for CL over Android device %d
+EV_MH_USB_TOPOLOGY_INFO nodes nb %d
+ EV_MH_USB_TOPOLOGY_INFO node info bus %d, level %d, type %d, ports %d, vendor 0x%04x, product 0x%04x
+EV_MH_USB_DEVICE_INFO:Media reported device status %d Num %d  uniqueid %d  mediatype %d
+EV_MH_ADVANCED_DEVICE_CONFIG_INFO:Media reported device type %d Num %d  uniqueid %d
+EV_MH_REQUEST_FAILED: Media reported devNum %d
+EV_MH_USB_BUS_STATE - Received Bus State as %d Bus Index as %d
+EV_MH_USB_PORT_RESET_DONE for bus %d, level %d port %d
+map/set<T> too long
+../../../../sw/AP_DSI_MIB20_STD/DSIUtils/public/dsiFunktor.h
+ DSIUtil IFunktor::setNotification
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/SUSmartphoneIntegration/build/../source/SUSmartphoneIntegration.cpp
+%s - entry
+SUSmartphoneIntegration::onSUStarting - registration status: DSISmartphoneIntegrationImpl %d, SUSmartphoneIntegration %d
+%s - exit
+SUSmartphoneIntegration::onMessage() - event id %d
+Data is NULL pointer
+ SUSmartphoneIntegration: HISIP: ECD_EV_SUBSCRIBE_SPECIAL_CFM is received 
+Subscription rejected: appId: %d, funcId: %d, error: %d
+ SUSmartphoneIntegration: HISIP: ECD_EV_DATA_IND is received 
+SUSmartphoneIntegration::onMessage() - unhandled event with id %d
+SUSmartphoneIntegration::onMessage() - Sending updateDeviceConnectionStatus to HMI for device %d connection status = %d, mConnectionMethod = %d
+SUSmartphoneIntegration::onMessage() - Sending updateDeviceConnectionStatus to HMI device %d connection status = %d, mConnectionMethod = %d
+SUSmartphoneIntegration::onMessage() - Sending updateDeviceConnectionStatus to HMI  device %d connection status = %d, mConnectionMethod = %d
+SUSmartphoneIntegration::onMessage() - Sending Update to HMI BUS/PORT_RESET_STATUS_UPDATE %d
+SUSmartphoneIntegration::connectDevice - id %d, method %d
+SUSmartphoneIntegration::disconnectDevice - %d
+SUSmartphoneIntegration::requestFactorySettings - mode %d
+SUSmartphoneIntegration::updateDevicesList - number: %d
+SUSmartphoneIntegration::updateDevicesList - mDeviceUnderConnection %d, deviceFound %d
+SUSmartphoneIntegration::updateDevicesList - id %d, connMethod %d
+SUSmartphoneIntegration::updateDevicesList - id: %d, type: %d
+SUSmartphoneIntegration::updateDevicesList - number of devices sent to HMI %d
+SUSmartphoneIntegration::updateDeviceConnectionStatus - for device %d connection status = %d, mConnectionMethod = %d
+SUSmartphoneIntegration::translateDeviceConnectionStatus - unknown status %d
+SUSmartphoneIntegration::updateSWaPStatus DSI mask %#x
+SUSmartphoneIntegration::requestAppConnectContextActive 
+SUSmartphoneIntegration::Sbscription for HISIP message not confirmed
+SUSmartphoneIntegration: HISIP:Process %d ,%d,%d,%d,%d 
+Invalid source(%d)/target(%d)
+SUSmartphoneIntegration: HISIP: APPCONNECT_SET_REQ received with data APPCONNECT_SET_START
+SUSmartphoneIntegration: HISIP: APPCONNECT_SET_REQ received with data APPCONNECT_SET_STOP
+SUSmartphoneIntegration: HISIP: APPCONNECT_SET_REQ received with no valid data %d
+Unexpected data response with app id: %d and function id: %d
+SUSmartphoneIntegration: HISIP: SUSmartPhoneResposneHiSIPMSg : HMI responded and AppConnect is %d
+SUSmartphoneIntegration: HISIP: Setup subscriptions ...
+../../../../sw/AP_DSI_MIB20_STD/DSIUtils/public/dsiUpdateContainer.h
+ DSIUtil UpdateContainer::addUpdater for attribute %d
+assertion failed: mListener != 0
+ DSIUtil UpdateContainer::setNotification for attribute %d
+ DSIUtil UpdateContainer::update for attribute %d
+map/set<T> too long
+vector<T> too long
+invalid map/set<T> iterator
+assertion failed: data.size() == 1 && "dsiutils Funktor1::update wrong number of params"
+DSIUtil Funktor::update called
+ DSIUtil Funktor::update updating value and valid flag
+ DSIUtil Funktor1::fireUpdate
+assertion failed: data.size() == 3 && "dsiutils Funktor3::update wrong number of params"
+DSIUtil Funktor3::update called
+ DSIUtil Funktor3::update updating 3 values and valid flag
+ DSIUtil Funktor3::fireUpdate
+initSUSmartphoneIntegration
+onSUStarting
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/AppConnect/build/../source/AppConnect.cpp
+AppConnect::onMessage - event received with id %d
+AppConnect::onMessage - unhandled event with id %d
+AppConnect::onRegisterListener - registrationSuccess %d
+AppConnect::onSubscribeSWaPItemStatus - subscriptionSucces %d
+AppConnect::onUnsubscribeSWaPItemStatus - unsubscriptionSucces %d
+AppConnect::onSWaPItemStatus - SWaPItem %s, FEC state %d, state change reason %d
+enabled
+disabled
+AppConnect::onSWaPItemStatus - MirrorLink %s
+AppConnect::onSWaPItemStatus - CarPlay %s
+AppConnect::onSWaPItemStatus - AndroidAuto %s
+AppConnect::onSWaPItemStatus - CarLife %s
+DEVICE_CONFIG_INFO device number %d type %d
+DEVICE_CONFIG_INFO device product id 0x%08x vendor id 0x%08x, class code 0x%08x
+printContents() called
+DEVICE_CONFIG_INFO - Surfstick detected, ignoring it
+DEVICE_CONFIG_INFO manufacturer "%s", product "%s", serial number "%s"
+DEVICE_CONFIG_INFO - CarPlay device detected, ignoring it as it is connected to non-OTG
+DEVICE_CONFIG_INFO - update the HMI for ML failure
+DEVICE_CONFIG_INFO - device not in list
+REQUEST_FAILED device number %d
+RESET REQUEST_FAILED -Reset active sent as false to HMI
+REQUEST_FAILED - switch to NCM mode failed for device %d
+REQUEST_FAILED - USB mode reset failed for device %d
+REQUEST_FAILED - unknown request
+USB_SWITCH_TO_NCM_FAILED for non requested device %d
+AppConnect::onMessage- EV_APPCONNECT_BUS_RESET_TIMEOUT received
+Could not find the device for which GAL init failed
+AppConnect::onMessage- EV_APPCONNECT_DEVICE_SWITCH_TO_NCM_TIMEOUT received
+Sending RESET_REQUEST to MediaHandler on handleDeviceSwtchNCMTimeout for device %d
+AppConnect::onMessage- EV_APPCONNECT_DEVICE_CONNECTION_TIMEOUT received
+ device unique id %d
+Sending RESET_REQUEST to MediaHandler for device %d
+Published EV_APPCONNECT_SMART_APP_DISCONNECT  for device %d
+EV_MIRRORLINKAPP_DISCONNECT_DEVICE - unknown device with unique id %d
+USB_BUS_STATE - Received Bus State as %d Bus Index as %d
+DEVICE_STATUS_DISCONNECT - found in list, usbStatus %d
+DEVICE_STATUS_CONNECT - unsupported media type %d
+Handled genric device
+ADVANCED_DEVICE_CONFIG_INFO request to MediaHandler sent for device number %d
+Invalid connection type %d
+DEVICE_CONNECT - device number %d, media type %d, busNum %d, busDevNum %d, busIndex %d, topologyLevel %d
+UNKNOWN - unsupported device status %d
+SmartAppMI::handleDevConnectedPort() Unique Id %d Media %d Port %d added to portlist
+SmartAppMI::handleDevConnectedPort() - PortList  id %d, port %d, size %d
+map/set<T> too long
+list<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/AppConnect/build/../source/SmartAppBase.cpp
+%s - Entry Feature %d %s
+Unsupported
+DeviceList id %d, unique id %d, type %d, status %d, ifaceName '%s', mount path '%s'
+SmartAppBase::doReset - port reset requested for bus %d, level %d, port %d
+SmartAppBase::doReset - bus reset requested
+setenv("SOCK", "%s", 1) failed with %d
+setenv("SOCK", "%s", 1) success
+sysctl -w kern.sbmax=2097152
+handleSyncCarlife
+processConnectedPORT
+handleDevlistUpdate
+updateConnectionState
+update2MLDevicelist
+vncConnectionBroken
+nwInitialized
+nwUninitialized
+requestRemoveDevice
+update2MLDeviceConnectionStatus
+sendMessage2ML
+notSupportedAOAOnMD
+connectDeviceApp
+startPUBService
+stopPUBService
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/AppConnect/build/../source/MirrorlinkAppLink.cpp
+%s - Entry Feature %d %s
+Supported
+printContents() called
+Sending RESET_REQUEST to MediaHandler for device %d
+EV_ML_PUB_SERVICE_STOPPED - connected device not found
+uniqueId: %d : printContents() called
+EV_MIRRORLINKAPP_CONNECT_MIRRORLINK_DEVICE - device already of type SmartAppBase::APP_DEVICE_TYPE_NCM
+ML device %d connected
+EV_MH_USB_REQUEST_DEVICE_SWITCH_TO_NCM sent for device %d
+EV_MIRRORLINKAPP_CONNECT_MIRRORLINK_DEVICE - one device already under connection
+EV_MIRRORLINKAPP_CONNECT_MIRRORLINK_DEVICE - device not in the list, sending FAILED_OTHER
+AppConnect::MIRRORLINKAPP_SWITCH_TO_NCM_SUCCEEDED for non requested device
+AppConnect::EV_APPCONNECT_UNINIT_NETWORK from Requesting Remove device
+EV_MIRRORLINKAPP_REMOVE_DEVICE sent for unknown device 
+NTWK_UNINITIALIZED Uniqueid %d , DeviceNum %d , UninitNtwrkeventval %d 
+NTWK_UNINITIALIZED - EV_REMOVE_DEVICE 
+NTWK_UNINITIALIZED - EV_CONNECTION_TIMEOUT 
+NTWK_UNINITIALIZED - EV_DEVICEINFO_ML__DISCONNECT 
+NTWK_UNINITIALIZED - EV_DISCONNECT_ML_DEVICE 
+NTWK_UNINITIALIZED - EV_VNC_CONN_BROKEN 
+NTWK_UNINITIALIZED - unhandled event with id %d
+initializeNetwork() failed for device with unique id %d
+initializeNetwork() succeeded--waiting for device available event
+nwInitialized - connected device not found
+EV_MIRRORLINKAPP_VNC_CONNECTION_BROKEN - connected device not found
+Mount Path of NCM device is '%s'
+ADVANCED_DEVICE_CONFIG_INFO request to MediaHandler sent for device number %d
+list<T> too long
+vncConnectionBroken
+nwInitialized
+nwUninitialized
+requestRemoveDevice
+startPUBService
+update2MLDeviceConnectionStatus
+connectDeviceApp
+update2MLDevicelist
+sendMessage2ML
+stopPUBService
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/AppConnect/build/../source/CarPlayLink.cpp
+%s - Entry Feature %d %s
+Supported
+printContents() called
+Sending RESET_REQUEST to MediaHandler for device %d
+EV_CP_PUB_SERVICE_STOPPED - connected device not found
+ Device does not exist Carplay start service failure
+uniqueId : %d :printContents() called
+EV_MIRRORLINKAPP_CONNECT_CARPLAY_DEVICE - device already of type SmartAppBase::APP_DEVICE_TYPE_IPOD_NCM_D
+iPod device %d connected
+EV_MH_USB_REQUEST_DEVICE_SWITCH_TO_CARPLAY sent for device %d
+EV_MIRRORLINKAPP_CONNECT_CARPLAY_DEVICE - one device already under connection
+EV_MIRRORLINKAPP_CONNECT_CARPLAY_DEVICE - device not in the list, sending FAILED_OTHER
+Mount Path of iPod NCM device is '%s'
+CarPlay NCM device %d connected
+ADVANCED_DEVICE_CONFIG_INFO request to MediaHandler sent for device number %d
+processConnectedPORT busIndex %d, topology Level %d mUSBPortType %d
+list<T> too long
+connectDeviceApp
+startPUBService
+stopPUBService
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/AppConnect/build/../source/AndroidAppLink.cpp
+%s - Entry Feature %d %s
+Supported
+printContents() called
+Sending RESET_REQUEST to MediaHandler for device %d
+EV_AA_PUB_SERVICE_STOPPED - connected device not found
+ Device does not exist Android Auto start service failure
+Sending RESET_REQUEST to MediaHandler since GAL init failed
+EV_AA_PUB_SERVICE_AOAP_NOT_SUPPORTED_ON_MD - unknown device with unique id
+ Unique ID :%d :printContents() called
+EV_MIRRORLINKAPP_CONNECT_ANDROIDAUTO_DEVICE - device already of type SmartAppBase::APP_DEVICE_TYPE_AOA
+AOA device %d connected
+EV_MH_USB_REQUEST_DEVICE_SWITCH_TO_AOA sent for device %d
+EV_MIRRORLINKAPP_CONNECT_ANDROIDAUTO_DEVICE - one device already under connection
+EV_MIRRORLINKAPP_CONNECT_ANDROIDAUTO_DEVICE - device not in the list, sending FAILED_OTHER
+Mount Path of AOA device is '%s'
+ADVANCED_DEVICE_CONFIG_INFO request to MediaHandler sent for device number %d
+list<T> too long
+connectDeviceApp
+notSupportedAOAOnMD
+startPUBService
+stopPUBService
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/AppConnect/build/../source/CarLifeLink.cpp
+%s - Entry Feature %d %s
+Supported
+printContents() called
+Sending RESET_REQUEST to MediaHandler for device %d
+EV_CP_PUB_SERVICE_STOPPED - connected device not found
+ Device does not exist Carlife start service failure
+uniqueId : %d :printContents() called
+device switch requested for carlifeAOA for Android %d media type 
+device switch requested for carlifeAOA for Other %d media type
+EV_MIRRORLINKAPP_CONNECT_CARLIFE_DEVICE - device already of type SmartAppBase::APP_DEVICE_TYPE_AOA
+AOA device %d connected
+EV_MH_USB_REQUEST_DEVICE_SWITCH_TO_AOA_BCL sent for Android device %d
+EV_MIRRORLINKAPP_CONNECT_CARLIFE_DEVICE - one device already under connection
+EV_MIRRORLINKAPP_CONNECT_CARLIFE_DEVICE - device not in the list, sending FAILED_OTHER
+EV_MIRRORLINKAPP_CONNECT_CARLIFE_DEVICE - device already of type SmartAppBase::APP_DEVICE_TYPE_IPOD_NCM_D_CL
+iPod device %d connected
+EV_MH_USB_REQUEST_DEVICE_SWITCH_TO_CARLIFE sent for iOS device %d
+Mount Path of CarLife device is '%s'
+CarLife device %d connected with media type %d
+EV_APPCONNECT_CL_SMART_APP_CONNECT sent for CarLife device %d
+ADVANCED_DEVICE_CONFIG_INFO request to MediaHandler sent for device number %d
+processConnectedPORT busIndex %d, topology Level %d mUSBPortType %d
+list<T> too long
+connectDeviceApp
+startPUBService
+stopPUBService
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_AppConnect_MIB20_STD/AppConnectSystemProxy/build/../source/AppConnectSystemProxy.cpp
+Invalid or New App type
+list<T> too long
+onStopping
+onStarting
+deleteInstance
+querySWaPItemStatus
+unsubscribeSWaPItemStatus
+subscribeSWaPItemStatus
+unregisterListener
+registerListener
+~SWaPClient
+SWaPClient
+createInstance
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_SWaP_MIB20_STD/SWaPClient/build/../source/SWaPClient.cpp
+%s - entry
+%s - exit
+SWaPClient::onMessage - unexpected message with event id: %d
+SWaPListener
+~SWaPListener
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_SWaP_MIB20_STD/SWaPClient/build/../source/SWaPListener.cpp
+isSpecialContainedMFSID
+operator>>
+operator<<
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_SWaP_MIB20_STD/SWaPClient/build/../source/SWaPItem.cpp
+SWaPItem::isSpecialContainedMFSID - Is FSID(0x%08x) Special? %d 
+calling the getloadedstatus %d
+SWaPItem::operator >> - item id: 0x%04x, variant: 0x%02x, version: 0x%02x
+SWaPItem::operator << - item id: 0x%04x, variant: 0x%02x, version: 0x%02x
+item id 0x%04x, variant 0x%02x, version 0x%02x
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSISmartphoneIntegrationImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salActiveObject.cpp
+assertion failed: SAL_Get_Thread_Id() == getId()
+SAL_Create_Queue() failure
+SAL_Receive() failure
+Alive ActiveObject cannot be destroyed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salApplication.cpp
+assertion failed: appId > 1
+assertion failed: maxNumberOfThreads > 0
+assertion failed: appId >= std::numeric_limits<SAL_App_Id_T>::min() && appId <= std::numeric_limits<SAL_App_Id_T>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salException.cpp
+assertion failed: h != 0
+Resource fatal error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salIByteBuffer.cpp
+assertion failed: mPosition + sizeof( d ) <= mSize
+assertion failed: position < mSize
+assertion failed: mPosition + bytes <= mSize
+assertion failed: !( d == 0 && s > 0 )
+assertion failed: mPosition + s <= mSize
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salMessage.cpp
+assertion failed: msg != 0
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salOByteBuffer.cpp
+assertion failed: d != 0
+assign
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salThread.cpp
+assertion failed: name != 0 && ! isAlive()
+assertion failed: p!=0
+cstr != 0
+../public/salFixedString.h
+assertion failed: threadName != 0
+assertion failed: SAL_UNKNOWN_THREAD_ID == threadId || (threadId > 0 && threadId <= static_cast<int>( getMaxNumberOfThreads() ) )
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salTimer.cpp
+assertion failed: objectId >= -32768 && objectId <= 32767
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salUtils.cpp
+assertion failed: eventId >= std::numeric_limits<int16_t>::min() && eventId <= std::numeric_limits<int16_t>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salError.cpp
+Allocation fatal error
+Lock fatal error
+Resource fatal error
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.interp
+.note
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

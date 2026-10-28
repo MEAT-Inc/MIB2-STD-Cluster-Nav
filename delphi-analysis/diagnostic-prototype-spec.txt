@@ -1,0 +1,129 @@
+Diagnostic prototype gate: application registration observation
+==========================================================
+2026-10-28. OFFLINE SPECIFICATION AND HOST MODEL ONLY.
+No shim, installer, hook, remote execution, discovery edits or video changes.
+Acquired ARM files were read as data; no acquired code was executed.
+
+Decision
+--------
+Use the application's existing call to exported
+_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase as the first candidate
+observation boundary. Do not depend on interposition of the receiver library's
+internal marshallProto calls. This chooses an observable application-to-library
+boundary; it does NOT prove that the QNX loader can interpose it.
+
+Instruction evidence
+--------------------
+AndroidAuto 0x124e30-0x124e50 obtains the receiver in r0 and an existing endpoint
+in r1, then calls PLT 0x104df4 at 0x124e50. The application stores returned r0's
+low byte at 0x124e58, then reads it with ldrb at 0x124e5c. Do not infer a void
+return from a mangled name. The caller consumes a byte, while the proposed
+observer must preserve raw r0; the complete language-level return type remains
+to be confirmed. Additional application calls use the same PLT symbol; restrict
+initial observation to the identified caller, or explicitly label all callers.
+At this callsite native LR is 0x124e54 before runtime load relocation.
+GalReceiver implementation 0x76fac delegates to MessageRouter::registerService
+0x7f54c. The latter inspects endpoint byte+0x0c. First probe must not dereference
+this object or interpret the service byte. Its pointer identity is sufficient.
+Addresses are link-time VAs for this sample, NOT runtime addresses or offsets
+safe to apply to any other build. See existing android-discovery assembly/index.
+
+Additional callback/lifetime recovery
+-------------------------------------
+VideoSink::handleDataAvailable 0x8d9e0-0x8da38 reads callback object from sink+0x38
+and invokes its vtable address point +0x0c (fourth 32-bit entry). Immediately
+before blx at 0x8da30:
+  r0 = callback object; r1 = sink word+0x18 (media-session value);
+  r2/r3 = original uint64 argument, unchanged along this body;
+  stack+0 = address of original shared_ptr<IoBuffer> holder (borrowed reference);
+  stack+4 = buffer backing + start + incoming data offset;
+  stack+8 = end - start - incoming data offset.
+The uint64 identity follows the mangled Ey argument and register dataflow;
+its clock units and language-level callback return type remain unresolved.
+No callback reference is copied or retained in this forwarding body. The data
+pointer is an interior borrowed pointer. This is not evidence that a new consumer
+may hold it after return without acquiring ownership. No bounds validation is
+visible here; do not reproduce unchecked pointer arithmetic in a new consumer.
+
+VideoSink::handleVideoFocusRequest 0x8db04-0x8db30 invokes callback vtable+0x24:
+r0 callback, r1 notification word+8, r2 notification word+0x0c if hasbits+0x14
+mask0x4 is set, otherwise zero. Callback return is ignored; sink returns r0=1.
+Field semantics require schema confirmation. This pass does not claim to have
+recovered all callback slots or a complete VideoSink vtable.
+
+shared_ptr<IVideoSinkCallbacks> destructor 0x8e1e8 uses holder+0 refcount pointer,
+holder+4 object pointer. atomic_sub_value(count,1) returning old value 1 triggers
+last-owner cleanup: if object nonnull, call object's virtual slot+4; zero object
+word; operator delete(refcount); zero count word. Application helper 0x11c354
+corroborates this sequence. Virtual +4 is consistent with the deleting destructor
+slot; its implementation and allocator identity still need independent proof.
+If old count was not 1, the holder's words are not cleared by this destructor.
+Never fabricate std::shared_ptr layout, call delete on an interior buffer, or
+retain a borrowed holder pointer. Application adapter allocation is only 8 bytes
+at 0x124d04; constructor 0x125ca0 writes its vptr and owner pointer at+4.
+
+Concrete first diagnostic specification (not a loadable implementation)
+----------------------------------------------------------------------
+Inputs captured at the selected native call boundary: receiver r0, endpoint r1,
+caller LR, runtime module/build identity and per-thread sequence identifier.
+Emit bounded register.enter metadata, forward original exactly once, then emit
+register.leave with raw returned r0 and the same sequence identifier. No endpoint
+or callback dereferences, ownership changes, payload bytes, protobuf parsing,
+media requests, endpoint registration beyond the original call, focus or ack
+changes. Native arguments, return, stack alignment, callee-saved registers and
+unwind behavior must remain identical. Return the original result unchanged.
+
+Use an already-open nonblocking diagnostic sink or fixed-size bounded ring after
+its synchronization is proven; drop diagnostic records on full/failure. No file
+opening, heap allocation, blocking I/O, formatted strings, or recursion into the
+receiver in the critical call path. A thread-local recursion guard suppresses
+nested diagnostics only, never suppresses/retries native calls. Balance records
+with sequence/thread identity; an exceptional/nonreturning native call can leave
+an enter without leave. Record drops explicitly with a saturating counter.
+These are requirements for a future implementation, not properties proven by
+Python. Logging may affect timing even when bounded; compare stock behavior.
+
+Host scaffold and validation
+----------------------------
+scripts/diagnostic_logging_model.py is standard-library Python only. It
+accepts synthetic scalar words, forwards a supplied host function exactly once,
+preserves its raw uint32 return, tolerates logging failure, bounds stored events
+and propagates host native exceptions without retry. Five tests PASS using the
+bundled Python runtime, -B. No existing wire/buffer fixtures were modified or
+rerun. This model neither captures ARM registers nor resolves native symbols.
+It does not model concurrent ring writes, TLS, sequence pairing, timing, native
+unwinding, or QNX signal safety; those remain implementation gates.
+
+Unresolved requirements before any native diagnostic exists
+-----------------------------------------------------------
+1. Matching licensed/available QNX ARM toolchain/sysroot, ARM EABI/hard/soft-float
+   attributes, linker flags, C++/exception ABI, libc/atomic runtime and alignment.
+2. Confirm live module identity/load bias and actual application PLT binding;
+   choose and prove a reversible launch/resolution method. LD_PRELOAD or RTLD_NEXT
+   behavior, namespace visibility, recursion and original-symbol resolution are
+   NOT established by ELF relocations. No launch method is supplied here.
+3. Recover exact exported registerService return ABI and any exception contract;
+   verify symbol ownership/versioning and preserve native registers/unwinding.
+4. Review bounded logger implementation and synchronization; prove zero pointer
+   retention/refcount perturbation and log failure pass-through on host/native
+   test programs before a separately authorized vehicle diagnostic.
+5. Prepare reversible startup/rollback with stock executable and baseline logs.
+   A future logging-only observation proves invocation/binding only. It cannot
+   prove spare service IDs, callback lifetime safety for a new sink, phone support,
+   second video reception, geometry, stream compatibility or native-map ownership.
+
+Sample identities (SHA256)
+--------------------------
+AndroidAuto:
+DA1FD5776F6B85962B84AD77C6F564D3F09DD8079652229CDA57B4138060C271
+libautoreceiver.so:
+E14AA58D7867955D968D291FD43B941223FB5072CA7184D8885EF40F2323C92D
+
+
+
+2026-10-28 IMPLEMENTATION SUPERSESSION
+The native implementation deliberately uses entry-only tail forwarding rather
+than enter/leave interception, preserving the native return/exception path without
+a live wrapper frame. See PRODUCTION-OBSERVER-RESULTS.txt and native/observer/README.txt
+for tested behavior and remaining vehicle gates. Earlier requirements/status above
+are retained as historical specification, not a claim that all remain unresolved.

@@ -1,0 +1,29 @@
+Delphi native diagnostic progress - 2026-10-28
+
+The isolated QNX launch-mechanism gate is RESOLVED. See
+LAUNCH-MECHANISM-RESOLVED.txt for the root cause, corrected test, and raw evidence.
+The previous ENOENT was caused by the emulator IFS run-once data=uip default,
+not a demonstrated LD_PRELOAD limitation. data=copy fixes it. A failing control
+reproduces ENOENT on a second BASELINE run without preloading; the fixed image
+passes all eight baseline/preload/repeat/linked/restoration cases.
+
+Native synthetic C observer and ARM QNX toolchain exist. Host cases pass;
+QNX baseline, LD_PRELOAD (absolute/basename), RTLD_NEXT forwarding and return to
+a fresh stock process pass in emulation. Five artifacts pass static ELF checks.
+
+This is still a synthetic single-thread fixture, not the full observer specified
+in diagnostic-prototype-spec.txt. Real Delphi application binding, concurrency,
+exceptions/unwinding, module validation and supervisor-aware reversible restart
+remain future gates. Do not load the synthetic fixture into AndroidAuto.
+No vehicle connection or modification occurred. No reconnection is needed yet.
+
+Reproduce:
+  .\scripts\test_qnx_probe.ps1
+Optional image rebuild:
+  .\scripts\test_qnx_probe.ps1 -BuildToolchain -BuildEmulator
+Static ELF report:
+  python -B scripts/validate_qnx_probe.py
+
+2026-10-28 implementation completed
+The native entry-only observer is built and passes host/QNX ARM and packaging gates.
+See PRODUCTION-OBSERVER-RESULTS.txt. Vehicle runtime verification remains pending.

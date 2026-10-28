@@ -1,0 +1,728 @@
+
+FILE delphi-dump\extbin\apps\bin\AndroidAuto
+STRING TARGETS {'0x16c1b4': 'AaVideoSink.cpp', '0x170044': 'serviceDiscoveryRequestCallback', '0x16c740': 'addSupportedConfigurations'}
+POINTER FILE OFFSETS AaVideoSink.cpp: []
+POINTER FILE OFFSETS serviceDiscoveryRequestCallback: []
+POINTER FILE OFFSETS addSupportedConfigurations: []
+
+FILE delphi-dump\extbin\apps\bin\ClusterServices
+STRING TARGETS {'0x1841bf': 'Registering GfxStreamSink on MOST'}
+XREF Registering GfxStreamSink on MOST @ 0x115978 literal 0x115a30
+00115948 bl       #0x17c8d8
+0011594c mov      r5, #1
+00115950 strb     r5, [r4, #0x86]
+00115954 bl       #0x1045a0
+00115958 mov      r1, #4
+0011595c ldr      ip, [r0, #0x1c]
+00115960 mov      r0, r5
+00115964 blx      ip
+00115968 cmp      r0, #0
+0011596c beq      #0x115998
+00115970 bl       #0x1045a0
+00115974 mov      r1, #0xeb
+00115978 ldr      r3, [pc, #0xb0]
+0011597c stm      sp, {r1, r3}
+00115980 mov      r1, #4
+00115984 ldr      ip, [r0, #0x2c]
+00115988 ldr      r2, [pc, #0xa4]
+0011598c mov      r0, r5
+00115990 ldr      r3, [pc, #0xa0]
+00115994 blx      ip
+00115998 bl       #0x117c60
+0011599c ldrb     r2, [r0, #0x14]
+001159a0 cmp      r2, #0
+001159a4 bne      #0x115a28
+001159a8 bl       #0x117c60
+001159ac mov      ip, #1
+001159b0 add      r3, sp, #0x18
+001159b4 strb     ip, [r0, #0x14]
+001159b8 mov      r1, ip
+001159bc mov      r0, #2
+001159c0 movw     r2, #0x5d7
+001159c4 strb     r0, [r3, #-1]!
+001159c8 mov      r0, #0x22
+001159cc str      ip, [sp]
+001159d0 bl       #0x130ba0
+001159d4 b        #0x115a28
+001159d8 bl       #0x1045a0
+001159dc mov      r1, #4
+001159e0 ldr      r3, [r0, #0x1c]
+001159e4 mov      r0, #1
+001159e8 blx      r3
+001159ec cmp      r0, #0
+001159f0 beq      #0x115a28
+001159f4 bl       #0x1045a0
+001159f8 ldrb     r3, [r4, #0x87]
+001159fc mov      r2, #0xf8
+00115a00 str      r3, [sp, #8]
+POINTER FILE OFFSETS Registering GfxStreamSink on MOST: ['0x15a30']
+
+FILE delphi-dump\extbin\apps\bin\NavigationServer
+STRING TARGETS {'0x51c5b9': '/dev/transport_server/spawn/isoTX', '0x52fbfc': '::renderedFPK(..) VE_Encode', '0x53dd8d': '::transportStreamPackagesReady('}
+XREF /dev/transport_server/spawn/isoTX @ 0x1b428c literal 0x1b3bbc
+001b425c blx      ip
+001b4260 add      r1, sp, #0x220
+001b4264 mov      lr, #0
+001b4268 add      r0, r5, #4
+001b426c strb     lr, [r1, #-1]!
+001b4270 bl       #0x3e0ba4
+001b4274 bl       #0x1b5374
+001b4278 subs     r4, r0, #0
+001b427c beq      #0x1b42c0
+001b4280 bl       #0x1b5374
+001b4284 add      r4, sp, #0x88
+001b4288 mov      r6, r0
+001b428c ldr      r1, [pc, #-0x6d8]
+001b4290 mov      r0, r4
+001b4294 ldrb     r5, [sp, #0x21f]
+001b4298 bl       #0x13a698
+001b429c rsbs     r5, r5, #1
+001b42a0 movlo    r5, #0
+001b42a4 mov      r0, r6
+001b42a8 mov      r1, r5
+001b42ac mov      r2, r4
+001b42b0 bl       #0x21eaac
+001b42b4 mov      r0, r4
+001b42b8 bl       #0x1265dc
+001b42bc b        #0x1b4560
+001b42c0 bl       #0x1233b0
+001b42c4 mov      r1, #3
+001b42c8 ldr      r3, [r0, #0x1c]
+001b42cc mov      r0, r4
+001b42d0 blx      r3
+001b42d4 cmp      r0, #0
+001b42d8 beq      #0x1b4560
+001b42dc bl       #0x1233b0
+001b42e0 movw     r1, #0x696
+001b42e4 ldr      r2, [pc, #-0x72c]
+001b42e8 stm      sp, {r1, r2}
+001b42ec mov      r1, #3
+001b42f0 ldr      ip, [r0, #0x2c]
+001b42f4 ldr      r2, [pc, #-0x72c]
+001b42f8 mov      r0, r4
+001b42fc ldr      r3, [pc, #-0x730]
+001b4300 blx      ip
+001b4304 b        #0x1b4560
+001b4308 bl       #0x1233b0
+001b430c mov      r1, #5
+001b4310 ldr      r4, [r0, #0x1c]
+001b4314 mov      r0, #0x10
+XREF /dev/transport_server/spawn/isoTX @ 0x1b4378 literal 0x1b3bbc
+001b4348 blx      ip
+001b434c add      r1, sp, #0x220
+001b4350 mov      lr, #0
+001b4354 add      r0, r5, #4
+001b4358 strb     lr, [r1, #-1]!
+001b435c bl       #0x3e0ba4
+001b4360 bl       #0x1b5374
+001b4364 subs     r4, r0, #0
+001b4368 beq      #0x1b43ac
+001b436c bl       #0x1b5374
+001b4370 add      r4, sp, #0x6c
+001b4374 mov      r6, r0
+001b4378 ldr      r1, [pc, #-0x7c4]
+001b437c ldrb     r0, [sp, #0x21f]
+001b4380 rsbs     r5, r0, #1
+001b4384 movlo    r5, #0
+001b4388 mov      r0, r4
+001b438c bl       #0x13a698
+001b4390 mov      r0, r6
+001b4394 mov      r1, r5
+001b4398 mov      r2, r4
+001b439c bl       #0x1e4744
+001b43a0 mov      r0, r4
+001b43a4 bl       #0x1265dc
+001b43a8 b        #0x1b4560
+001b43ac bl       #0x1233b0
+001b43b0 mov      r1, #3
+001b43b4 ldr      ip, [r0, #0x1c]
+001b43b8 mov      r0, r4
+001b43bc blx      ip
+001b43c0 cmp      r0, #0
+001b43c4 beq      #0x1b4560
+001b43c8 bl       #0x1233b0
+001b43cc movw     r3, #0x6aa
+001b43d0 ldr      r1, [pc, #-0x818]
+001b43d4 str      r3, [sp]
+001b43d8 str      r1, [sp, #4]
+001b43dc ldr      r2, [pc, #-0x814]
+001b43e0 ldr      ip, [r0, #0x2c]
+001b43e4 mov      r1, #3
+001b43e8 mov      r0, r4
+001b43ec ldr      r3, [pc, #-0x820]
+001b43f0 blx      ip
+001b43f4 b        #0x1b4560
+001b43f8 bl       #0x1233b0
+001b43fc mov      r1, #5
+001b4400 ldr      r2, [r0, #0x1c]
+XREF ::renderedFPK(..) VE_Encode @ 0x1f5818 literal 0x1f5bd0
+001f57e8 str      r5, [sp, #0x30]
+001f57ec ldr      r1, [r0]
+001f57f0 str      r1, [sp, #0x24]
+001f57f4 bl       #0x1233b0
+001f57f8 mov      r1, #5
+001f57fc ldr      r2, [r0, #0x1c]
+001f5800 mov      r0, #0x10
+001f5804 blx      r2
+001f5808 cmp      r0, #0
+001f580c beq      #0x1f5838
+001f5810 bl       #0x1233b0
+001f5814 mov      r2, #0x290
+001f5818 ldr      ip, [pc, #0x3b0]
+001f581c stm      sp, {r2, ip}
+001f5820 mov      r1, #5
+001f5824 ldr      r7, [r0, #0x2c]
+001f5828 ldr      r2, [pc, #0x390]
+001f582c mov      r0, #0x10
+001f5830 ldr      r3, [pc, #0x38c]
+001f5834 blx      r7
+001f5838 ldr      r0, [r4, #0xf4]
+001f583c add      r1, sp, #0x24
+001f5840 add      r2, sp, #0x38
+001f5844 movw     r3, #0x1388
+001f5848 bl       #0x2540d0
+001f584c subs     r5, r0, #0
+001f5850 bne      #0x1f598c
+001f5854 bl       #0x1233b0
+001f5858 mov      r1, #5
+001f585c ldr      r3, [r0, #0x1c]
+001f5860 mov      r0, #0x10
+001f5864 blx      r3
+001f5868 cmp      r0, #0
+001f586c beq      #0x1f58c4
+001f5870 bl       #0x1233b0
+001f5874 ldr      r1, [pc, #0x350]
+001f5878 mov      r3, #0x298
+001f587c ldr      r5, [r1]
+001f5880 ldr      r2, [pc, #0x34c]
+001f5884 str      r3, [sp]
+001f5888 stmib    sp, {r2, r5}
+001f588c ldr      r1, [sp, #0x3c]
+001f5890 ldr      ip, [r4, #0x120]
+001f5894 ldr      r6, [sp, #0x40]
+001f5898 str      ip, [sp, #0xc]
+001f589c ldr      r2, [pc, #0x31c]
+001f58a0 ldr      r7, [r4, #0xf0]
+XREF ::transportStreamPackagesReady( @ 0x22cd08 literal 0x22d198
+0022ccd8 mov      r5, r1
+0022ccdc mov      r8, r2
+0022cce0 mov      r7, r0
+0022cce4 bl       #0x1233b0
+0022cce8 mov      r1, #7
+0022ccec ldr      r3, [r0, #0x1c]
+0022ccf0 mov      r0, #0x10
+0022ccf4 blx      r3
+0022ccf8 cmp      r0, #0
+0022ccfc beq      #0x22cd34
+0022cd00 bl       #0x1233b0
+0022cd04 movw     r2, #0x316
+0022cd08 ldr      r1, [pc, #0x488]
+0022cd0c str      r2, [sp]
+0022cd10 stmib    sp, {r1, r7}
+0022cd14 str      r5, [sp, #0xc]
+0022cd18 str      r8, [sp, #0x10]
+0022cd1c mov      r1, #7
+0022cd20 ldr      ip, [r0, #0x2c]
+0022cd24 ldr      r2, [pc, #0x470]
+0022cd28 mov      r0, #0x10
+0022cd2c ldr      r3, [pc, #0x46c]
+0022cd30 blx      ip
+0022cd34 cmp      r8, #0
+0022cd38 cmpne    r7, #0
+0022cd3c moveq    r4, #0
+0022cd40 movne    r4, #1
+0022cd44 beq      #0x22d128
+0022cd48 cmp      r5, #0
+0022cd4c beq      #0x22d0d4
+0022cd50 ldr      r4, [pc, #0x44c]
+0022cd54 ldr      r1, [pc, #0x444]
+0022cd58 ldr      r0, [r4]
+0022cd5c add      r0, r0, #0xc4
+0022cd60 bl       #0x2002c8
+0022cd64 subs     r6, r0, #0
+0022cd68 bne      #0x22d084
+0022cd6c add      sl, sp, #0x44
+0022cd70 add      r3, sp, #0xcc
+0022cd74 mov      r8, r6
+0022cd78 add      lr, r3, #4
+0022cd7c add      fp, sl, #8
+0022cd80 str      lr, [sp, #0x3c]
+0022cd84 str      r6, [sp, #0x1c]
+0022cd88 b        #0x22d070
+0022cd8c ldr      sb, [r4]
+0022cd90 ldr      r0, [sb, #0x128]
+POINTER FILE OFFSETS /dev/transport_server/spawn/isoTX: ['0xb3bbc']
+POINTER FILE OFFSETS ::renderedFPK(..) VE_Encode: ['0xf5bd0']
+POINTER FILE OFFSETS ::transportStreamPackagesReady(: ['0x12d198']
+
+FILE delphi-dump\extbin\apps\lib\libautoreceiver.so
+FIELD _ZN24ServiceDiscoveryResponse26kDriverPositionFieldNumberE: 6
+FIELD _ZN18VideoConfiguration34kDecoderAdditionalDepthFieldNumberE: 6
+FIELD _ZN24ServiceDiscoveryResponse16kYearFieldNumberE: 4
+FIELD _ZN24ServiceDiscoveryResponse33kHeadUnitSoftwareBuildFieldNumberE: 9
+FIELD _ZN16MediaSinkService24kAudioConfigsFieldNumberE: 3
+FIELD _ZN18VideoConfiguration21kFrameRateFieldNumberE: 2
+FIELD _ZN24ServiceDiscoveryResponse16kMakeFieldNumberE: 2
+FIELD _ZN18VideoConfiguration23kWidthMarginFieldNumberE: 3
+FIELD _ZN16MediaSinkService24kVideoConfigsFieldNumberE: 4
+FIELD _ZN18VideoConfiguration19kDensityFieldNumberE: 5
+FIELD _ZN16MediaSinkService21kAudioTypeFieldNumberE: 2
+FIELD _ZN24ServiceDiscoveryResponse20kServicesFieldNumberE: 1
+FIELD _ZN24ServiceDiscoveryResponse24kHeadUnitMakeFieldNumberE: 7
+FIELD _ZN7Service28kMediaSinkServiceFieldNumberE: 3
+FIELD _ZN18VideoConfiguration27kViewingDistanceFieldNumberE: 7
+FIELD _ZN24ServiceDiscoveryResponse25kHeadUnitModelFieldNumberE: 8
+FIELD _ZN24ServiceDiscoveryResponse32kSessionConfigurationFieldNumberE: 13
+FIELD _ZN24ServiceDiscoveryResponse38kCanPlayNativeMediaDuringVrFieldNumberE: 11
+FIELD _ZN16MediaSinkService32kAvailableWhileInCallFieldNumberE: 5
+FIELD _ZN16MediaSinkService25kAvailableTypeFieldNumberE: 1
+FIELD _ZN24ServiceDiscoveryResponse21kVehicleIdFieldNumberE: 5
+FIELD _ZN24ServiceDiscoveryResponse35kHeadUnitSoftwareVersionFieldNumberE: 10
+FIELD _ZN18VideoConfiguration24kHeightMarginFieldNumberE: 4
+FIELD _ZN24ServiceDiscoveryResponse17kModelFieldNumberE: 3
+FIELD _ZN18VideoConfiguration30kPixelAspectRatioE4FieldNumberE: 8
+FIELD _ZN18VideoConfiguration27kCodecResolutionFieldNumberE: 1
+
+FUNCTION _ZN9VideoSink16addDiscoveryInfoEP24ServiceDiscoveryResponse 0x8dc90
+0008dc90 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr} 
+0008dc94 sub      sp, sp, #0x14 
+0008dc98 mov      r7, r0 
+0008dc9c mov      r4, r1 
+0008dca0 ldr      r3, [r1, #8] 
+0008dca4 ldr      r1, [r1, #0xc] 
+0008dca8 cmp      r3, r1 
+0008dcac bge      #0x8dcc4 
+0008dcb0 ldr      r2, [r4, #4] 
+0008dcb4 ldr      r5, [r2, r3, lsl #2] 
+0008dcb8 add      r3, r3, #1 
+0008dcbc str      r3, [r4, #8] 
+0008dcc0 b        #0x8dd24 
+0008dcc4 ldr      r3, [r4, #0x10] 
+0008dcc8 cmp      r1, r3 
+0008dccc bne      #0x8dcdc 
+0008dcd0 add      r0, r4, #4 
+0008dcd4 add      r1, r1, #1 
+0008dcd8 bl       #0x6af68 
+0008dcdc ldr      r3, [r4, #0xc] 
+0008dce0 add      r3, r3, #1 
+0008dce4 str      r3, [r4, #0xc] 
+0008dce8 mov      r0, #0x40 
+0008dcec bl       #0x6d44c 
+0008dcf0 mov      r6, r0 
+0008dcf4 mov      r5, r0 
+0008dcf8 bl       #0x6b5b0 
+0008dcfc b        #0x8dd14 
+0008dd00 mov      r4, r0 
+0008dd04 mov      r0, r6 
+0008dd08 bl       #0x69d98 
+0008dd0c mov      r0, r4 
+0008dd10 bl       #0x6b688 
+0008dd14 ldmib    r4, {r2, r3} 
+0008dd18 str      r6, [r2, r3, lsl #2] 
+0008dd1c add      r3, r3, #1 
+0008dd20 str      r3, [r4, #8] 
+0008dd24 ldr      r3, [r5, #0x3c] 
+0008dd28 ldrb     r2, [r7, #0xc] 
+0008dd2c str      r2, [r5, #0x34] 
+0008dd30 orr      r3, r3, #5 
+0008dd34 str      r3, [r5, #0x3c] 
+0008dd38 ldr      r3, [r5, #8] 
+0008dd3c cmp      r3, #0 
+0008dd40 bne      #0x8dd74 
+0008dd44 mov      r0, #0x58 
+0008dd48 bl       #0x6d44c 
+0008dd4c mov      r6, r0 
+0008dd50 mov      r4, r0 
+0008dd54 bl       #0x6b5bc 
+0008dd58 b        #0x8dd70 
+0008dd5c mov      r4, r0 
+0008dd60 mov      r0, r6 
+0008dd64 bl       #0x69d98 
+0008dd68 mov      r0, r4 
+0008dd6c bl       #0x6b688 
+0008dd70 str      r6, [r5, #8] 
+0008dd74 ldr      r5, [r5, #8] 
+0008dd78 ldr      r3, [r7, #0x14] 
+0008dd7c ldr      r2, [r5, #0x54] 
+0008dd80 orr      r2, r2, #1 
+0008dd84 str      r2, [r5, #0x54] 
+0008dd88 str      r3, [r5, #4] 
+0008dd8c add      r3, r5, #0x2c 
+0008dd90 str      r3, [sp, #4] 
+0008dd94 ldr      r6, [r7, #0x40] 
+0008dd98 mov      r8, #1 
+0008dd9c mov      fp, #0x2c 
+0008dda0 mov      sb, #0 
+0008dda4 b        #0x8df60 
+0008dda8 ldr      r3, [r6, #4] 
+0008ddac str      r3, [sp, #0xc] 
+0008ddb0 ldr      r0, [r6] 
+0008ddb4 str      r0, [sp, #8] 
+0008ddb8 cmp      r0, #0 
+0008ddbc beq      #0x8ddc8 
+0008ddc0 mov      r1, r8 
+0008ddc4 bl       #0x6a638 
+0008ddc8 ldr      r3, [r5, #0x30] 
+0008ddcc ldr      r1, [r5, #0x34] 
+0008ddd0 cmp      r3, r1 
+0008ddd4 bge      #0x8ddec 
+0008ddd8 ldr      r2, [r5, #0x2c] 
+0008dddc ldr      r4, [r2, r3, lsl #2] 
+0008dde0 add      r3, r3, #1 
+0008dde4 str      r3, [r5, #0x30] 
+0008dde8 b        #0x8de4c 
+0008ddec ldr      r3, [r5, #0x38] 
+0008ddf0 cmp      r1, r3 
+0008ddf4 bne      #0x8de04 
+0008ddf8 ldr      r0, [sp, #4] 
+0008ddfc add      r1, r1, #1 
+0008de00 bl       #0x6af68 
+0008de04 ldr      r3, [r5, #0x34] 
+0008de08 add      r3, r3, #1 
+0008de0c str      r3, [r5, #0x34] 
+0008de10 mov      r0, fp 
+0008de14 bl       #0x6d44c 
+0008de18 mov      sl, r0 
+0008de1c mov      r4, r0 
+0008de20 bl       #0x69858 
+0008de24 b        #0x8de38 
+0008de28 mov      r4, r0 
+0008de2c mov      r0, sl 
+0008de30 bl       #0x69d98 
+0008de34 b        #0x8df08 
+0008de38 ldr      r3, [r5, #0x30] 
+0008de3c ldr      r2, [r5, #0x2c] 
+0008de40 str      sl, [r2, r3, lsl #2] 
+0008de44 add      r3, r3, #1 
+0008de48 str      r3, [r5, #0x30] 
+0008de4c ldr      r3, [sp, #0xc] 
+0008de50 ldr      r2, [r3, #4] 
+0008de54 ldr      r3, [r4, #0x28] 
+0008de58 orr      r1, r3, #1 
+0008de5c str      r1, [r4, #0x28] 
+0008de60 str      r2, [r4, #4] 
+0008de64 ldr      r2, [sp, #0xc] 
+0008de68 ldr      r2, [r2, #8] 
+0008de6c orr      r1, r3, #3 
+0008de70 str      r1, [r4, #0x28] 
+0008de74 str      r2, [r4, #8] 
+0008de78 ldr      r2, [sp, #0xc] 
+0008de7c ldr      r2, [r2, #0xc] 
+0008de80 orr      r1, r3, #7 
+0008de84 str      r1, [r4, #0x28] 
+0008de88 str      r2, [r4, #0xc] 
+0008de8c ldr      r2, [sp, #0xc] 
+0008de90 ldr      r2, [r2, #0x10] 
+0008de94 orr      r1, r3, #0xf 
+0008de98 str      r1, [r4, #0x28] 
+0008de9c str      r2, [r4, #0x10] 
+0008dea0 ldr      r2, [sp, #0xc] 
+0008dea4 ldr      r2, [r2, #0x14] 
+0008dea8 orr      r1, r3, #0x1f 
+0008deac str      r1, [r4, #0x28] 
+0008deb0 str      r2, [r4, #0x14] 
+0008deb4 ldr      r2, [sp, #0xc] 
+0008deb8 ldr      r2, [r2, #0x18] 
+0008debc orr      r3, r3, #0x3f 
+0008dec0 str      r3, [r4, #0x28] 
+0008dec4 str      r2, [r4, #0x18] 
+0008dec8 ldr      r2, [r7, #0x4c] 
+0008decc cmp      r2, #0 
+0008ded0 orrne    r3, r3, #0x40 
+0008ded4 strne    r3, [r4, #0x28] 
+0008ded8 strne    r2, [r4, #0x1c] 
+0008dedc ldr      r3, [sp, #0xc] 
+0008dee0 ldr      r3, [r3, #0x20] 
+0008dee4 ldr      r2, [r4, #0x28] 
+0008dee8 orr      r2, r2, #0x80 
+0008deec str      r2, [r4, #0x28] 
+0008def0 str      r3, [r4, #0x20] 
+0008def4 ldr      r0, [sp, #8] 
+0008def8 cmp      r0, #0 
+0008defc bne      #0x8df24 
+0008df00 b        #0x8df5c 
+0008df04 mov      r4, r0 
+0008df08 ldr      r3, [sp, #8] 
+0008df0c cmp      r3, #0 
+0008df10 beq      #0x8df1c 
+0008df14 add      r0, sp, #8 
+0008df18 bl       #0x6d920 
+0008df1c mov      r0, r4 
+0008df20 bl       #0x6b688 
+0008df24 mov      r1, r8 
+0008df28 bl       #0x69354 
+0008df2c cmp      r0, #1 
+0008df30 bne      #0x8df5c 
+0008df34 ldr      r0, [sp, #0xc] 
+0008df38 cmp      r0, #0 
+0008df3c beq      #0x8df4c 
+0008df40 ldr      r3, [r0] 
+0008df44 ldr      r3, [r3, #4] 
+0008df48 blx      r3 
+0008df4c str      sb, [sp, #0xc] 
+0008df50 ldr      r0, [sp, #8] 
+0008df54 bl       #0x69d98 
+0008df58 str      sb, [sp, #8] 
+0008df5c add      r6, r6, #8 
+0008df60 ldr      r3, [r7, #0x44] 
+0008df64 cmp      r3, r6 
+0008df68 bne      #0x8dda8 
+0008df6c add      sp, sp, #0x14 
+0008df70 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc} 
+
+FUNCTION _ZN9VideoSink25addSupportedConfigurationEiiiiiii 0x8df74
+0008df74 push     {r4, r5, r6, r7, r8, sl, lr} 
+0008df78 sub      sp, sp, #0xc 
+0008df7c mov      r4, r0 
+0008df80 mov      r7, r1 
+0008df84 mov      r8, r2 
+0008df88 mov      sl, r3 
+0008df8c mov      r0, #0x2c 
+0008df90 bl       #0x6d44c 
+0008df94 mov      r5, r0 
+0008df98 mov      r6, r0 
+0008df9c bl       #0x69858 
+0008dfa0 b        #0x8dfb8 
+0008dfa4 mov      r4, r0 
+0008dfa8 mov      r0, r5 
+0008dfac bl       #0x69d98 
+0008dfb0 mov      r0, r4 
+0008dfb4 bl       #0x6b688 
+0008dfb8 str      r5, [sp, #4] 
+0008dfbc mov      r0, #4 
+0008dfc0 bl       #0x6d44c 
+0008dfc4 str      r0, [sp] 
+0008dfc8 mov      r3, #1 
+0008dfcc str      r3, [r0] 
+0008dfd0 ldr      r3, [sp, #4] 
+0008dfd4 ldr      r2, [r3, #0x28] 
+0008dfd8 orr      r2, r2, #1 
+0008dfdc str      r2, [r3, #0x28] 
+0008dfe0 str      r7, [r3, #4] 
+0008dfe4 ldr      r3, [sp, #4] 
+0008dfe8 cmp      r8, #0x3c 
+0008dfec moveq    r8, #1 
+0008dff0 movne    r8, #2 
+0008dff4 ldr      r2, [r3, #0x28] 
+0008dff8 orr      r2, r2, #2 
+0008dffc str      r2, [r3, #0x28] 
+0008e000 str      r8, [r3, #8] 
+0008e004 ldr      r3, [sp, #4] 
+0008e008 ldr      r2, [r3, #0x28] 
+0008e00c orr      r2, r2, #4 
+0008e010 str      r2, [r3, #0x28] 
+0008e014 str      sl, [r3, #0xc] 
+0008e018 ldr      r3, [sp, #4] 
+0008e01c ldr      r2, [r3, #0x28] 
+0008e020 orr      r2, r2, #8 
+0008e024 str      r2, [r3, #0x28] 
+0008e028 ldr      r2, [sp, #0x28] 
+0008e02c str      r2, [r3, #0x10] 
+0008e030 ldr      r3, [sp, #4] 
+0008e034 ldr      r2, [r3, #0x28] 
+0008e038 orr      r2, r2, #0x10 
+0008e03c str      r2, [r3, #0x28] 
+0008e040 ldr      r2, [sp, #0x2c] 
+0008e044 str      r2, [r3, #0x14] 
+0008e048 ldr      r3, [sp, #4] 
+0008e04c ldr      r2, [r3, #0x28] 
+0008e050 orr      r2, r2, #0x20 
+0008e054 str      r2, [r3, #0x28] 
+0008e058 ldr      r2, [sp, #0x30] 
+0008e05c str      r2, [r3, #0x18] 
+0008e060 ldr      r3, [sp, #4] 
+0008e064 ldr      r2, [r3, #0x28] 
+0008e068 orr      r2, r2, #0x80 
+0008e06c str      r2, [r3, #0x28] 
+0008e070 ldr      r2, [sp, #0x34] 
+0008e074 str      r2, [r3, #0x20] 
+0008e078 ldr      r3, [r4, #0x40] 
+0008e07c cmp      r3, #0 
+0008e080 beq      #0x8e100 
+0008e084 ldr      r5, [r4, #0x44] 
+0008e088 rsb      r2, r3, r5 
+0008e08c ldr      r1, [r4, #0x48] 
+0008e090 rsb      r3, r3, r1 
+0008e094 asr      r3, r3, #3 
+0008e098 cmp      r3, r2, asr #3 
+0008e09c bls      #0x8e100 
+0008e0a0 cmp      r5, #0 
+0008e0a4 beq      #0x8e0e8 
+0008e0a8 ldr      r3, [sp, #4] 
+0008e0ac str      r3, [r5, #4] 
+0008e0b0 ldr      r0, [sp] 
+0008e0b4 str      r0, [r5] 
+0008e0b8 cmp      r0, #0 
+0008e0bc beq      #0x8e0e8 
+0008e0c0 mov      r1, #1 
+0008e0c4 bl       #0x6a638 
+0008e0c8 b        #0x8e0e8 
+0008e0cc mov      r4, r0 
+0008e0d0 mov      r0, r5 
+0008e0d4 mov      r1, r5 
+0008e0d8 bl       #0x6d194 
+0008e0dc mov      r0, r4 
+0008e0e0 bl       #0x6900c 
+0008e0e4 bl       #0x6d3bc 
+0008e0e8 add      r5, r5, #8 
+0008e0ec str      r5, [r4, #0x44] 
+0008e0f0 b        #0x8e114 
+0008e0f4 mov      r4, r0 
+0008e0f8 bl       #0x6bab4 
+0008e0fc b        #0x8e180 
+0008e100 add      r0, r4, #0x3c 
+0008e104 ldr      r1, [r4, #0x44] 
+0008e108 mov      r2, #1 
+0008e10c mov      r3, sp 
+0008e110 bl       #0x6cccc 
+0008e114 ldr      r3, [r4, #0x40] 
+0008e118 cmp      r3, #0 
+0008e11c moveq    r4, #0 
+0008e120 ldrne    r4, [r4, #0x44] 
+0008e124 rsbne    r4, r3, r4 
+0008e128 asrne    r4, r4, #3 
+0008e12c ldr      r0, [sp] 
+0008e130 cmp      r0, #0 
+0008e134 beq      #0x8e170 
+0008e138 mov      r1, #1 
+0008e13c bl       #0x69354 
+0008e140 cmp      r0, #1 
+0008e144 bne      #0x8e170 
+0008e148 ldr      r0, [sp, #4] 
+0008e14c cmp      r0, #0 
+0008e150 beq      #0x8e160 
+0008e154 ldr      r3, [r0] 
+0008e158 ldr      r3, [r3, #4] 
+0008e15c blx      r3 
+0008e160 mov      r3, #0 
+0008e164 str      r3, [sp, #4] 
+0008e168 ldr      r0, [sp] 
+0008e16c bl       #0x69d98 
+0008e170 sub      r0, r4, #1 
+0008e174 add      sp, sp, #0xc 
+0008e178 pop      {r4, r5, r6, r7, r8, sl, pc} 
+0008e17c mov      r4, r0 
+0008e180 ldr      r3, [sp] 
+0008e184 cmp      r3, #0 
+0008e188 beq      #0x8e194 
+0008e18c mov      r0, sp 
+0008e190 bl       #0x6d920 
+0008e194 mov      r0, r4 
+0008e198 bl       #0x6b688 
+
+FUNCTION _ZNK16MediaSinkService24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE 0xbbabc
+000bbabc push     {r4, r5, r6, r7, r8, lr} 
+000bbac0 mov      r4, r0 
+000bbac4 mov      r6, r1 
+000bbac8 ldr      r3, [r0, #0x54] 
+000bbacc tst      r3, #1 
+000bbad0 beq      #0xbbae4 
+000bbad4 mov      r0, #1 
+000bbad8 ldr      r1, [r4, #4] 
+000bbadc mov      r2, r6 
+000bbae0 bl       #0x69dec 
+000bbae4 ldr      r3, [r4, #0x54] 
+000bbae8 tst      r3, #2 
+000bbaec beq      #0xbbb00 
+000bbaf0 mov      r0, #2 
+000bbaf4 ldr      r1, [r4, #8] 
+000bbaf8 mov      r2, r6 
+000bbafc bl       #0x69dec 
+000bbb00 ldr      r3, [r4, #0x10] 
+000bbb04 cmp      r3, #0 
+000bbb08 ble      #0xbbb38 
+000bbb0c mov      r5, #0 
+000bbb10 mov      r7, #3 
+000bbb14 ldr      r3, [r4, #0xc] 
+000bbb18 mov      r0, r7 
+000bbb1c ldr      r1, [r3, r5, lsl #2] 
+000bbb20 mov      r2, r6 
+000bbb24 bl       #0x6a950 
+000bbb28 add      r5, r5, #1 
+000bbb2c ldr      r3, [r4, #0x10] 
+000bbb30 cmp      r5, r3 
+000bbb34 blt      #0xbbb14 
+000bbb38 ldr      r3, [r4, #0x30] 
+000bbb3c cmp      r3, #0 
+000bbb40 ble      #0xbbb70 
+000bbb44 mov      r5, #0 
+000bbb48 mov      r7, #4 
+000bbb4c ldr      r3, [r4, #0x2c] 
+000bbb50 mov      r0, r7 
+000bbb54 ldr      r1, [r3, r5, lsl #2] 
+000bbb58 mov      r2, r6 
+000bbb5c bl       #0x6a950 
+000bbb60 add      r5, r5, #1 
+000bbb64 ldr      r3, [r4, #0x30] 
+000bbb68 cmp      r5, r3 
+000bbb6c blt      #0xbbb4c 
+000bbb70 ldr      r3, [r4, #0x54] 
+000bbb74 tst      r3, #0x10 
+000bbb78 popeq    {r4, r5, r6, r7, r8, pc} 
+000bbb7c mov      r0, #5 
+000bbb80 ldrb     r1, [r4, #0x4c] 
+000bbb84 mov      r2, r6 
+000bbb88 bl       #0x6da04 
+000bbb8c pop      {r4, r5, r6, r7, r8, pc} 
+
+FUNCTION _ZNK18VideoConfiguration24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE 0xbc3cc
+000bc3cc push     {r4, r5, r6, lr} 
+000bc3d0 mov      r4, r0 
+000bc3d4 mov      r5, r1 
+000bc3d8 ldr      r3, [r0, #0x28] 
+000bc3dc tst      r3, #1 
+000bc3e0 beq      #0xbc3f4 
+000bc3e4 mov      r0, #1 
+000bc3e8 ldr      r1, [r4, #4] 
+000bc3ec mov      r2, r5 
+000bc3f0 bl       #0x69dec 
+000bc3f4 ldr      r3, [r4, #0x28] 
+000bc3f8 tst      r3, #2 
+000bc3fc beq      #0xbc410 
+000bc400 mov      r0, #2 
+000bc404 ldr      r1, [r4, #8] 
+000bc408 mov      r2, r5 
+000bc40c bl       #0x69dec 
+000bc410 ldr      r3, [r4, #0x28] 
+000bc414 tst      r3, #4 
+000bc418 beq      #0xbc42c 
+000bc41c mov      r0, #3 
+000bc420 ldr      r1, [r4, #0xc] 
+000bc424 mov      r2, r5 
+000bc428 bl       #0x6ac98 
+000bc42c ldr      r3, [r4, #0x28] 
+000bc430 tst      r3, #8 
+000bc434 beq      #0xbc448 
+000bc438 mov      r0, #4 
+000bc43c ldr      r1, [r4, #0x10] 
+000bc440 mov      r2, r5 
+000bc444 bl       #0x6ac98 
+000bc448 ldr      r3, [r4, #0x28] 
+000bc44c tst      r3, #0x10 
+000bc450 beq      #0xbc464 
+000bc454 mov      r0, #5 
+000bc458 ldr      r1, [r4, #0x14] 
+000bc45c mov      r2, r5 
+000bc460 bl       #0x6ac98 
+000bc464 ldr      r3, [r4, #0x28] 
+000bc468 tst      r3, #0x20 
+000bc46c beq      #0xbc480 
+000bc470 mov      r0, #6 
+000bc474 ldr      r1, [r4, #0x18] 
+000bc478 mov      r2, r5 
+000bc47c bl       #0x6ac98 
+000bc480 ldr      r3, [r4, #0x28] 
+000bc484 tst      r3, #0x40 
+000bc488 beq      #0xbc49c 
+000bc48c mov      r0, #7 
+000bc490 ldr      r1, [r4, #0x1c] 
+000bc494 mov      r2, r5 
+000bc498 bl       #0x6ac98 
+000bc49c ldr      r3, [r4, #0x28] 
+000bc4a0 tst      r3, #0x80 
+000bc4a4 popeq    {r4, r5, r6, pc} 
+000bc4a8 mov      r0, #8 
+000bc4ac ldr      r1, [r4, #0x20] 
+000bc4b0 mov      r2, r5 
+000bc4b4 bl       #0x6ac98 
+000bc4b8 pop      {r4, r5, r6, pc} 

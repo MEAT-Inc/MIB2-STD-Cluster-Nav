@@ -1,0 +1,3749 @@
+_fini
+__cxa_finalize
+__deregister_frame_info
+__register_frame_info
+_Jv_RegisterClasses
+set_ag_params
+set_standard_ag_params
+dyn_decomp
+__LogCategory_Initialize
+DebugPrintAssert
+LogPrintF
+BitBufferAdvance
+gLogCategory_DebugServicesLogging
+AppleLosslessDecoder_Decode
+BitBufferReadSmall
+BitBufferRead
+unpc_block
+copyPredictorTo20
+copyPredictorTo24Shift
+copyPredictorTo24
+copyPredictorTo32Shift
+copyPredictorTo32
+unmix16
+unmix20
+unmix24
+unmix32
+BitBufferReadOne
+BitBufferByteAlign
+memset
+AppleLosslessDecoder_Delete
+AppleLosslessDecoder_Configure
+malloc
+AppleLosslessDecoder_Create
+calloc
+BitBufferInit
+BitBufferPeek
+BitBufferPeekOne
+BitBufferGetPosition
+BitBufferRewind
+BitBufferWrite
+BitBufferUnpackBERSize
+BitArrayClearBits
+BitArrayClearBit
+BitArraySetBits
+BitArraySetBit
+BitArrayTestBit
+memcpy
+aes_test_alignment_detection
+aes_mode_reset
+aes_ofb_crypt
+__assert
+aes_encrypt
+aes_cfb_decrypt
+aes_cfb_encrypt
+aes_cbc_encrypt
+aes_ecb_encrypt
+aes_ctr_crypt
+aes_cbc_decrypt
+aes_decrypt
+aes_ecb_decrypt
+aes_encrypt_key128
+aes_encrypt_key192
+aes_encrypt_key256
+aes_encrypt_key
+aes_decrypt_key128
+aes_decrypt_key192
+aes_decrypt_key256
+aes_decrypt_key
+aes_init
+AES_CTR_Final
+AES_CBCFrame_Final
+AES_ECB_Final
+AES_CTR_Update
+AES_ECB_Update
+AES_ECB_Init
+AES_CBCFrame_Init
+AES_CTR_Init
+AES_CBCFrame_Update2
+AES_CBCFrame_Update
+AirPlaySettings_Synchronize
+CFPreferencesAppSynchronize_compat
+AirPlaySettings_RemoveValue
+CFPreferencesSetAppValue_compat
+AirPlaySettings_SetValue
+AirPlaySettings_SetNumber
+CFNumberCreate
+CFRelease
+AirPlaySettings_SetDouble
+AirPlaySettings_SetInt64
+CFNumberCreateInt64
+AirPlaySettings_SetCString
+CFStringCreateWithCString
+CFStringCreateWithBytes
+AirPlaySettings_CopyValueEx
+CFPreferencesCopyAppValue_compat
+CFGetTypeID
+AirPlaySettings_CopyValue
+AirPlaySettings_GetInt64
+CFGetInt64
+AirPlaySettings_GetDouble
+CFGetDouble
+AirPlaySettings_GetCString
+CFGetCString
+AirPlaySettings_CopyKeys
+CFArrayCreateMutable
+CFPreferencesCopyKeyList_compat
+CFArrayGetCount
+CFArrayAppendArray
+kCFLArrayCallBacksCFLTypes
+_Tolotab
+DebugGetNextError
+DebugValidPtr
+DebugIsDebuggerPresent
+DebugEnterDebugger
+HTTPGetReasonPhrase
+ReportCriticalError
+LogUtils_EnsureInitialized
+pthread_mutex_lock
+pthread_mutex_unlock
+gLogUtilsInitializing
+usleep
+strncmp
+_Ctype
+fclose
+_Stderr
+_Stdout
+LogUtils_Finalize
+strrchr
+mkpath
+fopen
+fseeko
+ftello
+setvbuf
+fwrite
+syslog
+strdup
+fileno
+fstat
+sscanf
+__aeabi_uldivmod
+strchr
+__aeabi_idivmod
+__aeabi_idiv
+__aeabi_uidivmod
+__aeabi_uidiv
+if_indextoname
+RollLogFiles
+fputs
+remove
+rename
+__get_errno_ptr
+DebugGetErrorString
+strerror
+LogPrintFVAList
+VASPrintF
+getpid
+VCPrintF
+DebugStackTrace
+gLogCategory_DebugServicesAssert
+gLogCategory_DebugServicesBreak
+LogControlCF
+CFStringGetLength
+CFStringGetMaximumSizeForEncoding
+CFStringGetBytes
+realloc
+GetProcessNameByPID
+devctl
+kCFLBooleanTrue
+CFBooleanGetTypeID
+CFNumberGetTypeID
+CFLNumberIsFloatType
+CFNumberGetValue
+CFStringGetTypeID
+CFLNullGetTypeID
+CFArrayGetTypeID
+CFDictionaryGetTypeID
+gettimeofday
+localtime
+strftime
+memcmp
+VMemPrintF
+CFArrayGetValueAtIndex
+CFDataGetTypeID
+CFDataGetLength
+CFDataGetBytePtr
+CFDateGetTypeID
+CFDateGetComponents
+CFDictionaryGetCount
+CFDictionaryApplyFunction
+VFPrintF
+AppendPrintF
+DebugCopyStackTrace
+bt_load_memmap
+bt_get_backtrace
+bt_sprnf_addrs
+bt_unload_memmap
+bt_acc_self
+gLogCategory_DebugServicesStackTrace
+VSNPrintF
+fread
+fflush
+SNPrintF_Add
+__aeabi_llsl
+LogShow
+UpTicksToMilliseconds
+__progname
+gLogCategory_LogUtils
+APSMFiSAP_DeriveAESKey
+SHA512_Init_compat
+SHA512_Update_compat
+SHA512_Final_compat
+APSMFiSAP_Decrypt
+APSMFiSAP_Encrypt
+APSMFiSAP_Exchange
+SleepForUpTicks
+RandomBytes
+UY3cPyyKD6
+SHA1_Init_compat
+SHA1_Update_compat
+SHA1_Final_compat
+APSMFiPlatform_CreateSignature
+APSMFiPlatform_CopyCertificate
+APSMFiSAP_Delete
+APSMFiSAP_Create
+APSMFiPlatform_Finalize
+SecondsToUpTicks
+devctlv
+APSMFiPlatform_Initialize
+AsyncConnection_TestHandler
+dispatch_semaphore_signal
+AsyncConnection_Release
+dispatch_async_f
+dispatch_source_cancel
+dispatch_release
+DNSServiceRefDeallocate
+AsyncConnection_Connect
+URLParseComponents
+strndup
+dispatch_retain
+AsyncConnection_Test
+dispatch_queue_create
+dispatch_semaphore_create
+dispatch_semaphore_wait
+DNSServiceConstructFullName
+gLogCategory_AsyncConnection
+AsyncConnection_ConnectSyncEx
+dispatch_time
+AsyncConnection_ConnectSync
+getsockopt
+SockAddrCopy
+SockAddrGetPort
+SockAddrSetPort
+socket
+SocketSetP2P
+SocketSetBoundInterface
+setsockopt
+SocketSetBufferSize
+SockAddrGetSize
+dispatch_source_create
+dispatch_set_context
+dispatch_source_set_event_handler_f
+dispatch_source_set_cancel_handler_f
+dispatch_resume
+SocketSetNonBlocking
+_dispatch_source_type_read
+_dispatch_source_type_write
+DNSServiceProcessResult
+if_nametoindex
+DNSServiceGetAddrInfo
+DNSServiceRefSockFD
+DNSServiceQueryRecord
+StringToSockAddr
+stristr
+dispatch_source_set_timer
+_dispatch_source_type_timer
+AudioConverterReset_compat
+AudioConverterFillComplexBuffer_compat
+AudioConverterSetProperty_compat
+AudioConverterDispose_compat
+AudioConverterNew_compat
+IsDTSEncodedData
+IsSilencePCM
+SineTable_GetSamples
+VolumeAdjusterInit
+VolumeAdjusterApply
+VolumeAdjusterSetVolumeDB
+SineTable_Delete
+SineTable_Create
+AudioStreamGetContext
+AudioStreamSetContext
+AudioStreamSetInputCallback
+AudioStreamSetOutputCallback
+_AudioStreamCopyProperty
+_AudioStreamSetProperty
+AudioStreamGetVolume
+AudioStreamSetVolume
+AudioStreamRampVolume
+AudioStreamPrepare
+AudioStreamStart
+AudioStreamStop
+AudioSessionGetSupportedOutputFormats
+dispatch_once_f_slow
+AudioSessionGetSupportedInputFormats
+AudioSessionEnsureTornDown
+AudioSessionEnsureSetup
+AudioSessionCopyLatencies
+AudioSessionSetEventHandler
+AudioStreamGetTypeID
+dlopen
+dlsym
+AudioStreamCreate
+_CFRuntimeCreateInstance
+_CFRuntimeRegisterClass
+Base64EncodedLinesMaxSize
+Base64Decode
+Base64DecodedSize
+Base64EncodeLinesEx
+Base64EncodeEx
+Base64DecodeCopy
+Base64EncodeLinesCopyEx
+Base64EncodeCopyEx
+CFBooleanGetValue
+CFLDateGetDate
+CFLRuntimeCreateInstance
+CFLRuntimeRegisterClass
+CFPropertyListCreateData
+CFBinaryPlistV0CreateData
+CFBinaryPlistCreateData
+CFStringAppendCString
+CFLStringAppendText
+CFStringGetCStringPtr
+CFLStringGetCStringPtr
+CFStringFindWithOptions
+strncasestr
+strnstr
+CFStringFindAndReplace
+CFLStringFindAndReplace
+CFStringGetIntValue
+TextToInt32
+CFStringCompare
+TextCompareNatural
+strcasecmp
+strcmp
+memmove
+CFStringGetPascalString
+CFStringGetCString
+CFLStringGetLength
+latin1_to_utf8_copy
+utf8_encodestr_copy
+CFLStringCreateWithText
+CFStringCreateWithFormat
+CFStringCreateMutableCopy
+CFStringCreateMutable
+CFLStringGetTypeID
+CFLNumberGetValue
+CFLNumberCreate
+CFLNumberGetTypeID
+CFLDictionaryApplyFunction
+CFDictionaryGetKeysAndValues
+CFLDictionaryGetKeysAndValues
+CFDictionaryRemoveAllValues
+CFLDictionaryRemoveAllValues
+CFDictionaryRemoveValue
+CFLDictionaryRemoveValue
+CFDictionaryAddValue
+CFLDictionaryAddValue
+CFDictionarySetValue
+CFLDictionarySetValue
+CFDictionaryGetValue
+CFLDictionaryGetValue
+CFLDictionaryGetCount
+CFDictionaryCreateMutable
+CFLDictionaryCreate
+CFLDictionaryGetTypeID
+CFDateCompare
+YMD_HMStoSeconds
+__aeabi_l2d
+CFDateGetAbsoluteTime
+CFDateCreateWithComponents
+CFLDateCreate
+__aeabi_d2lz
+CFDateCreate
+SecondsToYMD_HMS
+CFLDateGetTypeID
+CFDataAppendBytes
+CFLDataAppendData
+CFDataGetMutableBytePtr
+CFLDataGetDataPtr
+CFDataGetBytes
+CFPropertyListCreateWithData
+CFBinaryPlistV0CreateWithData
+CFBinaryPlistCreateFromData
+CFDataCreateMutableCopy
+CFLDataCreate
+CFDataCreateMutable
+CFDataCreate
+CFLDataGetTypeID
+CFLBooleanGetTypeID
+CFArrayContainsValue
+CFLArrayContainsValue
+CFArrayRemoveAllValues
+CFLArrayRemoveAllValues
+CFArrayRemoveValueAtIndex
+CFLArrayRemoveValueAtIndex
+CFArrayAppendValue
+CFLArrayAppendValue
+CFArrayInsertValueAtIndex
+CFLArrayInsertValueAtIndex
+CFArraySetValueAtIndex
+CFLArraySetValueAtIndex
+CFLArrayGetValueAtIndex
+CFArrayGetValues
+CFLArrayGetValues
+CFLArrayGetCount
+CFArrayCreateMutableCopy
+CFLArrayCreateCopy
+CFArrayCreateCopy
+CFLArrayCreate
+CFArrayCreate
+CFLRelease
+CFDictionaryCreate
+CFLArrayGetTypeID
+CFPropertyListCreateDeepCopy
+CFLCopy
+CFHash
+CFLHash
+CFEqual
+CFLEqual
+CFArrayGetFirstIndexOfValue
+CFRetain
+CFLRetain
+CFGetRetainCount
+CFLGetRetainCount
+CFLGetTypeID
+__aeabi_d2ulz
+__aeabi_l2f
+CFLNumberGetByteSize
+CFLDictionaryContainsKey
+CFLDateSetDate
+CFLArrayApplyFunction
+CFLRuntimeFinalize
+CFLDictionaryCopyKeysAndValues
+CFLDataSetData
+_smp_cmpxchg
+CFLStringSetText
+CFLArraySortValues
+atomic_add_value
+atomic_sub_value
+strstr
+kCFLDictionaryKeyCallBacksCFLTypes
+kCFLDictionaryValueCallBacksCFLTypes
+kCFLArrayCallBacksNull
+kCFLBooleanFalse
+kCFLDictionaryKeyCallBacksNull
+kCFLDictionaryValueCallBacksNull
+kCFLNull
+utf8_decodestr_copy
+GetHomePath
+__CFRunLoopTimerRequeue
+CFSocketGetNative
+CFSocketGetSocketFlags
+CFSocketSetSocketFlags
+__CFSocketSourceSchedule
+__CFSocketSourceCancel
+__CFFileDescriptorSocketCallBack
+CFFileDescriptorGetNativeDescriptor
+CFFileDescriptorGetContext
+CFFileDescriptorIsValid
+CFSocketDisableCallBacks
+CFFileDescriptorDisableCallBacks
+CFSocketEnableCallBacks
+CFFileDescriptorEnableCallBacks
+CFRunLoopTimerSetNextFireDate
+CFRunLoopRemoveTimer
+CFRunLoopTimerInvalidate
+kCFRunLoopCommonModes
+__CFRunLoopTimerFree
+CFRunLoopRemoveSource
+CFRunLoopSourceInvalidate
+__CFRunLoopSourceFree
+CFRunLoopAddTimer
+CFRunLoopAddSource
+__CFSocketHandler
+CFSocketConnectToAddress
+CFSocketInvalidate
+CFFileDescriptorInvalidate
+__CFFileDescriptorFree
+__CFSocketFree
+__CFRunLoopFree
+__aeabi_ul2d
+CFAbsoluteTimeGetCurrent
+__CFRunLoopCommandSocketHandler
+CFRunLoopWakeUp
+CFRunLoopSourceSignal
+CFRunLoopStop
+__CFRunLoopSelect
+select
+__CFRunLoopRunOne
+__CFRunLoopCreate
+getsockname
+CFRunLoopFinalize
+pthread_mutex_destroy
+CFRunLoopEnsureInitialized
+pthread_mutex_init
+CFFileDescriptorGetTypeID
+__CFSocketEnsureInitialized
+CFSocketGetTypeID
+CFSocketCreateWithNative
+CFFileDescriptorCreate
+CFRunLoopTimerGetTypeID
+CFRunLoopTimerCreate
+CFRunLoopSourceGetTypeID
+CFRunLoopSourceCreate
+CFSocketCreateRunLoopSource
+CFFileDescriptorCreateRunLoopSource
+CFRunLoopGetCurrent
+CFRunLoopRunInMode
+CFRunLoopGetMain
+CFRunLoopRun
+CFRunLoopGetTypeID
+kCFRunLoopDefaultMode
+CFArrayEnsureCreatedAndAppend
+CFArrayEnsureCreatedAndAppendCString
+CFArrayAppendCString
+CFDictionaryGetTypedValue
+CFArrayAppendInt64
+CFDictionarySetNumber
+CFDictionarySetInt64
+CFDictionarySetDouble
+CFDictionarySetCString
+CFDictionarySetData
+CFDictionaryMergeDictionary
+CFDictionaryCreateWithINIBytes
+INIGetNext
+CFDictionaryCopyKeys
+CFArrayGetTypedValueAtIndex
+CFSetObjectAtPath
+CFDictionaryCreateWithCFStringArray
+CFGetUUID
+StringToUUID
+CFDictionaryGetUUID
+CFGetHardwareAddress
+TextToHardwareAddress
+CFDictionaryGetHardwareAddress
+CFDictionaryGetInt64
+CFDictionaryGetDouble
+strlcpy
+CFDictionaryGetCString
+CFDictionaryGetNestedValue
+MapValueToCFString
+CFCreateWithPlistBytes
+CFCreateObjectFromStringEx
+HexToData
+CreateTXTRecordWithCString
+CFCreateObjectFromString
+RangeArrayToString
+MapCFStringToValue
+CFStringCopyUTF8CString
+CFCopyCString
+CFDictionaryCopyCString
+CFStringGetOrCopyCStringUTF8
+CFStringCreateComponentsSeparatedByString
+CFGetData
+CFDictionaryGetData
+CFCopyData
+HexToDataCopy
+CFDictionaryCopyData
+CFCopyCFData
+CFDictionaryCopyCFData
+CFPropertyListCreateBytes
+strncmp_prefix
+CFPropertyListWriteToANSIFile
+CFPropertyListWriteToFilePath
+CFDataCreateWithANSIFile
+CFPropertyListCreateFromANSIFile
+CFDataCreateWithFilePath
+CFPropertyListCreateFromFilePath
+CFSortLocalizedStandardCompare
+CFObjectSetProperty
+dispatch_sync_f
+CFObjectSetPropertyInt64
+CFObjectSetPropertyDouble
+CFObjectSetPropertyData
+CFObjectSetPropertyCString
+CFObjectCopyProperty
+CFObjectGetPropertyInt64Sync
+CFObjectGetPropertyDoubleSync
+CFObjectGetPropertyCStringSync
+CFObjectControlSync
+CFObjectControlAsync
+CFPropertyListExtractFormattedVAList
+HardwareAddressToCString
+TextToFourCharCode
+StringToIPv4Address
+TextToNumVersion
+TextToSourceVersion
+strncmpx
+CFPropertyListExtractFormatted
+CFSortCompareKeyPath
+CFPropertyListBuildFormatted
+strnlen
+UUIDtoCString
+CFPropertyListAppendFormattedVAList
+CFPropertyListAppendFormatted
+CFDictionaryCreateFromNameTypeValueArgList
+ParseCommaSeparatedNameValuePair
+ParseEscapedString
+StringToRangeArray
+ConflictingRangeArrayStringAndRangeArray
+ConflictingRangeArrayStrings
+ValidateRangeArrayStrings
+CFDictionaryCreateWithFourCharCodeArray
+CFPropertyListCreateFormattedVAList
+CFObjectSetPropertyV
+CFObjectSetPropertyF
+CFObjectControlSyncV
+CFObjectControlSyncF
+CFObjectControlAsyncV
+CFObjectControlAsyncF
+CFPropertyListCreateFormatted
+StringToInteger64
+strtoll
+StringArray_Free
+CLIFree
+gArgVAlt
+gArgC
+gArgV
+gArgI
+StringArray_Append
+CLIArgToValueOrErrQuit
+strnicmpx
+_CLIVersionOption
+fprintf
+gProgramLongName
+gProgramName
+_CLIVersionCommand
+gCLICurrentOption
+fputc
+strtol
+CLIInit
+gProgramPath
+_CLIHelpOption
+gCLICurrentCommand
+_CLIHelpCommand
+CLIParse
+gExitCode
+DataBuffer_Init
+DataBuffer_Shrink
+DataBuffer_Commit
+DataBuffer_Free
+DataBuffer_Disown
+DataBuffer_AppendFVAList
+DataBuffer_AppendF
+DataBuffer_AppendFNested
+DataBuffer_Resize
+DataBuffer_Append
+DataBuffer_AppendANSIFile
+DataBuffer_RunProcessAndAppendOutput
+popen
+pclose
+DataBuffer_AppendFile
+DataBuffer_Detach
+DataBuffer_DetachCString
+DataBuffer_Replace
+IPCAgent_SetMessageHandler
+_DebugIPCUtils_TestResponseHandler
+_DebugIPCUtils_TestRequestHandler
+_IPCAgent_FreeMessage
+_IPCAgent_PerformHandler
+_IPCAgent_Finalize
+_IPCAgent_SendMessage
+UUIDGet
+sendto
+_IPCAgent_Start
+IPCAgent_DeleteSync
+_IPCAgent_Delete
+DebugIPC_EnsureFinalized
+IPCAgent_DeleteAsync
+_IPCAgent_CleanupStalePackets
+_IPCAgent_ProcessMessagePackets
+_IPCAgent_ProcessMessageBytes
+_IPCAgent_CancelHandler
+_IPCAgent_ReadHandler
+recvmsg
+SocketIsDefunct
+SocketGetPacketReceiveInterface
+ServerSocketOpen
+SocketSetPacketReceiveInterface
+GetLoopbackInterfaceInfo
+SocketSetMulticastInterface
+SocketSetMulticastLoop
+SocketJoinMulticast
+IPCAgent_Create
+dispatch_set_finalizer_f
+DebugIPC_EnsureInitialized
+IPCAgent_Perform
+DebugIPC_PerformV
+DebugIPC_PerformF
+DebugIPC_LogControl
+DebugIPC_Perform
+DebugIPCUtils_Test
+dispatch_get_context
+__dispatch_empty_callback
+dispatch_source_get_handle
+_dispatch_source_type_signal
+dispatch_source_get_data
+dispatch_queue_get_label
+__LibDispatch_PlatformFreeSource
+__dispatch_queue_suspend
+__LibDispatch_SelectHandleTimerEvent
+atomic_clr_value
+__dispatch_milliseconds
+__aeabi_ldivmod
+__LibDispatchCF_Schedule
+__LibDispatchCF_Finalize
+__LibDispatchCF_EnsureInitialized
+__LibDispatchCF_SourcePerform
+__dispatch_wall_milliseconds
+dispatch_walltime
+pthread_cond_signal
+__dispatch_sync_callback
+pthread_cond_wait
+pthread_cond_timedwait
+dispatch_group_enter
+dispatch_group_wait
+pthread_cond_init
+__dispatch_semaphore_free
+__dispatch_group_notify_callback
+dispatch_group_create
+__dispatch_group_free
+__dispatch_free_object
+pthread_cond_destroy
+__dispatch_source_free
+__dispatch_queue_free
+__dispatch_queue_concurrent_drain
+pthread_setspecific
+__dispatch_queue_create_internal
+__LibDispatch_WorkThread
+pthread_self
+pthread_setname_np
+pthread_cond_broadcast
+gLogCategory_gcd
+__LibDispatch_ScheduleWork
+pthread_create
+__dispatch_queue_resume
+__dispatch_queue_serial_drain
+gDispatchMainQueueScheduleHookFunc
+__LibDispatch_SelectEnsureInitialized
+__LibDispatch_SelectDrain
+dispatch_group_leave
+dispatch_group_notify_f
+__dispatch_group_async_callback
+dispatch_group_async_f
+LibDispatch_EnsureInitialized
+pthread_attr_init
+pthread_attr_setdetachstate
+pthread_key_create
+LibDispatch_Finalize
+dispatch_get_main_queue
+dispatch_get_current_queue
+pthread_getspecific
+__LibDispatch_PlatformArmOrDisarmSourceAndUnlock
+__LibDispatch_SelectHandleCommand
+__LibDispatch_PlatformDisarmSourceAndUnlock
+MillisecondsToUpTicks
+atomic_set_value
+__LibDispatch_SelectHandleReadWriteEvent
+__dispatch_source_suspend
+dispatch_suspend
+__LibDispatch_PlatformArmSourceAndUnlock
+__dispatch_source_resume
+__dispatch_queue_serial_drain_locked
+dispatch_main_drain_np
+pthread_key_delete
+pthread_attr_destroy
+dispatch_main
+dispatch_get_global_queue
+HIDDPadFillReport
+HIDKnobFillReport
+HIDSimpleFillReport
+HIDTrackpadCreateDescriptor
+HIDTelephonyCreateDescriptor
+HIDPointingCreateDescriptor
+HIDKnobCreateDescriptor
+HIDDPadCreateDescriptor
+HIDButtonsCreateDescriptor
+HIDGetOverrideDescriptor
+HIDDeregisterOverrideDescriptor
+HIDRegisterOverrideDescriptor
+HIDTrackpadFillReport
+HIDPointingFillReport
+TranslateValue
+HIDBrowserSetEventHandler
+HIDDeviceSetEventHandler
+gLogCategory_HIDUtils
+HIDDeregisterDevice
+HIDRegisterDevice
+HIDCopyDevices
+HIDDeviceStop
+HIDDeviceStart
+HIDBrowserStopDevices
+HIDBrowserStop
+HIDBrowserStart
+HIDDevicePostReport
+HIDPostReport
+HIDBrowserCopyProperty
+HIDDeviceSetProperty
+HIDDeviceCopyProperty
+HIDDeviceSetDispatchQueue
+HIDBrowserSetDispatchQueue
+HIDDeviceGetTypeID
+HIDDeviceCreateVirtual
+HIDBrowserGetTypeID
+HIDBrowserCreate
+HTTPClientSetFlags
+HTTPClientSetLogging
+HTTPClientSendMessage
+HTTPHeader_SetField
+HTTPHeader_Commit
+HTTPClientSendMessageSync
+HTTPClientInvalidate
+SocketWriteData
+LogHTTP
+HTTPMessageReset
+HTTPMessageReadMessage
+shutdown
+HTTPClientSetDispatchQueue
+HTTPClientSetDestination
+HTTPClientGetPeerAddress
+getpeername
+HTTPClientGetTypeID
+HTTPClientCreate
+gLogCategory_HTTPClientCore
+HTTPClientCreateWithSocket
+HTTPMessageSetBodyLength
+HTTPMessageSetBody
+SocketReadHTTPHeader
+SocketReadData
+HTTPMessageGetTypeID
+HTTPMessageCreate
+HTTPHeader_Parse
+NetSocket_HTTPReadHeader
+HTTPDownloadFile
+strncasecmp
+HTTPHeader_InitRequest
+HTTPScanFHeaderValue
+SocketCloseGracefully
+_HTTPServerCopyProperty
+HTTPConnectionSendResponse
+HTTPConnectionInitResponse
+HTTPHeader_InitResponse
+HTTPMakeDateString
+HTTPConnectionSendSimpleResponse
+HTTPConnectionVerifyAuth
+HTTPVerifyAuthorization
+HTTPMakeTimedNonce
+HTTPConnectionGetNextURLSegmentEx
+HTTPConnectionStop
+HTTPConnectionSetDispatchQueue
+HTTPConnectionStart
+SocketGetInterfaceInfo
+HTTPServerSetDispatchQueue
+HTTPConnectionGetTypeID
+HTTPConnectionCreate
+gLogCategory_HTTPServerCore
+HTTPServerGetTypeID
+HTTPServerCreate
+_HTTPServerSetProperty
+_HTTPServerControl
+ServerSocketPairOpen
+accept
+HTTPClientAuthorization_Init
+gLogCategory_HTTPRequests
+gLogCategory_HTTPResponses
+HTTPHeader_Validate
+HTTPHeader_Uncommit
+HTTPParseToken
+HTTPParseParameter
+HTTPClientAuthorization_Free
+__HTTPMakeAuthDigest
+MD5Init
+MD5Update
+MD5Final
+DataToHexCStringEx
+HTTPVerifyTimedNonce
+HTTPParseByteRangeRequest
+gmtime_r
+HTTPGetHeaderField
+VSNScanF
+HTTPParseRTPInfo
+__HTTPAddDigestAuth
+__HTTPAddBasicAuth
+HTTPClientAuthorization_Apply
+gcd64
+ifloor2
+ifloor2_64
+Multiply64x64
+TorbenMedian32
+TorbenMedian64
+TorbenMedianF
+StandardDeviation
+PearsonCorrelation
+EuclideanDistance
+MedianAbsoluteDeviation
+qsort
+qsort_cmp_double
+InterquartileRange
+ipow10_64
+ipow10
+iceil2_64
+iceil2
+ilog2_64
+MD5Final_V1
+MD5Update_V1
+MD5OneShot_V1
+MD5OneShot
+qsort_cmp_int8
+qsort_cmp_uint8
+qsort_cmp_int16
+qsort_cmp_uint16
+qsort_cmp_int32
+qsort_cmp_uint32
+qsort_cmp_int64
+qsort_cmp_uint64
+qsort_cmp_float
+CompareIntPtrs
+PIDInit
+PIDUpdate
+poly1305_auth
+crypto_xsalsa20_poly1305_encrypt
+crypto_xsalsa20_poly1305_decrypt
+H264GetNextNALUnit
+MorseCode
+_Touptab
+UnpackDataVAList
+PackDataVAList
+TXTRecordGetNextItem
+Swap16Mem
+MemReverse
+MirroredRingBufferFree
+munmap
+MirroredRingBufferInit
+mkstemp
+sysconf
+ftruncate
+unlink
+H264ConvertAVCCtoAnnexBHeader
+SwapUUID
+CreateEDIDDictionaryWithBytes
+UnpackData
+PackData
+APSSystemf
+ParseQuotedEscapedString
+posix_spawnp
+waitpid
+environ
+SCDynamicStoreCopyLocalHostName
+gethostname
+RunProcessAndCaptureOutputEx
+RunProcessAndCaptureOutput
+RemovePath
+NumberListStringCreateFromUInt8Array
+NormalizePath
+getenv
+getpwnam
+realpath
+strspn
+strcspn
+mkdir
+chmod
+getuid
+getpwuid_r
+WriteANSIFile
+ReadANSIFile
+CopyFileDataByFile
+CopyFileDataByPath
+CopySmallFile
+CompareStringPtrs
+QSortPtrs
+FPSUpdate
+FPSInit
+_NetPerfSetProperty
+_NetPerfCopyProperty
+SetCurrentThreadPriority
+UpTicksToNTP
+SleepUntilUpTicks
+SocketRecvFrom
+SendSelfConnectedLoopbackMessage
+pthread_join
+NetPerfSetEventHandler
+NetPerfGetTypeID
+NetPerfCreate
+SocketSetPacketTimestamps
+OpenSelfConnectedLoopbackSocket
+_NetPerfControl
+HostIsPotentiallyReachable
+NetworkStackSupportsIPv4MappedIPv6Addresses
+UpdateIOVec
+__EqualBits
+IsIPv6MartianAddressEx
+IsIPv6MartianAddress
+IsIPv4MartianAddress
+IsPrivateIPv4Address
+IsGlobalIPv4Address
+IsRoutableIPv4Address
+IsP2PInterface
+IsUSBNetworkInterface
+NetSocket_WriteVSlow
+NetSocket_GetNative
+SockAddrGetIPv4
+GetInterfaceMACAddress
+getifaddrs
+freeifaddrs
+GetIPAddress
+CompareMACAddresses
+SockAddrSimplify
+SockAddrToDeviceID
+SockAddrCompareAddrEx
+SockAddrCompareAddr
+SockAddrConvertToIPv6
+GetPrimaryMACAddress
+StringToIPv6Address
+SockAddrToString
+IPv4AddressToCString
+IPv6AddressToCString
+SocketSetKeepAlive
+_SocketJoinOrLeaveMulticast
+ioctl
+SocketLeaveMulticast
+SocketGetPacketUpTicks
+MicrosecondsToUpTicks
+__cmsg_alignbytes
+fcntl
+SocketGetFamily
+SocketSetQoS
+IsWiFiNetworkInterface
+sysctl
+SocketGetBufferSize
+writev
+NetSocket_Reset
+NetSocket_Wait
+NetSocket_WriteVInternal
+SocketWriteAll
+SocketReadAll
+NetSocket_ReadInternal
+NetSocket_Disconnect
+SocketConnect
+__NetSocket_Connect
+GetUDPOutgoingSockAddr
+SocketAccept
+strtoul
+getaddrinfo
+freeaddrinfo
+NetSocket_TCPConnectEx
+NetSocket_TCPConnect
+NetSocket_WriteFileSlow
+lseek
+gLogCategory_NetSocket
+NetSocket_Delete
+NetSocket_ReadFile
+NetSocket_WriteInternal
+NetSocket_Cancel
+NetSocket_Create
+NetSocket_CreateWithNative
+UDPClientSocketOpen
+listen
+SendUDPQuitPacket
+DrainUDPSocket
+recvfrom
+NetworkChangeListenerSetHandler
+NetworkChangeListenerStop
+gLogCategory_NetworkChanges
+NetworkChangeListenerStart
+NetworkChangeListenerSetDispatchQueue
+NetworkChangeListenerGetTypeID
+NetworkChangeListenerCreate
+NTPClockSetEpoch
+NTPClockSetLogging
+NTPClockSetP2P
+NTPClockGetListenPort
+NTPClockSetListenPort
+NTPClockSetQoSDisabled
+NTPClockSetRTCP
+NTPClockGetStats
+NTPClockSetThreadPriority
+NTPClockGetSynchronizedNTPTimeNearUpTicks
+NTPClockGetSynchronizedNTPTime
+NTPClockGetUpTicksNearSynchronizedNTPTimeMid32
+NTPtoUpTicks
+NTPClockGetUpTicksNearSynchronizedNTPTime
+gLogCategory_NTPClockRaw
+UpTicksToTimeValTimeout
+NTPClockSetThreadName
+NTPClockSetPeer
+NTPClockStop
+NTPClockStartServer
+NTPClockStartClient
+NTPClockGetTypeID
+NTPClockCreate
+gLogCategory_NTPClockCore
+RandomString
+ScreenDeregister
+gLogCategory_Screen
+ScreenRegister
+_ScreenSetProperty
+_ScreenCopyProperty
+ScreenGetTypeID
+ScreenCreate
+ScreenCopyMain
+ScreenStreamGetContext
+ScreenStreamSetContext
+_ScreenStreamSetProperty
+ScreenStreamStart
+ScreenStreamStop
+ScreenStreamProcessData
+ScreenStreamGetTypeID
+ScreenStreamCreate
+SHA3_Final_compat
+SHA3_Init_compat
+SHA3_Update_compat
+SHA3_compat
+SHA512_compat
+SHA1_compat
+BitListString_Make
+FourCharCodeToCString
+memicmp
+strcmp_prefix
+stricmp_prefix
+strnicmp_prefix
+memrchr
+memrlen
+tolowerstr
+toupperstr
+BoyerMooreSearch
+INIFindSection
+IsASCII7PrintableString
+NumberToOrdinalSuffixCString
+ParseLine
+TextSep
+UTF16strlen
+ValidDNSName
+ContainsNumericSuffix
+RemoveNumericSuffix
+XMLEscape
+TruncatedUTF8Length
+AppendNumericSuffix
+SplitText
+strnspn
+strnspnx
+strlcat
+strnicmp_suffix
+strncmp_suffix
+__aeabi_llsr
+BCDTextToInt
+IncrementNumericSuffixEx
+IncrementNumericSuffix
+HexTextToData
+XMLEscapeCopy
+ConvertUTF8StringToRFC1034LabelString
+CleanseHFSVolumeName
+CleanseDiskString
+TextToHardwareAddressScalar
+BitListString_Parse
+TruncateUTF8
+StringListFree
+FreeCommandLineArgV
+ParseCommandLineIntoArgV
+NameValueListFree
+HexTextToDataCopy
+GetFileExtensionFromString
+MapStringToValue
+ReplaceDifferentString
+MIMETypeToExtension
+bsearch
+MapValueToString
+SourceVersionToCString
+strtoi
+vsnprintf_add
+vsnprintf
+NumVersionToCString
+BCDTextFromInt
+GestaltSetHook
+GestaltCopyAnswer
+GetDeviceName
+GestaltGetData
+GestaltGetCString
+GestaltGetBoolean
+CompareOSBuildVersionStrings
+pthread_getschedparam
+pthread_setschedparam
+UpTicksToSeconds
+UpTicksToMicroseconds
+UpTicksToNanoseconds
+NanosecondsToUpTicks
+clock_gettime
+nanosleep
+ParseTime
+ParseDate
+ISODayOfWeek
+TimeDescriptorGetStartEndTimes
+TimeDescriptorGetDays
+TimeDescriptorMatch
+TimeDescriptorMakeWithDaysAndTimes
+SecondsToTimeComponentsString
+ParseFractionalDateString
+MakeFractionalDateString
+gmtime
+UTCSeconds
+mktime
+difftime
+UTCOffset
+GMTtoLocalTime
+URLGetNextPathSegment
+URLGetNextVariable
+URLGetVariable
+URLDecodeEx
+URLEncode
+URLDecodeCopy
+URLGetOrCopyNextVariable
+URLGetOrCopyVariable
+URLEncodeCopy
+utf8_validatestr
+utf_extrabytes
+utf8_encodelen
+utf8_encodestr
+utf8_decodestr
+hexdigits
+utf16_to_utf32
+macroman_to_utf8_copy
+utf8_normalizestr
+libbacktrace.so.1
+libc.so.3
+libcpp.so.4
+libdns_sd.so.1
+libm.so.2
+libsocket.so.3
+_in6addr_loopback
+_in6addr_any
+__lshrdi3
+__ashldi3
+__aeabi_drsub
+__subdf3
+__aeabi_dsub
+__adddf3
+__aeabi_dadd
+__floatunsidf
+__aeabi_ui2d
+__floatsidf
+__aeabi_i2d
+__extendsfdf2
+__aeabi_f2d
+__floatundidf
+__floatdidf
+__aeabi_frsub
+__subsf3
+__aeabi_fsub
+__addsf3
+__aeabi_fadd
+__floatunsisf
+__aeabi_ui2f
+__floatsisf
+__aeabi_i2f
+__floatundisf
+__aeabi_ul2f
+__floatdisf
+pthread_once
+pthread_atfork
+fdopen
+fwide
+confstr
+spawn
+pathfind_r
+srandom
+setstate
+initstate
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+libAirPlaySupport.so
+libsocket.so.2
+ecaa 
+cgmd8n
+calamcpl
+crsd,$
+crsdH
+crsdH
+prgdH
+euqdH
+crsd 
+euqd<&
+EUQD,1
+euqddg
+crsdH
+euqdcrsd
+crsdH
+crsdH
+euqdcrsd
+crsdH
+euqdH
+euqdH
+QZ^&S
+nd 3te k2-byexpa
+te k2-bynd 3expa
+cosn|[
+cosn|[
+cosn|[
+cosn|[
+0CBhA
+cosn|[
+cosn|[
+@DB`0
+cosn|[
+0CBP 
+cosn|[
+cosn|[
+cosn|[
+cosn|[
+dyn_decomp
+getstreambits
+dyn_get_32bit
+dyn_get
+ASSERT FAILED: (bitstream != nil) && (pc != nil) && (outNumBits != nil) %s, line %d
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../External/AppleLossless/ag_dec.c
+ASSERT FAILED: bitPos < maxPos %s, line %d
+numbits <= 32
+k<=14
+result+1+k <= 32
+pre+1+k <= 32
+ASSERT FAILED: c+n <= (uint32_t) numSamples %s, line %d
+ASSERT FAILED: bitstream->cur <= bitstream->end %s, line %d
+AppleLosslessDecoder_Decode
+DataStreamElement
+FillElement
+AppleLosslessDecoder_Configure
+AppleLosslessDecoder_Create
+inBits->cur < inBits->end
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../External/AppleLossless/AppleLosslessDecoder.c
+unusedHeader == 0
+bytesShifted != 3
+(mixBits == 0) && (mixRes == 0)
+bytesShifted == 0
+inBits->cur <= inBits->end
+inBits->cur == inBits->end
+inDecoder->mixBufferU
+inDecoder->mixBufferV
+inDecoder->predictor
+BitBufferRewind
+BitBufferWrite
+BitBufferReadOne
+BitBufferReadSmall
+BitBufferRead
+BitArrayClearBits
+BitArrayClearBit
+BitArraySetBits
+BitArraySetBit
+BitArrayTestBit
+BitBufferRewind: Rewound too far.
+ASSERT FAILED: bits != nil %s, line %d
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../External/AppleLossless/BitUtilities.c
+bits->cur <= bits->end
+numBits <= 8
+numBits <= 16
+bitArray != 0
+bitIndexStart <= bitIndexEnd
+copyPredictorTo32Shift
+copyPredictorTo24Shift
+unmix32
+bytesShifted != 0
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../External/AppleLossless/matrix_dec.c
+aes_ofb_crypt
+aes_cfb_decrypt
+aes_cfb_encrypt
+b_pos == 0
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../External/GladmanAES/aes_modes.c
+T`00P
+L&&jl66Z~??A
+Oh44\Q
+sb11S*
+RF##e
+&N''i
+X,,t4
+>^//q
+,@  `
+x<<D%
+uB!!c 
+D""fT**~;
+;d22Vt::N
+Cn77Y
+J%%o\..r8
+|>>Bq
+gg}V++
+jL&&Zl66A~??
+Sb11?*
+eF##^
+tX,,.4
+RRMv;;a
+{R))>
+MMUf33
+PPDx<<
+cB!!0 
+~~Gz==
+fD""~T**
+Vd22Nt::
+xxoJ%%r\..$8
+ppB|>>
+aa_j55
+UUxP((z
+g+}V+
+&jL&6Zl6?A~?
+R;Mv;
+9Kr9J
+M3Uf3
+P<Dx<
+~=Gz=d
+"fD"*~T*
+2Vd2:Nt:
+$lH$\
+7Yn7m
+x%oJ%.r\.
+p>B|>
+a5_j5W
+U(xP(
+=&&jL66Zl??A~
+})){R
+g99KrJJ
+!88Hp
+==Gzdd
+""fD**~T
+22Vd::Nt
+$$lH\\
+77Ynmm
+%%oJ..r\
+55_jWW
+)--wZ
+P~AeS
+Q3`bS
+>8$4,
+pHl\t
+Xt!)I
+Q3EbS
++XpHh
+pNlZr
+'6-9d
+[T:$6.
+ iZwK
+Df;4[
+1*?#0
+,8$4_
+tHl\B
+Xti)I
+[.:$6g
+Df~4[
+j_FbT~
+h4,8$@_
+2\tHlWB
+PQAeS~
+HhXpE
+=-9'6
+awKiZ
+~4[C)v
+j~FbT
+1?#1*
+8$4,6-9'$6.:*?#1pHhX~AeSlZrNbS
+EHl\tFeQ
+T~FbZwKi
+,8$4'6-9:$6.1*?#XpHhS~AeNlZrEbS
+FeQbT~FiZwK
+V},z7
+4,8$9'6-.:$6#1*?hXpHeS~ArNlZ
+EbS\tHlQ
+FeFbT~KiZw
+$4,8-9'66.:$?#1*HhXpAeS~ZrNlS
+Ebl\tHeQ
+F~FbTwKiZ
+AES_CTR_Update
+AES_ECB_Update
+!( ( (uintptr_t)(inSrc) >= (uintptr_t)(inDst) ) && ( (uintptr_t)(inSrc) < ( ( (uintptr_t)(inDst) ) + (inLen) ) ) )
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/AESUtils.c
+!( ( (uintptr_t)(inDst) >= (uintptr_t)(inSrc) ) && ( (uintptr_t)(inDst) < ( ( (uintptr_t)(inSrc) ) + (inLen) ) ) )
+ECB doesn't support non-block-sized operations (%zu bytes)
+com.apple.airplay
+AirPlaySettings_SetNumber
+AirPlaySettings_SetInt64
+AirPlaySettings_SetCString
+AirPlaySettings_CopyValueEx
+AirPlaySettings_CopyKeys
+kCFPreferencesCurrentUser
+kCFPreferencesAnyHost
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Sources/AirPlaySettings.c
+cfStr
+### Wrote type for AirPlay setting '%@': '%@'
+allKeys
+DebugPrintAssert
+LogControlCF
+PrintFCallBackAllocatedString
+GetProcessNameByPID
+<<NULL>>
+PrintFWriteHex
+DebugStackTrace
+SNPrintF_Add
+LogShow
+Switching Protocols
+Continue
+Processing
+Checkpoint
+Created
+Accepted
+Non-Authoritative Information
+No Content
+Reset Content
+Partial Content
+Multi-Status
+Already Reported
+Content Different
+IM Used
+Low on Storage Space
+Multiple Choices
+Moved Permanently
+See Other
+Not Modified
+Use Proxy
+Switch Proxy
+Temporary Redirect
+Resume Incomplete
+Moved Location
+Going Away
+Load Balancing
+Bad Request
+Unauthorized
+Payment Required
+Forbidden
+Method Not Allowed
+Not Acceptable
+Proxy Authentication Required
+Request Timeout
+Length Required
+Precondition Failed
+Request Entity Too Large
+Request-URI Too Long
+Unsupported Media Type
+Requested Range Not Satisfiable
+Expectation Failed
+I'm a teapot
+Enhance Your Calm
+Unprocessable Entity
+Failed Dependency
+Unordered Collection
+Upgrade Required
+Precondition Required
+Too Many Requests
+Request Header Fields Too Large
+No Response
+Retry With
+Blocked by Parental Controls
+Parameter Not Understood
+Conference Not Found
+Not Enough Bandwidth
+Session Not Found
+Method Not Valid In This State
+Header Field Not Valid
+Invalid Range
+Parameter Is Read-Only
+Aggregate Operation Not Allowed
+Only Aggregate Operation Allowed
+Unsupported Transport
+Destination Unreachable
+Destination Prohibited
+Data Transport Not Ready Yet
+Notification Reason Unknown
+Key Management Error
+Connection Authorization Required
+Connection Credentials not accepted
+Failure to establish secure connection
+Invalid collblob
+Client Closed Request
+Internal Server Error
+Not Implemented
+Bad Gateway
+Service Unavailable
+Gateway Time-out
+Version Not Supported
+Variant Also Negotiates
+Insufficient Storage
+Loop Detected
+Bandwidth Limit Exceeded
+Not Extended
+Network Authentication Required
+Option Not Supported
+Network Read Timeout
+Network Connect Timeout
+/dev/console
+level
+stderr
+stdout
+backup
+/dev/null
+syslog
+callback
+flags
+program
+category
+prefix
+function
+output
+output2
+0123456789abcdef
+%s.%d
+<< NO ERROR STRING >>
+%s+%u
+%s-%u
+%s%llu
+%s%.*s
+### [ASSERT] %s:%ld "%###s", %#m %V
+### [ASSERT] %s:%ld "%###s", "%s" %V
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/APSDebugServices.c
+range.location == range.length
+len > 0
+/proc/%lld/as
+0123456789ABCDEF
+<<NULL>>
+<< ERROR: %%S with too many #'s (%d) >>
+false
+%-11d    0x%08X    '%C'    
+%d/0x%X/'%C' 
+%-11d    0x%08X    '^^^^'    
+%d/0x%X 
+(0 bytes)
+<< BAD %%H PRECISION >>
+<<NULL %zu/%zu>>
+%Y-%m-%d %I:%M:%S
+%s.%06u %s
+%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x
+### bad IE header:
+%2.1H
+### bad IE length:
+%2.1H
+%*s%3d %-*s '%.*s'
+%*s%3d %-*s %2.2H
+DS Parameter Set
+Extended Supported Rates
+### bad vendor IE:
+%2.1H
+### bad Apple General IE:
+%2.1H
+%*s%3d %-*s product ID %d flags 0x%x
+Apple General IE
+%*s%3d %-*s
+### WPS TLV too small for header:
+%2.1H
+### WPS TLV bad length:
+%2.1H
+%*s%-*s %3.2H
+ConfigMethods
+<<UNKNOWN>>
+<<UNKNOWN VENDOR>
+%*s%3d %-*s %2.2H
+%s:%lld
+sline
+waMA=
+%*s### bad TXT record length byte (%zu, %zu expected)
+%*s### bad TXT escape: %.*s
+%*s%.*s
+%*s### TXT record length byte too big (%zu, %zu max)
+<<UNKNOWN PRINTF EXTENSION '%.*s'>>
+<<UNKNOWN FORMAT CONVERSION CODE %%%c>>
+( (size_t)( s - currHexPtr ) ) < sizeof( hex1 )
++%04X: %s |%s| (%zu bytes)
+* (%zu more identical bytes, %zu total)
++%04X: %s |%s|
+... %zu more bytes ...
+%04d-%02d-%02d %02d:%02d:%02d.%06d
+<<UNKNOWN CF OBJECT TYPE: %d>>
+%a (%f)
+%2d %*s %p  %s
+LOG ENDED, CONTINUES IN NEXT LOG FILE
+%u.%u.%u.%u
+<< ERROR: %#a used with unsupported type: %d >>
+<< AF_UNSPEC >>
+<< ERROR: %%##a used with unknown family: %d >>
+%02X:%02X:%02X:%02X:%02X:%02X:%02X:%02X
+<< ERROR: Must specify address size (i.e. %.4a=IPv4, %.6a=Enet, %.8a=Fibre, %.16a=IPv6) >>
+ALAC,
+%-5s %5u Hz
+, %2u-bit
+16-bit
+20-bit
+24-bit
+??-bit
+32-bit
+Stereo
+%u ch
+, Non-interleaved
+, Swapped
+, Float
+, %u.%u
+, %u samples/packet
+Add '%s' format failed due to lack of space (%d vs %zu)
+ERROR: << precision must be 0-%d >>
+<< ERROR: invalid NumVersion stage: 0x%02X >>
+<<INVALID DNS LABEL LENGTH %u>>
+<<DNS NAME TOO LONG>>
+<< ERROR: %%s with too many #'s (%d) >>
+=== LogUtils (%s, PID %llu) ===
+  %-*s  L=%-*s  R=%u/%-5llu  O1=%s  O2=%s
+  Action: %s:%s=%s
+### ERROR: %#m
+DebugServicesAssert
+DebugServicesBreak
+DebugServicesLogging
+DebugServicesStackTrace
+LogUtils
+chatty
+verbose
+trace
+notice
+warning
+assert
+require
+critical
+alert
+emergency
+tragic
+noErr
+catch-all unknown error
+kUnknownErr
+kOptionErr
+kSelectorErr
+kExecutionStateErr
+kPathErr
+kParamErr
+kUserRequiredErr
+kCommandErr
+kIDErr
+kStateErr
+kRangeErr
+kRequestErr
+kResponseErr
+kChecksumErr
+kNotHandledErr
+kVersionErr
+kSignatureErr
+kFormatErr
+kNotInitializedErr
+kAlreadyInitializedErr
+kNotInUseErr
+kTimeoutErr
+kCanceledErr
+kAlreadyCanceledErr
+kCannotCancelErr
+kDeletedErr
+kNoMemoryErr
+kNoResourcesErr
+kDuplicateErr
+kImmutableErr
+kUnsupportedDataErr
+kIntegrityErr
+kIncompatibleErr
+kUnsupportedErr
+kUnexpectedErr
+kValueErr
+kNotReadableErr
+kNotWritableErr
+kBadReferenceErr
+kFlagErr
+kMalformedErr
+kSizeErr
+kNameErr
+kNotPreparedErr
+kReadErr
+kWriteErr
+kMismatchErr
+kDateErr
+kUnderrunErr
+kOverrunErr
+kEndingErr
+kConnectionErr
+kAuthenticationErr
+kOpenErr
+kTypeErr
+kSkipErr
+kNoAckErr
+kCollisionErr
+kBackoffErr
+kAddressErr
+kInternalErr
+kNoSpaceErr
+kCountErr
+kEndOfDataErr
+kWouldBlockErr
+kLookErr
+kSecurityRequiredErr
+kOrderErr
+kUpgradeErr
+kAsyncNoErr
+kDeprecatedErr
+kPermissionErr
+kDNSServiceErr_Unknown
+kDNSServiceErr_NoSuchName
+kDNSServiceErr_NoMemory
+kDNSServiceErr_BadParam
+kDNSServiceErr_BadReference
+kDNSServiceErr_BadState
+kDNSServiceErr_BadFlags
+kDNSServiceErr_Unsupported
+kDNSServiceErr_NotInitialized
+mStatus_NoCache
+kDNSServiceErr_AlreadyRegistered
+kDNSServiceErr_NameConflict
+kDNSServiceErr_Invalid
+kDNSServiceErr_Firewall
+kDNSServiceErr_Incompatible
+kDNSServiceErr_BadInterfaceIndex
+kDNSServiceErr_Refused
+kDNSServiceErr_NoSuchRecord
+kDNSServiceErr_NoAuth
+kDNSServiceErr_NoSuchKey
+kDNSServiceErr_NATTraversal
+kDNSServiceErr_DoubleNAT
+kDNSServiceErr_BadTime
+kDNSServiceErr_BadSig
+kDNSServiceErr_BadKey
+kDNSServiceErr_Transient
+kDNSServiceErr_ServiceNotRunning
+kDNSServiceErr_NATPortMappingUnsupported
+kDNSServiceErr_NATPortMappingDisabled
+kDNSServiceErr_NoRouter
+kDNSServiceErr_PollingMode
+kDNSServiceErr_Timeout
+mStatus_ConnPending
+mStatus_ConnFailed
+mStatus_ConnEstablished
+mStatus_GrowCache
+mStatus_ConfigChanged
+mStatus_MemFree
+EACCES
+EADDRINUSE
+EADDRNOTAVAIL
+EAFNOSUPPORT
+EBADE
+EBADF
+EBADFD
+EBADFSYS
+EBADMSG
+EBADR
+EBADRPC
+EBADRQC
+EBADSLT
+EBFONT
+EBUSY
+ECANCELED
+ECHILD
+ECHRNG
+ECOMM
+ECONNABORTED
+ECONNREFUSED
+ECONNRESET
+ECTRLTERM
+EDEADLK
+EDEADLOCK
+EDESTADDRREQ
+EDQUOT
+EENDIAN
+EEXIST
+EFAULT
+EFBIG
+EFPOS
+EHOSTDOWN
+EHOSTUNREACH
+EIDRM
+EILSEQ
+EINPROGRESS
+EINTR
+EINVAL
+EISCONN
+EISDIR
+EL2HLT
+EL2NSYNC
+EL3HLT
+EL3RST
+ELIBACC
+ELIBBAD
+ELIBEXEC
+ELIBMAX
+ELIBSCN
+ELNRNG
+ELOOP
+EMFILE
+EMLINK
+EMORE
+EMSGSIZE
+EMULTIHOP
+ENAMETOOLONG
+ENETDOWN
+ENETRESET
+ENETUNREACH
+ENFILE
+ENOANO
+ENOBUFS
+ENOCSI
+ENODATA
+ENODEV
+ENOENT
+ENOEXEC
+ENOLCK
+ENOLIC
+ENOLINK
+ENOMEM
+ENOMSG
+ENONDP
+ENONET
+ENOPKG
+ENOPROTOOPT
+ENOREMOTE
+ENOSPC
+ENOSR
+ENOSTR
+ENOSYS
+ENOTBLK
+ENOTCONN
+ENOTDIR
+ENOTEMPTY
+ENOTSOCK
+ENOTSUP
+ENOTTY
+ENOTUNIQ
+ENXIO
+EOPNOTSUPP
+EOVERFLOW
+EOWNERDEAD
+EPERM
+EPFNOSUPPORT
+EPIPE
+EPROCUNAVAIL
+EPROGMISMATCH
+EPROGUNAVAIL
+EPROTO
+EPROTONOSUPPORT
+EPROTOTYPE
+ERANGE
+EREMCHG
+EREMOTE
+ERESTART
+EROFS
+ERPCMISMATCH
+ESHUTDOWN
+ESOCKTNOSUPPORT
+ESPIPE
+ESRCH
+ESRMNT
+ESRVRFAULT
+ESTALE
+ESTRPIPE
+ETIME
+ETIMEDOUT
+ETOOMANYREFS
+ETXTBSY
+EUNATCH
+EUSERS
+EWOULDBLOCK
+EXDEV
+EXFULL
+APSMFiSAP_DeriveAESKey
+APSMFiSAP_Decrypt
+APSMFiSAP_Encrypt
+__APSMFiSAP_Exchange_ServerM1
+APSMFiSAP_Exchange
+APSMFiSAP_Create
+( inRef->state == kAPSMFiSAPState_ClientDone ) || ( inRef->state == kAPSMFiSAPState_ServerDone )
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/APSMFiSAP.c
+inputEnd > inInputPtr
+( inputEnd - inInputPtr ) >= kAPSMFiSAP_VersionLen
+inRef->version == kAPSMFiSAPVersion1
+( inputEnd - inInputPtr ) >= kAPSMFiSAP_ECDHKeyLen
+inInputPtr == inputEnd
+AES-KEY
+AES-IV
+dst == ( buf + len )
+bad state %d
+inVersion == kAPSMFiSAPVersion1
+_ReadI2C
+APSMFiPlatform_CopyCertificate
+_WriteI2C
+APSMFiPlatform_CreateSignature
+### MFi auth 0x%02X read register 0x%02X, %zu bytes (try %d, %d bytes) failed: %#m
+UpTicks() < deadline
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/APSMFiServerPlatformQNX.c
+### MFi auth read register 0x%02X, %zu bytes failed after %d tries: %#m
+MFi auth copy certificate
+certificatePtr
+/dev/i2c_usb0
+certificateLen > 0
+MFi auth copy certificate done: %zu bytes
+### MFi auth copy certificate failed: %#m
+### MFi auth 0x%02X write register 0x%02X, %zu bytes (try %d, %d bytes) failed: %#m
+### MFi auth write register 0x%02X, %zu bytes failed after %d tries: %#m
+MFi auth create signature
+inDigestLen == 20
+!( buf[ 0 ] & kMFiAuthFlagError )
+signatureLen > 0
+signaturePtr
+MFi auth created signature:
+### MFi auth create signature failed: %#m
+_AsyncConnection_ReleaseOperation
+AsyncConnection_Connect
+AsyncConnection_Test
+AsyncConnection_ConnectSyncEx
+_AsyncConnection_ConnectHandler
+_AsyncConnection_StartConnect
+_AsyncConnection_DNSCallBack
+_AsyncConnection_EventHandler
+ParseDestination
+_AsyncConnection_StartDNSResolve
+_AsyncConnection_SRVCallBack
+_AsyncConnection_StartSRVQuery
+_AsyncConnection_Connect
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/AsyncConnection.c
+*inDestination != '\0'
+obj->destination
+context.doneSem
+http://10.0.20.1
+www.apple.com
+bb30home
+_airport._tcp.
+local.
+Brother HL-5370DW series
+_http._tcp.
+FAILED
+PASSED
+context.queue
+### Canceling connect to %s
+Connected to  %##a
+Connecting to %##a, interface %d
+### Connect 1 to %##a failed: %#m
+obj->readSource
+obj->writeSource
+Resolved      %s -> %##a, Flags 0x%X, If %u, TTL %u
+DNSServiceProcessResult failed: %#m...mDNSResponder probably crashed
+### Connect 2 to %##a failed: %#m
+n == 1
+len < sizeof( ifname )
+len < inNameMaxLen
+Resolving     %s
+inRDataSize > 6
+SRV resolved  %s -> %s port %d, If %u, Flags 0x%X, TTL %u
+Querying SRV  %s
+connection->timerSource
+AsyncConnection
+AudioConverterSetProperty_compat
+AudioConverterNew_compat
+inSize == sizeof( *alacParams )
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/AudioConverterLite.c
+me->alacDecoder
+SineTable_Create
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/AudioUtils.c
+AudioStreamCreate
+_AudioStreamGetTypeID
+libAudioStream.so
+AudioSessionSetEventHandler
+AudioSessionCopyLatencies
+AudioSessionEnsureSetup
+AudioSessionEnsureTornDown
+AudioSessionGetSupportedInputFormats
+AudioSessionGetSupportedOutputFormats
+AudioStreamInitialize
+AudioStreamFinalize
+AudioStreamSetInputCallback
+AudioStreamSetOutputCallback
+_AudioStreamCopyProperty
+_AudioStreamSetProperty
+AudioStreamGetVolume
+AudioStreamSetVolume
+AudioStreamRampVolume
+AudioStreamPrepare
+AudioStreamStart
+AudioStreamStop
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/AudioUtilsDLL.c
+gAudioStreamTypeID != _kCFRuntimeNotATypeID
+AudioStream
+Base64EncodedLinesMaxSize
+Base64Decode
+?456789:;<=
+ !"#$%&'()*+,-./0123
+Base64DecodedSize
+Base64EncodeLinesEx
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_
+Base64EncodeEx
+Base64DecodeCopy
+Base64EncodeLinesCopyEx
+Base64EncodeCopyEx
+inLineEnding
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/Base64Utils.c
+inEncodedData
+inDecodedDataBuffer
+impossible state (%d)
+buf[ 1 ] == 0
+buf[ 2 ] == 0
+impossible pad state (%d)
+inSourceData
+inEncodedDataBuffer
+encodedSize >= inSourceSize
+( end - src ) == 0
+( (size_t)( dst - ( (uint8_t *) inEncodedDataBuffer ) ) ) <= encodedSize
+outDecodedData
+n > inEncodedSize
+outEncodedData
+n >= inSourceSize
+CFPropertyListCreateData
+CFStringAppendCString
+CFStringGetCStringPtr
+CFStringFindWithOptions
+CFStringGetIntValue
+CFStringCompare
+CFStringGetBytes
+CFStringGetPascalString
+CFStringGetCString
+CFStringCreateWithBytes
+CFStringCreateWithFormat
+CFStringCreateMutableCopy
+CFNumberCreate
+CFDateGetAbsoluteTime
+CFDataGetBytes
+CFArrayAppendArray
+CFArrayCreate
+CFDictionaryCreate
+CFArrayGetFirstIndexOfValue
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/CFCompat.c
+Unsupported plist format: %d
+inEncoding == kCFStringEncodingUTF8
+inRangeToSearch.location >= 0
+inRangeToSearch.location <= ( (CFIndex) sourceLen )
+endOffset >= inRangeToSearch.location
+endOffset <= ( (CFIndex) sourceLen )
+inRange.location <= ( (CFIndex) size )
+inRange.length <= ( (CFIndex) size )
+( inRange.location + inRange.length ) <= ( (CFIndex) size )
+inFormatOptions == NULL
+resultString
+p && ( n >= ( (size_t)( inRange.location + inRange.length ) ) )
+( srcIndex >= 0 ) && ( srcIndex <= srcCount )
+( endIndex >= 0 ) && ( endIndex <= srcCount )
+inValues || ( inCount == 0 )
+( i >= 0 ) && ( i <= n )
+( n >= 0 ) && ( n <= maxN )
+__CFLStringHash
+__CFLNumberHash
+__CFLNumberEqual
+__CFLNumberFree
+__CFLDictionaryHash
+__CFLDateHash
+__CFLDateEqual
+__CFLDateFree
+__CFLDataHash
+__CFLArrayHash
+__CFLArrayEqual
+CFLNumberIsFloatType
+CFLNumberGetValue
+CFLNumberGetByteSize
+CFLDictionaryApplyFunction
+CFLDictionaryGetKeysAndValues
+__CFLDictionaryFindKey
+CFLDictionaryGetValue
+__CFLDictionaryEqual
+CFLDictionaryGetCount
+CFLDateSetDate
+CFLDateGetDate
+CFLDataGetDataPtr
+CFLArrayApplyFunction
+CFLArrayContainsValue
+CFLArraySetValueAtIndex
+CFLArrayGetValueAtIndex
+CFLArrayGetValues
+CFLArrayGetCount
+CFLHash
+CFLEqual
+CFLGetRetainCount
+CFLGetTypeID
+CFLRuntimeCreateInstance
+__CFLStringFree
+__CFLDataFree
+CFLDictionaryCopyKeysAndValues
+CFLDictionaryRemoveAllValues
+__CFLDictionaryFree
+CFLDictionaryRemoveValue
+CFLDataSetData
+CFLArrayRemoveAllValues
+__CFLArrayFree
+CFLArrayRemoveValueAtIndex
+CFLArrayInsertValueAtIndex
+__CFLStringEqual
+__CFLDataEqual
+CFLRuntimeRegisterClass
+CFLStringSetText
+CFLStringGetCStringPtr
+CFLStringGetLength
+CFLStringAppendText
+CFLDataAppendData
+CFLDictionaryAddValue
+CFLDictionarySetValue
+CFLArraySortValues
+CFLRetain
+CFLRelease
+CFLStringCreateWithText
+CFLNumberCreate
+CFLDictionaryCreate
+CFLDateCreate
+CFLDataCreate
+CFLStringFindAndReplace
+CFLArrayCreate
+CFLArrayCreateCopy
+CFLCopy
+__CFLArrayCopy
+__CFLDataCopy
+__CFLDateCopy
+__CFLDictionaryCopy
+__CFLNumberCopy
+__CFLStringCopy
+CFLValidObjectType( inObject, kCFLTypeString )
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/CFLite.c
+CFLValidObjectType( inObject, kCFLTypeNumber )
+CFLValidObjectType( inLeft, kCFLTypeNumber )
+CFLValidObjectType( inRight, kCFLTypeNumber )
+inLeft != inRight
+object ptrs match...should have passed earlier equality testing
+CFLValidObjectType( inObject, kCFLTypeDictionary )
+CFLValidObjectType( inObject, kCFLTypeDate )
+CFLValidObjectType( inLeft, kCFLTypeDate )
+CFLValidObjectType( inRight, kCFLTypeDate )
+CFLValidObjectType( inObject, kCFLTypeData )
+CFLValidObjectType( inObject, kCFLTypeArray )
+CFLValidObjectType( inLeft, kCFLTypeArray )
+CFLValidObjectType( inRight, kCFLTypeArray )
+CFLValidObjectType( inNumber, kCFLTypeNumber )
+internal bad number type %d
+CFLValidObjectType( inDict, kCFLTypeDictionary )
+inObject
+inKey
+CFLValidObjectType( inLeft, kCFLTypeDictionary )
+CFLValidObjectType( inRight, kCFLTypeDictionary )
+( err == kNoErr ) || ( err == kNotFoundErr )
+inDate
+object->data
+CFLValidObjectType( inArray, kCFLTypeArray )
+( inStart >= 0 ) && ( inStart <= inEnd ) && ( inEnd <= object->count )
+( inIndex >= 0 ) && ( inIndex < object->count )
+( inIndex >= 0 ) && ( inIndex <= object->count )
+( inCount >= 0 ) && ( inCount <= object->count )
+( i >= 0 ) && ( i <= object->count )
+CFLValidObject( inObject )
+CFLValidObject( inLeft )
+CFLValidObject( inRight )
+inAllocator == kCFLAllocatorDefault
+inTypeID < gCFLRuntimeClassTableCount
+!CFLIsConstantObject( inObject )
+constant objects should never get freed
+values
+( object->count == 0 ) || object->storage
+object->count == 0
+newStorage
+CFLValidObjectType( inLeft, kCFLTypeString )
+CFLValidObjectType( inRight, kCFLTypeString )
+r->data
+l->data
+CFLValidObjectType( inLeft, kCFLTypeData )
+CFLValidObjectType( inRight, kCFLTypeData )
+newClassArray
+( inSize == 0 ) || inText
+inText || ( inSize == 0 )
+err == kNotFoundErr
+newNode
+( inRange.location >= 0 ) && ( inRange.location <= n ) && ( n <= obj->count )
+( inTextSize == 0 ) || inText
+outRef
+object
+object->buckets
+inLocation == 0
+inCompareOptions == 0
+inLength == (CFLIndex) stringLen
+outDst
+CFLValidObjectType( inSrc, kCFLTypeDictionary )
+CFLValidObjectType( inSrc, kCFLTypeNumber )
+Unknown typeID %u
+<invalid>
+CFLArray
+CFLBoolean
+CFLData
+CFLDate
+CFLDictionary
+CFLNumber
+CFLString
+CFLNull
+_ReadV0Object
+CFBinaryPlistV0CreateWithData
+_WriteInteger
+CFBinaryPlistV0CreateData
+_WriteV0String
+_WriteV0Object
+_WriteV0Number
+_ReadObject
+_WriteObject
+CFBinaryPlistCreateData
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/CFLiteBinaryPlist.c
+bplist00
+ctx.uniqueDict
+ctx.data
+ctx.array
+ctx.uniqueCount > 0
+offsets
+Unsupported object type: %u
+Bad UTF-8 string, trying Windows Latin-1 with:
+%1.1H
+Bad Windows Latin-1E, stripping non-ASCII
+asciiBuf
+keysAndValues
+Unknown object type: %u
+_CopyDictionaryFromFile
+_WritePlistToFile
+CFPreferencesSetAppValue_compat
+CFPreferencesCopyAppValue_compat
+CFPreferencesCopyKeyList_compat
+%s/Library/Preferences/%@.plist
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/CFLitePreferencesFile.c
+Prefs must be a dictionary: %@
+%s/Library/Preferences
+Make parent %s failed: %#m
+gPrefs
+appDictCopy
+__CFSocketHandler
+CFSocketConnectToAddress
+CFSocketInvalidate
+__CFRunLoopFree
+__CFRunLoopCommandSocketHandler
+CFRunLoopWakeUp
+__CFRunLoopRunOne
+__CFRunLoopCreate
+CFRunLoopFinalize
+CFRunLoopEnsureInitialized
+CFFileDescriptorGetTypeID
+__CFSocketEnsureInitialized
+CFSocketCreateWithNative
+CFFileDescriptorCreate
+CFRunLoopTimerCreate
+CFRunLoopSourceCreate
+CFSocketCreateRunLoopSource
+CFRunLoopRun
+default
+common
+inSock->callbackTypes & kCFSocketConnectCallBack
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/CFLiteRunLoopSelect.c
+!inSock->connecting
+inTimeout < 0
+realLen >= sizeof( *sa )
+realLen >= len
+%s: ### unknown control cmd '%c'
+rls->context.perform
+sourceHandled
+gCFRunLoopTypeID != _kCFRuntimeNotATypeID
+gCFRunLoopSourceTypeID != _kCFRuntimeNotATypeID
+gCFRunLoopTimerTypeID != _kCFRuntimeNotATypeID
+gCFFileDescriptorTypeID != _kCFRuntimeNotATypeID
+gCFSocketTypeID != _kCFRuntimeNotATypeID
+IsValidSocket( inSock )
+obj->sock
+inCallBack
+inInterval <= ( 0x7FFFFFFF / 1000 )
+CFFileDescriptor
+CFSocket
+CFRunLoop
+CFRunLoopSource
+CFRunLoopTimer
+CFArrayEnsureCreatedAndAppend
+CFArrayEnsureCreatedAndAppendCString
+CFArrayAppendCString
+__CFPropertyListStackPop
+CFArrayAppendInt64
+CFDictionarySetNumber
+CFDictionarySetInt64
+CFDictionarySetDouble
+CFDictionarySetCString
+CFDictionarySetData
+CFDictionaryCreateWithINIBytes
+CFDictionaryCopyKeys
+CFSetObjectAtPath
+CFDictionaryCreateWithCFStringArray
+CFGetHardwareAddress
+CFDictionaryGetNestedValue
+CFCreateWithPlistBytes
+CFCreateObjectFromStringEx
+RangeArrayToString
+begin
+MapCFStringToValue
+CFStringCopyUTF8CString
+CFCopyCString
+CFStringGetOrCopyCStringUTF8
+CFStringCreateComponentsSeparatedByString
+CFGetData
+CFCopyData
+CFCopyCFData
+CFPropertyListCreateBytes
+CFPropertyListWriteToFilePathEx
+CFDataCreateWithANSIFile
+CFDataCreateWithFilePath
+__CFPropertyListAssociateObject
+CFObjectSetProperty
+CFObjectSetPropertyInt64
+CFObjectSetPropertyDouble
+CFObjectSetPropertyData
+CFObjectSetPropertyCString
+CFObjectControlAsync
+_CFObjectControlAsync
+CFPropertyListExtractFormattedVAList
+CFSortCompareKeyPath
+__CFPropertyListStackPush
+CFPropertyListBuildFormatted
+CFDictionaryCreateFromNameTypeValueArgList
+StringToRangeArray
+ConflictingRangeArrayStringAndRangeArray
+ConflictingRangeArrayStrings
+ValidateRangeArrayStrings
+CFDictionaryCreateWithFourCharCodeArray
+CFObjectSetPropertyV
+CFObjectControlSyncV
+CFObjectControlAsyncV
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/CFUtils.c
+cfstr
+ioStack
+outArray
+outDict
+tempNum
+tempCFStr
+rootDict
+sectionDict
+sectionArray
+result
+newParent
+lastIndex >= 0
+CFGetTypeID( str ) == CFStringGetTypeID()
+inLen <= sizeof( tempAddr )
+%04d-%02d-%02d %02d:%02d:%02d.%06d %s
+CFGetTypeID( inDict ) == CFDictionaryGetTypeID()
+--bool
+--integer
+%lli %n
+--hex
+CFDataGetLength( data ) == (CFIndex) len
+--txt
+--array
+--dict
+--string
+CFGetTypeID( dict ) == CFDictionaryGetTypeID()
+CFGetTypeID( num ) == CFNumberGetTypeID()
+y >= 0
+%d-%d
+inString
+componentStr
+inPath
+cflbinary
+binary1
+unknown format: '%s'
+tempBuf
+( !inArray && !inDict ) || ( !inArray != !inDict )
+( *ioKey || !inDict ) && ( !( *ioKey ) || inDict )
+inObj
+ioTopObject
+inArray || inDict || ( ioTopObject && !( *ioTopObject ) )
+*ioKey
+params
+### Async control with no completion ignored response %@
+%s: unknown %%k specifier: %.*s
+%s: unknown specifier: %.*s
+i >= 0
+*p == ']'
+%s: unknown [] specifier: %.*s
+*p == '\0'
+( s64 >= INT_MIN ) && ( s64 <= UINT_MAX )
+( s64 >= SCHAR_MIN ) && ( s64 <= UCHAR_MAX )
+int16
+( s64 >= SHRT_MIN ) && ( s64 <= USHRT_MAX )
+int64
+( s64 >= INT8_MIN ) && ( s64 <= UINT8_MAX )
+( s64 >= INT16_MIN ) && ( s64 <= UINT16_MAX )
+( s64 >= INT32_MIN ) && ( s64 <= UINT32_MAX )
+bad integer size %zu
+%s: cannot convert to UTF-8: %@
+*utf8
+CFDataGetLength( (CFDataRef) value ) == 6
+macStr
+range.length == 4
+size == 4
+svers
+sourceVersion != 0
+CFDataGetLength( (CFDataRef) value ) == 16
+CFStringUUID
+CFArray
+CFBoolean
+CFData
+CFDate
+CFDictionary
+CFNumber
+CFString
+unknown CF type: '%s'
+not type %.*s:
+data*
+CFGetTypeID( value ) == CFDataGetTypeID()
+CFDataGetLength( (CFDataRef) value ) == ( (CFIndex) len )
+%s: unknown conversion type: %s
+CFDataGetLength( (CFDataRef) value ) == i
+leftTypeID == rightTypeID
+unsupport CF type: %d
+inFormat
+%s: parent must be an array, dictionary, or null (typeID=%d)
+precision >= 0
+precision == -1
+%s: unknown key specifier: %s
+c == '='
+( longFlag == 0 ) || ( longFlag == 2 )
+p || ( n == 0 )
+CFGetTypeID( obj ) == CFDictionaryGetTypeID()
+objArg
+%s: unknown format char: %s
+%.*ks=%b
+%.*ks=%i
+%.*ks=%D
+%.*ks=%s
+%.*ks={%@}
+%ks=%s
+%.*ks=[]
+%.*ks=[%@]
+inStr
+{begin=%iend=%i}
+inArray
+%kO:int
+inStr1
+inStr2
+%kC=%O
+_CLIReorderArg
+StringArray_Append
+_CLIGetValue
+_CLIPrepareForMetaCommand
+CLIParse
+gMutableArgV
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/CommandLineUtils.c
+newStr
+newArray
+<any-true-ish>
+<any-false-ish>
+<any-int>
+error: bad %s: '%s'. It must be 
+error: no %s specified. It must be 
+true|yes|y|on|1
+false|no|n|off|0
+<number>
+, or 
+internal failure
+%s version %s (%s)
+error: option 
+'%c' 
+'no-%s' 
+'%s' 
+requires a value
+%s%*s%s
+ [global options]
+ <command> [options] [args]
+ [options]
+ %c%s%c
+[=<%s>]
+[=%s]
+[<%s>]
+ <%s>
+can't be negated
+doesn't take a value
+expects a numerical value
+BUG: unknown option type %d
+%*s%s
+%*s    %s
+%*s%s %s -- %s
+SYNOPSIS
+DESCRIPTION
+GLOBAL OPTIONS
+Usage: 
+Commonly used commands
+Commands
+%*s%-*s    %s
+See '%s help' for a full list of commands.
+See '%s help <command>' for more info about a command.
+error: unknown command '%s'.
+newArgV
+error: unknown option '%c'.
+error: unknown option '%s'.
+error: no %s command specified. See '%s help %s' for more information.
+error: 
+%*s not specified
+error: unknown %s command '%s'. See '%s help %s' for a list of commands.
+error: unknown command '%s'. See '%s help' for a list of commands.
+warning: unused argument '%s'.
+DataBuffer_Shrink
+DataBuffer_Commit
+DataBuffer_AppendFVAList
+DataBuffer_Resize
+DataBuffer_Append
+DataBuffer_AppendANSIFile
+DataBuffer_RunProcessAndAppendOutput
+DataBuffer_AppendFile
+__DataBuffer_PrintFCallBack
+DataBuffer_Detach
+DataBuffer_DetachCString
+DataBuffer_Replace
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/DataBufferUtils.c
+inAmount <= inDB->bufferLen
+earlier error occurred
+inNewLen <= inDB->maxGrowLen
+newPtr
+inDB->bufferPtr || ( len == 0 )
+!( ( (uintptr_t)(inDB->bufferPtr) >= (uintptr_t)(inNewData) ) && ( (uintptr_t)(inDB->bufferPtr) < ( ( (uintptr_t)(inNewData) ) + (inNewLen) ) ) )
+!( ( (uintptr_t)(inNewData) >= (uintptr_t)(inDB->bufferPtr) ) && ( (uintptr_t)(inNewData) < ( ( (uintptr_t)(inDB->bufferPtr) ) + (inDB->bufferLen) ) ) )
+inOldLen == 0
+endOffset >= inOffset
+endOffset <= inDB->bufferLen
+value1
+_DebugIPCUtils_TestRequestHandler
+value2
+value3
+value
+_IPCAgent_Finalize
+_IPCAgent_SendMessage
+IPCAgent_SendMessage
+command
+_DebugIPC_MessageHandler
+logging
+responseType
+IPCAgent_DeleteSync
+_IPCAgent_ProcessMessagePackets
+_IPCAgent_ProcessMessageBytes
+_IPCAgent_CancelHandler
+_IPCAgent_Delete
+_IPCAgent_ReadHandler
+_IPCAgent_Start
+IPCAgent_Create
+DebugIPC_EnsureInitialized
+IPCAgent_Perform
+DebugIPC_PerformV
+DebugIPCUtils_Test
+CFEqual( CFDictionaryGetValue( inMsg, CFSTR( "key" ) ), CFSTR( "value1" ) )
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/DebugIPCUtils.c
+*agentStatePtr == 0
+CFEqual( CFDictionaryGetValue( inMsg, CFSTR( "key" ) ), CFSTR( "value2" ) )
+*agentStatePtr == 1
+CFEqual( CFDictionaryGetValue( inMsg, CFSTR( "key" ) ), CFSTR( "value3" ) )
+*agentStatePtr == 2
+Bad state
+!IsValidSocket( agent->sock )
+agent->source == NULL
+agent->messageList == NULL
+agent->handlerFunc == NULL
+plistData
+CFIsType( opcode, CFString )
+CFIsType( value, CFString )
+{%kO=%s}
+quitSem
+plistObj
+CFGetTypeID( plistObj ) == CFDictionaryGetTypeID()
+peMem
+[DebugIPC] Socket became defunct
+n >= ( (ssize_t) kIPCPacketHeaderSize )
+msg.msg_controllen >= sizeof( struct cmsghdr )
+SocketGetPacketReceiveInterface( &msg, NULL ) == agent->loopbackIfIndex
+memcmp( pe->pkt.signature, kIPCSignature, 4 ) == 0
+pe->pkt.fragmentIndex < pe->pkt.fragmentCount
+pe->pkt.fragmentCount > 0
+pe->pkt.fragmentCount <= kIPCMaxFragments
+agent->messageCount < kIPCMaxMessages
+msgCurr
+pe->pkt.fragmentCount == msgCurr->packetList->pkt.fragmentCount
+cmp != 0
+[DebugIPC] ### Packet receive error: %#m
+### [DebugIPC] Start failed: %#m
+IPCAgent
+obj->internalQueue
+context.lock
+context.msgSem
+context.msgs
+{%kO=%O%kO=%s}
+gDebugIPC_Agent1State == 1
+gDebugIPC_Agent2State == 1
+gDebugIPC_Agent1State == 2
+gDebugIPC_Agent2State == 2
+gDebugIPC_Agent1State == 3
+gDebugIPC_Agent2State == 3
+passed
+%###s: %s
+dispatch_source_get_handle
+dispatch_source_get_data
+dispatch_queue_get_label
+__LibDispatch_PlatformFreeSource
+__dispatch_queue_suspend
+__LibDispatchCF_EnsureInitialized
+dispatch_semaphore_signal
+dispatch_semaphore_wait
+dispatch_retain
+dispatch_group_wait
+dispatch_release
+dispatch_semaphore_create
+dispatch_group_create
+__dispatch_semaphore_free
+__dispatch_source_free
+dispatch_source_create
+__dispatch_queue_free
+__dispatch_queue_concurrent_drain
+__dispatch_queue_create_internal
+__LibDispatch_WorkThread
+__LibDispatch_ScheduleWork
+__dispatch_queue_resume
+dispatch_async_f
+__LibDispatch_SelectEnsureInitialized
+dispatch_group_notify_f
+dispatch_group_async_f
+LibDispatch_EnsureInitialized
+dispatch_queue_create
+dispatch_get_main_queue
+dispatch_get_current_queue
+__LibDispatch_PlatformArmOrDisarmSourceAndUnlock
+__LibDispatch_SelectHandleCommand
+__LibDispatch_SelectDrain
+__dispatch_source_suspend
+dispatch_suspend
+dispatch_source_cancel
+__dispatch_source_resume
+dispatch_resume
+dispatch_source_set_timer
+__dispatch_queue_serial_drain_locked
+__dispatch_queue_serial_drain
+dispatch_main_drain_np
+dispatch_sync_f
+LibDispatch_Finalize
+dispatch_main
+dispatch_get_global_queue
+DispatchSourceValidOrFreeing( inSource )
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/DispatchLite.c
+'%s' doesn't make sense for a '%s' source
+DispatchQueueValid( inQueue )
+<<INVALID>>
+DispatchSourceValidOrFreeing( source )
+inQueue != gDispatchMainQueue
+!inQueue->concurrent
+inQueue->suspendCount >= 1
+gDispatchCF_Source
+inSem->value > 0
+DispatchGroupValid( inGroup )
+obj->base.doFree
+obj->sem
+source && ( source->base.magic == kDispatchSource_MagicGood )
+bad type: %p
+queue && ( queue->base.magic == kDispatchQueue_MagicGood )
+queue->base.refCount == 0
+queue->itemsHead == NULL
+DispatchQueueValid( queue )
+gcd-work
+*** work thread timed out with work to do?
+--- quitting thread: %d now (%d max)
+--- aging idle thread: %d now (%d max)
++++ created work thread: %d now (%d max)
+*** more work, but not allowed to create another thread (%d of %d)
+inQueue->suspendCount > 0
+com.apple.select-commands
+gDispatchSelect_CommandQueue
+inGroup->notifyQueue == NULL
+com.apple.low-priority-root-queue
+gDispatchConcurrentQueues[ 0 ]
+com.apple.root-queue
+gDispatchConcurrentQueues[ 1 ]
+com.apple.high-priority-root-queue
+gDispatchConcurrentQueues[ 2 ]
+com.apple.main-queue
+inPkt->source->base.refCount == 0
+inPkt->source->canceled
+quit command received...exiting
+gDispatchSelect_QuitSem
+unknown command: %p
+gcd-select-drain
+DispatchSourceValidOrFreeing( curr )
+curr->type == DISPATCH_SOURCE_TYPE_READ
+curr->type == DISPATCH_SOURCE_TYPE_WRITE
+select() error: EBADF, quitting...
+DispatchSourceValid( curr )
+curr->type == DISPATCH_SOURCE_TYPE_TIMER
+Thread exited
+gDispatchSelect_ReadWriteList == NULL
+gDispatchSelect_TimerList == NULL
+DispatchSourceValid( inSource )
+inSource->suspendCount >= 0
+bad object '%C' %p
+inSource->suspendCount > 0
+( inQueue == gDispatchMainQueue ) || ( inQueue->base.refCount > 1 )
+caller didn't retain queue
+dispatch_get_current_queue() == inQueue
+caller didn't set current queue
+dispatch_get_current_queue() == gDispatchMainQueue
+inQueue != dispatch_get_current_queue()
+DEADLOCK: illegal from current queue
+gDispatchSelect_QuitSem == NULL
+gDispatchThreadPool_ItemsHead == NULL
+gDispatchThreadPool_PendingItems == 0
+signal
+timer
+write
+HIDTrackpadCreateDescriptor
+HIDTelephonyCreateDescriptor
+HIDPointingCreateDescriptor
+HIDKnobCreateDescriptor
+HIDDPadCreateDescriptor
+HIDButtonsCreateDescriptor
+HIDGetOverrideDescriptor
+HIDDeregisterOverrideDescriptor
+HIDRegisterOverrideDescriptor
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/HIDUtils.c
+gHIDOverrides
+key && value
+_HIDDeviceStart
+HIDDeregisterDevice
+_HIDDeviceStop
+_HIDBrowserStop
+HIDRegisterDevice
+_HIDBrowserStart
+HIDCopyDevices
+HIDDeviceStop
+_HIDBrowserStopDevices
+HIDDeviceStart
+HIDBrowserStopDevices
+HIDBrowserStop
+HIDBrowserStart
+HIDDevicePostReport
+HIDPostReport
+devices
+HIDBrowserCopyProperty
+countryCode
+HIDDeviceSetProperty
+displayUUID
+productID
+hidDescriptor
+sampleRate
+vendorID
+HIDDeviceCopyProperty
+_HIDDeviceFinalize
+_HIDBrowserFinalize
+HIDDeviceCreateVirtual
+HIDBrowserCreate
+_HIDDeviceGetTypeID
+_HIDBrowserGetTypeID
+HID device started
+Deregistered HID %''@, %#U
+HID device stopped
+HID browser stopped
+gVirtualHIDDevices
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/HIDUtilsVirtual.c
+Registered HID %''@, %#U
+browser->devices
+HID browser started
+### HID browser start failed: %#m
+HID device stopping...
+HID browser stopped devices
+HID device starting...
+HID browser stopping devices...
+HID browser stopping...
+HID browser starting...
+### Post HID report for %@ not found
+!inValue || CFIsType( inValue, CFString )
+!inValue || CFIsType( inValue, CFData )
+!me->started
+HID device finalized
+!me->devices
+HID browser finalized
+me->displayUUID
+me->sampleRate
+gHIDDeviceTypeID != _kCFRuntimeNotATypeID
+gHIDBrowserTypeID != _kCFRuntimeNotATypeID
+HIDUtils
+HIDDevice
+HIDBrowser
+HTTPClientSendMessage
+HTTPClientSendMessageSync
+_HTTPClientConnectHandler
+_HTTPClientRunStateMachine
+_HTTPClientCancelHandler
+_HTTPClientWriteHandler
+_HTTPClientReadHandler
+HTTPClientSetDestination
+_HTTPClientFinalize
+HTTPClientGetPeerAddress
+HTTPClientCreate
+HTTPClientCreateWithSocket
+_HTTPClientGetTypeID
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/HTTPClient.c
+me->readSource
+me->writeSource
+!me->connector
+### Read %zd bytes after connection close
+### Error on connection close: %#m
+Running state machine in error state
+Bad state %d
+!me->writeSuspended
+!me->readSuspended
+tempStr
+me->sockRefCount == 0
+gHTTPClientTypeID != _kCFRuntimeNotATypeID
+HTTPClientCore
+HTTPClient
+HTTPMessageSetBodyLength
+HTTPMessageSetBody
+HTTPMessageReadMessage
+HTTPMessageCreate
+_HTTPMessageGetTypeID
+inMsg->bigBodyBuf
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/HTTPMessage.c
+Content-Length
+Content-Type
+hdr->contentLength <= inMsg->maxBodyLen
+gHTTPMessageTypeID != _kCFRuntimeNotATypeID
+HTTPMessage
+SocketReadHTTPHeader
+NetSocket_HTTPReadHeader
+HTTPReadHeader
+HTTPDownloadFile
+len <= (size_t)( lim - dst )
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/HTTPNetUtils.c
+inBufferSize > 0
+[%s] %###s: ### recv failed: %#m
+http://
+strnicmp( inURL, "http://", sizeof_string( "http://" ) ) == 0
+HTTP/1.1
+========== HTTP REQUEST header ==========
+FD_ISSET( sock, &set )
+========== HTTP RESPONSE header ==========
+( inMaxSize == 0 ) || ( bodySize < inMaxSize )
+bodyBuffer
+bodyOffset == bodySize
+========== HTTP RESPONSE body ==========
+HTTPConnectionSendResponse
+HTTPConnectionInitResponse
+HTTPConnectionSendSimpleResponse
+HTTPConnectionVerifyAuth
+HTTPConnectionGetNextURLSegmentEx
+_HTTPConnectionRunStateMachine
+_HTTPConnectionWriteHandler
+_HTTPConnectionReadHandler
+_HTTPServerCloseConnection
+stopServer
+HTTPConnectionStart
+HTTPConnectionCreate
+HTTPServerCreate
+_HTTPConnectionGetTypeID
+_HTTPServerGetTypeID
+_HTTPConnectionFinalize
+password
+_HTTPServerSetProperty
+realm
+_HTTPServerListenerCanceled
+startServer
+_HTTPServerStart
+_HTTPServerControl
+_HTTPServerAcceptConnection
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/HTTPServer.c
+YjM5ODQ4MDE0MmI3YTI4ZmQ1MzdjNGIxMDVmNzYxMDg=
+server->realm
+WWW-Authenticate
+Digest realm="%s", nonce="%s"
+### Bad URL segment: '%.*s'
+!cnx->writeSuspended
+!cnx->readSuspended
+Closing  connection from %##a to %##a
+inCnx->readSource
+inCnx->writeSource
+gHTTPConnectionTypeID != _kCFRuntimeNotATypeID
+gHTTPServerTypeID != _kCFRuntimeNotATypeID
+me->readSource == NULL
+me->writeSource == NULL
+Set of unsupported property %@
+listener
+Listening on port %d
+Unsupported command %@
+Accepted connection from %##a to %##a
+### Accept connection failed: %#m
+HTTPServerCore
+HTTPServer
+HTTPConnection
+LogHTTP
+HTTPHeader_Validate
+HTTPHeader_Uncommit
+HTTPHeader_Commit
+HTTPHeader_InitRequest
+HTTPMakeTimedNonce
+HTTPVerifyAuthorization
+HTTPParseRTPInfo
+HTTPHeader_Parse
+HTTPHeader_SetField
+__HTTPAddDigestAuth
+__HTTPAddBasicAuth
+HTTPClientAuthorization_Apply
+HTTPHeader_InitResponse
+-------------------- HTTP RESPONSE --------------------
+==================== HTTP REQUEST  ====================
+%s%{text}%{text}%s
+%s%{text}<< BINARY DATA >>
+HTTP Request:  %.*s
+HTTP Response: %.*s
+inHeader->len < sizeof( inHeader->buf )
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/HTTPUtils.c
+inHeader->firstErr == kAlreadyInUseErr
+len > 4
+buf[ len - 4 ] == '\r'
+buf[ len - 3 ] == '\n'
+buf[ len - 2 ] == '\r'
+buf[ len - 1 ] == '\n'
+header not initialized
+( len + 2 ) < sizeof( inHeader->buf )
+()<>@,;:\"[]?={} 
+bytes=
+%s%n %n%s%n %s
+( n > 0 ) && ( n < ( (int) sizeof( inHeader->buf ) ) )
+inNonceLen > 0
+%a, %d %b %Y %H:%M:%S GMT
+Authorization
+ioAuthInfo->serverScheme & kHTTPAuthorizationScheme_Basic
+ioAuthInfo->copyPasswordFunction
+### Bad HTTP basic password: '%.*s'
+ioAuthInfo->serverScheme & kHTTPAuthorizationScheme_Digest
+username
+response
+algorithm
+cnonce
+opaque
+### Ignoring unknown HTTP auth param: %.*s=%.*s
+ioAuthInfo->requestNonceLen > 0
+### Bad HTTP digest nonce: '%.*s'
+ioAuthInfo->serverTimedNonceKeyPtr
+ioAuthInfo->serverTimedNonceKeyLen > 0
+### Bad HTTP digest nonce: '%.*s' %#m
+### HTTP digest mismatch (probably bad password):
+    ours:   %s
+    theirs: %.*s
+unknown auth scheme: "%.*s"
+RTP-Info
+rtptime
+gotSeq
+gotTS
+ioHeader->len < sizeof( ioHeader->buf )
+ptr < end
+HTTP/1.0
+len > 2
+len < maxLen
+bad header length
+%s: %V
+newLen < maxLen
+( n > 0 ) && ( n < ( (int) maxLen ) )
+inAuthInfo->allowedAuthSchemes & kHTTPAuthorizationScheme_Digest
+Digest username="%s", realm="%.*s", nonce="%.*s", uri="%.*s", response="%s"
+inAuthInfo->allowedAuthSchemes & kHTTPAuthorizationScheme_Basic
+%s:%s
+userPass
+Basic %s
+fullValue
+inAuthInfo->requestHeader
+inAuthInfo->responseHeader
+inAuthInfo->requestHeader->methodLen > 0
+inAuthInfo->requestHeader->urlLen > 0
+bad lastAuthScheme %d
+domain
+stale
+%s: ### ignoring unknown auth param: %.*s=%.*s
+%s %u %s
+HTTPRequests
+HTTPResponses
+ipow10_64
+ipow10
+iceil2_64
+iceil2
+inExponent <= 19
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/MathUtils.c
+inExponent <= 9
+x <= UINT64_C( 0x8000000000000000 )
+x <= UINT32_C( 0x80000000 )
+_MorseCodeAction
+MorseCode
+UnpackDataVAList
+PackDataVAList
+TXTRecordGetNextItem
+Swap16Mem
+MemReverse
+MirroredRingBufferFree
+MirroredRingBufferInit
+H264ConvertAVCCtoAnnexBHeader
+SwapUUID
+CreateEDIDDictionaryWithBytes
+rawBytes
+manufacturer
+productID
+serialNumber
+weekOfManufacture
+yearOfManufacture
+edidVersion
+edidRevision
+monitorName
+monitorSerialNumber
+_ParseEDID_CEABlock
+ceaBlock
+revision
+_ParseEDID_CEABlock_HDMI
+sourcePhysicalAddress
+videoLatencyMs
+audioLatencyMs
+videoLatencyInterlacedMs
+audioLatencyInterlacedMs
+APSSystemf
+SCDynamicStoreCopyLocalHostName
+RunProcessAndCaptureOutputEx
+NumberListStringCreateFromUInt8Array
+GetHomePath
+CreateTXTRecordWithCString
+CopyFileDataByFile
+CopyFileDataByPath
+CopySmallFile
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/MiscUtils.c
+BUG: bad action %d
+### bad morse code letter '%c' (0x%02x)
+altForm == 0
+( end - src ) >= 2
+( end - src ) >= 4
+src < end
+size <= (size_t)( end - src )
+unknown format specifier: %%%c
+dst < lim
+( lim - dst ) >= 2
+( lim - dst ) >= 4
+size <= 255
+( 1 + size ) <= ( (size_t)( lim - dst ) )
+size <= ( (size_t)( lim - dst ) )
+bad TXT record: 
+%1.1H
+( inLen % 2 ) == 0
+IsPtrAligned( src, 2 )
+IsPtrAligned( dst, 2 )
+( src == dst ) || !PtrsOverlap( src, inLen, dst, inLen )
+( inSrc == inDst ) || !PtrsOverlap( inSrc, inLen, inDst, inLen )
+/tmp/MirrorRingBuffer-XXXXXX
+( end - src ) >= 6
+( end - src ) >= len
+( lim - dst ) >= ( 4 + len )
+( inSrc == inDst ) || !PtrsOverlap( inSrc, 16, inDst, 16 )
+edidDict
+<<%%%02X%%%02X>>
+%%%02X
+ceaDict
+hdmiDict
+parsedCmd
+parsedArgs
+parsedArgsCount
+sortedArray
+/root
+maxLen < SIZE_MAX
+_NetPerfSetProperty
+_NetPerfCopyProperty
+_NetPerfClientSendThread
+_NetPerfClientReceiveThread
+_NetPerfClientReceivePacket
+_NetPerfServerSessionTearDown
+_PostEventF
+_NetPerfClientStop
+_NetPerfServerDataHandler
+_NetPerfServerDataThread
+_NetPerfFinalize
+NetPerfCreate
+_NetPerfGetTypeID
+_NetPerfClientSendControlMessage
+controlCommand
+_NetPerfClientRunStateMachine
+setUpServerSession
+_NetPerfClientHandleSetUpServerCompletion
+startServerSession
+_NetPerfClientStartData
+_NetPerfClientHandleControlCompletion
+startClientSession
+_NetPerfClientStart
+destination
+_NetPerfControl
+stopClientSession
+_NetPerfServerSessionSetUp
+tearDownServerSession
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/NetPerf.c
+Get of unsupported property %@
+Client data thread select() error: %#m
+ (bad)
+%4llu: Min RTT %10f ms, Max RTT %10f, Avg RTT %10f, Recent RTT %10f Lost %u%s
+NetPerf server tearing down
+NetPerf server torn down
+NetPerf client stopping
+NetPerf client stopped
+Server data thread select() error: %#m
+NetPerf finalized
+NetPerfControl
+me->queue
+gNetPerfTypeID != _kCFRuntimeNotATypeID
+request
+/perf
+application/x-apple-binary-plist
+NetPerf client setting up server
+inResponse
+NetPerf client starting server
+NetPerf client starting data
+NetPerf client running
+me->clientResponse
+CFIsType( me->clientResponse, CFDictionary )
+NetPerf client starting
+me->clientState == kNetPerfClientState_Stopped
+inParams
+me->packetBuffer
+NetPerf client started
+NetPerf server setting up
+!me->serverSessionSetUp
+NetPerf server set up
+NetPerf server starting
+!me->serverSessionStarted
+NetPerf server started
+NetPerf
+SockAddrSetPort
+SockAddrGetPort
+SockAddrGetSize
+SocketSetBoundInterface
+NetSocket_WriteVSlow
+NetSocket_GetNative
+SockAddrGetIPv4
+GetInterfaceMACAddress
+GetIPAddress
+SockAddrCopy
+SockAddrSimplify
+SockAddrToDeviceID
+SockAddrCompareAddrEx
+SockAddrConvertToIPv6
+_GetPrimaryMACAddress
+SockAddrToString
+SocketSetPacketTimestamps
+SocketSetPacketReceiveInterface
+SocketSetKeepAlive
+_SocketJoinOrLeaveMulticast
+GetLoopbackInterfaceInfo
+SocketGetPacketUpTicks
+SocketGetPacketReceiveInterface
+SocketSetNonBlocking
+SocketGetFamily
+SocketSetMulticastLoop
+SocketSetMulticastInterface
+SocketSetQoS
+SocketGetInterfaceInfo
+SocketSetBufferSize
+SocketGetBufferSize
+SocketWriteData
+SocketReadData
+NetSocket_Reset
+NetSocket_Wait
+NetSocket_WriteVInternal
+SocketWriteAll
+SocketReadAll
+NetSocket_ReadInternal
+SocketCloseGracefully
+NetSocket_Disconnect
+SocketConnect
+__NetSocket_Connect
+GetUDPOutgoingSockAddr
+NetSocket_TCPConnectEx
+NetSocket_WriteFileSlow
+NetSocket_Delete
+NetSocket_ReadFile
+NetSocket_WriteInternal
+NetSocket_Cancel
+NetSocket_Create
+NetSocket_CreateWithNative
+UDPClientSocketOpen
+OpenSelfConnectedLoopbackSocket
+ServerSocketOpen
+ServerSocketPairOpen
+SendUDPQuitPacket
+SendSelfConnectedLoopbackMessage
+DrainUDPSocket
+inPort >= 0
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/NetUtils.c
+unknown family: %d
+Set bound interface unsupported for family %d
+inSock && ( inSock->magic == kNetSocketMagic )
+illegal when socket is not set up
+!inSock->canceled
+illegal when canceled
+inInterfaceName
+GetIPAddress: found address %.4a on interface %s
+Bad sockaddr family: %d
+unsupported family: %d
+inIfName
+mreq.ipv6mr_interface != 0
+Unsupported family: %d
+SO_TIMESTAMP not found. Did you enable it with setsockopt?
+Receive interface not found. Did you enable it with setsockopt?
+inIfIndex != 0
+Bad QoS value: %d
+### Set IP_TOS=0x%x failed: %#m
+### Set IPV6_TCLASS=0x%x failed: %#m
+bad socket family %d
+ifaList
+( inWhich == SO_RCVBUF ) || ( inWhich == SO_SNDBUF )
+### couldn't set SO_SNDBUF to %d...trying %d (%#m)
+### couldn't set SO_SNDBUF to %d...giving up at %d (%#m)
+writev failed: %#m
+offset < inSize
+recv failed: %#m
+i < 100
+IsValidSocket( inNativeSock )
+bad wait type: %d
+Bad writev() param
+writev() error: %zd, %#m
+recv() error: %#m
+inTimeoutSecs >= 0
+infinite timeout not allowed
+timeout waiting for graceful close
+### %zd bytes received on graceful shutdown: %#H
+recv error: %#m
+FD_ISSET( inSock, &readSet ) || FD_ISSET( inSock, &writeSet )
+!IsValidSocket( inSock->nativeSock )
+unsupport family: %d
+Wrote %10lld of %10lld, %6.2f%%, %6.2f Mbit/sec
+read failed: %#m
+Wrote %lld of %lld, %6.2f Mbit/sec: %#m
+inSock->readBuffer
+send/write() error: %#m
+inPeerAddr
+Bad family: %d
+!err || !err2
+NetSocket
+NetworkChangeListenerStop
+NetworkChangeListenerStart
+_NetworkChangeListenerCoalesceTimer
+_NetworkChangeListenerStop
+_NetworkChangeListenerCoalesceCanceled
+_NetworkChangeListenerFinalize
+_NetworkChangeListenerStart
+_NetworkChangeListenerCancelHandler
+_NetworkChangeListenerReadHandler
+NetworkChangeListenerCreate
+_NetworkChangeListenerGetTypeID
+Stopping
+Starting
+Delivering change
+Stopped
+Coalesce canceled
+!IsValidSocket( me->routingSock )
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/NetworkChangeListener.c
+me->routingSource == NULL
+me->coalesceTimer == NULL
+me->routingSource
+Started
+Canceled
+Read %zu too small for header
+Read %zu too small for msg (%d)
+Change: 0x%X
+Starting coalesce timer
+Coalescing change
+### Network change handling failed: %#m
+gNetworkChangeListenerTypeID != _kCFRuntimeNotATypeID
+NetworkChanges
+NetworkChangeListener
+_NTPClockServerProcessPacket
+_NTPClockServerThread
+_NTPClockClientSendRequest
+_NTPClockClientProcessResponse
+_NTPClockClientThread
+NTPClockSetThreadName
+_NTPClockFinalize
+NTPClockStop
+NTPClockStartServer
+NTPClockStartClient
+_NTPClockClientNegotiate
+NTPClockCreate
+_NTPClockGetTypeID
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/NTPUtils.c
+( pkt.rtcp.v_p_m >> 6 ) == 2
+pkt.rtcp.pt == 210
+Bad packet length: %zu
+RTCP 
+NTP server sent %sresponse to %##a
+ RTCP
+### NTP server send%s to %##a failed: %#m
+NTPClockServer
+NTP client request: 0x%08X%08X
+### NTP client send to %##a failed (%u total): %#m
+### NTP client received unexpected response: originated 0x%016llX, received 0x%016llX (%u total)
+%sNTP client clock reset: %s%{dur}
+NTP Raw: #
+Offset ms
+OffsetAvg
+OffsetMin
+OffsetMax
+OffsetJitter
+RTT ms
+RTTavg
+RTTmin
+RTTmax
+RTTjitter
+NTP Raw: %zu
+NTP client update: #
+RTT ms
+RTT ! 
+RateNew    
+RateAvg    
+RateHz    
+JitHz
+Offset ms
+Offset Avg
+Flags
+Best 
+NTP client update: %zu
+%+.9f
+%+.9f%s%s%s%s
+NTP client poll updated: %u-%u ms
+### NTP client received bad response from %##a (%u total): %#m
+NTPClockClient
+!me->lockPtr
+!me->threadPtr
+!IsValidSocket( me->cmdSock )
+!IsValidSocket( me->clientSock )
+!IsValidSocket( me->serverSockV4 )
+!IsValidSocket( me->serverSockV6 )
+server
+client
+NTP %s stopped
+NTP server started on port %d
+### NTP server start failed: %#m
+NTP client negotiating with %##a
+### NTP client negotiate wait for %##a failed (%u total): %#m
+failed
+succeeded
+%sNTP client negotiation with %##a %s: Good=%d, Serr=%u, Tout=%u, Rerr=%u Dur=%llu ms%s%?#m
+NTP client started with %##a on port %d
+### NTP client start failed: %#m
+gNTPClockTypeID != _kCFRuntimeNotATypeID
+NTPClockCore
+NTPClock
+NTPClockRaw
+RandomBytes
+RandomString
+/dev/urandom
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/RandomNumberUtils.c
+open urandom error: %#m
+read urandom error: %#m
+inMinChars <= inMaxChars
+ScreenDeregister
+ScreenRegister
+features
+maxFPS
+platformLayer
+widthPhysical
+heightPhysical
+widthPixels
+heightPixels
+_ScreenSetProperty
+_ScreenCopyProperty
+ScreenCreate
+e5f7a68d-7b0f-4305-984b-974f677a150b
+ScreenCopyMain
+_ScreenGetTypeID
+Deregistered screen %@ %u x %u
+gScreenArray
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/ScreenUtils.c
+Registered screen %@ %u x %u, %u FPS
+me->uuid
+gScreenTypeID != _kCFRuntimeNotATypeID
+Screen
+ScreenStreamCreate
+_ScreenStreamGetTypeID
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/ScreenUtilsDLL.c
+libScreenStream.so
+ScreenStreamInitialize
+ScreenStreamFinalize
+_ScreenStreamSetProperty
+ScreenStreamStart
+ScreenStreamStop
+ScreenStreamProcessData
+gScreenStreamTypeID != _kCFRuntimeNotATypeID
+ScreenStream
+D7q/;M
+XMLEscapeCopy
+ConvertUTF8StringToRFC1034LabelString
+CleanseHFSVolumeName
+CleanseDiskString
+HexToDataCopy
+TextToHardwareAddress
+TextToHardwareAddressScalar
+BitListString_Parse
+ParseIPv4Address
+StringToIPv4Address
+ParseCommandLineIntoArgV
+HexTextToDataCopy
+MapStringToValue
+ReplaceDifferentString
+MapValueToString
+strndup
+vsnprintf_add
+TextToInt32
+NumVersionToCString
+IPv6AddressToCString
+0123456789abcdef
+StringToIPv6Address
+ParseIPv6Address
+ParseIPv6Scope
+&quot;
+&amp;
+&#39;
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/StringUtils.c
+(int)( ptr - dst ) <= kRFC1034MaxLabelSize
+!( ( (uintptr_t)(inSrc) >= (uintptr_t)(inDst) ) && ( (uintptr_t)(inSrc) < ( ( (uintptr_t)(inDst) ) + (inDstMaxLen) ) ) )
+!( ( (uintptr_t)(inDst) >= (uintptr_t)(inSrc) ) && ( (uintptr_t)(inDst) < ( ( (uintptr_t)(inSrc) ) + (inSrcLen) ) ) )
+Untitled
+inDstSize > 0
+bytes
+( x >= 0x00 ) && ( x <= 0xFF )
+inAddrSize <= 8
+Bad hardware address size: %zu
+src != ptr
+( c == ',' ) || ( src == end )
+x < 32
+inBuffer
+outStr
+%2hhx%2hhx%2hhx%2hhx-%2hhx%2hhx-%2hhx%2hhx-%2hhx%2hhx-%2hhx%2hhx%2hhx%2hhx%2hhx%2hhx%n
+( inBase == 0 ) || ( inBase == 16 ) || ( inBase == 10 ) || ( inBase == 8 ) || ( inBase == 2 )
+%s: unsupported base: %d
+### invalid NumVersion stage: 0x%02X
+inPort <= 65535
+inPrefix <= 128
+c < (int) countof( kASCIItoHexTable )
+dst <= lim
+audio/mpeg
+audio/x-aiff
+audio/x-m4a
+audio/x-m4p
+audio/x-wav
+image/bmp
+image/gif
+image/jp2
+image/jpeg
+image/none
+image/pict
+image/png
+image/tiff
+video/mp4
+video/quicktime
+video/x-m4v
+CompareOSBuildVersionStrings
+%u%c%u
+result == 3
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/SystemUtils.c
+SetCurrentThreadPriority
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/ThreadUtils.c
+Platform doesn't support time constraint threads
+SleepForUpTicks
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/TickUtils.c
+YMD_HMStoSeconds
+ISODayOfWeek
+TimeDescriptorParseComponent
+TimeDescriptorFindComponent
+TimeDescriptorGetStartEndTimes
+TimeDescriptorGetDays
+TimeDescriptorMatch
+TimeDescriptorDayMatch
+TimeDescriptorTimeMatch
+TimeDescriptorMakeWithDaysAndTimes
+ParseFractionalDateString
+UTCSeconds
+UTCOffset
+GMTtoLocalTime
+inYear > 0
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/TimeUtils.c
+( inMonth >= 1 ) && ( inMonth <= 12 )
+( inDay >= 1 ) && ( inDay <= 31 )
+( inHour >= 0 ) && ( inHour <= 23 )
+( inMinute >= 0 ) && ( inMinute <= 59 )
+( inSecond >= 0 ) && ( inSecond <= 62 )
+y > 1752
+( m >= 1 ) && ( m <= 12 )
+( d >= 1 ) && ( d <= 31 )
+*p == '='
+( *p == '\0' ) || ( *p == ';' )
+( p < q ) && ( *p == '-' )
+( sHH >= 0 ) && ( sHH <= 23 )
+( sMM >= 0 ) && ( sMM <= 59 )
+( sSS >= 0 ) && ( sSS <= 61 )
+p == q
+( eHH >= 0 ) && ( eHH <= 24 )
+( eMM >= 0 ) && ( eMM <= 60 )
+( eSS >= 0 ) && ( eSS <= 62 )
+n == 7
+( p[ 0 ] == 'm' ) || ( p[ 0 ] == '-' )
+( p[ 1 ] == 't' ) || ( p[ 1 ] == '-' )
+( p[ 2 ] == 'w' ) || ( p[ 2 ] == '-' )
+( p[ 3 ] == 't' ) || ( p[ 3 ] == '-' )
+( p[ 4 ] == 'f' ) || ( p[ 4 ] == '-' )
+( p[ 5 ] == 's' ) || ( p[ 5 ] == '-' )
+( p[ 6 ] == 's' ) || ( p[ 6 ] == '-' )
+tt != ( (time_t) -1 )
+( inISOWeekDay >= 1 ) && ( inISOWeekDay <= 7 )
+( inSecond >= 0 ) && ( inSecond <= 61 )
+( inDays & ~kDaySetAllDays ) == 0
+( inStartHour >= 0 ) && ( inStartHour <= 23 )
+( inStartMinute >= 0 ) && ( inStartMinute <= 59 )
+( inStartSecond >= 0 ) && ( inStartSecond <= 61 )
+( inEndHour >= 0 ) && ( inEndHour <= 24 )
+( inEndMinute >= 0 ) && ( inEndMinute <= 60 )
+( inEndSecond >= 0 ) && ( inEndSecond <= 62 )
+inStartHour <= inEndHour
+inStartMinute <= inEndMinute
+inStartSecond <= inEndSecond
+days=%c%c%c%c%c%c%c;
+:%02d
+( src - ptr ) == 4
+( c == '-' ) || ( c == 'Z' )
+( src - ptr ) == 2
+( month >= 1 ) && ( month <= 12 )
+( day >= 0 ) && ( day <= 31 )
+( c == 'T' ) || ( c == 'Z' )
+( hour >= 0 ) && ( hour <= 23 )
+( c == ':' ) || ( c == 'Z' )
+( minute >= 0 ) && ( minute <= 59 )
+( second >= 0 ) && ( second <= 61 )
+( c == '.' ) || ( c == 'Z' )
+power <= 9
+c == 'Z'
+%Y-%m-%dT%H:%M:%S
+.%06uZ
+outSeconds
+tt1 != (time_t) -1
+tt2 != ( (time_t) -1 )
+diff >= 0
+currentCalendarTime != ( (time_t) -1 )
+tmPtr
+localCalendarTime != ( (time_t) -1 )
+gmtCalendarTime != ( (time_t) -1 )
+URLEncode
+URLDecodeCopy
+URLGetOrCopyNextVariable
+URLGetOrCopyVariable
+URLEncodeCopy
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Support/URLUtils.c
+unknown type: %d
+decodedData
+encodedStr
+"*:<>?\| .
+ ! #$%&'()!+,-."0123456789";#=$%@ABCDEFGHIJKLMNOPQRSTUVWXYZ[&]^_`abcdefghijklmnopqrstuvwxyz{'}~
+"#"$"%"&"<"A"C"D"E"G"H"I"M"m"a"b"d"p"e"q"r"t"s"u"v"x"w"y"z"
+0K0L0M0N0O0P0Q0R0S0T0U0V0W0X0Y0Z0[0\0]0^0_0`0a0b0d0e0f0g0h0i0o0p0r0s0u0v0x0y0{0|0
+0o0q0r0t0u0w0x0z0{0}0
+ 9 : 
+ &   ! 
+0123456789ABCDEFsh
+/bin/sh
+random: state info corrupted; not changed.
+random: not enough state (%d bytes); ignored.
+kC-*.g
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.note
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

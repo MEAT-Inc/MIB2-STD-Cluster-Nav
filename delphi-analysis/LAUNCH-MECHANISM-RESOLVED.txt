@@ -1,0 +1,70 @@
+Delphi native launch mechanism - RESOLVED IN QNX EMULATION
+2026-10-28
+
+Root cause
+The original minimal QEMU IFS used mkifs default data=uip for executables in RAM.
+That permits one execution. QNX consumes/removes the executable from the image
+namespace because its data has been used in place. The baseline was the first
+launch of probe_main; every preload attempt was a later launch of that same
+filename, which then returned ENOENT (2). probe_linked succeeded because it was
+a different executable being started for the first time. dlopen(observer) also
+succeeded because this was not a missing observer or forwarding-symbol issue.
+The earlier interpretation of this as an LD_PRELOAD blocker was incorrect.
+
+Fix
+native/loader-probe/run-qemu.sh now applies [data=copy] to the synthetic files
+in the generated test image. Code can stay in place while each process receives
+private initial data. This changes the disposable emulator IFS only, not the
+car's firmware, loader, program, mount settings, or startup configuration.
+
+Controlled evidence
+The same revised runner and native artifacts are tested in two fresh boots.
+Only the data attribute changes between the negative and positive image.
+- data=uip: initial baseline passes; access(probe_main) then fails. A SECOND
+  baseline without any LD_PRELOAD returns errno=2, exit=14. This reproduces the
+  failure independently of preloading. The negative-control checker requires
+  that exact pattern and rejects accidental full-suite success.
+- data=copy: all eight subprocess cases exit=0 and probe_main remains present:
+  baseline, baseline_repeat, preload, preload_repeat, provider preload, observer
+  basename preload, explicitly linked observer, restore_baseline.
+- Each successful process checks exactly 19 original provider calls and unchanged
+  arguments/uint32 results. Each observed run checks 16 stored records and 3 drops.
+- Parent suite exits=0 and prints DELPHI_QNX_SUITE_PASS. No fatal signal appears.
+- Removing preload restores the unobserved path in a fresh process. It does NOT
+  unload a preload from an already running process.
+
+Proven launch/resolution path
+For these synthetic QNX 6.5 ARM binaries, a process-scoped LD_PRELOAD causes the
+application's imported mangled registerService symbol to bind to the observer.
+The observer constructor's dlsym(RTLD_NEXT, symbol) resolves the provider, which
+is forwarded to exactly once. Both absolute and basename library forms pass.
+A parent launcher confines environment changes to forked children and waits for
+their exit; no global environment, executable, dependency or startup patch is
+required. run-qemu.sh makes no network or vehicle connection.
+
+Scope before the first car test
+This resolves the isolated launch mechanism. Actual Delphi AndroidAuto binding,
+its supervisor/launch arguments, module identity and C++ exception behavior still
+need their own checks. The synthetic library intentionally has _exit(90) on bad
+symbol resolution and a single-thread recorder: DO NOT preload it into the real
+AndroidAuto process. A production observer must meet diagnostic-prototype-spec.
+The real application must later be started with its original environment/args,
+adding the observer only to that one child, with a verified stock restart path.
+No restarting AndroidAuto, supervisor manipulation, disk patching, global export
+of LD_PRELOAD, firmware modification, or upload to the vehicle was performed.
+
+Artifacts and reproduction
+  native/loader-probe/build-qnx/qemu/test.build             data=copy
+  native/loader-probe/build-qnx/qemu/qemu.log               eight PASS cases
+  native/loader-probe/build-qnx/qemu-uip/test.build         data=uip
+  native/loader-probe/build-qnx/qemu-uip/qemu.log           negative control
+  native/loader-probe/build-qnx/elf-validation.json         static ELF checks
+  scripts/test_qnx_probe.ps1                              host + both QNX boots
+Run .\scripts\test_qnx_probe.ps1 in PowerShell with Docker Desktop running.
+The negative control intentionally runs a failing guest suite, but its host
+checker returns success only when the documented run-once failure is reproduced.
+The corrected-image checker requires all eight case results and suite exit=0.
+
+Primary documentation (data attribute, RAM-image defaults and repeated execution)
+https://qnx.com/developers/docs/6.5.0SP1.update/com.qnx.doc.neutrino_utilities/m/mkifs.html
+Toolchain revision baa45224f18ae6b13c2e9c77c6663bb8181eb6a1.

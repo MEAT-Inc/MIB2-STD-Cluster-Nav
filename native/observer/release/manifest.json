@@ -1,0 +1,96 @@
+{
+  "artifact": "libdelphi_observer.so",
+  "sha256": "cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c",
+  "abi": "ARM32 LE EABI5 base PCS",
+  "toolchain_revision": "baa45224f18ae6b13c2e9c77c6663bb8181eb6a1",
+  "target_train": "MST2_US_VW_P0890D",
+  "expected_target_sha256": {
+    "AndroidAuto": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271",
+    "libautoreceiver.so": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+  },
+  "event_mode": "entry_only_tail_call",
+  "exports": [
+    "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase",
+    "delphi_observer_view"
+  ],
+  "imports": [
+    "snprintf",
+    "getenv",
+    "getpid",
+    "memcpy",
+    "__cxa_finalize",
+    "ftruncate",
+    "dladdr",
+    "mmap",
+    "strrchr",
+    "write",
+    "__deregister_frame_info",
+    "_ITM_registerTMCloneTable",
+    "__get_errno_ptr",
+    "strncmp",
+    "_ITM_deregisterTMCloneTable",
+    "dlsym",
+    "memset",
+    "strcmp",
+    "pthread_self",
+    "_exit",
+    "open",
+    "__register_frame_info",
+    "close"
+  ],
+  "needed": [
+    "libc.so.3"
+  ],
+  "dynamic_relocations": [
+    23,
+    23,
+    23,
+    23,
+    23,
+    21,
+    21,
+    21,
+    21,
+    21,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22,
+    22
+  ],
+  "wrapper_assembly": "00000d30: push {r0, r1, r2, r3, ip, lr}\n00000d34: vpush {d0, d1, d2, d3, d4, d5, d6, d7}\n00000d38: ldr r2, [sp, #0x54]\n00000d3c: bl #0x8d8\n00000d40: str r0, [sp, #0x50]\n00000d44: vpop {d0, d1, d2, d3, d4, d5, d6, d7}\n00000d48: pop {r0, r1, r2, r3, ip, lr}\n00000d4c: bx ip",
+  "qnx_test_log_sha256": "8abba654c575e707552878f691be16c054d85f722b73ed97923a6d9d73a64f1c",
+  "vehicle_validated": false,
+  "runtime_fingerprints_verified": false,
+  "deployment_ready": false,
+  "files": {
+    "libdelphi_observer.so": {
+      "sha256": "cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c",
+      "bytes": 8561
+    },
+    "decode_delphi_observer.py": {
+      "sha256": "113906aee942b7245360806fcddb643b95210df976f23ce7f97cf3006264e13b",
+      "bytes": 2118
+    },
+    "README.txt": {
+      "sha256": "d1a499b89c4dff72dab8a8e67d504293a21481b6b85bfef8a83fedc85353e6d2",
+      "bytes": 5540
+    }
+  }
+}

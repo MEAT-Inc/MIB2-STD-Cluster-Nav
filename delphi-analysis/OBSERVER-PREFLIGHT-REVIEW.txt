@@ -1,0 +1,56 @@
+Observer vehicle preflight review - 2026-10-28
+Source collection: _observer_preflight_20261028_233615_52c306c9
+Captured: 2026-10-28T23:36:31 UTC. Process IDs/addresses describe that snapshot.
+
+Result: firmware/process preflight PASSES after correcting a display-name parser.
+All nine remote commands completed with exit 0. I independently hashed the three
+freshly acquired local payloads and matched AndroidAuto, libautoreceiver.so and
+libautoreceiver.so.1 against the observer manifest. Both receiver aliases have
+the same expected SHA256. This checks collected files, not loaded-memory bytes.
+
+AndroidAuto was already running as PID 684110, arguments AndroidAuto -t, with
+Ethernet connected and the phone unplugged. The receiver appears in its mapinfo
+at 0x78100000, printed as bautoreceiver.so.1. pidin's display removed the leading
+'li'. The original literal substring check reported receiver_in_mapinfo=false;
+that was a collector false negative, not a failed download or missing module.
+The collector now recognizes a long unique basename suffix in a mapped-library
+row and records the mapping address plus the fact that the name was shortened.
+The original raw dump and acquisition summary were preserved unchanged.
+Corrected derived details are in OBSERVER-PREFLIGHT-REVIEW.json.
+
+Launch context captured
+PATH=/proc/boot:/extbin/apps/bin:/ifs2:/extbin/apps/usr/bin:/extbin/apps/usr/bin/graphics:/ffs/sbin:.
+LD_LIBRARY_PATH=/proc/boot:/extbin/apps/lib:/ifs2:/extbin/apps/usr/lib/graphics:/extbin/apps/usr/lib/graphics/jacinto6
+stdout/stderr point to /dev/ser3. /dev/shmem and /ramdisk exist. The runtime linker
+alias points from /usr/lib/ldqnx.so.2 to ../../proc/boot/libc.so.3. QNX reports
+6.5.0 on ARM, two Cortex-A15 CPUs. Other mapped libraries include libXSAL,
+libcpp-ne.so.4 and libcpp.so.4, consistent with the acquired build.
+
+Remaining launch prerequisite
+The process list shows procman -f /etc/procman_core.cfg (PID 417823 in this capture),
+plus SystemManager. AndroidAuto and AndroidAutoServices are listed in the acquired
+platform_restart.cfg, but this list alone does not establish respawn policy or
+how to suspend/restart one instance. The core configuration and process ancestry
+were not included in the first preflight. Do not hardcode the captured PIDs into
+a future controller: they can change after a restart.
+The existing SMConfig.db was inspected in memory, without changing its file. Its
+tables concern speech recognition/TTS/grammars; it is not a substitute for the
+process-manager launch configuration.
+
+Targeted follow-up added
+  .\scripts\collect_observer_preflight.ps1 -SupervisorOnly
+This runs seven fixed read-only commands, including cat /etc/procman_core.cfg,
+pidin family and procman's arguments/fds/maps, plus AndroidAuto args/maps. It
+performs no FTP downloads, uploads, file writes on the vehicle, process stops or
+restarts. It stores a new unique directory under the common delphi-dump root.
+The phone remains unplugged; keep Ethernet connected. This data is needed to
+plan a controlled observer launch with a verified return to the stock process.
+No observer was deployed or vehicle process changed during this review.
+
+Validation of collector change
+Actual truncated map row resolves uniquely to libautoreceiver.so.1 at 0x78100000.
+Full names work; unrelated/too-short suffixes are rejected. Python CLI help and
+the updated PowerShell wrapper parse successfully. No vehicle connection was made
+by these offline checks. The new seven-command mode still needs its vehicle run.
+QNX pidin reference:
+https://qnx.com/developers/docs/6.5.0SP1.update/com.qnx.doc.neutrino_utilities/p/pidin.html

@@ -1,0 +1,1287 @@
+/usr/lib/ldqnx.so.2
+libXSAL.so
+clock_gettime
+SAL_Set_Thread_Priority
+pthread_attr_destroy
+SAL_Stat_Queue
+pthread_create
+strerror
+pthread_attr_init
+SAL_Undeclare_Urgent
+snprintf
+SAL_Get_Thread_Name_Self
+pthread_setname_np
+usleep
+SAL_Destroy_Timer
+SAL_Subscribe
+getpid
+memcpy
+SAL_Wait_Ready
+SAL_Get_Thread_Priority
+__cxa_finalize
+sem_destroy
+malloc
+SAL_Run
+SAL_Get_Thread_Id
+sem_wait
+sem_post
+SAL_Publish
+SAL_Signal_Ready
+SAL_Start_Timer_Ex
+abort
+SAL_Receive
+SAL_Is_Thread_Alive
+pthread_getschedparam
+calloc
+__deregister_frame_info
+SAL_Create_Timer
+SAL_Init
+SAL_Get_Max_Number_Of_Threads
+SAL_Unsubscribe
+__get_errno_ptr
+sem_init
+strncpy
+SAL_Stop_Timer
+SAL_Exit
+memcmp
+memset
+DTS_Client_Get_Frontend
+_fini
+sprintf
+SAL_Wait_Destroyed
+SAL_Sleep
+SAL_Declare_Urgent
+pthread_self
+SAL_Create_Thread
+SAL_Get_App_Id
+SAL_Create_Queue
+SAL_Start_Timer
+SAL_Send
+pthread_attr_setschedpolicy
+_Jv_RegisterClasses
+pthread_attr_setdetachstate
+__register_frame_info
+SAL_Get_Config
+SAL_Receive_Only_Timeout
+SAL_Open_Shared_Memory
+SAL_Close_Shared_Memory
+libTSD.so
+__aeabi_uldivmod
+__aeabi_uidiv
+libDebugTrace.so
+memmove
+fflush
+strtol
+write
+DTS_System_Init
+DTS_Set_Thread_Name_Func_Getter
+atomic_add_value
+realloc
+fopen
+fclose
+strlen
+DTS_Client_Prepare_Name
+libaoa-lite.so.1
+aoa_disconnect
+aoa_connect
+aoa_err2str
+aoa_bulk_rx
+aoa_bulk_tx
+libautoreceiver.so.1
+_ZTV9AudioSink
+_ZN11SensorBatchC1Ev
+_ZNSt3setIiSt4lessIiESaIiEED1Ev
+_Znaj
+_ZTV13MediaSinkBase
+_ZN6google8protobuf8internal21StringTypeHandlerBase3NewEv
+_ZN13MediaSinkBase9ackFramesEij
+_ZN17BluetoothEndpoint27registerCarBluetoothAddressERKSs
+_ZNSt5_TreeISt12_Tset_traitsIiSt4lessIiESaIiELb0EEE7_InsertEbPNSt9_Tree_nodIS4_E5_NodeERKi
+_ZNKSt11logic_error4whatEv
+_ZdaPv
+_ZN20ProtocolEndpointBase15onChannelOpenedEh
+atomic_sub_value
+_ZN10SslWrapperC1Ev
+_ZN9SemaphoreD1Ev
+_ZN11InputSource11reportTouchEyiPKjS1_S1_ii
+_ZN12SensorSource15reportSpeedDataEibbbi
+_ZN9Transport11waitForExitEv
+_ZN9Transport5startEv
+_ZTV20ProtocolEndpointBase
+_ZNSs5_GrowEjb
+_ZN10shared_ptrI8IoBufferED1Ev
+_ZNSsC1EPKc
+_ZN12SensorSource23reportDrivingStatusDataEi
+_ZTV6Thread
+_ZN10shared_ptrI7ChannelE6putRefEv
+_ZNSt12length_errorD0Ev
+_ZN10Controller18setNavigationFocusE12NavFocusType
+_ZTVSt12out_of_range
+_ZN15VendorExtension8sendDataEPvj
+_ZN6ThreadD2Ev
+_ZdlPv
+_ZN10SslWrapperD1Ev
+_ZNSt5_TreeISt12_Tset_traitsIiSt4lessIiESaIiELb0EEE6_EraseEPNSt9_Tree_nodIS4_E5_NodeE
+_ZNSt12out_of_rangeD0Ev
+_ZN10Controller18sendByeByeResponseEv
+_ZN11GalReceiver5startEv
+_ZN25IVendorExtensionCallbacksD0Ev
+__cxa_pure_virtual
+_ZNSsD1Ev
+_ZN10Controller13setAudioFocusE19AudioFocusStateTypeb
+_ZN12SensorSource19reportNightModeDataEb
+_ZN20ProtocolEndpointBase12routeMessageEhtRK10shared_ptrI8IoBufferE
+_ZN9AudioSink25addSupportedConfigurationEjjj
+_ZN11GalReceiver8shutdownEv
+_ZN6Thread5startEv
+_ZTV17BluetoothEndpoint
+_ZN20ProtocolEndpointBase15onChannelClosedEh
+_ZN6google8protobuf8internal12kEmptyStringE
+_ZTV11InputSource
+_ZNSs5eraseEjj
+_ZNKSt12_String_base5_XlenEv
+_ZTVSt11logic_error
+_ZN10shared_ptrI20IControllerCallbacksED1Ev
+_ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi
+_ZNSt12out_of_rangeD1Ev
+_ZN6Thread4joinEv
+_ZN25IVendorExtensionCallbacksD1Ev
+_ZN10shared_ptrI7ChannelED1Ev
+_ZN5Mutex4lockEv
+_ZNKSt12_String_base5_XranEv
+_ZN11InputSource9reportKeyEyjbj
+_ZN10Controller14setClientCredsERKSsS1_S1_
+_ZN7ServiceC1Ev
+_ZN9Transport11requestStopEv
+_ZN10ControllerD1Ev
+_ZNSt11logic_errorD1Ev
+_ZN11AudioSource9setConfigEiii
+_ZN11GalReceiver15prepareShutdownEv
+_ZTVSt12length_error
+_ZN15GalReaderThreadD1Ev
+_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase
+_ZN15GalWriterThreadD1Ev
+_ZN5MutexC1Ev
+_ZN9VideoSink13setVideoFocusEib
+_ZN9VideoSink25addSupportedConfigurationEiiiiiii
+_ZN10shared_ptrI19IVideoSinkCallbacksED1Ev
+_ZN11AudioSource4sendEyRK10shared_ptrI8IoBufferE
+_ZNSt12length_errorD1Ev
+_ZNSt12length_errorC1ERKSs
+_ZN17BluetoothEndpoint12sendAuthDataERKSs
+_ZN17BluetoothEndpoint17onReadyForPairingEb
+_ZN10shared_ptrI5FrameED1Ev
+_ZNSsC1Ev
+_ZNSt9exceptionD2Ev
+_ZN9SemaphoreC1Ev
+_ZTV10Controller
+_ZN11GalReceiver4initERK10shared_ptrI20IControllerCallbacksE
+_ZN15VendorExtension16handleRawMessageEhRK10shared_ptrI8IoBufferE
+_ZN10shared_ptrI8IoBufferE6putRefEv
+_ZN20ProtocolEndpointBase14mayOpenChannelEh
+_ZN12SensorSource18reportLocationDataEyiibibibibi
+_ZTV9VideoSink
+_ZNSs5_TidyEbj
+_ZNSs6assignERKSs
+_ZN10shared_ptrI19IAudioSinkCallbacksED1Ev
+_ZN17BluetoothEndpoint17registerCallbacksERK10shared_ptrI19IBluetoothCallbacksE
+_ZN17BluetoothEndpoint21registerPairingMethodERK22BluetoothPairingMethod
+_ZTV12SensorSource
+_ZNSs6assignERKSsjj
+_ZTV15GalWriterThread
+_ZTV15GalReaderThread
+_ZN6Thread7setNameEPKc
+_ZN12SensorSource14reportGearDataEi
+_ZN11InputSource14reportRelativeEyji
+RAND_status
+_ZNSt11logic_errorD0Ev
+_ZN12SensorSource22reportGpsSatelliteDataEibiPKiS1_PKbS1_S1_
+_ZNSt5dequeI10shared_ptrI5FrameESaIS2_EED1Ev
+_ZN22VendorExtensionServiceC1Ev
+_ZTV25IVendorExtensionCallbacks
+_Znwj
+_ZN5MutexD1Ev
+_ZN17BluetoothEndpoint21requestDelayedPairingEv
+_ZN5Mutex6unlockEv
+_ZN8IoBufferD1Ev
+_ZTV15VendorExtension
+_ZTV11AudioSource
+_ZN12SensorSource19reportGyroscopeDataEbibibi
+libprotobuf-lite.so.7
+libssl.so.2
+libm.so.2
+libscreen.so.1
+MsgSend
+screen_get_window_property_pv
+screen_set_window_property_pv
+screen_create_window_buffers
+screen_flush_context
+screen_destroy_window
+screen_get_buffer_property_iv
+screen_get_buffer_property_pv
+screen_set_window_property_iv
+screen_set_window_property_cv
+screen_create_window
+screen_create_context
+screen_post_window
+screen_get_context_property_pv
+screen_get_display_property_iv
+screen_destroy_context
+TimerTimeout
+screen_get_context_property_iv
+libUtilities.so
+CRC32_new
+__assert
+CRC32_delete
+sscanf
+_Touptab
+_ZNKSt12length_error8_DoraiseEv
+_ZNKSt11logic_error8_DoraiseEv
+_ZNKSt9exception6_RaiseEv
+_ZSt6_ThrowRKSt9exception
+libcpp-ne.so.4
+_ZTVSt9exception
+_ZGVNSt8numpunctIcE2idE
+_ZGVNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
+_ZNKSt12out_of_range8_DoraiseEv
+_ZNSs6appendERKSsjj
+_ZNSt8numpunctIcE2idE
+_ZNSs6appendEjc
+fseek
+memchr
+_ZNSs6assignEPKc
+libc.so.3
+asctime
+_init_array
+errno
+_preinit_array
+fscanf
+remove
+optarg
+gmtime_r
+MsgSendPulse
+ConnectDetach
+pthread_attr_setinheritsched
+mktime
+mmap_device_memory
+getprio
+sched_get_priority_max
+sched_get_priority_min
+ConnectAttach
+fread
+_init_libc
+getopt
+ChannelCreate
+_fini_array
+delay
+atexit
+MsgReceive
+sem_open
+munmap_device_memory
+rewind
+gmtime
+toupper
+pthread_attr_setschedparam
+MsgReply
+mkdir
+vfprintf
+libcrypto.so.2
+RAND_seed
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+_ZTV23PlayedFrameReaderThread
+_ZTV14xAppFacadeBase
+_ZTV10SinkThread
+MP_MediaPlayerNotificationThread
+_ZTV25AaRegisterVendorExtension
+_ZTV21IAudioSourceCallbacks
+_ZN10SinkThread11spoInstanceE
+_ZTVN3sal6ThreadE
+_ZTV20AaVideoSinkCallbacks
+_ZN10SensorData11spoInstanceE
+_ZTV22MicrophoneReaderThread
+_ZN3sal6Thread14threadFunctionEPv
+_Z12Callback_Log16proxy_traceLevelPc
+contextMic
+_ZTV12AaController
+_ZN6Server11spoInstanceE
+_ZTVN3sal11ApplicationE
+_Z14DSPLogCallBack16proxy_traceLevelPc
+_ZTV10SensorData
+_Z14MicLogCallBack16proxy_traceLevelPc
+VP_VideoPlayerNotificationThread
+_ZTV19IBluetoothCallbacks
+_ZTV6Server
+_ZTV19IVideoSinkCallbacks
+_ZTV6Logger
+_ZTV24AaGuidAudioSinkCallbacks
+_ZTV20AaBluetoothCallbacks
+_ZTV19IAudioSinkCallbacks
+_ZTV22AaAudioSourceCallbacks
+proxy_dummyLog
+_ZTV16MediaAudioPlayer
+_ZTV31AaVendorExtensionCallbackRouter
+_ZTV25AaMediaAudioSinkCallbacks
+_ZTVN3sal12ActiveObjectE
+_Z25DSPElapsedSamplesCallBackjjyPv
+_ZTV9Transport
+_ZTVN3sal13PassiveObjectE
+_ZTV12UsbTransport
+_Z21Callback_DecoderErrorjjPv
+loggedLines
+_ZTV20IControllerCallbacks
+_ZTV18UsbReadaheadThread
+_ZTV12RemoteClient
+_Z20Callback_OutputReady19vp_decodeResponse_tPv
+error_fp
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Application/build/../source/Application.cpp
+parseCommandLineArgs - config file '%s'
+parseCommandLineArgs - last exit code %s
+parseCommandLineArgs - manufacturing mode detected -> no special handling
+parseCommandLineArgs - display id %s
+g:l:t:e:N:v:c:X:yD:
+"androidauto"
+%s: [pid: %d] - Logger activated (compilation %s %s)
+Jun 26 2018
+18:35:21
+XAPP_MAIN
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Application/build/../source/Dispatcher.cpp
+Dispatcher::onStartingExecute: EV_APP_INITIALIZED published
+invalid map/set<T> iterator
+XAPP_MAIN
+../../../../sw/AP_XSALcpp/public/salTemplateDispatcher.h
+TemplateDispatcher::onMessage(),No passive object avaliable with id: %d
+assertion failed: isRegistered( passive )
+map/set<T> too long
+UNKNOWN0000
+UNKNOWN
+%d.%d
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/Server.cpp
+Server::onMessage - event %d
+Server::onMessage - EV_AA_REGISTER_LISTENER - listener %llx, appId %d, threadId %d passiveObjId %d
+Server::onMessage - EV_AA_UNREGISTER_LISTENER - listener %llx
+Server::onMessage - EV_AA_VISIBLE - visible=%d zorder=%d
+Server::onMessage - EV_MH_USB_DEVICE_INFO - path=%s, devno=%u, busno=%u, status=%u, mediatype=%u
+Server::onMessage - EV_AA_START_SERVICE 
+Server::onMessage - EV_AA_PUB_SUBSCRIBE_SERVICE_STATUS - appId %d, threadId %d
+Server::onMessage - EV_AA_PUB_VENDOR_EXTN_DATA_RX
+Server::onMessage - EV_AA_BUTTON_EVENT - button=%d buttonState=%d
+Server::onMessage - EV_AA_ROTARY_EVENT - rotations=%d 
+Server::onMessage - EV_AA_TOUCH_EVENT - TouchSource=%d Action=%d ActionIndex=%d
+Server::onMessage - EV_AA_DAYNIGHT_MODE
+Server::onMessage - EV_AA_DRIVING_STATUS_RSP
+Server::onMessage - EV_AA_AUDIO_FOCUS_NOTIFICATION
+Server::onMessage - EV_AA_MICROPHONE_NOTIFICATION
+Server::onMessage - EV_AA_NAV_FOCUS_NOTIFICATION
+Server::onMessage - EV_AA_VIDEO_FOCUS_NOTIFICATION
+Server::onMessage - EV_AA_INT_ON_VIDEO_FOCUS_REQ_NOTIFICATION
+Server::onMessage - EV_AA_INT_ON_AUDIO_FOCUS_REQ_NOTIFICATION
+Server::onMessage - EV_AA_INT_ON_MIC_REQ_NOTIFICATION
+Server::onMessage - EV_AA_INT_ON_NAV_FOCUS_REQ_NOTIFICATION
+Server::onMessage - EV_AA_INT_ON_VOICE_SESSION_REQ_NOTIFICATION
+Received event EV_AA_INT_ON_VIDEO_STREAMING_STARTED
+Setting pending video focus to phone
+Server::onMessage - EV_AA_INT_ON_AUDIO_AVAILABLE_NOTIFICATION
+Server::onMessage -AC_BT_STATUS_EVT has arrived!!!
+%02x:%02x:%02x:%02x:%02x:%02x
+Server::BT is enabled with btState = %x,callState = %x, headunitAddr = "%s" ,pairingMethod = %x
+Server::onMessage -AC_AAP_AUTH_DATA_EVT has arrived!!!
+Server::onMessage -AC_AAP_PAIRING_RSP has arrived!!! with %d %d
+Server::onMessage - EV_APP_EXIT - appId %d
+Received event EV_AA_PUB_SERVICE_STARTED...
+Server::onMessage - EV_AA_SHUTDOWN_AOAP
+Server::onMessage - EV_SYSTEM_SHUTDOWN not processed
+Server::onMessage - unexpected message with event id: %d
+196_1714
+Server::processRegisterListener - number of clients %d
+Server::processUnregisterListener(listener) - listener unregistered
+Server::processUnregisterListener - number of clients %d
+Server::processUnregisterListener(appId) - listener unregistered
+Server::processUnregisterListener(appId) - number of clients %d
+Server::processUnregisterListener(appId, threadId, passiveObjId) - listener unregistered
+Server::processUnregisterListener(appId, threadId, passiveObjId) - number of clients %d
+Server::processVisible(abVisible:%d, aiZOrder:%d) received from client
+Server::processButtonEvent(int aiButton,int aiButtonState) received from client
+Server::processRotaryEvent(int aiTicks) received from client
+Server::processTouchEvent(int aiTouchSource, const std::vector<TouchEvent>& aroPointers, int aiAction, int aiActionIndex) received from client
+Server::processStartService
+Android auto session already exists, cannot create a second sink!
+Unknown audio focus state notification
+Microphone notification not able to be sent to phone
+Not sending video focus grant/response from HMI to phone since video streaming not yet available
+vector<T> too long
+map/set<T> too long
+XAPP_MAIN
+UNKNOWN0000
+UNKNOWN
+SinkConn
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/SinkThread.cpp
+%s - event=%d
+%s - SinkThread::onMessage - EV_AA_START_ANDROIDAUTO_SINK
+%s - SinkThread::onMessage - EV_AA_SHUTDOWN_AOAP
+%s - unhandled event %d 
+aoa_connect() error: %s (%d)
+aoa_disconnect() error: %s (%d)
+checkRandomAvailability failed
+Android auto session already exists, cannot create a second sink!
+Publishing event EV_AA_PUB_SERVICE_AOAP_NOT_SUPPORTED_ON_MD
+Publishing event EV_AA_PUB_SERVICE_STOPPED
+Publishing event EV_AA_PUB_SERVICE_DISCONNECT_AA_DEVICE
+Connected to a registered device with aoa hdl = %p, creating android auto sink...
+Failed to start Android Auto, Sink Initialisation failed!
+Publishing event EV_AA_PUB_SERVICE_STARTED
+setVideoFocusNotification cannot be processed. No android auto sink exists!
+setAudioFocusToPhone cannot be processed. No android auto sink exists!
+setNavigationFocusToPhone cannot be processed. No android auto sink exists!
+useNonDuckingAudioChannel cannot be processed. No android auto sink exists!
+Key events from HMI cannot be processed. No android auto sink exists!
+Rotary events from HMI cannot be processed. No android auto sink exists!
+Touch events from HMI cannot be processed. No android auto sink exists!
+BluetoothResponse cannot be processed. No android auto sink exists!
+Vendor Extn. Request could not be sent to phone. No android auto sink exists!
+BluetoothAuthData cannot be processed. No android auto sink exists!
+GPS data could not be sent to phone. No android auto sink exists!
+GPS Satellite data could not be sent to phone. No android auto sink exists!
+Gyro data could not be sent to phone. No android auto sink exists!
+Accelerometer data could not be sent to phone. No android auto sink exists!
+Speed data could not be sent to phone. No android auto sink exists!
+Gear data could not be sent to phone. No android auto sink exists!
+Driving Status could not be sent to phone. No android auto sink exists!
+DayNight Mode could not be sent to phone. No android auto sink exists!
+requestUSBTransportStop cannot be sent. No android auto sink exists!
+No /dev/urandom - Must seed RNG manually.
+/dev/urandom
+The error generated was %d (%s)
+Trying again after 500ms....
+XAPP_MAIN
+onMessage
+~SinkThread
+SinkThread
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/Graphics.cpp
+gfxInitInstanceOnce() - entry
+gfxInitInstanceOnce() - exit
+gfxDestroy() - entry
+gfxDestroy() - exit
+gfxDeinitInstanceOnce() - entry
+gfxDeinitInstanceOnce() - exit
+gfxDisplayFrame(%d %d)
+DPY_EXTERNAL_SMARTPHONE_AA
+../include/UsbTransport.h
+Failed to set up readahead thread.
+Starting USB Readahead thread...
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/AaSink.cpp
+AaSink::init()
+Delphi
+VAG_MIB20_STD_AP
+Unkown position for Driver Position
+UsbReaderThread
+UsbWriterThread
+AaSink::shutdown()
+-----BEGIN CERTIFICATE-----
+MIIDiTCCAnGgAwIBAgIJAMFO56WkVE1CMA0GCSqGSIb3DQEBBQUAMFsxCzAJBgNV
+BAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRYwFAYDVQQHDA1Nb3VudGFpbiBW
+aWV3MR8wHQYDVQQKDBZHb29nbGUgQXV0b21vdGl2ZSBMaW5rMB4XDTE0MDYwNjE4
+MjgxOVoXDTQ0MDYwNTE4MjgxOVowWzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNh
+bGlmb3JuaWExFjAUBgNVBAcMDU1vdW50YWluIFZpZXcxHzAdBgNVBAoMFkdvb2ds
+ZSBBdXRvbW90aXZlIExpbmswggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
+AQDUH+iIbwwVb74NdI5eBv/ACFmh4ml/NOW7gUVWdYX50n8uQQsHHLCNIhk5VV2H
+hanvAZ/XXHPuVAPadE2HpnNqePKF/RDo4eJo/+rOief8gBYq/Z+OQTZeLdNm+GoI
+HBrEjU4Ms8IdLuFW0jF8LlIRgekjLHpc7duUl3QpwBlmAWQK40T/SZjprlmhyqfJ
+g1rxFdnGbrSibmCsTmb3m6WZyZUyrcwmd7t6q3pHbMABO+o02asPG/YPj/SJo4+i
+fb5/Nk56f3hH9pBiPKQXJnVUdVLKMXSRgydDBsGSBol4C0JL77MNDrMR5jdafJ4j
+mWmsa2+mnzoAv9AxEL9T0LiNAgMBAAGjUDBOMB0GA1UdDgQWBBS5dqvv8DPQiwrM
+fgn8xKR91k7wgjAfBgNVHSMEGDAWgBS5dqvv8DPQiwrMfgn8xKR91k7wgjAMBgNV
+HRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4IBAQDKcnBsrbB0Jbz2VGJKP2lwYB6P
+dCTCCpQu7dVp61UQOX+zWfd2hnNMnLs/r1xPO+eyN0vmw7sD05phaIhbXVauKWZi
+9WqWHTaR+9s6CTyBOc1Mye0DMj+4vHt+WLmf0lYjkYUVYvR1EImX8ktXzkVmOqn+
+e30siqlZ8pQpsOgegIKfJ+pNQM8c3eXVv3KFMUgjZW33SziZL8IMsLvSO+1LtH37
+KqbTEMP6XUwVuZopgGvaHU74eT/WSRGlL7vX4OL5/UXXP4qsGH2Zp7uQlErv4H9j
+kMs37UL1vGb4M8RM7Eyu9/RulepSmqZUF+3i+3eby8iGq/3OWk9wgJf7AXnx
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDMjCCAhoCAgCEMA0GCSqGSIb3DQEBCwUAMFsxCzAJBgNVBAYTAlVTMRMwEQYD
+VQQIDApDYWxpZm9ybmlhMRYwFAYDVQQHDA1Nb3VudGFpbiBWaWV3MR8wHQYDVQQK
+DBZHb29nbGUgQXV0b21vdGl2ZSBMaW5rMCYXETE0MDcwNDAwMDAwMC0wNzAwFxE0
+NjEyMTUxNjAzMTItMDgwMDBaMQswCQYDVQQGEwJERTEVMBMGA1UECAwMTG93ZXIg
+U2F4b255MRIwEAYDVQQHDAlXb2xmc2J1cmcxEzARBgNVBAoMClZvbGtzd2FnZW4x
+CzAJBgNVBAsMAjEyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3fz0
+5mCgRuUXyfaNXQcbIAKedKAftliDmzIQo0+1eCuCry5mdqAt9EQCXxFdbdbLQjWP
+eh5JaKbosxOCWN3AXSGW5S8PKvLnFmGhDUYg2Amm0eovCP7tYspMSPHwFMphJgvY
+WL5cCIPqQU0PjfKaA313StKBXbNCJWVLmPVdyDnW+ZFs7PywZUFQi5FpzmQZzOKf
+2qkVLXvRLs+rsBepmlr9Uw8NYk0IU3uGdG5QWStuE3yxWEnFfFuv4wX0HMvT2qA8
+Nw6FpGLF/woRGXIb+EOvyEQLLCHuVO9NSg4tjEX+BrI2bw1ogMpmLBKVwCLkFHbg
+VPLhtgv0nCirxg3PPwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBrZUeyVf/4Vw/V
+pMhIpbujDOjtsyWfeqHM1z1a7BP61M2a5D+xKWdYW84Wk9A18+c4TI48YiPqzA3o
+zyp0KaedtW/Gjl9sFWQRrravhpjOFp2O9sNGpOBuYVFcTgy4hpOBB50r5pwq7E2e
+Q93ujBQaopzUW8X0z6Q6j3Cf155YnR6lsGc+K9y7fUWKG6LBcJAaANd2h7dNyt5K
+YhF33M3yeSgNdYoZqD0DaTlKxRP2R91mjy7QnUznKN7W+YdeJM9EmhjuO0N3x0Re
+GHqNJ44K3+3UuaWOtnE0EyIDYQAqMC+UMwfvM1oNnwRZMdDqZ84HdPfL+OZ4ORcH
+psb2VWmd
+-----END CERTIFICATE-----
+-----BEGIN PRIVATE KEY-----
+MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDd/PTmYKBG5RfJ
+9o1dBxsgAp50oB+2WIObMhCjT7V4K4KvLmZ2oC30RAJfEV1t1stCNY96Hklopuiz
+E4JY3cBdIZblLw8q8ucWYaENRiDYCabR6i8I/u1iykxI8fAUymEmC9hYvlwIg+pB
+TQ+N8poDfXdK0oFds0IlZUuY9V3IOdb5kWzs/LBlQVCLkWnOZBnM4p/aqRUte9Eu
+z6uwF6maWv1TDw1iTQhTe4Z0blBZK24TfLFYScV8W6/jBfQcy9PaoDw3DoWkYsX/
+ChEZchv4Q6/IRAssIe5U701KDi2MRf4GsjZvDWiAymYsEpXAIuQUduBU8uG2C/Sc
+KKvGDc8/AgMBAAECggEBALl+hXn4ZhW3m2BFKK0CohTme1gC8Vziq95EQIjms0He
+Qc52nGIlySCir8SW8xY0dRY3QVQO+NJ9Hld9Rt9RNUvdJIUQBMGjxZv7KqO35PwB
+XKdt463Fr8FsP8B4gmAtGG69WSQWtTrcWCQG66d2gGHINqWML1OH1g7/jOMcrSgA
+NnEveThAcJH1SW7bYKvIkAz9M0UJrmUDB7R+JW6PzE3/zEBOxk7zFqRZLCRzthhh
+2UWV5sOjk4v7rvl9TS649EH7TN1CHtFZsE5U9cC0JrLDr1uwfjYepvIo4/N4laL9
+7ps5yCaVJX7iUN/1w26m8OFegAQczQXZXccNO3kx6JkCgYEA9DHASys4ozJVVas7
+v97i+DhSU82v4lWkqIZQXtFUhjUVHpfVJg6nViTNKuPyT+x78ly1jlZNfEoRxXq2
+u0/5nm5klJEjcAiyZY0S/14Y10e0/EWsRswnPKOL7a7QgwfeAQX0g/uCaxw/uVW4
+vIZZAf4Bk1YflwxIvW7dLOF3onMCgYEA6LhfRMC+YJfwFSDxw2N0TfpalWxpgFY9
++HgT2SUZ6kbJ7vrmZsT4Hgx7X4tXyMbQUeRluVRG8cu7/NRgrIzJXnK6bbGBxcy2
++W3QEDIHuJ4gxUlFwm1pCQDCr2gFwZy2QPoQUNZjSY15YnUAlC7tdH4sezh14G/o
+I1JStM3aEQUCgYAeI9nhLUeDVR4VQdpRF1iaXJFEyLlxzTJSnqli2qF9IyYlLYZg
+eSSMTGSKa7InzT+LLYg3Nk3ADoBdCIVvXzKnLGb7s2JVXK1wPVZf8KRORgp/rLXT
+0zTwlhsaTh5sXdc39x00ASIayFTRMlRn6Ikp5skY/2NMyHZd80YXWQjkIwKBgQCD
+FKaEoVQaMDqIjB/hADnYWjV/iKr8IJeTRn9XhfBM50aCl0wDgtqGgl1TebceXe2k
+0tMBSpkTRMBELpOtXTdnPZQIiT0hXqeJYvMYzDVRJbArr5PdaacJ7SW7iwoC/fQi
+MTfTcI5INamzbVfAH5acUR1Y4npyylWk34+6S2CSyQKBgQC+xY1gf3rGvoFEH0Hk
+FGFYAyqF4LbpQyf0a78+WMjXkOyzYkcTp155THTBXaexb/28KKBrgFBYO3VNIM3N
+pRQ7dlJe9rVvI0iyPpNBNqHPpzWKtblmcrq+7vu9niZ7M+/uo0zB1qqjpTDZtbZ4
+eGYfUrKPXXYh9TVuMuBWtgzg2Q==
+-----END PRIVATE KEY-----
+-----BEGIN CERTIFICATE-----
+MIIDITCCAgkCAh6GMA0GCSqGSIb3DQEBCwUAMFsxCzAJBgNVBAYTAlVTMRMwEQYD
+VQQIDApDYWxpZm9ybmlhMRYwFAYDVQQHDA1Nb3VudGFpbiBWaWV3MR8wHQYDVQQK
+DBZHb29nbGUgQXV0b21vdGl2ZSBMaW5rMB4XDTE0MDcwODIyNTUyOFoXDTQ0MDcw
+NzIyNTUyOFowUTELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAkNBMRYwFAYDVQQHDA1N
+b3VudGFpbiBWaWV3MR0wGwYDVQQKDBRHb29nbGUtUW54LVJlZmVyZW5jZTCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANjChGBuSyb3uj/ZZy2Lxj4VMCud
+xcSn+Bq0Py0jinjJgkcg1g+k6nk7hR83g/OfT5hvInvV3PgwijhVBJwDtkLtDH4p
+/DeDtoDj4cLYOVylhsz2Bny7S4YSbkxlP3koGEpZxOZg1tR5KJd7fXa6siswZjL3
+6RDIeSx+oqoyFVxPx5F72MmzqFXPhz4J3EPf7YZWb9ryxvbMO+8RiBoQKTFA9P+0
+T+00qjS1RFPIgYSALoW6u9YSVuNN83JWNV0ttw+uxX0edybUXyLbn7NyB/ADoxIp
+LkmESG2aqIeBrucP9z8meWxeKeEH4//kbQZk7ikm+e9Te17LnZfn/ykwzI8CAwEA
+ATANBgkqhkiG9w0BAQsFAAOCAQEAS4HwFTOmF7pYo5Z2awB6VRaKpSVIy4eczdK6
+bO8Q5Z0FYoasg7RqsTes7viOy0d2zESiqHW9kdTTOlvjp+D1EvS0dZg9f9pjwXpn
+8mGD7PFIoV6bdfBzKgele1cDtCoeqfC12fti4+jiRE6U+teg94HqQtdqm6PAaEwS
+AVr8ZPu847LXUPE8FMulAhOSWW4g70GoBUrN+fIUvXXA0akikE/8u87W0ctfHLnx
+gCcKQcIlQ97fbzOPTg6WsLYO0JDpsnXpy4hZqpJQ6PSKRWlY6cuD62Jj9XCcGggy
+VbQGFnPRoz0YViBqp2tqYB3c8OH0Ove9pjsW6GyD8RGDVDd4Ww==
+-----END CERTIFICATE-----
+-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDYwoRgbksm97o/
+2Wcti8Y+FTArncXEp/gatD8tI4p4yYJHINYPpOp5O4UfN4Pzn0+YbyJ71dz4MIo4
+VQScA7ZC7Qx+Kfw3g7aA4+HC2DlcpYbM9gZ8u0uGEm5MZT95KBhKWcTmYNbUeSiX
+e312urIrMGYy9+kQyHksfqKqMhVcT8eRe9jJs6hVz4c+CdxD3+2GVm/a8sb2zDvv
+EYgaECkxQPT/tE/tNKo0tURTyIGEgC6FurvWElbjTfNyVjVdLbcPrsV9Hncm1F8i
+25+zcgfwA6MSKS5JhEhtmqiHga7nD/c/JnlsXinhB+P/5G0GZO4pJvnvU3tey52X
+5/8pMMyPAgMBAAECggEAVvqnF/LqITbi++AHMRWXdS4XaEklJOap/j055KkQVau2
+pUgd3aU1mXQy1PX38viIfgiKc9q7krQXoscq1FgA+RYaHz5FwRkPUOUgoIkXa3/Y
+ecJ3k/GsOp6GuA0gzUMzjBI9mpxdWGFN0otxKwV7nS0MtYMZeOyZAyvFpjn2rFVx
+ppGZeNVWbO7UcbO7QXL1KljQLKR12/wq4BVw51cIpeoFO9JFEVagojOuvJmdBbyH
+mTOG8+Ei8kx/Eoba4ZDCoVJXHJvfYY+keLUMMQcURxZWbz2iheKG3J0pPY8vh2fJ
+0kl5RKrWF+pW6nfnTiP3NBCfAiPi76xQBaMlThc2oQKBgQD8QxfN/lH32ReXF6BM
+SDW1HhH4bME3V3xXI/5ITLab7tu3mTPHh50khaDpleMyxZrLpXo+4iYfguOsTT9r
+w9LmHhrnw0k/uvAFSsHHn90WNIcJo/zAeXxbrkTbWWvR4HEfCzUyffunUmclhtz1
+H6Tac7vqeC1Ovj5f9ZnL1i4BGQKBgQDb+MDU8ESNIOjA2rHwf+q3N3paInjLNoxb
+R7az45+GKdGiCbyCNZ9ySNgHpQe7laoq4qK6XUT81p4rWjiXezhQnyK+/oynr6d4
+dzoid6kQC1Lhrz0iw4CHazVs+dN2g9VTp/dRHLhrhI7h+gYblANyWRPi85ZYW/Mg
+N3KFUPsn5wKBgQDTfOxYJv9Raw/7/DLHwUJFthAa1hKm8xGrfOGSe74cvQQ3yJlA
+jtGP7Pga3S69Qi2kzfbPAYo0oOd/bMPe9S26/0JPS8n9RBw2U5ZiZgRUuXT9AB7G
+vxMjSdcwjqd2LVSpUhwnWLfCb7NKIubcGst62cyRpm9VtOlWSfHGkqm/AQKBgHBU
+kExtQeR76MALLhDtkbPsTbvXnK3Rdk1qyr8EP0No+Zdwt2Ya8giPcFo/CTrey95I
+i+b1mDQxeOYUlY+tqe1pxnmYTcWX6sKWyAYv6xK5ZaLANU0aXvlIYyj6TuVXn0mw
+HZi7POYS9FAruJC+vh/Xo1MjJySKGBbcmcvAtfEDAoGBAMFHHUxVPeIee9X5wcwm
+DagF2du1ez6gdMbJT9abPFl6P/mmbNculIZKhtoWGXNyMnZ0XTYosP44yCM+U0ba
+94CD2QDoFdzYn8DZNvck+eDdoJJIAtEkM05tfq5qZawvpyyxJfxs+EvYOr8X4g4Z
+uf/bIzPqCDP88nUXf1W6v1P8
+-----END PRIVATE KEY-----
+GPS time not available, reading System/Cluster time...
+Head Unit time: epoch = %u, formatted (DDMMYYYY HH:MM:SS) = %02d%02d%d %02d:%02d:%02d
+Formatted time not available, Head Unit time (epoch) = %u
+Android Auto sink is not available!
+%s - %d %d
+NAV_FOCUS_PROJECTED
+NAV_FOCUS_NATIVE
+%s - %s
+Requesting to stop USB Transport...
+vector<T> too long
+XAPP_MAIN
+setNavigationFocusToPhone
+setAudioFocusToPhone
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/AaVideoSink.cpp
+%s - VIDEO_STREAM: codec=%d, x=%d, y=%d, density=%d
+PROJECTED
+NATIVE
+false
+%s - mode=%s, unsolicited=%s
+VIDEO_STREAM: Non zero copy version invoked. This is unsupported!
+%s - VIDEO_STREAM: sessionId=%u, timestamp=%lld, data=0x%p, len=%zu
+%s - VIDEO_STREAM: data=0x%p, len=%zu
+%s - VIDEO_STREAM: mediaCodecType=%d
+%s - VIDEO_STREAM: sessionId=%d
+%s - VIDEO_STREAM: index=%d
+%s - VIDEO_STREAM: focus=%d, reason=%d
+Unknown videoFocusCallback received from Phone!
+videoFocusCallback
+sourceVideoConfigCallback
+playbackStopCallback
+playbackStartCallback
+setupCallback
+codecConfigCallback
+dataAvailableCallback
+setVideoFocusNotification
+addSupportedConfigurations
+shutdown
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/MediaVideoPlayer.cpp
+Callback_DecoderError - consumed bytes %d, token %d
+Callback_OutputReady - frame %d, consumed bytes %d, produced bytes %d, token %d
+[VP_ERR] %s
+[VP_WRN] %s
+[VP_INF] %s
+[VP_DBG] %s
+Callback_Log - invalid trace level %d
+VP_InitializeProxy() succeeded. Input buffer size %d, output buffer 1 size %d, output buffer 2 size %d
+VP_InitializeProxy() returned NULL
+VP_Open(VP_CODEC_H264, %d, %d, SYNCHRONOUS, VP_YUV_420SP, VP_MEMTYPE_RAW) succeeded.
+VP_Open(VP_CODEC_H264, %d, %d, SYNCHRONOUS, VP_YUV_420SP, VP_MEMTYPE_RAW) failed with error %d
+Cannot open video player since VP Handle does not exist!
+VP_Close() succeeded
+VP_Close() failed with error %d
+Video player is not opened to be closed
+Cannot close video player since VP Handle does not exist!
+Video Player not ready/opened!
+VP_Decode() returned %d with consumed bytes %d, produced bytes %d, frame number %d, token %d
+VP_Decode() failed with error %d consumed %d
+VP_UnInitializeProxy() succeeded
+VP_UnInitializeProxy() failed with error %d
+deinit
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/AaMediaAudioSink.cpp
+Media type is not AUDIO_STREAM_MEDIA!,receievd = %s
+Media Audio Player not started! Unknown media audio type!
+Media Audio Player not started! Unknown audio codec type!
+AUDIO_STREAM_MEDIA
+AUDIO_STREAM_GUIDANCE
+AUDIO_STREAM_SYSTEM_AUDIO
+AUDIO_STREAM_NOT_SUPPORTED
+%s: Non zero copy version invoked. This is unsupported!
+%s - %s: sessionId=%u, timestamp=%lld, data=0x%p, len=%zu
+DSP Overflow detected for %s, all audio frames from MD will be ignored hereafter
+%s - %s: data=0x%p, len=%zu
+%s - %s: mediaCodecType=%d
+%s - %s: sessionId=%d
+playbackStopCallback
+playbackStartCallback
+setupCallback
+codecConfigCallback
+dataAvailableCallback
+shutdown
+GuidFrRead
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/AaGuidAudioSink.cpp
+Media type is not AUDIO_STREAM_GUIDANCE!,receievd = %s
+Media Audio Player not started! Unknown media audio type!
+Media Audio Player not started! Unknown audio codec type!
+AUDIO_STREAM_MEDIA
+AUDIO_STREAM_GUIDANCE
+AUDIO_STREAM_SYSTEM_AUDIO
+AUDIO_STREAM_NOT_SUPPORTED
+%s: Non zero copy version invoked. This is unsupported!
+%s - %s: sessionId=%u, timestamp=%lld, data=0x%p, len=%zu, frameNr=%u
+%s - %s: data=0x%p, len=%zu
+%s - %s: mediaCodecType=%d
+%s - %s: sessionId=%d
+Playback already ongoing. Ignoring playbackStartCallback from MD
+Playing audio using ANN channel
+Playing audio using NAV channel
+Pausing audio in ANN channel
+Pausing audio in NAV channel
+Couldn't pause audio player since none playing
+Acknowledged %d frames, last played frame = %d
+Acknowledged %d remaining frames before stopping
+GuidFrRead Thread exit.
+playbackStopCallback
+playbackStartCallback
+setupCallback
+codecConfigCallback
+dataAvailableCallback
+shutdown
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/MediaAudioPlayer.cpp
+DSP Err - %s
+DSP Wrn - %s
+DSP Inf - %s
+DSP Dbg - %s
+DSPLogCallBack - unknown trace level %d
+MediaAudioPlayer::MediaAudioPlayer - unknown media audio type %d
+MediaAudioPlayer::MediaAudioPlayer - MP_InititalizeProxy(%d) failed
+MediaAudioPlayer::MediaAudioPlayer - MP_InititalizeProxy(%d) succeeded
+MediaAudioPlayer::~MediaAudioPlayer - MP_UnitializeProxy() failed
+MediaAudioPlayer::activate[%d] - MP_ActivateProxy() failed
+MediaAudioPlayer::activate - activate(%d) succeeded
+MediaAudioPlayer::activate[%d] - handle is NULL
+MediaAudioPlayer::deactivate[%d] - MP_ActivateProxy() failed
+MediaAudioPlayer::deactivate - deactivate(%d) succeeded
+MediaAudioPlayer::deactivate[%d] - handle is NULL
+MediaAudioPlayer::play[%d] - MP_Play() failed
+MediaAudioPlayer::play[%d] - MP_Play() successful
+MediaAudioPlayer::pause[%d] - MP_Stop() failed
+MediaAudioPlayer::pause[%d] - MP_Stop() successful
+MediaAudioPlayer::send[%d] - MP_DataAlloc() failed
+MediaAudioPlayer::send[%d] - MP_DataSend() failed
+MediaAudioPlayer::send[%d] - media player instance not ready
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/AaInputSource.cpp
+Rotary is not registered to the MD from HU
+Touch Event cannot be sent to the mobile device!!!!
+Rotary Event cannot be sent to the mobile device!!!
+Rotary event not sent to MD since DDS Control is disabled in GEM!
+Sending the following Button Event %d %d %d
+Key Event cannot be sent to the mobile device!!!
+map/set<T> too long
+invalid map/set<T> iterator
+onKeyEvent
+onRotaryEvent
+onTouchEvent
+shutdown
+%hhx:%hhx:%hhx:%hhx:%hhx:%hhx
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/AaBluetoothEndpoint.cpp
+Sending BT pairing request from Phone: address %s and pairing method %d
+Creating Bluetooth Endpoint!!!
+Registering BT with address %s and pairing method %x
+Mac Address of the head unit is empty!!!Registering with Persisted Headunit Address %s and Pairing Method %d
+Shutting down Bluetooth!
+Prepare the headunit for Pairing!!!!!
+BluetoothEndpoint received invalid Response for Bluetooth Pairing
+Send Authentication Data to Headunit!!
+onBluetoothAuthData
+onBluetoothResponse
+shutdown
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/AaSensorSource.cpp
+China
+SENSOR_LOCATION not registered for China variants!
+AaSensorSource - EV_SH_GPS_DATA [ latitude %d, longitude %d ] bearing %d
+GPS data sent to the mobile device
+GPS data not sent to the mobile device for unknown reasons
+AaSensorSource - EV_SH_GPS_DATA Number of Sats used in fix = %d
+Gyro data could not be sent to the mobile device for unknown reasons!
+Speed data could not be sent to the mobile device for unknown reasons!
+Sending Drive Level Status %d
+Driving Status data could not be sent to the mobile device for unknown reasons!
+Sending Day Night Mode Change!!!
+Day Night Mode change could not be sent to the mobile device for unknown reasons!
+map/set<T> too long
+XAPP_MAIN
+shutdown
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/AaVendorExtension.cpp
+Data is received on phone!!! Sending the received Data to Sink
+com.vwag.infotainment.gal.exlap
+com.vwag.infotainment.aa.vex
+de.vw.exlap.android
+Creating Vendor Extension
+Shutting down Vendor Extension!
+Sending Vendor Extension Data to phone
+shutdown
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/SensorData.cpp
+SensorData::onMessage - event %d
+SensorData::onMessage - EV_SH_GPS_DATA [ longitude %f, latitude %f bearing %f]
+SensorData::onMessage - EV_SH_GPS_DATA [ NMEA string <%d> "%s" ]
+China
+No provisioning of Position information to China variants
+No proper GPS signal, hence not reporting to phone
+SensorData::onMessage - EV_SH_GYRO_DATA [ Gyro data z-axis %f Timestamp %u ]
+SensorData::onMessage - EV_SH_ACCELEROMETER_DATA [ accelerometer data x-axis %d y-axis %d z-axis %d timestamp %u ]
+SensorData::onMessage - CARSERV_EV_CURRENT_GEAR_RES [ Current gear %d ]
+SensorData::onMessage -Speed sent: %d
+SensorData::onMessage - Periodic speed sent: %d
+SensorData::onMessage - unexpected message with event id %d
+map/set<T> too long
+XAPP_MAIN
+MicRead
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/AaAudioSource.cpp
+%s - sessionId=%d, ack=%u
+%s - open=%d, ancEnabled=%d, ecEnabled=%d, maxUnacked=%d
+Tried to open when already open. Ignoring.
+Tried to close when already closed. Ignoring.
+Microphone reader thread started.
+Failed to initialize microphone.
+Mic couldn't be opened
+Mic reader thread terminating due to close().
+Failed to read microphone. Exiting reader thread.
+Out of while loop
+Microphone reader thread exit.
+microphoneRequestCallback
+ackCallback
+shutdown
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/AaController.cpp
+%s - smallIcon=%s, mediumIcon=%s, largeIcon=%s, label=%s, deviceName=%s 
+Encountered unrecoverable error=%d. Shutting down.
+%s - focusType=%d
+%s - reason=%d
+%s - status=%d
+%s - request=%d
+Unknown AudioFocusRequest Type received!
+XAPP_MAIN
+audioFocusRequestCallback
+voiceSessionNotificationCallback
+byeByeResponseCallback
+byeByeRequestCallback
+navigationFocusCallback
+pingResponseCallback
+pingRequestCallback
+serviceDiscoveryRequestCallback
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/UsbTransport.cpp
+abortReads...
+Fatal error on write: %s
+UsbReadAhead
+USB Readahead thread started...
+Fatal error on read: %s
+Failed write to pipe. Aborting.
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Server/build/../source/Microphone.cpp
+Mic Err - %s
+Mic Wrn - %s
+Mic Inf - %s
+Mic Dbg - %s
+MicLogCallBack - unknown trace level %d
+Microphone::init - MicCaptureInit() success
+Microphone::init - MicCaptureInit() failed with error %d
+EC ENABLED
+EC DISABLED
+Microphone::open - "%s"
+Microphone::open - Mic already started, trying to start again
+Microphone::open(%s) - StartMicCapture() failed with error %d
+Microphone::open(%s) - StartMicCapture() succeeded
+Microphone::open - not initialized
+Microphone::close - Mic already stopped, trying to stop again
+Microphone::close() - StopMicCapture() failed with error %d
+Microphone::close() - StopMicCapture() succeeded
+Microphone::getData - unsupported format [ %d Hz  ]
+Microphone::getData - apzSize 0x%p, appcData 0x%p, sample rate %dHz, bits per sample %d, channels %d
+Microphone::getData - unsupported format [ %d Hz %d bit %d channels ]
+Microphone::getData - no data found, data length is %d
+Microphone::getData - WaitForMicData() failed with error %d
+Microphone::getData - invalid output arguments - apzSize 0x%p, appcData 0x%p
+Microphone::getData - Mic session not started
+Microphone::getData - Mic not initialized
+Microphone::freeData - apcData 0x%p
+ - entry
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Utils/build/../source/Logger.cpp
+ - exit
+Unknown
+VWAG_SKODA
+VWAG_AUDI
+Volkswagen
+VWAG_PORSCHE
+VWAG_SEAT
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Utils/build/../source/HeadUnit.cpp
+HeadUnit::getManufacturerName - no valid brand detected, using "%s"
+Europe
+NorthAmerica
+China
+HeadUnit::getMarketName - no valid region detected, using "%s"
+MIB Standard2 ZR Nav
+HeadUnit::getHUModel = %s
+HeadUnit::getSoftwareVersion - ImageInfo-Object returned wrong pointer to VersionNumber
+HeadUnit::getSoftwareVersion - init() failed
+0x%#x
+Skoda
+Porsche
+HeadUnit::getOEMIconLabel - no valid brand detected, using "%s"
+/extbin/apps/bmp/
+Delphi_CarPlay_oemIcon.png
+Skoda_CarPlay_oemIcon.png
+Audi_CarPlay_oemIcon.png
+VW_CarPlay_oemIcon.png
+Porsche_CarPlay_oemIcon.png
+Seat_CarPlay_oemIcon.png
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_Android_Auto/Utils/build/../source/HuTime.cpp
+Failed to to access shared memory for System time retrieval.
+Failed to to access shared memory for GPS time retrieval.
+Received UTC time is not valid
+Could not fetch GPS-UTC time
+Failed to to access shared memory for UTC time retrieval.
+enabled
+disabled
+GPS time: %s, TZ: %s
+Speech_MicCapture_Cmd_Arm2DspQueue
+Failed to open microphone capture command queue for SPEECH
+Speech_MicCapture_Rsp_Dsp2ArmQueue
+Failed to open microphone capture response queue for SPEECH
+Speech_MicCapture_Data_Dsp2ArmQueue
+MirrorLink_MicCapture_Cmd_Arm2DspQueue
+Failed to open microphone capture command queue for MIRRORLINK
+MirrorLink_MicCapture_Rsp_Dsp2ArmQueue
+Failed to open microphone capture response queue for MIRRORLINK
+MirrorLink_MicCapture_Data_Dsp2ArmQueue
+CarPlay_MicCapture_Cmd_Arm2DspQueue
+Failed to open microphone capture command queue for CARPLAY
+CarPlay_MicCapture_Rsp_Dsp2ArmQueue
+Failed to open microphone capture response queue for CARPLAY
+CarPlay_MicCapture_Data_Dsp2ArmQueue
+AndroidAuto_MicCapture_Cmd_Arm2DspQueue
+Failed to open microphone capture command queue for ANDROIDAUTO
+AndroidAuto_MicCapture_Rsp_Dsp2ArmQueue
+Failed to open microphone capture response queue for ANDROIDAUTO
+AndroidAuto_MicCapture_Data_Dsp2ArmQueue
+StartMicCapture
+[MicCapture] Failed to allocate EasyLink message
+[MicCapture] Failed to put EasyLink message
+[MicCapture] Failed to free EasyLink message
+WaitForMicData
+WaitForMicData: Function called even though overflow is detected
+WaitForMicData: Overflow detected
+WaitForMicData: DSP responded with wrong message type
+FreeMicData: Invalid MicUser! %d
+FreeMicData: EasyLink free failure!
+FreeMicData: Trying to free a message without calling WaitForMicData first
+StopMicCapture
+StopMicCapture: Trying to stop mic capture without freeing last message first
+[MP_ActivateProxy] Invalid handle (NULL pointer passed)
+Proxy already activated, cannot activate an already active proxy.
+[MP_DeactivateProxy] Invalid handle (NULL pointer passed)
+ERROR! Proxy not active, cannot deactivate an already deactivated proxy.
+CRITICAL ERROR IN MEDIA PLAYER PROXY: Failed to allocate memory (channel %d)!
+Initializing media player proxy for channel %d
+MediaPlayer_Arm2DspQueue
+MediaPlayer_Dsp2ArmQueue
+MediaPlayer_NotifyQueue
+MediaPlayer_DataQueue
+PhoneRTPlayer_Arm2DspQueue
+PhoneRTPlayer_Dsp2ArmQueue
+PhoneRTPlayer_NotifyQueue
+PhoneRTPlayer_DataQueue
+NAVPlayer_Arm2DspQueue
+NAVPlayer_Dsp2ArmQueue
+NAVPlayer_NotifyQueue
+NAVPlayer_DataQueue
+SDSPlayer_Arm2DspQueue
+SDSPlayer_Dsp2ArmQueue
+SDSPlayer_NotifyQueue
+SDSPlayer_DataQueue
+SysTonesPlayer_Arm2DspQueue
+SysTonesPlayer_Dsp2ArmQueue
+SysTonesPlayer_NotifyQueue
+SysTonesPlayer_DataQueue
+MirrorLinkEntPlayer_Arm2DspQueue
+MirrorLinkEntPlayer_Dsp2ArmQueue
+MirrorLinkEntPlayer_NotifyQueue
+MirrorLinkEntPlayer_DataQueue
+MirrorLinkAnnPlayer_Arm2DspQueue
+MirrorLinkAnnPlayer_Dsp2ArmQueue
+MirrorLinkAnnPlayer_NotifyQueue
+MirrorLinkAnnPlayer_DataQueue
+MirrorLinkNavPlayer_Arm2DspQueue
+MirrorLinkNavPlayer_Dsp2ArmQueue
+MirrorLinkNavPlayer_NotifyQueue
+MirrorLinkNavPlayer_DataQueue
+MirrorLinkPhonePlayer_Arm2DspQueue
+MirrorLinkPhonePlayer_Dsp2ArmQueue
+MirrorLinkPhonePlayer_NotifyQueue
+MirrorLinkPhonePlayer_DataQueue
+BT_MediaPlayer_Arm2DspQueue
+BT_MediaPlayer_Dsp2ArmQueue
+BT_MediaPlayer_NotifyQueue
+BT_MediaPlayer_DataQueue
+Invalid channel, %d
+Initializing media player communication...
+Initialization OK!
+Handshaking...
+Handshaking OK!
+Starting notification thread...
+Notification thread started OK!
+UnInitializing media player proxy
+[MediaPlayer] Failed to allocate EasyLink message
+[MediaPlayer] Failed to put EasyLink message
+[MediaPlayer] Failed to free EasyLink message
+Proxy not active. Cannot use playback related API calls without activating Proxy first.
+MP_Stop
+MP_Play
+MP_Fade
+MP_TrickPlayStart
+MP_TrickPlayStop
+Invalid number of samples passed!
+MP_SetElapsedSamplesThreshold
+MP_Pause
+MP_UnPause
+Failed to allocate %d bytes of memory for MP_DataSend
+Invalid data message (NULL pointer)
+Number of frames to send larger than allocated
+Could not open reader queue
+Flushed %d messages
+Could not open writer queue
+Could not open data writer queue
+Could not close reader queue
+Could not close writer queue
+Could not close notification reader queue
+Could not close data writer queue
+MP_Handshake
+Failed to allocate message for MP_Handshake
+Failed to put message for MP_Handshake
+MediaPlayer ARM<->DSP interface mismatch!
+ARM interface version: %d
+DSP interface version: %d
+Failed to free EasyLink message
+Mapping time update address (0x%08x) failed!
+EasyLink_free failed!
+EasyLink_get failed for MPNotificationReceiver
+Warning, no handler registered for data request!
+Warning, no handler registered for end of playback!
+Warning, no handler registered for decode errors!
+Warning, no handler registered for fade request done!
+Warning, no handler registered for elapsed samples!
+Unknown MediaPlayer notification: %d
+Failed to free notification message
+Failed to open notification reader queue
+pthread_attr_setdetachstate failed
+pthread_getschedparam failed
+Setting scheduling parameters failed
+Could not set priority, not in valid interval. Min: %d, Max: %d, Used: %d
+Failed to create MP_MediaPlayerNotificationThread
+Wrong sequence number returned from DSP, %d, expected %d. Message discarded
+Wrong message id returned from DSP, %d, expected %d. Message discarded
+[Proxy] Failed to free EasyLink message
+/tmp/mcp_decoder_locked.txt
+MCP decoder instance already initialized, unintialize before attempting again!
+Failed to open MCP decoder locked file (%s)!
+CRITICAL ERROR IN VIDEO PLAYER PROXY: Failed to allocate memory!
+Initializing video player proxy
+VPlayerCmd_Ap2McpQueue
+VPlayerRsp_Mcp2ApQueue
+VPlayerNtf_Mcp2ApQueue
+Initializing video player communication...
+Initialization OK!
+Handshaking...
+Handshaking OK!
+Starting notification thread...
+Notification thread started OK!
+UnInitializing video player proxy
+[VideoPlayer] Failed to allocate EasyLink message
+[VideoPlayer] Failed to put EasyLink message
+[VideoPlayer] Failed to free EasyLink message
+Unable to remove decoder locked file (%s)!
+VP_Open
+VP_Close
+VP_Decode
+[VideoPlayer] Invalid decode response pointer passed
+VP_Reset
+Could not open reader queue
+Flushed %d messages
+Could not open writer queue
+Could not close reader queue
+Could not close writer queue
+Could not close notification reader queue
+VP_Handshake
+Failed to allocate message for VP_Handshake
+Failed to put message for VP_Handshake
+VideoPlayer AP<->MCP interface mismatch!
+AP interface version: %d
+MCP interface version: %d
+Mapping input address (0x%08x) failed!
+Mapping output1 address (0x%08x) failed!
+Mapping output2 address (0x%08x) failed!
+EasyLink_free failed!
+EasyLink_get failed for VP_NotificationReceiver
+Warning, no handler registered for output ready!
+Warning, no handler registered for decode errors!
+Unknown VideoPlayer notification: %d
+Failed to free notification message
+Failed to open notification reader queue
+pthread_attr_setdetachstate failed
+pthread_getschedparam failed
+Setting scheduling parameters failed
+Could not set priority, not in valid interval. Min: %d, Max: %d, Used: %d
+Failed to create VP_VideoPlayerNotificationThread
+/tmp/EasyLinkReady.lock
+EasyLink.c: Warning !! Could not open %s
+EasyLink.c: Warning !! Could not open %s, Exiting
+/tmp/EasyLinkReady.txt
+failed to open file %s
+%d %d
+/tmp/easylink_error_log_%d
+[EasyLink] EasyLink_channelCreate failed 0x%08x
+That means: %s
+[EasyLink] ConnectAttach failed in EasyLink_open() with chId: %d pid: %d
+[EasyLink] EasyLink_msgSend failed 0x%08x
+[EasyLink] EasyLink_msgReceive (PID %d) failed 0x%08x
+[EasyLink] EasyLink_put (PID %d) - EasyLink_msgSendPulse failed 0x%08x
+[EasyLink] EasyLink_get (PID %d) - ERROR! readIdx %d is out of bounds!
+[EasyLink] EasyLink_get (PID %d) - ERROR! magic header overwritten 0x%08x
+[EasyLink] EasyLink_get (PID %d) - ERROR! readIdx+dataSize+header %d > bufferLen %d
+[EasyLink] EasyLink_free (PID %d) - EasyLink_msgSendPulse failed 0x%08x
+[EasyLink] EasyLink_free (PID %d) - Invalid message pointer: 0x%08x
+[EasyLink] EasyLink_closeReader - MsgSend failed 0x%08x
+[EasyLink] EasyLink_closeReader - ConnectDetach failed 0x%08x
+[EasyLink] EasyLink_closeReader - munmap_device_memory failed for 0x%08x with length %d
+[EasyLink] EasyLink_closeWriter - MsgSend failed 0x%08x
+[EasyLink] EasyLink_closeWriter - ConnectDetach failed 0x%08x
+[EasyLink] EasyLink_closeWriter - munmap_device_memory failed for 0x%08x with length %d
+[EasyLink] EasyLink_startTimer (PID %d) - clock_gettime failed 0x%08x
+[EasyLink] EasyLink_timeElapsed (PID %d) - clock_gettime failed 0x%08x
+Call completed successfully
+Call timed out
+Error occurred while receiving internal message
+Error occurred while sending internal pulse
+Error occurred while sending message
+The requested size is not available in the buffer
+Error occurred while placing the message into the buffer
+Error occurred while retrieving message from buffer
+Pointer to message passed is not within the buffer area
+Detaching connection from the ELM failed
+Un-mapping of shared memory failed
+/tmp/
+ERROR! Failed to create error log file %s!
+ERROR! %s created! pid: %d tid: %d date: Jun 26 2018 time: 18:06:11
+EasyLink error log %d - pid: %d tid: %d date: Jun 26 2018 time: 18:06:11
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salActiveObject.cpp
+assertion failed: SAL_Get_Thread_Id() == getId()
+SAL_Create_Queue() failure
+SAL_Receive() failure
+Alive ActiveObject cannot be destroyed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salApplication.cpp
+assertion failed: appId > 1
+assertion failed: maxNumberOfThreads > 0
+assertion failed: appId >= std::numeric_limits<SAL_App_Id_T>::min() && appId <= std::numeric_limits<SAL_App_Id_T>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salException.cpp
+assertion failed: h != 0
+Resource fatal error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salIByteBuffer.cpp
+assertion failed: mPosition + sizeof( d ) <= mSize
+assertion failed: position < mSize
+assertion failed: mPosition + bytes <= mSize
+assertion failed: !( d == 0 && s > 0 )
+assertion failed: mPosition + s <= mSize
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salMessage.cpp
+assertion failed: msg != 0
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salOByteBuffer.cpp
+assertion failed: d != 0
+assign
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salThread.cpp
+assertion failed: name != 0 && ! isAlive()
+assertion failed: p!=0
+cstr != 0
+../public/salFixedString.h
+assertion failed: threadName != 0
+assertion failed: SAL_UNKNOWN_THREAD_ID == threadId || (threadId > 0 && threadId <= static_cast<int>( getMaxNumberOfThreads() ) )
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salTimer.cpp
+assertion failed: objectId >= -32768 && objectId <= 32767
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salUtils.cpp
+assertion failed: eventId >= std::numeric_limits<int16_t>::min() && eventId <= std::numeric_limits<int16_t>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salError.cpp
+Allocation fatal error
+Lock fatal error
+Resource fatal error
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_SystemTime_MIB20/SystemTime_LIB/build/../source/SystemTimeAccess.c
+SystemTime_open(): This call is obsolete - please remove in next baseline
+/SystemTimeSem
+SystemTime_get(): Open of Semaphore returned with ErrorNumber = %d
+SystemTime_get(): Meaning of this errno: %s
+SystemTime_get(): Wait for Semaphore returned with ErrorNumber = %d
+SystemTime_get(): Opening of Shared Memory failed - Return with not valid SystemTime
+SystemTime_get():  time_offset = %d
+SystemTime_get(): Closing of Shared Memory failed
+SystemTime_get(): Post of Semaphore returned with ErrorNumber = %d
+ERROR in SystemTime-LIB-Function SystemTime_get(): SystemTime has negative value
+GPSTime_get(): Open of Semaphore returned with ErrorNumber = %d
+GPSTime_get(): Meaning of this errno: %s
+GPSTime_get(): Wait for Semaphore returned with ErrorNumber = %d
+GPSTime_get(): Opening of Shared Memory failed - Return with not valid GPSTime
+GPSTime_get():  time_offset = %d
+GPSTime_get(): Closing of Shared Memory failed
+GPSTime_get(): Post of Semaphore returned with ErrorNumber = %d
+ERROR in GPSTime_get(): GPSTime has negative value!
+UTCTime_get(): Open of Semaphore returned with ErrorNumber = %d
+UTCTime_get(): Meaning of this errno: %s
+UTCTime_get(): Wait for Semaphore returned with ErrorNumber = %d
+UTCTime_get(): Opening of Shared Memory failed - Return with NULL-Pointer
+UTCTime_get(): time_offset = %d, TimezoneOffset = %d
+UTCTime_get(): DayLightSavingFlag = %d, ValidFlag = %d
+UTCTime_get(): Closing of Shared Memory failed
+UTCTime_get(): Post of Semaphore returned with ErrorNumber = %d
+ERROR in UTCTime_get(): UTCTime has negative value!
+UTCTime_get():  Hour:Minutes:Seconds = %d:%d:%d
+UTCTime_get():  Day:Month:Year = %d:%d:%d
+UTCTime_get():  TimeZoneOffset:DayLightSavingFlag = %d:%d
+ERROR in UTCTime_get(): QNX-Call gmtime_r() failed - Return with NULL-Pointer
+SystemTime_close(): This call is obsolete - please remove in next baseline
+/dev/fs0
+ systeminfo: malloc failed
+ systeminfo: magic doesn't match
+/home/root/platformrestart_yes
+/home/root/platformrestart_no
+/home/root/tracescope_yes
+/home/root/tracescope_no
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.interp
+.note
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

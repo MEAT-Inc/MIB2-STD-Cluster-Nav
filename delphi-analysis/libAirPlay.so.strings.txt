@@ -1,0 +1,1250 @@
+_fini
+__cxa_finalize
+__deregister_frame_info
+__register_frame_info
+_Jv_RegisterClasses
+libAirPlaySupport.so
+AirPlayNTPClient_SetQoSDisabled
+__aeabi_uldivmod
+AirPlayNTPClient_GetSynchronizedTimeNearUpTicks
+AirPlayNTPClient_GetSynchronizedTime
+AirPlayNTPClient_GetSynchronizedNTPTime
+_AirPlayNTPClient_AdjustClock
+__LogCategory_Initialize
+LogPrintF
+gLogCategory_AirPlayNTPClientCore
+__aeabi_l2d
+__aeabi_d2lz
+__aeabi_uidivmod
+__aeabi_ul2d
+_AirPlayNTPClient_ProcessResponse
+gLogCategory_AirPlayNTPClientStat
+AirPlayNTPClient_GetUpTicksNearSynchronizedNTPTime
+NTPtoUpTicks
+_AirPlayNTPClient_SendRequest
+__get_errno_ptr
+_AirPlayNTPClient_ClockTimer
+random
+_AirPlayNTPClient_ReadPacket
+SocketRecvFrom
+usleep
+DebugPrintAssert
+_AirPlayNTPClient_ReadHandler
+_AirPlayNTPClient_CancelHandler
+_AirPlayNTPClient_SetupSocket
+socket
+SocketSetQoS
+memset
+SockAddrSetPort
+getsockname
+SockAddrGetSize
+connect
+SocketSetNonBlocking
+SocketSetPacketTimestamps
+_AirPlayNTPClient_Negotiate
+select
+DrainUDPSocket
+_AirPlayNTPClient_Stop
+dispatch_source_cancel
+dispatch_release
+AirPlayNTPClient_Start
+dispatch_source_create
+dispatch_set_context
+dispatch_source_set_event_handler_f
+dispatch_source_set_timer
+dispatch_resume
+dispatch_source_set_cancel_handler_f
+_dispatch_source_type_timer
+_dispatch_source_type_read
+_AirPlayNTPClient_Finalizer
+_AirPlayNTPClient_Delete
+dispatch_async_f
+AirPlayNTPClient_Create
+calloc
+SockAddrCopy
+dispatch_queue_create
+dispatch_set_finalizer_f
+AirPlayReceiverServerPlatformSetProperty
+AirPlayReceiverSessionPlatformSetProperty
+AirPlayReceiverServerPlatformControl
+CFEqual
+AirPlayReceiverSessionPlatformCopyProperty
+CFArrayCreateMutable
+AirPlayReceiverSessionScreen_CopyDisplaysInfo
+CFArrayAppendValue
+CFRelease
+ScreenCopyMain
+HIDBrowserCopyProperty
+CFArrayGetCount
+CFArrayGetValueAtIndex
+CFDictionaryCreateMutable
+HIDDeviceCopyProperty
+CFDictionarySetValue
+CFObjectCopyProperty
+kCFLArrayCallBacksCFLTypes
+kCFLDictionaryKeyCallBacksCFLTypes
+kCFLDictionaryValueCallBacksCFLTypes
+_ScreenCopyProperty
+gLogCategory_AirPlayReceiverPlatform
+HIDBrowserStopDevices
+HIDBrowserStop
+HIDDeviceSetEventHandler
+HIDDeviceStart
+CFRetain
+HIDDeviceStop
+CFDictionarySetData
+AirPlayReceiverSessionSendCommand
+AudioSessionEnsureSetup
+AudioStreamCreate
+AudioStreamSetInputCallback
+AudioStreamSetOutputCallback
+CFObjectSetPropertyInt64
+CFObjectSetPropertyCString
+CFObjectSetProperty
+_AudioStreamSetProperty
+AirPlayAudioFormatToPCM
+CFObjectSetPropertyData
+AudioStreamPrepare
+AudioStreamStop
+AudioSessionEnsureTornDown
+AudioStreamStart
+kCFLBooleanTrue
+kCFLBooleanFalse
+CFArrayGetTypeID
+CFDictionaryGetTypedValue
+CFDictionaryGetTypeID
+CFArrayGetTypedValueAtIndex
+CFDictionaryGetInt64
+AirPlayReceiverSessionPlatformControl
+CFDictionaryGetDouble
+AudioStreamRampVolume
+CFStringGetTypeID
+HIDBrowserCreate
+HIDBrowserSetEventHandler
+HIDBrowserStart
+AirPlayReceiverSessionReadAudio
+AirPlayReceiverSessionWriteAudio
+AirPlayReceiverSessionPlatformFinalize
+AirPlayReceiverServerPlatformFinalize
+AirPlayReceiverServerPlatformInitialize
+AirPlayReceiverSessionPlatformInitialize
+AudioSessionSetEventHandler
+AirPlayReceiverServerPlatformCopyProperty
+CFDictionarySetInt64
+AudioSessionGetSupportedInputFormats
+AudioSessionGetSupportedOutputFormats
+AudioSessionCopyLatencies
+CFNumberCreateInt64
+AirPlayReceiverServerSetLogPath
+AirPlayReceiverServerSetDelegate
+AirPlayReceiverServerGetDispatchQueue
+DNSServiceRefDeallocate
+gLogCategory_AirPlayReceiverServer
+CFDictionaryGetCString
+gAirPlayReceiverServer
+AirPlayGetMinimumClientOSBuildVersion
+strlcpy
+AirPlayReceiverServerCopyProperty
+AirTunesServer_EnsureDeleted
+AirPlayReceiverServerGetTypeID
+dispatch_once_f_slow
+AirPlayReceiverServerCreateWithConfigFilePath
+_CFRuntimeCreateInstance
+dispatch_get_main_queue
+dispatch_retain
+GetPrimaryMACAddress
+strdup
+CFStringCopyUTF8CString
+CFDataCreateWithFilePath
+CFPropertyListCreateWithData
+CFDataGetBytePtr
+CFDataGetLength
+CFDictionaryCreateWithINIBytes
+CFGetTypeID
+HIDDeviceCreateVirtual
+HIDRegisterDevice
+ScreenCreate
+ScreenRegister
+CFDictionaryCreate
+AirPlayReceiverServerCreate
+_CFRuntimeRegisterClass
+AirPlayReceiverServerSetLogLevel
+LogControl
+APSMFiPlatform_Initialize
+DebugIPC_EnsureInitialized
+AirPlayGetStatusFlags
+CFObjectGetPropertyInt64Sync
+AirPlayGetFeatures
+AirPlayGetDeviceName
+AirPlaySettings_GetCString
+AirPlayGetDeviceID
+memcpy
+TXTRecordCreate
+HardwareAddressToCString
+strlen
+TXTRecordSetValue
+snprintf
+CFObjectGetPropertyCStringSync
+TXTRecordGetBytesPtr
+TXTRecordGetLength
+CFDataCreate
+DNSServiceUpdateRecord
+AirTunesServer_GetListenPort
+if_nametoindex
+DNSServiceRegister
+TXTRecordDeallocate
+UpTicksToMilliseconds
+dispatch_time
+AirPlayReceiverServerSetProperty
+CFGetData
+CFGetCString
+CFGetInt64
+AirTunesServer_SetDenyInterruptions
+AirPlaySettings_Synchronize
+AirPlaySettings_GetInt64
+strcmp
+AirTunesServer_EnsureCreated
+AirTunesServer_Start
+AirPlayReceiverServerControl
+AirTunesServer_FailureOccurred
+AirPlayCopyServerInfo
+CFDictionaryGetValue
+CFDictionarySetCString
+CFLArrayApplyFunction
+CFArrayContainsValue
+CFDictionaryApplyFunction
+CFStringGetIntValue
+AirPlayReceiverSessionGetDispatchQueue
+AirPlayReceiverSessionSetDelegate
+AirTunesDebugControl_Tweak
+DataBuffer_AppendF
+AirTunesDebugAppendShowData
+UpTicksToSeconds
+gAirTunes
+gAirTunesClockOffsetCount
+gAirTunesClockOffsetHistory
+gAirTunesClockRTTCount
+gAirTunesClockRTTHistory
+gLogCategory_DebugServicesLogging
+AirTunesDebugShow
+DataBuffer_Init
+CFStringCreateWithBytes
+DataBuffer_Free
+gLogCategory_AirPlayReceiverCore
+AirTunesDebugControl_ResetDebugStats
+gAirTunesDebugRecvRTPOriginalByteCountLast
+gAirTunesDebugBusyNodeCountMax
+gAirTunesDebugRecvRTPOriginalBytesPerSecAvg
+gAirTunesDebugSentByteCount
+gAirTunesDebugRecvRTPRetransmitByteCount
+gAirTunesDebugRecvByteCount
+gAirTunesDebugRecvRTPOriginalByteCount
+gAirTunesDebugRecvRTPRetransmitByteCountLast
+gAirTunesDebugRecvRTPRetransmitBytesPerSecAvg
+gAirTunesDebugIdleTimeoutCount
+gAirTunesDebugStolenNodeCount
+gAirTunesDebugOldDiscardCount
+gAirTunesDebugConcealedGapCount
+gAirTunesDebugConcealedEndCount
+gAirTunesDebugLateDropCount
+gAirTunesDebugSameTimestampCount
+gAirTunesDebugLossCounts
+gAirTunesDebugTotalLossCount
+gAirTunesDebugMaxBurstLoss
+gAirTunesDebugDupCount
+gAirTunesDebugMisorderedCount
+gAirTunesDebugUnrecoveredPacketCount
+gAirTunesDebugUnexpectedRTPOffsetResetCount
+gAirTunesDebugHugeSkewResetCount
+gAirTunesDebugGlitchCount
+gAirTunesDebugTimeSyncHugeRTTCount
+gAirTunesDebugTimeAnnounceMinNanos
+gAirTunesDebugTimeAnnounceMaxNanos
+gAirTunesDebugRetransmitActiveCount
+gAirTunesDebugRetransmitActiveMax
+gAirTunesDebugRetransmitSendCount
+gAirTunesDebugRetransmitSendLastCount
+gAirTunesDebugRetransmitSendPerSecAvg
+gAirTunesDebugRetransmitRecvCount
+gAirTunesDebugRetransmitBigLossCount
+gAirTunesDebugRetransmitAbortCount
+gAirTunesDebugRetransmitFutileAbortCount
+gAirTunesDebugRetransmitNoFreeNodesCount
+gAirTunesDebugRetransmitNotFoundCount
+gAirTunesDebugRetransmitPrematureCount
+gAirTunesDebugRetransmitMaxTries
+gAirTunesDebugRetransmitMinNanos
+gAirTunesDebugRetransmitMaxNanos
+gAirTunesDebugRetransmitAvgNanos
+gAirTunesDebugRetransmitRetryMinNanos
+gAirTunesDebugRetransmitRetryMaxNanos
+gAirTunesClockOffsetIndex
+gAirTunesClockRTTIndex
+gAirTunesRTPOffsetIndex
+gAirTunesRTPOffsetCount
+AirTunesDebugControl
+strncmpx
+sscanf
+fclose
+fopen
+gAirTunesDropMinRate
+gAirTunesDropMaxRate
+gAirTunesSkipMinRate
+gAirTunesSkipMaxRate
+gAirTunesDropRemaining
+gAirTunesSkipRemaining
+gAirTunesLateDrop
+gAirTunesFile
+AirPlayReceiverSessionMakeModeStateFromDictionary
+MapCFStringToValue
+AirPlayReceiverSessionSetUserVersion
+AirPlayReceiverSessionScreen_SetUserVersion
+__aeabi_uidiv
+Swap16Mem
+sendto
+gLogCategory_AirPlayReceiverStats
+AirTunesClock_GetSynchronizedTimeNearUpTicks
+RTPJitterBufferRead
+pthread_create
+pthread_self
+pthread_setname_np
+SetCurrentThreadPriority
+SocketAccept
+AirPlayReceiverSessionScreen_SetSessionUUID
+AirPlayReceiverSessionScreen_SetClientDeviceID
+NetSocket_CreateWithNative
+AirPlayReceiverSessionScreen_SetTimeSynchronizer
+CFAbsoluteTimeGetCurrent
+AirPlayReceiverSessionScreen_SetReceiveEndTime
+AirPlayReceiverSessionScreen_SetAuthEndTime
+AirPlayReceiverSessionScreen_SetNTPEndTime
+AirPlayReceiverSessionScreen_StartSession
+AirPlayReceiverSessionScreen_LogStarted
+AirPlayReceiverSessionScreen_ProcessFrames
+AirPlayReceiverSessionScreen_LogEnded
+AirPlayReceiverSessionScreen_StopSession
+NetSocket_Delete
+AirTunesClock_GetUpTicksNearSynchronizedNTPTime
+AirTunesClock_GetSynchronizedNTPTime
+AirTunesClock_GetSynchronizedTime
+AirTunesClock_Adjust
+AirPlayReceiverSessionStart
+HTTPClientCreateWithSocket
+HTTPClientSetLogging
+SockAddrGetPort
+gLogCategory_AirPlayReceiverEvents
+RTPJitterBufferGetFreeNode
+RTPJitterBufferPutBusyNode
+RTPJitterBufferPutFreeNode
+AirPlayReceiverSessionScreen_SendCommand
+pthread_join
+SendSelfConnectedLoopbackMessage
+RTPJitterBufferFree
+MirroredRingBufferFree
+HTTPClientInvalidate
+AirPlayReceiverSessionTearDown
+dispatch_get_global_queue
+AirTunesClock_Finalize
+AirPlayReceiverSessionScreen_ReplaceEventHandlerSynchronously
+AirPlayReceiverSessionScreen_Setup
+AirPlay_DeriveAESKeySHA512ForScreen
+AirPlayReceiverSessionScreen_SetSecurityInfo
+ServerSocketOpen
+AirPlayReceiverSessionSetup
+AirTunesClock_Create
+OpenSelfConnectedLoopbackSocket
+CompareOSBuildVersionStrings
+AirPlayReceiverSessionScreen_SetClientModelCode
+AirPlayReceiverSessionScreen_SetClientDeviceUDID
+AirPlayReceiverSessionScreen_SetClientOSBuildVersion
+AirPlayAudioFormatToASBD
+SecondsToUpTicks
+RTPJitterBufferInit
+MirroredRingBufferInit
+RandomBytes
+HTTPMessageCreate
+HTTPHeader_InitRequest
+CFPropertyListCreateData
+HTTPMessageSetBody
+HTTPClientSendMessage
+AirPlayReceiverSessionSetLimitedUI
+AirPlayReceiverSessionSetNightMode
+AirPlayReceiverSessionRequestUI
+AirPlayReceiverSessionRequestSiriAction
+AirPlayReceiverSessionForceKeyFrame
+AirPlayReceiverSessionChangeModes
+AirPlayCreateModesDictionary
+AirPlayReceiverSessionChangeResourceMode
+AirPlayReceiverSessionChangeAppState
+CFCreateWithPlistBytes
+AirPlayReceiverSessionSetSecurityInfo
+AES_CBCFrame_Final
+AES_CBCFrame_Init
+AirPlayReceiverSessionSetProperty
+AirPlayReceiverSessionCopyProperty
+AirPlayReceiverSessionControl
+CFDictionarySetDouble
+CFObjectControlAsyncF
+AirPlayReceiverSessionGetTypeID
+AirPlayReceiverSessionCreate
+UUIDGet
+AirPlayReceiverSessionScreen_Create
+AirPlayReceiverSessionScreen_SetEventHandler
+AirPlayReceiverSessionScreen_SetOverscanOverride
+AirPlayReceiverSessionScreen_SetClientIfMACAddr
+AirPlayReceiverSessionScreen_SetIFName
+AirPlayReceiverSessionScreen_SetTransportType
+AirPlayReceiverSessionScreen_Delete
+gAirTunesDebugNoSkewSlew
+gAirTunesDebugLogAllSkew
+gAirTunesDebugNoRetransmits
+gAirTunesDebugPrintPerf
+gAirTunesDebugPerfMode
+gAirTunesDebugRetransmitTiming
+gAirTunesDebugBusyNodeCount
+gAirTunesDebugBusyNodeCountLast
+gAirTunesDebugLastPollTicks
+gAirTunesDebugPollIntervalTicks
+gAirTunesDebugSentByteCountLast
+gAirTunesDebugRecvByteCountLast
+gAirTunesDebugHighestSeqLast
+gAirTunesDebugTotalLossCountLast
+gAirTunesDebugRecvCountLast
+gAirTunesDebugGlitchCountLast
+gAirPlayAudioStats
+gAirTunesRTPOffsetHistory
+AirPlayReceiverSessionScreen_CopyTimestampInfo
+writev
+ScreenStreamStop
+AES_CTR_Final
+ScreenStreamCreate
+_ScreenStreamSetProperty
+ScreenStreamStart
+AES_CTR_Init
+AirPlayReceiverSessionScreen_CopyDisplayUUID
+dispatch_sync_f
+NetSocket_GetNative
+malloc
+AES_CTR_Update
+ScreenStreamProcessData
+CFObjectSetPropertyDouble
+gLogCategory_AirPlayReceiverSessionScreenCore
+gLogCategory_AirPlayReceiverSessionScreenFrames
+__aeabi_ulcmp
+dispatch_semaphore_wait
+dispatch_semaphore_signal
+gLogCategory_AirPlayJitterBuffer
+RTPJitterBufferReset
+MillisecondsToUpTicks
+dispatch_semaphore_create
+AirPlay_DeriveAESKeySHA512
+SHA512_Init_compat
+SHA512_Update_compat
+SHA512_Final_compat
+ASPrintF
+CFArrayEnsureCreatedAndAppend
+_AirTunesClock_Tick
+pthread_mutex_lock
+pthread_mutex_unlock
+_AirTunesClock_Thread
+AirTunesClock_GetUpTicksNearSynchronizedNTPTimeMid32
+pthread_mutex_destroy
+pthread_mutex_init
+AirTunesServer_AllowPlayback
+HTTPConnectionStop
+gLogCategory_AirTunesServerCore
+_HTTPServerControl
+HTTPServerCreate
+HTTPServerSetDispatchQueue
+NetworkChangeListenerStop
+APSMFiSAP_Delete
+HTTPGetHeaderField
+strnicmpx
+TextToInt32
+HTTPParseParameter
+NetworkChangeListenerCreate
+NetworkChangeListenerSetDispatchQueue
+NetworkChangeListenerSetHandler
+NetworkChangeListenerStart
+SocketGetInterfaceInfo
+strnicmp_prefix
+HTTPHeader_InitResponse
+CFDictionaryMergeDictionary
+CFDictionaryGetCount
+CFArrayEnsureCreatedAndAppendCString
+URLGetOrCopyNextVariable
+HTTPScanFHeaderValue
+SocketSetKeepAlive
+CFDictionaryGetHardwareAddress
+strncpy
+CFDictionaryGetData
+TextToSourceVersion
+APSMFiSAP_Decrypt
+CFDictionaryRemoveValue
+strnicmp_suffix
+LogHTTP
+SockAddrToDeviceID
+TruncateUTF8
+HTTPHeader_SetField
+APSMFiSAP_Create
+gAirPlayAudioCompressionType
+gLogCategory_AirTunesServerHTTP
+APSMFiSAP_Exchange
+HTTPMakeTimedNonce
+HTTPConnectionSendResponse
+AirTunesServer_StopAllConnections
+AirTunesServer_PreventPlayback
+libbacktrace.so.1
+libc.so.3
+libcpp.so.4
+libdns_sd.so.1
+libm.so.2
+libsocket.so.3
+_in6addr_any
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+libAirPlay.so
+libsocket.so.2
+`FBP 
+mcplp@-
+_AirPlayNTPClient_AdjustClock
+_AirPlayNTPClient_ProcessResponse
+_AirPlayNTPClient_ClockTimer
+_AirPlayNTPClient_ReadPacket
+_AirPlayNTPClient_CancelHandler
+_AirPlayNTPClient_SetupSocket
+_AirPlayNTPClient_Negotiate
+_AirPlayNTPClient_Stop
+AirPlayNTPClient_Start
+_AirPlayNTPClient_Finalizer
+AirPlayNTPClient_Delete
+AirPlayNTPClient_Create
+Stepped clock by %d.%09llu seconds
+### Wrong NTP response. Expected time 0x%08x:%08x, but got 0x%08x:%08x
+### Large NTP RTT %f, RTT avg %f, RTT min %f, RTT max %f, offset %f
+### Replacing large NTP RTT %f, offset %f with least bad RTT %f, offset %f
+#    RTTLast   RTTMin    RTTMax    RTTAvg    CLKLast   CLKMin    CLKMax    CLKAvg    Rate
+---- --------- --------- --------- --------- --------- --------- --------- --------- ----------
+%-4u %+1.6f %+1.6f %+1.6f %+1.6f %+1.6f %+1.6f %+1.6f %+1.6f %+1.6f
+### Send NTP to %##a failed: %#m
+len == sizeof( pkt )
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Sources/AirPlayNTPClient.c
+Canceled  %d
+Bad family: %##a
+Negotiating time with %##a
+### Negotiate send to %##a failed (%d): %#m
+### Negotiate wait for %##a failed (%d, %d): %#m
+### Negotiate recv failed (%d, %d): %#m
+### Negotiate with %##a failed: %d, %d, %d, %d
+Successfully negotiated time with %##a
+### Negotiate with %##a failed: G=%d, B=%d, S=%d, R=%d, T=%d
+inClient->timerSource
+Started   %p to %##a from %##a
+inClient->ntpSource
+### NTP client start with %##a failed: %#m
+!IsValidSocket( client->ntpSocket )
+client->ntpSource == NULL
+client->timerSource == NULL
+Finalized %p
+Deleting  %p
+client
+AirPlayNTPClient
+client->internalQueue
+Created   %p to %##a
+AirPlayNTPClientCore
+AirPlayNTPClientStat
+updatePrefs
+displays
+_CopyDisplayDescriptions
+hidDevices
+_HIDCopyDevices
+devices
+hidDescriptor
+countryCode
+hidCountryCode
+productID
+hidProductID
+sampleRate
+vendorID
+hidVendorID
+displayUUID
+AirPlayReceiverSessionPlatformCopyProperty
+_HIDStop
+_HIDBrowserEventHandler
+_HIDDeviceEventHandler
+hidSendReport
+hidReport
+default
+_UpdateStreams
+streamType
+threadName
+threadPriority
+input
+audioType
+varispeed
+format
+streams
+_TearDownStreams
+duckAudio
+durationMs
+volume
+AirPlayReceiverSessionPlatformControl
+unduckAudio
+setUpStreams
+_SetUpStreams
+audioFormat
+audioLoopback
+_HIDStart
+tearDownStreams
+startSession
+_HandleAudioSessionEvent
+_AudioOutputCallBack
+_AudioInputCallBack
+AirPlayReceiverServerPlatformInitialize
+AirPlayReceiverSessionPlatformInitialize
+audioFormats
+AirPlayReceiverServerPlatformCopyProperty
+audioInputFormats
+audioOutputFormats
+audioLatencies
+statusFlags
+displays
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Sources/AirPlayReceiverPOSIX.c
+descriptions
+description
+### Report HID device %d of %d failed: %#m
+HID stopping
+HID stopped
+HID report from %@: %.3H
+request
+HID device stopped
+### HID device event failed: %#m
+PCM/8000/16/1
+PCM/8000/16/2
+PCM/16000/16/1
+PCM/16000/16/2
+PCM/24000/16/1
+PCM/24000/16/2
+PCM/32000/16/1
+PCM/32000/16/2
+PCM/44100/16/1
+PCM/44100/16/2
+PCM/44100/24/1
+PCM/44100/24/2
+PCM/48000/16/1
+PCM/48000/16/2
+PCM/48000/24/1
+PCM/48000/24/2
+ALAC/44100/16/2
+ALAC/44100/24/2
+ALAC/48000/16/2
+ALAC/48000/24/2
+AAC-LC/44100/2
+AAC-LC/48000/2
+AAC-ELD/44100/2
+AAC-ELD/48000/2
+Main audio setting up %s for %@, input %s, loopback %s, volume %s
+AirPlayAudioMain
+Main audio torn down
+Alt audio setting up %s
+AirPlayAudioAlt
+Alt audio torn down
+### Main audio start failed: %#m
+### Alt audio start failed: %#m
+### Unsupported stream type %d
+Ducking audio to %f within %f seconds
+Delegating ducking of audio to %f within %f seconds
+Unducking audio within %f seconds
+Delegating unducking of audio within %f seconds
+HID started
+### HID start failed: %#m
+Bad event type: %u
+platform
+value
+AudioLatencies = %@
+AirPlayReceiverPlatform
+AirPlay
+_StopBonjour
+AirPlayGetConfigCString
+clientOSBuildVersionMin
+AirPlayGetDeviceModel
+model
+playing
+sourceVersion
+210.81
+stopServer
+_StopServers
+AirPlayReceiverServerCreateWithConfigFilePath
+_InitializeConfig
+hidDevice
+displays
+display
+screenStreamOptions
+audioStreamOptions
+hidDevices
+_GetTypeID
+statusFlags
+features
+AirPlayGetDeviceName
+_UpdateBonjourAirPlay
+firmwareRevision
+_UpdateBonjour
+_RestartBonjour
+deviceID
+interfaceName
+_BonjourRegistrationHandler
+_RetryBonjour
+enabled
+bonjourDisabled
+_UpdatePrefs
+denyInterruptions
+overscanOverride
+qosDisabled
+timeoutDataSecs
+updatePrefs
+_StartServers
+startServer
+updateBonjour
+prefsChanged
+AirPlayReceiverServerControl
+sessionDied
+AirPlayCopyServerInfo
+audioFormats
+audioLatencies
+bluetoothIDs
+hardwareRevision
+hidLanguages
+macAddress
+keepAliveSendStatsAsBody
+limitedUIElements
+limitedUI
+manufacturer
+modes
+nightMode
+oemIconPath
+oemIcon
+oemIconLabel
+oemIconVisible
+OSInfo
+rightHandDrive
+settingsIconPath
+settingsIcon
+txtAirPlay
+Deregistered Bonjour %s for %s
+_airplay._tcp.
+gAirPlayReceiverServer
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Sources/AirPlayReceiverServer.c
+inMaxLen > 0
+AirPlayGeneric1,1
+AirPlay servers stopped
+/etc/airplay.conf
+Bad type for config file: %s
+gAirPlayReceiverServerTypeID != _kCFRuntimeNotATypeID
+?AirPlayReceiverCore:level=info,AirPlayScreenServerCore:level=trace,AirPlayReceiverSessionScreenCore:level=trace,AirTunesServerCore:level=info
+?DebugServices.*:level=info
+CarPlay
+deviceid
+0x%X,0x%X
+features
+flags
+model
+srcvers
+210.81
+Updated Bonjour TXT for %s
+Bonjour TXT update failed for %s, deregistering so we can force a re-register %s
+port > 0
+local.
+Registering Bonjour %s port %d
+disable
+### Bonjour failed, retrying in %llu ms: %#m
+timer
+Ignoring Bonjour restart while disabled
+Deferring Bonjour restart until we've stopped playing
+Ignoring Bonjour restart since Bonjour wasn't started
+restart
+Waiting for 2 seconds for Bonjour to remove service
+Starting Bonjour service for restart
+### Bonjour server crashed for %s
+### Bonjour registration error for %s: %#m
+Registered Bonjour %s.%s%s
+Retrying Bonjour after failure
+Bonjour Disabled: %s -> %s
+Deny Interruptions: %s -> %s
+Name changed '%s' -> '%s'
+Overscan override: %s -> %s
+QoS disabled: %s -> %s
+AirPlay servers started
+Prefs changed
+AirTunesDebugAppendShowData
+AirTunesDebugShow
+_LogEnded
+AirTunesDebugControl_ResetDebugStats
+AirTunesDebugControl
+appStates
+AirPlayReceiverSessionMakeModeStateFromDictionary
+appStateID
+speech
+phoneCall
+turnByTurn
+entity
+controller
+accessory
+speechMode
+speaking
+recognizing
+resources
+resourceID
+mainScreen
+mainAudio
+AirPlayReceiverSessionWriteAudio
+_UpdateEstimatedRate
+AirPlayReceiverSessionReadAudio
+_ScreenStart
+_ScreenThread
+_TimingSendRequest
+_TimingReceiveResponse
+_TimingProcessResponse
+_TimingThread
+_ControlStart
+AirPlayReceiverSessionStart
+_TimingNegotiate
+_LogStarted
+startSession
+_PerformPeriodTasks
+sessionDied
+_MainAltAudioThread
+_MainAltAudioProcessPacket
+_ScreenTearDown
+_TimingFinalize
+_TearDownStream
+_ControlTearDown
+AirPlayReceiverSessionTearDown
+tearDownStreams
+streams
+_AddResponseStream
+_ScreenSetup
+streamConnectionID
+dataPort
+AirPlayReceiverSessionSetup
+timingPort
+_ControlSetup
+_TimingInitialize
+eventPort
+osBuildVersion
+modelCode
+_MainAltAudioSetup
+audioFormat
+audioLatencyMs
+audioBufferMainAltWiredMs
+audioBufferMainAltWiFiMs
+setUpStreams
+AirPlayReceiverSessionSendCommand
+AirPlayReceiverSessionSetLimitedUI
+setLimitedUI
+limitedUI
+params
+AirPlayReceiverSessionSetNightMode
+setNightMode
+nightMode
+AirPlayReceiverSessionRequestUI
+requestUI
+AirPlayReceiverSessionRequestSiriAction
+requestSiri
+siriAction
+AirPlayReceiverSessionForceKeyFrame
+forceKeyFrame
+AirPlayReceiverSessionChangeModes
+changeModes
+AirPlayReceiverSessionChangeResourceMode
+AirPlayReceiverSessionChangeAppState
+_AirPlayReceiverSessionSendCommandCompletion
+status
+AirPlayReceiverSessionSetSecurityInfo
+timelineOffset
+AirPlayReceiverSessionSetProperty
+modesChanged
+AirPlayReceiverSessionControl
+updateFeedback
+_UpdateFeedback
+hidSetInputMode
+forceKeyFrameNeeded
+_ScreenHandleEvent
+timestampsUpdated
+frameCount
+metrics
+updateTimestamps
+AirPlayReceiverSessionCreate
+_GetTypeID
+### malformed tweak: '%s'
+### unknown tweak: '%s'
+globals
++-+ AirPlay Audio Statistics +-+
+    Encoding Mode            = %s
+    Running Time             = %u seconds (%{dur})
+    timing                   = sock %d, local port %d, remote port %d
+    receiveCount             = %u
+    rtcpTISend, Resp         = %u, %u, %u
+    rtcpTIStepCount          = %u
+    rtcpTIClockRTTOutliers   = %u
+    rtcpTIClockRTTAvg        = %f
+    rtcpTIClockRTTMin        = %f
+    rtcpTIClockRTTMax        = %f
+    rtcpTIClockOffsetArray   = [%f, %f, %f]
+    rtcpTIClockOffsetAvg     = %f
+    rtcpTIClockOffsetMin     = %f
+    rtcpTIClockOffsetMax     = %f
+clockOffsets
++-+ AirTunes Clock Offset History (%u total) +-+
++-+ AirTunes Clock RTT History (%u total) +-+
++-+ AirTunes Debug Show Commands +-+
+    globals       -- Show globals.
+    stats         -- Show persistent stats.
+    tweak         -- Show tweakable values.
+    mem           -- Show memory usage.
+    clockOffsets  -- Show clock offset history.
+### Unknown command: "%s"
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Sources/AirPlayReceiverSession.c
+output
+AirPlay session ended: Dur=%{dur} Reason=%#m
+AirPlay debugging stats reset
+%d,%d,%d,%d
+Starting simulated packet loss: drop %d-%d packets every %d-%d packets
+Stopped simulated packet loss
+latedrop
+Late dropping every %d packets
+Disabling late drop
+Reset debug stats
+-- AirTunes Debug Control Commands --
+    aro                    -- Adjust relative RTP offset.
+    rs                     -- Reset all debug stats.
+    perf                   -- Start/stop performance monitoring.
+    perfMode               -- Set performance monitoring mode.
+    hwskew <force>,<skew>  -- Set performance monitoring mode.
+### unknown command: '%s'
+starting record of audio at file "%s"
+### Ignoring unknown app state %@
+### Ignoring unknown resource state %@
+### Audio input buffer full: %zu > %zu
+### Audio audio send error (%u total): %#m
+%s: Estimated rate: %.3f
+Bad stream type: %u
+### screen start failed: %#m
+AirPlayScreenReceiver
+screen receiver started
+params
+Screen thread exit
+### NTP send request failed: %#m
+Bad size: %zu < %zu
+Bad version: %d
+Wrong packet type: %d
+len >= sizeof( pkt.timeSync )
+### Large clock sync RTT %f, Avg %f, Min %f, Max %f, Offset %f
+Replaced large clock sync RTT with %f, offset %f
+AirPlayTimeSyncClient
+Timing thread starting
+select() error: %#m
+Timing thread exit
+_TimingThread exit
+Events started on port %d to port %d
+### Event start failed: %#m
+inSession->timingThreadPtr == NULL
+### Time sync send error: %#m
+Time negotiate send error: %d
+Too many time negotiate send failures: %d
+### Time sync select() error: %#m
+Time negotiate receive error: %d
+### Time sync receive error: %#m
+Too many time negotiate failures: G=%d B=%d R=%d T=%d
+Timing started
+source
+Direct
+AAC-LC
+AAC-ELD
+H.264
+AirPlay session started: From=%s D=0x%012llx A=%##a T=%s C=%s Bonjour=%u ms Conn=%u ms Auth=%u ms Ann=%u ms Setup=%u ms %s%?u%sRec=%u ms: %#m
+### Idle for %llu seconds
+Idle timeout after %d seconds with no audio
+AirPlayAudioReceiver
+MainAltAudio thread starting
+len >= kRTPHeaderSize
+### Process main audio error: %#m
+%s audio thread exit
+screen receiver torn down
+Timing finalized
+%s audio torn down
+Control torn down
+Tearing down session %llu with %##a %?@
+### Unsupported stream type: %d
+responseStreams
+!inSession->screenInitialized
+responseStreamDesc
+streamConnectionID
+screen receiver set up on port %d
+### screen receiver setup failed: %#m
+Setting up session %llu with %##a %?@
+responseParams
+### Timing connect UDP to %##a failed (using sendto instead): %#m
+Timing set up on port %d to port %d
+### Timing setup failed: %#m
+Events set up on port %d
+### Control setup failed: %#m
+!ctx->session
+%s audio set up for %s on receive port %d, send port %d
+### %s audio setup failed: %#m
+### Set up session %llu with %##a failed: %#m %@
+/command
+RTSP/1.0
+application/x-apple-binary-plist
+Bad resource ID: %d
+( offset >= -250 ) && ( offset <= 250 )
+inParams
+controller
+accessory
+speaking
+recognizing
+Modes changed: screen %s, mainAudio %s, speech %s (%s), phone %s, turns %s
+Request accessory UI
+streams
+Set HIDInputMode
+{%kO=%i%kO=%O}
+gAirPlayReceiverSessionTypeID != _kCFRuntimeNotATypeID
+AirPlayReceiverCore
+AirPlayReceiverEvents
+AirPlayReceiverStats:rate=5;3000
+AirPlayReceiverStats
+AirPlayReceiverSession
+AirPlayReceiverSessionScreen_SendCommand
+_AirPlayReceiverSessionScreen_Cleanup
+AirPlayReceiverSessionScreen_StartSession
+platformLayer
+_AirPlayReceiverSessionScreen_Finalize
+latencyMs
+AirPlayReceiverSessionScreen_SetSecurityInfo
+AirPlayReceiverSessionScreen_CopyDisplayUUID
+AirPlayReceiverSessionScreen_CopyDisplaysInfo
+features
+maxFPS
+widthPhysical
+heightPhysical
+widthPixels
+heightPixels
+AirPlayReceiverSessionScreen_Create
+AirPlayReceiverSessionScreen_ProcessFrames
+_AirPlayReceiverSessionScreen_ProcessFrame
+_AirPlayReceiverSessionScreen_ProcessCommand
+_AirPlayReceiverSessionScreen_PostEvent
+forceKeyFrameNeeded
+( 1 + inExtraLen ) <= kAirPlayReceiverSessionScreenCommandMaxSize
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Sources/AirPlayReceiverSessionScreen.c
+me->commandSock == kInvalidSocketRef
+AirPlayReceiverSessionScreen
+obj->queue
+### Sender went dead. Stopping.
+malloc( %zu ) failed
+Late frame (%lld ms, %u total late frames): %.3H ... %.3H
+### Unknown screen opcode: %u
+### Process frame error (%u): %#m
+User quit event received
+( n - 1 ) >= 4
+Stop event received for session %u
+### Unknown pipe action: '%c'
+AirPlayReceiverSessionScreenCore
+AirPlayReceiverSessionScreenFrames:rate=5;3000
+AirPlayReceiverSessionScreenFrames
+RTPJitterBufferRead
+RTPJitterBufferGetFreeNode
+RTPJitterBufferPutBusyNode
+RTPJitterBufferFree
+RTPJitterBufferInit
+AirPlayCreateModesDictionary
+appStateID
+state
+speechMode
+resourceID
+transferType
+transferPriority
+takeConstraint
+borrowConstraint
+unborrowConstraint
+appStates
+resources
+reasonStr
+Default
+%s: Buffering complete, %d ms (%d), %llu ticks late
+%s: Late: %d ms (%u total)
+%s: Skip: %d ms (%u total)
+%s: Gap:  %d ms (%u total)
+%s: Re-buffering: %d ms buffered (%d), %d ms missing (%d), %u total)
+node != stop
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Sources/AirPlayUtils.c
+( node == stop ) || ( node->pkt.pkt.rtp.header.ts != ts )
+%s: Starting audio in %u ms
+### %s: Buffering issues during session: Late=%u Missing=%u Gaps=%u Rebuffers=%u
+ctx->nodeLock
+ctx->packets
+%s%llu
+AirPlayStreamKey
+AirPlayStreamIV
+tempDict
+Bad borrow/unborrow constraint
+AirPlayJitterBuffer:rate=3;1000
+AirPlayJitterBuffer
+AirTunesClock_Finalize
+AirTunesClock_Create
+AirPlayClock
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Sources/AirTunesClock.c
+AirTunesServer_AllowPlayback
+_connectionDestroy
+AirTunesServer_Start
+startServer
+stopServer
+AirTunesServer_EnsureCreated
+playing
+_requestProcessRecord
+_requestNetworkChangeListenerHandleEvent
+sessionDied
+_requestSendPlistResponse
+_requestProcessCommand
+params
+_requestProcessFeedback
+updateFeedback
+_requestProcessInfo
+qualifier
+_connectionInitialize
+playbackAllowed
+_requestProcessSetup
+_requestProcessSetupPlist
+_AirTunesServer_HijackConnections
+deviceID
+macAddress
+sessionUUID
+sourceVersion
+_requestCreateSession
+_requestDecryptKey
+_connectionHandleMessage
+_requestProcessSetParameter
+_requestProcessSetParameterText
+_requestProcessSetProperty
+property
+value
+_requestProcessGetParameter
+_requestProcessTearDown
+_requestProcessGetLog
+_requestProcessAuthSetup
+_AirTunesServer_RemoveAllConnections
+AirTunesServer_FailureOccurred
+AirTunesServer_PreventPlayback
+*** ALLOW PLAYBACK ***
+Closing  connection from %##a to %##a
+gAirTunesServer && gAirTunesServer->httpServer
+E:/AP_20151013_SOP3/sw/AP_CarPlay/ApplePlugin/AppleCarPlay_CommunicationPlugin/PlatformPOSIX/../Sources/AirTunesServer.c
+gAirTunesServer
+AirTunesServerQueue
+gAirTunesServer->queue
+Record
+RECORD not allowed before SETUP
+X-Apple-Durations
+### Can't get interface's %s info: err = %d; killing session.
+### Interface %s is not running; killing session.
+### Interface %s is inactive; killing session.
+HTTP/1.1
+atCnx->session
+responseDict
+### Command '%@' failed: %#m, %#m
+### Feedback failed: %#m, %#m
+X-Apple-ProtocolVersion
+### Get info failed: %#m, %#m
+atCnx
+Content-Type
+### Setup denied because playback is not allowed
+text/x-apple-plist+xml
+Setup
+Denying interruption from %##a due to %##a
+*** Hijacking connection %##a for %##a
+len == sizeof( sessionUUID )
+atCnx->MFiSAP
+### Bad ET: %d
+len == 16
+### Setup session failed: %#m
+Bad setup URL '%.*s'
+OPTIONS
+/feedback
+X-Apple-Device-ID
+X-Apple-Client-Name
+Public
+ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET
+SET_PARAMETER
+SET_PARAMETER not allowed before SETUP
+text/parameters
+Bad parameter: '%.*s'
+Unknown parameter: '%.*s'
+property
+### Set property '%@' failed: %#m, %#m
+Bad Content-Type: '%.*s'
+GET_PARAMETER
+GET_PARAMETER not allowed before SETUP
+No Content-Type header
+name: %s
+RECORD
+TEARDOWN
+Teardown %?@
+### Rejecting log request from non-internal build
+/info
+### Unsupported GET: '%.*s'
+/auth-setup
+request->bodyOffset > 0
+application/octet-stream
+/diag-info
+Bad POST: '%.*s'
+Bad method: %.*s
+Content-Length
+AirTunes/%s
+YjM5ODQ4MDE0MmI3YTI4ZmQ1MzdjNGIxMDVmNzYxMDg=
+WWW-Authenticate
+Digest realm="airplay", nonce="%s"
+inServer->httpServer->connections == inConnectionToKeep
+!inServer->httpServer->connections || ( inServer->httpServer->connections->next == NULL )
+### Failure: %#m
+*** PREVENT PLAYBACK ***
+AirTunesServerCore
+AirTunesServerHTTP
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+GCC: (GNU) 4.4.2
+aeabi
+.shstrtab
+.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.note
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.data
+.comment
+.ARM.attributes

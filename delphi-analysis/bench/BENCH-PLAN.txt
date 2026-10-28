@@ -1,0 +1,30 @@
+Phone-only reference test (optional later; not yet executed)
+==========================================================
+Purpose: establish whether the chosen phone and map app can produce a
+separate cluster map with Google's reference Desktop Head Unit. This does
+NOT test Delphi compatibility, the stock protocol 1.3 handshake, MOST,
+cluster geometry, or our host-only discovery transformation.
+
+Official instructions:
+https://developer.android.com/training/cars/testing/dhu
+The documented Cluster Display feature requires a supporting DHU release
+(documentation introduces it in 2.1). Install it through Android's SDK tools
+if/when we choose this bench test. No SDK installation has been performed.
+
+Example after installing DHU and enabling the phone's Android Auto developer
+head-unit server, with USB debugging authorized for the test laptop:
+  adb forward tcp:5277 tcp:5277
+  desktop-head-unit.exe -c ".\delphi-analysis\bench\dhu-cluster-reference.ini"
+Run desktop-head-unit.exe from its SDK installation directory so its bundled
+libraries can be found. The ADB path may need to be supplied explicitly.
+
+Record phone model, Android/Android Auto/map versions and DHU version. Check
+that a route appears in the separate cluster window, not only turn arrows.
+The example 800x480, 160dpi, 30fps geometry is a reference fixture, not a
+measurement or installation recommendation for this Golf R.
+
+If run later, stop the head-unit server and remove only this port forward:
+  adb forward --remove tcp:5277
+This plan intentionally requires no connection to the vehicle. A successful
+reference test cannot establish that our Delphi hook or negotiated protocol
+will work; those remain separate gates.

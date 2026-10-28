@@ -1,0 +1,71 @@
+Bridge analysis: focused offline continuation (P0890D local VAs)
+===========================================================
+No vehicle connection, SAL sends, patching or execution of acquired binaries.
+Evidence: existing runtime/native disassembly plus the host-only script below.
+
+0x1694 payload/result semantics CONFIRMED
+- screen-cda externalMapActivateResponse 0x116fbc writes stack words at
+  +0x24/+0x28/+0x2c = {0,0,input[0]}, publishes 12 bytes at 0x117088-98.
+- externalMapDeactivateResponse 0x117114 similarly publishes {1,0,input[0]}
+  at 0x1171e0-f0.
+- externalMapRateResponse 0x11726c writes +0x1c/+0x20/+0x24 = {2,input[0],0},
+  publishes at 0x117314-24. Thus wire order is COMMAND, NEW RATE, RESULT.
+- Result zero is SCDA_OK; nonzero is SCDA_Failed, directly supported by
+  conditional log-string selection at 0x117020-40 and strings 0x12c62c/34.
+  Rate response unconditionally supplies success; it transports only peer rate,
+  not a separate peer result. Do not treat that field as encoder health proof.
+- Independent receiver corroboration: DisplayManagement 0x116ac4 requires
+  length 12; 0x116af0/af8/b00 load words into r1/r2/r3 before 0x116b90;
+  activation tests r3/result ==0 at 0x116bd4-dc.
+
+Rate propagation and codec parameters CONFIRMED
+- Existing bridge request command2 passes word+4 unchanged in event0x1699.
+- MDCore startFPKMap 0x1e45bc saves newRate in r4; serializes that integer
+  at 0x1e46f8-4700 and sends event0xf6e to app0x1d/thread8 at 0x1e4704-471c.
+- MDEncoderThread dispatch jump table base0x1fa350 indexes event-0xf5d;
+  entry for0xf6e at0x1fa394 is target0x1fa58c (table bytes are data).
+  0x1fa58c-5b0 reads four bytes and passes unchanged newRate to startFPK
+  0x1f9b64. It returns event0xf6f containing boolean(nonzero return) then
+  ORIGINAL requested rate at0x1fa5c0-5f4; not measured output cadence.
+- startFPK switches an active encoder through switchTargetFramerateFPK
+  0x1edb84 and forces an I-frame through0x1edcd0; stores requested rate
+  at object+0xe0 on success. Return2 means already-active equal rate;
+  return1 means successful start/switch, return0 failure (0x1fa284-290).
+- Both initial start and switch use target parameter = 1000*rate +2000
+  for rate<=9, otherwise1000*rate. Switch:0x1edbb0-bcc, VE_GetParams
+  0x2546b8 / VE_SetParams0x254928 identified by failure diagnostics.
+  Initial:0x1f9bd8/be4 and0x1fa1fc-210. This is a frame-rate parameter
+  transform, NOT a demonstrated actual fps measurement or bitrate formula.
+- Initial parameter block at0x1fa238 contains constant0x30d400 (3,200,000)
+  at block+0x1c; block+0x20 receives transformed rate. Precise ABI/units of
+  that constant remain unproven; do not yet label it a confirmed bitrate.
+
+Geometry propagation CONFIRMED; runtime dimensions UNKNOWN
+- MDCore0x21ebe8/ec04/ec20/ec3c/ec58 serializes mapWindow fields
+  +8/+0xc/+0x10/+0x14/+0x18 in order after filename into event0xf6a.
+- Receiver0x1fa458-498 reads them in order;0x1fa4a8-4cc passes them to
+  initFPK as r2,r3,stack0,stack4,stack8.
+- initFPK diagnostic0x1ee4b4 and argument placement0x1ee4a8-4d8 identify
+  them as windowWidth, windowHeight, bufferWidth, bufferHeight, paddedPixels.
+- Later start diagnostic0x1f9e48-74 names encoder fields +0xf8/+0xfc
+  image width/height, +0x100/+0x104 buffer width/height, +0x108 padding.
+  Their assignment through the encoder initialization callback remains open.
+  No fixed 800x480 or other active geometry established.
+
+SAL time units CONFIRMED
+- Export SAL_Clock0xdfa4:0xdfbc gets SAL_I_Get_Time;0xdfc4 obtains seconds,
+  subtracts stored epoch seconds and multiplies by1000 (0xdfd4-dc), then
+  adds SAL_I_Time_Get_Milli_Seconds result (0xdfe4-e8).
+- SAL_I_Get_Time0xdf90 calls clock_gettime(0,...). Millisecond accessor
+  0xded8 divides nanoseconds by1,000,000. SAL_Delta_Time export0xe010
+  is r1-r0; elapsed helper0xdffc is SAL_Clock()-argument.
+  Thus earlier TS 90*clock timestamps and thresholds332/32 use milliseconds.
+  Clock is based on clock_gettime ID0; do not assume monotonic behavior.
+
+Reproduce focused raw windows (host Python, pyelftools/capstone .tools/python):
+  python scripts/bridge_analysis_windows.py
+  python scripts/bridge_analysis_windows.py 1f9b64:1f9c2c 1fa1b4:1fa2a0 1edb84:1edcd0
+Script only reads NavigationServer and prints selected ARM windows. Existing
+screen-cda/libXSAL disassembly supplies response/clock addresses above. No
+broad regeneration, import of scripts with output side effects, or new research.
+

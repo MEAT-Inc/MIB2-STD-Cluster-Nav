@@ -1,0 +1,730 @@
+00001f19 _fini
+00001f1f __cxa_finalize
+00001f2e __deregister_frame_info
+00001f46 __register_frame_info
+00001f5c _Jv_RegisterClasses
+00001f70 SAL_Sync_Reply
+00001f7f DTS_Client_Get_Frontend
+00001f97 abort
+00001f9d MsgReply_r
+00001fa8 strerror
+00001fb1 SAL_Sync_Reply_V
+00001fc2 MsgReplyv_r
+00001fce SAL_Sync_Read
+00001fdc MsgRead_r
+00001fe6 SAL_Sync_Receive
+00001ff7 MsgReceive_r
+00002004 SAL_Sync_Send_SV
+00002015 MsgSendsv_r
+00002021 SAL_Sync_Send_VS
+00002032 MsgSendvs_r
+0000203e SAL_Sync_Send
+0000204c MsgSend_r
+00002056 SAL_Sync_Send_V
+00002066 MsgSendv_r
+00002071 SAL_Send_Pulse
+00002080 MsgSendPulse_r
+0000208f SAL_Disconnect
+0000209e ConnectDetach_r
+000020ae SAL_Unbind
+000020b9 SAL_NS_Unbind_Channel
+000020cf SAL_Bind
+000020d8 SAL_NS_Bind_Channel
+000020ec SAL_Create_Connection
+00002102 ConnectAttach_r
+00002112 SAL_Connect
+0000211e SAL_NS_Resolve_Channel
+00002135 SAL_Destroy_Channel
+00002149 ChannelDestroy_r
+0000215a SAL_Create_Channel
+0000216d ChannelCreate_r
+0000217d getpid
+00002184 SAL_Init_Mutex_Attr
+00002198 SAL_Create_Mutex
+000021a9 pthread_mutex_init
+000021bc pthread_mutexattr_init
+000021d3 pthread_mutexattr_setrecursive
+000021f2 pthread_mutexattr_destroy
+0000220c SAL_Destroy_Mutex
+0000221e pthread_mutex_destroy
+00002234 SAL_Lock_Mutex
+00002243 pthread_mutex_lock
+00002256 SAL_Unlock_Mutex
+00002267 pthread_mutex_unlock
+0000227c SAL_Lock_Mutex_Timeout
+00002293 SAL_I_Get_Time
+000022a2 SAL_I_Time_Add_Offset
+000022b8 pthread_mutex_timedlock
+000022d0 SAL_Try_Lock_Mutex
+000022e3 pthread_mutex_trylock
+000022f9 SAL_Init_Semaphore_Attr
+00002311 SAL_Create_Semaphore
+00002326 sem_init
+0000232f __get_errno_ptr
+0000233f SAL_Destroy_Semaphore
+00002355 sem_destroy
+00002361 SAL_Signal_Semaphore
+00002376 sem_post
+0000237f SAL_Wait_Semaphore
+00002392 sem_wait
+0000239b SAL_Wait_Semaphore_Timeout
+000023b6 sem_timedwait
+000023c4 SAL_Try_Wait_Semaphore
+000023db sem_trywait
+000023e7 SAL_I_Deinit_Buffer_Pools
+00002406 SAL_I_Max_Number_Of_Buffer_Pools
+00002427 SAL_I_Buffer_Pools_Tab
+0000243e SAL_I_Buffer_Pools_Mutex
+00002457 SAL_I_Init_Buffer_Pools
+0000246f malloc
+00002476 SAL_Create_Buffer_Pool
+0000248d SAL_Destroy_Buffer_Pool
+000024a5 SAL_Alloc_Buffer
+000024b6 SAL_Free_Buffer
+000024c6 SAL_Alloc
+000024d0 SAL_Free
+000024d9 SAL_I_Set_Thread_Priority
+000024f3 pthread_getschedparam
+00002509 pthread_setschedparam
+0000251f SAL_I_Thread_Table
+00002532 SAL_I_Exit_Thread
+00002544 pthread_exit
+00002551 SAL_I_Free_Thread_Resources
+0000256d SAL_I_Destroy_And_Unbind_Timers_From_Thread
+00002599 SAL_I_Unsubscribe_Thread_Events
+000025b9 SAL_I_Release_Message
+000025cf SAL_I_Destroy_Message_Queue
+000025eb SAL_I_Stop_Router_Thread
+00002604 SAL_I_Event_Property_Mutex
+0000261f SAL_I_Thread_Table_Mutex
+00002638 SAL_I_Number_Of_Running_User_Threads
+0000265d SAL_I_TLS_Get_Specific
+00002674 pthread_getspecific
+00002688 SAL_I_Get_Thread_Id
+0000269c SAL_I_Thread_Id_Self
+000026b1 SAL_I_Get_Thread_Attr
+000026c7 SAL_I_TLS_Set_Specific
+000026de pthread_setspecific
+000026f2 SAL_I_TLS_Key_Delete
+00002707 pthread_key_delete
+0000271a SAL_I_Deinit_Thread_Module
+00002735 SAL_I_Deinit_Queue_Structure
+00002752 SAL_I_Max_Number_Of_Threads
+0000276e SAL_I_TLS_Key_Create
+00002783 pthread_key_create
+00002796 SAL_I_Init_Thread_Module
+000027af calloc
+000027b6 SAL_I_Init_Queue_Structure
+000027d1 pthread_self
+000027de strncpy
+000027e6 pthread_setname_np
+000027f9 SAL_Init_Thread_Attr
+0000280e SAL_Create_Thread
+00002820 pthread_attr_init
+00002832 pthread_attr_setdetachstate
+0000284e pthread_attr_setschedpolicy
+0000286a pthread_attr_setstacksize
+00002884 snprintf
+0000288d pthread_create
+0000289c pthread_attr_destroy
+000028b1 SAL_First_Unknown_Thread_Id
+000028cd SAL_Wait_Ready
+000028dc SAL_Get_Thread_Id
+000028ee SAL_Get_Thread_Name
+00002902 SAL_Get_Thread_Name_Self
+0000291b SAL_I_Get_Thread_Priority
+00002935 SAL_Get_Thread_Priority
+0000294d SAL_Is_Thread_Alive
+00002961 SAL_Signal_Ready
+00002972 SAL_Wait_Ready_Timeout
+00002989 SAL_Wait_Destroyed_Timeout
+000029a4 SAL_Set_Thread_Priority
+000029bc SAL_Delay
+000029c6 usleep
+000029cd SAL_Sleep
+000029d7 SAL_I_Remove_Node_From_List
+000029f3 SAL_I_Free_Message_Data_Buffer
+00002a12 SAL_I_Add_Node_To_Free_List
+00002a2e SAL_I_Free_Node
+00002a3e SAL_I_Remove_Node_From_Queue
+00002a5b SAL_I_Post_Message_Node
+00002a73 SAL_I_Create_Message_Queue
+00002a8e SAL_I_Get_Free_Node
+00002aa2 SAL_I_Post_Message
+00002ab5 memcpy
+00002abc SAL_I_Message_Dropped_Callback
+00002adb SAL_I_Pend_Message_Timeout
+00002af6 SAL_I_Time_Diff
+00002b06 SAL_Create_Queue
+00002b17 SAL_Stat_Queue
+00002b26 SAL_I_Deinit_Event_Property_Module
+00002b49 SAL_I_Event_Property
+00002b5e SAL_I_Init_Event_Property_Module
+00002b7f SAL_I_Receive_From_Timeout
+00002b9a SAL_I_Search_Selected_Message
+00002bb8 SAL_Receive_Timeout
+00002bcc SAL_I_Search_Message_Queue
+00002be7 SAL_Receive_Only_Timeout
+00002c00 SAL_Send
+00002c09 ftime
+00002c0f SAL_I_Local_Publish
+00002c23 SAL_I_App_Id
+00002c30 SAL_I_Connection_Id
+00002c44 SAL_I_Connection_Id_Mutex
+00002c5e SAL_I_Init_Publish_Module
+00002c78 SAL_I_GRT
+00002c82 SAL_I_NS_Data
+00002c90 SAL_I_Deinit_Publish_Module
+00002cac SAL_NS_Unsubscribe
+00002cbf SAL_Publish
+00002ccb SAL_Subscribe
+00002cd9 SAL_NS_Subscribe
+00002cea SAL_Unsubscribe
+00002cfa SAL_I_Init_Time_Module
+00002d11 SAL_I_Clock_Start_Time
+00002d28 SAL_I_Deinit_Time_Module
+00002d41 SAL_I_Time_Get_Seconds
+00002d58 SAL_I_Time_Get_Milli_Seconds
+00002d75 clock_gettime
+00002d83 SAL_Clock
+00002d8d SAL_Elapsed_Time
+00002d9e SAL_Delta_Time
+00002dad SAL_I_Stop_Timer_Module
+00002dc5 SAL_I_Start_Timer_Module
+00002dde SAL_I_Timers_Free_List
+00002df5 SAL_I_Timers
+00002e02 SAL_I_Max_Number_Of_Timers
+00002e1d SAL_I_Destroy_Timer
+00002e31 timer_delete
+00002e3e SAL_I_Stop_Timer
+00002e4f timer_settime
+00002e5d SAL_I_Start_Timer
+00002e6f SAL_I_Create_Timer
+00002e82 timer_create
+00002e8f SAL_I_Deinit_Timer_Module
+00002ea9 SAL_I_Timers_Mutex
+00002ebc SAL_I_Init_Timer_Module
+00002ed4 SAL_I_Bind_Timer_To_Thread
+00002eef SAL_I_Unbind_Timer_From_Thread
+00002f0e SAL_I_Post_Timer_Event
+00002f25 SAL_Create_Timer
+00002f36 SAL_Destroy_Timer
+00002f48 SAL_Start_Timer
+00002f58 SAL_Start_Timer_Ex
+00002f6b SAL_Stop_Timer
+00002f7a SAL_Get_Config
+00002f89 SAL_Init
+00002f92 SAL_NS_Init_Proxy
+00002fa4 SAL_NS_Config_Ok
+00002fb5 SAL_I_Init_Connection_Module
+00002fd2 SAL_Run
+00002fda SAL_I_Before_Run
+00002feb SAL_I_Run
+00002ff5 SAL_I_After_Run
+00003005 SAL_Exit
+0000300e SAL_Get_App_Id
+0000301d SAL_Get_Max_Number_Of_Threads
+0000303b SAL_Init_RWLock_Attr
+00003050 SAL_Create_RWLock
+00003062 pthread_rwlock_init
+00003076 SAL_Destroy_RWLock
+00003089 pthread_rwlock_destroy
+000030a0 SAL_RLock_RWLock
+000030b1 pthread_rwlock_rdlock
+000030c7 SAL_RLock_RWLock_Timeout
+000030e0 pthread_rwlock_timedrdlock
+000030fb SAL_Try_RLock_RWLock
+00003110 pthread_rwlock_tryrdlock
+00003129 SAL_WLock_RWLock
+0000313a pthread_rwlock_wrlock
+00003150 SAL_WLock_RWLock_Timeout
+00003169 pthread_rwlock_timedwrlock
+00003184 SAL_Try_WLock_RWLock
+00003199 pthread_rwlock_trywrlock
+000031b2 SAL_Unlock_RWLock
+000031c4 pthread_rwlock_unlock
+000031da SAL_Init_Cond_Attr
+000031ed SAL_Create_Cond
+000031fd pthread_cond_init
+0000320f SAL_Destroy_Cond
+00003220 pthread_cond_destroy
+00003235 SAL_Signal_Cond
+00003245 pthread_cond_signal
+00003259 SAL_Wait_Cond
+00003267 pthread_cond_wait
+00003279 SAL_Wait_Cond_Timeout
+0000328f pthread_cond_timedwait
+000032a6 SAL_Wait_Destroyed
+000032b9 SAL_Create_Queue_For_Thread
+000032d5 SAL_I_Pend_Message
+000032e8 SAL_I_Try_Pend_Message
+000032ff SAL_I_Receive_From
+00003312 SAL_Receive
+0000331e SAL_Receive_From
+0000332f SAL_Receive_From_Timeout
+00003348 SAL_I_Try_Receive_From
+0000335f SAL_Try_Receive
+0000336f SAL_Try_Receive_From
+00003384 SAL_Receive_Only
+00003395 SAL_Local_Publish
+000033a7 SAL_Declare_Urgent
+000033ba SAL_Undeclare_Urgent
+000033cf SAL_I_Unselect
+000033de SAL_Select
+000033e9 SAL_Unselect
+000033f6 SAL_First_Message
+00003408 SAL_Last_Message
+00003419 SAL_Queue_End
+00003427 SAL_Next_Message
+00003438 SAL_Prev_Message
+00003449 SAL_Get_Message
+00003459 SAL_Remove_Message_Then_Next
+00003476 SAL_Remove_Message_Then_Prev
+00003493 SAL_Remove_Message
+000034a6 SAL_Is_Queue_Begin
+000034b9 SAL_Is_Queue_End
+000034ca SAL_Purge
+000034d4 SAL_Purge_Only
+000034e3 SAL_Set_Message_Dropped_Callback
+00003504 SAL_I_Create_Shared_Memory_Path
+00003524 getenv
+0000352b sprintf
+00003533 SAL_Create_Shared_Memory
+0000354c shm_open
+00003555 ftruncate
+00003564 close
+0000356a shm_unlink
+00003575 SAL_Open_Shared_Memory
+0000358c fstat
+00003592 SAL_Close_Shared_Memory
+000035aa munmap
+000035b1 SAL_I_NS_Proxy_Data
+000035c5 SAL_NS_Unsubscribe_App
+000035dc SAL_NS_Get_Running_App_Ids
+000035f7 SAL_NS_Unbind_App
+00003609 SAL_NS_Deinit_Proxy
+0000361d SAL_Name_Server_Destroy
+00003635 SAL_Start_Name_Server_Thread
+00003652 memcmp
+00003659 SAL_I_NS_Thread_Data
+0000366e SAL_Name_Server_Init
+00003683 memset
+0000368a SAL_Deinit
+00003695 SAL_I_Deinit_Connection_Module
+000036b4 SAL_Get_Connection
+000036c7 SAL_I_Proccess_DT_Command
+000036e1 DTS_Client_Set_Dt_Level
+000036f9 strcpy
+00003700 SAL_I_RT_Channel
+00003711 libc.so.3
+0000371b _btext
+00003722 __exidx_start
+00003730 __exidx_end
+0000373c __data_start
+00003749 _edata
+00003750 __bss_start
+0000375c __bss_start__
+0000376a __bss_end__
+00003776 __end__
+0000377e _stack
+000197f0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_rpc_qnx.c
+0001983c SAL_PRE(receive_id != NULL)
+00019858 SAL_Sync_Reply error: %s
+00019874 SAL_PRE(((reply_buffers != NULL) && (number_of_buffers > 0)) || ((reply_buffers == NULL) && (number_of_buffers == 0)))
+000198ec SAL_Sync_Reply_V error: %s
+00019908 SAL_PRE(buffer != NULL)
+00019920 SAL_PRE(buffer_size > 0)
+0001993c SAL_PRE(received_message_size != NULL)
+00019964 SAL_Sync_Read error: %s
+0001997c SAL_PRE(channel != NULL)
+00019998 SAL_PRE(message_size != NULL)
+000199b8 SAL_PRE(is_pulse != NULL)
+000199d4 SAL_Sync_Receive error: %s
+000199f0 SAL_PRE(connection != NULL)
+00019a0c SAL_PRE(message != NULL)
+00019a28 SAL_PRE(reply_buffers != NULL)
+00019a48 SAL_Sync_Send_SV error: %s
+00019a64 SAL_PRE(message_buffers != NULL)
+00019a88 SAL_PRE(number_of_buffers > 0)
+00019aa8 SAL_PRE(reply_status != NULL)
+00019ac8 SAL_Sync_Send_VS error: %s
+00019ae4 SAL_PRE(message_size > 0)
+00019b00 SAL_Sync_Send error: %s
+00019b18 SAL_Send_Pulse error: %s
+00019b34 SAL_Disconnect error: %s
+00019b50 SAL_Create_Connection error: %s
+00019b70 SAL_Destroy_Channel error: %s
+00019b90 SAL_Create_Channel error: %s
+00019bb0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init_mutex_attr.c
+00019c04 SAL_PRE(attr != NULL)
+00019c1c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_mutex.c
+00019c70 SAL_PRE(mutex != NULL)
+00019c88 SAL_Create_Mutex error: %s
+00019ca4 SAL_POST(status == EOK)
+00019cbc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_mutex.c
+00019d10 SAL_Destroy_Mutex error: %s
+00019d2c SAL_PRE(status != EINVAL)
+00019d48 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_lock_mutex.c
+00019d98 SAL_Lock_Mutex error: %s
+00019db4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_unlock_mutex.c
+00019e08 SAL_Unlock_Mutex error: %s
+00019e24 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_lock_mutex_timeout.c
+00019e7c SAL_Lock_Mutex_Timeout error: %s
+00019ea0 SAL_Lock_Mutex_Timeout(%d) - timeout
+00019ec8 SAL_POST((status == EOK) || (status == ETIMEDOUT))
+00019efc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_try_lock_mutex.c
+00019f50 SAL_Try_Lock_Mutex error: %s
+00019f70 SAL_Try_Lock_Mutex: BUSY
+00019f8c SAL_POST((status == EOK) || (status == EBUSY))
+00019fbc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init_semaphore_attr.c
+0001a014 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_semaphore.c
+0001a06c SAL_PRE(sem != NULL)
+0001a084 SAL_Create_Semaphore error: %s
+0001a0a4 SAL_POST(status == 0)
+0001a0bc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_semaphore.c
+0001a114 SAL_Destroy_Semaphore error: %s
+0001a134 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_signal_semaphore.c
+0001a18c SAL_Signal_Semaphore error: %s
+0001a1ac C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_semaphore.c
+0001a200 SAL_Wait_Semaphore error: %s
+0001a220 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_semaphore_timeout.c
+0001a27c SAL_Wait_Semaphore_Timeout error: %s
+0001a2a4 SAL_Wait_Semaphore_Timeout timeout(%d)
+0001a2cc SAL_POST((status == 0) || (err == ETIMEDOUT))
+0001a2fc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_try_wait_semaphore.c
+0001a354 SAL_Try_Wait_Semaphore error: %s
+0001a378 SAL_POST((status == 0) || (err == EAGAIN))
+0001a3a4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_buffer_pools.c
+0001a3f8 SAL_PRE(SAL_I_Buffer_Pools_Tab != NULL)
+0001a420 SAL_PRE(SAL_I_Buffer_Pools_Tab == NULL)
+0001a448 SAL_I_Init_Buffer_Pools/SAL_Create_Mutex() failed
+0001a47c SAL_Init_Buffer_Pools/malloc() failed
+0001a4a4 SAL_I_Init_Buffer_Pools: max number of buffer pools == 0
+0001a4e0 SAL_I_Init_Buffer_Pools failed
+0001a500 SAL_POST(status)
+0001a514 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_buffer_pool.c
+0001a56c SAL_PRE(number_of_buffers <= 65535u)
+0001a594 SAL_PRE(pool_id != NULL)
+0001a5b0 SAL_PRE(SAL_I_Max_Number_Of_Buffer_Pools > 0u)
+0001a5e0 SAL_I_Create_Buffer_Pool/malloc() failed
+0001a60c SAL_Create_Buffer_Pool: no free buffer pool
+0001a638 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_buffer_pool.c
+0001a690 SAL_PRE(pool_id >= 0)
+0001a6a8 SAL_PRE((size_t)pool_id < SAL_I_Max_Number_Of_Buffer_Pools)
+0001a6e4 SAL_PRE_FAILED()
+0001a6f8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_alloc_buffer.c
+0001a74c Buffer %d in pool %d is corrupted (invalid buffer header)
+0001a788 SAL_POST_FAILED()
+0001a79c Buffer %d in pool %d is corrupted (invalid debug pattern)
+0001a7d8 No free buffer in pool %d
+0001a7f4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_free_buffer.c
+0001a844 SAL_PRE((size_t)buffer_id < SAL_I_Buffer_Pools_Tab[pool_id].max_number_of_buffers)
+0001a898 Invalid buffer address
+0001a8b0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_alloc.c
+0001a8fc SAL_Alloc(%d)=%p
+0001a910 SAL_Alloc() failed to allocate %d bytes
+0001a938 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_free.c
+0001a984 SAL_Free(%p)
+0001a994 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_thread.c
+0001a9e4 SAL_I_Set_Thread_Priority failed: setschedparam [tid=%d, sc=%d, prio=%d], %s
+0001aa34 SAL_I_Set_Thread_Priority failed: getschedparam [tid=%d, prio=%d], %s
+0001aa7c Destroy_Thread_Itself %d
+0001aa98 SAL_I_TLS_Set_Specific(%d, %p) error: %s
+0001aac4 SAL_I_TLS_Key_Delete error: %s
+0001aae4 SAL_I_TLS_Create error: %s
+0001ab00 SAL_I_Init_Threads_Module: SAL_Create_Mutex
+0001ab2c Cannot allocate memory for thread attributes table
+0001ab60 Cannot create semaphore for thread startup synchronization
+0001ab9c Cannot initialize queue structure
+0001abc0 Init_Threads_Module: couldn't create or initialize TLS
+0001abf8 XSAL-RT
+0001ac00 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init_thread_attr.c
+0001ac5c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_thread.c
+0001acb0 SAL_PRE((attr == NULL) || (attr->id > 0) || (attr->id == SAL_UNKNOWN_THREAD_ID))
+0001ad04 SAL_PRE((attr == NULL) || (attr->id <= (SAL_Thread_Id_T)SAL_I_Max_Number_Of_Threads))
+0001ad5c SAL_PRE(thread_attr->thread_id == SAL_UNKNOWN_THREAD_ID)
+0001ad98 SAL_%d
+0001ada0 Thread_Create %d failed. Error: %d
+0001adc4 SAL_PRE(thread_attr->current_message == NULL)
+0001adf4 SAL_PRE(thread_attr->selected_count == 0)
+0001ae20 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_get_thread_name.c
+0001ae74 SAL_PRE(thread_id >= SAL_ROUTER_THREAD_ID)
+0001aea0 SAL_PRE((size_t)thread_id <= SAL_I_Max_Number_Of_Threads)
+0001aedc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_get_thread_priority.c
+0001af34 SAL_I_Get_Thread_Priority failed/pthread_getschedparam [%d], %s
+0001af74 SAL_PRE(thread_id >= 0)
+0001af8c SAL_I_Get_Thread_Priority: thread %d is not running
+0001afc0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_is_thread_alive.c
+0001b014 SAL_PRE(thread_id > 0)
+0001b02c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_signal_ready.c
+0001b080 SAL_PRE(thread_attr != NULL)
+0001b0a0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_ready.c
+0001b0f0 SAL_PRE(tid >= 0)
+0001b104 SAL_PRE((size_t)tid <= SAL_I_Max_Number_Of_Threads)
+0001b138 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_ready_timeout.c
+0001b190 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_destroyed_timeout.c
+0001b1ec C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_set_thread_priority.c
+0001b244 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_message_queue.c
+0001b298 SAL_PRE(q != NULL)
+0001b2ac SAL_PRE(queue != NULL)
+0001b2c4 assertion failed: queue->end_marker->message.data == NULL
+0001b300 SAL_PRE(queue_size > 0u)
+0001b31c SAL_PRE(queue->node_tab == NULL)
+0001b340 SAL_I_Create_Message_Queue: Couldn't allocate memory for queue data
+0001b384 SAL_I_Create_Message_Queue: Couldn't create semaphore
+0001b3bc Queue is full and a new urgent message has arived. The last non-urgent message is removed from queue
+0001b424 Queue is full of urgent message. The new urgent message is dropped.
+0001b468 SAL_PRE(err != NULL)
+0001b480 SAL_I_Post_Message: queue is not created
+0001b4ac SAL_I_Post_Message: queue is full
+0001b4d0 SAL_I_Post_Message: there is no free memory
+0001b4fc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_pend_message_timeout.c
+0001b558 SAL_PRE(queue->node_tab != NULL)
+0001b57c SAL_I_Pend_Message_Timeout: No messages in the queue
+0001b5b4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_queue.c
+0001b608 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_stat_queue.c
+0001b658 SAL_PRE(queue_stat != NULL)
+0001b674 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_event_property.c
+0001b6cc SAL_PRE(SAL_I_Event_Property != NULL)
+0001b6f4 SAL_I_Init_Event_Property_Module/calloc() failed
+0001b728 SAL_I_Init_Event_Property_Module/SAL_Create_Mutex() failed
+0001b764 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_receive_from_timeout.c
+0001b7c0 SAL_PRE(queue_owner_thread != NULL)
+0001b7e4 SAL_PRE(calling_thread != NULL)
+0001b804 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_receive_timeout.c
+0001b858 SAL_PRE(queue_owner_thread->thread_id > 0)
+0001b884 SAL_PRE((size_t)queue_owner_thread->thread_id <= SAL_I_Max_Number_Of_Threads)
+0001b8d4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_receive_only_timeout.c
+0001b930 SAL_PRE((event_list != NULL) || (number_of_events == 0))
+0001b96c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_send.c
+0001b9b8 SAL_PRE(app_id < APP_LAST_ID)
+0001b9d8 SAL_PRE(msg.event_id >= 0)
+0001b9f4 SAL_PRE((data != NULL) || (data_size == 0u))
+0001ba24 SAL_Send from (%d,%d) to (%d,%d) EV %d OBJ %d data size %d
+0001ba60 SAL_Send fail, reopen connection the application %d
+0001ba94 SAL_Send: Couldn't send to app %d
+0001bab8 SAL_Send: Couldn't connect to app %d
+0001bae0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_publish.c
+0001bb30 SAL_I_Local_Publish: to thread %d
+0001bb54 SAL_I_Local_Publish to (%d,%d) EV %d OBJ %d size %d
+0001bb88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_publish.c
+0001bbd4 SAL_PRE(msg.event_id >= EV_FIRST_EVENT_ID)
+0001bc00 SAL_PRE(msg.event_id < EV_LAST_EVENT_ID)
+0001bc2c SAL_Publish from (%d,%d) EV %d OBJ %d size %d
+0001bc5c SAL_Publish: to app %d
+0001bc74 SAL_Publish fail, reopen connection the application %d
+0001bcac SAL_Publish: couldn't send to app %d EV %d OBJ %d data 0x%p size %d
+0001bcf0 SAL_Publish: couldn't connect to app %d EV %d OBJ %d data 0x%p size %d
+0001bd38 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_subscribe.c
+0001bd88 SAL_PRE(tid > 0)
+0001bd9c SAL_PRE(tid <= (SAL_Thread_Id_T)SAL_I_Max_Number_Of_Threads)
+0001bddc SAL_PRE((event_id_list != NULL) || (number_of_events == 0))
+0001be18 SAL_PRE(ev_id >= EV_FIRST_EVENT_ID)
+0001be3c SAL_PRE(ev_id < EV_LAST_EVENT_ID)
+0001be60 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_unsubscribe.c
+0001beb0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_timer_pulse.c
+0001bf04 SAL_I_Destroy_Timer(%d) error: %s
+0001bf28 SAL_I_Create_Timer: Timer for event_id=%d not created
+0001bf60 SAL_I_Create_Timer: Get thread's priority error
+0001bf90 SAL_PRE(status)
+0001bfa0 SAL_PRE(SAL_I_Timers == NULL)
+0001bfc0 SAL_I_Init_Timer_Module: memory allocation failed
+0001bff4 SAL_I_Init_Timer_Module/SAL_Create_Mutex() failed
+0001c028 SAL_I_Init_Timer_Module: max number of timers == 0
+0001c05c SAL_I_Init_Timer_Module failed
+0001c07c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_timer.c
+0001c0c8 Dropped timer event: TID=%d, EV_ID=%d
+0001c0f0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_timer.c
+0001c144 SAL_PRE(timer_id != NULL)
+0001c160 SAL_PRE(timer->event_id == -1)
+0001c180 Too many timers were created.
+0001c19e Increase max number of timer is the SAL configuration (see SAL_Init)
+0001c1e4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_timer.c
+0001c238 SAL_PRE(timer_id >= 0)
+0001c250 SAL_PRE((size_t)timer_id < SAL_I_Max_Number_Of_Timers)
+0001c288 SAL_PRE(timer->event_id != -1)
+0001c2a8 SAL_PRE(timer->thread_id == tid)
+0001c2cc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_start_timer.c
+0001c31c SAL_PRE((interval_msec != 0) || (!is_periodic))
+0001c34c SAL_PRE(timer->thread_id == SAL_I_Get_Thread_Id())
+0001c380 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_start_timer_ex.c
+0001c3d4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_stop_timer.c
+0001c424 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init.c
+0001c470 XSAL 134 1442 2014-10-16
+0001c48c SAL_PRE(SAL_I_App_Id == 0)
+0001c4a8 SAL_PRE(sal_config != NULL)
+0001c4c4 SAL_PRE(sal_config->app_id > 0)
+0001c4e4 SAL_PRE(sal_config->app_id < APP_LAST_ID)
+0001c510 SAL_PRE(sal_config->max_number_of_threads > 0u)
+0001c540 SAL_PRE(sal_config->first_unknown_thread_id > 0)
+0001c574 SAL_PRE(sal_config->first_unknown_thread_id <= (SAL_Thread_Id_T)sal_config->max_number_of_threads)
+0001c5d8 Application has different number of the Channels, App IDs or Event IDs then the Name Server.
+0001c635 Re-compile your application or Process Manager.
+0001c668 SAL_Init: SAL_NS_Init_Proxy failed. Check if Process Manager is running.
+0001c6b4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_run.c
+0001c6fc SAL_Run: no user threads were created
+0001c724 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init_rwlock_attr.c
+0001c77c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_rwlock.c
+0001c7d0 SAL_PRE(rw_lock != NULL)
+0001c7ec SAL_Create_RWLock error: %s
+0001c808 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_rwlock.c
+0001c85c SAL_Destroy_RWLock error: %s
+0001c87c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_rlock_rwlock.c
+0001c8d0 SAL_RLock_RWLock error: %s
+0001c8ec C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_rlock_rwlock_timeout.c
+0001c948 SAL_RLock_RWLock_Timeout error: %s
+0001c96c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_try_rlock_rwlock.c
+0001c9c4 SAL_Try_RLock_RWLock error: %s
+0001c9e4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wlock_rwlock.c
+0001ca38 SAL_WLock_RWLock error: %s
+0001ca54 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wlock_rwlock_timeout.c
+0001cab0 SAL_WLock_RWLock_Timeout error: %s
+0001cad4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_try_wlock_rwlock.c
+0001cb2c SAL_Try_WLock_RWLock error: %s
+0001cb4c SAL_Try_WLock_RWLock busy
+0001cb68 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_unlock_rwlock.c
+0001cbbc SAL_Unlock_RWLock error: %s
+0001cbd8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init_cond_attr.c
+0001cc2c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_cond.c
+0001cc7c SAL_PRE(cond != NULL)
+0001cc94 SAL_Create_Cond error: %s
+0001ccb0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_cond.c
+0001cd04 SAL_Destroy_Cond error: %s
+0001cd20 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_signal_cond.c
+0001cd70 SAL_Signal_Cond error: %s
+0001cd8c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_cond.c
+0001cddc SAL_Wait_Cond error: %s
+0001cdf4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_cond_timeout.c
+0001ce4c SAL_Wait_Cond_Timeout error: %s
+0001ce6c SAL_Wait_Cond_Timeout timeout(%d)
+0001ce90 SAL_POST((status == 0) || (status == ETIMEDOUT))
+0001cec4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_destroyed.c
+0001cf18 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_queue_for_thread.c
+0001cf74 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_pend_message.c
+0001cfc8 SAL_Wait_Semaphore(&queue->message_available). Was the queue created?
+0001d010 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_try_pend_message.c
+0001d068 SAL_I_Try_Pend_Message: No messages in the queue
+0001d09c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_receive_from.c
+0001d0f0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_receive.c
+0001d13c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_receive_from.c
+0001d190 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_receive_from_timeout.c
+0001d1ec C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_try_receive_from.c
+0001d244 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_try_receive.c
+0001d294 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_try_receive_from.c
+0001d2ec C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_receive_only.c
+0001d340 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_local_publish.c
+0001d394 SAL_Local_Publish: from App(%d, %d), event id %d, message size %d
+0001d3d8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_declare_urgent.c
+0001d42c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_undeclare_urgent.c
+0001d484 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_select.c
+0001d4d0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_unselect.c
+0001d520 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_first_message.c
+0001d574 SAL_PRE(iterator != NULL)
+0001d590 SAL_PRE(q->node_tab != NULL)
+0001d5b0 SAL_PRE(q->end_marker != NULL)
+0001d5d0 SAL_PRE(q->end_marker->next_node != NULL)
+0001d5fc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_last_message.c
+0001d650 SAL_PRE(q->end_marker->prev_node != NULL)
+0001d67c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_queue_end.c
+0001d6cc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_next_message.c
+0001d720 SAL_PRE(iterator->node != NULL)
+0001d740 SAL_PRE((iterator->node != q->end_marker) || (iterator->begin_end_flag == SAL_I_Queue_Begin))
+0001d7a0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_prev_message.c
+0001d7f4 SAL_PRE((iterator->node != q->end_marker) || (iterator->begin_end_flag == SAL_I_Queue_End))
+0001d850 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_get_message.c
+0001d8a0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_remove_message_then_next.c
+0001d900 SAL_PRE(iterator->node != q->end_marker)
+0001d92c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_remove_message_then_prev.c
+0001d98c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_is_queue_begin.c
+0001d9e0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_is_queue_end.c
+0001da34 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_purge.c
+0001da80 SAL_PRE(thread_attr->thread_id > 0)
+0001daa4 SAL_PRE((size_t)thread_attr->thread_id <= SAL_I_Max_Number_Of_Threads)
+0001daec C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_purge_only.c
+0001db3c %s%d_%d
+0001db44 %s%s_%d_%d
+0001db50 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_shared_memory.c
+0001dba4 Too long value of the environment variable: %s 
+0001dbd4 XSAL_INSTANCE_NAME
+0001dbe8 /XSAL_Shm_
+0001dbf4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_shared_memory.c
+0001dc50 SAL_PRE(key >= 0)
+0001dc64 SAL_PRE(subkey >= 0)
+0001dc7c SAL_PRE(handle != NULL)
+0001dc94 SAL_Create_Shared_Memory/mmap error: %s
+0001dcbc SAL_Create_Shared_Memory/ftruncate error: %s
+0001dcec SAL_Create_Shared_Memory/shm_open (%s) error: %s
+0001dd20 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_open_shared_memory.c
+0001dd78 SAL_Open_Shared_Memory/mmap error: %s
+0001dda0 SAL_Open_Shared_Memory/fstat error: %s
+0001ddc8 SAL_Open_Shared_Memory/shm_open (%s) error: %s
+0001ddf8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_close_shared_memory.c
+0001de50 SAL_PRE(handle->data != NULL)
+0001de70 SAL_PRE(handle->size > 0)
+0001de8c SAL_PRE(handle->fd >= 0)
+0001dea8 SAL_PRE(handle->key >= 0)
+0001dec4 SAL_PRE(handle->subkey >= 0)
+0001dee4 SAL_Close_Shared_Memory/munmap, name=[%d, %d], error: %s
+0001df20 SAL_Close_Shared_Memory/close, name=[%d, %d], error: %s
+0001df58 SAL_Close_Shared_Memory/shm_unlink (%s) error: %s
+0001df8c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_ns_proxy.c
+0001dfdc SAL_PRE(SAL_I_NS_Proxy_Data != NULL)
+0001e004 SAL_PRE(app_id >= APP_FIRST_ID)
+0001e024 NS_Unsubscribe_App failed
+0001e040 SAL_PRE(reply_app_id_list != NULL)
+0001e064 Name_Server_Get_Running_Apps
+0001e084 NS_Unbind_App error
+0001e098 NS_Resolve_Channel
+0001e0ac NS_Unbind_Channel error
+0001e0c4 NS_Bind_Channel error
+0001e0dc SAL_PRE(event_id_list != NULL)
+0001e0fc SAL_PRE(number_of_events > 0)
+0001e11c NS_Unsubscribe
+0001e12c NS_Subscribe
+0001e13c SAL_PRE(SAL_I_NS_Sh_Mem_Handle.data != NULL)
+0001e16c SAL_PRE(SAL_I_NS_Proxy_Data == NULL)
+0001e194 NameServer
+0001e1a0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_ns_thread.c
+0001e1f0 SAL_Sync_Receive
+0001e204 Pulse was received
+0001e218 Bind_Channel: APP_ID %d is reserved for ProccessManager application
+0001e25c Bind_Channel: re-bind app_id=%d, port_id=%d
+0001e288 Bind_Channel: app_id=%d, port_id=%d
+0001e2ac Bind_Channel: app_id=%d, port_id=%d, too many entries (>%d)
+0001e2e8 Unbind_Channel app_id=%d, port_id=%d
+0001e310 Unbind_Channel: channel doesn't exist
+0001e338 Resolve_Channel: app_id=%d, port_id=%d
+0001e360 Resolve_Channel: app_id=%d, port_id=%d not bound
+0001e394 Unbind_App app_id=%d, port_id=%d
+0001e3b8 Invalid event_id %d from app %d
+0001e3d8 Invalid app_id %d
+0001e3ec Invalid command %d
+0001e400 Name_Server/SAL_Create_Channel error
+0001e428 Name_Server/Create_Shared_Memory error
+0001e450 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_deinit.c
+0001e49c SAL_PRE(SAL_I_App_Id != 0)
+0001e4b8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_connections.c
+0001e50c SAL_PRE(app_id > 0)
+0001e520 SAL_PRE(app_id <= SAL_MAX_APPS)
+0001e540 SAL_Init: SAL_I_Connection_Id_Mutex
+0001e564 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_run.c
+0001e5b0 %s: thread %d doesn't have a queue
+0001e5d4 %s: thread's %d queue is full
+0001e5f4 %s: There is no free memory
+0001e610 %s: Too small buffer in thread's %d queue
+0001e63c %s: Communication error
+0001e654 Invalid RouterThread command %d
+0001e674 RT Message data is too large
+0001e694 SAL_Run: received pulse: %d, %d
+0001e6b4 SAL_Run: received message: from(%d, %d) to (%d, %d), EV %d OBJ %d, message size %d
+0001e708 Process_Publish
+0001e718 Read error. Message was dropped
+0001e738 Received unknown event: %d
+0001e754 Process_Send: Invalid message size
+0001e778 Process_Send: SAL_Sync_Read error
+0001e79c Process_Send
+0001e7ac Received event with invalid receiver thread Id : %d
+0001e7e0 ERROR SAL_Receive
+0001e7f4 SAL_I_Before_Run/SAL_Bind() failed
+0001e818 SAL_I_Before_Run/SAL_Create_Connection() failed
+0001e848 SAL_I_Before_Run/SAL_Create_Channel() failed

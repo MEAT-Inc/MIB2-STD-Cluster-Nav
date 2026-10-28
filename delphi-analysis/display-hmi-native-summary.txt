@@ -1,0 +1,38 @@
+Recovered imports 84 PLT labels 84 target string refs 37
+0x111784 0x1117e0 ::switchContextCluster(): contextId %d / sessionID %d [r%s] --> handle FPK map
+0x111784 0x111928 ::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d -> deactivate CLUSTER layer (no action)
+0x111784 0x1119f8 ::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d -> activate CLUSTER MAPVIEWER (no action)
+0x111784 0x111a94 ::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d cid %d < %s > (expected MAPVIEWER)
+0x111784 0x111b1c ::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d (expected 0 or 1)
+0x111784 0x111b98 ::switchContextCluster(): contextId %d / sessionID %d - not found in context list
+0x111784 0x111c0c ::switchContextCluster(): layerContextList == NULL
+0x1167d4 0x116838 ::getDisplayType(): displayID %d (%s) - returning DISPLAYTYPE_LVDS
+0x1167d4 0x1168ec ::getDisplayType(): displayID %d (%s) - returning DISPLAYTYPE_H264_MOST
+0x1167d4 0x1169a0 ::getDisplayType(): displayID %d (%s) %s - returning DISPLAYTYPE_UNDEFINED
+0x116a08 0x116a50 ::initExtLayerStates(): reset own FPK states to MMOff / rate 0
+0x116aa8 0x116b58 ::handleMessageSCDAExternalLayerResponse(): received SCDA_EV_EXT_LAYER_RES - msgSize mismatch %d/%d
+0x116b90 0x116c24 ::handleExtLayerCmdResponse(): MAP_ACTIVATE result OK -> requesting MAP_RATE (requested rate %d) [->MMRunRequested]
+0x116b90 0x116cb4 ::handleExtLayerCmdResponse(): MAP_ACTIVATE result NOK (requested rate %d) [->MMOff]
+0x116b90 0x116d84 ::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) OK -> trigger deactivate [->MMOffRequested]
+0x116b90 0x116e14 ::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) OK -> fully up and running [->MMRun]
+0x116b90 0x116ea4 ::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) NOK -> rate mismatch [->MMRun]
+0x116b90 0x116f28 ::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) NOK -> rate mismatch [->MMOff]
+0x116b90 0x116ff4 ::handleExtLayerCmdResponse(): MAP_DEACTIVATE %s -> requested rate now %d -> requesting MAP_ACTIVATE [->MMReadyRequested]
+0x116b90 0x117098 ::handleExtLayerCmdResponse(): MAP_DEACTIVATE %s [->MMOff]
+0x116b90 0x117110 ::handleExtLayerCmdResponse(): unknown cmd %d
+0x116b90 0x1171d8 ::handleExtLayerCmdResponse(): cmd %d < %s > newRate %d result %s -> no HMI request so far -> ignoring external layer cmd response
+0x117218 0x1172ac ::handleExtLayerHMIRequest(): requested rate %d / state MMOff (current rate %d) -> requesting MAP_ACTIVATE
+0x117218 0x117348 ::handleExtLayerHMIRequest(): requested rate %d / state MMOff (current rate %d) -> no action
+0x117218 0x1173d4 ::handleExtLayerHMIRequest(): requested rate %d / state MMReadyRequested (current rate %d) -> update requested rate
+0x117218 0x11744c ::handleExtLayerHMIRequest(): requested rate %d / state MMRunRequested (current rate %d) -> ignore, as last rate request not yet completed
+0x117218 0x1174d8 ::handleExtLayerHMIRequest(): requested rate %d / state MMRun (current rate %d) -> no action
+0x117218 0x117558 ::handleExtLayerHMIRequest(): requested rate %d / state MMRun (current rate %d) -> requesting MAP_RATE
+0x117218 0x1175fc ::handleExtLayerHMIRequest(): requested rate %d / state MMOffRequested (current rate %d) -> store requested rate
+0x117218 0x117680 ::handleExtLayerHMIRequest(): requested rate %d / state MMOffRequested (current rate %d) -> requested rate 0 == current rate -> confirm rate 0 to HMI
+0x117218 0x11770c ::handleExtLayerHMIRequest(): requested rate %d --> unknown state %d (current rate %d)
+0x117760 0x1177c8 ::setUpdateRate(): CLUSTER updaterate %d -> disable FPK map
+0x117760 0x117868 ::setUpdateRate(): CLUSTER updaterate %d -> enable FPK map -> rejecting as MAPVIEWER is part of current context on MAIN display + sending updateRateResult(0)
+0x117760 0x117900 ::setUpdateRate(): CLUSTER updaterate %d -> enable FPK map
+0x117760 0x117984 ::setUpdateRate(): CLUSTER updaterate %d -> negative value
+0x117760 0x117a08 ::setUpdateRate(): displayID %d (%s) updaterate %d - changing of updaterate not supported in STD2 - returning 60 (Hz)
+0x117760 0x117ac4 ::setUpdateRate(): displayID %d (%s) updaterate %d - %s - returning 60 (Hz)

@@ -1,0 +1,578 @@
+/usr/lib/ldqnx.so.2
+libXSAL.so
+clock_gettime
+SAL_Open_Shared_Memory
+SAL_Set_Thread_Priority
+SAL_Stat_Queue
+strerror
+SAL_Undeclare_Urgent
+snprintf
+SAL_Get_Thread_Name_Self
+SAL_Subscribe
+getpid
+SAL_Close_Shared_Memory
+SAL_Wait_Ready
+SAL_Get_Thread_Priority
+__cxa_finalize
+malloc
+SAL_Run
+SAL_Get_Thread_Id
+SAL_Publish
+SAL_Signal_Ready
+abort
+SAL_Receive
+_init
+SAL_Is_Thread_Alive
+__deregister_frame_info
+SAL_Init
+SAL_Get_Max_Number_Of_Threads
+SAL_Unsubscribe
+__get_errno_ptr
+strncpy
+SAL_Exit
+SAL_Sync_Send_VS
+DTS_Client_Get_Frontend
+_fini
+sprintf
+SAL_Wait_Destroyed
+SAL_Sleep
+SAL_Declare_Urgent
+SAL_Create_Thread
+SAL_Disconnect
+SAL_Connect
+SAL_Get_App_Id
+SAL_Create_Queue
+SAL_Send
+_Jv_RegisterClasses
+__register_frame_info
+SAL_Get_Config
+libDebugTrace.so
+__aeabi_uldivmod
+DTS_System_Init
+DTS_Set_Thread_Name_Func_Getter
+realloc
+fopen
+fclose
+strlen
+DTS_Client_Prepare_Name
+libUtilities.so
+_ZNKSt11logic_error4whatEv
+_ZdaPv
+_ZNSs5_GrowEjb
+_ZNSt12length_errorD0Ev
+_ZdlPv
+wmemmove
+_Z7wcs2mbsRKSbIwSt11char_traitsIwESaIwEE
+__assert
+_Z7mbs2wcsPKct
+_ZNSs5eraseEjj
+_ZNKSt12_String_base5_XlenEv
+_ZTVSt11logic_error
+_ZNKSt12_String_base5_XranEv
+_ZNSt11logic_errorD1Ev
+_ZTVSt12length_error
+_ZNSt12length_errorD1Ev
+_ZNSt9exceptionD2Ev
+__stackavail
+_ZNKSt12length_error8_DoraiseEv
+_ZNKSt11logic_error8_DoraiseEv
+_ZNSs6assignERKSsjj
+_ZNSt11logic_errorD0Ev
+wmemcpy
+_ZNKSt9exception6_RaiseEv
+_Znwj
+_ZSt6_ThrowRKSt9exception
+wcslen
+libTSD.so
+libcpp-ne.so.4
+_ZNSbIwSt11char_traitsIwESaIwEE5eraseEjj
+_ZNSsC1EPKc
+_ZTVSt12out_of_range
+_ZNSbIwSt11char_traitsIwESaIwEE5_TidyEbj
+_ZTVSt9exception
+_ZNSt12out_of_rangeD0Ev
+__cxa_pure_virtual
+_ZNSbIwSt11char_traitsIwESaIwEE6assignERKS2_jj
+_ZSt7nothrow
+_ZNSt12out_of_rangeD1Ev
+_ZnajRKSt9nothrow_t
+_ZNKSt12out_of_range8_DoraiseEv
+wmemset
+_ZNSbIwSt11char_traitsIwESaIwEE6assignEPKwj
+_ZNSbIwSt11char_traitsIwESaIwEE6appendEjw
+_ZNSs6assignEPKc
+_ZNSs5_TidyEbj
+libc.so.3
+_init_array
+errno
+_preinit_array
+optarg
+optind
+mmap_device_memory
+_init_libc
+getopt
+_fini_array
+atexit
+munmap_device_memory
+mkdir
+_btext
+__exidx_start
+__exidx_end
+__data_start
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+_stack
+_ZTVN3sal6ThreadE
+_ZN3sal6Thread14threadFunctionEPv
+_ZTVN3sal11ApplicationE
+_ZTVN3sal12ActiveObjectE
+_ZTVN3sal13PassiveObjectE
+map/set<T> too long
+invalid map/set<T> iterator
+../../../../sw/AP_XSALcpp/public/salTemplateDispatcher.h
+TemplateDispatcher::onMessage(),No passive object avaliable with id: %d
+assertion failed: isRegistered( passive )
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DisplayManagement_MIB20_STD/AppBase/build/../source/DisplayManagementApp.cpp
+::DisplayManagementApp()
+::~DisplayManagementApp()
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DisplayManagement_MIB20_STD/AppBase/build/../source/DisplayManagementMain.cpp
+::handleCommandLineOption(): display height %d
+::handleCommandLineOption(): display width  %d
+::handleCommandLineOption(): disabled function setDimension()
+::handleCommandLineOption(): option 'y' specified: startup in manufacturing mode -> no special handling of this in DisplayManagement
+"displaymanagement"
+%s: [pid: %d] - Logger activated (compilation %s %s)
+Jun 26 2018
+18:22:25
+v:g:teq:j:zw:h:dy
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DisplayManagement_MIB20_STD/SUDisplayController/build/../source/SUDisplayController.cpp
+::SUDisplayController()
+::~SUDisplayController()
+::onSUStarting(): enter
+::onSUStarting(): leave
+::onMessage(): EV_SYSSERVICES_REP_DISP_BRIGHTNESS - received brightness %d percent
+::onMessage(): aID %2d tID %2d event 0x%08x dataSize %d - not handled
+<unknown displayID value>
+<unknown displayState value>
+<unknown turnState value>
+::setNotification(): specification does not define any notification attributes for DisplayController
+::switchDisplayPower(): displayID %d powerState %d (%s) turnstate %d (%s)
+::switchDisplayPower(): displayID %d powerState %d (%s) turnState %d (%s) - HMI requested invalid powerState
+::switchDisplayPower(): displayID %d powerState %d (%s) turnState %d (%s) - HMI requested invalid turnState
+::setDisplayBrightness(): displayID %d percentage %d
+::setDisplayBrightness(): not supported for displayID %d (%s)
+::getDisplayBrightness(): displayID %d
+::getDisplayBrightness(): not supported for displayID %d (%s)
+::forwardDisplayBrightnessToHMI(): sending value %d
+::forwardDisplayBrightnessToHMI(): no HMI request pending - not sending value %d
+map/set<T> too long
+TURNSTATE_NOT_USED
+TURNSTATE_CLOSED
+TURNSTATE_OPEN
+TURNSTATE_FASTOPEN
+DISPLAYSTATE_ON
+DISPLAYSTATE_OFF
+DISPLAYID_PRIMARY_DEFAULT
+DISPLAYID_SECONDARY
+DISPLAYID_RSE_LEFT
+DISPLAYID_RSE_RIGHT
+requested displayID not applicable in STD2 / needs fix in HMI
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DisplayManagement_MIB20_STD/SUDisplayManagement/build/../source/SUDisplayManagement.cpp
+::SUDisplayManagement()
+supports
+does not support
+::SUDisplayManagement(): device %s RVC
+::~SUDisplayManagement()
+::onSUStarting(): enter
+::onSUStarting(): leave
+::registerAtMediaHandler(): register for info about removable storage devices
+::registerAtSystemManager(): register for shutdown events
+handleMessageAppInitialized(): APP_MEDIAHANDLER
+handleMessageAppInitialized(): APP_SYSTEMMANAGER
+handleMessageAppInitialized(): APP_REARVIEWCAM
+handleMessageAppInitialized(): APP_NAVIGATIONSERVER
+handleMessageAppInitialized(): appId %d
+handleMessageAppState(): APP_MEDIAHANDLER running
+handleMessageAppState(): APP_SYSTEMMANAGER running
+handleMessageAppState(): APP_REARVIEWCAM running
+::onMessage(): EV_SYSSERVICES_REP_DISP_BRIGHTNESS - received brightness %d percent
+::onMessage(): received EV_DISPLAY_STATUS: DISPLAY_PWR_OFF for display %d
+::onMessage(): received EV_DISPLAY_STATUS: DISPLAY_PWR_ON for display %d
+::onMessage(): received EV_DISPLAY_STATUS: DISPLAY_PWR_UNKNOWN for display %d
+::onMessage(): unexpected display ID (%d) - only 1 display supported, ID expected to be '0'
+::onMessage(): info about normal shutdown
+::onMessage(): info about fast shutdown
+::onMessage(): info about emergency shutdown
+::onMessage(): info about shutdown cancelled
+::onMessage(): aID %2d tID %2d event 0x%08x dataSize %d - not handled
+DPY_3D
+DPY_AMI
+DPY_BROWSER
+DPY_COVERFLOW
+DPY_COVERFLOW2
+DPY_CRUISING_RANGE
+DPY_DIGITAL_VIDEOPLAYER_1
+DPY_DIGITAL_VIDEOPLAYER_2
+DPY_DVD_VIDEO
+DPY_EXTERNAL_DVD_VIDEO
+DPY_EXTERNAL_SMARTPHONE
+DPY_FBAS_1
+DPY_FBAS_2
+DPY_FBAS_3
+DPY_FILE_VIDEO
+DPY_GOOGLE_EARTH
+DPY_GOOGLE_EARTH_KOMBI_MAP_VIEW
+DPY_HMI
+DPY_HMI2
+DPY_INVALID
+DPY_JAPANMAP
+DPY_KANBAN
+DPY_KOMBI_MAP_VIEW
+DPY_MAPVIEWER
+DPY_MAP_3D_INTERSECTION_VIEW
+DPY_MAP_INTERSECTION_VIEW
+DPY_MAP_IN_MAP
+DPY_MAP_JUNCTION_VIEW
+DPY_MAP_LANDMARK_VIEW
+DPY_MAP_ROUTE_GUIDANCE
+DPY_MIRRORLINK
+DPY_OPS
+DPY_PUBLIC_SPLASHSCREEN
+DPY_REALISTIC_PICTURE
+DPY_REAR_VIEW_CAM
+DPY_REMOTE_HMI
+DPY_RESERVED
+DPY_SFA
+DPY_SIDE_VIEW_CAM
+DPY_STREETVIEW
+DPY_TRAFFIC_INFORMATION
+DPY_TV_AUX1
+DPY_TV_AUX2
+DPY_TV_TUNER
+DPY_TV_VIDEOTEXT
+::sendLayerDefinition(): used layers (%d of %d) %s
+::sendLayerDefinition(): mem allocation failed
+::sendLayerDefinition(): skip call to lmDefineLayers (useLayerManager false)
+::getDisplayableName(): cid %d unknown
+<unknown displayableID>
+<unknown displayID value>
+<unknown displayState value>
+<unknown displayType value>
+<unknown scaleMode value>
+::setNotification(): specification does not define any notification attributes for DisplayManagement
+::declareContexts(): size of context vector: %d
+::declareContexts(): context %d -> 0 displayables
+::declareContexts(): #%2d: id %2d (%d: %s)
+::declareContexts(): #%2d: id %2d (NULL)
+::declareContexts(): failed to alloc array for layerIDs (size %d)
+::declareContexts(): failed to alloc LayerContext array (size %d)
+::switchContextCluster(): contextId %d / sessionID %d [r%s] --> handle FPK map
+::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d -> deactivate CLUSTER layer (no action)
+::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d -> activate CLUSTER MAPVIEWER (no action)
+::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d cid %d < %s > (expected MAPVIEWER)
+::switchContextCluster(): contextId %d / sessionID %d --> numOfDisplayables %d (expected 0 or 1)
+::switchContextCluster(): contextId %d / sessionID %d - not found in context list
+::switchContextCluster(): layerContextList == NULL
+::switchContext(): contextId %d / displayID %d (%s) / sessionID %d [r%s]
+contains
+does NOT contain
+::switchContext(): context %s DISPLAYABLE_MAPVIEWER
+::switchContext(): skip call to lmEnableLayers (useLayerManager false)
+::switchContext(): contextId %d / displayID %d / sessionID %d - not found in context list
+::switchContext(): layerContextList == NULL
+::switchContext(): displayID %d (%s) %s
+::handleMessageSCDAEnableLayersReport(): received SCDA_EV_ENABLE_LAYERS_REP - msgSize mismatch %d/%d
+::forwardActiveContextToHMI(): contextId %d / displayID %d / sessionID %d
+::setOpacity(): cid %d (%s) opacity %3d (displayID %d)
+::setOpacity(): cid %d (%s) opacity %3d (CLUSTER) -> no action on HU
+::setOpacity(): skip call to lmSetOpacity (useLayerManager false)
+::fadeToOpacity(): cid %d (%s) displayID %d opacity %d fadingTime %d
+::fadeToOpacity(): cid %d (%s) CLUSTER opacity %d fadingTime %d -> no action on HU
+::fadeToOpacity(): skip call to lmFadeToOpacity (useLayerManager false)
+::getExtents(): cid %d (%s)
+::getExtents(): cid %d (%s) OK -> return %d x %d
+::getExtents(): cid %d (%s) failed -> return default %d x %d (display size)
+::getExtents(): skip call to lmGetExtent (useLayerManager false)
+::checkScreenshotFolder(): open <%s> ok
+::checkScreenshotFolder(): open <%s> failed
+::checkScreenshotFolder(): open device <%s> ok
+::checkScreenshotFolder(): mkdir <%s> OK
+::checkScreenshotFolder(): mkdir <%s> failed - result %d errno %d <%s>
+::takeScreenshot(): displayID %d fileName <%s> [r%s]
+::takeScreenshot(): displayID %d fileName <%s> OK
+::takeScreenshot(): displayID %d fileName <%s> FAILED
+::takeScreenshot(): skip call to lmSaveScreenshot (useLayerManager false)
+::takeScreenshot(): displayID %d fileName <%s> [r%s] --> system shuts down, writing of files not allowed
+::takeScreenshotOnExternalStorage(): displayID %d absolutePath <%s> [r%s]
+screenshots
+%s/%s
+%s/%s/%s
+::takeScreenshotOnExternalStorage(): displayID %d dev<%s> folder<%s> name<%s> OK
+::takeScreenshotOnExternalStorage(): displayID %d dev<%s> folder<%s> name<%s> FAILED
+::takeScreenshotOnExternalStorage(): skip call to lmSaveScreenshot (useLayerManager false)
+::takeScreenshotOnExternalStorage(): fullPath<%s> open/creation FAILED!
+::takeScreenshotOnExternalStorage(): alloca failed with error %d
+::takeScreenshotOnExternalStorage(): displayID %d absolutePath <%s> FAILED (no medium)
+::lockDisplay(): displayID %d
+::lockDisplay(): skip call to lmLockDisplay (useLayerManager false)
+::unlockDisplay(): displayID %d
+::unlockDisplay(): skip call to lmLockDisplay (useLayerManager false)
+::switchDisplayPower(): displayID %d powerState %d (%s)
+::switchDisplayPower(): displayID %d powerState %d (%s) - HMI requested invalid powerState 
+::switchDisplayPower(): displayID %d (%s) %s
+::getDisplayPower(): displayID %d
+::getDisplayPower(): mismatch: HMI displayID %d != monitored Id %d - only 1 display supported, ID expected to be '0' - returning DISPLAYSTATE_UNKNOWN
+::getDisplayPower(): returning DISPLAYSTATE_ON
+::getDisplayPower(): returning DISPLAYSTATE_OFF
+::getDisplayPower(): returning DISPLAYSTATE_UNKNOWN
+::getDisplayPower(): invalide mDisplayPowerState - returning DISPLAYSTATE_UNKNOWN
+::getDisplayPower(): displayID %d (%s) %s
+::setDisplayBrightness(): displayID %d percentage %d
+::setDisplayBrightness(): displayID %d (%s) %s
+::getDisplayBrightness(): displayID %d
+::getDisplayBrightness(): displayID %d (%s) %s
+::forwardDisplayBrightnessToHMI(): sending value %d
+::forwardDisplayBrightnessToHMI(): no HMI request pending - not sending value %d
+::setBrightness(): cid %d (%s) value %d [-128..127]
+::setBrightness(): cid %d (%s) value %d [-128..127] - APP_REARVIEWCAM not active
+::setBrightness(): cid %d (%s) value %d [-128..127] - device without RVC support
+::setBrightness(): not supported for cid %d (%s)
+::getBrightness(): cid %d (%s)
+::getBrightness(): request update from RVC app - sending EV_RVC_BRIGHTNESS_REQ
+::getBrightness(): cid %d (%s) - APP_REARVIEWCAM not active
+::getBrightness(): cid %d (%s) - device without RVC support
+::getBrightness(): not supported for cid %d (%s)
+::forwardRVCBrightnessToHMI(): sending value %d
+::setContrast(): cid %d (%s) value %d [-128..127]
+::setContrast(): cid %d (%s) value %d [-128..127] - APP_REARVIEWCAM not active
+::setContrast(): cid %d (%s) value %d [-128..127] - device without RVC support
+::setContrast(): not supported for cid %d (%s)
+::getContrast(): cid %d (%s)
+::getContrast(): request update from RVC app - sending EV_RVC_CONTRAST_REQ
+::getContrast(): cid %d (%s) - APP_REARVIEWCAM not active
+::getContrast(): cid %d (%s) - device without RVC support
+::getContrast(): not supported for cid %d (%s)
+::forwardRVCContrastToHMI(): sending value %d
+::setTint(): cid %d (%s) value %d [-128..127] - not supported in STD2
+::getTint(): cid %d (%s) - not supported in STD2 - returning 0
+::setColor(): cid %d (%s) value %d [-128..127]
+::setColor(): cid %d (%s) value %d [-128..127] - APP_REARVIEWCAM not active
+::setColor(): cid %d (%s) value %d [-128..127] - device without RVC support
+::setColor(): not supported for cid %d (%s)
+::getColor(): cid %d (%s)
+::getColor(): request update from RVC app - sending EV_RVC_COLOR_REQ
+::getColor(): cid %d (%s) - APP_REARVIEWCAM not active
+::getColor(): cid %d (%s) - device without RVC support
+::getColor(): not supported for cid %d (%s)
+::forwardRVCColorToHMI(): sending value %d
+::setPosition(): cid %d (%s) x %3d y %3d (displayID %d)
+::setPosition(): cid %d (%s) x %3d y %3d (CLUSTER) -> no action on HU
+::setPosition(): skip call to lmSetPosition (useLayerManager false)
+::setCropping(): displayID %d cid %d (%s) source x %d y %d w %d h %d dst x %d y %d w %d h %d - ignored
+::setCropping(): displayID %d cid %d (%s) source x %d y %d w %d h %d dst x %d y %d w %d h %d
+::setCropping(): skip call to lmSetCropping (useLayerManager false)
+::setCropping(): not supported for cid %d (%s)
+::getDisplayableInfo(): displayID %d cid %d (%s)
+::getDisplayableInfo(): displayID %d cid %d (%s) - DISPLAYABLEINFO_SUPPORTED_VIDEO_PARAMETRIZABLE
+::getDisplayableInfo(): displayID %d cid %d (%s) - DISPLAYABLEINFO_NOT_SUPPORTED
+::setDimension(): cid %d (%s) w %3d h %3d (displayID %d)
+::setDimension(): cid %d (%s) w %3d h %3d (CLUSTER) -> no action on HU
+::setDimension(): cid %d (%s) w %3d h %3d (displayID %d) - skip call to lmSetDimension (useDimension false)
+::setDimension(): skip call to lmSetDimension (useLayerManager false)
+::setScaleMode(): cid %d (%s) scaleEnum %d (%s) displayID %d
+::setScaleMode(): unknown scaleMode %d
+::setScaleMode(): skip call to lmSetScaleMode (useLayerManager false)
+::setScaleMode(): display ID %d (%s) %s
+::setDisplayType(): display ID %d (%s) type %d (%s) - changing of display type not applicable in STD2 - returning DISPLAYTYPE_LVDS
+::setDisplayType(): display ID %d (%s) type %d (%s) - changing of display type not applicable in STD2 - returning DISPLAYTYPE_H264_MOST
+::setDisplayType(): display ID %d (%s) type %d (%s) - %s - returning DISPLAYTYPE_UNDEFINED
+::getDisplayType(): displayID %d (%s) - returning DISPLAYTYPE_LVDS
+::getDisplayType(): displayID %d (%s) - returning DISPLAYTYPE_H264_MOST
+::getDisplayType(): displayID %d (%s) %s - returning DISPLAYTYPE_UNDEFINED
+::initExtLayerStates(): reset own FPK states to MMOff / rate 0
+::handleMessageSCDAExternalLayerResponse(): received SCDA_EV_EXT_LAYER_RES - msgSize mismatch %d/%d
+::handleExtLayerCmdResponse(): MAP_ACTIVATE result OK -> requesting MAP_RATE (requested rate %d) [->MMRunRequested]
+::handleExtLayerCmdResponse(): MAP_ACTIVATE result NOK (requested rate %d) [->MMOff]
+::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) OK -> trigger deactivate [->MMOffRequested]
+::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) OK -> fully up and running [->MMRun]
+::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) NOK -> rate mismatch [->MMRun]
+::handleExtLayerCmdResponse(): MAP_RATE (rate requested %d / new %d) NOK -> rate mismatch [->MMOff]
+FAILED+IGNORED
+::handleExtLayerCmdResponse(): MAP_DEACTIVATE %s -> requested rate now %d -> requesting MAP_ACTIVATE [->MMReadyRequested]
+::handleExtLayerCmdResponse(): MAP_DEACTIVATE %s [->MMOff]
+::handleExtLayerCmdResponse(): unknown cmd %d
+MAP_DEACTIVATE
+MAP_RATE
+MAP_ACTIVATE
+::handleExtLayerCmdResponse(): cmd %d < %s > newRate %d result %s -> no HMI request so far -> ignoring external layer cmd response
+::handleExtLayerHMIRequest(): requested rate %d / state MMOff (current rate %d) -> requesting MAP_ACTIVATE
+::handleExtLayerHMIRequest(): requested rate %d / state MMOff (current rate %d) -> no action
+::handleExtLayerHMIRequest(): requested rate %d / state MMReadyRequested (current rate %d) -> update requested rate
+::handleExtLayerHMIRequest(): requested rate %d / state MMRunRequested (current rate %d) -> ignore, as last rate request not yet completed
+::handleExtLayerHMIRequest(): requested rate %d / state MMRun (current rate %d) -> no action
+::handleExtLayerHMIRequest(): requested rate %d / state MMRun (current rate %d) -> requesting MAP_RATE
+::handleExtLayerHMIRequest(): requested rate %d / state MMOffRequested (current rate %d) -> store requested rate
+::handleExtLayerHMIRequest(): requested rate %d / state MMOffRequested (current rate %d) -> requested rate 0 == current rate -> confirm rate 0 to HMI
+::handleExtLayerHMIRequest(): requested rate %d --> unknown state %d (current rate %d)
+::setUpdateRate(): CLUSTER updaterate %d -> disable FPK map
+::setUpdateRate(): CLUSTER updaterate %d -> enable FPK map -> rejecting as MAPVIEWER is part of current context on MAIN display + sending updateRateResult(0)
+::setUpdateRate(): CLUSTER updaterate %d -> enable FPK map
+::setUpdateRate(): CLUSTER updaterate %d -> negative value
+::setUpdateRate(): displayID %d (%s) updaterate %d - changing of updaterate not supported in STD2 - returning 60 (Hz)
+::setUpdateRate(): displayID %d (%s) updaterate %d - %s - returning 60 (Hz)
+::getUpdateRate(): CLUSTER -> current rate %d
+::getUpdateRate(): displayID %d (%s) - returning 60 (Hz)
+::getUpdateRate(): displayID %d (%s) - %s - returning 60 (Hz)
+::forwardUpdateRateToHMI(): current rate %d
+::forwardUpdateRateToHMI(): no HMI request pending - not sending value %d
+::startComponent(): cid %d (%s) displayID %d (%s) sessionID 0x%08x - not implemented - returning OK
+::startComponent(): cid %d (%s) displayID %d (%s) sessionID 0x%08x - %s - returning ERROR
+::stopComponent(): cid %d (%s) displayID %d (%s) sessionID 0x%08x - not implemented - returning OK
+::stopComponent(): cid %d (%s) displayID %d (%s) sessionID 0x%08x - %s - returning ERROR
+::createImageDisplayable(): cid %d - not supported in STD2
+::destroyImageDisplayable(): cid %d - not supported in STD2
+::requestUpdateImageDisplayable(): cid %d - not supported in STD2
+::initAnnotations(): displayID %d - not supported in STD2
+::setAnnotationData(): displayID %d receiverID %d - not supported in STD2
+map/set<T> too long
+SCALEMODE_ASPECT_RATIO
+SCALEMODE_FIT_HORIZONTAL
+SCALEMODE_FIT_VERTICAL
+SCALEMODE_CLIP_TOP_LEFT
+SCALEMODE_CLIP_MIDDLE
+DISPLAYTYPE_UNDEFINED
+DISPLAYTYPE_LVDS
+DISPLAYTYPE_H264_MOST
+DISPLAYSTATE_ON
+DISPLAYSTATE_OFF
+DISPLAYSTATE_UNKNOWN
+DISPLAYID_PRIMARY_DEFAULT
+DISPLAYID_SECONDARY
+DISPLAYID_RSE_LEFT
+DISPLAYID_RSE_RIGHT
+DISPLAYID_CLUSTER
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DisplayManagement_MIB20_STD/SUDisplayManagement/build/../source/deviceMonitor.cpp
+::showStatus() - #%02d/%d available %d dev #%d part #%d sd %d RO %d path <%s>
+::updateDeviceInfo() - [%s] devNum %d MH_DEVICE_DISCONNECT
+::updateDeviceInfo() - [%s] devNum %d MH_DEVICE_ERROR
+::updateDeviceInfo() - [%s] devNum %d MH_DEVICE_CONNECT MH_MEDIA_TYPE_MSD media_count %d
+::updateDeviceInfo() - [%s] MH_MEDIA_TYPE_MSD %d id 0x%08x content_type 0x%08x isReadOnly %d path <%s> name<%s>
+::updateDeviceInfo() - [%s] devNum %d MH_DEVICE_CONNECT media_type %d
+updated
+::setDeviceAvailable() - [%s] dev %d part %d RO %d path<%s> -> %s
+::setDeviceAvailable() - could not track device %d - no entry available
+::setDeviceAvailable() - not tracking device %d - path == NULL
+tracked
+no entry found
+::setDeviceUnavailable() - [%s] dev %d -> %s
+::getAvailableDevice() - no storage device available
+%d:%02d:%02d.%03d
+/home/root/platformrestart_yes
+/home/root/platformrestart_no
+/home/root/tracescope_yes
+/home/root/tracescope_no
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ScreenCDA/ScreenCDAClient/build/../source/screenCDAClient.c
+::fillLayerName(): layerName len %d exceeds max %d -> name truncated to <%s>
+::fillLayerName(): missing arg - nameArray %p name %p
+::lmDefineLayers(): alloca failed
+::lmEnableLayers(): displayId %d numOfLayers %d
+::lmEnableLayers(): alloca failed
+::lmEnableLayers(): displayId %d layerIDs NULL
+::lmLockDisplay(): displayId %d lock %d
+::lmDebugSetVerbosity(): verbosity %d
+::lmDebugShowWindowInfo(): showClient %d
+::lmSetDimension(): displayId %d layerID %d w %d h %d
+::lmSetDimensionByName(): displayId %d layerName %s w %d h %d
+::lmSetCropping(): displayId %d layerID %d src x %d y %d w %d h %d dst x %d y %d w %d h %d
+::lmSetCroppingByName(): displayId %d layerName %s src x %d y %d w %d h %d dst x %d y %d w %d h %d
+::lmSetOpacity(): displayId %d layerID %d opacity %d
+::lmSetOpacityByName(): displayId %d layerName %s opacity %d
+::lmFadeToOpacity(): displayId %d layerId %d opacity %d time %dms
+::lmFadeToOpacityByName(): displayId %d layerName %s opacity %d time %dms
+::lmSetPosition(): displayId %d layerID %d x %d y %d
+::lmSetPositionByName(): displayId %d layerName %s x %d y %d
+::lmSetVisibilityByName(): displayId %d layerName %s visible %d
+::lmSetZOrderByName(): displayId %d layerName %s zorder %d
+::lmSetScaleMode(): displayId %d layerID %d scaleMode %d
+::lmDisableRequestSynch()
+::lmEnableRequestSynch()
+::lmLVDSEnable(%d)
+::lmGetLayerContent(): request x %d y %d w %d h %d  response x %d y %d w %d h %d  buf %p size %d
+::lmGetLayerContent(): malloc(%d) failed
+::lmGetLayerContent(): SAL_Open_Shared_Memory key 0x%08x / %d  subkey 0x%08x / %d failed
+::lmGetLayerContent(): SCDA_EV_GET_LAYER_CONTENT_REQ failed
+::lmGetLayerContent(): SAL_Connect failed - AID %d TID %d
+::lmGetDisplayContent(): request x %d y %d w %d h %d  response x %d y %d w %d h %d  buf %p size %d
+::lmGetDisplayContent(): malloc(%d) failed
+::lmGetDisplayContent(): SAL_Open_Shared_Memory key 0x%08x / %d  subkey 0x%08x / %d failed
+::lmGetDisplayContent(): SCDA_EV_GET_LAYER_CONTENT_REQ failed
+::lmGetDisplayContent(): SAL_Connect failed - AID %d TID %d
+::lmGetDimension(): displayId %d layerId %d response w %d h %d
+::lmGetDimension(): SCDA_EV_GET_DIMENSION_REQ failed
+::lmGetDimension(): SAL_Connect failed - AID %d TID %d
+::lmGetExtent(): displayId %d layerId %d response w %d h %d
+::lmGetExtent(): SCDA_EV_GET_EXTENT_REQ failed
+::lmGetExtent(): SAL_Connect failed - AID %d TID %d
+::lmSetDisplay(): displayId %d layerID %d
+::lmSetDisplayByName(): displayId %d layerName %s
+::lmExtLayerRequest(): cmd %d option %d
+FAILED
+::lmExtMapActivateResponse(): result %s
+::lmExtMapDeactivateResponse(): result %s
+::lmExtMapRateResponse(): rate %d
+::lmColorAdjustment()
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIDisplayManagementImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+c:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_DSI_MIB20_STD/DSICpp/build/../source/DSIDisplayControllerImpl.cpp
+On Starting executed!
+On Stopping executed!
+On Message status sent!
+assertion failed: mObject
+On Message: function %d received!
+assertion failed: _buffer.tell() == _buffer.size()
+vector<T> too long
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salActiveObject.cpp
+assertion failed: SAL_Get_Thread_Id() == getId()
+SAL_Create_Queue() failure
+SAL_Receive() failure
+Alive ActiveObject cannot be destroyed
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salApplication.cpp
+assertion failed: appId > 1
+assertion failed: maxNumberOfThreads > 0
+assertion failed: appId >= std::numeric_limits<SAL_App_Id_T>::min() && appId <= std::numeric_limits<SAL_App_Id_T>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salException.cpp
+assertion failed: h != 0
+Resource fatal error: %s
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salIByteBuffer.cpp
+assertion failed: mPosition + sizeof( d ) <= mSize
+assertion failed: position < mSize
+assertion failed: mPosition + bytes <= mSize
+assertion failed: !( d == 0 && s > 0 )
+assertion failed: mPosition + s <= mSize
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salMessage.cpp
+assertion failed: msg != 0
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salOByteBuffer.cpp
+assertion failed: d != 0
+assign
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salThread.cpp
+assertion failed: name != 0 && ! isAlive()
+assertion failed: p!=0
+cstr != 0
+../public/salFixedString.h
+assertion failed: threadName != 0
+assertion failed: SAL_UNKNOWN_THREAD_ID == threadId || (threadId > 0 && threadId <= static_cast<int>( getMaxNumberOfThreads() ) )
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salUtils.cpp
+assertion failed: eventId >= std::numeric_limits<int16_t>::min() && eventId <= std::numeric_limits<int16_t>::max()
+C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSALcpp/build/../source/salError.cpp
+Allocation fatal error
+Lock fatal error
+Resource fatal error
