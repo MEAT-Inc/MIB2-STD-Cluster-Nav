@@ -76,6 +76,28 @@ def add_cluster_descriptor(response,template_id,new_id,display_id=1):
     service_copy=b''.join(uint(1,new_id) if f.number==1 else message(3,media_copy) if f.number==3 else f.raw for f in body)
     return response+message(1,service_copy)
 
+def add_cluster_services(response,template_id,video_id,input_id,display_id=1):
+    """OFFBOARD ONLY: video plus minimal paired input; creates no live endpoint.
+
+    Input field 5 is display id. The minimal key list follows the working DHU
+    pair described in the upstream video_sink_hook.c reference. Never deploy
+    this descriptor until both actual protocol endpoints exist.
+    """
+    if video_id==input_id or not 1<=input_id<=254:raise ValueError('distinct valid service IDs required')
+    seen=set()
+    for f in fields(response):
+        if f.number!=1:continue
+        if f.wire!=2:raise ValueError('Service must be a message')
+        sid=single(fields(f.value),1,0).value
+        if sid in seen:raise ValueError('duplicate original service ID')
+        seen.add(sid)
+        if sid==input_id:raise ValueError('input service ID already occupied')
+    candidate=add_cluster_descriptor(response,template_id,video_id,display_id)
+    # Packed keycodes: DPAD_CENTER (23) and 65536, no fabricated touchscreen.
+    input_media=message(1,varint(23)+varint(65536))+uint(5,display_id)
+    input_service=uint(1,input_id)+message(4,input_media)
+    return candidate+message(1,input_service)
+
 # Independent fixture decoder: deliberately uses separate byte-walking logic.
 def independent_decode(data):
     pos=0;out=[]

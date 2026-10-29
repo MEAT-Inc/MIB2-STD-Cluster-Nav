@@ -1,0 +1,38 @@
+{
+  "scope": "Captured procman with synthetic app in QNX; factory AndroidAuto not executed",
+  "passed": true,
+  "controls": [
+    "LAUNCH_IDENTITY_MISMATCH_REJECTED",
+    "LAUNCH_MANAGED_CAPTURE_RESTORE_PASS",
+    "LAUNCH_ORPHAN_RESTORE_PASS",
+    "LAUNCH_HANGUP_GROUP_RESTORE_PASS",
+    "LAUNCH_PHONE_WINDOW_PASS",
+    "LAUNCH_TRACE_ZERO_TAIL_OK",
+    "LAUNCH_QNX_SUITE_PASS",
+    "LAUNCH_QNX_END"
+  ],
+  "experiments": [
+    {
+      "capture_seconds": 20,
+      "observed_pid": 12293,
+      "restored_pid": 20485,
+      "controller_pid": 4102,
+      "manager_pid": 4,
+      "baseline_pid": 4101,
+      "records": 9,
+      "dropped": 0
+    },
+    {
+      "capture_seconds": 60,
+      "observed_pid": 36869,
+      "restored_pid": 49157,
+      "controller_pid": 28678,
+      "manager_pid": 4,
+      "baseline_pid": 20485,
+      "records": 9,
+      "dropped": 0
+    }
+  ],
+  "qnx_log_sha256": "ebac2d720a509416602b7bd09d935bde1dd64b0f6fe25d522e130eeb32b06b18",
+  "actual_androidauto_interposition_tested": false
+}

@@ -1,0 +1,76 @@
+Private-path hardware review and real-app observer handoff
+
+Returned collection: _observer_path_20261029_023951_c57c86e6
+Independent review PASS: all five artifact sizes/SHA256 hashes match, all sixteen
+remote commands returned zero, and the raw observer log matches its decoded JSON.
+Six private app launches passed. Observed PID 1065056 recorded
+9 registrations with 0 drops. The factory
+AndroidAuto PID 684110 and argv were unchanged before/after.
+Watchdog finished=1 and removed=1 prove orphan cleanup. Its final done=0 is expected:
+the orphan case deliberately relies on the deadline, not an installer completion.
+
+Next concrete step prepared:
+  scripts/run_androidauto_observer.py
+  native/observer/launch/androidauto-observer-laptop.zip
+This is the first proposed experiment on the real AndroidAuto process. No live
+factory-app interruption or vehicle connection occurred during preparation.
+
+Verified native controls (QNX emulation, synthetic app with captured manager):
+- Stale process-start identity refuses interruption.
+- Normal observed launch captures nine synthetic native calls and restores a fresh
+  stock executable under the same manager.
+- Separate-session watchdog restores even after controller process-group SIGHUP.
+- Stock library symlinks are dereferenced for exact byte comparison; staged private
+  references must remain regular files.
+- The release candidate matches tested.sha256. Both native files are ARM32 LE EABI5
+  softfp, non-executable stack, and need only libc.so.3. Every required import exists
+  in the actual captured unit libc (controller import count:
+  52).
+- Fifteen new Python tests plus fourteen path-runner and nine shared-helper tests
+  pass. The extracted eight-entry portable package defaults to an offline plan,
+  creates no dump, and contains no proprietary app/manager or emulator binaries.
+
+Final design choices:
+- Read-only procfs descriptors check executable, PID, parent and start time; the
+  actual signal is kill(SIGINT), matching the captured manager. The initially
+  attempted writable procfs/debugger signal path did not preserve restart behavior
+  in emulation and is not used. Identity recheck and kill are not atomic.
+- The observer is entry-only and forwards originals. No endpoint object or phone
+  discovery data is modified. The real-app collector requires one or more captured
+  callers matching the verified AndroidAuto image (eight statically verified BL
+  call sites, normalized by reported executable load bias). The video-registration
+  caller is 0x124e54 and is reported separately.
+- Optional external library debugger-name/mapping assumptions were removed. Actual
+  captured known-caller records provide interposition evidence directly. The five
+  old binding fields in the 512-byte report remain reserved/zero.
+- Fresh snapshots, exact stock app/receiver/manager fingerprints, and the reviewed
+  AndroidAuto -r configuration entry must pass before any interruption. Native
+  full-byte comparisons are repeated at the critical transitions.
+- The wrapper removes its namespace redirect before exec, preserves manager argv,
+  cwd/environment, and refuses an existing nonempty LD_PRELOAD. It uses an identical
+  RAM-staged app copy and the unchanged observer candidate.
+- An exclusive /dev/shmem/delphi-aa-observer-active.bin marker coordinates the
+  wrapper/guard and blocks overlapping or uncertain experiments. It is removed only
+  after verified stock restoration; it is never a persistent startup change.
+
+Next car action (parked, powered; Ethernet connected; phone unplugged):
+Extract the new ZIP into the existing laptop project root, then run:
+  python scripts/run_androidauto_observer.py --run
+This interrupts/restarts the actual AndroidAuto process for capture and then for
+restoration. Expected capture is about twenty seconds; guarded startup/restoration
+adds up to about forty-five seconds plus file-transfer time.
+Return the entire new delphi-dump/_androidauto_observer_* directory.
+If the process restores but no registrations occur without a phone, the script
+returns 2 and labels that outcome separately. Incomplete or failed restoration
+must be reviewed before retrying; a unit restart may be needed if SIGINT is ignored.
+
+Goal status: actual AndroidAuto interposition still awaits hardware evidence.
+No Android Auto secondary video or full instrument-cluster map is demonstrated.
+
+Bundle bytes: 33641
+Bundle SHA256: 3fe60c3eb854ee01be5900067f3a370527d1ab6a4da1c1f0ae950c0f32507d80
+Native controller SHA256: 4f6aa88c52752a81ebaf02cbad6a916f25b88ef8847f1ad8e278391808a63d21
+Observer SHA256 (unchanged): cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c
+
+QNX procfs reference consulted for structures and semantics:
+https://www.qnx.com/developers/docs/6.5.0SP1/neutrino/prog/process.html

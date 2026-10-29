@@ -1,0 +1,272 @@
+Persistent Android Auto black view: diagnosis in progress; disruptive tests held
+2026-10-29
+
+User clarification:
+- Android Auto view fails to appear; car/settings/radio still work.
+- Recovery required holding the power button for ten seconds.
+- Opening the driver door while the script is running seems to trigger it.
+- Ignition was on or engine running.
+This is not cleared as an expected visual interruption. The ignition-off retained
+accessory power explanation does not match the reported test conditions.
+The current evidence points to Android Auto session/visibility recovery rather
+than an established whole-head-unit crash; root cause is not confirmed.
+
+Confirmed audit of existing data:
+- Both phone capture controller reports have phase 6, error 0 and fresh stock
+  process identity verification. Observed-to-stock start intervals are 61.483
+  and 61.488 seconds. The earlier no-phone profile took 20.560 seconds.
+- Native watchdog polls observed identity throughout capture. An unexpected exit
+  detected in that interval sets error 1100; neither phone report has that error.
+  This does not detect a stalled session, failed USB rebind or a blank view in a
+  still-alive process. A very late exit between the last poll and cleanup also
+  cannot be excluded by polling alone.
+- At the end of the sixty-second phone window the current controller uses SIGINT
+  on the observed AndroidAuto even though the phone can still occupy the USB
+  socket. A new stock process is then verified. Matching manager SIGINT behavior
+  does not establish cooperative session/display teardown or reconnect.
+- CAPTURE READY means the observer log is ready, not that the screen or phone
+  session is healthy. LAUNCH_RESTORED means process identity and stock-file checks
+  passed, not that the Android Auto view returned. Earlier PASS interpretation
+  overstated recovery by omitting this distinction.
+- The head unit's UI, AndroidAutoServices, AppConnect, USB state and Screen state
+  were not logged across the phone-only interval. Door timing is absent. No
+  existing capture proves the display recovered or identifies the triggering event.
+- Both phone tests use the same controller; the first did not contain the new
+  config/focus/queue hooks. A new extra-hook-only regression therefore does not
+  explain both reports, although shared instrumentation/timing is not exonerated.
+- Acquired binaries contain visibility and service start/stop/disconnect handling,
+  including AndroidAuto's EV_AA_VISIBLE and missing-sink focus diagnostics, plus
+  AndroidAutoServices' EV_PREPARE_OFF_APP/FAST/CANCEL/EMERGENCY handling. These
+  static strings establish diagnostic search targets, not observed runtime events
+  and not proof that opening the door caused a power-off event with ignition on.
+
+Leading, unconfirmed mechanisms:
+1. The timed SIGINT restart interrupts an active phone/USB/video session and the
+   new stock process does not rebind/recover its view through the surviving
+   AndroidAutoServices/AppConnect/HMI state.
+2. A door-related visibility/focus or vehicle lifecycle event exposes a stale or
+   missing sink/window/session while our process-only health check still passes.
+3. A still-running observer/app stalls or has a rendering fault. Existing logs
+   lack media/frame/graphics health and cannot exclude this.
+No speculative focus injection, USB reset or additional process restart was made.
+
+Changes made now:
+- run_androidauto_observer.py refuses every live --run variant before network,
+  uploads or interruption. No CLI override was added. Offline plans/decoders and
+  analysis remain available. Native controller/observer artifacts are unchanged.
+- Parser results explicitly record process_restoration_verified,
+  restoration_scope=process_identity_and_stock_files_only and
+  display_recovery_verified=false. Historical captured bytes remain unchanged.
+- Both observer laptop ZIPs were refreshed with the hold and README notices.
+  Already copied older ZIPs cannot be remotely disabled; do not use those to retry.
+- collect_display_health.py adds a read-only Telnet snapshot, with observed UI
+  state, menu response, door trigger, ignition and optional elapsed-time metadata.
+  It reads system log, before/after process lists, ancestry, targeted thread/maps,
+  RAM marker metadata and error-file listings. It does not restart, signal,
+  install an observer, modify a head-unit file or clear system logs.
+- Missing utilities/nodes are recorded; timeouts stop the session without reuse.
+  A successful collection is explicitly not a display-health PASS. A post-reboot
+  snapshot cannot establish the pre-reboot cause; changing USB can alter the state.
+
+Portable package:
+  native/observer/display/black-screen-diagnostics-laptop.zip
+  29115 bytes
+  SHA256 6af90ddadcb662cba053e1b60a8e9362c7f099854b603063cc050fe690d6c61d
+Extract into the laptop project root, overwriting included scripts. There are no
+native executables or observer libraries in this diagnostics ZIP.
+If Android Auto is currently black, VW menus work, ignition on:
+  python scripts/collect_display_health.py --run --state black --menu-response works --door-opened --ignition on
+If the unit has already been rebooted:
+  python scripts/collect_display_health.py --run --state after-reboot --menu-response works --door-opened --ignition on
+Reconnect Ethernet to collect. Do not rerun the observer to deliberately reproduce.
+Return the whole new delphi-dump/_display_health_* folder. If transient state is
+lost by replacing the phone with Ethernet, later autonomous read-only logging
+through the phone interval may be necessary; this snapshot does not overclaim it.
+
+Validation: 35 Android tests and five new health collector tests pass. Extracted
+ZIP passes standard-library-only offline plan, creates no dump in plan mode, and
+blocks both ordinary and display live runner commands before dump/network work.
+Both refreshed observer ZIPs include the hold. No car action was executed here.
+Machine reviews: control-runtime/black-screen-existing-evidence.json and
+control-runtime/display-health-release-review.json.
+
+System log utility semantics checked against QNX 6.5 primary documentation:
+https://www.qnx.com/developers/docs/6.5.0SP1.update/com.qnx.doc.neutrino_utilities/s/sloginfo.html
+sloginfo -t displays current events with timestamps and exits. Neither the clear
+option -c nor future-event wait option -w is used.
+
+Still required: actual state/log evidence to confirm cause; a cooperative and
+verified session/display recovery strategy; a controlled recovery test with
+explicit visual confirmation before lifting the live-experiment hold. Successful
+protobuf capture and emulation do not establish operational display recovery.
+
+
+Direct-PC continuation and focused static review
+User connected the vehicle to this PC and requested no further laptop bundles.
+All future collection/test work uses the Source workspace directly. No new ZIP
+was built during this continuation. Disruptive experiments remain held.
+
+Read-only Windows checks found Ethernet 3 (Intel physical PC port) disconnected
+and Ethernet 6 (ASIX AX88772C USB Ethernet) disconnected. Ethernet 6 retains the
+configured 192.168.1.10 address, but the interface is not usable. The route lookup
+for 192.168.1.4 selected home Wi-Fi rather than a direct vehicle route. Explicitly
+binding probes to 192.168.1.10 failed with WinError 10049, and neither known FTP
+nor Telnet port connected. VPN/network settings were not changed. These results
+establish a PC link problem for collection, not a head-unit crash diagnosis.
+The user was asked to check the cable/link lights and head-unit power.
+
+Focused independent static review (one low-effort agent; no car access):
+- AndroidAuto VA 0x1109f4..0x110a08 passes visibility/zorder to 0x112e18,
+  which invokes 0x11d678 and 0x11d590 and broadcasts to listeners at
+  0x112f00..0x112f40. A new process PID does not establish visibility recovery.
+- EV_AA_SHUTDOWN_AOAP clears object+0x60 at 0x112498 and calls 0x113c20 at
+  0x1124dc. The distinct EV_SYSTEM_SHUTDOWN path 0x1124e4..0x112548 logs
+  that it is not processed. This is not proof of what SIGINT invokes.
+- The USB lifecycle calls aoa_connect at 0x118e94, session helper 0x119384
+  at 0x118f38, then aoa_disconnect at 0x118f40. Reconnect is not equivalent
+  to successfully spawning a process. Existing-sink, initialization-failure,
+  service-start/stop and missing-sink-focus logs can distinguish these states.
+- Streaming availability/pending focus diagnostics and AndroidAutoServices
+  prepare-off/cancel logs must be correlated to the actual door event. Their
+  presence in strings alone cannot establish what happened.
+Addresses above are in android-discovery-AndroidAuto.assembly.txt for the exact
+fingerprinted image; associated diagnostics are in AndroidAuto.strings.txt and
+AndroidAutoServices.strings.txt. No new recovery commands were guessed or sent.
+
+Smallest decisive remaining evidence: timestamped PID/session/USB transitions,
+listener registration, visible/zorder, video availability/streaming/focus and
+prepare-off/cancel messages covering the restart and door event, plus explicit
+visual recovery. A post-reboot snapshot alone may not reconstruct the sequence;
+absence of logs is inconclusive when that diagnostic channel is disabled.
+
+The local read-only collector now accepts --state unknown so a direct-PC snapshot
+can truthfully record that the operator has not inspected the current view.
+It never upgrades process presence or collection completion to visual recovery.
+
+
+Laptop inventory _display_health_20261029_195634_2d848f65 reviewed
+All 29 artifacts match recorded lengths/SHA256; all 29 command results recorded.
+Seven monitored processes are present and unchanged, matching the preceding
+post-reboot direct-PC snapshot. Four optional location listings return nonzero
+because observer artifacts, /dev/graphics, HMI errlog and /var/log(s) are absent.
+Those failures are recorded; they do not establish missing Android Auto binaries.
+
+AndroidAuto and AndroidAutoServices descriptors 1 and 2 point to /dev/ser3. A
+running TraceServer process and four name-special DTS_Shm_1..4 objects appear.
+The acquired TraceServer executable has separate shared-memory, pipe, terminal,
+file and TCP transport machinery, plus TRACE_CONFIG_PATH/trace_config.json and
+explicit disabled-logging diagnostics. Its presence does not establish which
+backend/filter is active or that old events remain buffered. We must inspect the
+configuration and format before requesting a phone-session trace. Do not read
+/dev/ser3 or /dev/DbTrace directly; that could consume a live stream.
+
+Next laptop bundle includes collect_trace_snapshot.py. It uses fixed read-only
+TraceServer/process inventory and bounded FTP reads of the four DTS objects,
+/proc/boot/libDebugTrace.so and fixed/config-environment trace_config.json paths.
+No filter writes, trace client attachment, process interruption or remote staging.
+Live memory copies are not atomic; a denied transfer or absent config is recorded
+and no fallback serial/pipe read is attempted. Copy limits are 4 MiB per object,
+64 KiB per config, 8 MiB aggregate. Return partial results without repeated retries.
+QNX advertises these shared-memory objects as name-special (S_IFNAM), which some
+file utilities reject. FTP success is therefore not assumed:
+https://www.qnx.com/developers/docs/6.5.0SP1.update/com.qnx.doc.neutrino_user_guide/fsystems.html
+The independently useful library/config files are attempted even if a DTS copy
+is denied. Determining a suitable acquisition path is part of this gate; no raw
+memory buffer is called a decoded/valid historical trace merely because it copies.
+
+Reproducible package: python scripts/package_display_health.py
+Bundle: native/observer/display/black-screen-diagnostics-laptop.zip (32800 bytes)
+SHA256: 882b3fa892d0efd04650151b7bd5161c839f4b50ad506f21661b39bf30aebf8f
+Run: python scripts/collect_trace_snapshot.py --run
+Return delphi-dump/_trace_snapshot_* in full. No phone swap or fault reproduction
+is needed for this acquisition. Five new collector tests pass; extracted package
+plans for both collectors pass with Python -S and live restart calls remain held.
+No head-unit connection was made during this offboard review/package preparation.
+Root cause and visual recovery remain unverified.
+
+
+TCP text feed proven; passive phone-session reader prepared
+Returned _trace_tcp_20261029_201038_afbf8699 has verified raw data plus nine
+verified supporting artifacts. It received 1319918 bytes over the full30-second
+window, stopped for duration, and sent zero application bytes. The complete raw
+file (not the truncated preview) has6653 lines; two AndroidAutoServices messages
+report parking-brake/gear state. No matching AA start/stop/visibility/focus,
+AOAP or prepare-off lifecycle message is present in this phone-unplugged baseline.
+This proves the trace delivery path, not the historical black-view cause.
+
+A passive RAM-only on-unit reader is now built from new C source. It connects
+only to 127.0.0.1:15361, receives without application writes, and exits after180
+seconds,16MiB, closure or error. It never signals, hooks, redirects, kills or
+restarts AndroidAuto. It writes only its two new files in a fresh validated RAM
+directory. It detaches from the terminal, ignoring HUP; if ksh makes the job a
+process-group leader, it forks only its own logger child before files/sockets or
+threads are created. Stock processes are never forked or modified.
+
+Validation gates:
+- Seven real-loopback host cases exercise same C source: short duration, hangup
+  survival including process-group-leader detachment, exact production16MiB cap,
+  exact binary preservation, EOF/empty/refused connection, invalid path and
+  existing-output refusal. Tests fingerprint both source and ARM production ELF.
+- Production ARM32 little-endian EABI5 softfp, non-executable stack, libc.so.3 and
+  libsocket.so.3 dependencies/imports checked. QNX sockaddr sin_len set explicitly.
+- Exact production ELF passed QNX emulator loader and invalid-root refusal tests.
+  QNX networking behavior was NOT emulated or proven on the car for this new
+  reader. The upcoming isolated test checks that scope; manifests say so.
+- Ten offline Python tests cover no-network plan, upload tampering, two separate
+  verified sessions, busy listener refusal, PID changes, short wait, partial/slow
+  FTP and malformed/impossible native reports. Partial downloads are preserved.
+- The portable ZIP's Python -S offline plan and native-asset hash verification pass.
+- A focused low-effort review found partial-download and completion-scope issues;
+  fixes retain received bytes, add transfer deadline checks, reject impossible
+  byte-limit counts and avoid calling early-cap captures complete windows. Manual
+  USB handoff coverage remains explicitly unverified until trace examination.
+
+Laptop routine: python scripts/run_phone_trace.py --run
+Start on Ethernet, phone unplugged. Only at LOGGER READY swap to phone, start AA
+navigation, leave the driver door CLOSED, wait210 seconds, reconnect Ethernet
+and collect. Record whether the phone view worked before unplugging and whether
+the door opened. Return the full _phone_trace_* folder. Native logging runs180
+seconds and stops itself; AndroidAuto is never restarted. Before/after stock PID
+must match. On missing readiness no phone handoff occurs. No forced cleanup or
+kill is sent on failures. The existing disruptive observer remains disabled.
+This baseline precedes, rather than deliberately recreates, the door-triggered
+failure. Normal trace collection alone does not prove AA recovery or cluster maps.
+
+Bundle: native/trace-reader/passive-phone-trace-laptop.zip
+Bytes: 43086
+SHA256: 6e41740a7f27cfdc95327cdb35e7dc7574846699a10064b70d779351b8c770d7
+Sources/build/test procedures: native/trace-reader/ and scripts/run_phone_trace.py,
+scripts/package_phone_trace.py. The portable ZIP contains no acquired programs.
+No vehicle commands were issued during this offboard review or build.
+
+
+2026-10-29: Phone trace launcher syntax failure identified and fixed
+Returned _phone_trace_20261029_205440_f6999121 did not reach logger startup.
+Three initial snapshots and six empty partial artifacts match their hashes;
+ten recorded preparation commands returned zero. The attempted background
+command ends in bare &, while the common Shell.command appends ; echo marker.
+The resulting &; is invalid ksh syntax. The transcript explicitly reports that
+syntax error; the missing completion marker caused the old timeout. Empty
+trace-job and absent native reports are consistent with no reader launch.
+No phone handoff was reached and no AndroidAuto restart was attempted. No
+before/after identity equality is claimed because the old broken session did
+not collect a post-snapshot. This is a launcher defect, not new evidence about
+the head unit black-view cause.
+
+Fixed launch: ... & delphi_trace_job=$! followed by the normal completion echo.
+Actual Shell.command-generated wire, not a mocked command string, was passed to
+QNX ksh -n in emulation. The corrected wire exited0; the exact &; negative
+control exited1 with the same syntax-error diagnostic. Fixtures and launcher /
+wrapper source hashes bind this evidence into the package gate. The native
+reader ELF is byte-identical. Shell.command now rejects bare & locally and
+stops immediately on a remote syntax diagnostic. Ten phone-workflow tests, two
+wrapper tests and71 existing observer tests pass. Extracted portable plan and
+reader-asset checks also pass. QNX reader networking remains untested on car.
+
+Updated bundle: native/trace-reader/passive-phone-trace-laptop.zip
+Run python scripts/run_phone_trace.py --run with Ethernet and phone unplugged.
+At LOGGER READY swap to phone/navigation, keep door CLOSED, wait210 seconds,
+then reconnect Ethernet and collect. Return the entire new _phone_trace_*.
+Disruptive restart observer remains disabled; root cause of the original AA
+black view remains open. No vehicle commands were sent during this review.
+Bundle SHA256: aa4f4c4c7916fc08dd0e368364d0eda35cd55b6846a387b5b48d93b18c3f6ba1

@@ -1,0 +1,15 @@
+{
+  "collection": "_trace_tcp_20261029_201038_afbf8699",
+  "artifacts_verified": 10,
+  "raw_bytes": 1319918,
+  "duration_seconds": 30.0,
+  "stop_reason": "duration",
+  "trace_lines": 6653,
+  "android_auto_lines": [
+    "androidautoservices: 45-[Disp]-I-DT_MAIN-00:30:21.111-SUAndroidAuto.cpp-239-Park Brake Sts Event = 1 ",
+    "androidautoservices: 46-[Disp]-I-DT_MAIN-00:30:21.288-SUAndroidAuto.cpp-226-Current Gear Event = 101 "
+  ],
+  "matched_lifecycle_lines": [],
+  "cause_confirmed": false,
+  "next_test": "passive stock AndroidAuto phone-session baseline, door closed"
+}

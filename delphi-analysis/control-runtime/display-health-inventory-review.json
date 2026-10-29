@@ -1,0 +1,40 @@
+{
+  "collection": "_display_health_20261029_195634_2d848f65",
+  "verified_artifacts": 29,
+  "commands": 29,
+  "process_ids": {
+    "AndroidAuto": [
+      684103
+    ],
+    "AndroidAutoServices": [
+      667724
+    ],
+    "AppConnect": [
+      655433
+    ],
+    "DisplayManagement": [
+      553007
+    ],
+    "screen-cda": [
+      221196
+    ],
+    "j9": [
+      520225
+    ],
+    "procman": [
+      413728
+    ]
+  },
+  "missing_processes": [],
+  "changed_processes": [],
+  "app_stdout_stderr": "/dev/ser3",
+  "trace_server_running": true,
+  "dts_objects_observed": [
+    "DTS_Shm_1",
+    "DTS_Shm_2",
+    "DTS_Shm_3",
+    "DTS_Shm_4"
+  ],
+  "cause_confirmed": false,
+  "next_collection": "collect_trace_snapshot.py --run"
+}

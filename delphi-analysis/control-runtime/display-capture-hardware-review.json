@@ -1,0 +1,54 @@
+{
+  "collection": "_androidauto_observer_20261029_130447_557863fc",
+  "artifacts_verified": 14,
+  "actions_verified": 35,
+  "completed_restored": true,
+  "observed_pid": 1228877,
+  "restored_pid": 1306694,
+  "manager_pid": 417823,
+  "registration_records": 9,
+  "registration_dropped": 0,
+  "display_records": 3,
+  "display_dropped": 0,
+  "video_endpoint": "0x1970f0",
+  "configuration_arguments": [
+    1,
+    2,
+    0,
+    0,
+    160,
+    0,
+    10000
+  ],
+  "configuration_matches_wire": true,
+  "discovery_bytes": 386,
+  "advertised_service_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "video_service_id": 1,
+  "advertised_video_sinks": 1,
+  "main_display_id": [],
+  "main_display_type": [],
+  "focus_arguments": [
+    [
+      1,
+      1
+    ]
+  ],
+  "host_only_candidate_service_ids": [
+    9,
+    10
+  ],
+  "host_only_candidate_bytes": 430,
+  "host_only_candidate_preserves_original": true,
+  "router_slots_verified_free": false,
+  "second_endpoints_created": false,
+  "second_stream_proven": false
+}

@@ -1,0 +1,38 @@
+{
+  "scope": "synthetic QNX 6.5 ARM emulation only",
+  "passed": true,
+  "markers": [
+    "TX_BASELINE_PASS",
+    "TX_ONE_SHOT_AND_STOCK_RESTORE_PASS",
+    "TX_FAILURE_FALLBACK_PASS",
+    "TX_PRE_DETACH_FAILURE_RESTORE_PASS",
+    "TX_ORPHAN_WATCHDOG_RESTORE_PASS",
+    "TX_TRANSACTION_SUITE_PASS",
+    "TX_QNX_END"
+  ],
+  "artifacts": {
+    "native\\observer\\transaction\\build\\tx_control": {
+      "bytes": 12529,
+      "sha256": "6197b7ee84d44ea236b23a93a2f4385d3c1de1c8a570a356654b005ed1a59445"
+    },
+    "native\\observer\\transaction\\build\\tx_original": {
+      "bytes": 7863,
+      "sha256": "004f7feda24ce487acc53711469c2c9f3289c27d8448154d1dd782e5a0a8881d"
+    },
+    "native\\observer\\transaction\\build\\tx_stock": {
+      "bytes": 7863,
+      "sha256": "004f7feda24ce487acc53711469c2c9f3289c27d8448154d1dd782e5a0a8881d"
+    },
+    "native\\observer\\smoke\\build\\libautoreceiver.so": {
+      "bytes": 5674,
+      "sha256": "f9e167e7b8b27c8e5790edbf005103373880fe7fea5d4a6e3857570d748dcb83"
+    },
+    "native\\observer\\release\\libdelphi_observer.so": {
+      "bytes": 8561,
+      "sha256": "cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c"
+    }
+  },
+  "actual_procman_executed": false,
+  "actual_androidauto_executed": false,
+  "vehicle_deployment_ready": false
+}

@@ -1,0 +1,72 @@
+Phone-session registration capture verified; next display capture ready
+2026-10-29
+
+Returned collection: _androidauto_observer_20261029_042655_dbdaa2d1
+All 13 collected artifact sizes/SHA256 hashes and 33 successful remote actions
+were independently rechecked against the actual files. The raw registration log,
+decoded JSON, controller report and process snapshots agree.
+
+Hardware evidence:
+- Baseline AndroidAuto PID 1212494; observed real-app PID 1646670.
+- Same manager PID 417823; fresh stock PID 1757254 verified after capture.
+- Nine registrations, zero drops, one observed thread, same receiver 0x001cdd70.
+- All eight known app registration callers appeared. Video caller 0x124e54
+  registered endpoint object 0x00197098. App load bias was zero.
+- First call came from receiver-library offset 0x770c0 (GalReceiver::init).
+  That establishes internal preemption for this registration call only.
+- Real native registration target was library base + 0x76fac.
+- The 60-second phone profile completed and stock restoration was verified.
+This resolves the real-app registration interposition gate. It does not establish
+Android Auto secondary display support, a second video stream, or cluster maps.
+
+Next bounded experiment:
+  python scripts/run_androidauto_observer.py --run --phone-capture --display-capture
+Portable bundle:
+  native/observer/display/androidauto-display-capture-laptop.zip
+Bundle SHA256:
+  3ed470531b9321c0a70c9fdbb37d00d41af85032059b63b87ee13c97f4d11df5
+Bundle bytes: 38783; nine entries, no proprietary files/emulator helpers.
+
+The new display observer extends the existing registration observer, keeping its
+source/released binary intact. It tail-forwards these additional native calls:
+- VideoSink::addSupportedConfiguration(this + seven int words), offset 0x8df74.
+- VideoSink::setVideoFocus(this,int,bool), offset 0x8db50.
+- MessageRouter::queueOutgoing(this,channel,buffer,length), offset 0x7f5d8.
+It logs scalar arguments and synchronously copies bounded outgoing channel-0
+00 06 discovery packets up to 4096 bytes. Oversized candidates have metadata
+only. No endpoint object is dereferenced or modified. Original packet bytes,
+arguments, return values and errno are preserved. No services are advertised.
+The three extra hooks still need real-unit evidence; an internal call can bypass
+preload even though the registration call was intercepted.
+
+The controller is byte-identical to the tested/hardware-used launch release.
+Same native watchdog, 60-second phone window, stock hashes and identity checks,
+USB handoff/reconnect workflow and autonomous restoration. No firmware edits.
+An additional fixed RAM log is collected as display.bin and decoded on the host.
+A full display-capture pass requires video-object/caller correlation and discovery
+at receiver return address base+0x761f0. Missing extra data cannot pass; verified
+base registration/restoration evidence is retained and partial results are explicit.
+
+Validation:
+- QNX baseline, observed and disabled-log forwarding passed; eight configuration
+  arguments including stack words, focus arguments, return values and errno tested.
+- Correct discovery bytes copied; non-discovery packet forwarded without logging;
+  oversized pointer deliberately invalid and not dereferenced; overflow 32/7.
+- Missing original functions refused before main; native runner exited 0.
+- Native artifacts bound to tested.sha256; compact native log reconstructed and
+  decoded independently by the host parser; omitted padding verified zero natively.
+- ARM32 little-endian EABI5 softfp and non-executable stack checked; required imports
+  present in the acquired unit libc; all extra symbol offsets verified against the
+  exact acquired receiver. Existing base observer release hash unchanged.
+- 31 Python tests pass, including numeric-pointer correlation, incorrect caller/PID,
+  corrupted/truncated payloads, complete and missing/partial display collection,
+  reconnect directory failure, upload/stock validation, readiness and legacy reports.
+- Extracted ZIP passes its offline plan with Python -S (standard library only),
+  package native asset hashes, phone-mode requirement, and no dump/network action.
+
+Car action: extract the ZIP into the laptop project root, park and keep the unit
+powered, start the command with Ethernet connected and phone unplugged. Only at
+CAPTURE READY replace Ethernet with the phone, open Android Auto navigation,
+wait 90 seconds, reconnect Ethernet, and press Enter to collect. Return the entire
+new delphi-dump/_androidauto_observer_* folder. Do not retry automatically after an
+incomplete restoration result. We now need that car capture to advance this gate.

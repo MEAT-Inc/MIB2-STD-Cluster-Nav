@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "manager_pid": 4,
+  "child_pids": [
+    4101,
+    8197,
+    12293,
+    24581
+  ],
+  "observed_records": 9,
+  "raw_status_after_exit_7": 1792,
+  "raw_status_after_sigint": 2,
+  "scope": "Captured procman plus synthetic apps in QNX emulation only",
+  "actual_androidauto_interposition_tested": false,
+  "vehicle_deployment_ready": false,
+  "artifacts": {
+    "procman.captured": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d",
+    "managed_child": "590c7739af1f08138e7601c8df7f3b49de16c9c784274726d09e3a0276e41e49",
+    "managed_original": "590c7739af1f08138e7601c8df7f3b49de16c9c784274726d09e3a0276e41e49",
+    "managed_wrapper": "ee70de0ce1cbd251a040926364948e152f8a8ff1116d2f5861992c568f2b6835",
+    "managed_runner": "c2fa38789aa448f34fb04685474455553c63f283ee2497763773015c39a7745c",
+    "libdelphi_observer.so": "cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c",
+    "libautoreceiver.so": "f9e167e7b8b27c8e5790edbf005103373880fe7fea5d4a6e3857570d748dcb83"
+  },
+  "log_sha256": "388267aa0d876cded021c8cacd697d6e88c97e2df316b2762999d4578e11cca0",
+  "source_hashes": {
+    "bench.h": "11fc4608651bb3d93b6835be169369c9c53ff581338345fd6a377256e915bb20",
+    "build.sh": "ccb38ca111ea3c776e0555525915b0ffd9151ac21e64e66c83fb7461ad9179ea",
+    "child.c": "fd4bc3b08cd96cb3fa70b572d2ea3e12a5dc2ed61acc3f2875894526c10d081e",
+    "manager.cfg": "193f295ccca20f5eed1ef3c9b2e9ee7dd152850cc335a627bfe2118fc4790d2d",
+    "README.txt": "d3c61dc67632c621c12263ad4eb1159b93f40929510314554bfadb14446db8e9",
+    "runner.c": "3228b4690f9c4bcbefddd4af0ed6eb70b2d819ccc52190aa2818e6f3ca1d92af",
+    "test-qemu.sh": "ba87c6d3f0e33b0dc8a8a7c9d991c6bab079560f201b4b01c01de66c31a312d1",
+    "wrapper.c": "b74192d489642bb3d5c5b5e41cffe2ad3029e105494a610e4cd8737385eda7e4"
+  }
+}

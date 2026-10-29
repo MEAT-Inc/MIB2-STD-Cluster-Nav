@@ -1,0 +1,122 @@
+{
+  "format_version": 1,
+  "pid": 8196,
+  "module_base": "0x7802c000",
+  "native_offsets": {
+    "video_configuration": "0x834",
+    "video_focus": "0x918",
+    "queue_outgoing": "0x98c"
+  },
+  "count": 4,
+  "dropped": 0,
+  "dropped_is_lower_bound": false,
+  "records": [
+    {
+      "sequence": 1,
+      "event": 1,
+      "thread": 1,
+      "caller": "0x100b38",
+      "object": "0x13572468",
+      "arguments": [
+        "0x13572468",
+        "0x11111111",
+        "0x22222222",
+        "0x33333333",
+        "0x44444444",
+        "0x55555555",
+        "0x66666666",
+        "0x87654321"
+      ],
+      "flags": 0,
+      "kind": "video_configuration",
+      "integer_parameters": [
+        286331153,
+        572662306,
+        858993459,
+        1145324612,
+        1431655765,
+        1717986918,
+        -2023406815
+      ]
+    },
+    {
+      "sequence": 2,
+      "event": 2,
+      "thread": 1,
+      "caller": "0x100c88",
+      "object": "0x13572468",
+      "arguments": [
+        "0x13572468",
+        "0xfffffffe",
+        "0x1"
+      ],
+      "flags": 0,
+      "kind": "video_focus",
+      "integer_parameters": [
+        -2,
+        1
+      ]
+    },
+    {
+      "sequence": 3,
+      "event": 3,
+      "thread": 1,
+      "caller": "0x100cb8",
+      "object": "0x24681357",
+      "arguments": [
+        "0x24681357",
+        "0x0",
+        "0xffe38",
+        "0x8"
+      ],
+      "flags": 0,
+      "kind": "service_discovery",
+      "payload_hex": "00060a0408011803",
+      "discovery": {
+        "response_fields": [
+          {
+            "field": 1,
+            "wire": 2,
+            "value": "08011803"
+          }
+        ],
+        "services": [
+          {
+            "service_id": 1,
+            "fields": [
+              {
+                "field": 1,
+                "wire": 0,
+                "value": 1
+              },
+              {
+                "field": 3,
+                "wire": 0,
+                "value": 3
+              }
+            ],
+            "media_sinks": []
+          }
+        ],
+        "advertised_service_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "sequence": 4,
+      "event": 3,
+      "thread": 1,
+      "caller": "0x100d18",
+      "object": "0x24681357",
+      "arguments": [
+        "0x24681357",
+        "0x0",
+        "0x1",
+        "0x1001"
+      ],
+      "flags": 1,
+      "kind": "oversized_control_candidate"
+    }
+  ]
+}

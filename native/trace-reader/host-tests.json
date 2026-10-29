@@ -1,0 +1,57 @@
+{
+  "scope": "Linux real loopback of same C source; bounds shortened only for duration tests; no QNX network execution claim",
+  "cases": [
+    {
+      "case": "duration-hangup",
+      "passed": true,
+      "exit_code": 0,
+      "bytes": 11,
+      "report": "TRACE_READER_REPORT version=1 pid=17 seconds=2 limit=32768 bytes=11 elapsed_ms=2001 reason=duration rc=0 error=0"
+    },
+    {
+      "case": "short-cap",
+      "passed": true,
+      "exit_code": 0,
+      "bytes": 32768,
+      "report": "TRACE_READER_REPORT version=1 pid=20 seconds=2 limit=32768 bytes=32768 elapsed_ms=0 reason=byte_limit rc=0 error=0"
+    },
+    {
+      "case": "production-cap",
+      "passed": true,
+      "exit_code": 0,
+      "bytes": 16777216,
+      "report": "TRACE_READER_REPORT version=1 pid=23 seconds=180 limit=16777216 bytes=16777216 elapsed_ms=9 reason=byte_limit rc=0 error=0"
+    },
+    {
+      "case": "short-eof",
+      "passed": true,
+      "exit_code": 2,
+      "bytes": 5,
+      "report": "TRACE_READER_REPORT version=1 pid=26 seconds=2 limit=32768 bytes=5 elapsed_ms=0 reason=peer_closed rc=2 error=0"
+    },
+    {
+      "case": "short-empty",
+      "passed": true,
+      "exit_code": 2,
+      "bytes": 0,
+      "report": "TRACE_READER_REPORT version=1 pid=29 seconds=2 limit=32768 bytes=0 elapsed_ms=0 reason=peer_closed rc=2 error=0"
+    },
+    {
+      "case": "refused",
+      "passed": true,
+      "exit_code": 2,
+      "bytes": 0,
+      "report": "TRACE_READER_REPORT version=1 pid=31 seconds=2 limit=32768 bytes=0 elapsed_ms=0 reason=error rc=2 error=111"
+    },
+    {
+      "case": "process-group-leader",
+      "passed": true,
+      "exit_code": 0,
+      "bytes": 11,
+      "report": "TRACE_READER_REPORT version=1 pid=35 seconds=2 limit=32768 bytes=11 elapsed_ms=2001 reason=duration rc=0 error=0"
+    }
+  ],
+  "invalid_root_rejected": true,
+  "source_sha256": "2cc688e20fd1ae12c8525dbe019db361e5060e4efc2928dfa655b979d26bd2ed",
+  "qnx_binary_sha256": "c53d50be3d840c1f4e4da10bf9491b0856a7a802b6a1e3dc60702c4edd0af578"
+}

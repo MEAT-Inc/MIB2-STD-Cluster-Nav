@@ -1,0 +1,1862 @@
+
+PROLOGUE-HEURISTIC WINDOW 0x103288..0x103504
+00103288 push      {r4, r5, r6, r7, r8, fp, lr}               
+0010328c add       fp, sp, #0x18                              
+00103290 sub       sp, sp, #0xc                               
+00103294 mov       r5, r0                                     
+00103298 mov       r4, r1                                     
+0010329c ldr       r3, [r1]                                   
+001032a0 add       r1, r0, r3                                 
+001032a4 ldrb      r2, [r1]                                   
+001032a8 sxtb      ip, r2                                     
+001032ac movw      r0, #0xfee0                                
+001032b0 movt      r0, #0x12                                  
+001032b4 ldr       r0, [r0]                                   
+001032b8 add       r0, r0, ip, lsl #1                         
+001032bc ldrh      r0, [r0]                                   
+001032c0 tst       r0, #0x144                                 
+001032c4 beq       #0x1032f4                                  
+001032c8 movw      lr, #0xfee0                                
+001032cc movt      lr, #0x12                                  
+001032d0 add       r3, r3, #1                                 
+001032d4 str       r3, [r4]                                   
+001032d8 ldrb      r2, [r1, #1]!                              
+001032dc sxtb      ip, r2                                     
+001032e0 ldr       r0, [lr]                                   
+001032e4 add       r0, r0, ip, lsl #1                         
+001032e8 ldrh      r0, [r0]                                   
+001032ec tst       r0, #0x144                                 
+001032f0 bne       #0x1032d0                                  
+001032f4 sxtb      r2, r2                                     
+001032f8 cmp       r2, #0x22                                  
+001032fc movne     r7, #0                                     
+00103300 addeq     r3, r3, #1                                 
+00103304 streq     r3, [r4]                                   
+00103308 moveq     r7, #1                                     
+0010330c mov       r0, r5                                     
+00103310 bl        #0x10264c                                  strlen [PLT]
+00103314 ldr       r8, [r4]                                   
+00103318 rsb       r8, r8, r0                                 
+0010331c bl        #0x102988                                  __stackavail [PLT]
+00103320 add       r3, r8, #8                                 
+00103324 bic       r3, r3, #7                                 
+00103328 add       r3, r3, #0x80                              
+0010332c cmp       r3, r0                                     
+00103330 movhs     r6, #0                                     
+00103334 addlo     r3, r8, #0xf                               
+00103338 biclo     r3, r3, #7                                 
+0010333c sublo     sp, sp, r3                                 
+00103340 addlo     r6, sp, #8                                 
+00103344 mov       r0, r6                                     
+00103348 mov       r1, #0                                     
+0010334c add       r2, r8, #1                                 
+00103350 bl        #0x1028bc                                  memset [PLT]
+00103354 mov       r2, #0                                     
+00103358 ldr       r1, [r4]                                   
+0010335c ldrsb     r3, [r5, r1]                               
+00103360 cmp       r3, #0x20                                  
+00103364 beq       #0x10340c                                  
+00103368 bgt       #0x103380                                  
+0010336c cmp       r3, #0                                     
+00103370 beq       #0x103394                                  
+00103374 cmp       r3, #9                                     
+00103378 bne       #0x1034c8                                  
+0010337c b         #0x10340c                                  
+00103380 cmp       r3, #0x22                                  
+00103384 beq       #0x103434                                  
+00103388 cmp       r3, #0x5c                                  
+0010338c bne       #0x1034c8                                  
+00103390 b         #0x103464                                  
+00103394 cmp       r7, #0                                     
+00103398 beq       #0x1033ec                                  
+0010339c bl        #0x11201c                                  
+001033a0 ldr       r3, [r0, #0x1c]                            
+001033a4 mov       r0, #0                                     
+001033a8 mov       r1, #2                                     
+001033ac blx       r3                                         
+001033b0 cmp       r0, #0                                     
+001033b4 beq       #0x1034e4                                  
+001033b8 bl        #0x11201c                                  
+001033bc mov       r3, #0x60                                  
+001033c0 str       r3, [sp]                                   
+001033c4 ldr       r3, [pc, #0x128]                            literal=0x1268f0 Closing quote not found
+001033c8 str       r3, [sp, #4]                               
+001033cc ldr       ip, [r0, #0x2c]                            
+001033d0 mov       r0, #0                                     
+001033d4 mov       r1, #2                                     
+001033d8 ldr       r2, [pc, #0x118]                            literal=0x12689c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_parser.c
+001033dc ldr       r3, [pc, #0x118]                            literal=0x12e0f8
+001033e0 blx       ip                                         
+001033e4 mov       r4, #0                                     
+001033e8 b         #0x1034e8                                  
+001033ec mov       r0, r6                                     
+001033f0 bl        #0x10264c                                  strlen [PLT]
+001033f4 add       r0, r0, #1                                 
+001033f8 bl        #0x1025bc                                  malloc [PLT]
+001033fc mov       r4, r0                                     
+00103400 mov       r1, r6                                     
+00103404 bl        #0x102a84                                  strcpy [PLT]
+00103408 b         #0x1034e8                                  
+0010340c cmp       r7, #0                                     
+00103410 bne       #0x1034c8                                  
+00103414 mov       r0, r6                                     
+00103418 bl        #0x10264c                                  strlen [PLT]
+0010341c add       r0, r0, #1                                 
+00103420 bl        #0x1025bc                                  malloc [PLT]
+00103424 mov       r4, r0                                     
+00103428 mov       r1, r6                                     
+0010342c bl        #0x102a84                                  strcpy [PLT]
+00103430 b         #0x1034e8                                  
+00103434 cmp       r7, #0                                     
+00103438 beq       #0x1034c8                                  
+0010343c add       r1, r1, #1                                 
+00103440 str       r1, [r4]                                   
+00103444 mov       r0, r6                                     
+00103448 bl        #0x10264c                                  strlen [PLT]
+0010344c add       r0, r0, #1                                 
+00103450 bl        #0x1025bc                                  malloc [PLT]
+00103454 mov       r4, r0                                     
+00103458 mov       r1, r6                                     
+0010345c bl        #0x102a84                                  strcpy [PLT]
+00103460 b         #0x1034e8                                  
+00103464 add       r1, r1, #1                                 
+00103468 str       r1, [r4]                                   
+0010346c ldrsb     r3, [r5, r1]                               
+00103470 cmp       r3, #0                                     
+00103474 bne       #0x1034c8                                  
+00103478 bl        #0x11201c                                  
+0010347c ldr       r3, [r0, #0x1c]                            
+00103480 mov       r0, #0                                     
+00103484 mov       r1, #2                                     
+00103488 blx       r3                                         
+0010348c cmp       r0, #0                                     
+00103490 beq       #0x1034e4                                  
+00103494 bl        #0x11201c                                  
+00103498 mov       r3, #0x88                                  
+0010349c str       r3, [sp]                                   
+001034a0 ldr       r3, [pc, #0x58]                             literal=0x126908 \ -- embedded special character
+001034a4 str       r3, [sp, #4]                               
+001034a8 ldr       ip, [r0, #0x2c]                            
+001034ac mov       r0, #0                                     
+001034b0 mov       r1, #2                                     
+001034b4 ldr       r2, [pc, #0x3c]                             literal=0x12689c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_parser.c
+001034b8 ldr       r3, [pc, #0x3c]                             literal=0x12e0f8
+001034bc blx       ip                                         
+001034c0 mov       r4, #0                                     
+001034c4 b         #0x1034e8                                  
+001034c8 ldr       r3, [r4]                                   
+001034cc ldrb      r1, [r5, r3]                               
+001034d0 strb      r1, [r6, r2]                               
+001034d4 add       r2, r2, #1                                 
+001034d8 add       r3, r3, #1                                 
+001034dc str       r3, [r4]                                   
+001034e0 b         #0x103358                                  
+001034e4 mov       r4, #0                                     
+001034e8 mov       r0, r4                                     
+001034ec sub       sp, fp, #0x18                              
+001034f0 pop       {r4, r5, r6, r7, r8, fp, pc}               
+001034f4 ldrsheq   r6, [r2], -r0                              
+001034f8 mulseq    r2, ip, r8                                 
+001034fc ldrsheq   lr, [r2], -r8                              
+00103500 andseq    r6, r2, r8, lsl #18                        
+
+PROLOGUE-HEURISTIC WINDOW 0x10357c..0x103c2c
+0010357c push      {r4, r5, r6, r7, r8, sb, sl, fp, lr}       
+00103580 sub       sp, sp, #0x4c                              
+00103584 mov       r4, r0                                     
+00103588 str       r1, [sp, #0x14]                            
+0010358c mov       r7, r2                                     
+00103590 mov       r5, #0                                     
+00103594 str       r5, [sp, #0x44]                            
+00103598 add       r3, sp, #0x20                              
+0010359c str       r5, [r3], #4                               
+001035a0 str       r5, [r3], #4                               
+001035a4 str       r5, [r3], #4                               
+001035a8 str       r5, [r3], #4                               
+001035ac str       r5, [r3], #4                               
+001035b0 str       r5, [r3], #4                               
+001035b4 str       r5, [r3], #4                               
+001035b8 str       r5, [r3], #4                               
+001035bc str       r5, [r3]                                   
+001035c0 movw      r6, #0xfee0                                
+001035c4 movt      r6, #0x12                                  
+001035c8 add       r8, sp, #0x44                              
+001035cc add       sl, sp, #0x1c                              
+001035d0 mov       sb, #1                                     
+001035d4 movw      r3, #0x6667                                
+001035d8 movt      r3, #0x6666                                
+001035dc str       r3, [sp, #0x10]                            
+001035e0 b         #0x103978                                  
+001035e4 add       r3, r3, #1                                 
+001035e8 str       r3, [sp, #0x44]                            
+001035ec ldrb      r2, [r1, #1]!                              
+001035f0 sxtb      r0, r2                                     
+001035f4 add       r0, ip, r0, lsl #1                         
+001035f8 ldrh      r0, [r0]                                   
+001035fc tst       r0, #0x144                                 
+00103600 bne       #0x1035e4                                  
+00103604 sxtb      r2, r2                                     
+00103608 cmp       r2, #0x23                                  
+0010360c beq       #0x1039a0                                  
+00103610 cmp       r2, #0x2d                                  
+00103614 beq       #0x103624                                  
+00103618 cmp       r2, #0                                     
+0010361c beq       #0x1039a0                                  
+00103620 b         #0x10396c                                  
+00103624 cmp       r5, #0                                     
+00103628 bne       #0x10363c                                  
+0010362c mov       r0, #0x4c                                  
+00103630 bl        #0x1025bc                                  malloc [PLT]
+00103634 mov       r5, r0                                     
+00103638 bl        #0x103c88                                  
+0010363c ldr       r2, [sp, #0x44]                            
+00103640 add       r2, r2, #1                                 
+00103644 ldrb      r3, [r4, r2]                               
+00103648 add       r2, r2, #1                                 
+0010364c str       r2, [sp, #0x44]                            
+00103650 sxtb      r3, r3                                     
+00103654 sub       r3, r3, #0x61                              
+00103658 cmp       r3, #0x17                                  
+0010365c ldrls     pc, [pc, r3, lsl #2]                       
+00103660 b         #0x1038fc                                  
+00103664 andseq    r3, r0, r4, asr #13                        
+00103668 ldrsheq   r3, [r0], -ip                              
+0010366c andseq    r3, r0, ip, lsr r7                         
+00103670 andseq    r3, r0, r8, asr #15                        
+00103674 ldrsheq   r3, [r0], -ip                              
+00103678 ldrsheq   r3, [r0], -ip                              
+0010367c ldrsheq   r3, [r0], -ip                              
+00103680 ldrsheq   r3, [r0], -ip                              
+00103684 ldrsheq   r3, [r0], -ip                              
+00103688 ldrsheq   r3, [r0], -ip                              
+0010368c ldrsheq   r3, [r0], -ip                              
+00103690 andseq    r3, r0, r0, lsr r8                         
+00103694 ldrsheq   r3, [r0], -ip                              
+00103698 andseq    r3, r0, r0, ror #16                        
+0010369c ldrsheq   r3, [r0], -ip                              
+001036a0 andseq    r3, r0, r8, lsl #17                        
+001036a4 ldrsheq   r3, [r0], -ip                              
+001036a8 ldrheq    r3, [r0], -r8                              
+001036ac ldrsheq   r3, [r0], -ip                              
+001036b0 ldrsheq   r3, [r0], -ip                              
+001036b4 ldrsheq   r3, [r0], -ip                              
+001036b8 ldrsheq   r3, [r0], -ip                              
+001036bc ldrsheq   r3, [r0], -ip                              
+001036c0 andseq    r3, r0, ip, asr #17                        
+001036c4 mov       r0, r4                                     
+001036c8 mov       r1, r8                                     
+001036cc bl        #0x103288                                  
+001036d0 subs      fp, r0, #0                                 
+001036d4 beq       #0x103960                                  
+001036d8 ldr       r3, [r5, #0xc]                             
+001036dc ldr       r2, [sp, #0x10]                            
+001036e0 smull     r2, r1, r2, r3                             
+001036e4 asr       r2, r3, #0x1f                              
+001036e8 rsb       r2, r2, r1, asr #1                         
+001036ec add       r2, r2, r2, lsl #2                         
+001036f0 cmp       r3, r2                                     
+001036f4 bne       #0x103718                                  
+001036f8 add       r3, r3, #5                                 
+001036fc ldr       r0, [r5, #8]                               
+00103700 lsl       r1, r3, #2                                 
+00103704 bl        #0x102568                                  realloc [PLT]
+00103708 str       r0, [r5, #8]                               
+0010370c ldr       r3, [r5, #0xc]                             
+00103710 str       fp, [r0, r3, lsl #2]                       
+00103714 b         #0x103720                                  
+00103718 ldr       r2, [r5, #8]                               
+0010371c str       fp, [r2, r3, lsl #2]                       
+00103720 ldr       r3, [sp, #0x20]                            
+00103724 add       r3, r3, #1                                 
+00103728 str       r3, [sp, #0x20]                            
+0010372c ldr       r3, [r5, #0xc]                             
+00103730 add       r3, r3, #1                                 
+00103734 str       r3, [r5, #0xc]                             
+00103738 b         #0x103978                                  
+0010373c mov       r0, r4                                     
+00103740 mov       r1, r8                                     
+00103744 mov       r2, sl                                     
+00103748 bl        #0x103504                                  
+0010374c cmp       r0, #0                                     
+00103750 beq       #0x103960                                  
+00103754 ldr       r3, [sp, #0x1c]                            
+00103758 cmp       r3, #0x1f                                  
+0010375c bls       #0x1037ac                                  
+00103760 bl        #0x11201c                                  
+00103764 ldr       r3, [r0, #0x1c]                            
+00103768 mov       r0, #0                                     
+0010376c mov       r1, #2                                     
+00103770 blx       r3                                         
+00103774 cmp       r0, #0                                     
+00103778 beq       #0x103960                                  
+0010377c bl        #0x11201c                                  
+00103780 mov       r3, #0xbf                                  
+00103784 str       r3, [sp]                                   
+00103788 ldr       r3, [pc, #0x430]                            literal=0x126928 Configuration must be in [0-31]
+0010378c str       r3, [sp, #4]                               
+00103790 ldr       ip, [r0, #0x2c]                            
+00103794 mov       r0, #0                                     
+00103798 mov       r1, #2                                     
+0010379c ldr       r2, [pc, #0x420]                            literal=0x12689c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_parser.c
+001037a0 ldr       r3, [pc, #0x420]                            literal=0x12e0f8
+001037a4 blx       ip                                         
+001037a8 b         #0x103960                                  
+001037ac ldr       r2, [r5, #4]                               
+001037b0 orr       r3, r2, sb, lsl r3                         
+001037b4 str       r3, [r5, #4]                               
+001037b8 ldr       r3, [sp, #0x24]                            
+001037bc add       r3, r3, #1                                 
+001037c0 str       r3, [sp, #0x24]                            
+001037c4 b         #0x103978                                  
+001037c8 ldr       r3, [sp, #0x28]                            
+001037cc cmp       r3, #0                                     
+001037d0 bne       #0x103960                                  
+001037d4 mov       r0, r4                                     
+001037d8 mov       r1, r8                                     
+001037dc bl        #0x103288                                  
+001037e0 cmp       r0, #0                                     
+001037e4 beq       #0x103960                                  
+001037e8 str       r0, [r5, #0x18]                            
+001037ec ldr       r3, [sp, #0x28]                            
+001037f0 add       r3, r3, #1                                 
+001037f4 str       r3, [sp, #0x28]                            
+001037f8 b         #0x103978                                  
+001037fc ldr       r3, [sp, #0x2c]                            
+00103800 cmp       r3, #0                                     
+00103804 bne       #0x103960                                  
+00103808 mov       r0, r4                                     
+0010380c mov       r1, r8                                     
+00103810 bl        #0x103288                                  
+00103814 cmp       r0, #0                                     
+00103818 beq       #0x103960                                  
+0010381c str       r0, [r5, #0x1c]                            
+00103820 ldr       r3, [sp, #0x2c]                            
+00103824 add       r3, r3, #1                                 
+00103828 str       r3, [sp, #0x2c]                            
+0010382c b         #0x103978                                  
+00103830 mov       r0, r4                                     
+00103834 mov       r1, r8                                     
+00103838 mov       r2, sl                                     
+0010383c bl        #0x103504                                  
+00103840 cmp       r0, #0                                     
+00103844 beq       #0x103960                                  
+00103848 ldr       r3, [sp, #0x1c]                            
+0010384c str       r3, [r5, #0x24]                            
+00103850 ldr       r3, [sp, #0x30]                            
+00103854 add       r3, r3, #1                                 
+00103858 str       r3, [sp, #0x30]                            
+0010385c b         #0x103978                                  
+00103860 mov       r0, r4                                     
+00103864 mov       r1, r8                                     
+00103868 bl        #0x103288                                  
+0010386c cmp       r0, #0                                     
+00103870 beq       #0x103960                                  
+00103874 str       r0, [r5]                                   
+00103878 ldr       r3, [sp, #0x34]                            
+0010387c add       r3, r3, #1                                 
+00103880 str       r3, [sp, #0x34]                            
+00103884 b         #0x103978                                  
+00103888 mov       r0, r4                                     
+0010388c mov       r1, r8                                     
+00103890 mov       r2, sl                                     
+00103894 bl        #0x103504                                  
+00103898 cmp       r0, #0                                     
+0010389c beq       #0x103960                                  
+001038a0 ldr       r3, [sp, #0x1c]                            
+001038a4 str       r3, [r5, #0x14]                            
+001038a8 ldr       r3, [sp, #0x38]                            
+001038ac add       r3, r3, #1                                 
+001038b0 str       r3, [sp, #0x38]                            
+001038b4 b         #0x103978                                  
+001038b8 str       sb, [r5, #0x2c]                            
+001038bc ldr       r3, [sp, #0x3c]                            
+001038c0 add       r3, r3, #1                                 
+001038c4 str       r3, [sp, #0x3c]                            
+001038c8 b         #0x103978                                  
+001038cc mov       r0, r4                                     
+001038d0 mov       r1, r8                                     
+001038d4 mov       r2, sl                                     
+001038d8 bl        #0x103504                                  
+001038dc cmp       r0, #0                                     
+001038e0 beq       #0x103960                                  
+001038e4 ldr       r3, [sp, #0x1c]                            
+001038e8 str       r3, [r5, #0x28]                            
+001038ec ldr       r3, [sp, #0x40]                            
+001038f0 add       r3, r3, #1                                 
+001038f4 str       r3, [sp, #0x40]                            
+001038f8 b         #0x103978                                  
+001038fc bl        #0x11201c                                  
+00103900 ldr       r3, [r0, #0x1c]                            
+00103904 mov       r0, #0                                     
+00103908 mov       r1, #2                                     
+0010390c blx       r3                                         
+00103910 cmp       r0, #0                                     
+00103914 beq       #0x103960                                  
+00103918 bl        #0x11201c                                  
+0010391c movw      r3, #0x115                                 
+00103920 str       r3, [sp]                                   
+00103924 movw      r3, #0x6948                                
+00103928 movt      r3, #0x12                                   address=0x126948 Unrecognized option: %c
+0010392c str       r3, [sp, #4]                               
+00103930 ldr       r3, [sp, #0x44]                            
+00103934 add       r4, r4, r3                                 
+00103938 ldrsb     r3, [r4, #-1]                              
+0010393c str       r3, [sp, #8]                               
+00103940 ldr       ip, [r0, #0x2c]                            
+00103944 mov       r0, #0                                     
+00103948 mov       r1, #2                                     
+0010394c movw      r2, #0x689c                                
+00103950 movt      r2, #0x12                                   address=0x12689c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_parser.c
+00103954 movw      r3, #0xe0f8                                
+00103958 movt      r3, #0x12                                  
+0010395c blx       ip                                         
+00103960 mov       r3, #0                                     
+00103964 str       r3, [r7]                                   
+00103968 b         #0x103bb8                                  
+0010396c mov       r3, #0                                     
+00103970 str       r3, [r7]                                   
+00103974 b         #0x103bb8                                  
+00103978 ldr       ip, [r6]                                   
+0010397c ldr       r3, [sp, #0x44]                            
+00103980 add       r1, r4, r3                                 
+00103984 ldrb      r2, [r1]                                   
+00103988 sxtb      r0, r2                                     
+0010398c add       r0, ip, r0, lsl #1                         
+00103990 ldrh      r0, [r0]                                   
+00103994 tst       r0, #0x144                                 
+00103998 bne       #0x1035e4                                  
+0010399c b         #0x103604                                  
+001039a0 mov       r3, #1                                     
+001039a4 ldr       r2, [sp, #0x20]                            
+001039a8 cmp       r2, #0                                     
+001039ac bne       #0x103a10                                  
+001039b0 ldr       r2, [sp, #0x24]                            
+001039b4 cmp       r2, #0                                     
+001039b8 bne       #0x103a10                                  
+001039bc ldr       r2, [sp, #0x28]                            
+001039c0 cmp       r2, #0                                     
+001039c4 bne       #0x103a10                                  
+001039c8 ldr       r2, [sp, #0x2c]                            
+001039cc cmp       r2, #0                                     
+001039d0 bne       #0x103a10                                  
+001039d4 ldr       r2, [sp, #0x30]                            
+001039d8 cmp       r2, #0                                     
+001039dc bne       #0x103a10                                  
+001039e0 ldr       r2, [sp, #0x34]                            
+001039e4 cmp       r2, #0                                     
+001039e8 bne       #0x103a10                                  
+001039ec ldr       r2, [sp, #0x38]                            
+001039f0 cmp       r2, #0                                     
+001039f4 bne       #0x103a10                                  
+001039f8 ldr       r2, [sp, #0x3c]                            
+001039fc cmp       r2, #0                                     
+00103a00 bne       #0x103a10                                  
+00103a04 ldr       r2, [sp, #0x40]                            
+00103a08 cmp       r2, #0                                     
+00103a0c beq       #0x103acc                                  
+00103a10 cmp       r3, #0                                     
+00103a14 beq       #0x103b80                                  
+00103a18 ldr       r3, [sp, #0x28]                            
+00103a1c cmp       r3, #1                                     
+00103a20 bgt       #0x103a6c                                  
+00103a24 ldr       r3, [sp, #0x2c]                            
+00103a28 cmp       r3, #1                                     
+00103a2c bne       #0x103a6c                                  
+00103a30 ldr       r3, [sp, #0x30]                            
+00103a34 cmp       r3, #1                                     
+00103a38 bgt       #0x103a6c                                  
+00103a3c ldr       r3, [sp, #0x34]                            
+00103a40 cmp       r3, #1                                     
+00103a44 bne       #0x103a6c                                  
+00103a48 ldr       r3, [sp, #0x38]                            
+00103a4c cmp       r3, #1                                     
+00103a50 bgt       #0x103a6c                                  
+00103a54 ldr       r3, [sp, #0x3c]                            
+00103a58 cmp       r3, #1                                     
+00103a5c bgt       #0x103a6c                                  
+00103a60 ldr       r3, [sp, #0x40]                            
+00103a64 cmp       r3, #1                                     
+00103a68 ble       #0x103ad4                                  
+00103a6c mov       r4, #0                                     
+00103a70 str       r4, [r7]                                   
+00103a74 bl        #0x11201c                                  
+00103a78 ldr       r3, [r0, #0x1c]                            
+00103a7c mov       r0, r4                                     
+00103a80 mov       r1, #2                                     
+00103a84 blx       r3                                         
+00103a88 cmp       r0, r4                                     
+00103a8c beq       #0x103acc                                  
+00103a90 bl        #0x11201c                                  
+00103a94 mov       r3, #0x16c                                 
+00103a98 str       r3, [sp]                                   
+00103a9c ldr       r3, [pc, #0x128]                            literal=0x126960 cfg error in line %d
+00103aa0 str       r3, [sp, #4]                               
+00103aa4 ldr       r3, [sp, #0x14]                            
+00103aa8 str       r3, [sp, #8]                               
+00103aac ldr       ip, [r0, #0x2c]                            
+00103ab0 mov       r0, r4                                     
+00103ab4 mov       r1, #2                                     
+00103ab8 ldr       r2, [pc, #0x104]                            literal=0x12689c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_parser.c
+00103abc ldr       r3, [pc, #0x104]                            literal=0x12e0f8
+00103ac0 blx       ip                                         
+00103ac4 mov       r3, r4                                     
+00103ac8 b         #0x103b80                                  
+00103acc mov       r3, #0                                     
+00103ad0 b         #0x103b80                                  
+00103ad4 mov       r4, #0                                     
+00103ad8 ldr       r6, [pc, #0xf0]                             literal=0x12653c
+00103adc add       r3, r6, r4, lsl #3                         
+00103ae0 ldr       r0, [r5]                                   
+00103ae4 ldr       r1, [r3, #4]                               
+00103ae8 bl        #0x1029dc                                  strcmp [PLT]
+00103aec cmp       r0, #0                                     
+00103af0 bne       #0x103b08                                  
+00103af4 movw      r3, #0x653c                                
+00103af8 movt      r3, #0x12                                  
+00103afc ldr       r3, [r3, r4, lsl #3]                       
+00103b00 str       r3, [r5, #0x10]                            
+00103b04 b         #0x103b14                                  
+00103b08 add       r4, r4, #1                                 
+00103b0c cmp       r4, #0x6c                                  
+00103b10 bne       #0x103adc                                  
+00103b14 ldr       r3, [r5, #0x10]                            
+00103b18 cmp       r3, #0                                     
+00103b1c bne       #0x103bac                                  
+00103b20 mov       r4, #0                                     
+00103b24 str       r4, [r7]                                   
+00103b28 bl        #0x11201c                                  
+00103b2c ldr       r3, [r0, #0x1c]                            
+00103b30 mov       r0, r4                                     
+00103b34 mov       r1, #2                                     
+00103b38 blx       r3                                         
+00103b3c cmp       r0, r4                                     
+00103b40 moveq     r3, r4                                     
+00103b44 beq       #0x103b80                                  
+00103b48 bl        #0x11201c                                  
+00103b4c movw      r3, #0x181                                 
+00103b50 str       r3, [sp]                                   
+00103b54 ldr       r3, [pc, #0x78]                             literal=0x126978 Wrong application name: %s
+00103b58 str       r3, [sp, #4]                               
+00103b5c ldr       r3, [r5]                                   
+00103b60 str       r3, [sp, #8]                               
+00103b64 ldr       ip, [r0, #0x2c]                            
+00103b68 mov       r0, #0                                     
+00103b6c mov       r1, #2                                     
+00103b70 ldr       r2, [pc, #0x4c]                             literal=0x12689c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_parser.c
+00103b74 ldr       r3, [pc, #0x4c]                             literal=0x12e0f8
+00103b78 blx       ip                                         
+00103b7c mov       r3, #0                                     
+00103b80 eor       r3, r3, #1                                 
+00103b84 cmp       r5, #0                                     
+00103b88 moveq     r3, #0                                     
+00103b8c andne     r3, r3, #1                                 
+00103b90 cmp       r3, #0                                     
+00103b94 beq       #0x103bac                                  
+00103b98 mov       r0, r5                                     
+00103b9c bl        #0x103c2c                                  
+00103ba0 mov       r0, r5                                     
+00103ba4 bl        #0x102a0c                                  free [PLT]
+00103ba8 mov       r5, #0                                     
+00103bac mov       r0, r5                                     
+00103bb0 add       sp, sp, #0x4c                              
+00103bb4 pop       {r4, r5, r6, r7, r8, sb, sl, fp, pc}       
+00103bb8 mov       r3, #0                                     
+00103bbc b         #0x1039a4                                  
+00103bc0 andseq    r6, r2, r8, lsr #18                        
+00103bc4 mulseq    r2, ip, r8                                 
+00103bc8 ldrsheq   lr, [r2], -r8                              
+00103bcc andseq    r6, r2, r0, ror #18                        
+00103bd0 andseq    r6, r2, ip, lsr r5                         
+00103bd4 andseq    r6, r2, r8, ror sb                         
+00103bd8 mvn       r3, #0                                     
+00103bdc str       r3, [r0, #0x3c]                            
+00103be0 str       r3, [r0, #0x40]                            
+00103be4 str       r3, [r0, #0x44]                            
+00103be8 str       r3, [r0, #0x48]                            
+00103bec bx        lr                                         
+00103bf0 movw      r3, #0xff70                                
+00103bf4 movt      r3, #0x12                                  
+00103bf8 mov       r2, #1                                     
+00103bfc str       r2, [r3]                                   
+00103c00 bx        lr                                         
+00103c04 ldr       r0, [r0, #0x20]                            
+00103c08 bx        lr                                         
+00103c0c ldr       r0, [r0, #0x10]                            
+00103c10 bx        lr                                         
+00103c14 ldr       r0, [r0, #0x38]                            
+00103c18 bx        lr                                         
+00103c1c ldr       r3, [r1, #4]                               
+00103c20 lsr       r0, r3, r0                                 
+00103c24 and       r0, r0, #1                                 
+00103c28 bx        lr                                         
+
+PROLOGUE-HEURISTIC WINDOW 0x103d28..0x103dec
+00103d28 push      {r4, lr}                                   
+00103d2c sub       sp, sp, #0x10                              
+00103d30 mov       r4, r0                                     
+00103d34 ldrb      r0, [r0, #0x10]                            
+00103d38 bl        #0x108e44                                  
+00103d3c ldrb      r0, [r4, #0x10]                            
+00103d40 bl        #0x1090a8                                  
+00103d44 ldr       r0, [r4, #0x20]                            
+00103d48 mov       r1, #2                                     
+00103d4c bl        #0x102a9c                                  kill [PLT]
+00103d50 bl        #0x11201c                                  
+00103d54 ldr       r3, [r0, #0x1c]                            
+00103d58 mov       r0, #1                                     
+00103d5c mov       r1, #5                                     
+00103d60 blx       r3                                         
+00103d64 cmp       r0, #0                                     
+00103d68 beq       #0x103dac                                  
+00103d6c bl        #0x11201c                                  
+00103d70 movw      r3, #0x121                                 
+00103d74 str       r3, [sp]                                   
+00103d78 movw      r3, #0x7000                                
+00103d7c movt      r3, #0x12                                   address=0x127000 App %s - killed
+00103d80 str       r3, [sp, #4]                               
+00103d84 ldr       r3, [r4]                                   
+00103d88 str       r3, [sp, #8]                               
+00103d8c ldr       ip, [r0, #0x2c]                            
+00103d90 mov       r0, #1                                     
+00103d94 mov       r1, #5                                     
+00103d98 movw      r2, #0x6f88                                
+00103d9c movt      r2, #0x12                                   address=0x126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+00103da0 movw      r3, #0xe0f8                                
+00103da4 movt      r3, #0x12                                  
+00103da8 blx       ip                                         
+00103dac add       sp, sp, #0x10                              
+00103db0 pop       {r4, pc}                                   
+00103db4 str       lr, [sp, #-4]!                             
+00103db8 sub       sp, sp, #0xc                               
+00103dbc add       r3, sp, #8                                 
+00103dc0 str       r1, [r3, #-4]!                             
+00103dc4 movw      r2, #0x16f                                 
+00103dc8 movw      r1, #0x16e                                 
+00103dcc cmp       r0, #0                                     
+00103dd0 movne     r0, r1                                     
+00103dd4 moveq     r0, r2                                     
+00103dd8 mov       r1, r3                                     
+00103ddc mov       r2, #4                                     
+00103de0 bl        #0x108bf0                                  
+00103de4 add       sp, sp, #0xc                               
+00103de8 ldm       sp!, {pc}                                  
+
+PROLOGUE-HEURISTIC WINDOW 0x103e78..0x1042dc
+00103e78 push      {r4, r5, lr}                               
+00103e7c sub       sp, sp, #0x1c                              
+00103e80 mov       r4, r0                                     
+00103e84 mov       r5, r1                                     
+00103e88 bl        #0x11201c                                  
+00103e8c ldr       r3, [r0, #0x1c]                            
+00103e90 mov       r0, #1                                     
+00103e94 mov       r1, #5                                     
+00103e98 blx       r3                                         
+00103e9c cmp       r0, #0                                     
+00103ea0 beq       #0x103ef0                                  
+00103ea4 bl        #0x11201c                                  
+00103ea8 mov       r3, #0xab                                  
+00103eac str       r3, [sp]                                   
+00103eb0 movw      r3, #0x7028                                
+00103eb4 movt      r3, #0x12                                   address=0x127028  App %s [%d] process Event: %d
+00103eb8 str       r3, [sp, #4]                               
+00103ebc ldr       r3, [r4]                                   
+00103ec0 str       r3, [sp, #8]                               
+00103ec4 ldr       r3, [r4, #0x38]                            
+00103ec8 str       r3, [sp, #0xc]                             
+00103ecc str       r5, [sp, #0x10]                            
+00103ed0 ldr       ip, [r0, #0x2c]                            
+00103ed4 mov       r0, #1                                     
+00103ed8 mov       r1, #5                                     
+00103edc movw      r2, #0x6f88                                
+00103ee0 movt      r2, #0x12                                   address=0x126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+00103ee4 movw      r3, #0xe0f8                                
+00103ee8 movt      r3, #0x12                                  
+00103eec blx       ip                                         
+00103ef0 ldr       r3, [r4, #0x38]                            
+00103ef4 cmp       r3, #4                                     
+00103ef8 ldrls     pc, [pc, r3, lsl #2]                       
+00103efc b         #0x1042d4                                  
+00103f00 andseq    r3, r0, r4, lsl pc                         
+00103f04 andseq    r3, r0, ip, lsr pc                         
+00103f08 andseq    r4, r0, r4, lsr r0                         
+00103f0c mulseq    r0, r0, r1                                 
+00103f10 andseq    r4, r0, ip, lsr #5                         
+00103f14 movw      r3, #0x161                                 
+00103f18 cmp       r5, r3                                     
+00103f1c bne       #0x1042d4                                  
+00103f20 mov       r3, #0                                     
+00103f24 str       r3, [r4, #0x34]                            
+00103f28 mov       r0, r4                                     
+00103f2c bl        #0x103dec                                  
+00103f30 mov       r3, #1                                     
+00103f34 str       r3, [r4, #0x38]                            
+00103f38 b         #0x1042d4                                  
+00103f3c movw      r3, #0x16e                                 
+00103f40 cmp       r5, r3                                     
+00103f44 bne       #0x103f64                                  
+00103f48 ldr       r3, [r4, #0x24]                            
+00103f4c str       r3, [r4, #0x30]                            
+00103f50 cmp       r3, #0                                     
+00103f54 movgt     r3, #2                                     
+00103f58 movle     r3, #3                                     
+00103f5c str       r3, [r4, #0x38]                            
+00103f60 b         #0x1042d4                                  
+00103f64 movw      r3, #0x16f                                 
+00103f68 cmp       r5, r3                                     
+00103f6c bne       #0x103f84                                  
+00103f70 mov       r0, r4                                     
+00103f74 bl        #0x103bd8                                  
+00103f78 mov       r3, #0                                     
+00103f7c str       r3, [r4, #0x38]                            
+00103f80 b         #0x1042d4                                  
+00103f84 movw      r3, #0x162                                 
+00103f88 cmp       r5, #0x164                                 
+00103f8c cmpne     r5, r3                                     
+00103f90 bne       #0x103fa0                                  
+00103f94 mov       r3, r4                                     
+00103f98 mov       r2, #0                                     
+00103f9c b         #0x103fb0                                  
+00103fa0 movw      r3, #0x163                                 
+00103fa4 cmp       r5, r3                                     
+00103fa8 bne       #0x1042d4                                  
+00103fac b         #0x103f94                                  
+00103fb0 ldr       r1, [r3, #0x3c]                            
+00103fb4 cmn       r1, #1                                     
+00103fb8 bne       #0x103fcc                                  
+00103fbc cmn       r5, #1                                     
+00103fc0 addne     r2, r4, r2, lsl #2                         
+00103fc4 strne     r5, [r2, #0x3c]                            
+00103fc8 bne       #0x1042d4                                  
+00103fcc add       r2, r2, #1                                 
+00103fd0 add       r3, r3, #4                                 
+00103fd4 cmp       r2, #4                                     
+00103fd8 bne       #0x103fb0                                  
+00103fdc bl        #0x11201c                                  
+00103fe0 ldr       r3, [r0, #0x1c]                            
+00103fe4 mov       r0, #0                                     
+00103fe8 mov       r1, #2                                     
+00103fec blx       r3                                         
+00103ff0 cmp       r0, #0                                     
+00103ff4 beq       #0x1042d4                                  
+00103ff8 bl        #0x11201c                                  
+00103ffc mov       r3, #0x99                                  
+00104000 str       r3, [sp]                                   
+00104004 movw      r3, #0x7048                                
+00104008 movt      r3, #0x12                                   address=0x127048 Deferred events queue full
+0010400c str       r3, [sp, #4]                               
+00104010 ldr       ip, [r0, #0x2c]                            
+00104014 mov       r0, #0                                     
+00104018 mov       r1, #2                                     
+0010401c movw      r2, #0x6f88                                
+00104020 movt      r2, #0x12                                   address=0x126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+00104024 movw      r3, #0xe0f8                                
+00104028 movt      r3, #0x12                                  
+0010402c blx       ip                                         
+00104030 b         #0x1042d4                                  
+00104034 sub       r5, r5, #0x160                             
+00104038 sub       r5, r5, #2                                 
+0010403c cmp       r5, #0xa                                   
+00104040 ldrls     pc, [pc, r5, lsl #2]                       
+00104044 b         #0x1042d4                                  
+00104048 andseq    r4, r0, r4, ror r0                         
+0010404c ldrsheq   r4, [r0], -r8                              
+00104050 andseq    r4, r0, r0, lsl r1                         
+00104054 ldrsbeq   r4, [r0], -r4                              
+00104058 ldrsbeq   r4, [r0], -r4                              
+0010405c ldrsbeq   r4, [r0], -r4                              
+00104060 ldrsbeq   r4, [r0], -r4                              
+00104064 ldrsbeq   r4, [r0], -r4                              
+00104068 ldrsbeq   r4, [r0], -r4                              
+0010406c ldrsbeq   r4, [r0], -r4                              
+00104070 andseq    r4, r0, r8, lsl #1                         
+00104074 mov       r3, #3                                     
+00104078 str       r3, [r4, #0x38]                            
+0010407c mov       r3, #0                                     
+00104080 str       r3, [r4, #0x30]                            
+00104084 b         #0x1042d4                                  
+00104088 bl        #0x11201c                                  
+0010408c ldr       r3, [r0, #0x1c]                            
+00104090 mov       r0, #0                                     
+00104094 mov       r1, #3                                     
+00104098 blx       r3                                         
+0010409c cmp       r0, #0                                     
+001040a0 beq       #0x1040e4                                  
+001040a4 bl        #0x11201c                                  
+001040a8 mov       r3, #0xd3                                  
+001040ac str       r3, [sp]                                   
+001040b0 movw      r3, #0x7064                                
+001040b4 movt      r3, #0x12                                   address=0x127064  App %s doesn't send APP_INITIALIZED and will be killed.
+001040b8 str       r3, [sp, #4]                               
+001040bc ldr       r3, [r4]                                   
+001040c0 str       r3, [sp, #8]                               
+001040c4 ldr       ip, [r0, #0x2c]                            
+001040c8 mov       r0, #0                                     
+001040cc mov       r1, #3                                     
+001040d0 movw      r2, #0x6f88                                
+001040d4 movt      r2, #0x12                                   address=0x126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+001040d8 movw      r3, #0xe0f8                                
+001040dc movt      r3, #0x12                                  
+001040e0 blx       ip                                         
+001040e4 mov       r0, r4                                     
+001040e8 bl        #0x103d28                                  
+001040ec mov       r3, #0                                     
+001040f0 str       r3, [r4, #0x38]                            
+001040f4 b         #0x1042d4                                  
+001040f8 mov       r0, r4                                     
+001040fc bl        #0x103d28                                  
+00104100 mov       r3, #0                                     
+00104104 str       r3, [r4, #0x30]                            
+00104108 str       r3, [r4, #0x38]                            
+0010410c b         #0x1042d4                                  
+00104110 ldr       r3, [r4, #0x34]                            
+00104114 cmp       r3, #0                                     
+00104118 beq       #0x104180                                  
+0010411c bl        #0x11201c                                  
+00104120 ldr       r3, [r0, #0x1c]                            
+00104124 mov       r0, #0                                     
+00104128 mov       r1, #3                                     
+0010412c blx       r3                                         
+00104130 cmp       r0, #0                                     
+00104134 beq       #0x104180                                  
+00104138 bl        #0x11201c                                  
+0010413c mov       r3, #0xdf                                  
+00104140 str       r3, [sp]                                   
+00104144 movw      r3, #0x70a0                                
+00104148 movt      r3, #0x12                                   address=0x1270a0  App %s exited with code %d.
+0010414c str       r3, [sp, #4]                               
+00104150 ldr       r3, [r4]                                   
+00104154 str       r3, [sp, #8]                               
+00104158 ldr       r3, [r4, #0x34]                            
+0010415c str       r3, [sp, #0xc]                             
+00104160 ldr       ip, [r0, #0x2c]                            
+00104164 mov       r0, #0                                     
+00104168 mov       r1, #3                                     
+0010416c movw      r2, #0x6f88                                
+00104170 movt      r2, #0x12                                   address=0x126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+00104174 movw      r3, #0xe0f8                                
+00104178 movt      r3, #0x12                                  
+0010417c blx       ip                                         
+00104180 mov       r3, #0                                     
+00104184 str       r3, [r4, #0x38]                            
+00104188 str       r3, [r4, #0x30]                            
+0010418c b         #0x1042d4                                  
+00104190 movw      r3, #0x163                                 
+00104194 cmp       r5, r3                                     
+00104198 bne       #0x1041e8                                  
+0010419c ldr       r3, [r4, #0x28]                            
+001041a0 cmp       r3, #0                                     
+001041a4 ble       #0x1041d4                                  
+001041a8 ldrb      r0, [r4, #0x10]                            
+001041ac mov       r3, #0                                     
+001041b0 str       r3, [sp]                                   
+001041b4 mov       r1, r3                                     
+001041b8 movw      r2, #0x163                                 
+001041bc bl        #0x106dd8                                  
+001041c0 ldr       r3, [r4, #0x28]                            
+001041c4 str       r3, [r4, #0x30]                            
+001041c8 mov       r3, #4                                     
+001041cc str       r3, [r4, #0x38]                            
+001041d0 b         #0x1042d4                                  
+001041d4 mov       r0, r4                                     
+001041d8 bl        #0x103d28                                  
+001041dc mov       r3, #0                                     
+001041e0 str       r3, [r4, #0x38]                            
+001041e4 b         #0x1042d4                                  
+001041e8 cmp       r5, #0x164                                 
+001041ec bne       #0x1042d4                                  
+001041f0 ldr       r3, [r4, #0x34]                            
+001041f4 cmp       r3, #0                                     
+001041f8 beq       #0x104260                                  
+001041fc bl        #0x11201c                                  
+00104200 ldr       r3, [r0, #0x1c]                            
+00104204 mov       r0, #0                                     
+00104208 mov       r1, #3                                     
+0010420c blx       r3                                         
+00104210 cmp       r0, #0                                     
+00104214 beq       #0x104260                                  
+00104218 bl        #0x11201c                                  
+0010421c mov       r3, #0xf7                                  
+00104220 str       r3, [sp]                                   
+00104224 movw      r3, #0x70a0                                
+00104228 movt      r3, #0x12                                   address=0x1270a0  App %s exited with code %d.
+0010422c str       r3, [sp, #4]                               
+00104230 ldr       r3, [r4]                                   
+00104234 str       r3, [sp, #8]                               
+00104238 ldr       r3, [r4, #0x34]                            
+0010423c str       r3, [sp, #0xc]                             
+00104240 ldr       ip, [r0, #0x2c]                            
+00104244 mov       r0, #0                                     
+00104248 mov       r1, #3                                     
+0010424c movw      r2, #0x6f88                                
+00104250 movt      r2, #0x12                                   address=0x126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+00104254 movw      r3, #0xe0f8                                
+00104258 movt      r3, #0x12                                  
+0010425c blx       ip                                         
+00104260 ldr       r3, [r4, #0x2c]                            
+00104264 cmp       r3, #0                                     
+00104268 beq       #0x1042a0                                  
+0010426c ldr       r3, [r4, #0x34]                            
+00104270 cmp       r3, #0                                     
+00104274 beq       #0x1042a0                                  
+00104278 movw      r3, #0xff70                                
+0010427c movt      r3, #0x12                                  
+00104280 ldr       r3, [r3]                                   
+00104284 cmp       r3, #0                                     
+00104288 bne       #0x1042a0                                  
+0010428c mov       r0, r4                                     
+00104290 bl        #0x103dec                                  
+00104294 mov       r3, #1                                     
+00104298 str       r3, [r4, #0x38]                            
+0010429c b         #0x1042d4                                  
+001042a0 mov       r3, #0                                     
+001042a4 str       r3, [r4, #0x38]                            
+001042a8 b         #0x1042d4                                  
+001042ac cmp       r5, #0x164                                 
+001042b0 moveq     r3, #0                                     
+001042b4 streq     r3, [r4, #0x38]                            
+001042b8 beq       #0x1042d4                                  
+001042bc cmp       r5, #0x16c                                 
+001042c0 bne       #0x1042d4                                  
+001042c4 mov       r0, r4                                     
+001042c8 bl        #0x103d28                                  
+001042cc mov       r3, #0                                     
+001042d0 str       r3, [r4, #0x38]                            
+001042d4 add       sp, sp, #0x1c                              
+001042d8 pop       {r4, r5, pc}                               
+
+PROLOGUE-HEURISTIC WINDOW 0x10433c..0x104678
+0010433c push      {r4, r5, r6, r7, fp, lr}                   
+00104340 add       fp, sp, #0x14                              
+00104344 sub       sp, sp, #0x450                             
+00104348 sub       sp, sp, #8                                 
+0010434c mov       r5, r0                                     
+00104350 movw      r2, #0x6f7c                                
+00104354 movt      r2, #0x12                                  
+00104358 sub       r3, fp, #0x44                              
+0010435c ldm       r2, {r0, r1, r2}                           
+00104360 stm       r3, {r0, r1, r2}                           
+00104364 bl        #0x11201c                                  
+00104368 ldr       r3, [r0, #0x1c]                            
+0010436c mov       r0, #1                                     
+00104370 mov       r1, #5                                     
+00104374 blx       r3                                         
+00104378 cmp       r0, #0                                     
+0010437c beq       #0x1043b8                                  
+00104380 bl        #0x11201c                                  
+00104384 mov       r3, #0x45                                  
+00104388 str       r3, [sp]                                   
+0010438c movw      r3, #0x70c0                                
+00104390 movt      r3, #0x12                                   address=0x1270c0 startProcess
+00104394 str       r3, [sp, #4]                               
+00104398 ldr       ip, [r0, #0x2c]                            
+0010439c mov       r0, #1                                     
+001043a0 mov       r1, #5                                     
+001043a4 movw      r2, #0x6f88                                
+001043a8 movt      r2, #0x12                                   address=0x126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+001043ac movw      r3, #0xe0f8                                
+001043b0 movt      r3, #0x12                                  
+001043b4 blx       ip                                         
+001043b8 ldr       r4, [r5, #0xc]                             
+001043bc lsl       r4, r4, #2                                 
+001043c0 add       r4, r4, #0x13                              
+001043c4 bic       r4, r4, #7                                 
+001043c8 add       r4, r4, #0x80                              
+001043cc bl        #0x102988                                  __stackavail [PLT]
+001043d0 cmp       r4, r0                                     
+001043d4 movhs     r6, #0                                     
+001043d8 ldrlo     r3, [r5, #0xc]                             
+001043dc lsllo     r3, r3, #2                                 
+001043e0 addlo     r3, r3, #0x1a                              
+001043e4 biclo     r3, r3, #7                                 
+001043e8 sublo     sp, sp, r3                                 
+001043ec addlo     r6, sp, #0x10                              
+001043f0 ldr       r2, [r5, #0xc]                             
+001043f4 add       r2, r2, #3                                 
+001043f8 mov       r0, r6                                     
+001043fc mov       r1, #0                                     
+00104400 lsl       r2, r2, #2                                 
+00104404 bl        #0x1028bc                                  memset [PLT]
+00104408 ldr       r3, [r5, #0x1c]                            
+0010440c str       r3, [r6]                                   
+00104410 ldr       r3, [r5, #0xc]                             
+00104414 cmp       r3, #0                                     
+00104418 movle     r4, #1                                     
+0010441c ble       #0x104448                                  
+00104420 mov       r3, #0                                     
+00104424 mov       r4, #1                                     
+00104428 ldr       r2, [r5, #8]                               
+0010442c ldr       r2, [r2, r3, lsl #2]                       
+00104430 str       r2, [r6, r4, lsl #2]                       
+00104434 add       r4, r4, #1                                 
+00104438 add       r3, r3, #1                                 
+0010443c ldr       r2, [r5, #0xc]                             
+00104440 cmp       r2, r3                                     
+00104444 bgt       #0x104428                                  
+00104448 ldr       r2, [r5, #0x34]                            
+0010444c cmp       r2, #0                                     
+00104450 beq       #0x104470                                  
+00104454 sub       r7, fp, #0x38                              
+00104458 mov       r0, r7                                     
+0010445c movw      r1, #0x70d0                                
+00104460 movt      r1, #0x12                                  
+00104464 bl        #0x102910                                  sprintf [PLT]
+00104468 str       r7, [r6, r4, lsl #2]                       
+0010446c add       r4, r4, #1                                 
+00104470 mov       r3, #0                                     
+00104474 str       r3, [r6, r4, lsl #2]                       
+00104478 ldr       r0, [r5, #0x18]                            
+0010447c cmp       r0, r3                                     
+00104480 beq       #0x1044ec                                  
+00104484 bl        #0x1028a4                                  chdir [PLT]
+00104488 cmp       r0, #0                                     
+0010448c beq       #0x1044ec                                  
+00104490 bl        #0x11201c                                  
+00104494 ldr       r3, [r0, #0x1c]                            
+00104498 mov       r0, #0                                     
+0010449c mov       r1, #2                                     
+001044a0 blx       r3                                         
+001044a4 cmp       r0, #0                                     
+001044a8 beq       #0x1044ec                                  
+001044ac bl        #0x11201c                                  
+001044b0 mov       r3, #0x5d                                  
+001044b4 str       r3, [sp]                                   
+001044b8 movw      r3, #0x70d8                                
+001044bc movt      r3, #0x12                                   address=0x1270d8 Change directory to: <%s> failed
+001044c0 str       r3, [sp, #4]                               
+001044c4 ldr       r3, [r5, #0x18]                            
+001044c8 str       r3, [sp, #8]                               
+001044cc ldr       ip, [r0, #0x2c]                            
+001044d0 mov       r0, #0                                     
+001044d4 mov       r1, #2                                     
+001044d8 movw      r2, #0x6f88                                
+001044dc movt      r2, #0x12                                   address=0x126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+001044e0 movw      r3, #0xe0f8                                
+001044e4 movt      r3, #0x12                                  
+001044e8 blx       ip                                         
+001044ec ldr       r0, [r5, #0x1c]                            
+001044f0 str       r6, [sp]                                   
+001044f4 mov       r3, #0                                     
+001044f8 str       r3, [sp, #4]                               
+001044fc mov       r1, #3                                     
+00104500 sub       r2, fp, #0x44                              
+00104504 bl        #0x102a90                                  spawnp [PLT]
+00104508 str       r0, [r5, #0x20]                            
+0010450c cmn       r0, #1                                     
+00104510 beq       #0x10457c                                  
+00104514 bl        #0x11201c                                  
+00104518 ldr       r3, [r0, #0x1c]                            
+0010451c mov       r0, #1                                     
+00104520 mov       r1, #5                                     
+00104524 blx       r3                                         
+00104528 cmp       r0, #0                                     
+0010452c beq       #0x104648                                  
+00104530 bl        #0x11201c                                  
+00104534 mov       r3, #0x64                                  
+00104538 str       r3, [sp]                                   
+0010453c movw      r3, #0x70fc                                
+00104540 movt      r3, #0x12                                   address=0x1270fc App %s - spawned, %d
+00104544 str       r3, [sp, #4]                               
+00104548 ldr       r3, [r5]                                   
+0010454c str       r3, [sp, #8]                               
+00104550 ldr       r3, [r5, #0x20]                            
+00104554 str       r3, [sp, #0xc]                             
+00104558 ldr       ip, [r0, #0x2c]                            
+0010455c mov       r0, #1                                     
+00104560 mov       r1, #5                                     
+00104564 movw      r2, #0x6f88                                
+00104568 movt      r2, #0x12                                   address=0x126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+0010456c movw      r3, #0xe0f8                                
+00104570 movt      r3, #0x12                                  
+00104574 blx       ip                                         
+00104578 b         #0x104648                                  
+0010457c ldr       r6, [r5, #0x1c]                            
+00104580 mov       r0, r6                                     
+00104584 mov       r1, #0x2f                                  
+00104588 bl        #0x1025d4                                  strrchr [PLT]
+0010458c cmp       r0, #0                                     
+00104590 addne     r6, r0, #1                                 
+00104594 bl        #0x11201c                                  
+00104598 ldr       r3, [r0, #0x1c]                            
+0010459c mov       r0, #0                                     
+001045a0 mov       r1, #2                                     
+001045a4 blx       r3                                         
+001045a8 cmp       r0, #0                                     
+001045ac beq       #0x1045f8                                  
+001045b0 bl        #0x11201c                                  
+001045b4 ldr       r4, [r0, #0x2c]                            
+001045b8 bl        #0x1025e0                                  __get_errno_ptr [PLT]
+001045bc ldr       r0, [r0]                                   
+001045c0 bl        #0x102a3c                                  strerror [PLT]
+001045c4 mov       r3, #0x6e                                  
+001045c8 str       r3, [sp]                                   
+001045cc movw      r3, #0x7114                                
+001045d0 movt      r3, #0x12                                   address=0x127114 App %s - spawn fail: %s 
+001045d4 stmib     sp, {r3, r6}                               
+001045d8 str       r0, [sp, #0xc]                             
+001045dc mov       r0, #0                                     
+001045e0 mov       r1, #2                                     
+001045e4 movw      r2, #0x6f88                                
+001045e8 movt      r2, #0x12                                   address=0x126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+001045ec movw      r3, #0xe0f8                                
+001045f0 movt      r3, #0x12                                  
+001045f4 blx       r4                                         
+001045f8 sub       r4, fp, #0x450                             
+001045fc sub       r4, r4, #4                                 
+00104600 sub       r4, r4, #8                                 
+00104604 add       r0, r4, #0x14                              
+00104608 mov       r1, r6                                     
+0010460c mov       r2, #0x400                                 
+00104610 bl        #0x102880                                  strncpy [PLT]
+00104614 mov       r3, #0                                     
+00104618 strb      r3, [fp, #-0x48]                           
+0010461c mvn       r3, #0                                     
+00104620 str       r3, [fp, #-0x45c]                          
+00104624 str       r3, [fp, #-0x450]                          
+00104628 str       r3, [fp, #-0x454]                          
+0010462c str       r3, [fp, #-0x458]                          
+00104630 ldr       r3, [r5, #0x10]                            
+00104634 str       r3, [fp, #-0x44c]                          
+00104638 movw      r0, #0x16b                                 
+0010463c mov       r1, r4                                     
+00104640 movw      r2, #0x418                                 
+00104644 bl        #0x1077cc                                  
+00104648 ldr       r0, [r5, #0x20]                            
+0010464c adds      r0, r0, #1                                 
+00104650 movne     r0, #1                                     
+00104654 ldr       r1, [r5, #0x10]                            
+00104658 bl        #0x103db4                                  
+0010465c sub       sp, fp, #0x14                              
+00104660 pop       {r4, r5, r6, r7, fp, pc}                   
+00104664 movw      r3, #0xff74                                
+00104668 movt      r3, #0x12                                  
+0010466c mov       r2, #1                                     
+00104670 str       r2, [r3]                                   
+00104674 bx        lr                                         
+
+PROLOGUE-HEURISTIC WINDOW 0x104ae0..0x105638
+00104ae0 push      {r4, r5, r6, r7, r8, sb, sl, lr}           
+00104ae4 sub       sp, sp, #0x18                              
+00104ae8 movw      r6, #0xff74                                
+00104aec movt      r6, #0x12                                  
+00104af0 ldr       r4, [pc, #0xb20]                            literal=0x12f6b4
+00104af4 movw      sl, #0x1f5                                 
+00104af8 movw      sb, #0x73d4                                
+00104afc movt      sb, #0x12                                   address=0x1273d4 Request state of an unknown app id: %d
+00104b00 add       r7, r6, #0xc                               
+00104b04 bl        #0x108ab8                                  
+00104b08 mov       r8, r0                                     
+00104b0c ldr       r3, [r6]                                   
+00104b10 cmp       r3, #0                                     
+00104b14 beq       #0x104b54                                  
+00104b18 movw      r3, #0xff74                                
+00104b1c movt      r3, #0x12                                  
+00104b20 ldr       r3, [r3, #8]                               
+00104b24 subs      r5, r3, #1                                 
+00104b28 bmi       #0x105610                                  
+00104b2c ldr       r4, [pc, #0xae8]                            literal=0x12ff80
+00104b30 add       r4, r4, r3, lsl #2                         
+00104b34 mov       r6, #0                                     
+00104b38 ldr       r0, [r4, #-4]                              
+00104b3c bl        #0x103d28                                  
+00104b40 ldr       r3, [r4, #-4]!                             
+00104b44 str       r6, [r3, #0x38]                            
+00104b48 subs      r5, r5, #1                                 
+00104b4c bpl       #0x104b38                                  
+00104b50 b         #0x105610                                  
+00104b54 ldr       r3, [r0, #0xc]                             
+00104b58 cmp       r3, #0x168                                 
+00104b5c beq       #0x105070                                  
+00104b60 bgt       #0x104ba0                                  
+00104b64 movw      r2, #0x162                                 
+00104b68 cmp       r3, r2                                     
+00104b6c beq       #0x104e50                                  
+00104b70 bgt       #0x104b84                                  
+00104b74 movw      r2, #0x161                                 
+00104b78 cmp       r3, r2                                     
+00104b7c bne       #0x105308                                  
+00104b80 b         #0x104f1c                                  
+00104b84 movw      r2, #0x165                                 
+00104b88 cmp       r3, r2                                     
+00104b8c beq       #0x104c64                                  
+00104b90 movw      r2, #0x166                                 
+00104b94 cmp       r3, r2                                     
+00104b98 bne       #0x105308                                  
+00104b9c b         #0x104ce8                                  
+00104ba0 movw      r2, #0x16e                                 
+00104ba4 cmp       r3, r2                                     
+00104ba8 beq       #0x105160                                  
+00104bac bgt       #0x104bcc                                  
+00104bb0 movw      r2, #0x16a                                 
+00104bb4 cmp       r3, r2                                     
+00104bb8 beq       #0x104da0                                  
+00104bbc movw      r2, #0x16d                                 
+00104bc0 cmp       r3, r2                                     
+00104bc4 bne       #0x105308                                  
+00104bc8 b         #0x104ff0                                  
+00104bcc movw      r2, #0x16f                                 
+00104bd0 cmp       r3, r2                                     
+00104bd4 beq       #0x10523c                                  
+00104bd8 movw      r2, #0x19bb                                
+00104bdc cmp       r3, r2                                     
+00104be0 bne       #0x105308                                  
+00104be4 bl        #0x11201c                                  
+00104be8 ldr       r3, [r0, #0x1c]                            
+00104bec mov       r0, #1                                     
+00104bf0 mov       r1, #7                                     
+00104bf4 blx       r3                                         
+00104bf8 cmp       r0, #0                                     
+00104bfc beq       #0x104c38                                  
+00104c00 bl        #0x11201c                                  
+00104c04 mov       r3, #0x11c                                 
+00104c08 str       r3, [sp]                                   
+00104c0c movw      r3, #0x7240                                
+00104c10 movt      r3, #0x12                                   address=0x127240 Received event EV_TIMER_1
+00104c14 str       r3, [sp, #4]                               
+00104c18 ldr       ip, [r0, #0x2c]                            
+00104c1c mov       r0, #1                                     
+00104c20 mov       r1, #7                                     
+00104c24 movw      r2, #0x7130                                
+00104c28 movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00104c2c movw      r3, #0xe0f8                                
+00104c30 movt      r3, #0x12                                  
+00104c34 blx       ip                                         
+00104c38 ldr       r3, [r6, #8]                               
+00104c3c cmp       r3, #0                                     
+00104c40 ble       #0x105308                                  
+00104c44 mov       r5, #0                                     
+00104c48 ldr       r0, [r7, r5, lsl #2]                       
+00104c4c bl        #0x1042dc                                  
+00104c50 add       r5, r5, #1                                 
+00104c54 ldr       r3, [r6, #8]                               
+00104c58 cmp       r3, r5                                     
+00104c5c bgt       #0x104c48                                  
+00104c60 b         #0x105308                                  
+00104c64 bl        #0x11201c                                  
+00104c68 ldr       r3, [r0, #0x1c]                            
+00104c6c mov       r0, #1                                     
+00104c70 mov       r1, #5                                     
+00104c74 blx       r3                                         
+00104c78 cmp       r0, #0                                     
+00104c7c beq       #0x104cc0                                  
+00104c80 bl        #0x11201c                                  
+00104c84 mov       r3, #0x124                                 
+00104c88 str       r3, [sp]                                   
+00104c8c movw      r3, #0x725c                                
+00104c90 movt      r3, #0x12                                   address=0x12725c Received event EV_SYSTEM_SHUTDOWN [%d]
+00104c94 str       r3, [sp, #4]                               
+00104c98 ldr       r3, [r8, #0xc]                             
+00104c9c str       r3, [sp, #8]                               
+00104ca0 ldr       ip, [r0, #0x2c]                            
+00104ca4 mov       r0, #1                                     
+00104ca8 mov       r1, #5                                     
+00104cac movw      r2, #0x7130                                
+00104cb0 movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00104cb4 movw      r3, #0xe0f8                                
+00104cb8 movt      r3, #0x12                                  
+00104cbc blx       ip                                         
+00104cc0 ldr       r3, [r6, #0x1b8]                           
+00104cc4 cmp       r3, #1                                     
+00104cc8 beq       #0x105380                                  
+00104ccc bl        #0x103bf0                                  
+00104cd0 ldr       r3, [r6, #8]                               
+00104cd4 sub       r3, r3, #1                                 
+00104cd8 str       r3, [r4]                                   
+00104cdc mov       r3, #1                                     
+00104ce0 str       r3, [r6, #0x1b8]                           
+00104ce4 b         #0x105380                                  
+00104ce8 ldr       r3, [r0, #8]                               
+00104cec movw      r0, #0x7284                                
+00104cf0 movt      r0, #0x12                                   address=0x127284 Set system config
+00104cf4 ldr       r1, [r3]                                   
+00104cf8 bl        #0x104678                                  
+00104cfc ldr       r3, [r6, #0x1b8]                           
+00104d00 cmp       r3, #1                                     
+00104d04 beq       #0x104d48                                  
+00104d08 ldr       r3, [r8, #8]                               
+00104d0c ldr       r3, [r3]                                   
+00104d10 cmp       r3, #0                                     
+00104d14 blt       #0x104d48                                  
+00104d18 cmp       r3, #0x1f                                  
+00104d1c bgt       #0x104d48                                  
+00104d20 str       r3, [r6, #4]                               
+00104d24 bl        #0x105c68                                  
+00104d28 ldr       r0, [r6, #4]                               
+00104d2c bl        #0x104a5c                                  
+00104d30 mov       r3, #1                                     
+00104d34 str       r3, [r6, #0x1bc]                           
+00104d38 ldr       r3, [r6, #8]                               
+00104d3c sub       r3, r3, #1                                 
+00104d40 str       r3, [r4]                                   
+00104d44 b         #0x105308                                  
+00104d48 bl        #0x11201c                                  
+00104d4c ldr       r3, [r0, #0x1c]                            
+00104d50 mov       r0, #0                                     
+00104d54 mov       r1, #3                                     
+00104d58 blx       r3                                         
+00104d5c cmp       r0, #0                                     
+00104d60 beq       #0x105308                                  
+00104d64 bl        #0x11201c                                  
+00104d68 movw      r3, #0x13a                                 
+00104d6c str       r3, [sp]                                   
+00104d70 movw      r3, #0x7298                                
+00104d74 movt      r3, #0x12                                   address=0x127298 Attempt to change system config during shutdown or config not in range <0-31>
+00104d78 str       r3, [sp, #4]                               
+00104d7c ldr       ip, [r0, #0x2c]                            
+00104d80 mov       r0, #0                                     
+00104d84 mov       r1, #3                                     
+00104d88 movw      r2, #0x7130                                
+00104d8c movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00104d90 movw      r3, #0xe0f8                                
+00104d94 movt      r3, #0x12                                  
+00104d98 blx       ip                                         
+00104d9c b         #0x105308                                  
+00104da0 ldr       r3, [r0, #8]                               
+00104da4 movw      r0, #0x72e8                                
+00104da8 movt      r0, #0x12                                   address=0x1272e8 Add system config
+00104dac ldr       r1, [r3]                                   
+00104db0 bl        #0x104678                                  
+00104db4 ldr       r3, [r6, #0x1b8]                           
+00104db8 cmp       r3, #1                                     
+00104dbc beq       #0x104df8                                  
+00104dc0 ldr       r3, [r8, #8]                               
+00104dc4 ldr       r0, [r3]                                   
+00104dc8 cmp       r0, #0                                     
+00104dcc blt       #0x104df8                                  
+00104dd0 cmp       r0, #0x1f                                  
+00104dd4 bgt       #0x104df8                                  
+00104dd8 bl        #0x104a5c                                  
+00104ddc ldr       r3, [r6, #0x1bc]                           
+00104de0 cmp       r3, #1                                     
+00104de4 movne     r3, #1                                     
+00104de8 strne     r3, [r6, #0x1bc]                           
+00104dec mvnne     r3, #0                                     
+00104df0 strne     r3, [r4]                                   
+00104df4 b         #0x105308                                  
+00104df8 bl        #0x11201c                                  
+00104dfc ldr       r3, [r0, #0x1c]                            
+00104e00 mov       r0, #0                                     
+00104e04 mov       r1, #3                                     
+00104e08 blx       r3                                         
+00104e0c cmp       r0, #0                                     
+00104e10 beq       #0x105308                                  
+00104e14 bl        #0x11201c                                  
+00104e18 mov       r3, #0x14c                                 
+00104e1c str       r3, [sp]                                   
+00104e20 movw      r3, #0x7298                                
+00104e24 movt      r3, #0x12                                   address=0x127298 Attempt to change system config during shutdown or config not in range <0-31>
+00104e28 str       r3, [sp, #4]                               
+00104e2c ldr       ip, [r0, #0x2c]                            
+00104e30 mov       r0, #0                                     
+00104e34 mov       r1, #3                                     
+00104e38 movw      r2, #0x7130                                
+00104e3c movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00104e40 movw      r3, #0xe0f8                                
+00104e44 movt      r3, #0x12                                  
+00104e48 blx       ip                                         
+00104e4c b         #0x105308                                  
+00104e50 bl        #0x11201c                                  
+00104e54 ldr       r3, [r0, #0x1c]                            
+00104e58 mov       r0, #1                                     
+00104e5c mov       r1, #5                                     
+00104e60 blx       r3                                         
+00104e64 cmp       r0, #0                                     
+00104e68 beq       #0x104eac                                  
+00104e6c bl        #0x11201c                                  
+00104e70 movw      r3, #0x153                                 
+00104e74 str       r3, [sp]                                   
+00104e78 movw      r3, #0x72fc                                
+00104e7c movt      r3, #0x12                                   address=0x1272fc Received event EV_APP_INITIALIZED [%d]
+00104e80 str       r3, [sp, #4]                               
+00104e84 ldr       r3, [r8, #0xc]                             
+00104e88 str       r3, [sp, #8]                               
+00104e8c ldr       ip, [r0, #0x2c]                            
+00104e90 mov       r0, #1                                     
+00104e94 mov       r1, #5                                     
+00104e98 movw      r2, #0x7130                                
+00104e9c movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00104ea0 movw      r3, #0xe0f8                                
+00104ea4 movt      r3, #0x12                                  
+00104ea8 blx       ip                                         
+00104eac ldrb      r0, [r8, #0x12]                            
+00104eb0 bl        #0x10491c                                  
+00104eb4 cmp       r0, #0                                     
+00104eb8 beq       #0x104ec8                                  
+00104ebc ldr       r1, [r8, #0xc]                             
+00104ec0 bl        #0x103e78                                  
+00104ec4 b         #0x105308                                  
+00104ec8 bl        #0x11201c                                  
+00104ecc ldr       r3, [r0, #0x1c]                            
+00104ed0 mov       r0, #0                                     
+00104ed4 mov       r1, #3                                     
+00104ed8 blx       r3                                         
+00104edc cmp       r0, #0                                     
+00104ee0 beq       #0x105308                                  
+00104ee4 bl        #0x11201c                                  
+00104ee8 movw      r3, #0x15b                                 
+00104eec str       r3, [sp]                                   
+00104ef0 ldr       r3, [pc, #0x728]                            literal=0x127324 Receive msg from unknown app: %d
+00104ef4 str       r3, [sp, #4]                               
+00104ef8 ldrb      r3, [r8, #0x12]                            
+00104efc str       r3, [sp, #8]                               
+00104f00 ldr       ip, [r0, #0x2c]                            
+00104f04 mov       r0, #0                                     
+00104f08 mov       r1, #3                                     
+00104f0c ldr       r2, [pc, #0x710]                            literal=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00104f10 ldr       r3, [pc, #0x710]                            literal=0x12e0f8
+00104f14 blx       ip                                         
+00104f18 b         #0x105308                                  
+00104f1c bl        #0x11201c                                  
+00104f20 ldr       r3, [r0, #0x1c]                            
+00104f24 mov       r0, #1                                     
+00104f28 mov       r1, #5                                     
+00104f2c blx       r3                                         
+00104f30 cmp       r0, #0                                     
+00104f34 beq       #0x104f78                                  
+00104f38 bl        #0x11201c                                  
+00104f3c movw      r3, #0x162                                 
+00104f40 str       r3, [sp]                                   
+00104f44 movw      r3, #0x7348                                
+00104f48 movt      r3, #0x12                                   address=0x127348 Rceived event EV_START_APP [%d]
+00104f4c str       r3, [sp, #4]                               
+00104f50 ldr       r3, [r8, #0xc]                             
+00104f54 str       r3, [sp, #8]                               
+00104f58 ldr       ip, [r0, #0x2c]                            
+00104f5c mov       r0, #1                                     
+00104f60 mov       r1, #5                                     
+00104f64 movw      r2, #0x7130                                
+00104f68 movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00104f6c movw      r3, #0xe0f8                                
+00104f70 movt      r3, #0x12                                  
+00104f74 blx       ip                                         
+00104f78 ldr       r3, [r8, #8]                               
+00104f7c ldr       r0, [r3]                                   
+00104f80 bl        #0x10491c                                  
+00104f84 cmp       r0, #0                                     
+00104f88 beq       #0x104f98                                  
+00104f8c movw      r1, #0x161                                 
+00104f90 bl        #0x103e78                                  
+00104f94 b         #0x105308                                  
+00104f98 bl        #0x11201c                                  
+00104f9c ldr       r3, [r0, #0x1c]                            
+00104fa0 mov       r0, #0                                     
+00104fa4 mov       r1, #3                                     
+00104fa8 blx       r3                                         
+00104fac cmp       r0, #0                                     
+00104fb0 beq       #0x105308                                  
+00104fb4 bl        #0x11201c                                  
+00104fb8 movw      r3, #0x16a                                 
+00104fbc str       r3, [sp]                                   
+00104fc0 ldr       r3, [pc, #0x664]                            literal=0x127368 Request to start unknown app id: %d
+00104fc4 str       r3, [sp, #4]                               
+00104fc8 ldr       r3, [r8, #8]                               
+00104fcc ldr       r3, [r3]                                   
+00104fd0 str       r3, [sp, #8]                               
+00104fd4 ldr       ip, [r0, #0x2c]                            
+00104fd8 mov       r0, #0                                     
+00104fdc mov       r1, #3                                     
+00104fe0 ldr       r2, [pc, #0x63c]                            literal=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00104fe4 ldr       r3, [pc, #0x63c]                            literal=0x12e0f8
+00104fe8 blx       ip                                         
+00104fec b         #0x105308                                  
+00104ff0 bl        #0x11201c                                  
+00104ff4 ldr       r3, [r0, #0x1c]                            
+00104ff8 mov       r0, #1                                     
+00104ffc mov       r1, #5                                     
+00105000 blx       r3                                         
+00105004 cmp       r0, #0                                     
+00105008 beq       #0x10504c                                  
+0010500c bl        #0x11201c                                  
+00105010 movw      r3, #0x171                                 
+00105014 str       r3, [sp]                                   
+00105018 movw      r3, #0x738c                                
+0010501c movt      r3, #0x12                                   address=0x12738c Rceived event EV_PROCESS_EXIT [%d]
+00105020 str       r3, [sp, #4]                               
+00105024 ldr       r3, [r8, #0xc]                             
+00105028 str       r3, [sp, #8]                               
+0010502c ldr       ip, [r0, #0x2c]                            
+00105030 mov       r0, #1                                     
+00105034 mov       r1, #5                                     
+00105038 movw      r2, #0x7130                                
+0010503c movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00105040 movw      r3, #0xe0f8                                
+00105044 movt      r3, #0x12                                  
+00105048 blx       ip                                         
+0010504c ldr       r3, [r8, #8]                               
+00105050 ldr       r0, [r3]                                   
+00105054 bl        #0x1049f4                                  
+00105058 cmp       r0, #0                                     
+0010505c beq       #0x105308                                  
+00105060 ldr       r3, [r8, #8]                               
+00105064 ldr       r1, [r3, #4]                               
+00105068 bl        #0x104984                                  
+0010506c b         #0x105308                                  
+00105070 bl        #0x11201c                                  
+00105074 ldr       r3, [r0, #0x1c]                            
+00105078 mov       r0, #1                                     
+0010507c mov       r1, #5                                     
+00105080 blx       r3                                         
+00105084 cmp       r0, #0                                     
+00105088 beq       #0x1050cc                                  
+0010508c bl        #0x11201c                                  
+00105090 movw      r3, #0x17b                                 
+00105094 str       r3, [sp]                                   
+00105098 movw      r3, #0x73b0                                
+0010509c movt      r3, #0x12                                   address=0x1273b0 Rceived event EV_GET_APP_STATE [%d]
+001050a0 str       r3, [sp, #4]                               
+001050a4 ldr       r3, [r8, #0xc]                             
+001050a8 str       r3, [sp, #8]                               
+001050ac ldr       ip, [r0, #0x2c]                            
+001050b0 mov       r0, #1                                     
+001050b4 mov       r1, #5                                     
+001050b8 movw      r2, #0x7130                                
+001050bc movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+001050c0 movw      r3, #0xe0f8                                
+001050c4 movt      r3, #0x12                                  
+001050c8 blx       ip                                         
+001050cc ldr       r3, [r8, #8]                               
+001050d0 ldr       r0, [r3]                                   
+001050d4 bl        #0x10491c                                  
+001050d8 cmp       r0, #0                                     
+001050dc beq       #0x105110                                  
+001050e0 ldr       r3, [r0, #0x38]                            
+001050e4 ldr       r2, [r0, #0x10]                            
+001050e8 str       r2, [sp, #0x10]                            
+001050ec str       r3, [sp, #0x14]                            
+001050f0 ldrb      r0, [r8, #0x12]                            
+001050f4 mov       r3, #8                                     
+001050f8 str       r3, [sp]                                   
+001050fc mov       r1, #0                                     
+00105100 movw      r2, #0x169                                 
+00105104 add       r3, sp, #0x10                              
+00105108 bl        #0x106dd8                                  
+0010510c b         #0x105308                                  
+00105110 bl        #0x11201c                                  
+00105114 ldr       r3, [r0, #0x1c]                            
+00105118 mov       r0, #0                                     
+0010511c mov       r1, #2                                     
+00105120 blx       r3                                         
+00105124 cmp       r0, #0                                     
+00105128 beq       #0x105308                                  
+0010512c bl        #0x11201c                                  
+00105130 mov       r3, #0x184                                 
+00105134 stm       sp, {r3, sb}                               
+00105138 ldr       r3, [r8, #8]                               
+0010513c ldr       r3, [r3]                                   
+00105140 str       r3, [sp, #8]                               
+00105144 ldr       ip, [r0, #0x2c]                            
+00105148 mov       r0, #0                                     
+0010514c mov       r1, #2                                     
+00105150 ldr       r2, [pc, #0x4cc]                            literal=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00105154 ldr       r3, [pc, #0x4cc]                            literal=0x12e0f8
+00105158 blx       ip                                         
+0010515c b         #0x105308                                  
+00105160 bl        #0x11201c                                  
+00105164 ldr       r3, [r0, #0x1c]                            
+00105168 mov       r0, #1                                     
+0010516c mov       r1, #5                                     
+00105170 blx       r3                                         
+00105174 cmp       r0, #0                                     
+00105178 beq       #0x1051bc                                  
+0010517c bl        #0x11201c                                  
+00105180 movw      r3, #0x18b                                 
+00105184 str       r3, [sp]                                   
+00105188 movw      r3, #0x73fc                                
+0010518c movt      r3, #0x12                                   address=0x1273fc Received event EV_APP_SPAWN_SUCCESS [%d]
+00105190 str       r3, [sp, #4]                               
+00105194 ldr       r3, [r8, #0xc]                             
+00105198 str       r3, [sp, #8]                               
+0010519c ldr       ip, [r0, #0x2c]                            
+001051a0 mov       r0, #1                                     
+001051a4 mov       r1, #5                                     
+001051a8 movw      r2, #0x7130                                
+001051ac movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+001051b0 movw      r3, #0xe0f8                                
+001051b4 movt      r3, #0x12                                  
+001051b8 blx       ip                                         
+001051bc ldr       r3, [r8, #8]                               
+001051c0 ldr       r0, [r3]                                   
+001051c4 bl        #0x10491c                                  
+001051c8 subs      r5, r0, #0                                 
+001051cc beq       #0x1051e8                                  
+001051d0 mov       r0, r5                                     
+001051d4 ldr       r1, [r8, #0xc]                             
+001051d8 bl        #0x103e78                                  
+001051dc mov       r0, r5                                     
+001051e0 bl        #0x104300                                  
+001051e4 b         #0x105308                                  
+001051e8 bl        #0x11201c                                  
+001051ec ldr       r3, [r0, #0x1c]                            
+001051f0 mov       r0, #0                                     
+001051f4 mov       r1, #3                                     
+001051f8 blx       r3                                         
+001051fc cmp       r0, #0                                     
+00105200 beq       #0x105308                                  
+00105204 bl        #0x11201c                                  
+00105208 mov       r3, #0x194                                 
+0010520c str       r3, [sp]                                   
+00105210 ldr       r3, [pc, #0x408]                            literal=0x127324 Receive msg from unknown app: %d
+00105214 str       r3, [sp, #4]                               
+00105218 ldrb      r3, [r8, #0x12]                            
+0010521c str       r3, [sp, #8]                               
+00105220 ldr       ip, [r0, #0x2c]                            
+00105224 mov       r0, #0                                     
+00105228 mov       r1, #3                                     
+0010522c ldr       r2, [pc, #0x3f0]                            literal=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00105230 ldr       r3, [pc, #0x3f0]                            literal=0x12e0f8
+00105234 blx       ip                                         
+00105238 b         #0x105308                                  
+0010523c bl        #0x11201c                                  
+00105240 ldr       r3, [r0, #0x1c]                            
+00105244 mov       r0, #1                                     
+00105248 mov       r1, #5                                     
+0010524c blx       r3                                         
+00105250 cmp       r0, #0                                     
+00105254 beq       #0x105298                                  
+00105258 bl        #0x11201c                                  
+0010525c mov       r3, #0x19c                                 
+00105260 str       r3, [sp]                                   
+00105264 movw      r3, #0x7428                                
+00105268 movt      r3, #0x12                                   address=0x127428 Received event EV_APP_SPAWN_FAIL [%d]
+0010526c str       r3, [sp, #4]                               
+00105270 ldr       r3, [r8, #0xc]                             
+00105274 str       r3, [sp, #8]                               
+00105278 ldr       ip, [r0, #0x2c]                            
+0010527c mov       r0, #1                                     
+00105280 mov       r1, #5                                     
+00105284 movw      r2, #0x7130                                
+00105288 movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+0010528c movw      r3, #0xe0f8                                
+00105290 movt      r3, #0x12                                  
+00105294 blx       ip                                         
+00105298 ldr       r3, [r8, #8]                               
+0010529c ldr       r0, [r3]                                   
+001052a0 bl        #0x10491c                                  
+001052a4 cmp       r0, #0                                     
+001052a8 beq       #0x1052b8                                  
+001052ac ldr       r1, [r8, #0xc]                             
+001052b0 bl        #0x103e78                                  
+001052b4 b         #0x105308                                  
+001052b8 bl        #0x11201c                                  
+001052bc ldr       r3, [r0, #0x1c]                            
+001052c0 mov       r0, #0                                     
+001052c4 mov       r1, #3                                     
+001052c8 blx       r3                                         
+001052cc cmp       r0, #0                                     
+001052d0 beq       #0x105308                                  
+001052d4 bl        #0x11201c                                  
+001052d8 mov       r3, #0x1a4                                 
+001052dc str       r3, [sp]                                   
+001052e0 ldr       r3, [pc, #0x338]                            literal=0x127324 Receive msg from unknown app: %d
+001052e4 str       r3, [sp, #4]                               
+001052e8 ldrb      r3, [r8, #0x12]                            
+001052ec str       r3, [sp, #8]                               
+001052f0 ldr       ip, [r0, #0x2c]                            
+001052f4 mov       r0, #0                                     
+001052f8 mov       r1, #3                                     
+001052fc ldr       r2, [pc, #0x320]                            literal=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00105300 ldr       r3, [pc, #0x320]                            literal=0x12e0f8
+00105304 blx       ip                                         
+00105308 ldr       r3, [r6, #0x1b8]                           
+0010530c cmp       r3, #1                                     
+00105310 bne       #0x1053f0                                  
+00105314 b         #0x105380                                  
+00105318 add       r3, r6, r3, lsl #2                         
+0010531c ldr       r0, [r3, r5]                               
+00105320 bl        #0x103c14                                  
+00105324 cmp       r0, #0                                     
+00105328 ldreq     r3, [r4]                                   
+0010532c subeq     r3, r3, #1                                 
+00105330 streq     r3, [r4]                                   
+00105334 beq       #0x105388                                  
+00105338 ldr       r3, [r4]                                   
+0010533c add       r3, r6, r3, lsl #2                         
+00105340 ldr       r0, [r3, r5]                               
+00105344 bl        #0x103c14                                  
+00105348 cmp       r0, #4                                     
+0010534c beq       #0x105398                                  
+00105350 ldr       r3, [r4]                                   
+00105354 add       r3, r6, r3, lsl #2                         
+00105358 ldr       r0, [r3, r5]                               
+0010535c bl        #0x103c14                                  
+00105360 cmp       r0, #1                                     
+00105364 beq       #0x105398                                  
+00105368 ldr       r3, [r4]                                   
+0010536c add       r3, r6, r3, lsl #2                         
+00105370 ldr       r0, [r3, r5]                               
+00105374 mov       r1, r8                                     
+00105378 bl        #0x103e78                                  
+0010537c b         #0x105388                                  
+00105380 mov       r5, #0xc                                   
+00105384 movw      r8, #0x163                                 
+00105388 ldr       r3, [r4]                                   
+0010538c cmn       r3, #1                                     
+00105390 bne       #0x105318                                  
+00105394 b         #0x1053a4                                  
+00105398 ldr       r3, [r4]                                   
+0010539c cmn       r3, #1                                     
+001053a0 bne       #0x104b04                                  
+001053a4 bl        #0x11201c                                  
+001053a8 ldr       r3, [r0, #0x1c]                            
+001053ac mov       r0, #1                                     
+001053b0 mov       r1, #5                                     
+001053b4 blx       r3                                         
+001053b8 cmp       r0, #0                                     
+001053bc beq       #0x105610                                  
+001053c0 bl        #0x11201c                                  
+001053c4 movw      r3, #0x1bf                                 
+001053c8 str       r3, [sp]                                   
+001053cc ldr       r3, [pc, #0x25c]                            literal=0x127450 All processes stopped, exit PM
+001053d0 str       r3, [sp, #4]                               
+001053d4 ldr       ip, [r0, #0x2c]                            
+001053d8 mov       r0, #1                                     
+001053dc mov       r1, #5                                     
+001053e0 ldr       r2, [pc, #0x23c]                            literal=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+001053e4 ldr       r3, [pc, #0x23c]                            literal=0x12e0f8
+001053e8 blx       ip                                         
+001053ec b         #0x105610                                  
+001053f0 ldr       r3, [r6, #0x1bc]                           
+001053f4 cmp       r3, #0                                     
+001053f8 beq       #0x105408                                  
+001053fc cmp       r3, #1                                     
+00105400 bne       #0x104b04                                  
+00105404 b         #0x105508                                  
+00105408 bl        #0x104854                                  
+0010540c ldr       r3, [r4]                                   
+00105410 cmn       r3, #1                                     
+00105414 bne       #0x104b04                                  
+00105418 ldr       r0, [r6, #4]                               
+0010541c bl        #0x10481c                                  
+00105420 mov       r3, #2                                     
+00105424 str       r3, [r6, #0x1bc]                           
+00105428 bl        #0x11201c                                  
+0010542c ldr       r3, [r0, #0x1c]                            
+00105430 mov       r0, #1                                     
+00105434 mov       r1, #5                                     
+00105438 blx       r3                                         
+0010543c cmp       r0, #0                                     
+00105440 beq       #0x104b04                                  
+00105444 bl        #0x11201c                                  
+00105448 movw      r3, #0x1cd                                 
+0010544c str       r3, [sp]                                   
+00105450 movw      r3, #0x7470                                
+00105454 movt      r3, #0x12                                   address=0x127470 Entering state Idle
+00105458 str       r3, [sp, #4]                               
+0010545c ldr       ip, [r0, #0x2c]                            
+00105460 mov       r0, #1                                     
+00105464 mov       r1, #5                                     
+00105468 movw      r2, #0x7130                                
+0010546c movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00105470 movw      r3, #0xe0f8                                
+00105474 movt      r3, #0x12                                  
+00105478 blx       ip                                         
+0010547c b         #0x104b04                                  
+00105480 add       r3, r6, r3, lsl #2                         
+00105484 ldr       r0, [r3, r5]                               
+00105488 bl        #0x103c14                                  
+0010548c cmp       r0, #0                                     
+00105490 beq       #0x1054b0                                  
+00105494 ldr       r3, [r4]                                   
+00105498 add       r3, r6, r3, lsl #2                         
+0010549c ldr       r0, [r6, #4]                               
+001054a0 ldr       r1, [r3, r5]                               
+001054a4 bl        #0x103c1c                                  
+001054a8 cmp       r0, #0                                     
+001054ac beq       #0x1054c0                                  
+001054b0 ldr       r3, [r4]                                   
+001054b4 sub       r3, r3, #1                                 
+001054b8 str       r3, [r4]                                   
+001054bc b         #0x105510                                  
+001054c0 ldr       r3, [r4]                                   
+001054c4 add       r3, r6, r3, lsl #2                         
+001054c8 ldr       r0, [r3, r5]                               
+001054cc bl        #0x103c14                                  
+001054d0 cmp       r0, #4                                     
+001054d4 beq       #0x105520                                  
+001054d8 ldr       r3, [r4]                                   
+001054dc add       r3, r6, r3, lsl #2                         
+001054e0 ldr       r0, [r3, r5]                               
+001054e4 bl        #0x103c14                                  
+001054e8 cmp       r0, #1                                     
+001054ec beq       #0x105520                                  
+001054f0 ldr       r3, [r4]                                   
+001054f4 add       r3, r6, r3, lsl #2                         
+001054f8 ldr       r0, [r3, r5]                               
+001054fc mov       r1, r8                                     
+00105500 bl        #0x103e78                                  
+00105504 b         #0x105510                                  
+00105508 mov       r5, #0xc                                   
+0010550c movw      r8, #0x163                                 
+00105510 ldr       r3, [r4]                                   
+00105514 cmn       r3, #1                                     
+00105518 bne       #0x105480                                  
+0010551c b         #0x10552c                                  
+00105520 ldr       r3, [r4]                                   
+00105524 cmn       r3, #1                                     
+00105528 bne       #0x104b04                                  
+0010552c mov       r3, #0                                     
+00105530 str       r3, [r6, #0x1bc]                           
+00105534 bl        #0x11201c                                  
+00105538 ldr       r3, [r0, #0x1c]                            
+0010553c mov       r0, #1                                     
+00105540 mov       r1, #5                                     
+00105544 blx       r3                                         
+00105548 cmp       r0, #0                                     
+0010554c beq       #0x105588                                  
+00105550 bl        #0x11201c                                  
+00105554 mov       r3, #0x1e8                                 
+00105558 str       r3, [sp]                                   
+0010555c movw      r3, #0x7484                                
+00105560 movt      r3, #0x12                                   address=0x127484 Entering state Startup
+00105564 str       r3, [sp, #4]                               
+00105568 ldr       ip, [r0, #0x2c]                            
+0010556c mov       r0, #1                                     
+00105570 mov       r1, #5                                     
+00105574 movw      r2, #0x7130                                
+00105578 movt      r2, #0x12                                   address=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+0010557c movw      r3, #0xe0f8                                
+00105580 movt      r3, #0x12                                  
+00105584 blx       ip                                         
+00105588 bl        #0x105c00                                  
+0010558c str       r0, [r4]                                   
+00105590 cmn       r0, #1                                     
+00105594 beq       #0x1055b8                                  
+00105598 add       r0, r6, r0, lsl #2                         
+0010559c ldr       r0, [r0, #0xc]                             
+001055a0 movw      r1, #0x161                                 
+001055a4 bl        #0x103e78                                  
+001055a8 bl        #0x104854                                  
+001055ac ldr       r3, [r4]                                   
+001055b0 cmn       r3, #1                                     
+001055b4 bne       #0x104b04                                  
+001055b8 ldr       r0, [r6, #4]                               
+001055bc bl        #0x10481c                                  
+001055c0 mov       r3, #2                                     
+001055c4 str       r3, [r6, #0x1bc]                           
+001055c8 bl        #0x11201c                                  
+001055cc ldr       r3, [r0, #0x1c]                            
+001055d0 mov       r0, #1                                     
+001055d4 mov       r1, #5                                     
+001055d8 blx       r3                                         
+001055dc cmp       r0, #0                                     
+001055e0 beq       #0x104b04                                  
+001055e4 bl        #0x11201c                                  
+001055e8 str       sl, [sp]                                   
+001055ec ldr       r3, [pc, #0x40]                             literal=0x127470 Entering state Idle
+001055f0 str       r3, [sp, #4]                               
+001055f4 ldr       ip, [r0, #0x2c]                            
+001055f8 mov       r0, #1                                     
+001055fc mov       r1, #5                                     
+00105600 ldr       r2, [pc, #0x1c]                             literal=0x127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00105604 ldr       r3, [pc, #0x1c]                             literal=0x12e0f8
+00105608 blx       ip                                         
+0010560c b         #0x104b04                                  
+00105610 add       sp, sp, #0x18                              
+00105614 pop       {r4, r5, r6, r7, r8, sb, sl, pc}           
+00105618 ldrheq    pc, [r2], -r4                              
+0010561c andseq    pc, r2, r0, lsl #31                        
+00105620 andseq    r7, r2, r4, lsr #6                         
+00105624 andseq    r7, r2, r0, lsr r1                         
+00105628 ldrsheq   lr, [r2], -r8                              
+0010562c andseq    r7, r2, r8, ror #6                         
+00105630 andseq    r7, r2, r0, asr r4                         
+00105634 andseq    r7, r2, r0, ror r4                         

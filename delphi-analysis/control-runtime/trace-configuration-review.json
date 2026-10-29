@@ -1,0 +1,39 @@
+{
+  "collection": "_trace_snapshot_20261029_200420_5b5ac5b7",
+  "verified_artifacts": 9,
+  "remote_commands": 8,
+  "inventory_complete": true,
+  "config_captured": true,
+  "dts_ftp_rejected_as_non_plain_files": 4,
+  "library_ftp_empty": true,
+  "text_trace_port": 15361,
+  "backend": {
+    "type": "TextBackend",
+    "name": "tcp_15361",
+    "transport": {
+      "name": "tcp",
+      "port": "15361"
+    },
+    "frontends": [
+      {
+        "type": "ShmFrontend"
+      },
+      {
+        "type": "CoreDumpFrontend"
+      }
+    ],
+    "filters": {
+      "default": {
+        "enabled": true,
+        "levels": {
+          "channels": {
+            "*": "high"
+          }
+        }
+      }
+    }
+  },
+  "existing_trace_client_seen": false,
+  "cause_confirmed": false,
+  "next_test": "collect_trace_tcp.py --run"
+}

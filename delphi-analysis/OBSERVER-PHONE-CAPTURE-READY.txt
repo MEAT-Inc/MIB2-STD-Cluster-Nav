@@ -1,0 +1,54 @@
+Real AndroidAuto startup observer verified; phone-session capture prepared
+
+Returned collection: _androidauto_observer_20261029_040547_7c22f85f
+All twelve artifact size/SHA256 records and thirty successful remote actions were
+independently checked. The controller's final report, raw log, decoded JSON and
+kernel-reported process identities agree.
+
+Real unit outcome:
+- Initial AndroidAuto PID 684110, manager PID 417823.
+- Observed real-app PID 1056846 ran the identical RAM-staged app.
+- Observer constructor READY and its original receiver symbol offset 0x76fac match
+  the reviewed native provider. There were zero registration records and zero drops.
+- Fresh stock PID 1212494 was verified under the same manager.
+- LAUNCH_RESTORED and LAUNCH_COMPLETE confirm the experiment/restoration completed.
+- The summary's passed=false means service-call capture was not demonstrated; it
+  does not mean the launcher or restoration failed. No registration happened in
+  that phone-unplugged window. Phone-dependent initialization is the next hypothesis.
+
+Next test addresses the one-USB-port constraint directly:
+  python scripts/run_androidauto_observer.py --run --phone-capture
+Use native/observer/launch/androidauto-phone-capture-laptop.zip, extracted into the
+existing laptop project root. Start with Ethernet attached. Only after CAPTURE
+READY, replace the adapter with the phone, open navigation in Android Auto, leave
+it attached for 90 seconds, then reconnect Ethernet and press Enter to collect.
+The 60-second native capture and restoration proceed without a laptop connection.
+The unit remains parked and powered throughout. Actual AndroidAuto is restarted.
+
+Implementation/verification:
+- Native report version 2 retains the 512-byte layout and records a bounded 20/60
+  second capture profile. The Python reader still validates version-1 hardware data.
+- The watchdog emits readiness after observer logging is READY. It also owns the
+  final completion markers, so controller/session death cannot hide successful
+  restoration. Its independent session and ignored SIGHUP remain unchanged.
+- Phone mode launches the controller in the background, checks live readiness over
+  FTP within a bounded handoff period, closes the original Telnet connection, then
+  opens and verifies a new collection session after Ethernet returns.
+- Readiness log permissions are set before launch. Missing/stale readiness never
+  triggers the USB handoff; the still-connected shell waits for its existing job.
+- Old/closed sessions cannot issue collection writes; the new session must verify
+  the same private cwd first. Initial actions and the readiness snapshot are saved
+  before disconnect. No new signal/retry is sent during reconnection.
+- QNX emulation passed the default 20-second window and 60-second phone profile,
+  including terminating the controller's entire process group via SIGHUP and
+  autonomous restoration by the surviving watchdog. Both captured nine synthetic
+  calls with zero drops. Factory AndroidAuto was not run in emulation.
+- Twenty-one Python tests pass, including two-session success, readiness failure,
+  late/finished markers, reconnect-cd failure, and both binary report versions.
+- The extracted eight-file portable ZIP passed its default phone-mode plan without
+  network or dump creation. It contains no proprietary or emulator programs.
+
+Bundle SHA256: 69e16aaf4fd35638f11a43626c0392bf7c7067980029c68f37310cad584842d6
+Return the complete new delphi-dump/_androidauto_observer_* folder after the test.
+Actual registration interposition, display negotiation and cluster maps remain
+unproven; a safe real-app preload/restoration path is now verified on the vehicle.

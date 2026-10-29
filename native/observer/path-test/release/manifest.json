@@ -1,0 +1,46 @@
+{
+  "kind": "isolated_observer_path_test",
+  "files": {
+    "path_test": {
+      "bytes": 13928,
+      "sha256": "c7b97fb2729b9bc296f4c18e342ce5b41a353ab9164052805f34db6b293a39e3",
+      "needed": [
+        "libc.so.3"
+      ]
+    },
+    "path_child": {
+      "bytes": 9232,
+      "sha256": "49cd9ccc6b0660d3ccf9fb00681812d4ff9c36fee5670facb257fce619f70747",
+      "needed": [
+        "libautoreceiver.so",
+        "libc.so.3"
+      ]
+    },
+    "path_original": {
+      "bytes": 9232,
+      "sha256": "49cd9ccc6b0660d3ccf9fb00681812d4ff9c36fee5670facb257fce619f70747",
+      "needed": [
+        "libautoreceiver.so",
+        "libc.so.3"
+      ]
+    },
+    "libautoreceiver.so": {
+      "bytes": 5674,
+      "sha256": "f9e167e7b8b27c8e5790edbf005103373880fe7fea5d4a6e3857570d748dcb83",
+      "needed": [
+        "libc.so.3"
+      ]
+    },
+    "libdelphi_observer.so": {
+      "bytes": 8561,
+      "sha256": "cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c",
+      "needed": [
+        "libc.so.3"
+      ]
+    }
+  },
+  "qnx_emulation_passed": true,
+  "vehicle_validated": false,
+  "no_stock_app_control": true,
+  "qnx_log_sha256": "689e35fc422f23a6b55165381606f61cca2078a43104040f606c4957e280e59f"
+}

@@ -1,0 +1,2204 @@
+0000a72d __get_errno_ptr
+0000a73d ConnectClientInfo
+0000a74f eaccess
+0000a757 __aeabi_uldivmod
+0000a768 TimerAlarm
+0000a773 cfgetispeed
+0000a77f cfgetospeed
+0000a78b cfsetispeed
+0000a797 cfsetospeed
+0000a7a3 _connect_ctrl
+0000a7b1 ConnectDetach
+0000a7bf geteuid
+0000a7c7 getgroups
+0000a7d1 __stackavail
+0000a7de strlen
+0000a7e5 MsgSendv
+0000a7ee getegid
+0000a7f6 MsgSendvnc
+0000a801 __dir_keep_symlink
+0000a814 _connect_combine
+0000a825 lchown
+0000a82c MsgSend
+0000a834 ConnectDetach_r
+0000a844 creat
+0000a84a ctermid
+0000a852 strcpy
+0000a859 ConnectServerInfo
+0000a86b execle
+0000a872 execve
+0000a879 execl
+0000a87f execlpe
+0000a887 execvpe
+0000a88f execlp
+0000a896 execv
+0000a89c execvp
+0000a8a3 fchmod
+0000a8aa MsgSendnc
+0000a8b4 fchown
+0000a8bb _vfcntl
+0000a8c3 ConnectFlags
+0000a8d0 ConnectAttach
+0000a8de netmgr_remote_nd
+0000a8ef getpid
+0000a8f6 ConnectFlags_r
+0000a905 fdatasync
+0000a90f _fork
+0000a915 pthread_mutex_unlock
+0000a92a pthread_mutex_init
+0000a93d pthread_mutex_lock
+0000a950 _pthread_atfork_parent
+0000a967 pthread_atfork_mutex
+0000a97c _pthread_atfork_child
+0000a992 _pthread_atfork_prepare
+0000a9aa _Multi_threaded
+0000a9ba fpathconf
+0000a9c4 fstat
+0000a9ca __stat_check
+0000a9d7 futime
+0000a9de getcwd
+0000a9e5 strlcpy
+0000a9ed getgid
+0000a9f4 _cpupage_ptr
+0000aa01 getppid
+0000aa09 getuid
+0000aa10 telldir
+0000aa18 dircntl
+0000aa20 closedir
+0000aa29 rewinddir
+0000aa33 pthread_atfork
+0000aa42 strcmp
+0000aa49 readdir64
+0000aa53 _readx
+0000aa5a bsearch
+0000aa62 seekdir
+0000aa6a readdir
+0000aa72 readdir_r
+0000aa7c __tls
+0000aa82 opendir
+0000aa8a _connect_fd
+0000aa96 isatty
+0000aa9d flink
+0000aaa3 lseek64
+0000aaab tell64
+0000aab2 mkdir
+0000aab8 mkfifo
+0000aabf _mknod_extra
+0000aacc _vopen
+0000aad3 putspent
+0000aadc fopen
+0000aae2 setspent
+0000aaeb setgrent
+0000aaf4 setpwent
+0000aafd rewind
+0000ab04 fgets
+0000ab0a ferror
+0000ab11 fclose
+0000ab18 getspnam_r
+0000ab23 getgrnam_r
+0000ab2e getgrgid_r
+0000ab39 getpwnam_r
+0000ab44 getpwuid_r
+0000ab4f endspent
+0000ab58 getspent_r
+0000ab63 endgrent
+0000ab6c endpwent
+0000ab75 getpwent_r
+0000ab80 strchr
+0000ab87 strtol
+0000ab8e fgetc
+0000ab94 getpwent
+0000ab9d getpwuid
+0000aba6 getpwnam
+0000abaf getgrent
+0000abb8 getgrgid
+0000abc1 getgrnam
+0000abca getspnam
+0000abd3 fgetspent
+0000abdd sigemptyset
+0000abe9 SignalWaitinfo
+0000abfd _sopenfd
+0000ac06 rmdir
+0000ac0c setgroups
+0000ac16 setuid
+0000ac1d seteuid
+0000ac25 setgid
+0000ac2c setegid
+0000ac34 setreuid
+0000ac3d setregid
+0000ac46 setpgid
+0000ac4e procmgr_session
+0000ac5e sigaction
+0000ac68 SignalAction
+0000ac75 __signalstub
+0000ac82 sigaddset
+0000ac8c sigdelset
+0000ac96 sigfillset
+0000aca1 sigismember
+0000acad __sigjmp_prolog
+0000acbd SignalProcmask_r
+0000acce __sigjmpsave
+0000acdb siglongjmp
+0000ace6 _longjmp
+0000acef sigpending
+0000acfa SignalProcmask
+0000ad09 sigprocmask
+0000ad15 sigsetjmp
+0000ad1f _setjmp
+0000ad27 SignalReturn
+0000ad34 sigsuspend
+0000ad3f SignalSuspend
+0000ad4d TimerTimeout
+0000ad5a lstat
+0000ad60 _sysconf
+0000ad69 _conf_get
+0000ad73 MsgSendnc_r
+0000ad7f _sysconf_list
+0000ad8d tcdrain
+0000ad95 tcdropline
+0000ada0 tcflow
+0000ada7 tcflush
+0000adaf tcgetattr
+0000adb9 tcgetpgrp
+0000adc3 tcsendbreak
+0000adcf tcsetattr
+0000add9 tcsetpgrp
+0000ade3 ttyname
+0000adeb ttyname_r
+0000adf5 _umask
+0000adfc uname
+0000ae02 confstr
+0000ae0a wait4
+0000ae10 waitpid
+0000ae18 basename
+0000ae21 confstr_cache_enable
+0000ae36 confstr_cache_disable
+0000ae4c confstr_cache_invalidate
+0000ae65 _conf_set
+0000ae6f sysmgr_confstr_set
+0000ae82 _confstr_list
+0000ae90 confstr_cache_attach
+0000aea5 _confstr_get
+0000aeb2 MsgSendvnc_r
+0000aebf dirname
+0000aec7 fnmatch
+0000aecf getopt
+0000aed6 optind
+0000aedd optopt
+0000aee4 optarg
+0000aeeb opterr
+0000aef2 system
+0000aef9 pathfind_r
+0000af04 environ
+0000af0c aio_cancel
+0000af17 _mux_smp_cmpxchg
+0000af28 atomic_clr_value
+0000af39 atomic_sub_value
+0000af4a pthread_cond_signal
+0000af5e _mux_smp_xchg
+0000af6c SyncMutexLock_r
+0000af7c SyncMutexUnlock_r
+0000af8e _aio_init
+0000af98 _aio_cb
+0000afa0 __cpu_flags
+0000afac aio_error
+0000afb6 aio_fsync
+0000afc0 _aio_insert
+0000afcc _aio_destroy
+0000afd9 thread_pool_destroy
+0000afed pthread_mutex_destroy
+0000b003 pthread_cond_destroy
+0000b018 _aio_clean_up
+0000b026 _aio_insert_prio
+0000b037 pthread_self
+0000b044 pthread_getschedparam
+0000b05a pthread_cond_init
+0000b06c thread_pool_create
+0000b07f pthread_sigmask
+0000b08f thread_pool_start
+0000b0a1 atomic_set_value
+0000b0b2 atomic_clr
+0000b0bd pthread_create
+0000b0cc SignalKill_r
+0000b0d9 MsgSendPulse_r
+0000b0e8 pthread_setschedparam
+0000b0fe MsgSendvs
+0000b108 pthread_cancel
+0000b117 atomic_set
+0000b122 pthread_cond_wait
+0000b134 aio_read64
+0000b13f aio_read
+0000b148 aio_return
+0000b153 aio_suspend
+0000b15f atomic_add
+0000b16a pthread_cond_timedwait
+0000b181 aio_write64
+0000b18d aio_write
+0000b197 clock_getres
+0000b1a4 ClockPeriod
+0000b1b0 nsec2timespec
+0000b1be clock_gettime
+0000b1cc _syspage_time
+0000b1da clock_settime
+0000b1e8 ClockTime
+0000b1f2 ftruncate
+0000b1fc ftruncate64
+0000b208 lio_listio64
+0000b215 pthread_cond_broadcast
+0000b22c lio_listio
+0000b237 mlockall
+0000b240 mlock
+0000b246 _mmap2
+0000b24d mmap64
+0000b254 mphys
+0000b25a mprotect
+0000b263 __mq_check
+0000b26e mq_close
+0000b277 mq_getattr
+0000b282 mq_notify
+0000b28c ionotify
+0000b295 _vmq_open
+0000b29f _connect_object
+0000b2af mq_receive
+0000b2ba mq_send
+0000b2c2 _writex
+0000b2ca mq_setattr
+0000b2d5 mq_unlink
+0000b2df _unlink_object
+0000b2ee msync
+0000b2f4 munlockall
+0000b2ff munlock
+0000b307 munmap_flags
+0000b314 munmap
+0000b31b _nsem_close
+0000b327 _nsem_open
+0000b332 timer_timeout
+0000b340 sched_getparam
+0000b34f SchedGet
+0000b358 sched_get_priority_max
+0000b36f SchedInfo
+0000b379 sched_get_priority_min
+0000b390 sched_getscheduler
+0000b3a3 sched_rr_get_interval
+0000b3b9 sched_setparam
+0000b3c8 SchedSet
+0000b3d1 sched_setscheduler
+0000b3e4 sched_yield
+0000b3f0 SchedYield
+0000b3fb sem_destroy
+0000b407 SyncDestroy
+0000b413 sem_getvalue
+0000b420 sem_init
+0000b429 SyncTypeCreate
+0000b438 sem_post
+0000b441 SyncSemPost
+0000b44d sem_trywait
+0000b459 SyncSemWait
+0000b465 sem_unlink
+0000b470 sem_wait
+0000b479 shm_close
+0000b483 shm_open
+0000b48c shm_unlink
+0000b497 sigqueue
+0000b4a0 sigtimedwait
+0000b4ad sigwaitinfo
+0000b4b9 SignalWaitinfo_r
+0000b4ca timer_create
+0000b4d7 TimerCreate
+0000b4e3 timer_delete
+0000b4f0 TimerDestroy
+0000b4fd timer_getoverrun
+0000b50e TimerInfo
+0000b518 timer_gettime
+0000b526 _timer_round_interval
+0000b53c _syspage_ptr
+0000b549 timer_settime
+0000b557 TimerSettime
+0000b564 __my_thread_exit
+0000b575 pthread_exit
+0000b582 __pthread_once_prepare
+0000b599 __pthread_once_parent
+0000b5af __pthread_once_child
+0000b5c4 pthread_attr_default
+0000b5d9 pthread_attr_destroy
+0000b5ee pthread_attr_getdetachstate
+0000b60a pthread_attr_getinheritsched
+0000b627 pthread_attr_getschedparam
+0000b642 pthread_attr_getschedpolicy
+0000b65e pthread_attr_getscope
+0000b674 pthread_attr_getstackaddr
+0000b68e pthread_attr_getstacklazy
+0000b6a8 pthread_attr_getstack
+0000b6be pthread_attr_getstackprealloc
+0000b6dc pthread_attr_getstacksize
+0000b6f6 pthread_attr_init
+0000b708 SchedGet_r
+0000b713 pthread_attr_setdetachstate
+0000b72f pthread_attr_setinheritsched
+0000b74c pthread_attr_setschedparam
+0000b767 pthread_attr_setschedpolicy
+0000b783 SchedInfo_r
+0000b78f pthread_attr_setscope
+0000b7a5 pthread_attr_setstackaddr
+0000b7bf pthread_attr_setstacklazy
+0000b7d9 pthread_attr_setstack
+0000b7ef pthread_attr_setstackprealloc
+0000b80d pthread_attr_setstacksize
+0000b827 ThreadCancel_r
+0000b836 pthread_condattr_destroy
+0000b84f pthread_condattr_init
+0000b865 pthread_condattr_getpshared
+0000b881 pthread_condattr_setpshared
+0000b89d SyncCondvarSignal_r
+0000b8b1 SyncDestroy_r
+0000b8bf SyncTypeCreate_r
+0000b8d0 TimerTimeout_r
+0000b8df SyncCondvarWait_r
+0000b8f1 ThreadCreate_r
+0000b900 pthread_detach
+0000b90f ThreadDetach_r
+0000b91e pthread_equal
+0000b92c _Unlockfilemtx
+0000b93b _Unlocksysmtx
+0000b949 ThreadDestroy_r
+0000b959 _key_count
+0000b964 _key_destructor
+0000b974 pthread_getspecific
+0000b988 pthread_join
+0000b995 ThreadJoin_r
+0000b9a2 pthread_key_delete
+0000b9b5 pthread_key_create
+0000b9c8 pthread_kill
+0000b9d5 pthread_mutexattr_destroy
+0000b9ef pthread_mutexattr_getprioceiling
+0000ba10 pthread_mutexattr_getprotocol
+0000ba2e pthread_mutexattr_getrecursive
+0000ba4d pthread_mutexattr_getpshared
+0000ba6a pthread_mutexattr_gettype
+0000ba84 pthread_mutexattr_getwakeup_np
+0000baa3 pthread_mutexattr_init
+0000baba pthread_mutexattr_setprioceiling
+0000badb pthread_mutexattr_setprotocol
+0000baf9 pthread_mutexattr_setrecursive
+0000bb18 pthread_mutexattr_setpshared
+0000bb35 pthread_mutexattr_settype
+0000bb4f pthread_mutexattr_setwakeup_np
+0000bb6e pthread_mutex_getprioceiling
+0000bb8b SyncCtl_r
+0000bb95 pthread_mutex_setprioceiling
+0000bbb2 pthread_mutex_trylock
+0000bbc8 pthread_mutex_wakeup_np
+0000bbe0 __pthread_once
+0000bbef pthread_rwlockattr_destroy
+0000bc0a pthread_rwlockattr_getpshared
+0000bc28 pthread_rwlockattr_init
+0000bc40 pthread_rwlockattr_setpshared
+0000bc5e pthread_rwlock_destroy
+0000bc75 pthread_rwlock_trywrlock
+0000bc8e pthread_rwlock_wrlock
+0000bca4 pthread_rwlock_timedwrlock
+0000bcbf __pthread_rwlock_exclusive
+0000bcda pthread_rwlock_init
+0000bcee pthread_rwlock_tryrdlock
+0000bd07 pthread_rwlock_rdlock
+0000bd1d pthread_rwlock_timedrdlock
+0000bd38 __pthread_rwlock_shared
+0000bd50 pthread_rwlock_unlock
+0000bd66 pthread_setcancelstate
+0000bd7d pthread_setcanceltype
+0000bd93 SchedSet_r
+0000bd9e pthread_setschedprio
+0000bdb3 pthread_setspecific
+0000bdc7 pthread_testcancel
+0000bdda netmgr_ndtostr
+0000bde9 clock_getcpuclockid
+0000bdfd ClockId_r
+0000be07 mq_timedreceive_woption
+0000be1f mq_timedreceive_monotonic
+0000be39 mq_timedreceive
+0000be49 mq_timedsend_woption
+0000be5e mq_timedsend_monotonic
+0000be75 mq_timedsend
+0000be82 posix_fadvise64
+0000be92 posix_fadvise
+0000bea0 posix_fallocate64_large
+0000beb8 posix_fallocate64
+0000beca posix_fallocate
+0000beda posix_madvise
+0000bee8 posix_spawnattr_addpartid
+0000bf02 get_attrp
+0000bf0c _posix_spawnattr_t_extend
+0000bf26 set_attrp
+0000bf30 posix_spawnattr_addpartition
+0000bf4d valid_attrp
+0000bf59 strstr
+0000bf60 posix_spawnattr_getcred
+0000bf78 _default_posix_spawnattr_t
+0000bf93 posix_spawnattr_getxflags
+0000bfad posix_spawnattr_getflags
+0000bfc6 posix_spawnattr_getnode
+0000bfde posix_spawnattr_getpartid
+0000bff8 posix_spawnattr_getpgroup
+0000c012 posix_spawnattr_getrunmask
+0000c02d posix_spawnattr_getschedpolicy
+0000c04c posix_spawnattr_getschedparam
+0000c06a posix_spawnattr_getsigignore
+0000c087 posix_spawnattr_getsigmask
+0000c0a2 posix_spawnattr_getsigdefault
+0000c0c0 posix_spawnattr_getstackmax
+0000c0dc posix_spawnattr_destroy
+0000c0f4 posix_spawnattr_init
+0000c109 posix_spawnattr_endswap
+0000c121 posix_spawnattr_setcred
+0000c139 posix_spawnattr_setxflags
+0000c153 posix_spawnattr_setflags
+0000c16c posix_spawnattr_setnode
+0000c184 posix_spawnattr_setpgroup
+0000c19e posix_spawnattr_setrunmask
+0000c1b9 posix_spawnattr_setschedpolicy
+0000c1d8 posix_spawnattr_setschedparam
+0000c1f6 posix_spawnattr_setsigignore
+0000c213 posix_spawnattr_setsigmask
+0000c22e posix_spawnattr_setsigdefault
+0000c24c posix_spawnattr_setstackmax
+0000c268 posix_spawnattr_t_once_init
+0000c284 posix_spawn_file_actions_addclose
+0000c2a6 get_factp
+0000c2b0 set_factp
+0000c2ba valid_factp
+0000c2c6 posix_spawn_file_actions_adddup2
+0000c2e7 posix_spawn_file_actions_addopen
+0000c308 posix_spawn_file_actions_destroy
+0000c329 posix_spawn_file_actions_init
+0000c347 posix_spawn_file_actions_endswap
+0000c368 file_open_actions_fixup
+0000c380 posix_spawn_file_getactions
+0000c39c posix_spawn
+0000c3a8 posix_spawnp
+0000c3b5 getenv
+0000c3bc pthread_getcpuclockid
+0000c3d2 pthread_mutex_timedlock_np
+0000c3ed pthread_mutex_timedlock_monotonic
+0000c40f pthread_mutex_timedlock
+0000c427 sem_timedwait_np
+0000c438 sem_timedwait_monotonic
+0000c450 sem_timedwait
+0000c45e inet_ntop
+0000c468 inet_aton
+0000c472 inet_addr
+0000c47c inet_pton
+0000c486 isfdtype
+0000c48f htonl
+0000c495 ntohl
+0000c49b htons
+0000c4a1 ntohs
+0000c4a7 pthread_barrierattr_destroy
+0000c4c3 barrier_attr_destroy
+0000c4d8 pthread_barrierattr_getpshared
+0000c4f7 barrier_attr_getpshared
+0000c50f pthread_barrierattr_init
+0000c528 barrier_attr_init
+0000c53a pthread_barrierattr_setpshared
+0000c559 barrier_attr_setpshared
+0000c571 pthread_barrier_destroy
+0000c589 pthread_barrier_init
+0000c59e pthread_barrier_wait
+0000c5b3 clock_nanosleep
+0000c5c3 timer_timeout_r
+0000c5d3 mem_access_clear
+0000c5e4 mem_access_set
+0000c5f3 posix_typed_mem_get_info
+0000c60c posix_mem_offset64
+0000c61f posix_mem_offset
+0000c630 pthread_abort
+0000c63e pthread_condattr_getclock
+0000c658 pthread_condattr_setclock
+0000c672 pthread_rwlockattr_getclock
+0000c68e pthread_rwlockattr_setclock
+0000c6aa _pthread_spin_destroy
+0000c6c0 _pthread_spin_init
+0000c6d3 _pthread_spin_lock
+0000c6e6 _spin_lock_v
+0000c6f3 _pthread_spin_trylock
+0000c709 _spin_trylock_v
+0000c719 _pthread_spin_unlock
+0000c72e _spin_unlock_v
+0000c73d timer_getexpstatus
+0000c750 posix_typed_mem_open
+0000c765 _amblksiz
+0000c76f _amhiwater
+0000c77a __dynamic_Bands
+0000c78a __dynamic_nband
+0000c79a _check_bands
+0000c7a7 __pnband
+0000c7b0 __pBands
+0000c7b9 _select_band
+0000c7c6 _band_rlse
+0000c7d1 __return_barena
+0000c7e1 _malloc_stats
+0000c7ef __get_barena
+0000c7fc __aeabi_uidiv
+0000c80a _band_get_aligned
+0000c81c __malloc_sizes_init
+0000c830 __mallocsizes_inited
+0000c845 _band_get
+0000c84f __init_bands_new
+0000c860 __ba_elem_sz
+0000c86d donecore
+0000c876 morecore
+0000c87f __calloc
+0000c888 __mprobe
+0000c891 _malloc_check_on
+0000c8a2 __mallopt
+0000c8ac malloc_opts
+0000c8b8 __malloc_once
+0000c8c6 __malloc_mutex
+0000c8d5 __malloc_init
+0000c8e3 __mcheck
+0000c8ec _malloc_abort
+0000c8fa __mallinfo
+0000c905 __core_cache_max_sz
+0000c919 __core_cache_max_num
+0000c92e __core_cache_adjust
+0000c942 __malloc_mmap_flags
+0000c956 __core_prealloc_cache
+0000c96c _check_arena
+0000c979 __arenas
+0000c982 _list_gc
+0000c98b _list_resize
+0000c998 __flist_enqueue_bin
+0000c9ac __flist_dequeue_bin
+0000c9c0 _min_free_list_size
+0000c9d4 __flist_nbins
+0000c9e2 __flist_abins
+0000c9f0 _list_release
+0000c9fe __malloc_getflistptr
+0000ca13 _malloc_free_check
+0000ca26 _check_list
+0000ca32 _malloc_monotonic_growth
+0000ca4b _malloc_error
+0000ca59 __malloc_max_alignment
+0000ca75 strtoul
+0000ca7d __init_flist_bins
+0000ca8f __static_Bands
+0000ca9e __static_nband
+0000caad __pre_allocsz
+0000cabb __must_prealloc
+0000cacb __flist_queue_funcptr
+0000cae1 _list_memalign
+0000caf0 _flist_bin_first_fit
+0000cb05 _list_alloc
+0000cb11 _malloc_check_fd
+0000cb22 __free
+0000cb29 __malloc
+0000cb32 _msize
+0000cb39 __realloc
+0000cb43 __dlist_stat_bins
+0000cb55 __memalign
+0000cb60 valloc
+0000cb67 getpagesize
+0000cb73 __posix_memalign
+0000cb84 __ndlist_stat_bins
+0000cb97 _malloc_fill_area
+0000cba9 _Salloc_mutex
+0000cbb7 _Salloc_once
+0000cbc4 _Sfree_list
+0000cbd0 _malloc_log
+0000cbdc vsnprintf
+0000cbe6 _malloc_error_internal
+0000cbfd ThreadCtl
+0000cc07 __exit
+0000cc0e __assert
+0000cc17 fileno
+0000cc23 _Stderr
+0000cc2b _atexit_list
+0000cc38 __atexit_list_cookie
+0000cc4d _Btowc
+0000cc54 _Files
+0000cc5b __cxa_atexit
+0000cc68 __cxa_finalize
+0000cc77 __aeabi_idiv
+0000cc84 ThreadDestroy
+0000cc92 _Exit
+0000cc98 _findenv
+0000cca1 strncmp
+0000cca9 isalnum
+0000ccb1 isalpha
+0000ccb9 isascii
+0000ccc1 isblank
+0000ccc9 iscntrl
+0000ccd1 isdigit
+0000ccd9 isgraph
+0000cce1 islower
+0000cce9 isprint
+0000ccf1 ispunct
+0000ccf9 isspace
+0000cd01 isupper
+0000cd09 iswalnum
+0000cd12 _Iswctype
+0000cd1c iswalpha
+0000cd25 iswblank
+0000cd2e iswcntrl
+0000cd37 iswctype
+0000cd40 iswdigit
+0000cd49 iswgraph
+0000cd52 iswlower
+0000cd5b iswprint
+0000cd64 iswpunct
+0000cd6d iswspace
+0000cd76 iswupper
+0000cd7f iswxdigit
+0000cd89 isxdigit
+0000cd92 llabs
+0000cd98 __aeabi_ldivmod
+0000cda8 lldiv
+0000cdae localeconv
+0000cdb9 _Tls_setup__Locale
+0000cdcc mblen
+0000cdd2 _Mbtowc
+0000cdda mbrlen
+0000cde1 mbrtowc
+0000cde9 mbsinit
+0000cdf1 mbsrtowcs
+0000cdfb mbstowcs
+0000ce04 mbtowc
+0000ce0b qsort
+0000ce11 gettid
+0000ce18 rand_r
+0000ce1f srand
+0000ce25 _Getlname
+0000ce2f _Nmcats
+0000ce37 _Getnloc
+0000ce40 _Getloc
+0000ce48 _Defloc
+0000ce50 _Getcloc
+0000ce59 _Clocale
+0000ce62 setlocale
+0000ce6c _Setloc
+0000ce74 _Getpcostate
+0000ce81 _Getpwcostate
+0000ce8f _Getpmbstate
+0000ce9c _Getpwcstate
+0000cea9 _Getpwctrtab
+0000ceb6 _Getpwctytab
+0000cec3 _Getptimes
+0000cece _tolower
+0000ced7 _toupper
+0000cee0 towctrans
+0000ceea _Towctrans
+0000cef5 wcrtomb
+0000cefd _Wctomb
+0000cf05 wctob
+0000cf0b _Wctob
+0000cf12 wctomb
+0000cf19 _Tls_setup__Wctrans
+0000cf2d _Tls_setup__Wctype
+0000cf40 _Tls_setup__Costate
+0000cf54 _Getpctype
+0000cf5f _Tls_setup__Ctype
+0000cf71 strcat
+0000cf78 _Dnorm
+0000cf7f _Dscale
+0000cf8c _Dunscale
+0000cf96 _Dtentox
+0000cfa4 _FDnorm
+0000cfac _FDscale
+0000cfb5 _FInf
+0000cfbb _FDunscale
+0000cfc6 _FDtentox
+0000cfd5 _Feraise
+0000cfde _Skip
+0000cfe4 strspn
+0000cfeb _Findloc
+0000cff4 _Readloc
+0000cffd _Makeloc
+0000d006 _Locksyslock
+0000d013 _Unlocksyslock
+0000d022 fputs
+0000d028 fwrite
+0000d02f _Freeloc
+0000d038 _Ldbl
+0000d03e _Loctab
+0000d046 _FDenorm
+0000d04f _FEps
+0000d055 _FNan
+0000d05b _FSnan
+0000d062 _FRteps
+0000d06a _FXbig
+0000d071 _FZero
+0000d078 strcspn
+0000d080 _LDscale
+0000d089 _LDunscale
+0000d094 _LDtentox
+0000d09e _Locterm
+0000d0a7 _Locvar
+0000d0af _LDenorm
+0000d0b8 _LEps
+0000d0be _LInf
+0000d0c4 _LNan
+0000d0ca _LSnan
+0000d0d1 _LRteps
+0000d0d9 _LXbig
+0000d0e0 _LZero
+0000d0e7 _Locsum
+0000d0ef _Makestab
+0000d0f9 _Makewct
+0000d102 strrchr
+0000d10a _Mbtowcx
+0000d113 _Tls_setup__Mbstate
+0000d127 _Mtxunlock
+0000d132 _Mtxlock
+0000d13b _Mtxdst
+0000d143 _Mtxini
+0000d14b _Tls_setup__Tolotab
+0000d15f _Tls_setup__Touptab
+0000d173 _Tls_setup__Mbcurmax
+0000d188 _Tls_setup__Wcstate
+0000d19c _Tls_setup__WCostate
+0000d1b1 _Tls_setup__Times
+0000d1c3 _Getmbcurmax
+0000d1d0 _Stodx
+0000d1d7 _Stopfx
+0000d1df _Stoflt
+0000d1e7 _Stoxflt
+0000d1f5 _Stod
+0000d1fb _Stofx
+0000d202 _Stof
+0000d208 __aeabi_uidivmod
+0000d219 _Stoint
+0000d221 _Stoldx
+0000d229 _Stold
+0000d230 _Getptolower
+0000d23d _Getptoupper
+0000d24a _Denorm
+0000d257 _Hugeval
+0000d260 _Snan
+0000d266 _Rteps
+0000d26d _Xbig
+0000d273 _Zero
+0000d279 _Wctombx
+0000d282 atomic_add_value
+0000d293 atomic_sub
+0000d29e atomic_toggle
+0000d2ac atomic_toggle_value
+0000d2c0 dispatch_default
+0000d2d1 thread_pool_attr_default
+0000d2ea _dispatch_create
+0000d2fb dispatch_create_channel
+0000d313 dispatch_timeout
+0000d324 _dispatch_set_contextsize
+0000d33e dispatch_context_free
+0000d354 dispatch_destroy
+0000d365 ChannelDestroy
+0000d374 dispatch_handler
+0000d385 _sigwait_handler
+0000d396 _message_handler
+0000d3a7 dispatch_unblock
+0000d3b8 _message_unblock
+0000d3c9 dispatch_block_sigwait
+0000d3e0 MsgRead_r
+0000d3ea MsgError
+0000d3f3 dispatch_block_receive
+0000d40a MsgReceive
+0000d415 dispatch_block
+0000d424 dispatch_block_receive_pulse
+0000d441 MsgReceivePulse
+0000d451 _dispatch_attach
+0000d462 ChannelCreate
+0000d470 dispatch_context_alloc
+0000d487 _select_disarm
+0000d496 select_detach
+0000d4a4 _select_query
+0000d4b2 _select_msg_handler
+0000d4c6 _select_rearm_how
+0000d4d8 _select_rearm_all
+0000d4ea select_rearm
+0000d4f7 select_attach
+0000d505 _dispatch_vector_find
+0000d51b MsgSendPulse
+0000d528 message_connect
+0000d538 sigwait_attach
+0000d547 sigwait_detach
+0000d556 message_detach
+0000d565 message_block
+0000d573 message_attach
+0000d582 resmgr_detach
+0000d590 resmgr_attach
+0000d59e _resmgr_link_alloc
+0000d5b1 _resmgr_link_free
+0000d5c3 __name_prefix_local
+0000d5d7 __name_prefix_global
+0000d5ec _resmgr_link_query
+0000d5ff pthread_sleepon_lock
+0000d614 pthread_sleepon_wait
+0000d629 pthread_sleepon_unlock
+0000d640 _resmgr_detach_id
+0000d652 _resmgr_thread_key
+0000d665 _resmgr_msg_handler
+0000d679 _resmgr_handler
+0000d689 resmgr_unblock
+0000d698 resmgr_block
+0000d6a5 resmgr_context_free
+0000d6b9 resmgr_context_alloc
+0000d6ce pathmgr_link
+0000d6db _thread_pool_attr_normalise
+0000d6f7 thread_pool_control
+0000d70b _thread_pool_context_thread
+0000d727 thread_pool_limits
+0000d73a _thread_pool_thread
+0000d74e pthread_setname_np
+0000d761 _thread_pool_reserve_thread
+0000d77d _thread_pool_reserve
+0000d792 _dispatch_vector_free
+0000d7a8 _dispatch_vector_grow
+0000d7be iofunc_attr_init
+0000d7cf iofunc_attr_trylock
+0000d7e3 iofunc_attr_unlock
+0000d7f6 iofunc_attr_lock
+0000d807 iofunc_check_access
+0000d81b iofunc_chmod_default
+0000d830 iofunc_chmod
+0000d83d iofunc_client_info
+0000d850 iofunc_chown_default
+0000d865 iofunc_chown
+0000d872 ConnectClientInfo_r
+0000d886 iofunc_close_dup_default
+0000d89f iofunc_close_dup
+0000d8b0 _iofunc_llist_lock
+0000d8c3 _iofunc_unlock_scoid
+0000d8d8 _iofunc_llist_unlock
+0000d8ed iofunc_close_ocb_default
+0000d906 iofunc_close_ocb
+0000d917 iofunc_ocb_detach
+0000d929 iofunc_ocb_free
+0000d939 _iofunc_create
+0000d948 iofunc_devctl_default
+0000d95e iofunc_devctl
+0000d96c iofunc_fdinfo_default
+0000d982 iofunc_fdinfo
+0000d990 resmgr_pathname
+0000d9a0 iofunc_func_init
+0000d9b1 iofunc_open_default
+0000d9c5 iofunc_read_default
+0000d9d9 iofunc_write_default
+0000d9ee iofunc_stat_default
+0000da02 iofunc_unblock_default
+0000da19 iofunc_pathconf_default
+0000da31 iofunc_lseek_default
+0000da46 iofunc_utime_default
+0000da5b iofunc_openfd_default
+0000da71 iofunc_lock_default
+0000da85 iofunc_mmap_default
+0000da99 iofunc_lock_ocb_default
+0000dab1 iofunc_unlock_ocb_default
+0000dacb iofunc_sync_default
+0000dadf iofunc_power_default
+0000daf4 iofunc_link
+0000db00 _iofunc_sleepon_default
+0000db18 iofunc_lock_calloc
+0000db2b _iofunc_lock_find
+0000db3d _iofunc_lock_free
+0000db4f MsgInfo
+0000db57 MsgReplyv
+0000db61 _iofunc_unlock
+0000db70 _iofunc_lock
+0000db7d iofunc_lseek
+0000db8a _iofunc_isnonblock
+0000db9d iofunc_mknod
+0000dbaa iofunc_mmap
+0000dbb6 _resmgr_iofuncs
+0000dbc6 resmgr_open_bind
+0000dbd7 iofunc_ocb_calloc
+0000dbe9 iofunc_notify
+0000dbf7 iofunc_notify_remove_strict
+0000dc13 iofunc_notify_remove
+0000dc28 iofunc_notify_trigger_strict
+0000dc45 MsgDeliverEvent
+0000dc55 iofunc_notify_trigger
+0000dc6b iofunc_ocb_attach
+0000dc7d iofunc_time_update
+0000dc90 iofunc_openfd
+0000dc9e _iofunc_open
+0000dcab iofunc_pathconf
+0000dcbb iofunc_power
+0000dcc8 _resmgr_io_func
+0000dcd8 pmd_power
+0000dce2 iofunc_read_verify
+0000dcf5 iofunc_readlink
+0000dd05 iofunc_rename
+0000dd13 iofunc_unlink
+0000dd21 iofunc_space_verify
+0000dd35 iofunc_stat
+0000dd41 resmgr_devino
+0000dd4f iofunc_sync_verify
+0000dd62 iofunc_sync
+0000dd6e iofunc_unblock
+0000dd7d MsgInfo_r
+0000dd87 iofunc_utime
+0000dd94 iofunc_write_verify
+0000dda8 ChannelConnectAttr
+0000ddbb __ker_err
+0000ddc5 ChannelCreateExt
+0000ddd6 ChannelCreate_r
+0000dde6 ChannelDestroy_r
+0000ddf7 ClockAdjust
+0000de03 ClockAdjust_r
+0000de11 ClockId
+0000de19 ClockPeriod_r
+0000de27 ClockTime_r
+0000de33 ConnectAttachExt
+0000de44 ConnectAttach_r
+0000de54 ConnectServerInfo_r
+0000de68 InterruptAttach
+0000de78 InterruptAttach_r
+0000de8a InterruptDetachFunc
+0000de9e InterruptDetachFunc_r
+0000deb4 InterruptDetach
+0000dec4 InterruptDetach_r
+0000ded6 __interruptmask
+0000dee6 __interruptunmask
+0000def8 InterruptWait
+0000df06 InterruptWait_r
+0000df16 __kerbad
+0000df1f __kernop
+0000df28 MsgCurrent
+0000df33 MsgCurrent_r
+0000df40 MsgDeliverEvent_r
+0000df52 MsgError_r
+0000df5d MsgKeyData
+0000df68 MsgKeyData_r
+0000df75 MsgReadiov
+0000df80 MsgReadiov_r
+0000df8d MsgRead
+0000df95 MsgReadv
+0000df9e MsgReadv_r
+0000dfa9 MsgReceiveAsyncGbl
+0000dfbc MsgReceiveAsyncGbl_r
+0000dfd1 MsgReceivePulse_r
+0000dfe3 MsgReceivePulsev
+0000dff4 MsgReceivePulsev_r
+0000e007 MsgReceive_r
+0000e014 MsgReceivev
+0000e020 MsgReceivev_r
+0000e02e MsgReply
+0000e037 MsgReply_r
+0000e042 MsgReplyv_r
+0000e04e MsgSend_r
+0000e058 MsgSendsvnc
+0000e064 MsgSendsvnc_r
+0000e072 MsgSendsv
+0000e07c MsgSendsv_r
+0000e088 MsgSendv_r
+0000e093 MsgSendvsnc
+0000e09f MsgSendvsnc_r
+0000e0ad MsgSendvs_r
+0000e0b9 MsgVerifyEvent
+0000e0c8 MsgVerifyEvent_r
+0000e0d9 MsgWrite
+0000e0e2 MsgWrite_r
+0000e0ed MsgWritev
+0000e0f7 MsgWritev_r
+0000e103 NetCred
+0000e10b NetInfoscoid
+0000e118 NetSignalKill
+0000e126 NetUnblock
+0000e131 NetVtid
+0000e139 __Ring0
+0000e141 __Ring0_r
+0000e14b SchedCtl
+0000e154 SchedCtl_r
+0000e15f SchedYield_r
+0000e16c SignalAction_r
+0000e17b SignalFault
+0000e187 SignalSuspend_r
+0000e197 SyncCondvarSignal
+0000e1a9 SyncCondvarWait
+0000e1b9 SyncCtl
+0000e1c1 SyncMutexLock
+0000e1cf SyncMutexRevive
+0000e1df SyncMutexRevive_r
+0000e1f1 SyncMutexUnlock
+0000e201 SyncSemPost_r
+0000e20f SyncSemWait_r
+0000e21d __SysCpupageGet
+0000e22d __SysCpupageSet
+0000e23d ThreadCancel
+0000e24a ThreadCreate
+0000e257 ThreadCtl_r
+0000e263 ThreadDetach
+0000e270 ThreadJoin
+0000e27b TimerAlarm_r
+0000e288 TimerCreate_r
+0000e296 TimerDestroy_r
+0000e2a5 TimerInfo_r
+0000e2b1 TimerSettime_r
+0000e2c0 __traceevent
+0000e2cd ClockCycles
+0000e2d9 DebugBreak
+0000e2e4 DebugKDBreak
+0000e2f1 DebugKDOutput
+0000e2ff InterruptAttachEvent
+0000e314 InterruptAttachEvent_r
+0000e32b InterruptDetachId_r
+0000e33f InterruptDetachId
+0000e351 InterruptDisable
+0000e362 InterruptEnable
+0000e372 InterruptHookIdle
+0000e384 InterruptHookTrace
+0000e397 InterruptLock
+0000e3a5 InterruptMask
+0000e3b3 InterruptUnlock
+0000e3c3 InterruptUnmask
+0000e3d3 MsgReceiveAsync
+0000e3e3 MsgSendAsyncGbl
+0000e3f3 MsgSendAsync
+0000e400 SyncCreate
+0000e40b SyncCreate_r
+0000e418 SyncMutexEvent
+0000e427 SyncMutexEvent_r
+0000e438 TraceEvent
+0000e443 _dll_list
+0000e44d _dl_all_objects
+0000e45d dl_iterate_phdr
+0000e46d _dl_list_mutex
+0000e47c _dladdr
+0000e484 _start_
+0000e48c __gnu_Unwind_Find_exidx
+0000e4a4 _r_debug
+0000e4ad _dl_debug_state
+0000e4bd sys_nerr
+0000e4c6 sys_errlist
+0000e4d2 _dl_free
+0000e4db __ldd_deregister_eh
+0000e4ef _dl_alloc
+0000e4f9 __ldd_register_eh
+0000e50b __progname
+0000e516 _dlclose
+0000e51f dlerror
+0000e527 __sopen
+0000e52f realpath
+0000e538 dlopen
+0000e53f dlsym
+0000e545 _init_libc
+0000e550 strerror
+0000e559 clearenv
+0000e562 delay
+0000e568 _gmonparam
+0000e573 _cmdfd
+0000e57a _cmdname
+0000e583 _auxv
+0000e589 devctlv
+0000e591 localtime_r
+0000e59d getprio
+0000e5a5 __getset_thread_name
+0000e5ba strncpy
+0000e5c2 iofdinfo
+0000e5cb ltrunc
+0000e5d2 mmap_device_io
+0000e5e1 mmap_device_memory
+0000e5f4 munmap_device_io
+0000e605 munmap_device_memory
+0000e61a name_close
+0000e625 name_open
+0000e62f nanosleep_abs
+0000e63d nanosleep_rel
+0000e64b nanospin_count
+0000e65a nanospin_ns
+0000e666 nanospin_ns_to_count
+0000e67b nanospin_calibrate
+0000e68e hwi_find_item
+0000e69c hwi_find_tag
+0000e6a9 hwi_off2tag
+0000e6b5 nanospin
+0000e6be pthread_getname_np
+0000e6d1 pthread_timedjoin_np
+0000e6e6 pthread_timedjoin_monotonic
+0000e702 pthread_timedjoin
+0000e714 readblock
+0000e71e readcond
+0000e727 searchenv
+0000e731 _select_block
+0000e73f _select_event
+0000e74d setprio
+0000e755 shm_ctl
+0000e75d shm_ctl_special
+0000e76d pthread_sleepon_broadcast
+0000e787 pthread_sleepon_signal
+0000e79e pthread_sleepon_timedwait
+0000e7b8 _sleepon_destroy
+0000e7c9 _sleepon_init
+0000e7d7 spawnle
+0000e7df spawnve
+0000e7e7 spawnl
+0000e7ee spawnlpe
+0000e7f7 spawnvpe
+0000e800 spawnlp
+0000e808 spawnv
+0000e80f spawnvp
+0000e817 tcgetsize
+0000e821 tcinject
+0000e82a tcischars
+0000e834 tcsetsize
+0000e83e timespec2nsec
+0000e84c trace_func_exit
+0000e85c trace_func_enter
+0000e86d trace_logi
+0000e878 trace_logbc
+0000e884 trace_logb
+0000e88f trace_vnlogf
+0000e89c trace_nlogf
+0000e8a8 trace_logf
+0000e8b3 _waitfor
+0000e8bc procmgr_event_notify_add
+0000e8d5 procmgr_event_notify_delete
+0000e8f1 writeblock
+0000e8fc _resmgr_access
+0000e90b resmgr_msg_again
+0000e91c _resmgr_close_handler
+0000e932 _resmgr_connect_handler
+0000e94a _resmgr_link_return
+0000e95e _resmgr_handle
+0000e96d _resmgr_mount_handler
+0000e983 _resmgr_link_handler
+0000e998 resmgr_endian
+0000e9a6 _resmgr_io_handler
+0000e9b9 _resmgr_io_table
+0000e9ca _resmgr_link_list
+0000e9dc _resmgr_pulse_list
+0000e9ef fstat64
+0000e9f7 _resmgr_disconnect_handler
+0000ea12 _resmgr_dup_handler
+0000ea26 resmgr_endian_context
+0000ea3c resmgr_msgreplyv
+0000ea4d resmgr_msgreply
+0000ea5d _resmgr_handle_grow
+0000ea71 __aeabi_idivmod
+0000ea81 _resmgr_unblock_handler
+0000ea99 _resmgr_mmap_handler
+0000eaae _resmgr_openfd_handler
+0000eac5 _resmgr_notify_handler
+0000eadc resmgr_handle_tune
+0000eaef resmgr_msgread
+0000eafe resmgr_msgreadv
+0000eb0e resmgr_msgwrite
+0000eb1e resmgr_msgwritev
+0000eb2f _resmgr_ocb
+0000eb3b _resmgr_pathname_attach
+0000eb53 _resmgr_pathname_detach
+0000eb6b _resmgr_pulse_attach
+0000eb80 _resmgr_pulse_detach
+0000eb95 _resmgr_start
+0000eba3 _resmgr_thread
+0000ebb2 _resmgr_unbind
+0000ebc1 _netmgr_connect
+0000ebd1 netmgr_ctl
+0000ebdc __netmgr_send
+0000ebea __straddstr
+0000ebf6 netmgr_path
+0000ec02 netmgr_strtond
+0000ec11 __netmgr_send_private
+0000ec27 pathmgr_symlink
+0000ec37 pathmgr_unlink
+0000ec46 pci_generate_special_cycle
+0000ec61 _pci_send_message
+0000ec73 pci_irq_routing_options
+0000ec8b pci_rescan_bus
+0000ec9a pci_map_irq
+0000eca6 pci_present
+0000ecb2 pci_find_class
+0000ecc1 pci_write_config_bus
+0000ecd6 pci_read_config_bus
+0000ecea pci_detach_device
+0000ecfc pci_attach_device
+0000ed0e pci_write_config
+0000ed1f pci_read_config
+0000ed2f pci_find_device
+0000ed3f pci_detach
+0000ed4a pci_attach
+0000ed55 pm_get_modes
+0000ed62 pm_get_power
+0000ed6f pm_set_power
+0000ed7c procmgr_daemon
+0000ed8b _slogfd
+0000ed93 _procmgr_event_notify
+0000eda9 procmgr_event_trigger
+0000edbf procmgr_guardian
+0000edd0 rsrcdbmgr_attach
+0000ede1 _rsrcdbmgr_pack
+0000edf1 rsrcdbmgr_create
+0000ee02 rsrcdbmgr_destroy
+0000ee14 rsrcdbmgr_detach
+0000ee25 rsrcdbmgr_devno_attach
+0000ee3c rsrcdbmgr_minor_attach
+0000ee58 rsrcdbmgr_devno_detach
+0000ee6f rsrcdbmgr_minor_detach
+0000ee86 rsrcdbmgr_query_name
+0000ee9b rsrcdbmgr_query
+0000eeab __slog_once
+0000eeb7 __slog_mux
+0000eec2 sysmgr_cpumode
+0000eed1 sysmgr_reboot
+0000eedf sysmgr_sysconf_set
+0000eef2 clearerr
+0000eefb _Lockfilelock
+0000ef09 _Unlockfilelock
+0000ef19 fcloseall
+0000ef23 fflush
+0000ef2a _Releasefilelock
+0000ef3b fdopen
+0000ef42 __parse_oflag
+0000ef50 __fpinit
+0000ef5e flushall
+0000ef67 fgetchar
+0000ef70 _Stdin
+0000ef77 _Frprep
+0000ef7f fgetpos
+0000ef87 _Fgpos
+0000ef8e fgetwc
+0000ef95 _WFrprep
+0000ef9e fgetws
+0000efa5 flockfile
+0000efaf fopen64
+0000efb7 __fsopen
+0000efc0 __fpbufinit
+0000efcc setvbuf
+0000efd4 _Printf
+0000efdc _Fprout
+0000efe4 fputchar
+0000efed fputc
+0000eff3 _Stdout
+0000effb _Fwprep
+0000f003 fputwc
+0000f00a _WFwprep
+0000f013 fputws
+0000f01a fread
+0000f020 freopen64
+0000f02a _freopen
+0000f033 _Scanf
+0000f03a ungetc
+0000f041 fseek
+0000f047 _Fspos
+0000f04e fseeko64
+0000f057 fseeko
+0000f05e fsetpos
+0000f066 ftell
+0000f06c ftello64
+0000f075 ftello
+0000f07c ftrylockfile
+0000f089 _Ftrylockfile
+0000f097 funlockfile
+0000f0a3 fwide
+0000f0a9 _WPrintf
+0000f0b2 _Wfprout
+0000f0bb _WScanf
+0000f0c3 ungetwc
+0000f0cb getchar_unlocked
+0000f0dc getc_unlocked
+0000f0ea getwchar
+0000f0f3 perror
+0000f0fa putchar_unlocked
+0000f10b putc_unlocked
+0000f119 putwchar
+0000f122 setbuf
+0000f129 _Sprout
+0000f131 strerror_r
+0000f13c wmemcpy
+0000f144 tmpfile64
+0000f14e _tmpfile
+0000f157 _gettemp
+0000f160 vfprintf
+0000f169 vfscanf
+0000f171 vfwprintf
+0000f17b vfwscanf
+0000f184 vprintf
+0000f18c vscanf
+0000f193 vsprintf
+0000f19c vsscanf
+0000f1a4 vswprintf
+0000f1ae vswscanf
+0000f1b7 vwprintf
+0000f1c0 vwscanf
+0000f1c8 _Fbuf
+0000f1ce _PJP_C_Copyright
+0000f1df _Genld
+0000f1e6 _Getfld
+0000f1ee _Getstr
+0000f1f6 _Getint
+0000f1fe _Getfloat
+0000f208 _Stoull
+0000f210 _Stoll
+0000f217 _Ldtob
+0000f21e _Litob
+0000f225 _Putfld
+0000f22d _Puttxt
+0000f235 _Putstr
+0000f23d output_for_percent_s_NULL
+0000f257 _Snprout
+0000f260 _Initlocks
+0000f26b _Clearlocks
+0000f277 _WGenld
+0000f27f _WGetfld
+0000f288 _WGetfloat
+0000f293 _WGetint
+0000f29c _WGetstr
+0000f2a5 wmemchr
+0000f2ad _WStold
+0000f2b5 wcschr
+0000f2bc _WStoull
+0000f2c5 _WStoll
+0000f2cd _WLdtob
+0000f2d5 _WLitob
+0000f2dd wcscspn
+0000f2e5 _WPutfld
+0000f2ee _WPuttxt
+0000f2f7 _WPutstr
+0000f300 wcslen
+0000f307 _Wsprout
+0000f31a atoll
+0000f320 strtoll
+0000f332 bcopy
+0000f338 bzero
+0000f342 ulltoa
+0000f349 ultoa
+0000f34f memccpy
+0000f357 __memcpyv
+0000f361 __memicmp
+0000f36b rindex
+0000f372 strcasecmp
+0000f37d _Strcollx
+0000f387 _CStrxfrm
+0000f391 strcoll
+0000f399 _strdup
+0000f3a1 __stricmp
+0000f3ab _strcmpi
+0000f3b4 strlcat
+0000f3bc __strlwr
+0000f3c5 strncasecmp
+0000f3d1 strncat
+0000f3d9 __strnicmp
+0000f3e4 __strnset
+0000f3ee strpbrk
+0000f3f6 __strrev
+0000f3ff __strset
+0000f408 strtod
+0000f40f strtof
+0000f416 strtoimax
+0000f420 strtok
+0000f427 strtok_r
+0000f430 strtold
+0000f438 strtoull
+0000f441 strtoumax
+0000f44b __strupr
+0000f454 _Strxfrmx
+0000f45e strxfrm
+0000f466 towlower
+0000f46f towupper
+0000f478 wcscat
+0000f47f wcscmp
+0000f486 _CWcsxfrm
+0000f490 _Wcscollx
+0000f49a wmemcmp
+0000f4a2 wcscoll
+0000f4aa wcscpy
+0000f4b1 wcsncat
+0000f4b9 wcsncmp
+0000f4c1 wcsncpy
+0000f4c9 wcspbrk
+0000f4d1 wcsrchr
+0000f4d9 wcsrtombs
+0000f4e3 wcsspn
+0000f4ea wcsstr
+0000f4f1 wcstod
+0000f4f8 _WStod
+0000f4ff wcstof
+0000f506 _WStof
+0000f50d wcstoimax
+0000f517 wcstok
+0000f51e wcstold
+0000f526 wcstoll
+0000f52e wcstol
+0000f535 _WStoul
+0000f53d wcstombs
+0000f546 wcstoull
+0000f54f wcstoul
+0000f557 wcstoumax
+0000f561 _Wcsxfrmx
+0000f56b wcsxfrm
+0000f573 wmemmove
+0000f57c wmemset
+0000f584 _Stollx
+0000f58c _Stoullx
+0000f595 _Stolx
+0000f59c _Stoulx
+0000f5a4 _Stoul
+0000f5ab _WStodx
+0000f5b3 _WStopfx
+0000f5bc _WStoflt
+0000f5c5 _WStoxflt
+0000f5cf _WStofx
+0000f5d7 _WStoldx
+0000f5e0 __cleanup_push
+0000f5ef __cleanup_pop
+0000f5fd _CMain
+0000f604 _wchar_short
+0000f611 _conf_destroy
+0000f61f __posixly_correct
+0000f631 _connect_malloc
+0000f641 _connect_entry
+0000f650 _curbrk
+0000f658 __ealready_value
+0000f669 _flush_cache
+0000f676 _fullpath
+0000f680 __init_cookies
+0000f68f __stack_chk_guard
+0000f6a1 _preinit_array
+0000f6b0 _init_array
+0000f6bc _fini_array
+0000f6c8 errno
+0000f6d3 _math_emu_stub
+0000f6e2 _argc
+0000f6e8 _argv
+0000f6ee __main
+0000f6f5 _emulator_callout
+0000f707 _math_emulator
+0000f716 _notifyreadxv
+0000f724 ionotifyreadx
+0000f732 ionotifyread
+0000f73f _readxv
+0000f747 __stack_chk_fail
+0000f758 __chk_fail
+0000f763 _writexv
+0000f76c asctime_r
+0000f776 _CStrftime
+0000f781 asctime
+0000f789 localtime
+0000f793 difftime
+0000f79c gmtime
+0000f7a3 _Ttotm
+0000f7aa gmtime_r
+0000f7b3 _Tzoff_dst
+0000f7be _Gettime
+0000f7c7 _Getzone
+0000f7d0 _Tzoff
+0000f7d7 mktime
+0000f7de _Daysto
+0000f7e6 strftime
+0000f7ef tzset
+0000f7f5 wcsftime
+0000f7fe _Wcsftime
+0000f808 _Gentime
+0000f811 tzset_once
+0000f81c tzset_init
+0000f827 tzset_mutex
+0000f833 __getsecs
+0000f83d _Getdst
+0000f845 _Getrules
+0000f84f _Isdst
+0000f856 tzname
+0000f85d __Tzset
+0000f865 timezone
+0000f86e daylight
+0000f877 alloca
+0000f87e cfmakeraw
+0000f888 cfree
+0000f88e chroot
+0000f895 chsize
+0000f8a1 verrx
+0000f8a7 flock
+0000f8ad getdtablesize
+0000f8bb getgrouplist
+0000f8c8 getpagesizes64
+0000f8d7 getpagesizes
+0000f8e4 initgroups
+0000f8ef mktemp
+0000f8f6 mkstemp
+0000f8fe mount_parse_generic_args
+0000f917 getsubopt
+0000f921 _mount
+0000f928 umount
+0000f92f napms
+0000f939 pathfind
+0000f942 setbuffer
+0000f94c sethostname
+0000f958 setlinebuf
+0000f963 settimeofday
+0000f970 sigunblock
+0000f97b sigsetmask
+0000f986 sigblock
+0000f98f sigpause
+0000f998 strsep
+0000f99f strsignal
+0000f9a9 sys_nsig
+0000f9b2 sys_siglist
+0000f9be tcsetsid
+0000f9c7 vfork
+0000f9cd vwarn
+0000f9d3 vwarnx
+0000f9da wait3
+0000f9e0 waitid
+0000f9e7 creat64
+0000f9ef drand48
+0000f9f7 erand48
+0000f9ff __rand48_seed
+0000fa0d __dorand48
+0000fa18 fchdir
+0000fa1f fstatvfs64
+0000fa2a fstatvfs
+0000fa33 __statvfs_check
+0000fa48 gethostname
+0000fa54 setitimer
+0000fa5e getitimer
+0000fa68 getpgid
+0000fa70 getpriority
+0000fa7c getrlimit64
+0000fa88 getrlimit
+0000fa92 getrusage
+0000fa9c gettimeofday
+0000faa9 hsearch
+0000fab1 hdestroy
+0000faba hcreate
+0000fac2 ioctl
+0000fac8 jrand48
+0000fad0 killpg
+0000fad7 lcong48
+0000fadf __rand48_mult
+0000faed __rand48_add
+0000fafa lockf64
+0000fb02 lockf
+0000fb08 lrand48
+0000fb10 lfind
+0000fb16 lsearch
+0000fb1e mrand48
+0000fb26 lstat64
+0000fb2e nftw64
+0000fb3f setpriority
+0000fb4b nrand48
+0000fb53 select
+0000fb5f pread64
+0000fb67 pread
+0000fb6d pthread_attr_getguardsize
+0000fb87 pthread_attr_setguardsize
+0000fba1 pthread_setconcurrency
+0000fbb8 pthread_getconcurrency
+0000fbcf putenv
+0000fbd6 _unsetenv
+0000fbe0 pwrite64
+0000fbe9 pwrite
+0000fbf0 seed48
+0000fbf7 setrlimit64
+0000fc03 setrlimit
+0000fc0d srand48
+0000fc1a setlogmask
+0000fc25 closelog
+0000fc2e openlog
+0000fc36 vsyslog
+0000fc3e tcgetsid
+0000fc47 tempnam
+0000fc4f tmpnam
+0000fc56 ualarm
+0000fc5d usleep
+0000fc64 utimes
+0000fc6b __udivsi3
+0000fc75 __div0
+0000fc7c __divsi3
+0000fc85 __gnu_ldivmod_helper
+0000fc9a __gnu_uldivmod_helper
+0000fcb0 __udivdi3
+0000fcba __aeabi_unwind_cpp_pr0
+0000fcd1 __divdi3
+0000fcda _Unwind_VRS_Get
+0000fcea _Unwind_VRS_Set
+0000fcfa _Unwind_GetCFA
+0000fd09 _Unwind_Complete
+0000fd1a _Unwind_DeleteException
+0000fd32 __gnu_unwind_execute
+0000fd47 __cxa_type_match
+0000fd58 __cxa_begin_cleanup
+0000fd6c __cxa_call_unexpected
+0000fd82 __aeabi_unwind_cpp_pr2
+0000fd99 __aeabi_unwind_cpp_pr1
+0000fdb0 __exidx_end
+0000fdbc __exidx_start
+0000fdca __gnu_Unwind_Restore_VFP_D
+0000fde5 __gnu_Unwind_Restore_WMMXC
+0000fe00 __gnu_Unwind_Restore_VFP
+0000fe19 __gnu_Unwind_Restore_VFP_D_16_to_31
+0000fe3d __gnu_Unwind_Restore_WMMXD
+0000fe58 __gnu_Unwind_Backtrace
+0000fe6f __gnu_Unwind_ForcedUnwind
+0000fe89 __gnu_Unwind_RaiseException
+0000fea5 __gnu_Unwind_Resume_or_Rethrow
+0000fec4 __gnu_Unwind_Resume
+0000fed8 _Unwind_VRS_Pop
+0000fee8 __gnu_Unwind_Save_WMMXC
+0000ff00 __gnu_Unwind_Save_VFP
+0000ff16 __gnu_Unwind_Save_WMMXD
+0000ff2e __gnu_Unwind_Save_VFP_D_16_to_31
+0000ff4f __gnu_Unwind_Save_VFP_D
+0000ff67 __restore_core_regs
+0000ff7b ___Unwind_RaiseException
+0000ff94 ___Unwind_Resume
+0000ffa5 ___Unwind_Resume_or_Rethrow
+0000ffc1 ___Unwind_ForcedUnwind
+0000ffd8 ___Unwind_Backtrace
+0000ffec _Unwind_GetTextRelBase
+00010003 _Unwind_GetDataRelBase
+0001001a _Unwind_GetLanguageSpecificData
+0001003a _Unwind_GetRegionStart
+00010051 __gnu_unwind_frame
+00010064 __hwi_base
+0001006f __hwi_find_string
+00010081 _btext
+00010088 __data_start
+00010095 _edata
+0001009c __bss_start
+000100a8 __bss_start__
+000100b6 __bss_end__
+000100c2 __end__
+000100ca _stack
+000100d1 libc.so.3
+0006f948 /dev/tty
+0006f954 %s:%s:%ld:%ld:%ld
+0006f968 /etc/shadow
+0006f974 /etc/group
+0006f980 /etc/passwd
+0006f990 /dev/pipe
+0006f99c : illegal option -- 
+0006f9b4 : option requires an argument -- 
+0006f9dc /bin/sh
+0006f9ec /dev/mqueue
+0006f9f8 /dev/sem
+0006fa04 /dev/shmem
+0006fa10 /partition
+0006fa1c %s/%s
+0006fab0 %hhu.%hhu.%hhu.%hhu
+0006fac8 0123456789abcdef
+0006fadc 0123456789ABCDEF
+0006faf0 /dev/tymem
+0006fafc MALLOC_MMAP_NOZERO
+0006fb10 MALLOC_ARENA_SIZE
+0006fb24 MALLOC_MEMORY_BANDCONFIG
+0006fb40 MALLOC_BAND_CONFIG_STR
+0006fb58 MALLOC_MEMORY_PREALLOCATE
+0006fb74 MALLOC_MEMORY_HOLD
+0006fb88 MALLOC_FREE_LIFO
+0006fb9c MALLOC_ARENA_CACHE_MAXSZ
+0006fbb8 MALLOC_ARENA_CACHE_MAXBLK
+0006fbd4 MALLOC_MAX_ALIGNMENT
+0006fbec MALLOC_OPTIONS
+0006fbfc mprobe
+0006fc04 %s:%u - fatal alloc error - %s
+0006fc2c underrun
+0006fc38 overrun
+0006fc40 freed block
+0006fc4c In function 
+0006fc5c  -- assertion failed
+0006fc78 false
+0006fc88 ^[nN]
+0006fc90 ^[yY]
+0006fca0 POSIX
+0006fca8 C-TRADITIONAL
+0006fcbc collate:
+0006fcc8 ctype:
+0006fcd0 monetary:
+0006fcdc numeric:
+0006fce8 time:
+0006fcf0 messages:
+0006ff00 LC_ALL
+0006ff10 LOCALE
+0006ff1c LC_COLLATE
+0006ff28 LC_CTYPE
+0006ff34 LC_MONETARY
+0006ff40 LC_NUMERIC
+0006ff4c LC_TIME
+0006ff54 LC_MESSAGES
+0006ffc4 LOCFILE
+0006ffcd -- invalid locale file line
+0006ffec /usr/share/locale/locale.file
+0007019f uNOTE
+000701ac collate
+000701b4 wcollate
+000701c0 ctype
+000701c8 tolower
+000701d0 toupper
+000701d8 mb_cur_max
+000701e4 mbtowc
+000701ec wctomb
+000701f4 wctrans
+000701fc wctype
+00070204 currency_symbol
+00070214 int_curr_symbol
+00070224 mon_decimal_point
+00070238 mon_grouping
+00070248 mon_thousands_sep
+0007025c negative_sign
+0007026c positive_sign
+0007027c int_frac_digits
+0007028c int_n_cs_precedes
+000702a0 int_n_sep_by_space
+000702b4 int_n_sign_posn
+000702c4 int_p_cs_precedes
+000702d8 int_p_sep_by_space
+000702ec int_p_sign_posn
+000702fc frac_grouping
+0007030c frac_sep
+00070318 am_pm
+00070328 abday
+00070334 months
+0007033c abmon
+00070348 era_time_formats
+0007035c era_d_t_fmt
+00070368 era_d_fmt
+00070374 era_t_fmt
+00070380 era_t_fmt_ampm
+00070394 alt_digits
+000703a0 dst_rules
+000703ac time_zone
+000703b8 nostr
+000703c0 yesstr
+000703c8 ABCDEFGHIJKLMNOPQRSTUVWXYZ
+000703e4 ^abfnrtv01234567ABCDHLMPSUW#FIOR
+000704b8 0123456789abcdef
+000704cc 0123456789abcdef^
+000704e1  -- invalid locale file line
+00070500 _abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+00070550 0123456789abcdefABCDEF
+00070b1c alnum
+00070b24 alpha
+00070b2c cntrl
+00070b34 digit
+00070b3c graph
+00070b44 lower
+00070b4c print
+00070b54 punct
+00070b5c space
+00070b64 upper
+00070b6c xdigit
+00070b74 blank
+00070b80 /dev/name/global/
+00070b94 /dev/name/local/
+00070bfc _btext
+00070c04 Not enough memory
+00070c18 Invalid handle
+00070c28 Shared objects still referenced
+00070c48 Shared library is corrupted
+00070c64 searchpath
+00070c70 find_file
+00070c7c Library cannot be found
+00070c94 Invalid mode
+00070ca4 No symbols in executable
+00070cc0 Unresolved symbols
+00070cd4 Symbol not found
+00070ce8 (null)
+00070cf0 0123456789abcdef
+00070d04 Executable
+00070d18 . Symbol:
+00070d28 Unknown error: %d
+00070d3c libs: fini: %s obj->refcount: %d
+00070d60 debug: ERROR: duplicate object in link map
+00070d8c debug: Added %s to link map
+00070dac Resolution scope for %s->%s:
+00070dd2 %s->%s
+00070ddc libs: init: %s obj->refcount: %d
+00070e00 Object addr %p
+00070e1c Refcount
+00070e2d 0x%x 
+00070e34 Flags
+00070e54 Rpath
+00070e75 %d (0x%x)
+00070e80 Text size
+00070e91 %u (0x%x)
+00070e9c Text rel
+00070ea8 Data offset
+00070eb4 Data size
+00070ec0 Data rel
+00070ecc Scope
+00070ed4 List dump. Name: %s
+00070ef0 Mode: %s
+00070efc r_map:
+00070f04 Base address
+00070f14 Soname
+00070f2c Matching soname
+00070f3c Time lib was loaded
+00070f59 --------------------
+00070f72 Attempt to free a block not allocated: %p
+00070fa0 Mutex lock failed %d
+00070fb8 Mutex unlock failed %d
+00070fd0 morepages: munmap %p
+00070fe8 Cannot map %d pages of anonymous memory
+00071010 ldd:FATAL: 
+0007101c statistics: Number of bootstrap resolved symbols: %d
+00071054 statistics: Number of resolved symbols (without bootstrap): %d
+00071094 statistics: Number of relative relocations: %d
+000710c4 statistics: Number of relative relocations exe only: %d
+00071100 statistics: Number of relative relocations libc only: %d
+0007113c lazyload: Never loaded lazyload dependency: %s
+0007116d Valid options for the DL_DEBUG environment variable are:
+000711a8   %-10s
+000711b5 To redirect debug output, set LD_DEBUG_OUTPUT environment variable.
+000711fc lazyload: Lazy load dependency: %s flags:0x%x
+0007122d %s => * (0x00000000)
+00071244 unable to set dlerror() = 
+00071260 debug: ERROR: Trying to free object (%s) while executing its destructors
+000712ac debug: ERROR: Trying to free referenced handle
+000712dc debug: Removed %s from link map
+00071300 libs: dlclose(%p, %d)
+00071318 Attempt to remove element from object-list being iterated. 
+00071354 Calling dlclose() from callback passed to dl_iterate_phdr()?
+00071394 debug: All objects list (DAO)
+000713bc libs: load_elf32: mmaped, addr %p %p vaddr %p
+000713ec libs: load_elf32: found DT_TEXTREL, mapping a private copy of text sections!
+0007143c libs: load_elf32: loaded lib at addr %x(text) %x(data)
+00071474 debug: %s:%u: name=%s path=%s amode=%d bufsize=%d
+000714a8 debug: %s:%u: trying %s
+000714c4 debug: %s:%u:%s: success
+000714e0 debug: %s:%u:%s: failed (%s)
+00071508 debug: %s:%u: name=%s libpath=%s rpath=%s
+00071534 debug: ldd:%s:%u:%s: search failed
+00071558 debug: %s:%u:%s: sopen failed (%s)
+0007157c libs: %s: found; real path:%s
+0007159c libs: load_object: attempt load of %s
+000715c5 %s => %s (0x%x)
+000715d8 libs: object %s loaded; real soname: %s loaded from: %s
+00071614 LD_TLO
+0007161c libs: dlopen("%s",%d)
+00071634 LD_LIBRARY_PATH
+00071644 libs: Neither RTLD_GROUP nor RTLD_WORLD specified, assuming RTLD_GROUP | RTLD_WORLD
+0007169c libs: dlopen: %s
+000716b4 libs: warning: object %s already in all_objects list. Duplicate soname in multiple files?
+00071710 debug: Object should have been found!
+00071738 lazyload: Lazyload dependency %s already loaded by another thread.
+0007177c lazyload: Loading lazyload dependency %p, %s, tid:%d
+000717b4 lazyload: Failed to load lazyload dependency %s
+000717e8 lazyload: Loaded lazyload dependency: %p, %s
+00071818 debug: Looking up symbol %s
+00071838 lazyload: Lookup of symbol %s caused loading lazyload dependency. tid:%d, obj:%p
+0007188c Failed to load lazyload dependency. Unresolved symbol: 
+000718c4 lazyload: Symbol %s was resolved from %s
+000718f0 debug: Symbol %s bound to definition in %s
+0007191c debug: Symbol %s could not be resolved in this scope
+00071954 Attempt to call unresolved object: 
+00071978 bad weak relocation type
+00071994 unknown relocation type
+000719ac unknown symbol: 
+000719c0  referenced from 
+000719d8 reloc: Resolved lazy bound symbol: %s in RTLD_LAZY object.
+00071a14 Unresolved symbol "%s" called from %s
+00071a3c reloc: dlsym(%p,%s) RTLD_DEFAULT but calling object could not be determined
+00071a8c reloc: dlsym(%p,%s) RTLD_NEXT but calling object could not be determined
+00071ad8 reloc: dlsym(%p,%s) Invalid handle.
+00071b00 reloc: dlsym(%p,%s) real_handle:%p=%p
+00071b38 LD_DEBUG_OUTPUT
+00071b48 DL_DEBUG
+00071b54 LD_DEBUG
+00071b61 Failed to open [%s] specified by LD_DEBUG_OUTPUT
+00071b94 The error was: %s
+00071ba8 LD_PRELOAD
+00071bb4 LD_LAZYLOAD_FLAGS
+00071bc8 LD_LAZYLOAD_ALL
+00071bd8 LD_LAZYLOAD_IGNOREFAILURE
+00071bf4 LD_IGNORELIBCWEAK
+00071c08 debug: RTLD_LAZY overriden
+00071c24 Could not preload library 
+00071c40 Could not load library 
+00071c58 Could not resolve all symbols in libc 
+00071c80 Could not resolve all symbols 
+00071ca0 Could not use _dl_alloc. We are either out of memory or application overrides this symbol and returns NULL. In that case, executable must have DT_BIND_NOW or environment variable LD_BIND_NOW must be set
+00071d6c ldd:FATAL: unable to create dlerror() key (%s)
+00071d9c debug: Startup objects list (DSO)
+00071dc0 debug: Handles
+00071dd0 memory corruption or double free in realloc
+00071e00 Display all debug messages.
+00071e24 Display help message and exit.
+00071e44 reloc
+00071e4c Display relocation processing messages.
+00071e7c Display information about shared objects being opened.
+00071eb4 statistics
+00071ec0 Display ldd statistics.
+00071ed8 lazyload
+00071ee4 Print lazyload debug messages.
+00071f04 debug
+00071f0c Print various ldd debug messages.
+00071f38 RESOLVED
+00071f44 SYMBOLIC
+00071f58 JMPRELSDONE
+00071f64 REVERSED
+00071f70 NOSONAME
+00071f7c EXECUTABLE
+00071f88 BEGANINIT
+00071f94 BEGANFINI
+00071fa0 TEXTREL
+00071fa8 INITARRAY
+00071fb4 FINIARRAY
+00071fc0 PREINIT
+00071fc8 BEGANINITARRAY
+00071fd8 BEGANFINIARRAY
+00071fe8 BEGANPREINIT
+00071ff8 NEW_RELOCS
+00072004 LOCALGOTREL
+00072010 GLOBAL
+00072018 NODELETE
+00072024 LAZYLOAD
+00072030 RESOLVING
+0007203c IGNOREWEAK
+00072048 LAZYLOADING
+00072058 NOLOAD
+00072060 LOCAL
+00072068 GROUP
+00072070 WORLD
+00072078 NOSHARE
+00072080 /proc/%d/as
+00072094 nanospin_calibrate
+000720a8 nanospin
+000720bc /dev/netmgr
+000720c8 /dev/pci
+000720d4 /dev/null
+000720e0 Unknown error
+000720f4 /tmp/tmpfXXXXXX
+00072104 Copyright (c) 1992-2006 by P.J. Plauger, licensed by Dinkumware, Ltd. ALL RIGHTS RESERVED.
+00072160 0123456789abcdefABCDEF
+00072178 diouxXp
+00072188 0123456789abcdefABCDEF
+000721f8 0123456789ABCDEF
+0007220c 0123456789abcdef
+00072220 0123456789ABCDEF
+0007224c  +-#0,;:_
+00072258 hjltzLq
+00072260                                 
+00072284 00000000000000000000000000000000
+000722a8 hjltzL
+000726b4 0123456789abcdefghijklmnopqrstuvwxyz
+000726e0 0123456789abcdefghijklmnopqrstuvwxyz
+00072730 0123456789abcdefghijklmnopqrstuvwxyz
+000729c4 POSIXLY_CORRECT
+000729d4 DIR_KEEP_SYMLINK
+000729e8 fpemu.so.2
+000729f4 _math_emulator
+00072a04  terminated
+00072a14 *** stack smashing detected ***: 
+00072a38 *** buffer overflow detected ***: 
+00072a5c :AM:PM
+00072a64 :Sun:Sunday:Mon:Monday:Tue:Tuesday:Wed:Wednesday:Thu:Thursday:Fri:Friday:Sat:Saturday
+00072abc :Jan:January:Feb:February:Mar:March:Apr:April:May:May:Jun:June:Jul:July:Aug:August:Sep:September:Oct:October:Nov:November:Dec:December
+00072b44 |%a %b %e %T %Y|%m/%d/%y|%H:%M:%S|%I:%M:%S %p
+00072b8c %m/%d/%y
+00072b98 %Y-%m-%d
+00072ba4 %H:%M
+00072bb0 %H:%M:%S
+00072c5c M3.2.0/2,M11.1.0/2
+00072c70 /proc/ham/.info
+00072c80 DAEMONFORK 
+00072c98 noexec
+00072ca8 nosuid
+00072cb8 nocreat
+00072cc0 creat
+00072cc8 noatime
+00072cd0 atime
+00072cd8 remount
+00072ce0 update
+00072ce8 before
+00072cf0 after
+00072cf8 opaque
+00072d00 nostat
+00072d10 enumerate
+00072d1c implied
+00072d24 rwxfbcdpugks
+00072d38 Unknown error
+00072d48 No error
+00072d54 Operation not permitted
+00072d6c No such file or directory
+00072d88 No such process
+00072d98 Interrupted function call
+00072db4 Input/output error
+00072dc8 No such device or address
+00072de4 Arg list too long
+00072df8 Exec format error
+00072e0c Bad file descriptor
+00072e20 No child processes
+00072e34 Resource temporarily unavailable
+00072e58 Not enough memory
+00072e6c Permission denied
+00072e80 Bad address
+00072e8c Block device required
+00072ea4 Resource busy
+00072eb4 File exists
+00072ec0 Improper link
+00072ed0 No such device
+00072ee0 Not a directory
+00072ef0 Is a directory
+00072f00 Invalid argument
+00072f14 Too many open files in system
+00072f34 Too many open files
+00072f48 Inappropriate I/O control operation
+00072f6c Text file busy
+00072f7c File too large
+00072f8c No space left on device
+00072fa4 Invalid seek
+00072fb4 Read-only file system
+00072fcc Too many links
+00072fdc Broken pipe
+00072fe8 Domain error
+00072ff8 Result too large
+0007300c No message of desired type
+00073028 Identifier removed
+0007303c Channel number out of range
+00073058 Level 2 not synchronized
+00073074 Level 3 halted
+00073084 Level 3 reset
+00073094 Link number out of range
+000730b0 Protocol driver not attached
+000730d0 No CSI structure available
+000730ec Level 2 halted
+000730fc Resource deadlock avoided
+00073118 No locks available
+0007312c Operation canceled
+00073140 Not supported
+00073150 Disc quota exceded
+00073164 Invalid exchange
+00073178 Invalid request descriptor
+00073194 Exchange full
+000731a4 No anode
+000731b0 Invalid request code
+000731c8 Invalid slot
+000731d8 File locking deadlock
+000731f0 Bad font file format
+00073208 Owner died holding lock
+00073220 Device not a stream
+00073234 No data (for no delay io)
+00073250 Timer expired
+00073260 Out of streams resources
+0007327c Machine is not on network
+00073298 Package not installed
+000732b0 Too many levels of remote path
+000732d0 The link has been severed
+000732ec Advertise error
+000732fc Srmount error
+0007330c Communication error on send
+00073328 Protocol error
+00073338 multihop attempted
+0007334c Bad message
+00073358 Filename too long
+0007336c Value too large to be stored in datatype
+00073398 Given name not unique
+000733b0 FD invalid for this operation
+000733d0 Remote address changed
+000733e8 Can't access shared library
+00073404 Accessing a corrupted shared lib
+00073428 .lib section in a.out corrupted
+00073448 Attempting to link in too many libs
+0007346c Attempting to exec a shared lib
+0007348c Illegal byte sequence.
+000734a4 Function not implemented
+000734c0 Too many levels of symbolic links or prefixes
+000734f0 Restartable system call
+00073508 if pipe/FIFO, don't sleep in stream head
+00073534 Directory not empty
+00073548 Too many users (for UFS)
+00073564 Operation not supported
+0007357c Potentially recoverable i/o error
+000735a0 Operation now in progress
+000735bc Operation already in progress
+000735dc Socket operation on non-socket
+000735fc Destination address required
+0007361c Message too long
+00073630 Protocol wrong type for socket
+00073650 Protocol not available
+00073668 Protocol not configured or not supported
+00073694 Socket type not supported
+000736b0 Protocol family not supported
+000736d0 Address family not supported by protocol family
+00073700 Address already in use
+00073718 Can't assign requested address
+00073738 Network is down
+00073748 Network is unreachable
+00073760 Network dropped connection on reset
+00073784 Software caused connection abort
+000737a8 Connection reset by peer
+000737c4 No buffer space available
+000737e0 Socket is already connected
+000737fc Socket is not connected
+00073814 Can't send after socket shutdown
+00073838 Too many references: can't splice
+0007385c Connection timed out
+00073874 Connection refused
+00073888 Host is down
+00073898 No route to host
+000738ac RPC struct is bad
+000738c0 RPC version wrong
+000738d4 RPC prog. not avail
+000738e8 Program version wrong
+00073900 Bad procedure for program
+0007391c Must be done on local machine
+0007393c Need an NDP (8087...) to run
+0007395c Corrupted file system detected
+0007397c More to do; send message again
+0007399c Remap to controlling terminal
+000739bc No license
+000739c8 Server fault on msg pass
+000739e4 Endian not supported
+00073a00 empty
+00073a08 hangup
+00073a10 interrupt
+00073a24 illegal instruction
+00073a38 trace trap
+00073a44 abort
+00073a4c mutex deadlock
+00073a5c floating point exception
+00073a80 bus error
+00073a8c segmentation violation
+00073aa4 bad argument to system call
+00073ac0 write on pipe with no reader
+00073ae0 real-time alarm clock
+00073af8 software termination signal
+00073b14 user defined signal 1
+00073b2c user defined signal 2
+00073b44 death of child
+00073b54 power-fail restart
+00073b68 window change
+00073b78 urgent condition on I/O channel
+00073b98 asynchronus I/O
+00073ba8 sendable stop signal not from tty
+00073bcc stop signal from tty
+00073be4 continue a stopped process
+00073c00 attempted background tty read
+00073c20 attempted background tty write
+00073c40 virtual timer expired
+00073c58 profiling timer expired
+00073c70 exceeded cpu limit
+00073c84 exceeded file size limit
+00073ca0 signal 32
+00073cac signal 33
+00073cb8 signal 34
+00073cc4 signal 35
+00073cd0 signal 36
+00073cdc signal 37
+00073ce8 signal 38
+00073cf4 signal 39
+00073d00 signal 40
+00073d0c rtsig 41
+00073d18 rtsig 42
+00073d24 rtsig 43
+00073d30 rtsig 44
+00073d3c rtsig 45
+00073d48 rtsig 46
+00073d54 rtsig 47
+00073d60 rtsig 48
+00073d6c rtsig 49
+00073d78 rtsig 50
+00073d84 rtsig 51
+00073d90 rtsig 52
+00073d9c rtsig 53
+00073da8 rtsig 54
+00073db4 rtsig 55
+00073dc0 rtsig 56
+00073e14 /dev/crypto
+00073e3c /%.*s
+00073e44 /dev/log
+00073e50 syslog: unknown facility/priority: %x
+00073e80 %h %d %T 
+00073e8c [%d-%d]
+00073e94 /dev/console
+00073ea8 TMPDIR
+00073eb8 /tmp/
+00073ec4 /tmp//000000
+000779ec AAAXXXXXX

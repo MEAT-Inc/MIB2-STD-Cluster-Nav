@@ -1,0 +1,16 @@
+{
+  "collection": "_phone_trace_20261029_205440_f6999121",
+  "artifacts_verified": 9,
+  "successful_recorded_actions": 10,
+  "failure": "invalid generated &; shell syntax",
+  "reader_started": false,
+  "phone_handoff_occurred": false,
+  "native_reader_sha256": "c53d50be3d840c1f4e4da10bf9491b0856a7a802b6a1e3dc60702c4edd0af578",
+  "native_reader_changed": false,
+  "root_cause_black_view_confirmed": false,
+  "qnx_shell_positive_negative_controls_passed": true,
+  "python_phone_workflow_tests": 10,
+  "shell_completion_tests": 2,
+  "observer_regression_tests": 71,
+  "bundle_sha256": "aa4f4c4c7916fc08dd0e368364d0eda35cd55b6846a387b5b48d93b18c3f6ba1"
+}

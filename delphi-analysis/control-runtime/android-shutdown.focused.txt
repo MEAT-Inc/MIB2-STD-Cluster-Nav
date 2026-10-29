@@ -1,0 +1,106 @@
+CANDIDATE STRING REFERENCE {'index': 13397, 'va': 1123204, 'target': 1476956, 'text': 'Server::onMessage - EV_APP_EXIT - appId %d'}
+001122f8 blx       ip
+001122fc movw      r3, #0xfd72
+00112300 movt      r3, #0xffff
+00112304 add       r1, sp, #0x378
+00112308 ldrh      r2, [r1, r3]
+0011230c ldrb      r3, [sp, #0xe9]
+00112310 sxth      r2, r2
+00112314 ldr       r0, [sp, #0x24]
+00112318 mov       r1, r2
+0011231c mov       r2, r3
+00112320 bl        #0x113808
+00112324 b         #0x1125e0
+00112328 ldr       r0, [sp, #0x20]
+0011232c bl        #0x113f90
+00112330 mov       r3, r0
+00112334 str       r3, [sp, #0x370]
+00112338 ldr       r3, [sp, #0x370]
+0011233c ldr       r3, [r3, #8]
+00112340 ldr       r3, [r3]
+00112344 str       r3, [sp, #0x374]
+00112348 bl        #0x104b78
+0011234c mov       r3, r0
+00112350 ldr       r3, [r3, #0x1c]
+00112354 mov       r0, #1
+00112358 mov       r1, #5
+0011235c blx       r3
+00112360 mov       r3, r0
+00112364 cmp       r3, #0
+00112368 beq       #0x1123b4
+0011236c bl        #0x104b78
+00112370 mov       r3, r0
+00112374 ldr       ip, [r3, #0x2c]
+00112378 movw      r3, #0x272
+0011237c str       r3, [sp]
+00112380 ldr       r3, [pc, #0x290]
+00112384 add       r3, r4, r3
+00112388 str       r3, [sp, #4]
+0011238c ldr       r3, [sp, #0x374]
+00112390 str       r3, [sp, #8]
+00112394 mov       r0, #1
+00112398 mov       r1, #5
+0011239c ldr       r3, [pc, #0x248]
+001123a0 add       r3, r4, r3
+001123a4 mov       r2, r3
+001123a8 ldr       r3, [pc, #0x240]
+001123ac add       r3, r4, r3
+001123b0 blx       ip
+001123b4 ldr       r0, [sp, #0x24]
+001123b8 ldr       r1, [sp, #0x374]
+001123bc bl        #0x1129bc
+001123c0 b         #0x1125e0
+001123c4 bl        #0x104b78
+001123c8 mov       r3, r0
+001123cc ldr       r3, [r3, #0x1c]
+001123d0 mov       r0, #1
+001123d4 mov       r1, #4
+001123d8 blx       r3
+001123dc mov       r3, r0
+001123e0 cmp       r3, #0
+001123e4 beq       #0x1125d4
+001123e8 bl        #0x104b78
+001123ec mov       r3, r0
+001123f0 ldr       ip, [r3, #0x2c]
+001123f4 movw      r3, #0x279
+001123f8 str       r3, [sp]
+001123fc ldr       r3, [pc, #0x218]
+00112400 add       r3, r4, r3
+00112404 str       r3, [sp, #4]
+00112408 mov       r0, #1
+0011240c mov       r1, #4
+00112410 ldr       r3, [pc, #0x1d4]
+00112414 add       r3, r4, r3
+00112418 mov       r2, r3
+0011241c ldr       r3, [pc, #0x1cc]
+00112420 add       r3, r4, r3
+00112424 blx       ip
+00112428 b         #0x1125e0
+0011242c bl        #0x104b78
+00112430 mov       r3, r0
+00112434 ldr       r3, [r3, #0x1c]
+00112438 mov       r0, #1
+0011243c mov       r1, #4
+00112440 blx       r3
+00112444 mov       r3, r0
+00112448 cmp       r3, #0
+0011244c beq       #0x112490
+00112450 bl        #0x104b78
+00112454 mov       r3, r0
+00112458 ldr       ip, [r3, #0x2c]
+0011245c movw      r3, #0x27f
+00112460 str       r3, [sp]
+00112464 ldr       r3, [pc, #0x1b4]
+00112468 add       r3, r4, r3
+0011246c str       r3, [sp, #4]
+00112470 mov       r0, #1
+00112474 mov       r1, #4
+00112478 ldr       r3, [pc, #0x16c]
+0011247c add       r3, r4, r3
+00112480 mov       r2, r3
+00112484 ldr       r3, [pc, #0x164]
+00112488 add       r3, r4, r3
+0011248c blx       ip
+00112490 ldr       r3, [sp, #0x24]
+00112494 mov       r2, #0
+00112498 str       r2, [r3, #0x60]

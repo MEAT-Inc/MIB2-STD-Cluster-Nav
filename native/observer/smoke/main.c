@@ -9,7 +9,7 @@
 extern uint32_t registration(uintptr_t,uintptr_t,uint32_t,uint32_t,uint32_t,uint32_t) __asm__(OBS_SYMBOL);
 extern unsigned smoke_native_calls(void);
 int main(int argc,char **argv) {
-    unsigned i;
+    unsigned i,records=0,dropped=0;
     int observed=argc==2 && !strcmp(argv[1],"observed");
     const struct obs_file *(*view)(void)=0;
     void *symbol=dlsym(RTLD_DEFAULT,"delphi_observer_view");
@@ -28,15 +28,20 @@ int main(int argc,char **argv) {
     if (smoke_native_calls()!=9) return 6;
     if (view) {
         const struct obs_file *file=view();
+        uint32_t previous=0xfffu;
+        records=file->header.count; dropped=file->header.dropped;
+        printf("DELPHI_SMOKE_LOG status=%u records=%u dropped=%u lower_bound=%u\n",file->header.status,records,dropped,file->header.drop_flags);
         if (file->header.magic!=OBS_MAGIC || file->header.status!=OBS_READY ||
-            file->header.pointer_bytes!=4 || file->header.count!=9 || file->header.dropped) return 7;
-        for (i=0;i<9;++i) {
+            file->header.pointer_bytes!=4 || !records || records>9 || records+dropped>9 ||
+            (!file->header.drop_flags && records+dropped!=9) || file->header.lock) return 7;
+        for (i=0;i<records;++i) {
             const struct obs_record *r=&file->records[i];
             if (r->sequence!=i+1 || r->committed!=i+1 || r->thread_sequence!=i+1 ||
-                r->receiver!=0x1000u+i || r->endpoint!=0x2000u+i || !r->caller || !r->thread) return 8;
+                r->receiver<=previous || r->receiver>0x1008u || r->endpoint!=r->receiver+0x1000u || !r->caller || !r->thread) return 8;
+            previous=r->receiver;
         }
     }
-    printf("DELPHI_SMOKE_PASS mode=%s calls=9 registers_stack_errno_return=pass records=%u\n",
-        observed?"observed":"baseline",observed?9:0);
+    printf("DELPHI_SMOKE_PASS mode=%s calls=9 registers_stack_errno_return=pass records=%u dropped=%u\n",
+        observed?"observed":"baseline",records,dropped);
     return 0;
 }

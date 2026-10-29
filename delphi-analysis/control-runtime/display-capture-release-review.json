@@ -1,0 +1,14 @@
+{
+  "bundle": "native\\observer\\display\\androidauto-display-capture-laptop.zip",
+  "bundle_bytes": 38783,
+  "bundle_sha256": "3ed470531b9321c0a70c9fdbb37d00d41af85032059b63b87ee13c97f4d11df5",
+  "python_tests_passed": 31,
+  "portable_zip_passed": true,
+  "hardware_collection": "_androidauto_observer_20261029_042655_dbdaa2d1",
+  "hardware_artifacts_verified": 13,
+  "hardware_actions_verified": 33,
+  "hardware_records": 9,
+  "hardware_dropped": 0,
+  "hardware_restored_pid": 1757254,
+  "display_hooks_tested_on_car": false
+}

@@ -1,0 +1,98 @@
+{
+  "stock_processes_unchanged": true,
+  "stock_pids": [
+    684110
+  ],
+  "native_report": {
+    "armed": 1,
+    "done": 0,
+    "watchdog_finished": 1,
+    "watchdog_removed": 1,
+    "app_runs": 6,
+    "observed_runs": 1,
+    "records": [
+      {
+        "sequence": 1,
+        "pid": 1056863,
+        "ppid": 1052766,
+        "observed": 0,
+        "records": 0,
+        "args_ok": 1
+      },
+      {
+        "sequence": 2,
+        "pid": 1065056,
+        "ppid": 1052766,
+        "observed": 1,
+        "records": 9,
+        "args_ok": 1
+      },
+      {
+        "sequence": 3,
+        "pid": 1081439,
+        "ppid": 1052766,
+        "observed": 0,
+        "records": 0,
+        "args_ok": 1
+      },
+      {
+        "sequence": 4,
+        "pid": 1097824,
+        "ppid": 1052766,
+        "observed": 0,
+        "records": 0,
+        "args_ok": 1
+      },
+      {
+        "sequence": 5,
+        "pid": 1122399,
+        "ppid": 1052766,
+        "observed": 0,
+        "records": 0,
+        "args_ok": 1
+      },
+      {
+        "sequence": 6,
+        "pid": 1138783,
+        "ppid": 1052766,
+        "observed": 0,
+        "records": 0,
+        "args_ok": 1
+      }
+    ]
+  },
+  "collection": "_observer_path_20261029_023951_c57c86e6",
+  "verified_artifacts": [
+    {
+      "file": "stock-before.txt",
+      "bytes": 43,
+      "sha256": "956d030f6d4718f2e01303cb98e869e76bbb2ea25b6fc6e8954ba97929ba3955"
+    },
+    {
+      "file": "stock-after.txt",
+      "bytes": 43,
+      "sha256": "956d030f6d4718f2e01303cb98e869e76bbb2ea25b6fc6e8954ba97929ba3955"
+    },
+    {
+      "file": "path-test.txt",
+      "bytes": 561,
+      "sha256": "e9cc27b856f2b0c21347eac56d61a7b4439c3c8089a2712e83685b11618d49f4"
+    },
+    {
+      "file": "report.bin",
+      "bytes": 208,
+      "sha256": "b8fd30036cdd92526e8d98d9f44261b3e005b510f637f82de7f5dd51d01f4c85"
+    },
+    {
+      "file": "observer.bin",
+      "bytes": 32896,
+      "sha256": "dcaf8824d80ad5941374c1aeae38770f76781aafdc82a29be097d9650804f42e"
+    }
+  ],
+  "remote_directory": "/ramdisk/delphi-path-test_c57c86e6f02e4c26acc82002019e7bd7",
+  "actions_verified": 16,
+  "trace_pid": 1065056,
+  "records": 9,
+  "dropped": 0,
+  "actual_androidauto_interposition_tested": false
+}

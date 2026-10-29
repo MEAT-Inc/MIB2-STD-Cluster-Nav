@@ -1,0 +1,13 @@
+{
+  "collection": "_observer_preflight_20261029_000006_d6c5d4d0",
+  "all_seven_commands_passed": true,
+  "androidauto_parent_pid_at_capture": 417823,
+  "androidauto_pid_at_capture": 684110,
+  "procman_configuration_entries": [
+    "-f  AndroidAutoServices    -n\"androidautoservices\"      -l20 -x10 -r   -c15 -a\"-t\"",
+    "-f  AndroidAuto            -n\"androidauto\"              -l20 -x10 -r   -c15 -a\"-t\""
+  ],
+  "flag_semantics_and_control_api_unverified": true,
+  "observer_not_deployed_to_real_androidauto": true,
+  "next_test": "isolated RAM-only observer smoke; no stock process stop/restart"
+}

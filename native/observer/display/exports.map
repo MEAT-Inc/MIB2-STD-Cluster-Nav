@@ -1,0 +1,6 @@
+{
+ global: _ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase; delphi_observer_view;
+ _ZN9VideoSink25addSupportedConfigurationEiiiiiii; _ZN9VideoSink13setVideoFocusEib;
+ _ZN13MessageRouter13queueOutgoingEhPvj; delphi_display_view;
+ local: *;
+};

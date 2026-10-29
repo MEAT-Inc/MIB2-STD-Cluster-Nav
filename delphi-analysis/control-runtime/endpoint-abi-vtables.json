@@ -1,0 +1,464 @@
+{
+  "receiver": {
+    "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d",
+    "vtables": {
+      "_ZTV9VideoSink": {
+        "address": "0x117350",
+        "address_point": "0x117358",
+        "bytes": 72,
+        "entries": [
+          {
+            "slot": "0x0",
+            "address": "0x8ef0c",
+            "symbol": "_ZN9VideoSinkD1Ev",
+            "relocation": 2
+          },
+          {
+            "slot": "0x4",
+            "address": "0x8e304",
+            "symbol": "_ZN9VideoSinkD0Ev",
+            "relocation": 2
+          },
+          {
+            "slot": "0x8",
+            "address": "0x82850",
+            "symbol": "_ZN20ProtocolEndpointBase15onChannelClosedEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0xc",
+            "address": "0x82844",
+            "symbol": "_ZN20ProtocolEndpointBase14mayOpenChannelEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0x10",
+            "address": "0x82834",
+            "symbol": "_ZN20ProtocolEndpointBase15onChannelOpenedEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0x14",
+            "address": "0x7e904",
+            "symbol": "_ZN13MediaSinkBase12routeMessageEhtRK10shared_ptrI8IoBufferE",
+            "relocation": 2
+          },
+          {
+            "slot": "0x18",
+            "address": "0x6e190",
+            "symbol": "_ZN20ProtocolEndpointBase16handleRawMessageEhRK10shared_ptrI8IoBufferE",
+            "relocation": 2
+          },
+          {
+            "slot": "0x1c",
+            "address": "0x8dc90",
+            "symbol": "_ZN9VideoSink16addDiscoveryInfoEP24ServiceDiscoveryResponse",
+            "relocation": 2
+          },
+          {
+            "slot": "0x20",
+            "address": "0x8dc34",
+            "symbol": "_ZN9VideoSink11handleSetupEi",
+            "relocation": 2
+          },
+          {
+            "slot": "0x24",
+            "address": "0x8da3c",
+            "symbol": "_ZN9VideoSink17handleCodecConfigEPvj",
+            "relocation": 2
+          },
+          {
+            "slot": "0x28",
+            "address": "0x8d9e0",
+            "symbol": "_ZN9VideoSink19handleDataAvailableEyRK10shared_ptrI8IoBufferEj",
+            "relocation": 2
+          },
+          {
+            "slot": "0x2c",
+            "address": "0x8dad4",
+            "symbol": "_ZN9VideoSink13playbackStartEi",
+            "relocation": 2
+          },
+          {
+            "slot": "0x30",
+            "address": "0x8daec",
+            "symbol": "_ZN9VideoSink12playbackStopEi",
+            "relocation": 2
+          },
+          {
+            "slot": "0x34",
+            "address": "0x8dab8",
+            "symbol": "_ZN9VideoSink24handleMediaConfigurationEi",
+            "relocation": 2
+          },
+          {
+            "slot": "0x38",
+            "address": "0x8db04",
+            "symbol": "_ZN9VideoSink23handleVideoFocusRequestERK29VideoFocusRequestNotification",
+            "relocation": 2
+          },
+          {
+            "slot": "0x3c",
+            "address": "0x8db34",
+            "symbol": "_ZN9VideoSink25getNumberOfConfigurationsEv",
+            "relocation": 2
+          }
+        ]
+      },
+      "_ZTV13MediaSinkBase": {
+        "address": "0x117110",
+        "address_point": "0x117118",
+        "bytes": 72,
+        "entries": [
+          {
+            "slot": "0x0",
+            "address": "0x7ee60",
+            "symbol": "_ZN13MediaSinkBaseD1Ev",
+            "relocation": 2
+          },
+          {
+            "slot": "0x4",
+            "address": "0x7edf4",
+            "symbol": "_ZN13MediaSinkBaseD0Ev",
+            "relocation": 2
+          },
+          {
+            "slot": "0x8",
+            "address": "0x82850",
+            "symbol": "_ZN20ProtocolEndpointBase15onChannelClosedEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0xc",
+            "address": "0x82844",
+            "symbol": "_ZN20ProtocolEndpointBase14mayOpenChannelEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0x10",
+            "address": "0x82834",
+            "symbol": "_ZN20ProtocolEndpointBase15onChannelOpenedEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0x14",
+            "address": "0x7e904",
+            "symbol": "_ZN13MediaSinkBase12routeMessageEhtRK10shared_ptrI8IoBufferE",
+            "relocation": 2
+          },
+          {
+            "slot": "0x18",
+            "address": "0x6e190",
+            "symbol": "_ZN20ProtocolEndpointBase16handleRawMessageEhRK10shared_ptrI8IoBufferE",
+            "relocation": 2
+          },
+          {
+            "slot": "0x1c",
+            "address": "0x0",
+            "symbol": "__cxa_pure_virtual",
+            "relocation": 2
+          },
+          {
+            "slot": "0x20",
+            "address": "0x0",
+            "symbol": "__cxa_pure_virtual",
+            "relocation": 2
+          },
+          {
+            "slot": "0x24",
+            "address": "0x0",
+            "symbol": "__cxa_pure_virtual",
+            "relocation": 2
+          },
+          {
+            "slot": "0x28",
+            "address": "0x0",
+            "symbol": "__cxa_pure_virtual",
+            "relocation": 2
+          },
+          {
+            "slot": "0x2c",
+            "address": "0x0",
+            "symbol": "__cxa_pure_virtual",
+            "relocation": 2
+          },
+          {
+            "slot": "0x30",
+            "address": "0x0",
+            "symbol": "__cxa_pure_virtual",
+            "relocation": 2
+          },
+          {
+            "slot": "0x34",
+            "address": "0x0",
+            "symbol": "__cxa_pure_virtual",
+            "relocation": 2
+          },
+          {
+            "slot": "0x38",
+            "address": "0x0",
+            "symbol": "__cxa_pure_virtual",
+            "relocation": 2
+          },
+          {
+            "slot": "0x3c",
+            "address": "0x0",
+            "symbol": "__cxa_pure_virtual",
+            "relocation": 2
+          }
+        ]
+      },
+      "_ZTV20ProtocolEndpointBase": {
+        "address": "0x117210",
+        "address_point": "0x117218",
+        "bytes": 40,
+        "entries": [
+          {
+            "slot": "0x0",
+            "address": "0x8286c",
+            "symbol": "_ZN20ProtocolEndpointBaseD1Ev",
+            "relocation": 2
+          },
+          {
+            "slot": "0x4",
+            "address": "0x82890",
+            "symbol": "_ZN20ProtocolEndpointBaseD0Ev",
+            "relocation": 2
+          },
+          {
+            "slot": "0x8",
+            "address": "0x82850",
+            "symbol": "_ZN20ProtocolEndpointBase15onChannelClosedEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0xc",
+            "address": "0x82844",
+            "symbol": "_ZN20ProtocolEndpointBase14mayOpenChannelEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0x10",
+            "address": "0x82834",
+            "symbol": "_ZN20ProtocolEndpointBase15onChannelOpenedEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0x14",
+            "address": "0x78080",
+            "symbol": "_ZN20ProtocolEndpointBase12routeMessageEhtRK10shared_ptrI8IoBufferE",
+            "relocation": 2
+          },
+          {
+            "slot": "0x18",
+            "address": "0x6e190",
+            "symbol": "_ZN20ProtocolEndpointBase16handleRawMessageEhRK10shared_ptrI8IoBufferE",
+            "relocation": 2
+          },
+          {
+            "slot": "0x1c",
+            "address": "0x0",
+            "symbol": "__cxa_pure_virtual",
+            "relocation": 2
+          }
+        ]
+      },
+      "_ZTV11InputSource": {
+        "address": "0x117068",
+        "address_point": "0x117070",
+        "bytes": 40,
+        "entries": [
+          {
+            "slot": "0x0",
+            "address": "0x7a410",
+            "symbol": "_ZN11InputSourceD1Ev",
+            "relocation": 2
+          },
+          {
+            "slot": "0x4",
+            "address": "0x7a30c",
+            "symbol": "_ZN11InputSourceD0Ev",
+            "relocation": 2
+          },
+          {
+            "slot": "0x8",
+            "address": "0x82850",
+            "symbol": "_ZN20ProtocolEndpointBase15onChannelClosedEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0xc",
+            "address": "0x82844",
+            "symbol": "_ZN20ProtocolEndpointBase14mayOpenChannelEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0x10",
+            "address": "0x82834",
+            "symbol": "_ZN20ProtocolEndpointBase15onChannelOpenedEh",
+            "relocation": 2
+          },
+          {
+            "slot": "0x14",
+            "address": "0x798e4",
+            "symbol": "_ZN11InputSource12routeMessageEhtRK10shared_ptrI8IoBufferE",
+            "relocation": 2
+          },
+          {
+            "slot": "0x18",
+            "address": "0x6e190",
+            "symbol": "_ZN20ProtocolEndpointBase16handleRawMessageEhRK10shared_ptrI8IoBufferE",
+            "relocation": 2
+          },
+          {
+            "slot": "0x1c",
+            "address": "0x79040",
+            "symbol": "_ZN11InputSource16addDiscoveryInfoEP24ServiceDiscoveryResponse",
+            "relocation": 2
+          }
+        ]
+      }
+    },
+    "functions_traced": 47
+  },
+  "app": {
+    "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271",
+    "vtables": {
+      "_ZTV20AaVideoSinkCallbacks": {
+        "address": "0x175d08",
+        "address_point": "0x175d10",
+        "bytes": 48,
+        "entries": [
+          {
+            "slot": "0x0",
+            "address": "0x125e68",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x4",
+            "address": "0x125ecc",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x8",
+            "address": "0x125168",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0xc",
+            "address": "0x125200",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x10",
+            "address": "0x125338",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x14",
+            "address": "0x125420",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x18",
+            "address": "0x1254e4",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x1c",
+            "address": "0x1255d0",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x20",
+            "address": "0x1256bc",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x24",
+            "address": "0x125778",
+            "symbol": "",
+            "relocation": null
+          }
+        ]
+      },
+      "_ZTV19IVideoSinkCallbacks": {
+        "address": "0x175d38",
+        "address_point": "0x175d40",
+        "bytes": 48,
+        "entries": [
+          {
+            "slot": "0x0",
+            "address": "0x125a40",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x4",
+            "address": "0x125a98",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x8",
+            "address": "0x104b00",
+            "symbol": "__cxa_pure_virtual [PLT]",
+            "relocation": null
+          },
+          {
+            "slot": "0xc",
+            "address": "0x125af0",
+            "symbol": "",
+            "relocation": null
+          },
+          {
+            "slot": "0x10",
+            "address": "0x104b00",
+            "symbol": "__cxa_pure_virtual [PLT]",
+            "relocation": null
+          },
+          {
+            "slot": "0x14",
+            "address": "0x104b00",
+            "symbol": "__cxa_pure_virtual [PLT]",
+            "relocation": null
+          },
+          {
+            "slot": "0x18",
+            "address": "0x104b00",
+            "symbol": "__cxa_pure_virtual [PLT]",
+            "relocation": null
+          },
+          {
+            "slot": "0x1c",
+            "address": "0x104b00",
+            "symbol": "__cxa_pure_virtual [PLT]",
+            "relocation": null
+          },
+          {
+            "slot": "0x20",
+            "address": "0x104b00",
+            "symbol": "__cxa_pure_virtual [PLT]",
+            "relocation": null
+          },
+          {
+            "slot": "0x24",
+            "address": "0x104b00",
+            "symbol": "__cxa_pure_virtual [PLT]",
+            "relocation": null
+          }
+        ]
+      }
+    },
+    "functions_traced": 9
+  }
+}

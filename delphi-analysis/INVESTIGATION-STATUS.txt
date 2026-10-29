@@ -114,3 +114,540 @@ INCOMPLETE result was a map-name truncation false negative, now corrected. See
 OBSERVER-PREFLIGHT-REVIEW.txt/.json. No rerun of the old full preflight is needed.
 A targeted -SupervisorOnly collector mode now obtains procman_core.cfg and process
 ancestry needed for a controlled launch/restart plan. No observer deployed yet.
+
+2026-10-29 supervisor capture complete; isolated unit test prepared
+----------------------------------------------------------------
+Seven-command supervisor capture passed. procman is AndroidAuto's parent; both
+smartphone process entries are present in procman_core.cfg. See
+OBSERVER-SUPERVISOR-REVIEW.txt/.json. A Python-only portable RAM smoke-test package
+is now QNX-emulator/offline tested, with no vehicle execution yet. It leaves stock
+AndroidAuto managed/running and collects procman/libc data for offline analysis.
+
+2026-10-29 actual-unit observer smoke PASS
+----------------------------------------
+Collection _observer_smoke_20261029_005129_a1ecf3ce independently verified: seven
+artifact hashes, raw trace and decoded JSON agree; nine native calls, nine records,
+zero drops; factory AndroidAuto PID/arguments unchanged during test. Captured
+procman/libc support offline lifecycle work. -r's conditional restart-on-error
+path is now traced in the exact captured manager. See OBSERVER-HARDWARE-REVIEW.txt
+and control-runtime/hardware-review.json. Real AndroidAuto interposition and
+cluster output remain untested; no managed app was restarted/instrumented.
+
+
+Managed launch progress - synthetic proof completed
+
+The latest car smoke capture passed: unchanged observer candidate loads on the
+actual unit and records nine synthetic registrations with zero dropped records.
+Stock AndroidAuto remained the same PID/argv. Actual app interposition is untested.
+
+The next step now has a passing QNX emulation prototype under
+native/observer/transaction. Five scenarios prove baseline, observed one-shot exec,
+normal restoration, failure before/after detach and orphan-watchdog restoration.
+Child PID, parent PID, argv and observer forwarding were verified. The wrapper
+removes its temporary namespace redirect before exec. All targets are synthetic.
+No actual procman or AndroidAuto binary is executed by the bench.
+
+Static control evidence (captured procman SHA256 c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d):
+- Configuration parser -r sets descriptor+0x2c at 0x1038b8.
+- Active exit handler 0x104260..0x10429c schedules a restart when that flag and
+  recorded exit code are nonzero, subject to global shutdown state at 0x12ff70.
+- Spawn worker 0x10433c calls spawnp at 0x104504, inherits environment, and preserves
+  configured arguments. Nonzero recorded exits add an -X%d argument.
+- EV_START_APP 0x161 selects an app ID; no per-app environment override is visible.
+- EV_GET_APP_STATE 0x168 replies with event 0x169 and two words {appID,state}.
+- The active-state shutdown branch at 0x104190 sends event 0x163 to the app with
+  zero payload when configured exit countdown is positive. This is not yet a
+  verified externally usable manager stop request. Do not send guessed events.
+
+Static AndroidAuto evidence (expected SHA256 da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271):
+- Event accessor 0x1064c0 reads message-header event at +0xc without conversion.
+- Dispatcher at 0x1105c0 compares event 0x164 and branches to 0x112328.
+- That handler reads payload word0, logs EV_APP_EXIT / appId at 0x112384 and calls
+  0x1129bc with the app ID at 0x1123bc.
+- 0x1129bc iterates the listener collection at this+0x2c, compares listener app IDs,
+  and destroys/removes matching entries. This is listener cleanup, not proof of a
+  command that terminates AndroidAuto. Its EV_APP_EXIT string must not be confused
+  with procman's 0x163 shutdown request.
+- scripts/trace_android_shutdown.py checks the binary hash and emits candidate
+  references/windows using a reviewed function-local PIC-base invariant. It is
+  heuristic static analysis, not a runtime protocol validation.
+
+Remaining gate: trace the framework's handling of 0x163 and the manager-facing
+stop/configuration route, then test the managed transaction with synthetic apps.
+After that, prepare the Python-only opt-in vehicle controller and private-path
+hardware validation. No additional vehicle connection is needed for current
+static analysis. There is still no demonstrated Android Auto cluster map.
+
+
+Captured manager integration verified in QNX emulation
+
+This supersedes the modeled-manager-only result in OBSERVER-LAUNCH-TRANSACTION-
+REVIEW.txt. The exact acquired procman (SHA256 c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d)
+was executed in a disposable QNX 6.5 ARM emulator, with a private configuration
+containing one synthetic app and a unique XSAL_INSTANCE_NAME. No vehicle network
+connection, process stop or configuration modification occurred.
+
+New runtime evidence:
+- An app exit(7) is reported by this manager as raw wait status 1792 (7 << 8).
+  It appends -X1792, not -X7, to the next launch. Preserve this verbatim.
+- SIGINT to the owned synthetic app is reported as status 2 and restarted with
+  -X2. Header/runtime SIGINT agrees with the signal 2 loaded in the captured
+  manager's termination helper at 0x103d48 before kill at 0x103d4c.
+- The manager restarts the fixture via a temporary namespace redirect, the wrapper
+  removes the redirect before exec, and the observer records nine registrations.
+  The observed child's parent remains the actual captured manager.
+- The next manager restart executes the original fixture path with no observer.
+  Its zero exit is not restarted during a bounded 1.5 second observation window.
+- The unchanged observer candidate has SHA256 cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c.
+- Six Python evidence-review tests reject wrong parent identity, normalized -X7,
+  observer leakage, unexpected fatal signals and missing restoration evidence.
+
+Artifacts: native/observer/managed-bench/qemu/qemu.log, tested.sha256, summary.json.
+The Python evidence checker binds current native artifacts to the tested hashes
+and requires the exact four-launch sequence, expected signals and positive exits.
+The manager is proprietary user-provided input and is referenced from delphi-dump,
+not copied into a redistributable package.
+
+Interpretation:
+We now have actual-manager evidence for the restart/injection/restoration sequence,
+which is stronger than the previous model. This supplies a practical candidate
+restart route without inventing a per-app stop command. It does not establish a
+cooperative graceful stop: event 0x163 remains a manager shutdown request, while
+AndroidAuto's 0x164 EV_APP_EXIT handler cleans up listeners of an exited app.
+No claim is made that SIGINT gracefully shuts down real AndroidAuto.
+
+Remaining before any factory-app test:
+1. Private-path namespace redirect and watchdog validation on the actual unit.
+2. Python controller with fresh PID/parent/hash checks, bounded failure recovery,
+   exact inherited argv/environment and explicit verification of stock restoration.
+3. Check real-app readiness, signal behavior and executing an identical staged copy
+   without changing its resource lookup behavior. The synthetic -l0 app does not
+   exercise the real SAL readiness handshake or the car's dependency environment.
+4. Observe the real app-to-receiver registerService boundary. Cluster display and
+   secondary phone-video negotiation are not yet demonstrated.
+
+Current readiness: emulator integration PASS; factory AndroidAuto deployment NOT
+READY. No reconnect is needed until the private-path hardware routine is prepared.
+
+
+Private-path hardware test ready; next dependency is vehicle access
+
+Goal: enable the next real AndroidAuto registration capture, which is needed to
+inspect display-service negotiation before attempting cluster map video.
+
+Offline work completed:
+- native/observer/path-test tests the one-shot pathname redirect with only private
+  /ramdisk/delphi-path-test_<uuid>/path_child targets. Its strict path parser rejects
+  factory paths. It never signals AndroidAuto or procman.
+- Exact candidate files passed QNX 6.5 ARM emulation: baseline, observed launch,
+  normal restore, injected failure after detach, failure before detach and orphan
+  installer watchdog recovery. Six launches succeeded and the observed launch
+  recorded nine calls with zero drops. An invalid factory target was rejected.
+- report.bin (208 bytes) and observer.bin were exported from emulation and parsed
+  by the same Python assessor used by the laptop routine. Process identity,
+  arguments, watchdog restoration and log records cross-check successfully.
+- The final emulator uses private existing IFS executable paths and /dev/shmem
+  reports. A block-backed writable RAM filesystem is not required for this API
+  test. Real /ramdisk behavior remains the intended hardware gate.
+- scripts/run_observer_path_test.py is Python standard-library only; default is
+  offline plan. --run stages five hash-verified files in a fresh private RAM folder,
+  runs the bounded native suite, checks unchanged stock PID/argv and collects five
+  evidence files under common delphi-dump/_observer_path_*.
+- Native report storage is /dev/shmem/delphi-path-report-<uuid>.bin; its copy in the
+  private directory is collected as report.bin. Observer storage uses its own
+  /dev/shmem/delphi-observer-path-<uuid>.bin, collected as observer.bin.
+- Fourteen new runner tests, nine shared smoke-helper tests and six existing
+  manager-evidence tests pass (29 total). An independent agent reviewed the native
+  contract, runner scope and final portable package.
+- The portable ZIP has exactly 11 intended files, with no captured proprietary
+  programs, emulator runner, filesystem setup utilities or PowerShell scripts.
+  Extracted default plan returns 0 without connecting or creating delphi-dump.
+
+Focused actual-AndroidAuto launch review:
+- AndroidAuto hash da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271.
+- getopt string at 0x167e70 includes X:. X handler 0x105778..0x1057fc conditionally
+  logs optarg as text (format 0x167dd0); no crash-recovery action was seen there.
+- Neither AndroidAuto nor the acquired receiver has direct imports/strings for
+  readlink, realpath, chdir, dlopen, dlsym, /proc/ or exefile in the focused review.
+- ELF inspection confirms no DT_RPATH or DT_RUNPATH in these two files. App uses
+  /usr/lib/ldqnx.so.2 and the receiver dependency name libautoreceiver.so.1.
+- App resources include absolute /extbin/apps/bmp/, /tmp/, /home/root/, /dev/urandom
+  and /dev/fs0 paths. Preserve inherited working directory and environment in the
+  eventual wrapper; this is not a complete indirect dependency audit.
+- No signal/sigaction/sigwait direct imports were found in the two selected files.
+  This does not prove absence of handlers installed by dependencies. SIGINT is not
+  established as a graceful AndroidAuto shutdown.
+
+Next user action:
+Keep Ethernet connected with phone unplugged, vehicle parked, unit powered.
+Extract native/observer/path-test/observer-path-test-laptop.zip into the laptop
+project folder and run from that project root:
+  python scripts/run_observer_path_test.py --run
+Return the full new delphi-dump/_observer_path_* folder for review.
+
+This test establishes only the real unit's private pathname/observer mechanics.
+Factory AndroidAuto interposition, secondary video and a map in the cluster are
+still unproven. Actual factory-app launcher remains gated on the returned evidence.
+
+
+Private-path hardware review and real-app observer handoff
+
+Returned collection: _observer_path_20261029_023951_c57c86e6
+Independent review PASS: all five artifact sizes/SHA256 hashes match, all sixteen
+remote commands returned zero, and the raw observer log matches its decoded JSON.
+Six private app launches passed. Observed PID 1065056 recorded
+9 registrations with 0 drops. The factory
+AndroidAuto PID 684110 and argv were unchanged before/after.
+Watchdog finished=1 and removed=1 prove orphan cleanup. Its final done=0 is expected:
+the orphan case deliberately relies on the deadline, not an installer completion.
+
+Next concrete step prepared:
+  scripts/run_androidauto_observer.py
+  native/observer/launch/androidauto-observer-laptop.zip
+This is the first proposed experiment on the real AndroidAuto process. No live
+factory-app interruption or vehicle connection occurred during preparation.
+
+Verified native controls (QNX emulation, synthetic app with captured manager):
+- Stale process-start identity refuses interruption.
+- Normal observed launch captures nine synthetic native calls and restores a fresh
+  stock executable under the same manager.
+- Separate-session watchdog restores even after controller process-group SIGHUP.
+- Stock library symlinks are dereferenced for exact byte comparison; staged private
+  references must remain regular files.
+- The release candidate matches tested.sha256. Both native files are ARM32 LE EABI5
+  softfp, non-executable stack, and need only libc.so.3. Every required import exists
+  in the actual captured unit libc (controller import count:
+  52).
+- Fifteen new Python tests plus fourteen path-runner and nine shared-helper tests
+  pass. The extracted eight-entry portable package defaults to an offline plan,
+  creates no dump, and contains no proprietary app/manager or emulator binaries.
+
+Final design choices:
+- Read-only procfs descriptors check executable, PID, parent and start time; the
+  actual signal is kill(SIGINT), matching the captured manager. The initially
+  attempted writable procfs/debugger signal path did not preserve restart behavior
+  in emulation and is not used. Identity recheck and kill are not atomic.
+- The observer is entry-only and forwards originals. No endpoint object or phone
+  discovery data is modified. The real-app collector requires one or more captured
+  callers matching the verified AndroidAuto image (eight statically verified BL
+  call sites, normalized by reported executable load bias). The video-registration
+  caller is 0x124e54 and is reported separately.
+- Optional external library debugger-name/mapping assumptions were removed. Actual
+  captured known-caller records provide interposition evidence directly. The five
+  old binding fields in the 512-byte report remain reserved/zero.
+- Fresh snapshots, exact stock app/receiver/manager fingerprints, and the reviewed
+  AndroidAuto -r configuration entry must pass before any interruption. Native
+  full-byte comparisons are repeated at the critical transitions.
+- The wrapper removes its namespace redirect before exec, preserves manager argv,
+  cwd/environment, and refuses an existing nonempty LD_PRELOAD. It uses an identical
+  RAM-staged app copy and the unchanged observer candidate.
+- An exclusive /dev/shmem/delphi-aa-observer-active.bin marker coordinates the
+  wrapper/guard and blocks overlapping or uncertain experiments. It is removed only
+  after verified stock restoration; it is never a persistent startup change.
+
+Next car action (parked, powered; Ethernet connected; phone unplugged):
+Extract the new ZIP into the existing laptop project root, then run:
+  python scripts/run_androidauto_observer.py --run
+This interrupts/restarts the actual AndroidAuto process for capture and then for
+restoration. Expected capture is about twenty seconds; guarded startup/restoration
+adds up to about forty-five seconds plus file-transfer time.
+Return the entire new delphi-dump/_androidauto_observer_* directory.
+If the process restores but no registrations occur without a phone, the script
+returns 2 and labels that outcome separately. Incomplete or failed restoration
+must be reviewed before retrying; a unit restart may be needed if SIGINT is ignored.
+
+Goal status: actual AndroidAuto interposition still awaits hardware evidence.
+No Android Auto secondary video or full instrument-cluster map is demonstrated.
+
+Bundle bytes: 33641
+Bundle SHA256: 3fe60c3eb854ee01be5900067f3a370527d1ab6a4da1c1f0ae950c0f32507d80
+Native controller SHA256: 4f6aa88c52752a81ebaf02cbad6a916f25b88ef8847f1ad8e278391808a63d21
+Observer SHA256 (unchanged): cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c
+
+QNX procfs reference consulted for structures and semantics:
+https://www.qnx.com/developers/docs/6.5.0SP1/neutrino/prog/process.html
+
+
+Real AndroidAuto startup observer verified; phone-session capture prepared
+
+Returned collection: _androidauto_observer_20261029_040547_7c22f85f
+All twelve artifact size/SHA256 records and thirty successful remote actions were
+independently checked. The controller's final report, raw log, decoded JSON and
+kernel-reported process identities agree.
+
+Real unit outcome:
+- Initial AndroidAuto PID 684110, manager PID 417823.
+- Observed real-app PID 1056846 ran the identical RAM-staged app.
+- Observer constructor READY and its original receiver symbol offset 0x76fac match
+  the reviewed native provider. There were zero registration records and zero drops.
+- Fresh stock PID 1212494 was verified under the same manager.
+- LAUNCH_RESTORED and LAUNCH_COMPLETE confirm the experiment/restoration completed.
+- The summary's passed=false means service-call capture was not demonstrated; it
+  does not mean the launcher or restoration failed. No registration happened in
+  that phone-unplugged window. Phone-dependent initialization is the next hypothesis.
+
+Next test addresses the one-USB-port constraint directly:
+  python scripts/run_androidauto_observer.py --run --phone-capture
+Use native/observer/launch/androidauto-phone-capture-laptop.zip, extracted into the
+existing laptop project root. Start with Ethernet attached. Only after CAPTURE
+READY, replace the adapter with the phone, open navigation in Android Auto, leave
+it attached for 90 seconds, then reconnect Ethernet and press Enter to collect.
+The 60-second native capture and restoration proceed without a laptop connection.
+The unit remains parked and powered throughout. Actual AndroidAuto is restarted.
+
+Implementation/verification:
+- Native report version 2 retains the 512-byte layout and records a bounded 20/60
+  second capture profile. The Python reader still validates version-1 hardware data.
+- The watchdog emits readiness after observer logging is READY. It also owns the
+  final completion markers, so controller/session death cannot hide successful
+  restoration. Its independent session and ignored SIGHUP remain unchanged.
+- Phone mode launches the controller in the background, checks live readiness over
+  FTP within a bounded handoff period, closes the original Telnet connection, then
+  opens and verifies a new collection session after Ethernet returns.
+- Readiness log permissions are set before launch. Missing/stale readiness never
+  triggers the USB handoff; the still-connected shell waits for its existing job.
+- Old/closed sessions cannot issue collection writes; the new session must verify
+  the same private cwd first. Initial actions and the readiness snapshot are saved
+  before disconnect. No new signal/retry is sent during reconnection.
+- QNX emulation passed the default 20-second window and 60-second phone profile,
+  including terminating the controller's entire process group via SIGHUP and
+  autonomous restoration by the surviving watchdog. Both captured nine synthetic
+  calls with zero drops. Factory AndroidAuto was not run in emulation.
+- Twenty-one Python tests pass, including two-session success, readiness failure,
+  late/finished markers, reconnect-cd failure, and both binary report versions.
+- The extracted eight-file portable ZIP passed its default phone-mode plan without
+  network or dump creation. It contains no proprietary or emulator programs.
+
+Bundle SHA256: 69e16aaf4fd35638f11a43626c0392bf7c7067980029c68f37310cad584842d6
+Return the complete new delphi-dump/_androidauto_observer_* folder after the test.
+Actual registration interposition, display negotiation and cluster maps remain
+unproven; a safe real-app preload/restoration path is now verified on the vehicle.
+
+2026-10-29: Real phone registration interposition verified; display capture ready
+
+This supersedes the preceding statement that actual registration interposition
+was unproven. Collection _androidauto_observer_20261029_042655_dbdaa2d1 has nine
+real registrations, zero drops, all eight known app callers including the video
+sink, and verified stock restoration. All 13 artifact hashes and 33 actions were
+independently checked. Observed PID 1646670 -> restored stock PID 1757254 under
+unchanged manager 417823. Video endpoint was 0x00197098. A receiver-internal
+registration caller was also captured; this is not proof that all internal calls
+will interpose.
+
+Next read-only display configuration/discovery observer is packaged and verified:
+  native/observer/display/androidauto-display-capture-laptop.zip
+  python scripts/run_androidauto_observer.py --run --phone-capture --display-capture
+Start on Ethernet, swap to the phone only at CAPTURE READY, open navigation,
+wait 90 seconds, reconnect Ethernet and press Enter to collect. Same guarded
+60-second capture and autonomous stock restoration as the successful test.
+Return the entire new common delphi-dump/_androidauto_observer_* folder.
+The extra hooks capture VideoSink configuration/focus and bounded outgoing
+service-discovery bytes. They preserve packet bytes and do not create endpoints.
+Their real-unit interposition is the next gate. QNX forwarding/overflow/rejection
+controls, actual-unit ABI/import/symbol checks, 31 Python tests and the extracted
+standard-library-only portable bundle all pass.
+
+Full review: OBSERVER-DISPLAY-CAPTURE-READY.txt
+Release evidence: control-runtime/display-capture-release-review.json
+Bundle SHA256: 3ed470531b9321c0a70c9fdbb37d00d41af85032059b63b87ee13c97f4d11df5
+No Android Auto second display stream or cluster map has yet been demonstrated.
+Further advancement of the display-capture gate now needs the car session.
+
+2026-10-29: Display configuration, discovery and focus interposition verified
+
+Returned _androidauto_observer_20261029_130447_557863fc PASSED independent review:
+14 artifact hashes/sizes, 35 successful remote actions, nine registrations and
+three display records with zero drops. Fresh stock PID 1306694 verified under
+manager 417823 after observed PID 1228877. Raw and saved decoded data agree.
+The video config, 386-byte outgoing discovery and focus call refer to the known
+video sink. Native config arguments exactly match serialized fields. Service 1
+is the only advertised video sink; services 1..8 appear, with no cluster metadata.
+Native resolution enum 1 maps to 800x480. Phone stream selection is not captured.
+The previously uncertain library-internal queue hook now has hardware evidence.
+
+Offline work used the real packet to validate a paired video/input candidate
+(illustrative service IDs 9/10, display 1), preserving all original bytes. It is
+430 bytes and saved only as a host fixture. No runtime endpoints or advertisement
+were added. Three new paired descriptor tests, six existing wire tests, and the
+31 existing Android observer/decoder tests pass (40 total across those suites).
+Reproducible review: scripts/review_androidauto_display.py <collection-folder>.
+
+scripts/trace_android_endpoint_abi.py now fingerprints both binaries and resolves
+VideoSink, base, input and callback vtables, with targeted native assembly traces.
+Primary callbacks own main decoder/focus state; a second sink must have separate
+callbacks and lifecycle. A native exported VideoSink constructor is absent; the
+app's local constructor and its initialization chain have now been traced.
+
+Full findings and next implementation gates: OBSERVER-DISPLAY-HARDWARE-REVIEW.txt
+Machine evidence: control-runtime/display-capture-hardware-review.json
+No reconnect needed just to repeat this gate. Next is offboard endpoint factory /
+lifecycle implementation, followed by a bounded endpoint/phone experiment once
+ready. No secondary stream or Android Auto cluster maps have been demonstrated.
+The display observation laptop bundle is unchanged.
+
+2026-10-29: LIVE EXPERIMENT HOLD - Android Auto view fails to recover
+
+User reports Android Auto-only black view, car/settings/radio still functional,
+requiring a ten-second power-button reboot. Opening the driver door appears to
+trigger it while ignition is on or engine running. This is NOT cleared as normal.
+The exact root cause remains unconfirmed. Previous PASS verified capture and stock
+process identity, not Android Auto session/display recovery; that distinction is
+now explicit in parsed reports.
+
+Both phone runs deliberately restart AndroidAuto while the phone may still be
+connected. Stock starts 61.483/61.488 seconds after the observed app. Neither
+report recorded unexpected observed-process exit during capture, but they did not
+monitor USB/focus/HMI/display health or door events. A running stock PID cannot
+rule out a stuck/missing sink or session. The active-session timed restart is a
+leading suspect, and a visibility/focus transition is also plausible.
+
+run_androidauto_observer.py now blocks all live --run variants before network or
+uploads. Both observer ZIPs refreshed with the hold; older laptop copies must
+not be used to repeat the experiment. No new display/cluster experiment proceeds
+until recovery is diagnosed and verified. Native artifacts are unchanged.
+
+Read-only diagnostics ZIP: native/observer/display/black-screen-diagnostics-laptop.zip
+Instructions and analysis: ANDROID-AUTO-BLACK-SCREEN-INVESTIGATION.txt
+Run collect_display_health.py --run with actual --state black or after-reboot,
+--menu-response works --door-opened --ignition on, using Ethernet. Do not rerun
+the observer to provoke the fault. Return the whole _display_health_* folder.
+35 Android tests + five health tests and extracted portable plan/hold tests pass.
+Root cause/recovery remain open and require vehicle evidence; the diagnostic
+collector does not alter head-unit processes or files.
+
+
+Direct-PC continuation: user no longer needs laptop bundles. Vehicle collection
+attempted read-only; Windows reports both physical Ethernet interfaces down.
+The configured ASIX 192.168.1.10 source cannot bind; normal routing selects Wi-Fi.
+No FTP/Telnet connection or head-unit action succeeded, and no network settings
+were changed. Awaiting physical link correction. Further diagnosis still needs
+vehicle logs; recovery is not cleared and disruptive experiments remain held.
+One low-effort static review mapped separate visibility/listener, AOAP shutdown,
+USB reconnect and video-readiness paths; details appended to the black-screen
+investigation. Direct collector supports --state unknown without claiming UI
+recovery. No new bundles were built. Once link is up, collect directly from this
+PC and resume evidence-based diagnosis before further endpoint/cluster testing.
+
+
+2026-10-29: Returned to laptop bundles at user request
+The direct PC link was restored and read-only snapshot
+_display_health_20261029_194200_c8ade1b4 completed before the user requested a stop.
+All collected artifact hashes/sizes independently verify. All seven monitored
+processes were present and retained their PIDs during the snapshot. AndroidAuto
+PID 684103, manager 413728; previous failing-capture manager was 417823. Kernel
+reported a different boot, no observer markers remained, and the historical
+phone/door session is not established by these post-reboot data. System log has
+ASIX adapter disconnect/attach messages but lacks the required AA lifecycle trace;
+those USB messages alone do not explain the earlier black AA view.
+
+User has returned to the laptop and requests bundles again. Updated
+native/observer/display/black-screen-diagnostics-laptop.zip contains Python scripts
+only. Next command: python scripts/collect_display_health.py --run --state unknown
+It adds five targeted file-descriptor inventories plus shared-memory, boot/app
+utility and log-directory listings. These are read-only diagnostics, with no
+observer, process restart or log clearing. Return the new _display_health_* folder.
+Five collector tests and extracted standard-library-only plan/hold checks pass.
+Reproducible packaging: scripts/package_display_health.py.
+SHA256: 1b330153700d9b79e3e9eb2927508235bce963e626f1bf22bbd0b0fcc4d40957
+Root cause remains unconfirmed. Disruptive tests remain blocked; no new live
+vehicle commands were issued after the user switched back to the laptop.
+
+
+2026-10-29: New laptop health inventory verified; trace acquisition prepared
+Collection _display_health_20261029_195634_2d848f65 has 29 verified artifacts and
+29 command results. All seven monitored PIDs remain unchanged from the current
+boot. App stdout/stderr goes to /dev/ser3; TraceServer and four DTS named shared
+memory objects are present. System log alone does not provide the AA session
+history. No serial or trace-pipe device was read, and no trace configuration was
+changed. Cause remains unconfirmed; destructive/disruptive tests remain held.
+
+Updated black-screen-diagnostics-laptop.zip includes collect_trace_snapshot.py.
+Next command: python scripts/collect_trace_snapshot.py --run
+Return the complete _trace_snapshot_* folder, including partial outcomes. Bounded
+read-only FTP copies target DTS objects, trace configuration and libDebugTrace;
+name-special shared-memory FTP support is not assumed. No phone swap or fault
+reproduction is needed. Five new tests and extracted standard-library-only plans
+pass, and old live runner commands stay blocked. Full findings are appended to
+ANDROID-AUTO-BLACK-SCREEN-INVESTIGATION.txt; machine review is under control-runtime.
+Bundle SHA256: 882b3fa892d0efd04650151b7bd5161c839f4b50ad506f21661b39bf30aebf8f
+
+
+2026-10-29: Trace configuration recovered; receive-only text capture prepared
+Collection _trace_snapshot_20261029_200420_5b5ac5b7 verified: eight inventory
+artifacts plus the 19813-byte /etc/trace_config.json match SHA256/size records;
+eight inventory commands succeeded. FTP rejects all four DTS objects as non-plain
+files and returns an empty trace-library response. This acquisition limitation
+is now established; do not repeat the unsupported FTP snapshot test.
+
+The actual configuration defines TextBackend tcp_15361 with TCP port15361,
+ShmFrontend/CoreDumpFrontend and an enabled default high-level channel filter.
+The actual TraceServer descriptor list confirms a listener on15361 and no
+established client in that snapshot. Port54321 belongs to a different MlpBackend;
+no control protocol or filter command is guessed or sent to either service.
+
+Updated black-screen-diagnostics-laptop.zip includes collect_trace_tcp.py.
+Next command: python scripts/collect_trace_tcp.py --run
+Keep Ethernet attached, phone unplugged; receive for30 seconds/up to8MiB, then
+return the full _trace_tcp_* folder. No door-event reproduction needed. This
+baseline verifies the text trace feed, not the historical black-view cause.
+The receiver sends zero application bytes, reads no serial/trace-pipe devices,
+and checks existing-client/listener state before connecting. It writes only local
+files and does not reconnect silently. A peer-close with bytes is retained as a
+partial capture, not a completed observation window or display-health PASS.
+Eight TCP collector tests and extracted standard-library-only plans/hold checks
+pass. No vehicle connection was attempted while reviewing this returned result.
+Root cause remains unconfirmed; disruptive restart tests stay disabled.
+Machine review: control-runtime/trace-configuration-review.json
+
+
+2026-10-29: TCP trace feed proven; passive stock phone baseline ready
+_trace_tcp_20261029_201038_afbf8699 raw1319918 bytes/full30 seconds and nine supporting
+artifacts verify. Complete raw has6653 lines, two AA service gear/brake messages,
+no matching AA startup/focus/visibility/shutdown events in this phone-unplugged
+window. Root cause is still unconfirmed. No observer/restart test was enabled.
+
+New passive-phone-trace-laptop.zip stages a new bounded RAM-only loopback reader
+that leaves AndroidAuto running. Run python scripts/run_phone_trace.py --run.
+Ethernet stage -> LOGGER READY -> phone/AA navigation, door CLOSED -> wait210
+seconds -> Ethernet collection. Return complete _phone_trace_* including partial
+outcomes. Logger self-exits at180 seconds/16MiB; stock PID equality is checked.
+Seven same-source host loopback cases, QNX loader/root-refusal, ELF/import checks,
+ten Python workflow tests and portable plan/hash gates pass. New reader's QNX
+network runtime remains unproven until this isolated vehicle test. No complete
+phone-interval or visual recovery claim is inferred from a logger-only pass.
+Full review: ANDROID-AUTO-BLACK-SCREEN-INVESTIGATION.txt
+Machine review: control-runtime/trace-tcp-baseline-review.json
+Release: control-runtime/passive-phone-trace-release.json
+Bundle SHA256: 6e41740a7f27cfdc95327cdb35e7dc7574846699a10064b70d779351b8c770d7
+
+
+2026-10-29: Phone trace launcher syntax failure identified and fixed
+Returned _phone_trace_20261029_205440_f6999121 did not reach logger startup.
+Three initial snapshots and six empty partial artifacts match their hashes;
+ten recorded preparation commands returned zero. The attempted background
+command ends in bare &, while the common Shell.command appends ; echo marker.
+The resulting &; is invalid ksh syntax. The transcript explicitly reports that
+syntax error; the missing completion marker caused the old timeout. Empty
+trace-job and absent native reports are consistent with no reader launch.
+No phone handoff was reached and no AndroidAuto restart was attempted. No
+before/after identity equality is claimed because the old broken session did
+not collect a post-snapshot. This is a launcher defect, not new evidence about
+the head unit black-view cause.
+
+Fixed launch: ... & delphi_trace_job=$! followed by the normal completion echo.
+Actual Shell.command-generated wire, not a mocked command string, was passed to
+QNX ksh -n in emulation. The corrected wire exited0; the exact &; negative
+control exited1 with the same syntax-error diagnostic. Fixtures and launcher /
+wrapper source hashes bind this evidence into the package gate. The native
+reader ELF is byte-identical. Shell.command now rejects bare & locally and
+stops immediately on a remote syntax diagnostic. Ten phone-workflow tests, two
+wrapper tests and71 existing observer tests pass. Extracted portable plan and
+reader-asset checks also pass. QNX reader networking remains untested on car.
+
+Updated bundle: native/trace-reader/passive-phone-trace-laptop.zip
+Run python scripts/run_phone_trace.py --run with Ethernet and phone unplugged.
+At LOGGER READY swap to phone/navigation, keep door CLOSED, wait210 seconds,
+then reconnect Ethernet and collect. Return the entire new _phone_trace_*.
+Disruptive restart observer remains disabled; root cause of the original AA
+black view remains open. No vehicle commands were sent during this review.
+Bundle SHA256: aa4f4c4c7916fc08dd0e368364d0eda35cd55b6846a387b5b48d93b18c3f6ba1

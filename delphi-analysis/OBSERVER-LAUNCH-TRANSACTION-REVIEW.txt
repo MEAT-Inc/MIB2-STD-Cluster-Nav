@@ -1,0 +1,43 @@
+Managed launch progress - synthetic proof completed
+
+The latest car smoke capture passed: unchanged observer candidate loads on the
+actual unit and records nine synthetic registrations with zero dropped records.
+Stock AndroidAuto remained the same PID/argv. Actual app interposition is untested.
+
+The next step now has a passing QNX emulation prototype under
+native/observer/transaction. Five scenarios prove baseline, observed one-shot exec,
+normal restoration, failure before/after detach and orphan-watchdog restoration.
+Child PID, parent PID, argv and observer forwarding were verified. The wrapper
+removes its temporary namespace redirect before exec. All targets are synthetic.
+No actual procman or AndroidAuto binary is executed by the bench.
+
+Static control evidence (captured procman SHA256 c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d):
+- Configuration parser -r sets descriptor+0x2c at 0x1038b8.
+- Active exit handler 0x104260..0x10429c schedules a restart when that flag and
+  recorded exit code are nonzero, subject to global shutdown state at 0x12ff70.
+- Spawn worker 0x10433c calls spawnp at 0x104504, inherits environment, and preserves
+  configured arguments. Nonzero recorded exits add an -X%d argument.
+- EV_START_APP 0x161 selects an app ID; no per-app environment override is visible.
+- EV_GET_APP_STATE 0x168 replies with event 0x169 and two words {appID,state}.
+- The active-state shutdown branch at 0x104190 sends event 0x163 to the app with
+  zero payload when configured exit countdown is positive. This is not yet a
+  verified externally usable manager stop request. Do not send guessed events.
+
+Static AndroidAuto evidence (expected SHA256 da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271):
+- Event accessor 0x1064c0 reads message-header event at +0xc without conversion.
+- Dispatcher at 0x1105c0 compares event 0x164 and branches to 0x112328.
+- That handler reads payload word0, logs EV_APP_EXIT / appId at 0x112384 and calls
+  0x1129bc with the app ID at 0x1123bc.
+- 0x1129bc iterates the listener collection at this+0x2c, compares listener app IDs,
+  and destroys/removes matching entries. This is listener cleanup, not proof of a
+  command that terminates AndroidAuto. Its EV_APP_EXIT string must not be confused
+  with procman's 0x163 shutdown request.
+- scripts/trace_android_shutdown.py checks the binary hash and emits candidate
+  references/windows using a reviewed function-local PIC-base invariant. It is
+  heuristic static analysis, not a runtime protocol validation.
+
+Remaining gate: trace the framework's handling of 0x163 and the manager-facing
+stop/configuration route, then test the managed transaction with synthetic apps.
+After that, prepare the Python-only opt-in vehicle controller and private-path
+hardware validation. No additional vehicle connection is needed for current
+static analysis. There is still no demonstrated Android Auto cluster map.

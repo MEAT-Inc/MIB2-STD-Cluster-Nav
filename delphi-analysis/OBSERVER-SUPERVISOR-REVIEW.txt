@@ -1,0 +1,45 @@
+Supervisor review and isolated unit test prepared - 2026-10-29 UTC
+
+Latest capture: _observer_preflight_20261029_000006_d6c5d4d0.
+All seven supervisor commands completed with exit 0. Process ancestry confirms
+AndroidAuto PID 684110 was a direct child of procman PID 417823 at capture time.
+Both AndroidAuto and AndroidAutoServices have entries in /etc/procman_core.cfg:
+  -f AndroidAutoServices -n"androidautoservices" -l20 -x10 -r -c15 -a"-t"
+  -f AndroidAuto -n"androidauto" -l20 -x10 -r -c15 -a"-t"
+These switch values are evidence; their precise vendor semantics/control API
+are not inferred. Captured PIDs must never be hardcoded in a future controller.
+No further preflight repeat is needed for this snapshot.
+
+Next concrete step is an isolated RAM-only unit test. It validates the identical
+observer candidate against the actual unit's libc/loader using a tiny synthetic
+registration provider. It does not stop/restart/instrument the managed AndroidAuto
+process, access video transport, or edit startup configuration.
+Python runner: scripts/run_observer_smoke.py
+Portable bundle: native/observer/smoke/observer-smoke-laptop.zip
+Exact actions/limitations: native/observer/smoke/README.txt
+Default command shows the plan without connecting. --run explicitly uploads into
+a fresh /ramdisk namespace, verifies readback, runs its own guarded test children,
+copies test evidence and procman/libc runtime data into RAM for collection, and
+checks the stock AndroidAuto process identity before and after.
+
+QNX emulation passed baseline, observer capture and watchdog timeout control.
+Only the guard's own synthetic child was killed/reaped in the timeout control.
+Eight offline Python tests passed, covering namespace validation, upload corruption,
+failed cd (no relative writes), broken session (no reuse), process identity changes,
+trace integrity and plan-only behavior. Static gates verified four ARM32 LE EABI5
+files, no executable stack and no C++ runtime dependency. The portable bundle was
+extracted into an isolated local workspace and its default plan executed without
+creating a dump folder or connecting to the vehicle.
+
+No car execution or upload occurred while preparing this test. A future pass
+validates only the isolated hardware path; actual AndroidAuto interposition and
+phone/cluster support remain untested. Captured procman/libc will support further
+offline work on the real supervised launch mechanism without guessing commands.
+
+Final smoke release verification: QNX baseline/observed/timeout controls PASS;
+nine Python runner tests PASS, including explicit accounted-drop handling.
+All nine files in the portable bundle match current source/artifact bytes.
+The final emulated observed run captured nine records with zero drops. The smoke
+checks also accept correctly accounted drops, as required by observer v1's
+nonwaiting logging contract, while still requiring all nine native calls and
+valid captured inputs. This changes test expectations, not the observer library.

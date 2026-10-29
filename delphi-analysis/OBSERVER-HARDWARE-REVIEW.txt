@@ -1,0 +1,70 @@
+Actual-unit observer smoke review - 2026-10-29 UTC
+Collection: _observer_smoke_20261029_005129_a1ecf3ce
+
+RESULT: ISOLATED HARDWARE TEST PASS, independently verified offline.
+All seven downloaded artifacts match their recorded byte counts and SHA256.
+The raw observer.bin was decoded again and matches observer-decoded.json.
+Native baseline and preloaded child each completed nine calls. The fixture
+checks all six register/stack argument words, errno and the high-bit return.
+Observer status=ready, pointer width=4, records=9, dropped=0, writer inactive,
+no incomplete records. Synthetic captured inputs are exactly 0x1000..0x1008
+and 0x2000..0x2008, thread=1, caller=0x100a00 in the synthetic executable.
+Observed child PID was 1101919; stock AndroidAuto PID remained 671823 with
+arguments AndroidAuto -t before and after. Both stock snapshot files are
+byte-identical. Every recorded remote command returned zero.
+
+This is the first successful execution of the observer on the actual unit's
+CPU/QNX loader/libc. It confirms process-scoped LD_PRELOAD, RTLD_NEXT resolution,
+forwarding and shared-RAM logging for the isolated synthetic provider. The native
+receiver address 0x7800b690/base 0x7800b000 belongs to that synthetic provider,
+NOT the factory receiver inside AndroidAuto. Actual AndroidAuto interposition,
+phone video/display negotiation and cluster-map output remain untested.
+No observer factory-library replacement, stock process restart or persistent
+startup edit was performed. The capture shows the RAM-only test actions and
+reads/copies used to acquire runtime files. No additional vehicle commands were
+issued during this offline review.
+
+New runtime files verified
+procman.captured: 196184 bytes
+SHA256 c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d
+libc.so.3.captured: 490310 bytes
+SHA256 76ff9b07201a77ad231905741b25a97fd722a163c26a7ca0e36f17331bd12e9b
+The manager is ARM ELF with no section table and 208 dynamic symbols; its
+recorded dependencies are libsocket.so.3 and libc.so.3. Runtime libc has 1918
+dynamic symbols. Neither acquired binary was executed for this inspection.
+Indexes, strings and annotated disassembly are in control-runtime/.
+
+Supervisor findings from the exact captured procman
+- Config parser dispatch table 0x103664 maps character r to 0x1038b8, which
+  stores 1 into the process descriptor at +0x2c. This is -r in AndroidAuto's
+  previously captured procman_core.cfg entry.
+- Process-exit code at 0x104260..0x10429c tests that +0x2c is nonzero, the
+  descriptor's exit-code word +0x34 is nonzero, and global 0x12ff70 is zero.
+  That path calls 0x103dec and sets process state +0x38 to 1.
+- 0x103dec schedules the launch worker 0x10433c; the worker invokes spawnp
+  at 0x104504. Thus -r enables a conditional restart-on-error path. This
+  is not evidence that every normal exit is automatically restarted.
+- The launch worker adds an argument formatted -X%d (literal 0x1270d0) when
+  descriptor +0x34 is nonzero. A controlled restoration must preserve the
+  manager's lifecycle/arguments rather than copying only a PID or kill action.
+- Embedded usage documents a separate manager instance via XSAL_INSTANCE_NAME,
+  but does not document a per-app runtime preload/stop option. No such command
+  has been guessed or sent to the unit.
+These addresses refer only to the captured manager SHA above. String references
+and prologue-derived windows aid inspection; literal/jump-table words displayed
+as instructions must not be treated as executable control flow. Parser dispatch
+and restart branch facts above were checked against raw table words/instructions.
+The full SAL lifecycle/control-message ABI and restoration transaction remain
+unfinished. No unsafe process-control command has been provided.
+
+Next work
+Build and validate a supervisor-aware, reversible real-AndroidAuto observation
+transaction. Existing captured binaries support offline analysis now; another
+copy of the smoke/preflight collection is not needed for this milestone.
+Any later actual-app test must verify current identity/arguments and restore the
+stock supervised state. The isolated-hardware PASS does not set the existing
+production-candidate manifest's actual-app deployment readiness to true.
+
+Reproduce offline review (Python; .tools/python contains pyelftools/capstone):
+  python scripts/inspect_control_runtime.py
+  python scripts/trace_procman_control.py

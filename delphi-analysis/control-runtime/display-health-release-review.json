@@ -1,0 +1,15 @@
+{
+  "diagnostics_bundle": "native\\observer\\display\\black-screen-diagnostics-laptop.zip",
+  "bytes": 29115,
+  "sha256": "6af90ddadcb662cba053e1b60a8e9362c7f099854b603063cc050fe690d6c61d",
+  "portable_plan_passed": true,
+  "live_run_blocked": true,
+  "older_refresh_bundles_blocked": true,
+  "root_cause_confirmed": false,
+  "user_clarification": {
+    "only_android_auto_affected": true,
+    "vw_views_work": true,
+    "driver_door_trigger_reported": true,
+    "ignition_on_or_engine_running": true
+  }
+}

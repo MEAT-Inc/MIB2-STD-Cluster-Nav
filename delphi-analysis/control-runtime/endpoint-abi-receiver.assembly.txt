@@ -1,0 +1,2772 @@
+
+FUNCTION _ZN20ProtocolEndpointBase16handleRawMessageEhRK10shared_ptrI8IoBufferE @ 0x6e190 size 0x8
+0006e190 mvn      r0, #3                                     _ZN20ProtocolEndpointBase16handleRawMessageEhRK10shared_ptrI8IoBufferE
+0006e194 bx       lr                                         
+
+FUNCTION _ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase @ 0x76fac size 0xc
+00076fac push     {r4, lr}                                   _ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase
+00076fb0 bl       #0x6c630                                    _ZN13MessageRouter15registerServiceEP20ProtocolEndpointBase [PLT]
+00076fb4 pop      {r4, pc}                                   
+
+FUNCTION _ZN20ProtocolEndpointBase12routeMessageEhtRK10shared_ptrI8IoBufferE @ 0x78080 size 0x8
+00078080 mvn      r0, #3                                     _ZN20ProtocolEndpointBase12routeMessageEhtRK10shared_ptrI8IoBufferE
+00078084 bx       lr                                         
+
+FUNCTION _ZN11InputSource7isBoundEi @ 0x78758 size 0x5c
+00078758 ldr      ip, [r0, #0x48]                            _ZN11InputSource7isBoundEi
+0007875c ldr      r3, [ip, #4]                               
+00078760 mov      r0, ip                                     
+00078764 b        #0x78784                                    
+00078768 ldr      r2, [r3, #0xc]                             
+0007876c cmp      r1, r2                                     
+00078770 ldrgt    r2, [r3, #8]                               
+00078774 movgt    r3, r0                                     
+00078778 ldrle    r2, [r3]                                   
+0007877c mov      r0, r3                                     
+00078780 mov      r3, r2                                     
+00078784 ldrsb    r2, [r3, #0x11]                            
+00078788 cmp      r2, #0                                     
+0007878c beq      #0x78768                                   
+00078790 cmp      ip, r0                                     
+00078794 beq      #0x787a4                                   
+00078798 ldr      r3, [r0, #0xc]                             
+0007879c cmp      r1, r3                                     
+000787a0 bge      #0x787a8                                   
+000787a4 mov      r0, ip                                     
+000787a8 subs     r0, ip, r0                                 
+000787ac movne    r0, #1                                     
+000787b0 bx       lr                                         
+
+FUNCTION _ZN11InputSource19handleInputFeedbackERK13InputFeedback @ 0x787b4 size 0x7c
+000787b4 push     {r4, r5, r6, lr}                           _ZN11InputSource19handleInputFeedbackERK13InputFeedback
+000787b8 ldr      r4, [r1, #4]                               
+000787bc ldr      r5, [r0, #0x54]                            
+000787c0 ldr      r3, [r5, #4]                               
+000787c4 mov      ip, r5                                     
+000787c8 b        #0x787e8                                    
+000787cc ldr      r2, [r3, #0xc]                             
+000787d0 cmp      r4, r2                                     
+000787d4 ldrgt    r2, [r3, #8]                               
+000787d8 movgt    r3, ip                                     
+000787dc ldrle    r2, [r3]                                   
+000787e0 mov      ip, r3                                     
+000787e4 mov      r3, r2                                     
+000787e8 ldrsb    r2, [r3, #0x11]                            
+000787ec cmp      r2, #0                                     
+000787f0 beq      #0x787cc                                   
+000787f4 cmp      r5, ip                                     
+000787f8 beq      #0x78808                                   
+000787fc ldr      r3, [ip, #0xc]                             
+00078800 cmp      r4, r3                                     
+00078804 bge      #0x7880c                                   
+00078808 mov      ip, r5                                     
+0007880c cmp      r5, ip                                     
+00078810 mvneq    r0, #0xfc                                  
+00078814 popeq    {r4, r5, r6, pc}                           
+00078818 ldr      r0, [r0, #0x60]                            
+0007881c ldr      r3, [r0]                                   
+00078820 ldr      r3, [r3, #8]                               
+00078824 blx      r3                                         
+00078828 mov      r0, #0                                     
+0007882c pop      {r4, r5, r6, pc}                           
+
+FUNCTION _ZN11InputSource15sendInputReportEyP11InputReport @ 0x78830 size 0x98
+00078830 push     {r4, lr}                                   _ZN11InputSource15sendInputReportEyP11InputReport
+00078834 sub      sp, sp, #0x10                              
+00078838 mov      r4, r0                                     
+0007883c ldr      ip, [sp, #0x18]                            
+00078840 ldr      r1, [ip, #0x2c]                            
+00078844 orr      r1, r1, #1                                 
+00078848 str      r1, [ip, #0x2c]                            
+0007884c strd     r2, r3, [ip, #8]                           
+00078850 mov      r3, #0                                     
+00078854 str      r3, [sp]                                   
+00078858 str      r3, [sp, #4]                               
+0007885c str      r3, [sp, #8]                               
+00078860 str      r3, [sp, #0xc]                             
+00078864 ldr      r0, [r0, #8]                               
+00078868 movw     r1, #0x8001                                
+0007886c mov      r2, ip                                     
+00078870 mov      r3, sp                                     
+00078874 bl       #0x6c5c4                                    _ZN13MessageRouter13marshallProtoEtRKN6google8protobuf11MessageLiteEP8IoBuffer [PLT]
+00078878 ldr      r2, [sp]                                   
+0007887c ldr      r3, [sp, #8]                               
+00078880 ldr      ip, [sp, #0xc]                             
+00078884 ldrb     r1, [r4, #4]                               
+00078888 cmp      r1, #0                                     
+0007888c beq      #0x788a4                                   
+00078890 ldr      r0, [r4, #8]                               
+00078894 ldrb     r1, [r4, #5]                               
+00078898 add      r2, r2, r3                                 
+0007889c rsb      r3, r3, ip                                 
+000788a0 bl       #0x6b928                                    _ZN13MessageRouter13queueOutgoingEhPvj [PLT]
+000788a4 ldr      r0, [sp]                                   
+000788a8 bl       #0x6cf84                                    free [PLT]
+000788ac add      sp, sp, #0x10                              
+000788b0 pop      {r4, pc}                                   
+000788b4 mov      r4, r0                                     
+000788b8 ldr      r0, [sp]                                   
+000788bc bl       #0x6cf84                                    free [PLT]
+000788c0 mov      r0, r4                                     
+000788c4 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+
+FUNCTION _ZN11InputSource18populateTouchEventEP10TouchEventyiPKjS3_S3_ii @ 0x788c8 size 0x120
+000788c8 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}       _ZN11InputSource18populateTouchEventEP10TouchEventyiPKjS3_S3_ii
+000788cc sub      sp, sp, #0xc                               
+000788d0 mov      r5, r1                                     
+000788d4 ldr      fp, [sp, #0x30]                            
+000788d8 ldr      sb, [sp, #0x34]                            
+000788dc ldr      sl, [sp, #0x38]                            
+000788e0 ldr      r8, [sp, #0x3c]                            
+000788e4 cmp      fp, #0                                     
+000788e8 ble      #0x789c4                                   
+000788ec add      r3, r1, #4                                 
+000788f0 str      r3, [sp, #4]                               
+000788f4 mov      r6, #0                                     
+000788f8 mov      r7, r6                                     
+000788fc ldr      r3, [r5, #8]                               
+00078900 ldr      r1, [r5, #0xc]                             
+00078904 cmp      r3, r1                                     
+00078908 bge      #0x78920                                   
+0007890c ldr      r2, [r5, #4]                               
+00078910 ldr      r4, [r2, r3, lsl #2]                       
+00078914 add      r3, r3, #1                                 
+00078918 str      r3, [r5, #8]                               
+0007891c b        #0x78980                                    
+00078920 ldr      r3, [r5, #0x10]                            
+00078924 cmp      r1, r3                                     
+00078928 bne      #0x78938                                   
+0007892c ldr      r0, [sp, #4]                               
+00078930 add      r1, r1, #1                                 
+00078934 bl       #0x6af68                                    _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi [PLT]
+00078938 ldr      r3, [r5, #0xc]                             
+0007893c add      r3, r3, #1                                 
+00078940 str      r3, [r5, #0xc]                             
+00078944 mov      r0, #0x18                                  
+00078948 bl       #0x6d44c                                    _Znwj [PLT]
+0007894c str      r0, [sp]                                   
+00078950 mov      r4, r0                                     
+00078954 bl       #0x6a6a4                                    _ZN18TouchEvent_PointerC1Ev [PLT]
+00078958 b        #0x78970                                    
+0007895c mov      r4, r0                                     
+00078960 ldr      r0, [sp]                                   
+00078964 bl       #0x69d98                                    _ZdlPv [PLT]
+00078968 mov      r0, r4                                     
+0007896c bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+00078970 ldmib    r5, {r2, r3}                               
+00078974 str      r4, [r2, r3, lsl #2]                       
+00078978 add      r3, r3, #1                                 
+0007897c str      r3, [r5, #8]                               
+00078980 ldr      r2, [sb, r6]                               
+00078984 ldr      r3, [r4, #0x14]                            
+00078988 orr      r1, r3, #4                                 
+0007898c str      r1, [r4, #0x14]                            
+00078990 str      r2, [r4, #0xc]                             
+00078994 ldr      r2, [sl, r6]                               
+00078998 orr      r1, r3, #5                                 
+0007899c str      r1, [r4, #0x14]                            
+000789a0 str      r2, [r4, #4]                               
+000789a4 ldr      r2, [r8, r6]                               
+000789a8 orr      r3, r3, #7                                 
+000789ac str      r3, [r4, #0x14]                            
+000789b0 str      r2, [r4, #8]                               
+000789b4 add      r7, r7, #1                                 
+000789b8 add      r6, r6, #4                                 
+000789bc cmp      fp, r7                                     
+000789c0 bgt      #0x788fc                                   
+000789c4 ldr      r3, [r5, #0x30]                            
+000789c8 ldr      r2, [sp, #0x44]                            
+000789cc str      r2, [r5, #0x24]                            
+000789d0 orr      r3, r3, #6                                 
+000789d4 str      r3, [r5, #0x30]                            
+000789d8 ldr      r3, [sp, #0x40]                            
+000789dc str      r3, [r5, #0x28]                            
+000789e0 add      sp, sp, #0xc                               
+000789e4 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}       
+
+FUNCTION _ZN11InputSource14reportTouchPadEyiPKjS1_S1_ii @ 0x789e8 size 0xf8
+000789e8 push     {r4, r5, r6, r7, r8, lr}                   _ZN11InputSource14reportTouchPadEyiPKjS1_S1_ii
+000789ec sub      sp, sp, #0x48                              
+000789f0 mov      r4, r0                                     
+000789f4 mov      r6, r2                                     
+000789f8 mov      r7, r3                                     
+000789fc ldrb     r3, [r0, #0x20]                            
+00078a00 cmp      r3, #0                                     
+00078a04 mvneq    r0, #0x13                                  
+00078a08 beq      #0x78ad8                                   
+00078a0c add      r0, sp, #0x18                              
+00078a10 bl       #0x68f4c                                    _ZN11InputReportC1Ev [PLT]
+00078a14 ldr      r3, [sp, #0x44]                            
+00078a18 orr      r3, r3, #0x40                              
+00078a1c str      r3, [sp, #0x44]                            
+00078a20 ldr      r3, [sp, #0x38]                            
+00078a24 cmp      r3, #0                                     
+00078a28 bne      #0x78a58                                   
+00078a2c mov      r0, #0x34                                  
+00078a30 bl       #0x6d44c                                    _Znwj [PLT]
+00078a34 mov      r5, r0                                     
+00078a38 mov      r8, r0                                     
+00078a3c bl       #0x6d2f0                                    _ZN10TouchEventC1Ev [PLT]
+00078a40 b        #0x78a54                                    
+00078a44 mov      r4, r0                                     
+00078a48 mov      r0, r5                                     
+00078a4c bl       #0x69d98                                    _ZdlPv [PLT]
+00078a50 b        #0x78ac8                                    
+00078a54 str      r5, [sp, #0x38]                            
+00078a58 ldr      r3, [sp, #0x60]                            
+00078a5c str      r3, [sp]                                   
+00078a60 ldr      r3, [sp, #0x64]                            
+00078a64 str      r3, [sp, #4]                               
+00078a68 ldr      r3, [sp, #0x68]                            
+00078a6c str      r3, [sp, #8]                               
+00078a70 ldr      r3, [sp, #0x6c]                            
+00078a74 str      r3, [sp, #0xc]                             
+00078a78 ldr      r3, [sp, #0x70]                            
+00078a7c str      r3, [sp, #0x10]                            
+00078a80 ldr      r3, [sp, #0x74]                            
+00078a84 str      r3, [sp, #0x14]                            
+00078a88 mov      r0, r4                                     
+00078a8c ldr      r1, [sp, #0x38]                            
+00078a90 mov      r2, r6                                     
+00078a94 mov      r3, r7                                     
+00078a98 bl       #0x6cd08                                    _ZN11InputSource18populateTouchEventEP10TouchEventyiPKjS3_S3_ii [PLT]
+00078a9c add      r3, sp, #0x18                              
+00078aa0 str      r3, [sp]                                   
+00078aa4 mov      r0, r4                                     
+00078aa8 mov      r2, r6                                     
+00078aac mov      r3, r7                                     
+00078ab0 bl       #0x69aa4                                    _ZN11InputSource15sendInputReportEyP11InputReport [PLT]
+00078ab4 add      r0, sp, #0x18                              
+00078ab8 bl       #0x6d4f4                                    _ZN11InputReportD1Ev [PLT]
+00078abc mov      r0, #0                                     
+00078ac0 b        #0x78ad8                                    
+00078ac4 mov      r4, r0                                     
+00078ac8 add      r0, sp, #0x18                              
+00078acc bl       #0x6d4f4                                    _ZN11InputReportD1Ev [PLT]
+00078ad0 mov      r0, r4                                     
+00078ad4 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+00078ad8 add      sp, sp, #0x48                              
+00078adc pop      {r4, r5, r6, r7, r8, pc}                   
+
+FUNCTION _ZN11InputSource11reportTouchEyiPKjS1_S1_ii @ 0x78ae0 size 0xf8
+00078ae0 push     {r4, r5, r6, r7, r8, lr}                   _ZN11InputSource11reportTouchEyiPKjS1_S1_ii
+00078ae4 sub      sp, sp, #0x48                              
+00078ae8 mov      r4, r0                                     
+00078aec mov      r6, r2                                     
+00078af0 mov      r7, r3                                     
+00078af4 ldrb     r3, [r0, #0x11]                            
+00078af8 cmp      r3, #0                                     
+00078afc mvneq    r0, #0x13                                  
+00078b00 beq      #0x78bd0                                   
+00078b04 add      r0, sp, #0x18                              
+00078b08 bl       #0x68f4c                                    _ZN11InputReportC1Ev [PLT]
+00078b0c ldr      r3, [sp, #0x44]                            
+00078b10 orr      r3, r3, #4                                 
+00078b14 str      r3, [sp, #0x44]                            
+00078b18 ldr      r3, [sp, #0x28]                            
+00078b1c cmp      r3, #0                                     
+00078b20 bne      #0x78b50                                   
+00078b24 mov      r0, #0x34                                  
+00078b28 bl       #0x6d44c                                    _Znwj [PLT]
+00078b2c mov      r5, r0                                     
+00078b30 mov      r8, r0                                     
+00078b34 bl       #0x6d2f0                                    _ZN10TouchEventC1Ev [PLT]
+00078b38 b        #0x78b4c                                    
+00078b3c mov      r4, r0                                     
+00078b40 mov      r0, r5                                     
+00078b44 bl       #0x69d98                                    _ZdlPv [PLT]
+00078b48 b        #0x78bc0                                    
+00078b4c str      r5, [sp, #0x28]                            
+00078b50 ldr      r3, [sp, #0x60]                            
+00078b54 str      r3, [sp]                                   
+00078b58 ldr      r3, [sp, #0x64]                            
+00078b5c str      r3, [sp, #4]                               
+00078b60 ldr      r3, [sp, #0x68]                            
+00078b64 str      r3, [sp, #8]                               
+00078b68 ldr      r3, [sp, #0x6c]                            
+00078b6c str      r3, [sp, #0xc]                             
+00078b70 ldr      r3, [sp, #0x70]                            
+00078b74 str      r3, [sp, #0x10]                            
+00078b78 ldr      r3, [sp, #0x74]                            
+00078b7c str      r3, [sp, #0x14]                            
+00078b80 mov      r0, r4                                     
+00078b84 ldr      r1, [sp, #0x28]                            
+00078b88 mov      r2, r6                                     
+00078b8c mov      r3, r7                                     
+00078b90 bl       #0x6cd08                                    _ZN11InputSource18populateTouchEventEP10TouchEventyiPKjS3_S3_ii [PLT]
+00078b94 add      r3, sp, #0x18                              
+00078b98 str      r3, [sp]                                   
+00078b9c mov      r0, r4                                     
+00078ba0 mov      r2, r6                                     
+00078ba4 mov      r3, r7                                     
+00078ba8 bl       #0x69aa4                                    _ZN11InputSource15sendInputReportEyP11InputReport [PLT]
+00078bac add      r0, sp, #0x18                              
+00078bb0 bl       #0x6d4f4                                    _ZN11InputReportD1Ev [PLT]
+00078bb4 mov      r0, #0                                     
+00078bb8 b        #0x78bd0                                    
+00078bbc mov      r4, r0                                     
+00078bc0 add      r0, sp, #0x18                              
+00078bc4 bl       #0x6d4f4                                    _ZN11InputReportD1Ev [PLT]
+00078bc8 mov      r0, r4                                     
+00078bcc bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+00078bd0 add      sp, sp, #0x48                              
+00078bd4 pop      {r4, r5, r6, r7, r8, pc}                   
+
+FUNCTION _ZN11InputSource14reportRelativeEyji @ 0x78bd8 size 0x154
+00078bd8 push     {r4, r5, r6, r7, r8, sb, sl, lr}           _ZN11InputSource14reportRelativeEyji
+00078bdc sub      sp, sp, #0x38                              
+00078be0 mov      r7, r0                                     
+00078be4 mov      r8, r2                                     
+00078be8 mov      sb, r3                                     
+00078bec ldr      r6, [sp, #0x58]                            
+00078bf0 mov      r1, r6                                     
+00078bf4 bl       #0x68f58                                    _ZN11InputSource7isBoundEi [PLT]
+00078bf8 cmp      r0, #0                                     
+00078bfc mvneq    r0, #0x11                                  
+00078c00 beq      #0x78d24                                   
+00078c04 add      r0, sp, #8                                 
+00078c08 bl       #0x68f4c                                    _ZN11InputReportC1Ev [PLT]
+00078c0c ldr      r3, [sp, #0x34]                            
+00078c10 orr      r3, r3, #0x20                              
+00078c14 str      r3, [sp, #0x34]                            
+00078c18 ldr      r3, [sp, #0x24]                            
+00078c1c cmp      r3, #0                                     
+00078c20 bne      #0x78c4c                                   
+00078c24 mov      r0, #0x2c                                  
+00078c28 bl       #0x6d44c                                    _Znwj [PLT]
+00078c2c mov      r4, r0                                     
+00078c30 bl       #0x6a3b0                                    _ZN13RelativeEventC1Ev [PLT]
+00078c34 b        #0x78c48                                    
+00078c38 mov      r5, r0                                     
+00078c3c mov      r0, r4                                     
+00078c40 bl       #0x69d98                                    _ZdlPv [PLT]
+00078c44 b        #0x78d14                                    
+00078c48 str      r4, [sp, #0x24]                            
+00078c4c ldr      r4, [sp, #0x24]                            
+00078c50 ldr      r3, [r4, #8]                               
+00078c54 ldr      r1, [r4, #0xc]                             
+00078c58 cmp      r3, r1                                     
+00078c5c bge      #0x78c74                                   
+00078c60 ldr      r2, [r4, #4]                               
+00078c64 ldr      r5, [r2, r3, lsl #2]                       
+00078c68 add      r3, r3, #1                                 
+00078c6c str      r3, [r4, #8]                               
+00078c70 b        #0x78cd0                                    
+00078c74 ldr      r3, [r4, #0x10]                            
+00078c78 cmp      r1, r3                                     
+00078c7c bne      #0x78c8c                                   
+00078c80 add      r0, r4, #4                                 
+00078c84 add      r1, r1, #1                                 
+00078c88 bl       #0x6af68                                    _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi [PLT]
+00078c8c ldr      r3, [r4, #0xc]                             
+00078c90 add      r3, r3, #1                                 
+00078c94 str      r3, [r4, #0xc]                             
+00078c98 mov      r0, #0x14                                  
+00078c9c bl       #0x6d44c                                    _Znwj [PLT]
+00078ca0 mov      sl, r0                                     
+00078ca4 mov      r5, r0                                     
+00078ca8 bl       #0x69ffc                                    _ZN17RelativeEvent_RelC1Ev [PLT]
+00078cac b        #0x78cc0                                    
+00078cb0 mov      r5, r0                                     
+00078cb4 mov      r0, sl                                     
+00078cb8 bl       #0x69d98                                    _ZdlPv [PLT]
+00078cbc b        #0x78d14                                    
+00078cc0 ldmib    r4, {r2, r3}                               
+00078cc4 str      sl, [r2, r3, lsl #2]                       
+00078cc8 add      r3, r3, #1                                 
+00078ccc str      r3, [r4, #8]                               
+00078cd0 ldr      r3, [r5, #0x10]                            
+00078cd4 str      r6, [r5, #4]                               
+00078cd8 orr      r3, r3, #3                                 
+00078cdc str      r3, [r5, #0x10]                            
+00078ce0 ldr      r3, [sp, #0x5c]                            
+00078ce4 str      r3, [r5, #8]                               
+00078ce8 add      r3, sp, #8                                 
+00078cec str      r3, [sp]                                   
+00078cf0 mov      r0, r7                                     
+00078cf4 mov      r2, r8                                     
+00078cf8 mov      r3, sb                                     
+00078cfc bl       #0x69aa4                                    _ZN11InputSource15sendInputReportEyP11InputReport [PLT]
+00078d00 add      r0, sp, #8                                 
+00078d04 bl       #0x6d4f4                                    _ZN11InputReportD1Ev [PLT]
+00078d08 mov      r0, #0                                     
+00078d0c b        #0x78d24                                    
+00078d10 mov      r5, r0                                     
+00078d14 add      r0, sp, #8                                 
+00078d18 bl       #0x6d4f4                                    _ZN11InputReportD1Ev [PLT]
+00078d1c mov      r0, r5                                     
+00078d20 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+00078d24 add      sp, sp, #0x38                              
+00078d28 pop      {r4, r5, r6, r7, r8, sb, sl, pc}           
+
+FUNCTION _ZN11InputSource14reportAbsoluteEyji @ 0x78d2c size 0x154
+00078d2c push     {r4, r5, r6, r7, r8, sb, sl, lr}           _ZN11InputSource14reportAbsoluteEyji
+00078d30 sub      sp, sp, #0x38                              
+00078d34 mov      r7, r0                                     
+00078d38 mov      r8, r2                                     
+00078d3c mov      sb, r3                                     
+00078d40 ldr      r6, [sp, #0x58]                            
+00078d44 mov      r1, r6                                     
+00078d48 bl       #0x68f58                                    _ZN11InputSource7isBoundEi [PLT]
+00078d4c cmp      r0, #0                                     
+00078d50 mvneq    r0, #0x11                                  
+00078d54 beq      #0x78e78                                   
+00078d58 add      r0, sp, #8                                 
+00078d5c bl       #0x68f4c                                    _ZN11InputReportC1Ev [PLT]
+00078d60 ldr      r3, [sp, #0x34]                            
+00078d64 orr      r3, r3, #0x10                              
+00078d68 str      r3, [sp, #0x34]                            
+00078d6c ldr      r3, [sp, #0x20]                            
+00078d70 cmp      r3, #0                                     
+00078d74 bne      #0x78da0                                   
+00078d78 mov      r0, #0x2c                                  
+00078d7c bl       #0x6d44c                                    _Znwj [PLT]
+00078d80 mov      r4, r0                                     
+00078d84 bl       #0x6a308                                    _ZN13AbsoluteEventC1Ev [PLT]
+00078d88 b        #0x78d9c                                    
+00078d8c mov      r5, r0                                     
+00078d90 mov      r0, r4                                     
+00078d94 bl       #0x69d98                                    _ZdlPv [PLT]
+00078d98 b        #0x78e68                                    
+00078d9c str      r4, [sp, #0x20]                            
+00078da0 ldr      r4, [sp, #0x20]                            
+00078da4 ldr      r3, [r4, #8]                               
+00078da8 ldr      r1, [r4, #0xc]                             
+00078dac cmp      r3, r1                                     
+00078db0 bge      #0x78dc8                                   
+00078db4 ldr      r2, [r4, #4]                               
+00078db8 ldr      r5, [r2, r3, lsl #2]                       
+00078dbc add      r3, r3, #1                                 
+00078dc0 str      r3, [r4, #8]                               
+00078dc4 b        #0x78e24                                    
+00078dc8 ldr      r3, [r4, #0x10]                            
+00078dcc cmp      r1, r3                                     
+00078dd0 bne      #0x78de0                                   
+00078dd4 add      r0, r4, #4                                 
+00078dd8 add      r1, r1, #1                                 
+00078ddc bl       #0x6af68                                    _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi [PLT]
+00078de0 ldr      r3, [r4, #0xc]                             
+00078de4 add      r3, r3, #1                                 
+00078de8 str      r3, [r4, #0xc]                             
+00078dec mov      r0, #0x14                                  
+00078df0 bl       #0x6d44c                                    _Znwj [PLT]
+00078df4 mov      sl, r0                                     
+00078df8 mov      r5, r0                                     
+00078dfc bl       #0x6ba18                                    _ZN17AbsoluteEvent_AbsC1Ev [PLT]
+00078e00 b        #0x78e14                                    
+00078e04 mov      r5, r0                                     
+00078e08 mov      r0, sl                                     
+00078e0c bl       #0x69d98                                    _ZdlPv [PLT]
+00078e10 b        #0x78e68                                    
+00078e14 ldmib    r4, {r2, r3}                               
+00078e18 str      sl, [r2, r3, lsl #2]                       
+00078e1c add      r3, r3, #1                                 
+00078e20 str      r3, [r4, #8]                               
+00078e24 ldr      r3, [r5, #0x10]                            
+00078e28 str      r6, [r5, #4]                               
+00078e2c orr      r3, r3, #3                                 
+00078e30 str      r3, [r5, #0x10]                            
+00078e34 ldr      r3, [sp, #0x5c]                            
+00078e38 str      r3, [r5, #8]                               
+00078e3c add      r3, sp, #8                                 
+00078e40 str      r3, [sp]                                   
+00078e44 mov      r0, r7                                     
+00078e48 mov      r2, r8                                     
+00078e4c mov      r3, sb                                     
+00078e50 bl       #0x69aa4                                    _ZN11InputSource15sendInputReportEyP11InputReport [PLT]
+00078e54 add      r0, sp, #8                                 
+00078e58 bl       #0x6d4f4                                    _ZN11InputReportD1Ev [PLT]
+00078e5c mov      r0, #0                                     
+00078e60 b        #0x78e78                                    
+00078e64 mov      r5, r0                                     
+00078e68 add      r0, sp, #8                                 
+00078e6c bl       #0x6d4f4                                    _ZN11InputReportD1Ev [PLT]
+00078e70 mov      r0, r5                                     
+00078e74 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+00078e78 add      sp, sp, #0x38                              
+00078e7c pop      {r4, r5, r6, r7, r8, sb, sl, pc}           
+
+FUNCTION _ZN11InputSource7sendKeyEyjbbj @ 0x78e80 size 0x15c
+00078e80 push     {r4, r5, r6, r7, r8, sb, sl, lr}           _ZN11InputSource7sendKeyEyjbbj
+00078e84 sub      sp, sp, #0x40                              
+00078e88 mov      sl, r0                                     
+00078e8c strd     r2, r3, [sp, #8]                           
+00078e90 ldr      r6, [sp, #0x60]                            
+00078e94 ldrb     r7, [sp, #0x64]                            
+00078e98 ldrb     r8, [sp, #0x68]                            
+00078e9c mov      r1, r6                                     
+00078ea0 bl       #0x68f58                                    _ZN11InputSource7isBoundEi [PLT]
+00078ea4 cmp      r0, #0                                     
+00078ea8 mvneq    r0, #0x11                                  
+00078eac beq      #0x78fd4                                   
+00078eb0 add      r0, sp, #0x10                              
+00078eb4 bl       #0x68f4c                                    _ZN11InputReportC1Ev [PLT]
+00078eb8 ldr      r3, [sp, #0x3c]                            
+00078ebc orr      r3, r3, #8                                 
+00078ec0 str      r3, [sp, #0x3c]                            
+00078ec4 ldr      r3, [sp, #0x24]                            
+00078ec8 cmp      r3, #0                                     
+00078ecc bne      #0x78ef8                                   
+00078ed0 mov      r0, #0x2c                                  
+00078ed4 bl       #0x6d44c                                    _Znwj [PLT]
+00078ed8 mov      r4, r0                                     
+00078edc bl       #0x6b22c                                    _ZN8KeyEventC1Ev [PLT]
+00078ee0 b        #0x78ef4                                    
+00078ee4 mov      r5, r0                                     
+00078ee8 mov      r0, r4                                     
+00078eec bl       #0x69d98                                    _ZdlPv [PLT]
+00078ef0 b        #0x78fc4                                    
+00078ef4 str      r4, [sp, #0x24]                            
+00078ef8 ldr      r5, [sp, #0x24]                            
+00078efc ldr      r3, [r5, #8]                               
+00078f00 ldr      r1, [r5, #0xc]                             
+00078f04 cmp      r3, r1                                     
+00078f08 bge      #0x78f20                                   
+00078f0c ldr      r2, [r5, #4]                               
+00078f10 ldr      r4, [r2, r3, lsl #2]                       
+00078f14 add      r3, r3, #1                                 
+00078f18 str      r3, [r5, #8]                               
+00078f1c b        #0x78f7c                                    
+00078f20 ldr      r3, [r5, #0x10]                            
+00078f24 cmp      r1, r3                                     
+00078f28 bne      #0x78f38                                   
+00078f2c add      r0, r5, #4                                 
+00078f30 add      r1, r1, #1                                 
+00078f34 bl       #0x6af68                                    _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi [PLT]
+00078f38 ldr      r3, [r5, #0xc]                             
+00078f3c add      r3, r3, #1                                 
+00078f40 str      r3, [r5, #0xc]                             
+00078f44 mov      r0, #0x18                                  
+00078f48 bl       #0x6d44c                                    _Znwj [PLT]
+00078f4c mov      sb, r0                                     
+00078f50 mov      r4, r0                                     
+00078f54 bl       #0x6bd60                                    _ZN12KeyEvent_KeyC1Ev [PLT]
+00078f58 b        #0x78f6c                                    
+00078f5c mov      r5, r0                                     
+00078f60 mov      r0, sb                                     
+00078f64 bl       #0x69d98                                    _ZdlPv [PLT]
+00078f68 b        #0x78fc4                                    
+00078f6c ldmib    r5, {r2, r3}                               
+00078f70 str      sb, [r2, r3, lsl #2]                       
+00078f74 add      r3, r3, #1                                 
+00078f78 str      r3, [r5, #8]                               
+00078f7c ldr      r3, [r4, #0x14]                            
+00078f80 str      r6, [r4, #4]                               
+00078f84 strb     r7, [r4, #0xc]                             
+00078f88 ldr      r2, [sp, #0x6c]                            
+00078f8c str      r2, [r4, #8]                               
+00078f90 orr      r3, r3, #0xf                               
+00078f94 str      r3, [r4, #0x14]                            
+00078f98 strb     r8, [r4, #0xd]                             
+00078f9c add      r3, sp, #0x10                              
+00078fa0 str      r3, [sp]                                   
+00078fa4 mov      r0, sl                                     
+00078fa8 ldrd     r2, r3, [sp, #8]                           
+00078fac bl       #0x69aa4                                    _ZN11InputSource15sendInputReportEyP11InputReport [PLT]
+00078fb0 add      r0, sp, #0x10                              
+00078fb4 bl       #0x6d4f4                                    _ZN11InputReportD1Ev [PLT]
+00078fb8 mov      r0, #0                                     
+00078fbc b        #0x78fd4                                    
+00078fc0 mov      r5, r0                                     
+00078fc4 add      r0, sp, #0x10                              
+00078fc8 bl       #0x6d4f4                                    _ZN11InputReportD1Ev [PLT]
+00078fcc mov      r0, r5                                     
+00078fd0 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+00078fd4 add      sp, sp, #0x40                              
+00078fd8 pop      {r4, r5, r6, r7, r8, sb, sl, pc}           
+
+FUNCTION _ZN11InputSource18reportKeyLongPressEyjj @ 0x78fdc size 0x30
+00078fdc str      lr, [sp, #-4]!                             _ZN11InputSource18reportKeyLongPressEyjj
+00078fe0 sub      sp, sp, #0x14                              
+00078fe4 ldr      r1, [sp, #0x18]                            
+00078fe8 str      r1, [sp]                                   
+00078fec mov      r1, #1                                     
+00078ff0 str      r1, [sp, #4]                               
+00078ff4 str      r1, [sp, #8]                               
+00078ff8 ldr      r1, [sp, #0x1c]                            
+00078ffc str      r1, [sp, #0xc]                             
+00079000 bl       #0x6ac74                                    _ZN11InputSource7sendKeyEyjbbj [PLT]
+00079004 add      sp, sp, #0x14                              
+00079008 ldm      sp!, {pc}                                  
+
+FUNCTION _ZN11InputSource9reportKeyEyjbj @ 0x7900c size 0x34
+0007900c str      lr, [sp, #-4]!                             _ZN11InputSource9reportKeyEyjbj
+00079010 sub      sp, sp, #0x14                              
+00079014 ldrb     r1, [sp, #0x1c]                            
+00079018 ldr      ip, [sp, #0x18]                            
+0007901c str      ip, [sp]                                   
+00079020 str      r1, [sp, #4]                               
+00079024 mov      r1, #0                                     
+00079028 str      r1, [sp, #8]                               
+0007902c ldr      r1, [sp, #0x20]                            
+00079030 str      r1, [sp, #0xc]                             
+00079034 bl       #0x6ac74                                    _ZN11InputSource7sendKeyEyjbbj [PLT]
+00079038 add      sp, sp, #0x14                              
+0007903c ldm      sp!, {pc}                                  
+
+FUNCTION _ZN11InputSource16addDiscoveryInfoEP24ServiceDiscoveryResponse @ 0x79040 size 0x3e8
+00079040 push     {r4, r5, r6, r7, r8, lr}                   _ZN11InputSource16addDiscoveryInfoEP24ServiceDiscoveryResponse
+00079044 mov      r5, r0                                     
+00079048 mov      r4, r1                                     
+0007904c ldr      r3, [r1, #8]                               
+00079050 ldr      r1, [r1, #0xc]                             
+00079054 cmp      r3, r1                                     
+00079058 bge      #0x79070                                   
+0007905c ldr      r2, [r4, #4]                               
+00079060 ldr      r6, [r2, r3, lsl #2]                       
+00079064 add      r3, r3, #1                                 
+00079068 str      r3, [r4, #8]                               
+0007906c b        #0x790d0                                    
+00079070 ldr      r3, [r4, #0x10]                            
+00079074 cmp      r1, r3                                     
+00079078 bne      #0x79088                                   
+0007907c add      r0, r4, #4                                 
+00079080 add      r1, r1, #1                                 
+00079084 bl       #0x6af68                                    _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi [PLT]
+00079088 ldr      r3, [r4, #0xc]                             
+0007908c add      r3, r3, #1                                 
+00079090 str      r3, [r4, #0xc]                             
+00079094 mov      r0, #0x40                                  
+00079098 bl       #0x6d44c                                    _Znwj [PLT]
+0007909c mov      r7, r0                                     
+000790a0 mov      r6, r0                                     
+000790a4 bl       #0x6b5b0                                    _ZN7ServiceC1Ev [PLT]
+000790a8 b        #0x790c0                                    
+000790ac mov      r4, r0                                     
+000790b0 mov      r0, r7                                     
+000790b4 bl       #0x69d98                                    _ZdlPv [PLT]
+000790b8 mov      r0, r4                                     
+000790bc bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+000790c0 ldmib    r4, {r2, r3}                               
+000790c4 str      r7, [r2, r3, lsl #2]                       
+000790c8 add      r3, r3, #1                                 
+000790cc str      r3, [r4, #8]                               
+000790d0 ldr      r3, [r6, #0x3c]                            
+000790d4 ldrb     r2, [r5, #0xc]                             
+000790d8 str      r2, [r6, #0x34]                            
+000790dc orr      r3, r3, #9                                 
+000790e0 str      r3, [r6, #0x3c]                            
+000790e4 ldr      r3, [r6, #0xc]                             
+000790e8 cmp      r3, #0                                     
+000790ec bne      #0x7911c                                   
+000790f0 mov      r0, #0x88                                  
+000790f4 bl       #0x6d44c                                    _Znwj [PLT]
+000790f8 mov      r7, r0                                     
+000790fc bl       #0x6bcdc                                    _ZN18InputSourceServiceC1Ev [PLT]
+00079100 b        #0x79118                                    
+00079104 mov      r4, r0                                     
+00079108 mov      r0, r7                                     
+0007910c bl       #0x69d98                                    _ZdlPv [PLT]
+00079110 mov      r0, r4                                     
+00079114 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+00079118 str      r7, [r6, #0xc]                             
+0007911c ldr      r4, [r6, #0xc]                             
+00079120 ldr      r3, [r5, #0x3c]                            
+00079124 ldr      r6, [r3]                                   
+00079128 add      r8, r4, #4                                 
+0007912c b        #0x791bc                                    
+00079130 ldr      r7, [r6, #0xc]                             
+00079134 ldr      r1, [r4, #8]                               
+00079138 ldr      r3, [r4, #0xc]                             
+0007913c cmp      r1, r3                                     
+00079140 bne      #0x79150                                   
+00079144 mov      r0, r8                                     
+00079148 add      r1, r1, #1                                 
+0007914c bl       #0x6a6b0                                    _ZN6google8protobuf13RepeatedFieldIiE7ReserveEi [PLT]
+00079150 ldmib    r4, {r2, r3}                               
+00079154 str      r7, [r2, r3, lsl #2]                       
+00079158 add      r3, r3, #1                                 
+0007915c str      r3, [r4, #8]                               
+00079160 ldrsb    r3, [r6, #0x11]                            
+00079164 cmp      r3, #0                                     
+00079168 bne      #0x791bc                                   
+0007916c ldr      r2, [r6, #8]                               
+00079170 ldrsb    r3, [r2, #0x11]                            
+00079174 cmp      r3, #0                                     
+00079178 bne      #0x7919c                                   
+0007917c ldr      r3, [r2]                                   
+00079180 ldrsb    r1, [r3, #0x11]                            
+00079184 cmp      r1, #0                                     
+00079188 movne    r6, r2                                     
+0007918c bne      #0x791bc                                   
+00079190 mov      r2, r3                                     
+00079194 b        #0x7917c                                    
+00079198 mov      r6, r3                                     
+0007919c ldr      r3, [r6, #4]                               
+000791a0 ldrsb    r2, [r3, #0x11]                            
+000791a4 cmp      r2, #0                                     
+000791a8 bne      #0x791b8                                   
+000791ac ldr      r2, [r3, #8]                               
+000791b0 cmp      r2, r6                                     
+000791b4 beq      #0x79198                                   
+000791b8 mov      r6, r3                                     
+000791bc ldr      r3, [r5, #0x3c]                            
+000791c0 cmp      r6, r3                                     
+000791c4 bne      #0x79130                                   
+000791c8 ldrb     r3, [r5, #0x11]                            
+000791cc cmp      r3, #0                                     
+000791d0 beq      #0x79290                                   
+000791d4 ldr      r3, [r4, #0x28]                            
+000791d8 ldr      r1, [r4, #0x2c]                            
+000791dc cmp      r3, r1                                     
+000791e0 bge      #0x791f8                                   
+000791e4 ldr      r2, [r4, #0x24]                            
+000791e8 ldr      r6, [r2, r3, lsl #2]                       
+000791ec add      r3, r3, #1                                 
+000791f0 str      r3, [r4, #0x28]                            
+000791f4 b        #0x7925c                                    
+000791f8 ldr      r3, [r4, #0x30]                            
+000791fc cmp      r1, r3                                     
+00079200 bne      #0x79210                                   
+00079204 add      r0, r4, #0x24                              
+00079208 add      r1, r1, #1                                 
+0007920c bl       #0x6af68                                    _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi [PLT]
+00079210 ldr      r3, [r4, #0x2c]                            
+00079214 add      r3, r3, #1                                 
+00079218 str      r3, [r4, #0x2c]                            
+0007921c mov      r0, #0x18                                  
+00079220 bl       #0x6d44c                                    _Znwj [PLT]
+00079224 mov      r7, r0                                     
+00079228 mov      r6, r0                                     
+0007922c bl       #0x6ab48                                    _ZN30InputSourceService_TouchScreenC1Ev [PLT]
+00079230 b        #0x79248                                    
+00079234 mov      r4, r0                                     
+00079238 mov      r0, r7                                     
+0007923c bl       #0x69d98                                    _ZdlPv [PLT]
+00079240 mov      r0, r4                                     
+00079244 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+00079248 ldr      r3, [r4, #0x28]                            
+0007924c ldr      r2, [r4, #0x24]                            
+00079250 str      r7, [r2, r3, lsl #2]                       
+00079254 add      r3, r3, #1                                 
+00079258 str      r3, [r4, #0x28]                            
+0007925c ldr      r2, [r5, #0x14]                            
+00079260 ldr      r3, [r6, #0x14]                            
+00079264 orr      r1, r3, #1                                 
+00079268 str      r1, [r6, #0x14]                            
+0007926c str      r2, [r6, #4]                               
+00079270 ldr      r2, [r5, #0x18]                            
+00079274 orr      r1, r3, #3                                 
+00079278 str      r1, [r6, #0x14]                            
+0007927c str      r2, [r6, #8]                               
+00079280 ldr      r2, [r5, #0x1c]                            
+00079284 orr      r3, r3, #7                                 
+00079288 str      r3, [r6, #0x14]                            
+0007928c str      r2, [r6, #0xc]                             
+00079290 ldrb     r3, [r5, #0x20]                            
+00079294 cmp      r3, #0                                     
+00079298 beq      #0x79378                                   
+0007929c ldr      r3, [r4, #0x48]                            
+000792a0 ldr      r1, [r4, #0x4c]                            
+000792a4 cmp      r3, r1                                     
+000792a8 bge      #0x792c0                                   
+000792ac ldr      r2, [r4, #0x44]                            
+000792b0 ldr      r6, [r2, r3, lsl #2]                       
+000792b4 add      r3, r3, #1                                 
+000792b8 str      r3, [r4, #0x48]                            
+000792bc b        #0x79324                                    
+000792c0 ldr      r3, [r4, #0x50]                            
+000792c4 cmp      r1, r3                                     
+000792c8 bne      #0x792d8                                   
+000792cc add      r0, r4, #0x44                              
+000792d0 add      r1, r1, #1                                 
+000792d4 bl       #0x6af68                                    _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi [PLT]
+000792d8 ldr      r3, [r4, #0x4c]                            
+000792dc add      r3, r3, #1                                 
+000792e0 str      r3, [r4, #0x4c]                            
+000792e4 mov      r0, #0x20                                  
+000792e8 bl       #0x6d44c                                    _Znwj [PLT]
+000792ec mov      r7, r0                                     
+000792f0 mov      r6, r0                                     
+000792f4 bl       #0x6d614                                    _ZN27InputSourceService_TouchPadC1Ev [PLT]
+000792f8 b        #0x79310                                    
+000792fc mov      r4, r0                                     
+00079300 mov      r0, r7                                     
+00079304 bl       #0x69d98                                    _ZdlPv [PLT]
+00079308 mov      r0, r4                                     
+0007930c bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+00079310 ldr      r3, [r4, #0x48]                            
+00079314 ldr      r2, [r4, #0x44]                            
+00079318 str      r7, [r2, r3, lsl #2]                       
+0007931c add      r3, r3, #1                                 
+00079320 str      r3, [r4, #0x48]                            
+00079324 ldr      r2, [r5, #0x24]                            
+00079328 ldr      r3, [r6, #0x1c]                            
+0007932c orr      r1, r3, #1                                 
+00079330 str      r1, [r6, #0x1c]                            
+00079334 str      r2, [r6, #4]                               
+00079338 ldr      r2, [r5, #0x28]                            
+0007933c orr      r1, r3, #3                                 
+00079340 str      r1, [r6, #0x1c]                            
+00079344 str      r2, [r6, #8]                               
+00079348 ldr      r2, [r5, #0x30]                            
+0007934c orr      r1, r3, #0xb                               
+00079350 str      r1, [r6, #0x1c]                            
+00079354 str      r2, [r6, #0x10]                            
+00079358 ldr      r2, [r5, #0x34]                            
+0007935c orr      r1, r3, #0x1b                              
+00079360 str      r1, [r6, #0x1c]                            
+00079364 str      r2, [r6, #0x14]                            
+00079368 ldrb     r2, [r5, #0x2c]                            
+0007936c orr      r3, r3, #0x1f                              
+00079370 str      r3, [r6, #0x1c]                            
+00079374 strb     r2, [r6, #0xc]                             
+00079378 ldr      r3, [r5, #0x54]                            
+0007937c ldr      r6, [r3]                                   
+00079380 add      r8, r4, #0x64                              
+00079384 b        #0x79418                                    
+00079388 ldr      r7, [r6, #0xc]                             
+0007938c ldr      r1, [r4, #0x68]                            
+00079390 ldr      r3, [r4, #0x6c]                            
+00079394 cmp      r1, r3                                     
+00079398 bne      #0x793a8                                   
+0007939c mov      r0, r8                                     
+000793a0 add      r1, r1, #1                                 
+000793a4 bl       #0x6a6b0                                    _ZN6google8protobuf13RepeatedFieldIiE7ReserveEi [PLT]
+000793a8 ldr      r3, [r4, #0x68]                            
+000793ac ldr      r2, [r4, #0x64]                            
+000793b0 str      r7, [r2, r3, lsl #2]                       
+000793b4 add      r3, r3, #1                                 
+000793b8 str      r3, [r4, #0x68]                            
+000793bc ldrsb    r3, [r6, #0x11]                            
+000793c0 cmp      r3, #0                                     
+000793c4 bne      #0x79418                                   
+000793c8 ldr      r2, [r6, #8]                               
+000793cc ldrsb    r3, [r2, #0x11]                            
+000793d0 cmp      r3, #0                                     
+000793d4 bne      #0x793f8                                   
+000793d8 ldr      r3, [r2]                                   
+000793dc ldrsb    r1, [r3, #0x11]                            
+000793e0 cmp      r1, #0                                     
+000793e4 movne    r6, r2                                     
+000793e8 bne      #0x79418                                   
+000793ec mov      r2, r3                                     
+000793f0 b        #0x793d8                                    
+000793f4 mov      r6, r3                                     
+000793f8 ldr      r3, [r6, #4]                               
+000793fc ldrsb    r2, [r3, #0x11]                            
+00079400 cmp      r2, #0                                     
+00079404 bne      #0x79414                                   
+00079408 ldr      r2, [r3, #8]                               
+0007940c cmp      r6, r2                                     
+00079410 beq      #0x793f4                                   
+00079414 mov      r6, r3                                     
+00079418 ldr      r3, [r5, #0x54]                            
+0007941c cmp      r3, r6                                     
+00079420 bne      #0x79388                                   
+00079424 pop      {r4, r5, r6, r7, r8, pc}                   
+
+FUNCTION _ZN11InputSource23handleKeyBindingRequestERK17KeyBindingRequest @ 0x79428 size 0x4bc
+00079428 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}       _ZN11InputSource23handleKeyBindingRequestERK17KeyBindingRequest
+0007942c sub      sp, sp, #0x64                              
+00079430 mov      sb, r0                                     
+00079434 str      r1, [sp, #0x18]                            
+00079438 ldr      r4, [r1, #8]                               
+0007943c mov      r1, #0                                     
+00079440 str      r1, [sp, #0x14]                            
+00079444 mov      r5, r1                                     
+00079448 ldr      r6, [sp, #0x18]                            
+0007944c b        #0x794b4                                    
+00079450 ldr      r3, [r6, #4]                               
+00079454 ldr      ip, [r3, r1, lsl #2]                       
+00079458 ldr      r0, [sb, #0x3c]                            
+0007945c ldr      r3, [r0, #4]                               
+00079460 mov      r2, r0                                     
+00079464 b        #0x79484                                    
+00079468 ldr      lr, [r3, #0xc]                             
+0007946c cmp      ip, lr                                     
+00079470 ldrgt    lr, [r3, #8]                               
+00079474 movgt    r3, r2                                     
+00079478 ldrle    lr, [r3]                                   
+0007947c mov      r2, r3                                     
+00079480 mov      r3, lr                                     
+00079484 ldrsb    lr, [r3, #0x11]                            
+00079488 cmp      lr, #0                                     
+0007948c beq      #0x79468                                   
+00079490 cmp      r0, r2                                     
+00079494 beq      #0x794a4                                   
+00079498 ldr      r3, [r2, #0xc]                             
+0007949c cmp      ip, r3                                     
+000794a0 bge      #0x794a8                                   
+000794a4 mov      r2, r0                                     
+000794a8 cmp      r0, r2                                     
+000794ac mvneq    r5, #0x11                                  
+000794b0 add      r1, r1, #1                                 
+000794b4 cmp      r1, r4                                     
+000794b8 blt      #0x79450                                   
+000794bc str      r5, [sp, #0x14]                            
+000794c0 cmp      r5, #0                                     
+000794c4 bne      #0x79810                                   
+000794c8 add      r6, sb, #0x44                              
+000794cc ldr      r3, [sb, #0x48]                            
+000794d0 ldr      r3, [r3, #4]                               
+000794d4 str      r3, [sp, #0x10]                            
+000794d8 str      r3, [sp, #0x2c]                            
+000794dc str      sb, [sp, #0x34]                            
+000794e0 b        #0x796c0                                    
+000794e4 ldr      r2, [sp, #0x10]                            
+000794e8 ldr      r2, [r2, #8]                               
+000794ec str      r2, [sp, #0xc]                             
+000794f0 str      r2, [sp, #0x28]                            
+000794f4 b        #0x79694                                    
+000794f8 ldr      r3, [sp, #0xc]                             
+000794fc ldr      r3, [r3, #8]                               
+00079500 str      r3, [sp, #8]                               
+00079504 str      r3, [sp, #0x24]                            
+00079508 b        #0x79668                                    
+0007950c ldr      r2, [sp, #8]                               
+00079510 ldr      r2, [r2, #8]                               
+00079514 str      r2, [sp, #4]                               
+00079518 str      r2, [sp, #0x20]                            
+0007951c b        #0x7963c                                    
+00079520 ldr      r3, [sp, #4]                               
+00079524 ldr      r3, [r3, #8]                               
+00079528 str      r3, [sp]                                   
+0007952c str      r3, [sp, #0x1c]                            
+00079530 b        #0x79610                                    
+00079534 ldr      r2, [sp]                                   
+00079538 ldr      fp, [r2, #8]                               
+0007953c ldrsb    r3, [fp, #0x11]                            
+00079540 cmp      r3, #0                                     
+00079544 bne      #0x795f4                                   
+00079548 str      fp, [sp, #0x30]                            
+0007954c ldr      sl, [fp, #8]                               
+00079550 ldrsb    r3, [sl, #0x11]                            
+00079554 cmp      r3, #0                                     
+00079558 bne      #0x795dc                                   
+0007955c mov      sb, sl                                     
+00079560 ldr      r7, [sl, #8]                               
+00079564 ldrsb    r3, [r7, #0x11]                            
+00079568 cmp      r3, #0                                     
+0007956c bne      #0x795c4                                   
+00079570 mov      r8, r7                                     
+00079574 ldr      r4, [r7, #8]                               
+00079578 ldrsb    r3, [r4, #0x11]                            
+0007957c cmp      r3, #0                                     
+00079580 bne      #0x795ac                                   
+00079584 mov      r5, r4                                     
+00079588 mov      r0, r6                                     
+0007958c ldr      r1, [r4, #8]                               
+00079590 bl       #0x69f9c                                    _ZNSt5_TreeISt12_Tset_traitsIiSt4lessIiESaIiELb0EEE6_EraseEPNSt9_Tree_nodIS4_E5_NodeE [PLT]
+00079594 ldr      r4, [r4]                                   
+00079598 mov      r0, r5                                     
+0007959c bl       #0x69d98                                    _ZdlPv [PLT]
+000795a0 ldrsb    r3, [r4, #0x11]                            
+000795a4 cmp      r3, #0                                     
+000795a8 beq      #0x79584                                   
+000795ac ldr      r7, [r7]                                   
+000795b0 mov      r0, r8                                     
+000795b4 bl       #0x69d98                                    _ZdlPv [PLT]
+000795b8 ldrsb    r3, [r7, #0x11]                            
+000795bc cmp      r3, #0                                     
+000795c0 beq      #0x79570                                   
+000795c4 ldr      sl, [sl]                                   
+000795c8 mov      r0, sb                                     
+000795cc bl       #0x69d98                                    _ZdlPv [PLT]
+000795d0 ldrsb    r3, [sl, #0x11]                            
+000795d4 cmp      r3, #0                                     
+000795d8 beq      #0x7955c                                   
+000795dc ldr      fp, [fp]                                   
+000795e0 ldr      r0, [sp, #0x30]                            
+000795e4 bl       #0x69d98                                    _ZdlPv [PLT]
+000795e8 ldrsb    r3, [fp, #0x11]                            
+000795ec cmp      r3, #0                                     
+000795f0 beq      #0x79548                                   
+000795f4 ldr      r3, [sp]                                   
+000795f8 ldr      r3, [r3]                                   
+000795fc str      r3, [sp]                                   
+00079600 ldr      r0, [sp, #0x1c]                            
+00079604 bl       #0x69d98                                    _ZdlPv [PLT]
+00079608 ldr      r2, [sp]                                   
+0007960c str      r2, [sp, #0x1c]                            
+00079610 ldr      r2, [sp]                                   
+00079614 ldrsb    r3, [r2, #0x11]                            
+00079618 cmp      r3, #0                                     
+0007961c beq      #0x79534                                   
+00079620 ldr      r3, [sp, #4]                               
+00079624 ldr      r3, [r3]                                   
+00079628 str      r3, [sp, #4]                               
+0007962c ldr      r0, [sp, #0x20]                            
+00079630 bl       #0x69d98                                    _ZdlPv [PLT]
+00079634 ldr      r2, [sp, #4]                               
+00079638 str      r2, [sp, #0x20]                            
+0007963c ldr      r2, [sp, #4]                               
+00079640 ldrsb    r3, [r2, #0x11]                            
+00079644 cmp      r3, #0                                     
+00079648 beq      #0x79520                                   
+0007964c ldr      r3, [sp, #8]                               
+00079650 ldr      r3, [r3]                                   
+00079654 str      r3, [sp, #8]                               
+00079658 ldr      r0, [sp, #0x24]                            
+0007965c bl       #0x69d98                                    _ZdlPv [PLT]
+00079660 ldr      r2, [sp, #8]                               
+00079664 str      r2, [sp, #0x24]                            
+00079668 ldr      r2, [sp, #8]                               
+0007966c ldrsb    r3, [r2, #0x11]                            
+00079670 cmp      r3, #0                                     
+00079674 beq      #0x7950c                                   
+00079678 ldr      r3, [sp, #0xc]                             
+0007967c ldr      r3, [r3]                                   
+00079680 str      r3, [sp, #0xc]                             
+00079684 ldr      r0, [sp, #0x28]                            
+00079688 bl       #0x69d98                                    _ZdlPv [PLT]
+0007968c ldr      r2, [sp, #0xc]                             
+00079690 str      r2, [sp, #0x28]                            
+00079694 ldr      r2, [sp, #0xc]                             
+00079698 ldrsb    r3, [r2, #0x11]                            
+0007969c cmp      r3, #0                                     
+000796a0 beq      #0x794f8                                   
+000796a4 ldr      r3, [sp, #0x10]                            
+000796a8 ldr      r3, [r3]                                   
+000796ac str      r3, [sp, #0x10]                            
+000796b0 ldr      r0, [sp, #0x2c]                            
+000796b4 bl       #0x69d98                                    _ZdlPv [PLT]
+000796b8 ldr      r2, [sp, #0x10]                            
+000796bc str      r2, [sp, #0x2c]                            
+000796c0 ldr      r2, [sp, #0x10]                            
+000796c4 ldrsb    r3, [r2, #0x11]                            
+000796c8 cmp      r3, #0                                     
+000796cc beq      #0x794e4                                   
+000796d0 ldr      sb, [sp, #0x34]                            
+000796d4 ldr      r3, [sb, #0x48]                            
+000796d8 str      r3, [r3, #4]                               
+000796dc mov      r4, #0                                     
+000796e0 str      r4, [sb, #0x4c]                            
+000796e4 ldr      r3, [sb, #0x48]                            
+000796e8 str      r3, [r3]                                   
+000796ec ldr      r3, [sb, #0x48]                            
+000796f0 str      r3, [r3, #8]                               
+000796f4 mov      r5, #1                                     
+000796f8 mov      r8, r4                                     
+000796fc mov      sl, r5                                     
+00079700 add      r7, sp, #0x5c                              
+00079704 ldr      fp, [sp, #0x18]                            
+00079708 b        #0x79804                                    
+0007970c ldr      r3, [fp, #4]                               
+00079710 ldr      ip, [r3, r4, lsl #2]                       
+00079714 str      ip, [sp, #0x5c]                            
+00079718 ldr      r2, [sb, #0x48]                            
+0007971c ldr      r3, [r2, #4]                               
+00079720 mov      r0, r2                                     
+00079724 mov      r1, r5                                     
+00079728 b        #0x7974c                                    
+0007972c ldr      r1, [r3, #0xc]                             
+00079730 cmp      ip, r1                                     
+00079734 ldrlt    lr, [r3]                                   
+00079738 movlt    r1, sl                                     
+0007973c ldrge    lr, [r3, #8]                               
+00079740 movge    r1, r8                                     
+00079744 mov      r0, r3                                     
+00079748 mov      r3, lr                                     
+0007974c ldrsb    lr, [r3, #0x11]                            
+00079750 cmp      lr, #0                                     
+00079754 beq      #0x7972c                                   
+00079758 mov      r3, r0                                     
+0007975c cmp      r1, #0                                     
+00079760 beq      #0x797e4                                   
+00079764 ldr      r2, [r2]                                   
+00079768 cmp      r2, r0                                     
+0007976c bne      #0x79784                                   
+00079770 mov      r0, r6                                     
+00079774 mov      r1, r5                                     
+00079778 mov      r3, r7                                     
+0007977c bl       #0x69288                                    _ZNSt5_TreeISt12_Tset_traitsIiSt4lessIiESaIiELb0EEE7_InsertEbPNSt9_Tree_nodIS4_E5_NodeERKi [PLT]
+00079780 b        #0x79800                                    
+00079784 ldrsb    r2, [r0, #0x11]                            
+00079788 cmp      r2, #0                                     
+0007978c ldrne    r0, [r0, #8]                               
+00079790 bne      #0x797e4                                   
+00079794 ldr      r2, [r3]                                   
+00079798 ldrsb    lr, [r2, #0x11]                            
+0007979c cmp      lr, #0                                     
+000797a0 bne      #0x797c4                                   
+000797a4 ldr      r0, [r2, #8]                               
+000797a8 ldrsb    lr, [r0, #0x11]                            
+000797ac cmp      lr, #0                                     
+000797b0 movne    r0, r2                                     
+000797b4 bne      #0x797e4                                   
+000797b8 mov      r2, r0                                     
+000797bc b        #0x797a4                                    
+000797c0 mov      r0, r2                                     
+000797c4 ldr      r2, [r0, #4]                               
+000797c8 ldrsb    lr, [r2, #0x11]                            
+000797cc cmp      lr, #0                                     
+000797d0 bne      #0x797e4                                   
+000797d4 ldr      lr, [r2]                                   
+000797d8 cmp      r0, lr                                     
+000797dc beq      #0x797c0                                   
+000797e0 mov      r0, r2                                     
+000797e4 ldr      r2, [r0, #0xc]                             
+000797e8 cmp      ip, r2                                     
+000797ec ble      #0x79800                                   
+000797f0 mov      r0, r6                                     
+000797f4 mov      r2, r3                                     
+000797f8 mov      r3, r7                                     
+000797fc bl       #0x69288                                    _ZNSt5_TreeISt12_Tset_traitsIiSt4lessIiESaIiELb0EEE7_InsertEbPNSt9_Tree_nodIS4_E5_NodeERKi [PLT]
+00079800 add      r4, r4, #1                                 
+00079804 ldr      r3, [fp, #8]                               
+00079808 cmp      r4, r3                                     
+0007980c blt      #0x7970c                                   
+00079810 add      r4, sp, #0x4c                              
+00079814 mov      r0, r4                                     
+00079818 bl       #0x6a26c                                    _ZN18KeyBindingResponseC1Ev [PLT]
+0007981c ldr      r3, [sp, #0x58]                            
+00079820 orr      r3, r3, #1                                 
+00079824 str      r3, [sp, #0x58]                            
+00079828 ldr      r3, [sp, #0x14]                            
+0007982c str      r3, [sp, #0x50]                            
+00079830 mov      r3, #0                                     
+00079834 str      r3, [sp, #0x3c]                            
+00079838 str      r3, [sp, #0x40]                            
+0007983c str      r3, [sp, #0x44]                            
+00079840 str      r3, [sp, #0x48]                            
+00079844 ldr      r0, [sb, #8]                               
+00079848 movw     r1, #0x8003                                
+0007984c mov      r2, r4                                     
+00079850 add      r3, sp, #0x3c                              
+00079854 bl       #0x6c5c4                                    _ZN13MessageRouter13marshallProtoEtRKN6google8protobuf11MessageLiteEP8IoBuffer [PLT]
+00079858 ldr      r2, [sp, #0x3c]                            
+0007985c ldr      r3, [sp, #0x44]                            
+00079860 ldr      ip, [sp, #0x48]                            
+00079864 ldrb     r1, [sb, #4]                               
+00079868 cmp      r1, #0                                     
+0007986c beq      #0x79884                                   
+00079870 ldr      r0, [sb, #8]                               
+00079874 ldrb     r1, [sb, #5]                               
+00079878 add      r2, r2, r3                                 
+0007987c rsb      r3, r3, ip                                 
+00079880 bl       #0x6b928                                    _ZN13MessageRouter13queueOutgoingEhPvj [PLT]
+00079884 ldr      r0, [sp, #0x3c]                            
+00079888 bl       #0x6cf84                                    free [PLT]
+0007988c mov      r4, #0                                     
+00079890 str      r4, [sp, #0x3c]                            
+00079894 str      r4, [sp, #0x40]                            
+00079898 str      r4, [sp, #0x44]                            
+0007989c str      r4, [sp, #0x48]                            
+000798a0 add      r0, sp, #0x4c                              
+000798a4 bl       #0x69864                                    _ZN18KeyBindingResponseD1Ev [PLT]
+000798a8 mov      r0, r4                                     
+000798ac add      sp, sp, #0x64                              
+000798b0 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}       
+000798b4 mov      r4, r0                                     
+000798b8 ldr      r0, [sp, #0x3c]                            
+000798bc bl       #0x6cf84                                    free [PLT]
+000798c0 mov      r3, #0                                     
+000798c4 str      r3, [sp, #0x3c]                            
+000798c8 str      r3, [sp, #0x40]                            
+000798cc str      r3, [sp, #0x44]                            
+000798d0 str      r3, [sp, #0x48]                            
+000798d4 add      r0, sp, #0x4c                              
+000798d8 bl       #0x69864                                    _ZN18KeyBindingResponseD1Ev [PLT]
+000798dc mov      r0, r4                                     
+000798e0 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+
+FUNCTION _ZN11InputSource12routeMessageEhtRK10shared_ptrI8IoBufferE @ 0x798e4 size 0x178
+000798e4 push     {r4, r5, r6, r7, r8, lr}                   _ZN11InputSource12routeMessageEhtRK10shared_ptrI8IoBufferE
+000798e8 sub      sp, sp, #0x38                              
+000798ec ldr      r4, [pc, #0x15c]                           
+000798f0 add      r4, pc, r4                                 
+000798f4 mov      r8, r0                                     
+000798f8 ldr      r3, [r3, #4]                               
+000798fc ldr      r1, [r3, #8]                               
+00079900 ldr      r6, [r3]                                   
+00079904 add      r6, r6, r1                                 
+00079908 add      r6, r6, #2                                 
+0007990c ldr      r7, [r3, #0xc]                             
+00079910 sub      r7, r7, #2                                 
+00079914 rsb      r7, r1, r7                                 
+00079918 movw     r3, #0x8002                                
+0007991c cmp      r2, r3                                     
+00079920 beq      #0x79938                                   
+00079924 movw     r3, #0x8004                                
+00079928 cmp      r2, r3                                     
+0007992c mvnne    r4, #0xfc                                  
+00079930 bne      #0x79a1c                                   
+00079934 b        #0x799ac                                    
+00079938 add      r5, sp, #0xc                               
+0007993c mov      r0, r5                                     
+00079940 bl       #0x69abc                                    _ZN17KeyBindingRequestC1Ev [PLT]
+00079944 mov      r0, r5                                     
+00079948 mov      r1, r6                                     
+0007994c mov      r2, r7                                     
+00079950 bl       #0x6bb20                                    _ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi [PLT]
+00079954 cmp      r0, #0                                     
+00079958 bne      #0x79a28                                   
+0007995c mov      r3, #0x2c                                  
+00079960 str      r3, [sp]                                   
+00079964 movw     r0, #0x2710                                
+00079968 movt     r0, #0x10                                  
+0007996c mov      r1, #5                                     
+00079970 ldr      r2, [pc, #0xdc]                            
+00079974 add      r2, r4, r2                                 
+00079978 ldr      r3, [pc, #0xd8]                            
+0007997c add      r3, r4, r3                                 
+00079980 bl       #0x6c990                                    slogf [PLT]
+00079984 mvn      r4, #0xfc                                  
+00079988 b        #0x799a0                                    
+0007998c mov      r4, r0                                     
+00079990 add      r0, sp, #0xc                               
+00079994 bl       #0x6d824                                    _ZN17KeyBindingRequestD1Ev [PLT]
+00079998 mov      r0, r4                                     
+0007999c bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+000799a0 add      r0, sp, #0xc                               
+000799a4 bl       #0x6d824                                    _ZN17KeyBindingRequestD1Ev [PLT]
+000799a8 b        #0x79a1c                                    
+000799ac add      r5, sp, #0xc                               
+000799b0 mov      r0, r5                                     
+000799b4 bl       #0x68cf4                                    _ZN13InputFeedbackC1Ev [PLT]
+000799b8 mov      r0, r5                                     
+000799bc mov      r1, r6                                     
+000799c0 mov      r2, r7                                     
+000799c4 bl       #0x6bb20                                    _ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi [PLT]
+000799c8 cmp      r0, #0                                     
+000799cc bne      #0x79a3c                                   
+000799d0 mov      r3, #0x33                                  
+000799d4 str      r3, [sp]                                   
+000799d8 movw     r0, #0x2710                                
+000799dc movt     r0, #0x10                                  
+000799e0 mov      r1, #5                                     
+000799e4 ldr      r2, [pc, #0x68]                            
+000799e8 add      r2, r4, r2                                 
+000799ec ldr      r3, [pc, #0x64]                            
+000799f0 add      r3, r4, r3                                 
+000799f4 bl       #0x6c990                                    slogf [PLT]
+000799f8 mvn      r4, #0xfc                                  
+000799fc b        #0x79a14                                    
+00079a00 mov      r4, r0                                     
+00079a04 add      r0, sp, #0xc                               
+00079a08 bl       #0x6b7fc                                    _ZN13InputFeedbackD1Ev [PLT]
+00079a0c mov      r0, r4                                     
+00079a10 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+00079a14 add      r0, sp, #0xc                               
+00079a18 bl       #0x6b7fc                                    _ZN13InputFeedbackD1Ev [PLT]
+00079a1c mov      r0, r4                                     
+00079a20 add      sp, sp, #0x38                              
+00079a24 pop      {r4, r5, r6, r7, r8, pc}                   
+00079a28 mov      r0, r8                                     
+00079a2c add      r1, sp, #0xc                               
+00079a30 bl       #0x6a254                                    _ZN11InputSource23handleKeyBindingRequestERK17KeyBindingRequest [PLT]
+00079a34 mov      r4, r0                                     
+00079a38 b        #0x799a0                                    
+00079a3c mov      r0, r8                                     
+00079a40 add      r1, sp, #0xc                               
+00079a44 bl       #0x6b694                                    _ZN11InputSource19handleInputFeedbackERK13InputFeedback [PLT]
+00079a48 mov      r4, r0                                     
+00079a4c b        #0x79a14                                    
+00079a50 andeq    r0, sl, r0, lsl #23                        
+00079a54 .byte    0xc0, 0x42, 0xfe, 0xff                     
+00079a58 .byte    0x58, 0x48, 0xfe, 0xff                     
+
+FUNCTION _ZN11InputSourceD0Ev @ 0x7a30c size 0x104
+0007a30c push     {r4, r5, r6, lr}                           _ZN11InputSourceD0Ev
+0007a310 ldr      r5, [pc, #0xec]                            
+0007a314 add      r5, pc, r5                                 
+0007a318 mov      r4, r0                                     
+0007a31c ldr      r3, [pc, #0xe4]                            
+0007a320 ldr      r3, [r5, r3]                               
+0007a324 add      r3, r3, #8                                 
+0007a328 str      r3, [r0]                                   
+0007a32c ldr      r0, [r0, #0x5c]                            
+0007a330 cmp      r0, #0                                     
+0007a334 beq      #0x7a374                                   
+0007a338 mov      r1, #1                                     
+0007a33c bl       #0x69354                                    atomic_sub_value [PLT]
+0007a340 cmp      r0, #1                                     
+0007a344 bne      #0x7a374                                   
+0007a348 ldr      r0, [r4, #0x60]                            
+0007a34c cmp      r0, #0                                     
+0007a350 beq      #0x7a360                                   
+0007a354 ldr      r3, [r0]                                   
+0007a358 ldr      r3, [r3, #4]                               
+0007a35c blx      r3                                         
+0007a360 mov      r6, #0                                     
+0007a364 str      r6, [r4, #0x60]                            
+0007a368 ldr      r0, [r4, #0x5c]                            
+0007a36c bl       #0x69d98                                    _ZdlPv [PLT]
+0007a370 str      r6, [r4, #0x5c]                            
+0007a374 add      r0, r4, #0x50                              
+0007a378 bl       #0x6bcf4                                    _ZNSt3setI13FeedbackEventSt4lessIS0_ESaIS0_EED1Ev [PLT]
+0007a37c b        #0x7a3a0                                    
+0007a380 mov      r6, r0                                     
+0007a384 add      r0, r4, #0x50                              
+0007a388 bl       #0x6bcf4                                    _ZNSt3setI13FeedbackEventSt4lessIS0_ESaIS0_EED1Ev [PLT]
+0007a38c b        #0x7a394                                    
+0007a390 mov      r6, r0                                     
+0007a394 add      r0, r4, #0x44                              
+0007a398 bl       #0x68e2c                                    _ZNSt3setIiSt4lessIiESaIiEED1Ev [PLT]
+0007a39c b        #0x7a3b0                                    
+0007a3a0 add      r0, r4, #0x44                              
+0007a3a4 bl       #0x68e2c                                    _ZNSt3setIiSt4lessIiESaIiEED1Ev [PLT]
+0007a3a8 b        #0x7a3bc                                    
+0007a3ac mov      r6, r0                                     
+0007a3b0 add      r0, r4, #0x38                              
+0007a3b4 bl       #0x68e2c                                    _ZNSt3setIiSt4lessIiESaIiEED1Ev [PLT]
+0007a3b8 b        #0x7a3cc                                    
+0007a3bc add      r0, r4, #0x38                              
+0007a3c0 bl       #0x68e2c                                    _ZNSt3setIiSt4lessIiESaIiEED1Ev [PLT]
+0007a3c4 b        #0x7a3e4                                    
+0007a3c8 mov      r6, r0                                     
+0007a3cc ldr      r3, [pc, #0x38]                            
+0007a3d0 ldr      r3, [r5, r3]                               
+0007a3d4 add      r3, r3, #8                                 
+0007a3d8 str      r3, [r4]                                   
+0007a3dc mov      r0, r6                                     
+0007a3e0 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0007a3e4 ldr      r3, [pc, #0x20]                            
+0007a3e8 ldr      r3, [r5, r3]                               
+0007a3ec add      r3, r3, #8                                 
+0007a3f0 str      r3, [r4]                                   
+0007a3f4 mov      r0, r4                                     
+0007a3f8 bl       #0x69d98                                    _ZdlPv [PLT]
+0007a3fc mov      r0, r4                                     
+0007a400 pop      {r4, r5, r6, pc}                           
+0007a404 andeq    r0, sl, ip, asr r1                         
+0007a408 andeq    r1, r0, r8, lsl sp                         
+0007a40c ldrdeq   r1, r2, [r0], -ip                          
+
+FUNCTION _ZN11InputSourceD1Ev @ 0x7a410 size 0xfc
+0007a410 push     {r4, r5, r6, lr}                           _ZN11InputSourceD1Ev
+0007a414 ldr      r5, [pc, #0xe4]                            
+0007a418 add      r5, pc, r5                                 
+0007a41c mov      r4, r0                                     
+0007a420 ldr      r3, [pc, #0xdc]                            
+0007a424 ldr      r3, [r5, r3]                               
+0007a428 add      r3, r3, #8                                 
+0007a42c str      r3, [r0]                                   
+0007a430 ldr      r0, [r0, #0x5c]                            
+0007a434 cmp      r0, #0                                     
+0007a438 beq      #0x7a478                                   
+0007a43c mov      r1, #1                                     
+0007a440 bl       #0x69354                                    atomic_sub_value [PLT]
+0007a444 cmp      r0, #1                                     
+0007a448 bne      #0x7a478                                   
+0007a44c ldr      r0, [r4, #0x60]                            
+0007a450 cmp      r0, #0                                     
+0007a454 beq      #0x7a464                                   
+0007a458 ldr      r3, [r0]                                   
+0007a45c ldr      r3, [r3, #4]                               
+0007a460 blx      r3                                         
+0007a464 mov      r6, #0                                     
+0007a468 str      r6, [r4, #0x60]                            
+0007a46c ldr      r0, [r4, #0x5c]                            
+0007a470 bl       #0x69d98                                    _ZdlPv [PLT]
+0007a474 str      r6, [r4, #0x5c]                            
+0007a478 add      r0, r4, #0x50                              
+0007a47c bl       #0x6bcf4                                    _ZNSt3setI13FeedbackEventSt4lessIS0_ESaIS0_EED1Ev [PLT]
+0007a480 b        #0x7a4a4                                    
+0007a484 mov      r6, r0                                     
+0007a488 add      r0, r4, #0x50                              
+0007a48c bl       #0x6bcf4                                    _ZNSt3setI13FeedbackEventSt4lessIS0_ESaIS0_EED1Ev [PLT]
+0007a490 b        #0x7a498                                    
+0007a494 mov      r6, r0                                     
+0007a498 add      r0, r4, #0x44                              
+0007a49c bl       #0x68e2c                                    _ZNSt3setIiSt4lessIiESaIiEED1Ev [PLT]
+0007a4a0 b        #0x7a4b4                                    
+0007a4a4 add      r0, r4, #0x44                              
+0007a4a8 bl       #0x68e2c                                    _ZNSt3setIiSt4lessIiESaIiEED1Ev [PLT]
+0007a4ac b        #0x7a4c0                                    
+0007a4b0 mov      r6, r0                                     
+0007a4b4 add      r0, r4, #0x38                              
+0007a4b8 bl       #0x68e2c                                    _ZNSt3setIiSt4lessIiESaIiEED1Ev [PLT]
+0007a4bc b        #0x7a4d0                                    
+0007a4c0 add      r0, r4, #0x38                              
+0007a4c4 bl       #0x68e2c                                    _ZNSt3setIiSt4lessIiESaIiEED1Ev [PLT]
+0007a4c8 b        #0x7a4e8                                    
+0007a4cc mov      r6, r0                                     
+0007a4d0 ldr      r3, [pc, #0x30]                            
+0007a4d4 ldr      r3, [r5, r3]                               
+0007a4d8 add      r3, r3, #8                                 
+0007a4dc str      r3, [r4]                                   
+0007a4e0 mov      r0, r6                                     
+0007a4e4 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0007a4e8 ldr      r3, [pc, #0x18]                            
+0007a4ec ldr      r3, [r5, r3]                               
+0007a4f0 add      r3, r3, #8                                 
+0007a4f4 str      r3, [r4]                                   
+0007a4f8 mov      r0, r4                                     
+0007a4fc pop      {r4, r5, r6, pc}                           
+0007a500 andeq    r0, sl, r8, asr r0                         
+0007a504 andeq    r1, r0, r8, lsl sp                         
+0007a508 ldrdeq   r1, r2, [r0], -ip                          
+
+FUNCTION _ZN13MediaSinkBase11handleStartERK5Start @ 0x7e5f0 size 0x44
+0007e5f0 push     {r4, r5, r6, lr}                           _ZN13MediaSinkBase11handleStartERK5Start
+0007e5f4 mov      r4, r0                                     
+0007e5f8 ldr      r3, [r1, #4]                               
+0007e5fc str      r3, [r0, #0x18]                            
+0007e600 ldr      r3, [r0]                                   
+0007e604 ldr      r3, [r3, #0x34]                            
+0007e608 ldr      r1, [r1, #8]                               
+0007e60c blx      r3                                         
+0007e610 subs     r5, r0, #0                                 
+0007e614 bne      #0x7e62c                                   
+0007e618 ldr      r3, [r4]                                   
+0007e61c ldr      r3, [r3, #0x2c]                            
+0007e620 mov      r0, r4                                     
+0007e624 ldr      r1, [r4, #0x18]                            
+0007e628 blx      r3                                         
+0007e62c mov      r0, r5                                     
+0007e630 pop      {r4, r5, r6, pc}                           
+
+FUNCTION _ZN13MediaSinkBase10handleStopERK4Stop @ 0x7e634 size 0x1c
+0007e634 push     {r4, lr}                                   _ZN13MediaSinkBase10handleStopERK4Stop
+0007e638 ldr      r3, [r0]                                   
+0007e63c ldr      r3, [r3, #0x30]                            
+0007e640 ldr      r1, [r0, #0x18]                            
+0007e644 blx      r3                                         
+0007e648 mov      r0, #0                                     
+0007e64c pop      {r4, pc}                                   
+
+FUNCTION _ZN13MediaSinkBase9ackFramesEij @ 0x7e650 size 0xf4
+0007e650 push     {r4, r5, r6, r7, lr}                       _ZN13MediaSinkBase9ackFramesEij
+0007e654 sub      sp, sp, #0x2c                              
+0007e658 mov      r4, r0                                     
+0007e65c mov      r6, r1                                     
+0007e660 mov      r7, r2                                     
+0007e664 add      r5, sp, #4                                 
+0007e668 mov      r0, r5                                     
+0007e66c bl       #0x6c330                                    _ZN3AckC1Ev [PLT]
+0007e670 str      r6, [sp, #8]                               
+0007e674 ldr      r3, [sp, #0x14]                            
+0007e678 orr      r3, r3, #3                                 
+0007e67c str      r3, [sp, #0x14]                            
+0007e680 str      r7, [sp, #0xc]                             
+0007e684 mov      r3, #0                                     
+0007e688 str      r3, [sp, #0x18]                            
+0007e68c str      r3, [sp, #0x1c]                            
+0007e690 str      r3, [sp, #0x20]                            
+0007e694 str      r3, [sp, #0x24]                            
+0007e698 ldr      r0, [r4, #8]                               
+0007e69c movw     r1, #0x8004                                
+0007e6a0 mov      r2, r5                                     
+0007e6a4 add      r3, sp, #0x18                              
+0007e6a8 bl       #0x6c5c4                                    _ZN13MessageRouter13marshallProtoEtRKN6google8protobuf11MessageLiteEP8IoBuffer [PLT]
+0007e6ac ldr      r2, [sp, #0x18]                            
+0007e6b0 ldr      r3, [sp, #0x20]                            
+0007e6b4 ldr      ip, [sp, #0x24]                            
+0007e6b8 ldrb     r1, [r4, #4]                               
+0007e6bc cmp      r1, #0                                     
+0007e6c0 moveq    r4, #0                                     
+0007e6c4 beq      #0x7e6e0                                   
+0007e6c8 ldr      r0, [r4, #8]                               
+0007e6cc ldrb     r1, [r4, #5]                               
+0007e6d0 add      r2, r2, r3                                 
+0007e6d4 rsb      r3, r3, ip                                 
+0007e6d8 bl       #0x6b928                                    _ZN13MessageRouter13queueOutgoingEhPvj [PLT]
+0007e6dc mov      r4, r0                                     
+0007e6e0 ldr      r0, [sp, #0x18]                            
+0007e6e4 bl       #0x6cf84                                    free [PLT]
+0007e6e8 mov      r3, #0                                     
+0007e6ec str      r3, [sp, #0x18]                            
+0007e6f0 str      r3, [sp, #0x1c]                            
+0007e6f4 str      r3, [sp, #0x20]                            
+0007e6f8 str      r3, [sp, #0x24]                            
+0007e6fc add      r0, sp, #4                                 
+0007e700 bl       #0x6c684                                    _ZN3AckD1Ev [PLT]
+0007e704 subs     r0, r4, #0                                 
+0007e708 movne    r0, #1                                     
+0007e70c add      sp, sp, #0x2c                              
+0007e710 pop      {r4, r5, r6, r7, pc}                       
+0007e714 mov      r4, r0                                     
+0007e718 ldr      r0, [sp, #0x18]                            
+0007e71c bl       #0x6cf84                                    free [PLT]
+0007e720 mov      r3, #0                                     
+0007e724 str      r3, [sp, #0x18]                            
+0007e728 str      r3, [sp, #0x1c]                            
+0007e72c str      r3, [sp, #0x20]                            
+0007e730 str      r3, [sp, #0x24]                            
+0007e734 add      r0, sp, #4                                 
+0007e738 bl       #0x6c684                                    _ZN3AckD1Ev [PLT]
+0007e73c mov      r0, r4                                     
+0007e740 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+
+FUNCTION _ZN13MediaSinkBase10sendConfigEi @ 0x7e744 size 0x1c0
+0007e744 push     {r4, r5, r6, r7, lr}                       _ZN13MediaSinkBase10sendConfigEi
+0007e748 sub      sp, sp, #0x44                              
+0007e74c mov      r4, r0                                     
+0007e750 mov      r5, r1                                     
+0007e754 mov      r0, sp                                     
+0007e758 bl       #0x6c9cc                                    _ZN6ConfigC1Ev [PLT]
+0007e75c str      r5, [sp, #4]                               
+0007e760 ldr      r3, [r4, #0x1c]                            
+0007e764 ldr      r2, [sp, #0x2c]                            
+0007e768 orr      r2, r2, #3                                 
+0007e76c str      r2, [sp, #0x2c]                            
+0007e770 str      r3, [sp, #8]                               
+0007e774 ldr      r3, [r4, #0x24]                            
+0007e778 cmp      r3, #0                                     
+0007e77c beq      #0x7e7d4                                   
+0007e780 ldr      r2, [r4, #0x28]                            
+0007e784 rsb      r3, r3, r2                                 
+0007e788 lsrs     r3, r3, #2                                 
+0007e78c movne    r5, #0                                     
+0007e790 addne    r7, sp, #0xc                               
+0007e794 bne      #0x7e830                                   
+0007e798 b        #0x7e7d4                                    
+0007e79c ldr      r1, [sp, #0x10]                            
+0007e7a0 ldr      r3, [sp, #0x14]                            
+0007e7a4 cmp      r1, r3                                     
+0007e7a8 bne      #0x7e7b8                                   
+0007e7ac mov      r0, r6                                     
+0007e7b0 add      r1, r1, #1                                 
+0007e7b4 bl       #0x69cb4                                    _ZN6google8protobuf13RepeatedFieldIjE7ReserveEi [PLT]
+0007e7b8 ldr      r3, [sp, #0x10]                            
+0007e7bc ldr      r2, [sp, #0xc]                             
+0007e7c0 str      r5, [r2, r3, lsl #2]                       
+0007e7c4 add      r3, r3, #1                                 
+0007e7c8 str      r3, [sp, #0x10]                            
+0007e7cc add      r5, r5, #1                                 
+0007e7d0 b        #0x7e7dc                                    
+0007e7d4 mov      r5, #0                                     
+0007e7d8 add      r6, sp, #0xc                               
+0007e7dc ldr      r3, [r4]                                   
+0007e7e0 ldr      r3, [r3, #0x3c]                            
+0007e7e4 mov      r0, r4                                     
+0007e7e8 blx      r3                                         
+0007e7ec cmp      r5, r0                                     
+0007e7f0 blo      #0x7e79c                                   
+0007e7f4 b        #0x7e84c                                    
+0007e7f8 ldr      r6, [r3, r5, lsl #2]                       
+0007e7fc ldr      r1, [sp, #0x10]                            
+0007e800 ldr      r3, [sp, #0x14]                            
+0007e804 cmp      r1, r3                                     
+0007e808 bne      #0x7e818                                   
+0007e80c mov      r0, r7                                     
+0007e810 add      r1, r1, #1                                 
+0007e814 bl       #0x69cb4                                    _ZN6google8protobuf13RepeatedFieldIjE7ReserveEi [PLT]
+0007e818 ldr      r3, [sp, #0x10]                            
+0007e81c ldr      r2, [sp, #0xc]                             
+0007e820 str      r6, [r2, r3, lsl #2]                       
+0007e824 add      r3, r3, #1                                 
+0007e828 str      r3, [sp, #0x10]                            
+0007e82c add      r5, r5, #1                                 
+0007e830 ldr      r3, [r4, #0x24]                            
+0007e834 cmp      r3, #0                                     
+0007e838 beq      #0x7e84c                                   
+0007e83c ldr      r2, [r4, #0x28]                            
+0007e840 rsb      r2, r3, r2                                 
+0007e844 cmp      r5, r2, asr #2                             
+0007e848 blo      #0x7e7f8                                   
+0007e84c mov      r3, #0                                     
+0007e850 str      r3, [sp, #0x30]                            
+0007e854 str      r3, [sp, #0x34]                            
+0007e858 str      r3, [sp, #0x38]                            
+0007e85c str      r3, [sp, #0x3c]                            
+0007e860 ldr      r0, [r4, #8]                               
+0007e864 movw     r1, #0x8003                                
+0007e868 mov      r2, sp                                     
+0007e86c add      r3, sp, #0x30                              
+0007e870 bl       #0x6c5c4                                    _ZN13MessageRouter13marshallProtoEtRKN6google8protobuf11MessageLiteEP8IoBuffer [PLT]
+0007e874 ldr      r2, [sp, #0x30]                            
+0007e878 ldr      r3, [sp, #0x38]                            
+0007e87c ldr      ip, [sp, #0x3c]                            
+0007e880 ldrb     r1, [r4, #4]                               
+0007e884 cmp      r1, #0                                     
+0007e888 beq      #0x7e8a0                                   
+0007e88c ldr      r0, [r4, #8]                               
+0007e890 ldrb     r1, [r4, #5]                               
+0007e894 add      r2, r2, r3                                 
+0007e898 rsb      r3, r3, ip                                 
+0007e89c bl       #0x6b928                                    _ZN13MessageRouter13queueOutgoingEhPvj [PLT]
+0007e8a0 ldr      r0, [sp, #0x30]                            
+0007e8a4 bl       #0x6cf84                                    free [PLT]
+0007e8a8 mov      r3, #0                                     
+0007e8ac str      r3, [sp, #0x30]                            
+0007e8b0 str      r3, [sp, #0x34]                            
+0007e8b4 str      r3, [sp, #0x38]                            
+0007e8b8 str      r3, [sp, #0x3c]                            
+0007e8bc mov      r0, sp                                     
+0007e8c0 bl       #0x6ae24                                    _ZN6ConfigD1Ev [PLT]
+0007e8c4 add      sp, sp, #0x44                              
+0007e8c8 pop      {r4, r5, r6, r7, pc}                       
+0007e8cc mov      r4, r0                                     
+0007e8d0 ldr      r0, [sp, #0x30]                            
+0007e8d4 bl       #0x6cf84                                    free [PLT]
+0007e8d8 mov      r3, #0                                     
+0007e8dc str      r3, [sp, #0x30]                            
+0007e8e0 str      r3, [sp, #0x34]                            
+0007e8e4 str      r3, [sp, #0x38]                            
+0007e8e8 str      r3, [sp, #0x3c]                            
+0007e8ec b        #0x7e8f4                                    
+0007e8f0 mov      r4, r0                                     
+0007e8f4 mov      r0, sp                                     
+0007e8f8 bl       #0x6ae24                                    _ZN6ConfigD1Ev [PLT]
+0007e8fc mov      r0, r4                                     
+0007e900 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+
+FUNCTION _ZN13MediaSinkBase12routeMessageEhtRK10shared_ptrI8IoBufferE @ 0x7e904 size 0x3f4
+0007e904 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}       _ZN13MediaSinkBase12routeMessageEhtRK10shared_ptrI8IoBufferE
+0007e908 sub      sp, sp, #0x34                              
+0007e90c ldr      r4, [pc, #0x3d4]                           
+0007e910 add      r4, pc, r4                                 
+0007e914 mov      r6, r0                                     
+0007e918 mov      ip, r2                                     
+0007e91c mov      r0, r3                                     
+0007e920 ldr      r2, [r3, #4]                               
+0007e924 ldr      r1, [r2, #8]                               
+0007e928 ldr      r7, [r2]                                   
+0007e92c add      r7, r7, r1                                 
+0007e930 add      r7, r7, #2                                 
+0007e934 ldr      r3, [r2, #0xc]                             
+0007e938 rsb      r1, r1, r3                                 
+0007e93c sub      r8, r1, #2                                 
+0007e940 cmp      ip, #0x8000                                
+0007e944 beq      #0x7e980                                   
+0007e948 bhi      #0x7e960                                   
+0007e94c cmp      ip, #0                                     
+0007e950 beq      #0x7eadc                                   
+0007e954 cmp      ip, #1                                     
+0007e958 bne      #0x7ec50                                   
+0007e95c b        #0x7ebbc                                    
+0007e960 movw     r3, #0x8002                                
+0007e964 cmp      ip, r3                                     
+0007e968 beq      #0x7ea68                                   
+0007e96c blo      #0x7e9f4                                   
+0007e970 movw     r3, #0x8007                                
+0007e974 cmp      ip, r3                                     
+0007e978 bne      #0x7ec50                                   
+0007e97c b        #0x7ebdc                                    
+0007e980 add      r5, sp, #0x18                              
+0007e984 mov      r0, r5                                     
+0007e988 bl       #0x68d00                                    _ZN5SetupC1Ev [PLT]
+0007e98c mov      r0, r5                                     
+0007e990 mov      r1, r7                                     
+0007e994 mov      r2, r8                                     
+0007e998 bl       #0x6bb20                                    _ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi [PLT]
+0007e99c cmp      r0, #0                                     
+0007e9a0 bne      #0x7ec80                                   
+0007e9a4 mov      r3, #0xe                                   
+0007e9a8 str      r3, [sp]                                   
+0007e9ac movw     r0, #0x2710                                
+0007e9b0 movt     r0, #0x10                                  
+0007e9b4 mov      r1, #5                                     
+0007e9b8 ldr      r2, [pc, #0x32c]                           
+0007e9bc add      r2, r4, r2                                 
+0007e9c0 ldr      r3, [pc, #0x328]                           
+0007e9c4 add      r3, r4, r3                                 
+0007e9c8 bl       #0x6c990                                    slogf [PLT]
+0007e9cc mvn      r4, #0xfc                                  
+0007e9d0 b        #0x7e9e8                                    
+0007e9d4 mov      r4, r0                                     
+0007e9d8 add      r0, sp, #0x18                              
+0007e9dc bl       #0x6d1d0                                    _ZN5SetupD1Ev [PLT]
+0007e9e0 mov      r0, r4                                     
+0007e9e4 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0007e9e8 add      r0, sp, #0x18                              
+0007e9ec bl       #0x6d1d0                                    _ZN5SetupD1Ev [PLT]
+0007e9f0 b        #0x7ec74                                    
+0007e9f4 add      r5, sp, #0x18                              
+0007e9f8 mov      r0, r5                                     
+0007e9fc bl       #0x6c654                                    _ZN5StartC1Ev [PLT]
+0007ea00 mov      r0, r5                                     
+0007ea04 mov      r1, r7                                     
+0007ea08 mov      r2, r8                                     
+0007ea0c bl       #0x6bb20                                    _ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi [PLT]
+0007ea10 cmp      r0, #0                                     
+0007ea14 bne      #0x7ec9c                                   
+0007ea18 mov      r3, #0x15                                  
+0007ea1c str      r3, [sp]                                   
+0007ea20 movw     r0, #0x2710                                
+0007ea24 movt     r0, #0x10                                  
+0007ea28 mov      r1, #5                                     
+0007ea2c ldr      r2, [pc, #0x2b8]                           
+0007ea30 add      r2, r4, r2                                 
+0007ea34 ldr      r3, [pc, #0x2b4]                           
+0007ea38 add      r3, r4, r3                                 
+0007ea3c bl       #0x6c990                                    slogf [PLT]
+0007ea40 mvn      r4, #0xfc                                  
+0007ea44 b        #0x7ea5c                                    
+0007ea48 mov      r4, r0                                     
+0007ea4c add      r0, sp, #0x18                              
+0007ea50 bl       #0x6ccd8                                    _ZN5StartD1Ev [PLT]
+0007ea54 mov      r0, r4                                     
+0007ea58 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0007ea5c add      r0, sp, #0x18                              
+0007ea60 bl       #0x6ccd8                                    _ZN5StartD1Ev [PLT]
+0007ea64 b        #0x7ec74                                    
+0007ea68 add      r5, sp, #0x18                              
+0007ea6c mov      r0, r5                                     
+0007ea70 bl       #0x6c078                                    _ZN4StopC1Ev [PLT]
+0007ea74 mov      r0, r5                                     
+0007ea78 mov      r1, r7                                     
+0007ea7c mov      r2, r8                                     
+0007ea80 bl       #0x6bb20                                    _ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi [PLT]
+0007ea84 cmp      r0, #0                                     
+0007ea88 bne      #0x7ecb0                                   
+0007ea8c mov      r3, #0x1c                                  
+0007ea90 str      r3, [sp]                                   
+0007ea94 movw     r0, #0x2710                                
+0007ea98 movt     r0, #0x10                                  
+0007ea9c mov      r1, #5                                     
+0007eaa0 ldr      r2, [pc, #0x244]                           
+0007eaa4 add      r2, r4, r2                                 
+0007eaa8 ldr      r3, [pc, #0x240]                           
+0007eaac add      r3, r4, r3                                 
+0007eab0 bl       #0x6c990                                    slogf [PLT]
+0007eab4 mvn      r4, #0xfc                                  
+0007eab8 b        #0x7ead0                                    
+0007eabc mov      r4, r0                                     
+0007eac0 add      r0, sp, #0x18                              
+0007eac4 bl       #0x6d020                                    _ZN4StopD1Ev [PLT]
+0007eac8 mov      r0, r4                                     
+0007eacc bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0007ead0 add      r0, sp, #0x18                              
+0007ead4 bl       #0x6d020                                    _ZN4StopD1Ev [PLT]
+0007ead8 b        #0x7ec74                                    
+0007eadc ldrb     r2, [r7]                                   
+0007eae0 mov      r3, #0                                     
+0007eae4 lsl      r5, r2, #0x18                              
+0007eae8 mov      r4, #0                                     
+0007eaec mov      r3, r7                                     
+0007eaf0 ldrb     sl, [r3, #1]!                              
+0007eaf4 mov      fp, #0                                     
+0007eaf8 lsl      sb, sl, #0x10                              
+0007eafc orr      sl, r4, r4                                 
+0007eb00 orr      fp, sb, r5                                 
+0007eb04 strd     sl, fp, [sp, #8]                           
+0007eb08 ldrb     sl, [r3, #1]!                              
+0007eb0c mov      fp, #0                                     
+0007eb10 lsl      sb, sl, #8                                 
+0007eb14 ldrd     sl, fp, [sp, #8]                           
+0007eb18 orr      sl, sl, r4                                 
+0007eb1c orr      fp, fp, sb                                 
+0007eb20 ldrb     sb, [r3, #1]!                              
+0007eb24 orr      sl, sl, r4                                 
+0007eb28 orr      fp, fp, sb                                 
+0007eb2c strd     sl, fp, [sp, #0x10]                        
+0007eb30 ldrb     sl, [r3, #1]!                              
+0007eb34 mov      fp, #0                                     
+0007eb38 lsl      sb, fp, #0x18                              
+0007eb3c lsl      r8, sl, #0x18                              
+0007eb40 ldrd     sl, fp, [sp, #0x10]                        
+0007eb44 orr      sl, sl, r8                                 
+0007eb48 orr      fp, fp, sb                                 
+0007eb4c strd     sl, fp, [sp, #0x10]                        
+0007eb50 ldrb     sl, [r3, #1]!                              
+0007eb54 mov      fp, #0                                     
+0007eb58 lsl      sb, fp, #0x10                              
+0007eb5c lsl      r8, sl, #0x10                              
+0007eb60 ldrd     sl, fp, [sp, #0x10]                        
+0007eb64 orr      sl, sl, r8                                 
+0007eb68 orr      fp, fp, sb                                 
+0007eb6c strd     sl, fp, [sp, #0x10]                        
+0007eb70 ldrb     sl, [r3, #1]!                              
+0007eb74 mov      fp, #0                                     
+0007eb78 lsl      sb, fp, #8                                 
+0007eb7c lsl      r8, sl, #8                                 
+0007eb80 ldrd     sl, fp, [sp, #0x10]                        
+0007eb84 orr      r8, r8, sl                                 
+0007eb88 orr      sb, sb, fp                                 
+0007eb8c ldr      r1, [r6]                                   
+0007eb90 ldrb     r2, [r3, #1]                               
+0007eb94 mov      r3, #0                                     
+0007eb98 str      r0, [sp]                                   
+0007eb9c mov      r0, #0xa                                   
+0007eba0 str      r0, [sp, #4]                               
+0007eba4 ldr      r1, [r1, #0x28]                            
+0007eba8 mov      r0, r6                                     
+0007ebac orr      r2, r2, r8                                 
+0007ebb0 orr      r3, r3, sb                                 
+0007ebb4 blx      r1                                         
+0007ebb8 b        #0x7ec74                                    
+0007ebbc ldr      r3, [r6]                                   
+0007ebc0 ldr      r3, [r3, #0x24]                            
+0007ebc4 mov      r0, r6                                     
+0007ebc8 mov      r1, r7                                     
+0007ebcc mov      r2, r8                                     
+0007ebd0 blx      r3                                         
+0007ebd4 mov      r4, #0                                     
+0007ebd8 b        #0x7ec74                                    
+0007ebdc add      r5, sp, #0x18                              
+0007ebe0 mov      r0, r5                                     
+0007ebe4 bl       #0x6b940                                    _ZN29VideoFocusRequestNotificationC1Ev [PLT]
+0007ebe8 mov      r0, r5                                     
+0007ebec mov      r1, r7                                     
+0007ebf0 mov      r2, r8                                     
+0007ebf4 bl       #0x6bb20                                    _ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi [PLT]
+0007ebf8 cmp      r0, #0                                     
+0007ebfc bne      #0x7ecc4                                   
+0007ec00 mov      r3, #0x2c                                  
+0007ec04 str      r3, [sp]                                   
+0007ec08 movw     r0, #0x2710                                
+0007ec0c movt     r0, #0x10                                  
+0007ec10 mov      r1, #5                                     
+0007ec14 ldr      r2, [pc, #0xd0]                            
+0007ec18 add      r2, r4, r2                                 
+0007ec1c ldr      r3, [pc, #0xcc]                            
+0007ec20 add      r3, r4, r3                                 
+0007ec24 bl       #0x6c990                                    slogf [PLT]
+0007ec28 b        #0x7ec40                                    
+0007ec2c mov      r4, r0                                     
+0007ec30 add      r0, sp, #0x18                              
+0007ec34 bl       #0x699d8                                    _ZN29VideoFocusRequestNotificationD1Ev [PLT]
+0007ec38 mov      r0, r4                                     
+0007ec3c bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0007ec40 mvn      r4, #0xfc                                  
+0007ec44 add      r0, sp, #0x18                              
+0007ec48 bl       #0x699d8                                    _ZN29VideoFocusRequestNotificationD1Ev [PLT]
+0007ec4c b        #0x7ec74                                    
+0007ec50 str      r1, [sp]                                   
+0007ec54 movw     r0, #0x2710                                
+0007ec58 movt     r0, #0x10                                  
+0007ec5c mov      r1, #2                                     
+0007ec60 ldr      r2, [pc, #0x8c]                            
+0007ec64 add      r2, r4, r2                                 
+0007ec68 mov      r3, ip                                     
+0007ec6c bl       #0x6c990                                    slogf [PLT]
+0007ec70 mvn      r4, #0xfc                                  
+0007ec74 mov      r0, r4                                     
+0007ec78 add      sp, sp, #0x34                              
+0007ec7c pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}       
+0007ec80 ldr      r3, [r6]                                   
+0007ec84 ldr      r3, [r3, #0x20]                            
+0007ec88 mov      r0, r6                                     
+0007ec8c ldr      r1, [sp, #0x1c]                            
+0007ec90 blx      r3                                         
+0007ec94 mov      r4, r0                                     
+0007ec98 b        #0x7e9e8                                    
+0007ec9c mov      r0, r6                                     
+0007eca0 add      r1, sp, #0x18                              
+0007eca4 bl       #0x6d944                                    _ZN13MediaSinkBase11handleStartERK5Start [PLT]
+0007eca8 mov      r4, r0                                     
+0007ecac b        #0x7ea5c                                    
+0007ecb0 mov      r0, r6                                     
+0007ecb4 add      r1, sp, #0x18                              
+0007ecb8 bl       #0x6b808                                    _ZN13MediaSinkBase10handleStopERK4Stop [PLT]
+0007ecbc mov      r4, r0                                     
+0007ecc0 b        #0x7ead0                                    
+0007ecc4 ldr      r3, [r6]                                   
+0007ecc8 ldr      r3, [r3, #0x38]                            
+0007eccc mov      r0, r6                                     
+0007ecd0 add      r1, sp, #0x18                              
+0007ecd4 blx      r3                                         
+0007ecd8 cmp      r0, #0                                     
+0007ecdc movne    r4, #0                                     
+0007ece0 bne      #0x7ec44                                   
+0007ece4 b        #0x7ec40                                    
+0007ece8 andeq    fp, sb, r0, ror #22                        
+0007ecec .byte    0xc0, 0x42, 0xfe, 0xff                     
+0007ecf0 .byte    0x68, 0x4a, 0xfe, 0xff                     
+0007ecf4 .byte    0xfc, 0x4a, 0xfe, 0xff                     
+
+FUNCTION _ZN13MediaSinkBase26resetAllowedConfigurationsEPjj @ 0x7ecf8 size 0xfc
+0007ecf8 push     {r4, r5, r6, r7, r8, sb, sl, lr}           _ZN13MediaSinkBase26resetAllowedConfigurationsEPjj
+0007ecfc mov      r4, r0                                     
+0007ed00 mov      r5, r1                                     
+0007ed04 mov      r6, r2                                     
+0007ed08 ldr      r3, [r0]                                   
+0007ed0c ldr      r3, [r3, #0x3c]                            
+0007ed10 blx      r3                                         
+0007ed14 cmp      r0, r6                                     
+0007ed18 blo      #0x7ede4                                   
+0007ed1c cmp      r6, #0                                     
+0007ed20 beq      #0x7ed54                                   
+0007ed24 sub      r0, r0, #1                                 
+0007ed28 ldr      r3, [r5]                                   
+0007ed2c cmp      r0, r3                                     
+0007ed30 movhs    r3, #0                                     
+0007ed34 bhs      #0x7ed48                                   
+0007ed38 b        #0x7ede4                                    
+0007ed3c ldr      r2, [r5, r3, lsl #2]                       
+0007ed40 cmp      r0, r2                                     
+0007ed44 blo      #0x7ede4                                   
+0007ed48 add      r3, r3, #1                                 
+0007ed4c cmp      r6, r3                                     
+0007ed50 bhi      #0x7ed3c                                   
+0007ed54 ldr      r0, [r4, #0x24]                            
+0007ed58 cmp      r0, #0                                     
+0007ed5c beq      #0x7ed64                                   
+0007ed60 bl       #0x69d98                                    _ZdlPv [PLT]
+0007ed64 mov      r3, #0                                     
+0007ed68 str      r3, [r4, #0x24]                            
+0007ed6c str      r3, [r4, #0x28]                            
+0007ed70 str      r3, [r4, #0x2c]                            
+0007ed74 cmp      r6, r3                                     
+0007ed78 beq      #0x7edec                                   
+0007ed7c add      sl, r4, #0x20                              
+0007ed80 mov      r7, r3                                     
+0007ed84 mov      r8, #1                                     
+0007ed88 mov      r3, r5                                     
+0007ed8c ldr      r2, [r4, #0x24]                            
+0007ed90 cmp      r2, #0                                     
+0007ed94 beq      #0x7edc0                                   
+0007ed98 ldr      r1, [r4, #0x28]                            
+0007ed9c rsb      r0, r2, r1                                 
+0007eda0 ldr      ip, [r4, #0x2c]                            
+0007eda4 rsb      r2, r2, ip                                 
+0007eda8 asr      r2, r2, #2                                 
+0007edac cmp      r2, r0, asr #2                             
+0007edb0 ldrhi    r3, [r5]                                   
+0007edb4 strhi    r3, [r1], #4                               
+0007edb8 strhi    r1, [r4, #0x28]                            
+0007edbc bhi      #0x7edd0                                   
+0007edc0 mov      r0, sl                                     
+0007edc4 ldr      r1, [r4, #0x28]                            
+0007edc8 mov      r2, r8                                     
+0007edcc bl       #0x6d0f8                                    _ZNSt6vectorIjSaIjEE9_Insert_nESt16_Vector_iteratorIjS0_EjRKj [PLT]
+0007edd0 add      r7, r7, #1                                 
+0007edd4 add      r5, r5, #4                                 
+0007edd8 cmp      r6, r7                                     
+0007eddc bhi      #0x7ed88                                   
+0007ede0 b        #0x7edec                                    
+0007ede4 mov      r0, #0                                     
+0007ede8 pop      {r4, r5, r6, r7, r8, sb, sl, pc}           
+0007edec mov      r0, #1                                     
+0007edf0 pop      {r4, r5, r6, r7, r8, sb, sl, pc}           
+
+FUNCTION _ZN13MediaSinkBaseD0Ev @ 0x7edf4 size 0x6c
+0007edf4 push     {r4, r5, r6, lr}                           _ZN13MediaSinkBaseD0Ev
+0007edf8 ldr      r5, [pc, #0x54]                            
+0007edfc add      r5, pc, r5                                 
+0007ee00 mov      r4, r0                                     
+0007ee04 ldr      r3, [pc, #0x4c]                            
+0007ee08 ldr      r3, [r5, r3]                               
+0007ee0c add      r3, r3, #8                                 
+0007ee10 str      r3, [r0]                                   
+0007ee14 ldr      r0, [r0, #0x24]                            
+0007ee18 cmp      r0, #0                                     
+0007ee1c beq      #0x7ee24                                   
+0007ee20 bl       #0x69d98                                    _ZdlPv [PLT]
+0007ee24 mov      r3, #0                                     
+0007ee28 str      r3, [r4, #0x24]                            
+0007ee2c str      r3, [r4, #0x28]                            
+0007ee30 str      r3, [r4, #0x2c]                            
+0007ee34 ldr      r3, [pc, #0x20]                            
+0007ee38 ldr      r3, [r5, r3]                               
+0007ee3c add      r3, r3, #8                                 
+0007ee40 str      r3, [r4]                                   
+0007ee44 mov      r0, r4                                     
+0007ee48 bl       #0x69d98                                    _ZdlPv [PLT]
+0007ee4c mov      r0, r4                                     
+0007ee50 pop      {r4, r5, r6, pc}                           
+0007ee54 andeq    fp, sb, r4, ror r6                         
+0007ee58 andeq    r1, r0, ip, lsr fp                         
+0007ee5c ldrdeq   r1, r2, [r0], -ip                          
+
+FUNCTION _ZN13MediaSinkBaseD1Ev @ 0x7ee60 size 0x64
+0007ee60 push     {r4, r5, r6, lr}                           _ZN13MediaSinkBaseD1Ev
+0007ee64 ldr      r5, [pc, #0x4c]                            
+0007ee68 add      r5, pc, r5                                 
+0007ee6c mov      r4, r0                                     
+0007ee70 ldr      r3, [pc, #0x44]                            
+0007ee74 ldr      r3, [r5, r3]                               
+0007ee78 add      r3, r3, #8                                 
+0007ee7c str      r3, [r0]                                   
+0007ee80 ldr      r0, [r0, #0x24]                            
+0007ee84 cmp      r0, #0                                     
+0007ee88 beq      #0x7ee90                                   
+0007ee8c bl       #0x69d98                                    _ZdlPv [PLT]
+0007ee90 mov      r3, #0                                     
+0007ee94 str      r3, [r4, #0x24]                            
+0007ee98 str      r3, [r4, #0x28]                            
+0007ee9c str      r3, [r4, #0x2c]                            
+0007eea0 ldr      r3, [pc, #0x18]                            
+0007eea4 ldr      r3, [r5, r3]                               
+0007eea8 add      r3, r3, #8                                 
+0007eeac str      r3, [r4]                                   
+0007eeb0 mov      r0, r4                                     
+0007eeb4 pop      {r4, r5, r6, pc}                           
+0007eeb8 andeq    fp, sb, r8, lsl #12                        
+0007eebc andeq    r1, r0, ip, lsr fp                         
+0007eec0 ldrdeq   r1, r2, [r0], -ip                          
+
+FUNCTION _ZN13MessageRouter15registerServiceEP20ProtocolEndpointBase @ 0x7f54c size 0x30
+0007f54c ldrb     r3, [r1, #0xc]                             _ZN13MessageRouter15registerServiceEP20ProtocolEndpointBase
+0007f550 cmp      r3, #0xff                                  
+0007f554 beq      #0x7f574                                   
+0007f558 add      r2, r3, #0x40                              
+0007f55c ldr      r2, [r0, r2, lsl #2]                       
+0007f560 cmp      r2, #0                                     
+0007f564 addeq    r3, r3, #0x40                              
+0007f568 streq    r1, [r0, r3, lsl #2]                       
+0007f56c moveq    r0, #1                                     
+0007f570 bxeq     lr                                         
+0007f574 mov      r0, #0                                     
+0007f578 bx       lr                                         
+
+FUNCTION _ZN20ProtocolEndpointBase15onChannelOpenedEh @ 0x82834 size 0x10
+00082834 strb     r1, [r0, #5]                               _ZN20ProtocolEndpointBase15onChannelOpenedEh
+00082838 mov      r3, #1                                     
+0008283c strb     r3, [r0, #4]                               
+00082840 bx       lr                                         
+
+FUNCTION _ZN20ProtocolEndpointBase14mayOpenChannelEh @ 0x82844 size 0xc
+00082844 ldrb     r0, [r0, #4]                               _ZN20ProtocolEndpointBase14mayOpenChannelEh
+00082848 eor      r0, r0, #1                                 
+0008284c bx       lr                                         
+
+FUNCTION _ZN20ProtocolEndpointBase15onChannelClosedEh @ 0x82850 size 0x1c
+00082850 ldrb     r3, [r0, #4]                               _ZN20ProtocolEndpointBase15onChannelClosedEh
+00082854 cmp      r3, #0                                     
+00082858 moveq    r0, #0                                     
+0008285c movne    r3, #0                                     
+00082860 strbne   r3, [r0, #4]                               
+00082864 movne    r0, #1                                     
+00082868 bx       lr                                         
+
+FUNCTION _ZN20ProtocolEndpointBaseD1Ev @ 0x8286c size 0x24
+0008286c ldr      r3, [pc, #0x14]                            _ZN20ProtocolEndpointBaseD1Ev
+00082870 add      r3, pc, r3                                 
+00082874 ldr      r2, [pc, #0x10]                            
+00082878 ldr      r2, [r3, r2]                               
+0008287c add      r2, r2, #8                                 
+00082880 str      r2, [r0]                                   
+00082884 bx       lr                                         
+00082888 andeq    r7, sb, r0, lsl #24                        
+0008288c ldrdeq   r1, r2, [r0], -ip                          
+
+FUNCTION _ZN20ProtocolEndpointBaseD0Ev @ 0x82890 size 0x34
+00082890 push     {r4, lr}                                   _ZN20ProtocolEndpointBaseD0Ev
+00082894 ldr      r3, [pc, #0x20]                            
+00082898 add      r3, pc, r3                                 
+0008289c mov      r4, r0                                     
+000828a0 ldr      r2, [pc, #0x18]                            
+000828a4 ldr      r2, [r3, r2]                               
+000828a8 add      r2, r2, #8                                 
+000828ac str      r2, [r0]                                   
+000828b0 bl       #0x69d98                                    _ZdlPv [PLT]
+000828b4 mov      r0, r4                                     
+000828b8 pop      {r4, pc}                                   
+000828bc ldrdeq   r7, r8, [sb], -r8                          
+000828c0 ldrdeq   r1, r2, [r0], -ip                          
+
+FUNCTION _ZN9VideoSink19handleDataAvailableEyRK10shared_ptrI8IoBufferEj @ 0x8d9e0 size 0x5c
+0008d9e0 push     {r4, r5, r6, lr}                           _ZN9VideoSink19handleDataAvailableEyRK10shared_ptrI8IoBufferEj
+0008d9e4 sub      sp, sp, #0x10                              
+0008d9e8 mov      r1, r0                                     
+0008d9ec ldr      r5, [sp, #0x20]                            
+0008d9f0 ldr      lr, [sp, #0x24]                            
+0008d9f4 ldr      ip, [r5, #4]                               
+0008d9f8 ldr      r4, [ip, #8]                               
+0008d9fc ldr      r0, [r0, #0x38]                            
+0008da00 ldr      r6, [r0]                                   
+0008da04 ldr      r1, [r1, #0x18]                            
+0008da08 str      r5, [sp]                                   
+0008da0c ldr      r5, [ip]                                   
+0008da10 add      r5, r5, r4                                 
+0008da14 add      r5, r5, lr                                 
+0008da18 str      r5, [sp, #4]                               
+0008da1c ldr      ip, [ip, #0xc]                             
+0008da20 rsb      r4, r4, ip                                 
+0008da24 rsb      lr, lr, r4                                 
+0008da28 str      lr, [sp, #8]                               
+0008da2c ldr      ip, [r6, #0xc]                             
+0008da30 blx      ip                                         
+0008da34 add      sp, sp, #0x10                              
+0008da38 pop      {r4, r5, r6, pc}                           
+
+FUNCTION _ZN9VideoSink17handleCodecConfigEPvj @ 0x8da3c size 0x18
+0008da3c push     {r4, lr}                                   _ZN9VideoSink17handleCodecConfigEPvj
+0008da40 ldr      r0, [r0, #0x38]                            
+0008da44 ldr      r3, [r0]                                   
+0008da48 ldr      r3, [r3, #0x10]                            
+0008da4c blx      r3                                         
+0008da50 pop      {r4, pc}                                   
+
+FUNCTION _ZN9VideoSink23codecResolutionToPixelsERK18VideoConfigurationPiS3_ @ 0x8da54 size 0x64
+0008da54 ldr      r1, [r1, #4]                               _ZN9VideoSink23codecResolutionToPixelsERK18VideoConfigurationPiS3_
+0008da58 cmp      r1, #2                                     
+0008da5c beq      #0x8da88                                   
+0008da60 cmp      r1, #3                                     
+0008da64 beq      #0x8daa0                                   
+0008da68 cmp      r1, #1                                     
+0008da6c mvnne    r0, #7                                     
+0008da70 moveq    r1, #0x320                                 
+0008da74 streq    r1, [r2]                                   
+0008da78 moveq    r2, #0x1e0                                 
+0008da7c streq    r2, [r3]                                   
+0008da80 moveq    r0, #0                                     
+0008da84 bx       lr                                         
+0008da88 mov      r1, #0x500                                 
+0008da8c str      r1, [r2]                                   
+0008da90 mov      r2, #0x2d0                                 
+0008da94 str      r2, [r3]                                   
+0008da98 mov      r0, #0                                     
+0008da9c bx       lr                                         
+0008daa0 mov      r1, #0x780                                 
+0008daa4 str      r1, [r2]                                   
+0008daa8 movw     r2, #0x438                                 
+0008daac str      r2, [r3]                                   
+0008dab0 mov      r0, #0                                     
+0008dab4 bx       lr                                         
+
+FUNCTION _ZN9VideoSink24handleMediaConfigurationEi @ 0x8dab8 size 0x1c
+0008dab8 push     {r4, lr}                                   _ZN9VideoSink24handleMediaConfigurationEi
+0008dabc ldr      r0, [r0, #0x38]                            
+0008dac0 ldr      r3, [r0]                                   
+0008dac4 ldr      r3, [r3, #0x20]                            
+0008dac8 blx      r3                                         
+0008dacc mov      r0, #0                                     
+0008dad0 pop      {r4, pc}                                   
+
+FUNCTION _ZN9VideoSink13playbackStartEi @ 0x8dad4 size 0x18
+0008dad4 push     {r4, lr}                                   _ZN9VideoSink13playbackStartEi
+0008dad8 ldr      r0, [r0, #0x38]                            
+0008dadc ldr      r3, [r0]                                   
+0008dae0 ldr      r3, [r3, #0x18]                            
+0008dae4 blx      r3                                         
+0008dae8 pop      {r4, pc}                                   
+
+FUNCTION _ZN9VideoSink12playbackStopEi @ 0x8daec size 0x18
+0008daec push     {r4, lr}                                   _ZN9VideoSink12playbackStopEi
+0008daf0 ldr      r0, [r0, #0x38]                            
+0008daf4 ldr      r3, [r0]                                   
+0008daf8 ldr      r3, [r3, #0x1c]                            
+0008dafc blx      r3                                         
+0008db00 pop      {r4, pc}                                   
+
+FUNCTION _ZN9VideoSink23handleVideoFocusRequestERK29VideoFocusRequestNotification @ 0x8db04 size 0x30
+0008db04 push     {r4, lr}                                   _ZN9VideoSink23handleVideoFocusRequestERK29VideoFocusRequestNotification
+0008db08 ldr      r3, [r1, #0x14]                            
+0008db0c tst      r3, #4                                     
+0008db10 moveq    r2, #0                                     
+0008db14 ldrne    r2, [r1, #0xc]                             
+0008db18 ldr      r0, [r0, #0x38]                            
+0008db1c ldr      r3, [r0]                                   
+0008db20 ldr      r3, [r3, #0x24]                            
+0008db24 ldr      r1, [r1, #8]                               
+0008db28 blx      r3                                         
+0008db2c mov      r0, #1                                     
+0008db30 pop      {r4, pc}                                   
+
+FUNCTION _ZN9VideoSink25getNumberOfConfigurationsEv @ 0x8db34 size 0x1c
+0008db34 ldr      r3, [r0, #0x40]                            _ZN9VideoSink25getNumberOfConfigurationsEv
+0008db38 cmp      r3, #0                                     
+0008db3c moveq    r0, #0                                     
+0008db40 ldrne    r0, [r0, #0x44]                            
+0008db44 rsbne    r3, r3, r0                                 
+0008db48 asrne    r0, r3, #3                                 
+0008db4c bx       lr                                         
+
+FUNCTION _ZN9VideoSink13setVideoFocusEib @ 0x8db50 size 0xe4
+0008db50 push     {r4, r5, r6, r7, lr}                       _ZN9VideoSink13setVideoFocusEib
+0008db54 sub      sp, sp, #0x2c                              
+0008db58 mov      r4, r0                                     
+0008db5c mov      r6, r1                                     
+0008db60 mov      r7, r2                                     
+0008db64 add      r5, sp, #4                                 
+0008db68 mov      r0, r5                                     
+0008db6c bl       #0x6b67c                                    _ZN22VideoFocusNotificationC1Ev [PLT]
+0008db70 str      r6, [sp, #8]                               
+0008db74 ldr      r3, [sp, #0x14]                            
+0008db78 orr      r3, r3, #3                                 
+0008db7c str      r3, [sp, #0x14]                            
+0008db80 strb     r7, [sp, #0xc]                             
+0008db84 mov      r3, #0                                     
+0008db88 str      r3, [sp, #0x18]                            
+0008db8c str      r3, [sp, #0x1c]                            
+0008db90 str      r3, [sp, #0x20]                            
+0008db94 str      r3, [sp, #0x24]                            
+0008db98 ldr      r0, [r4, #8]                               
+0008db9c movw     r1, #0x8008                                
+0008dba0 mov      r2, r5                                     
+0008dba4 add      r3, sp, #0x18                              
+0008dba8 bl       #0x6c5c4                                    _ZN13MessageRouter13marshallProtoEtRKN6google8protobuf11MessageLiteEP8IoBuffer [PLT]
+0008dbac ldr      r2, [sp, #0x18]                            
+0008dbb0 ldr      r3, [sp, #0x20]                            
+0008dbb4 ldr      ip, [sp, #0x24]                            
+0008dbb8 ldrb     r1, [r4, #4]                               
+0008dbbc cmp      r1, #0                                     
+0008dbc0 beq      #0x8dbd8                                   
+0008dbc4 ldr      r0, [r4, #8]                               
+0008dbc8 ldrb     r1, [r4, #5]                               
+0008dbcc add      r2, r2, r3                                 
+0008dbd0 rsb      r3, r3, ip                                 
+0008dbd4 bl       #0x6b928                                    _ZN13MessageRouter13queueOutgoingEhPvj [PLT]
+0008dbd8 ldr      r0, [sp, #0x18]                            
+0008dbdc bl       #0x6cf84                                    free [PLT]
+0008dbe0 mov      r3, #0                                     
+0008dbe4 str      r3, [sp, #0x18]                            
+0008dbe8 str      r3, [sp, #0x1c]                            
+0008dbec str      r3, [sp, #0x20]                            
+0008dbf0 str      r3, [sp, #0x24]                            
+0008dbf4 add      r0, sp, #4                                 
+0008dbf8 bl       #0x6c318                                    _ZN22VideoFocusNotificationD1Ev [PLT]
+0008dbfc add      sp, sp, #0x2c                              
+0008dc00 pop      {r4, r5, r6, r7, pc}                       
+0008dc04 mov      r4, r0                                     
+0008dc08 ldr      r0, [sp, #0x18]                            
+0008dc0c bl       #0x6cf84                                    free [PLT]
+0008dc10 mov      r3, #0                                     
+0008dc14 str      r3, [sp, #0x18]                            
+0008dc18 str      r3, [sp, #0x1c]                            
+0008dc1c str      r3, [sp, #0x20]                            
+0008dc20 str      r3, [sp, #0x24]                            
+0008dc24 add      r0, sp, #4                                 
+0008dc28 bl       #0x6c318                                    _ZN22VideoFocusNotificationD1Ev [PLT]
+0008dc2c mov      r0, r4                                     
+0008dc30 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+
+FUNCTION _ZN9VideoSink11handleSetupEi @ 0x8dc34 size 0x5c
+0008dc34 push     {r4, lr}                                   _ZN9VideoSink11handleSetupEi
+0008dc38 mov      r4, r0                                     
+0008dc3c cmp      r1, #3                                     
+0008dc40 mvnne    r0, #7                                     
+0008dc44 popne    {r4, pc}                                   
+0008dc48 ldr      r0, [r4, #0x38]                            
+0008dc4c ldr      r3, [r0]                                   
+0008dc50 ldr      r3, [r3, #0x14]                            
+0008dc54 mov      r1, #3                                     
+0008dc58 blx      r3                                         
+0008dc5c mov      r0, r4                                     
+0008dc60 mov      r1, #2                                     
+0008dc64 bl       #0x6d044                                    _ZN13MediaSinkBase10sendConfigEi [PLT]
+0008dc68 ldrb     r3, [r4, #0x30]                            
+0008dc6c cmp      r3, #0                                     
+0008dc70 moveq    r0, #0                                     
+0008dc74 popeq    {r4, pc}                                   
+0008dc78 mov      r0, r4                                     
+0008dc7c mov      r1, #1                                     
+0008dc80 mov      r2, r1                                     
+0008dc84 bl       #0x6bc70                                    _ZN9VideoSink13setVideoFocusEib [PLT]
+0008dc88 mov      r0, #0                                     
+0008dc8c pop      {r4, pc}                                   
+
+FUNCTION _ZN9VideoSink16addDiscoveryInfoEP24ServiceDiscoveryResponse @ 0x8dc90 size 0x2e4
+0008dc90 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}       _ZN9VideoSink16addDiscoveryInfoEP24ServiceDiscoveryResponse
+0008dc94 sub      sp, sp, #0x14                              
+0008dc98 mov      r7, r0                                     
+0008dc9c mov      r4, r1                                     
+0008dca0 ldr      r3, [r1, #8]                               
+0008dca4 ldr      r1, [r1, #0xc]                             
+0008dca8 cmp      r3, r1                                     
+0008dcac bge      #0x8dcc4                                   
+0008dcb0 ldr      r2, [r4, #4]                               
+0008dcb4 ldr      r5, [r2, r3, lsl #2]                       
+0008dcb8 add      r3, r3, #1                                 
+0008dcbc str      r3, [r4, #8]                               
+0008dcc0 b        #0x8dd24                                    
+0008dcc4 ldr      r3, [r4, #0x10]                            
+0008dcc8 cmp      r1, r3                                     
+0008dccc bne      #0x8dcdc                                   
+0008dcd0 add      r0, r4, #4                                 
+0008dcd4 add      r1, r1, #1                                 
+0008dcd8 bl       #0x6af68                                    _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi [PLT]
+0008dcdc ldr      r3, [r4, #0xc]                             
+0008dce0 add      r3, r3, #1                                 
+0008dce4 str      r3, [r4, #0xc]                             
+0008dce8 mov      r0, #0x40                                  
+0008dcec bl       #0x6d44c                                    _Znwj [PLT]
+0008dcf0 mov      r6, r0                                     
+0008dcf4 mov      r5, r0                                     
+0008dcf8 bl       #0x6b5b0                                    _ZN7ServiceC1Ev [PLT]
+0008dcfc b        #0x8dd14                                    
+0008dd00 mov      r4, r0                                     
+0008dd04 mov      r0, r6                                     
+0008dd08 bl       #0x69d98                                    _ZdlPv [PLT]
+0008dd0c mov      r0, r4                                     
+0008dd10 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0008dd14 ldmib    r4, {r2, r3}                               
+0008dd18 str      r6, [r2, r3, lsl #2]                       
+0008dd1c add      r3, r3, #1                                 
+0008dd20 str      r3, [r4, #8]                               
+0008dd24 ldr      r3, [r5, #0x3c]                            
+0008dd28 ldrb     r2, [r7, #0xc]                             
+0008dd2c str      r2, [r5, #0x34]                            
+0008dd30 orr      r3, r3, #5                                 
+0008dd34 str      r3, [r5, #0x3c]                            
+0008dd38 ldr      r3, [r5, #8]                               
+0008dd3c cmp      r3, #0                                     
+0008dd40 bne      #0x8dd74                                   
+0008dd44 mov      r0, #0x58                                  
+0008dd48 bl       #0x6d44c                                    _Znwj [PLT]
+0008dd4c mov      r6, r0                                     
+0008dd50 mov      r4, r0                                     
+0008dd54 bl       #0x6b5bc                                    _ZN16MediaSinkServiceC1Ev [PLT]
+0008dd58 b        #0x8dd70                                    
+0008dd5c mov      r4, r0                                     
+0008dd60 mov      r0, r6                                     
+0008dd64 bl       #0x69d98                                    _ZdlPv [PLT]
+0008dd68 mov      r0, r4                                     
+0008dd6c bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0008dd70 str      r6, [r5, #8]                               
+0008dd74 ldr      r5, [r5, #8]                               
+0008dd78 ldr      r3, [r7, #0x14]                            
+0008dd7c ldr      r2, [r5, #0x54]                            
+0008dd80 orr      r2, r2, #1                                 
+0008dd84 str      r2, [r5, #0x54]                            
+0008dd88 str      r3, [r5, #4]                               
+0008dd8c add      r3, r5, #0x2c                              
+0008dd90 str      r3, [sp, #4]                               
+0008dd94 ldr      r6, [r7, #0x40]                            
+0008dd98 mov      r8, #1                                     
+0008dd9c mov      fp, #0x2c                                  
+0008dda0 mov      sb, #0                                     
+0008dda4 b        #0x8df60                                    
+0008dda8 ldr      r3, [r6, #4]                               
+0008ddac str      r3, [sp, #0xc]                             
+0008ddb0 ldr      r0, [r6]                                   
+0008ddb4 str      r0, [sp, #8]                               
+0008ddb8 cmp      r0, #0                                     
+0008ddbc beq      #0x8ddc8                                   
+0008ddc0 mov      r1, r8                                     
+0008ddc4 bl       #0x6a638                                    atomic_add_value [PLT]
+0008ddc8 ldr      r3, [r5, #0x30]                            
+0008ddcc ldr      r1, [r5, #0x34]                            
+0008ddd0 cmp      r3, r1                                     
+0008ddd4 bge      #0x8ddec                                   
+0008ddd8 ldr      r2, [r5, #0x2c]                            
+0008dddc ldr      r4, [r2, r3, lsl #2]                       
+0008dde0 add      r3, r3, #1                                 
+0008dde4 str      r3, [r5, #0x30]                            
+0008dde8 b        #0x8de4c                                    
+0008ddec ldr      r3, [r5, #0x38]                            
+0008ddf0 cmp      r1, r3                                     
+0008ddf4 bne      #0x8de04                                   
+0008ddf8 ldr      r0, [sp, #4]                               
+0008ddfc add      r1, r1, #1                                 
+0008de00 bl       #0x6af68                                    _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi [PLT]
+0008de04 ldr      r3, [r5, #0x34]                            
+0008de08 add      r3, r3, #1                                 
+0008de0c str      r3, [r5, #0x34]                            
+0008de10 mov      r0, fp                                     
+0008de14 bl       #0x6d44c                                    _Znwj [PLT]
+0008de18 mov      sl, r0                                     
+0008de1c mov      r4, r0                                     
+0008de20 bl       #0x69858                                    _ZN18VideoConfigurationC1Ev [PLT]
+0008de24 b        #0x8de38                                    
+0008de28 mov      r4, r0                                     
+0008de2c mov      r0, sl                                     
+0008de30 bl       #0x69d98                                    _ZdlPv [PLT]
+0008de34 b        #0x8df08                                    
+0008de38 ldr      r3, [r5, #0x30]                            
+0008de3c ldr      r2, [r5, #0x2c]                            
+0008de40 str      sl, [r2, r3, lsl #2]                       
+0008de44 add      r3, r3, #1                                 
+0008de48 str      r3, [r5, #0x30]                            
+0008de4c ldr      r3, [sp, #0xc]                             
+0008de50 ldr      r2, [r3, #4]                               
+0008de54 ldr      r3, [r4, #0x28]                            
+0008de58 orr      r1, r3, #1                                 
+0008de5c str      r1, [r4, #0x28]                            
+0008de60 str      r2, [r4, #4]                               
+0008de64 ldr      r2, [sp, #0xc]                             
+0008de68 ldr      r2, [r2, #8]                               
+0008de6c orr      r1, r3, #3                                 
+0008de70 str      r1, [r4, #0x28]                            
+0008de74 str      r2, [r4, #8]                               
+0008de78 ldr      r2, [sp, #0xc]                             
+0008de7c ldr      r2, [r2, #0xc]                             
+0008de80 orr      r1, r3, #7                                 
+0008de84 str      r1, [r4, #0x28]                            
+0008de88 str      r2, [r4, #0xc]                             
+0008de8c ldr      r2, [sp, #0xc]                             
+0008de90 ldr      r2, [r2, #0x10]                            
+0008de94 orr      r1, r3, #0xf                               
+0008de98 str      r1, [r4, #0x28]                            
+0008de9c str      r2, [r4, #0x10]                            
+0008dea0 ldr      r2, [sp, #0xc]                             
+0008dea4 ldr      r2, [r2, #0x14]                            
+0008dea8 orr      r1, r3, #0x1f                              
+0008deac str      r1, [r4, #0x28]                            
+0008deb0 str      r2, [r4, #0x14]                            
+0008deb4 ldr      r2, [sp, #0xc]                             
+0008deb8 ldr      r2, [r2, #0x18]                            
+0008debc orr      r3, r3, #0x3f                              
+0008dec0 str      r3, [r4, #0x28]                            
+0008dec4 str      r2, [r4, #0x18]                            
+0008dec8 ldr      r2, [r7, #0x4c]                            
+0008decc cmp      r2, #0                                     
+0008ded0 orrne    r3, r3, #0x40                              
+0008ded4 strne    r3, [r4, #0x28]                            
+0008ded8 strne    r2, [r4, #0x1c]                            
+0008dedc ldr      r3, [sp, #0xc]                             
+0008dee0 ldr      r3, [r3, #0x20]                            
+0008dee4 ldr      r2, [r4, #0x28]                            
+0008dee8 orr      r2, r2, #0x80                              
+0008deec str      r2, [r4, #0x28]                            
+0008def0 str      r3, [r4, #0x20]                            
+0008def4 ldr      r0, [sp, #8]                               
+0008def8 cmp      r0, #0                                     
+0008defc bne      #0x8df24                                   
+0008df00 b        #0x8df5c                                    
+0008df04 mov      r4, r0                                     
+0008df08 ldr      r3, [sp, #8]                               
+0008df0c cmp      r3, #0                                     
+0008df10 beq      #0x8df1c                                   
+0008df14 add      r0, sp, #8                                 
+0008df18 bl       #0x6d920                                    _ZN10shared_ptrI18VideoConfigurationE6putRefEv [PLT]
+0008df1c mov      r0, r4                                     
+0008df20 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0008df24 mov      r1, r8                                     
+0008df28 bl       #0x69354                                    atomic_sub_value [PLT]
+0008df2c cmp      r0, #1                                     
+0008df30 bne      #0x8df5c                                   
+0008df34 ldr      r0, [sp, #0xc]                             
+0008df38 cmp      r0, #0                                     
+0008df3c beq      #0x8df4c                                   
+0008df40 ldr      r3, [r0]                                   
+0008df44 ldr      r3, [r3, #4]                               
+0008df48 blx      r3                                         
+0008df4c str      sb, [sp, #0xc]                             
+0008df50 ldr      r0, [sp, #8]                               
+0008df54 bl       #0x69d98                                    _ZdlPv [PLT]
+0008df58 str      sb, [sp, #8]                               
+0008df5c add      r6, r6, #8                                 
+0008df60 ldr      r3, [r7, #0x44]                            
+0008df64 cmp      r3, r6                                     
+0008df68 bne      #0x8dda8                                   
+0008df6c add      sp, sp, #0x14                              
+0008df70 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}       
+
+FUNCTION _ZN9VideoSink25addSupportedConfigurationEiiiiiii @ 0x8df74 size 0x228
+0008df74 push     {r4, r5, r6, r7, r8, sl, lr}               _ZN9VideoSink25addSupportedConfigurationEiiiiiii
+0008df78 sub      sp, sp, #0xc                               
+0008df7c mov      r4, r0                                     
+0008df80 mov      r7, r1                                     
+0008df84 mov      r8, r2                                     
+0008df88 mov      sl, r3                                     
+0008df8c mov      r0, #0x2c                                  
+0008df90 bl       #0x6d44c                                    _Znwj [PLT]
+0008df94 mov      r5, r0                                     
+0008df98 mov      r6, r0                                     
+0008df9c bl       #0x69858                                    _ZN18VideoConfigurationC1Ev [PLT]
+0008dfa0 b        #0x8dfb8                                    
+0008dfa4 mov      r4, r0                                     
+0008dfa8 mov      r0, r5                                     
+0008dfac bl       #0x69d98                                    _ZdlPv [PLT]
+0008dfb0 mov      r0, r4                                     
+0008dfb4 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0008dfb8 str      r5, [sp, #4]                               
+0008dfbc mov      r0, #4                                     
+0008dfc0 bl       #0x6d44c                                    _Znwj [PLT]
+0008dfc4 str      r0, [sp]                                   
+0008dfc8 mov      r3, #1                                     
+0008dfcc str      r3, [r0]                                   
+0008dfd0 ldr      r3, [sp, #4]                               
+0008dfd4 ldr      r2, [r3, #0x28]                            
+0008dfd8 orr      r2, r2, #1                                 
+0008dfdc str      r2, [r3, #0x28]                            
+0008dfe0 str      r7, [r3, #4]                               
+0008dfe4 ldr      r3, [sp, #4]                               
+0008dfe8 cmp      r8, #0x3c                                  
+0008dfec moveq    r8, #1                                     
+0008dff0 movne    r8, #2                                     
+0008dff4 ldr      r2, [r3, #0x28]                            
+0008dff8 orr      r2, r2, #2                                 
+0008dffc str      r2, [r3, #0x28]                            
+0008e000 str      r8, [r3, #8]                               
+0008e004 ldr      r3, [sp, #4]                               
+0008e008 ldr      r2, [r3, #0x28]                            
+0008e00c orr      r2, r2, #4                                 
+0008e010 str      r2, [r3, #0x28]                            
+0008e014 str      sl, [r3, #0xc]                             
+0008e018 ldr      r3, [sp, #4]                               
+0008e01c ldr      r2, [r3, #0x28]                            
+0008e020 orr      r2, r2, #8                                 
+0008e024 str      r2, [r3, #0x28]                            
+0008e028 ldr      r2, [sp, #0x28]                            
+0008e02c str      r2, [r3, #0x10]                            
+0008e030 ldr      r3, [sp, #4]                               
+0008e034 ldr      r2, [r3, #0x28]                            
+0008e038 orr      r2, r2, #0x10                              
+0008e03c str      r2, [r3, #0x28]                            
+0008e040 ldr      r2, [sp, #0x2c]                            
+0008e044 str      r2, [r3, #0x14]                            
+0008e048 ldr      r3, [sp, #4]                               
+0008e04c ldr      r2, [r3, #0x28]                            
+0008e050 orr      r2, r2, #0x20                              
+0008e054 str      r2, [r3, #0x28]                            
+0008e058 ldr      r2, [sp, #0x30]                            
+0008e05c str      r2, [r3, #0x18]                            
+0008e060 ldr      r3, [sp, #4]                               
+0008e064 ldr      r2, [r3, #0x28]                            
+0008e068 orr      r2, r2, #0x80                              
+0008e06c str      r2, [r3, #0x28]                            
+0008e070 ldr      r2, [sp, #0x34]                            
+0008e074 str      r2, [r3, #0x20]                            
+0008e078 ldr      r3, [r4, #0x40]                            
+0008e07c cmp      r3, #0                                     
+0008e080 beq      #0x8e100                                   
+0008e084 ldr      r5, [r4, #0x44]                            
+0008e088 rsb      r2, r3, r5                                 
+0008e08c ldr      r1, [r4, #0x48]                            
+0008e090 rsb      r3, r3, r1                                 
+0008e094 asr      r3, r3, #3                                 
+0008e098 cmp      r3, r2, asr #3                             
+0008e09c bls      #0x8e100                                   
+0008e0a0 cmp      r5, #0                                     
+0008e0a4 beq      #0x8e0e8                                   
+0008e0a8 ldr      r3, [sp, #4]                               
+0008e0ac str      r3, [r5, #4]                               
+0008e0b0 ldr      r0, [sp]                                   
+0008e0b4 str      r0, [r5]                                   
+0008e0b8 cmp      r0, #0                                     
+0008e0bc beq      #0x8e0e8                                   
+0008e0c0 mov      r1, #1                                     
+0008e0c4 bl       #0x6a638                                    atomic_add_value [PLT]
+0008e0c8 b        #0x8e0e8                                    
+0008e0cc mov      r4, r0                                     
+0008e0d0 mov      r0, r5                                     
+0008e0d4 mov      r1, r5                                     
+0008e0d8 bl       #0x6d194                                    _ZdlPvS_ [PLT]
+0008e0dc mov      r0, r4                                     
+0008e0e0 bl       #0x6900c                                    __cxa_begin_catch [PLT]
+0008e0e4 bl       #0x6d3bc                                    __cxa_rethrow [PLT]
+0008e0e8 add      r5, r5, #8                                 
+0008e0ec str      r5, [r4, #0x44]                            
+0008e0f0 b        #0x8e114                                    
+0008e0f4 mov      r4, r0                                     
+0008e0f8 bl       #0x6bab4                                    __cxa_end_catch [PLT]
+0008e0fc b        #0x8e180                                    
+0008e100 add      r0, r4, #0x3c                              
+0008e104 ldr      r1, [r4, #0x44]                            
+0008e108 mov      r2, #1                                     
+0008e10c mov      r3, sp                                     
+0008e110 bl       #0x6cccc                                    _ZNSt6vectorI10shared_ptrI18VideoConfigurationESaIS2_EE9_Insert_nESt16_Vector_iteratorIS2_S3_EjRKS2_ [PLT]
+0008e114 ldr      r3, [r4, #0x40]                            
+0008e118 cmp      r3, #0                                     
+0008e11c moveq    r4, #0                                     
+0008e120 ldrne    r4, [r4, #0x44]                            
+0008e124 rsbne    r4, r3, r4                                 
+0008e128 asrne    r4, r4, #3                                 
+0008e12c ldr      r0, [sp]                                   
+0008e130 cmp      r0, #0                                     
+0008e134 beq      #0x8e170                                   
+0008e138 mov      r1, #1                                     
+0008e13c bl       #0x69354                                    atomic_sub_value [PLT]
+0008e140 cmp      r0, #1                                     
+0008e144 bne      #0x8e170                                   
+0008e148 ldr      r0, [sp, #4]                               
+0008e14c cmp      r0, #0                                     
+0008e150 beq      #0x8e160                                   
+0008e154 ldr      r3, [r0]                                   
+0008e158 ldr      r3, [r3, #4]                               
+0008e15c blx      r3                                         
+0008e160 mov      r3, #0                                     
+0008e164 str      r3, [sp, #4]                               
+0008e168 ldr      r0, [sp]                                   
+0008e16c bl       #0x69d98                                    _ZdlPv [PLT]
+0008e170 sub      r0, r4, #1                                 
+0008e174 add      sp, sp, #0xc                               
+0008e178 pop      {r4, r5, r6, r7, r8, sl, pc}               
+0008e17c mov      r4, r0                                     
+0008e180 ldr      r3, [sp]                                   
+0008e184 cmp      r3, #0                                     
+0008e188 beq      #0x8e194                                   
+0008e18c mov      r0, sp                                     
+0008e190 bl       #0x6d920                                    _ZN10shared_ptrI18VideoConfigurationE6putRefEv [PLT]
+0008e194 mov      r0, r4                                     
+0008e198 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+
+FUNCTION _ZN9VideoSinkD0Ev @ 0x8e304 size 0x1b8
+0008e304 push     {r4, r5, r6, r7, r8, sb, sl, lr}           _ZN9VideoSinkD0Ev
+0008e308 ldr      r8, [pc, #0x19c]                           
+0008e30c add      r8, pc, r8                                 
+0008e310 mov      r5, r0                                     
+0008e314 ldr      r3, [pc, #0x194]                           
+0008e318 ldr      r3, [r8, r3]                               
+0008e31c add      r3, r3, #8                                 
+0008e320 str      r3, [r0]                                   
+0008e324 ldr      r4, [r0, #0x40]                            
+0008e328 cmp      r4, #0                                     
+0008e32c beq      #0x8e39c                                   
+0008e330 ldr      r6, [r0, #0x44]                            
+0008e334 cmp      r4, r6                                     
+0008e338 beq      #0x8e394                                   
+0008e33c mov      r7, #1                                     
+0008e340 mov      sl, #0                                     
+0008e344 ldr      r0, [r4]                                   
+0008e348 cmp      r0, #0                                     
+0008e34c beq      #0x8e388                                   
+0008e350 mov      r1, r7                                     
+0008e354 bl       #0x69354                                    atomic_sub_value [PLT]
+0008e358 cmp      r0, #1                                     
+0008e35c bne      #0x8e388                                   
+0008e360 ldr      r0, [r4, #4]                               
+0008e364 cmp      r0, #0                                     
+0008e368 beq      #0x8e378                                   
+0008e36c ldr      r3, [r0]                                   
+0008e370 ldr      r3, [r3, #4]                               
+0008e374 blx      r3                                         
+0008e378 str      sl, [r4, #4]                               
+0008e37c ldr      r0, [r4]                                   
+0008e380 bl       #0x69d98                                    _ZdlPv [PLT]
+0008e384 str      sl, [r4]                                   
+0008e388 add      r4, r4, #8                                 
+0008e38c cmp      r6, r4                                     
+0008e390 bne      #0x8e344                                   
+0008e394 ldr      r0, [r5, #0x40]                            
+0008e398 bl       #0x69d98                                    _ZdlPv [PLT]
+0008e39c mov      r3, #0                                     
+0008e3a0 str      r3, [r5, #0x40]                            
+0008e3a4 str      r3, [r5, #0x44]                            
+0008e3a8 str      r3, [r5, #0x48]                            
+0008e3ac ldr      r0, [r5, #0x34]                            
+0008e3b0 cmp      r0, r3                                     
+0008e3b4 bne      #0x8e3cc                                   
+0008e3b8 b        #0x8e408                                    
+0008e3bc mov      r4, r0                                     
+0008e3c0 add      r0, r5, #0x34                              
+0008e3c4 bl       #0x6be20                                    _ZN10shared_ptrI19IVideoSinkCallbacksED1Ev [PLT]
+0008e3c8 b        #0x8e430                                    
+0008e3cc mov      r1, #1                                     
+0008e3d0 bl       #0x69354                                    atomic_sub_value [PLT]
+0008e3d4 cmp      r0, #1                                     
+0008e3d8 bne      #0x8e408                                   
+0008e3dc ldr      r0, [r5, #0x38]                            
+0008e3e0 cmp      r0, #0                                     
+0008e3e4 beq      #0x8e3f4                                   
+0008e3e8 ldr      r3, [r0]                                   
+0008e3ec ldr      r3, [r3, #4]                               
+0008e3f0 blx      r3                                         
+0008e3f4 mov      r4, #0                                     
+0008e3f8 str      r4, [r5, #0x38]                            
+0008e3fc ldr      r0, [r5, #0x34]                            
+0008e400 bl       #0x69d98                                    _ZdlPv [PLT]
+0008e404 str      r4, [r5, #0x34]                            
+0008e408 mov      r4, r5                                     
+0008e40c ldr      r3, [pc, #0xa0]                            
+0008e410 ldr      r3, [r8, r3]                               
+0008e414 add      r3, r3, #8                                 
+0008e418 str      r3, [r5]                                   
+0008e41c ldr      r0, [r5, #0x24]                            
+0008e420 cmp      r0, #0                                     
+0008e424 bne      #0x8e478                                   
+0008e428 b        #0x8e47c                                    
+0008e42c mov      r4, r0                                     
+0008e430 ldr      r3, [pc, #0x7c]                            
+0008e434 ldr      r3, [r8, r3]                               
+0008e438 add      r3, r3, #8                                 
+0008e43c str      r3, [r5]                                   
+0008e440 ldr      r0, [r5, #0x24]                            
+0008e444 cmp      r0, #0                                     
+0008e448 beq      #0x8e450                                   
+0008e44c bl       #0x69d98                                    _ZdlPv [PLT]
+0008e450 mov      r3, #0                                     
+0008e454 str      r3, [r5, #0x24]                            
+0008e458 str      r3, [r5, #0x28]                            
+0008e45c str      r3, [r5, #0x2c]                            
+0008e460 ldr      r3, [pc, #0x50]                            
+0008e464 ldr      r3, [r8, r3]                               
+0008e468 add      r3, r3, #8                                 
+0008e46c str      r3, [r5]                                   
+0008e470 mov      r0, r4                                     
+0008e474 bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0008e478 bl       #0x69d98                                    _ZdlPv [PLT]
+0008e47c mov      r3, #0                                     
+0008e480 str      r3, [r4, #0x24]                            
+0008e484 str      r3, [r4, #0x28]                            
+0008e488 str      r3, [r4, #0x2c]                            
+0008e48c ldr      r3, [pc, #0x24]                            
+0008e490 ldr      r3, [r8, r3]                               
+0008e494 add      r3, r3, #8                                 
+0008e498 str      r3, [r4]                                   
+0008e49c mov      r0, r5                                     
+0008e4a0 bl       #0x69d98                                    _ZdlPv [PLT]
+0008e4a4 mov      r0, r5                                     
+0008e4a8 pop      {r4, r5, r6, r7, r8, sb, sl, pc}           
+0008e4ac andeq    ip, r8, r4, ror #2                         
+0008e4b0 andeq    r1, r0, r4, ror #30                        
+0008e4b4 andeq    r1, r0, ip, lsr fp                         
+0008e4b8 ldrdeq   r1, r2, [r0], -ip                          
+
+FUNCTION _ZN9VideoSinkD1Ev @ 0x8ef0c size 0x1b0
+0008ef0c push     {r4, r5, r6, r7, r8, sb, sl, lr}           _ZN9VideoSinkD1Ev
+0008ef10 ldr      r8, [pc, #0x194]                           
+0008ef14 add      r8, pc, r8                                 
+0008ef18 mov      r5, r0                                     
+0008ef1c ldr      r3, [pc, #0x18c]                           
+0008ef20 ldr      r3, [r8, r3]                               
+0008ef24 add      r3, r3, #8                                 
+0008ef28 str      r3, [r0]                                   
+0008ef2c ldr      r4, [r0, #0x40]                            
+0008ef30 cmp      r4, #0                                     
+0008ef34 beq      #0x8efa4                                   
+0008ef38 ldr      r6, [r0, #0x44]                            
+0008ef3c cmp      r4, r6                                     
+0008ef40 beq      #0x8ef9c                                   
+0008ef44 mov      r7, #1                                     
+0008ef48 mov      sl, #0                                     
+0008ef4c ldr      r0, [r4]                                   
+0008ef50 cmp      r0, #0                                     
+0008ef54 beq      #0x8ef90                                   
+0008ef58 mov      r1, r7                                     
+0008ef5c bl       #0x69354                                    atomic_sub_value [PLT]
+0008ef60 cmp      r0, #1                                     
+0008ef64 bne      #0x8ef90                                   
+0008ef68 ldr      r0, [r4, #4]                               
+0008ef6c cmp      r0, #0                                     
+0008ef70 beq      #0x8ef80                                   
+0008ef74 ldr      r3, [r0]                                   
+0008ef78 ldr      r3, [r3, #4]                               
+0008ef7c blx      r3                                         
+0008ef80 str      sl, [r4, #4]                               
+0008ef84 ldr      r0, [r4]                                   
+0008ef88 bl       #0x69d98                                    _ZdlPv [PLT]
+0008ef8c str      sl, [r4]                                   
+0008ef90 add      r4, r4, #8                                 
+0008ef94 cmp      r6, r4                                     
+0008ef98 bne      #0x8ef4c                                   
+0008ef9c ldr      r0, [r5, #0x40]                            
+0008efa0 bl       #0x69d98                                    _ZdlPv [PLT]
+0008efa4 mov      r3, #0                                     
+0008efa8 str      r3, [r5, #0x40]                            
+0008efac str      r3, [r5, #0x44]                            
+0008efb0 str      r3, [r5, #0x48]                            
+0008efb4 ldr      r0, [r5, #0x34]                            
+0008efb8 cmp      r0, r3                                     
+0008efbc bne      #0x8efd4                                   
+0008efc0 b        #0x8f010                                    
+0008efc4 mov      r4, r0                                     
+0008efc8 add      r0, r5, #0x34                              
+0008efcc bl       #0x6be20                                    _ZN10shared_ptrI19IVideoSinkCallbacksED1Ev [PLT]
+0008efd0 b        #0x8f038                                    
+0008efd4 mov      r1, #1                                     
+0008efd8 bl       #0x69354                                    atomic_sub_value [PLT]
+0008efdc cmp      r0, #1                                     
+0008efe0 bne      #0x8f010                                   
+0008efe4 ldr      r0, [r5, #0x38]                            
+0008efe8 cmp      r0, #0                                     
+0008efec beq      #0x8effc                                   
+0008eff0 ldr      r3, [r0]                                   
+0008eff4 ldr      r3, [r3, #4]                               
+0008eff8 blx      r3                                         
+0008effc mov      r4, #0                                     
+0008f000 str      r4, [r5, #0x38]                            
+0008f004 ldr      r0, [r5, #0x34]                            
+0008f008 bl       #0x69d98                                    _ZdlPv [PLT]
+0008f00c str      r4, [r5, #0x34]                            
+0008f010 mov      r4, r5                                     
+0008f014 ldr      r3, [pc, #0x98]                            
+0008f018 ldr      r3, [r8, r3]                               
+0008f01c add      r3, r3, #8                                 
+0008f020 str      r3, [r5]                                   
+0008f024 ldr      r0, [r5, #0x24]                            
+0008f028 cmp      r0, #0                                     
+0008f02c bne      #0x8f080                                   
+0008f030 b        #0x8f084                                    
+0008f034 mov      r4, r0                                     
+0008f038 ldr      r3, [pc, #0x74]                            
+0008f03c ldr      r3, [r8, r3]                               
+0008f040 add      r3, r3, #8                                 
+0008f044 str      r3, [r5]                                   
+0008f048 ldr      r0, [r5, #0x24]                            
+0008f04c cmp      r0, #0                                     
+0008f050 beq      #0x8f058                                   
+0008f054 bl       #0x69d98                                    _ZdlPv [PLT]
+0008f058 mov      r3, #0                                     
+0008f05c str      r3, [r5, #0x24]                            
+0008f060 str      r3, [r5, #0x28]                            
+0008f064 str      r3, [r5, #0x2c]                            
+0008f068 ldr      r3, [pc, #0x48]                            
+0008f06c ldr      r3, [r8, r3]                               
+0008f070 add      r3, r3, #8                                 
+0008f074 str      r3, [r5]                                   
+0008f078 mov      r0, r4                                     
+0008f07c bl       #0x6b688                                    __cxa_end_cleanup [PLT]
+0008f080 bl       #0x69d98                                    _ZdlPv [PLT]
+0008f084 mov      r3, #0                                     
+0008f088 str      r3, [r4, #0x24]                            
+0008f08c str      r3, [r4, #0x28]                            
+0008f090 str      r3, [r4, #0x2c]                            
+0008f094 ldr      r3, [pc, #0x1c]                            
+0008f098 ldr      r3, [r8, r3]                               
+0008f09c add      r3, r3, #8                                 
+0008f0a0 str      r3, [r4]                                   
+0008f0a4 mov      r0, r5                                     
+0008f0a8 pop      {r4, r5, r6, r7, r8, sb, sl, pc}           
+0008f0ac andeq    fp, r8, ip, asr r5                         
+0008f0b0 andeq    r1, r0, r4, ror #30                        
+0008f0b4 andeq    r1, r0, ip, lsr fp                         
+0008f0b8 ldrdeq   r1, r2, [r0], -ip                          

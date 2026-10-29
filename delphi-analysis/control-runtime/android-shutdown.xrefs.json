@@ -1,0 +1,272 @@
+[
+  {
+    "index": 361,
+    "va": 1071060,
+    "target": 1474000,
+    "text": "parseCommandLineArgs - last exit code %s"
+  },
+  {
+    "index": 11454,
+    "va": 1115432,
+    "target": 1475160,
+    "text": "Server::onMessage - event %d"
+  },
+  {
+    "index": 11640,
+    "va": 1116176,
+    "target": 1475192,
+    "text": "Server::onMessage - EV_AA_REGISTER_LISTENER - listener %llx, appId %d, threadId %d passiveObjId %d"
+  },
+  {
+    "index": 11695,
+    "va": 1116396,
+    "target": 1475292,
+    "text": "Server::onMessage - EV_AA_UNREGISTER_LISTENER - listener %llx"
+  },
+  {
+    "index": 11749,
+    "va": 1116612,
+    "target": 1475356,
+    "text": "Server::onMessage - EV_AA_VISIBLE - visible=%d zorder=%d"
+  },
+  {
+    "index": 11873,
+    "va": 1117108,
+    "target": 1475416,
+    "text": "Server::onMessage - EV_MH_USB_DEVICE_INFO - path=%s, devno=%u, busno=%u, status=%u, mediatype=%u"
+  },
+  {
+    "index": 11973,
+    "va": 1117508,
+    "target": 1475516,
+    "text": "Server::onMessage - EV_AA_START_SERVICE "
+  },
+  {
+    "index": 12012,
+    "va": 1117664,
+    "target": 1475560,
+    "text": "Server::onMessage - EV_AA_PUB_SUBSCRIBE_SERVICE_STATUS - appId %d, threadId %d"
+  },
+  {
+    "index": 12064,
+    "va": 1117872,
+    "target": 1475640,
+    "text": "Server::onMessage - EV_AA_PUB_VENDOR_EXTN_DATA_RX"
+  },
+  {
+    "index": 12146,
+    "va": 1118200,
+    "target": 1475692,
+    "text": "Server::onMessage - EV_AA_BUTTON_EVENT - button=%d buttonState=%d"
+  },
+  {
+    "index": 12193,
+    "va": 1118388,
+    "target": 1475760,
+    "text": "Server::onMessage - EV_AA_ROTARY_EVENT - rotations=%d "
+  },
+  {
+    "index": 12256,
+    "va": 1118640,
+    "target": 1475816,
+    "text": "Server::onMessage - EV_AA_TOUCH_EVENT - TouchSource=%d Action=%d ActionIndex=%d"
+  },
+  {
+    "index": 12307,
+    "va": 1118844,
+    "target": 1475896,
+    "text": "Server::onMessage - EV_AA_DAYNIGHT_MODE"
+  },
+  {
+    "index": 12348,
+    "va": 1119008,
+    "target": 1475936,
+    "text": "Server::onMessage - EV_AA_DRIVING_STATUS_RSP"
+  },
+  {
+    "index": 12399,
+    "va": 1119212,
+    "target": 1475984,
+    "text": "Server::onMessage - EV_AA_AUDIO_FOCUS_NOTIFICATION"
+  },
+  {
+    "index": 12451,
+    "va": 1119420,
+    "target": 1476036,
+    "text": "Server::onMessage - EV_AA_MICROPHONE_NOTIFICATION"
+  },
+  {
+    "index": 12503,
+    "va": 1119628,
+    "target": 1476088,
+    "text": "Server::onMessage - EV_AA_NAV_FOCUS_NOTIFICATION"
+  },
+  {
+    "index": 12555,
+    "va": 1119836,
+    "target": 1476140,
+    "text": "Server::onMessage - EV_AA_VIDEO_FOCUS_NOTIFICATION"
+  },
+  {
+    "index": 12601,
+    "va": 1120020,
+    "target": 1476192,
+    "text": "Server::onMessage - EV_AA_INT_ON_VIDEO_FOCUS_REQ_NOTIFICATION"
+  },
+  {
+    "index": 12660,
+    "va": 1120256,
+    "target": 1476256,
+    "text": "Server::onMessage - EV_AA_INT_ON_AUDIO_FOCUS_REQ_NOTIFICATION"
+  },
+  {
+    "index": 12748,
+    "va": 1120608,
+    "target": 1476320,
+    "text": "Server::onMessage - EV_AA_INT_ON_MIC_REQ_NOTIFICATION"
+  },
+  {
+    "index": 12822,
+    "va": 1120904,
+    "target": 1476376,
+    "text": "Server::onMessage - EV_AA_INT_ON_NAV_FOCUS_REQ_NOTIFICATION"
+  },
+  {
+    "index": 12896,
+    "va": 1121200,
+    "target": 1476436,
+    "text": "Server::onMessage - EV_AA_INT_ON_VOICE_SESSION_REQ_NOTIFICATION"
+  },
+  {
+    "index": 13037,
+    "va": 1121764,
+    "target": 1476592,
+    "text": "Server::onMessage - EV_AA_INT_ON_AUDIO_AVAILABLE_NOTIFICATION"
+  },
+  {
+    "index": 13125,
+    "va": 1122116,
+    "target": 1476656,
+    "text": "Server::onMessage -AC_BT_STATUS_EVT has arrived!!!"
+  },
+  {
+    "index": 13280,
+    "va": 1122736,
+    "target": 1476836,
+    "text": "Server::onMessage -AC_AAP_AUTH_DATA_EVT has arrived!!!"
+  },
+  {
+    "index": 13351,
+    "va": 1123020,
+    "target": 1476892,
+    "text": "Server::onMessage -AC_AAP_PAIRING_RSP has arrived!!! with %d %d"
+  },
+  {
+    "index": 13397,
+    "va": 1123204,
+    "target": 1476956,
+    "text": "Server::onMessage - EV_APP_EXIT - appId %d"
+  },
+  {
+    "index": 13454,
+    "va": 1123432,
+    "target": 1477044,
+    "text": "Server::onMessage - EV_AA_SHUTDOWN_AOAP"
+  },
+  {
+    "index": 13500,
+    "va": 1123616,
+    "target": 1477084,
+    "text": "Server::onMessage - EV_SYSTEM_SHUTDOWN not processed"
+  },
+  {
+    "index": 13529,
+    "va": 1123732,
+    "target": 1477140,
+    "text": "Server::onMessage - unexpected message with event id: %d"
+  },
+  {
+    "index": 24387,
+    "va": 1167164,
+    "target": 1482560,
+    "text": "gfxInitInstanceOnce() - exit"
+  },
+  {
+    "index": 24490,
+    "va": 1167576,
+    "target": 1482616,
+    "text": "gfxDestroy() - exit"
+  },
+  {
+    "index": 24632,
+    "va": 1168144,
+    "target": 1482668,
+    "text": "gfxDeinitInstanceOnce() - exit"
+  },
+  {
+    "index": 37363,
+    "va": 1219068,
+    "target": 1496448,
+    "text": "GuidFrRead Thread exit."
+  },
+  {
+    "index": 47389,
+    "va": 1259172,
+    "target": 1505204,
+    "text": "Failed to read microphone. Exiting reader thread."
+  },
+  {
+    "index": 47491,
+    "va": 1259580,
+    "target": 1505276,
+    "text": "Microphone reader thread exit."
+  },
+  {
+    "index": 50881,
+    "va": 1273140,
+    "target": 1509808,
+    "text": " - exit"
+  },
+  {
+    "index": 50882,
+    "va": 1273144,
+    "target": 1509808,
+    "text": " - exit"
+  },
+  {
+    "index": 51110,
+    "va": 1274056,
+    "target": 1509808,
+    "text": " - exit"
+  },
+  {
+    "index": 51111,
+    "va": 1274060,
+    "target": 1509808,
+    "text": " - exit"
+  },
+  {
+    "index": 51339,
+    "va": 1274972,
+    "target": 1509808,
+    "text": " - exit"
+  },
+  {
+    "index": 51340,
+    "va": 1274976,
+    "target": 1509808,
+    "text": " - exit"
+  },
+  {
+    "index": 60425,
+    "va": 1311316,
+    "target": 1519148,
+    "text": "EasyLink.c: Warning !! Could not open %s, Exiting"
+  },
+  {
+    "index": 60426,
+    "va": 1311320,
+    "target": 1519148,
+    "text": "EasyLink.c: Warning !! Could not open %s, Exiting"
+  }
+]

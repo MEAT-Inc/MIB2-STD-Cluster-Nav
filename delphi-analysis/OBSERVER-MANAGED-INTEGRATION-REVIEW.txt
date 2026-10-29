@@ -1,0 +1,49 @@
+Captured manager integration verified in QNX emulation
+
+This supersedes the modeled-manager-only result in OBSERVER-LAUNCH-TRANSACTION-
+REVIEW.txt. The exact acquired procman (SHA256 c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d)
+was executed in a disposable QNX 6.5 ARM emulator, with a private configuration
+containing one synthetic app and a unique XSAL_INSTANCE_NAME. No vehicle network
+connection, process stop or configuration modification occurred.
+
+New runtime evidence:
+- An app exit(7) is reported by this manager as raw wait status 1792 (7 << 8).
+  It appends -X1792, not -X7, to the next launch. Preserve this verbatim.
+- SIGINT to the owned synthetic app is reported as status 2 and restarted with
+  -X2. Header/runtime SIGINT agrees with the signal 2 loaded in the captured
+  manager's termination helper at 0x103d48 before kill at 0x103d4c.
+- The manager restarts the fixture via a temporary namespace redirect, the wrapper
+  removes the redirect before exec, and the observer records nine registrations.
+  The observed child's parent remains the actual captured manager.
+- The next manager restart executes the original fixture path with no observer.
+  Its zero exit is not restarted during a bounded 1.5 second observation window.
+- The unchanged observer candidate has SHA256 cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c.
+- Six Python evidence-review tests reject wrong parent identity, normalized -X7,
+  observer leakage, unexpected fatal signals and missing restoration evidence.
+
+Artifacts: native/observer/managed-bench/qemu/qemu.log, tested.sha256, summary.json.
+The Python evidence checker binds current native artifacts to the tested hashes
+and requires the exact four-launch sequence, expected signals and positive exits.
+The manager is proprietary user-provided input and is referenced from delphi-dump,
+not copied into a redistributable package.
+
+Interpretation:
+We now have actual-manager evidence for the restart/injection/restoration sequence,
+which is stronger than the previous model. This supplies a practical candidate
+restart route without inventing a per-app stop command. It does not establish a
+cooperative graceful stop: event 0x163 remains a manager shutdown request, while
+AndroidAuto's 0x164 EV_APP_EXIT handler cleans up listeners of an exited app.
+No claim is made that SIGINT gracefully shuts down real AndroidAuto.
+
+Remaining before any factory-app test:
+1. Private-path namespace redirect and watchdog validation on the actual unit.
+2. Python controller with fresh PID/parent/hash checks, bounded failure recovery,
+   exact inherited argv/environment and explicit verification of stock restoration.
+3. Check real-app readiness, signal behavior and executing an identical staged copy
+   without changing its resource lookup behavior. The synthetic -l0 app does not
+   exercise the real SAL readiness handshake or the car's dependency environment.
+4. Observe the real app-to-receiver registerService boundary. Cluster display and
+   secondary phone-video negotiation are not yet demonstrated.
+
+Current readiness: emulator integration PASS; factory AndroidAuto deployment NOT
+READY. No reconnect is needed until the private-path hardware routine is prepared.

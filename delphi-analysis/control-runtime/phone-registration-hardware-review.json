@@ -1,0 +1,31 @@
+{
+  "completed_restored": true,
+  "captured_registration": true,
+  "capture_validated": true,
+  "capture_seconds": 60,
+  "observed_pid": 1646670,
+  "restored_pid": 1757254,
+  "baseline_pid": 1212494,
+  "manager_pid": 417823,
+  "controller_pid": 1634394,
+  "executable_load_bias": 0,
+  "known_registration_callers": [
+    "0x124e54",
+    "0x127390",
+    "0x128764",
+    "0x12b95c",
+    "0x12ed44",
+    "0x12fa08",
+    "0x130b90",
+    "0x132a3c"
+  ],
+  "video_registration_seen": true,
+  "collection": "_androidauto_observer_20261029_042655_dbdaa2d1",
+  "artifacts_verified": 13,
+  "actions_verified": 33,
+  "records": 9,
+  "dropped": 0,
+  "receiver": "0x001cdd70",
+  "video_endpoint": "0x00197098",
+  "internal_registration_caller": "0x770c0"
+}

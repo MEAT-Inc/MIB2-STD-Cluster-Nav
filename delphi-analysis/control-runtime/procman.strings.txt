@@ -1,0 +1,968 @@
+00100114 /usr/lib/ldqnx.so.2
+001014b1 libsocket.so.3
+001014c0 clock_gettime
+001014ce strcpy
+001014d5 ConnectDetach_r
+001014e5 pthread_create
+001014f4 pthread_getspecific
+00101508 strerror
+00101511 pthread_attr_init
+00101523 memmove
+0010152b getenv
+00101532 _Stdout
+0010153a _Tolotab
+00101543 getpid
+0010154a _Ctype
+00101551 fgets
+00101557 memcpy
+0010155e __cxa_finalize
+0010156d malloc
+00101574 __stackavail
+00101581 abort
+00101587 strtol
+0010158e MsgSendv_r
+00101599 calloc
+001015a0 fstat
+001015a6 __deregister_frame_info
+001015be pthread_key_create
+001015d1 __get_errno_ptr
+001015e6 pthread_attr_setstacksize
+00101600 strncmp
+00101608 strncpy
+00101610 strcasecmp
+0010161b realloc
+00101623 strtok
+0010162a memcmp
+00101631 fopen
+00101637 memset
+0010163e fclose
+00101645 strcmp
+0010164c pthread_mutex_unlock
+00101661 sprintf
+00101669 spawnp
+00101670 _Stderr
+00101678 pthread_self
+00101685 sopen
+0010168b fwrite
+00101692 access
+00101699 pthread_mutex_lock
+001016b1 strlen
+001016b8 strchr
+001016bf fputs
+001016c5 _Jv_RegisterClasses
+001016d9 pthread_attr_setdetachstate
+001016f5 __register_frame_info
+0010170b pthread_setspecific
+00101724 pthread_once
+00101731 libc.so.3
+0010173b ___Unwind_ForcedUnwind
+00101752 __gnu_Unwind_RaiseException
+0010176e __gnu_uldivmod_helper
+00101784 dispatch_handler
+00101795 ConnectAttach_r
+001017a5 __divdi3
+001017ae _init_array
+001017ba pthread_attr_destroy
+001017cf MsgSendvs_r
+001017db pthread_exit
+001017e8 __gnu_Unwind_Save_VFP
+001017fe gettid
+00101805 __exidx_end
+00101811 munmap
+00101818 __aeabi_unwind_cpp_pr0
+0010182f shm_open
+00101838 timer_create
+00101845 _Unwind_GetRegionStart
+0010185c ___Unwind_Resume_or_Rethrow
+00101878 iofunc_attr_init
+00101889 errno
+0010188f pthread_setname_np
+001018a2 usleep
+001018a9 __cxa_begin_cleanup
+001018bd _preinit_array
+001018cc __restore_core_regs
+001018e0 __gnu_Unwind_Save_VFP_D_16_to_31
+00101901 __cxa_call_unexpected
+00101917 pthread_key_delete
+0010192a _Unwind_GetCFA
+00101939 resmgr_attach
+00101947 _Unwind_VRS_Set
+00101957 pthread_mutexattr_destroy
+00101971 MsgSend_r
+0010197b __aeabi_uldivmod
+0010198c sem_destroy
+00101998 timer_delete
+001019a5 __udivsi3
+001019af optarg
+001019b6 vsnprintf
+001019c0 sem_wait
+001019c9 __gnu_Unwind_Backtrace
+001019e0 mmap_device_io
+001019ef sem_post
+001019f8 atomic_clr_value
+00101a09 __gnu_Unwind_Save_VFP_D
+00101a21 _Unwind_VRS_Pop
+00101a31 __aeabi_unwind_cpp_pr2
+00101a48 fflush
+00101a4f ___Unwind_Backtrace
+00101a63 ftruncate
+00101a6d __exidx_start
+00101a80 ___Unwind_RaiseException
+00101a99 __udivdi3
+00101aa3 ___Unwind_Resume
+00101ab4 MsgReply_r
+00101abf __gnu_Unwind_Restore_WMMXD
+00101ada pthread_getschedparam
+00101af0 strrchr
+00101af8 basename
+00101b06 __gnu_Unwind_Restore_VFP
+00101b1f chdir
+00101b25 pthread_attr_setinheritsched
+00101b42 _Unwind_DeleteException
+00101b5a _Unwind_Complete
+00101b6b pthread_setschedparam
+00101b81 devctl
+00101b88 sem_init
+00101b91 flock
+00101b9c signal
+00101ba3 __gnu_unwind_execute
+00101bb8 MsgReplyv_r
+00101bc4 __gnu_Unwind_Restore_VFP_D
+00101bdf MsgSendsv_r
+00101beb atomic_add_value
+00101bfc __cxa_type_match
+00101c0d dispatch_context_alloc
+00101c24 __gnu_Unwind_Resume
+00101c38 atomic_set_value
+00101c49 __gnu_Unwind_Restore_VFP_D_16_to_31
+00101c6d sem_trywait
+00101c79 _init_libc
+00101c84 getopt
+00101c90 __div0
+00101c97 ChannelDestroy_r
+00101ca8 __aeabi_uidiv
+00101cb6 MsgRead_r
+00101cc0 pthread_mutexattr_setpshared
+00101cdd _fini_array
+00101ce9 __gnu_Unwind_ForcedUnwind
+00101d03 MsgSendPulse_r
+00101d12 shm_unlink
+00101d1d __gnu_Unwind_Resume_or_Rethrow
+00101d3c __gnu_Unwind_Find_exidx
+00101d54 __gnu_Unwind_Save_WMMXC
+00101d6c iofunc_write_verify
+00101d80 atexit
+00101d87 _Unwind_GetTextRelBase
+00101d9e dispatch_create
+00101dae _Unwind_GetLanguageSpecificData
+00101dce pthread_mutexattr_init
+00101de5 MsgReceive_r
+00101df2 pthread_mutexattr_setrecursive
+00101e11 _Unwind_VRS_Get
+00101e21 ftime
+00101e27 __gnu_Unwind_Restore_WMMXC
+00101e42 __aeabi_uidivmod
+00101e53 __gnu_unwind_frame
+00101e66 pthread_mutex_destroy
+00101e7c munmap_device_io
+00101e8d iofunc_func_init
+00101e9e __gnu_Unwind_Save_WMMXD
+00101eb6 pthread_attr_setschedpolicy
+00101ed2 pthread_mutex_init
+00101ee5 __aeabi_unwind_cpp_pr1
+00101efc __assert
+00101f05 __gnu_ldivmod_helper
+00101f1a _Unwind_GetDataRelBase
+00101f31 pthread_attr_setschedparam
+00101f4c ChannelCreate_r
+00101f5c timer_settime
+00101f6a dispatch_block
+00101f79 _btext
+00101f80 __data_start
+00101f8d _edata
+00101f94 __bss_start
+00101fa0 __bss_start__
+00101fae __bss_end__
+00101fba __end__
+00101fc2 _stack
+0012613c "procman"
+00126148 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/main.c
+00126198 %s: [pid: %d] - Logger activated (compilation %s %s)
+001261d0 Jun 26 2018
+001261dc 18:15:08
+001261e8 Procman started
+001261f8 h:f:c:np:g:v:l:teN:F:P:
+00126210 Cannot initialize Name Server
+00126230 /home/root/POL_yes
+00126244 SAL_Init status = %d
+0012625c Couldn't start Name Server thread
+00126280 PMMain
+00126288 PMExit
+00126290 Usage: 
+00126298 %s -n | -f <config-file> [-c <configuration>] [-g <group>] [-l <log-file>] [-t] [-e] [-N <application name>] [-v <level>] [-h]
+00126317   -n Run the name server thread only.
+0012633d   -f Name of the configuration file. If it is not defined then XSAL_INSTANCE_NAME environment variable is used instead.
+001263b5   -c Configuration id to be started, 0 is default value.
+001263ee   -p <priority> ProcessManager priority
+00126416   -h Shows this info.
+0012642c   -t, -l, -g, -e, -v and -N are DebugTrace parameters.
+00126464 It is possible to run your own instance of the ProcessManger.
+001264a2 In order to do it set unique name to the XSAL_INSTANCE_NAME environment variable,
+001264f9 export XSAL_INSTANCE_NAME=my_procces_manager
+00126528 Received signal: %d
+0012689c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_parser.c
+001268f0 Closing quote not found
+00126908 \ -- embedded special character
+00126928 Configuration must be in [0-31]
+00126948 Unrecognized option: %c
+00126960 cfg error in line %d
+00126978 Wrong application name: %s
+00126994 procman
+0012699c test1
+001269a4 test2
+001269ac test3
+001269b8 test5
+001269c4 copyimages
+001269d0 displaymanagement
+001269e4 audiomanager
+001269f4 diagnosticsmanager
+00126a08 sysservices
+00126a14 persistenceservices
+00126a28 persistencemanager
+00126a3c systemmanager
+00126a4c mediahandler
+00126a5c carservices
+00126a68 mediaserver
+00126a74 tunermanager
+00126a84 dsplogger
+00126a90 keysimulator
+00126aa0 speechservices
+00126ab0 genericrecorder
+00126ac0 vipmisc
+00126ac8 persistenceshell
+00126adc infotainmentrecorder
+00126af4 mostswitchapp
+00126b04 imageloader
+00126b10 navigationserver
+00126b24 speechmanager
+00126b34 sensorhandler
+00126b44 gpsdriver
+00126b50 cddriver
+00126b64 im_hkpupdate
+00126b74 viplogger
+00126b80 debugmanager
+00126b90 sdstart
+00126b98 phoneserver
+00126ba4 navservices
+00126bb0 waveplayer
+00126bbc pictureservices
+00126bcc ttihandler
+00126bd8 psdcontroller
+00126be8 powermodetool
+00126c00 mirrorlinkapp
+00126c10 installationmanager
+00126c24 mostcanrouter
+00126c34 btstart
+00126c3c im_btupdate
+00126c48 im_abtupdate
+00126c58 im_apupdate
+00126c64 applicationtestframework
+00126c80 onlineservices
+00126c90 im_inicupdate
+00126ca0 priowatchdog
+00126cb0 vipcmd
+00126cb8 hkpcmd
+00126cc0 im_mostupdate
+00126cd0 hkplogger
+00126cdc rearviewcam
+00126ce8 systemtime
+00126cf4 installationservices
+00126d0c moststart
+00126d18 i2cstart
+00126d24 exlap
+00126d2c setupnavigation
+00126d3c im_packageupdate
+00126d50 mirrorlink_setup
+00126d64 cpumonitor
+00126d70 startupsynctool
+00126d80 im_gpsupdate
+00126d90 im_sxmupdate
+00126da0 startupsynctool2
+00126db4 startupsynctool3
+00126dc8 startupsynctool4
+00126ddc startupsynctool5
+00126df0 positionhandler
+00126e00 tcs_tcpip_manager
+00126e14 splashscreen
+00126e24 tunermanager_sdars
+00126e38 netfrontnx
+00126e48 screen-cda
+00126e54 thermalmanager
+00126e64 carplay
+00126e6c carplayservices
+00126e7c androidauto
+00126e88 androidautoservices
+00126ea4 connectmcp
+00126eb0 security
+00126ebc stressserver
+00126ecc unitinfo
+00126ed8 ols_ca_updater
+00126ee8 upnpmanager
+00126ef4 upnpservices
+00126f04 clusterservices
+00126f14 appconnect
+00126f20 transportserver
+00126f30 decodeandsave
+00126f40 diag_sw_version_monitor
+00126f58 carlife
+00126f60 carlifeservices
+00126f70 traceserver
+00126f88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_process.c
+00126fdc assertion failed: process != NULL
+00127000 App %s - killed
+00127010 Fail to create a thread
+00127028  App %s [%d] process Event: %d
+00127048 Deferred events queue full
+00127064  App %s doesn't send APP_INITIALIZED and will be killed.
+001270a0  App %s exited with code %d.
+001270c0 startProcess
+001270d8 Change directory to: <%s> failed
+001270fc App %s - spawned, %d
+00127114 App %s - spawn fail: %s 
+00127130 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_main_thread.c
+00127188 %s, %d, %2d:%02d:%02d.%03d
+001271a4 assertion failed: config >= 0 && config < PM_MAX_CONFIG_NUMBER
+001271e4 Configuration reached
+001271fc assertion failed: current_idx >= 0 && current_idx < proc_counter
+00127240 Received event EV_TIMER_1
+0012725c Received event EV_SYSTEM_SHUTDOWN [%d]
+00127284 Set system config
+00127298 Attempt to change system config during shutdown or config not in range <0-31>
+001272e8 Add system config
+001272fc Received event EV_APP_INITIALIZED [%d]
+00127324 Receive msg from unknown app: %d
+00127348 Rceived event EV_START_APP [%d]
+00127368 Request to start unknown app id: %d
+0012738c Rceived event EV_PROCESS_EXIT [%d]
+001273b0 Rceived event EV_GET_APP_STATE [%d]
+001273d4 Request state of an unknown app id: %d
+001273fc Received event EV_APP_SPAWN_SUCCESS [%d]
+00127428 Received event EV_APP_SPAWN_FAIL [%d]
+00127450 All processes stopped, exit PM
+00127470 Entering state Idle
+00127484 Entering state Startup
+0012749c assertion failed: !"!SAL_Create_Queue"
+001274c4 assertion failed: !"!SAL_Create_Timer"
+001274ec **** Exiting App ****
+00127508 cannot open: %s 
+0012751c Too long %d line in %s file
+00127538 too many apps in configuration file: %d
+00127560 Configuration file not valid
+00127580 There are not any valid entries in %s
+001275a8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_queue.c
+001275fc assertion failed: ( element >= 0 ) && ( element < SAL_MAX_APPS )
+00127640 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/pm_os_native_thread.c
+001276a0 Create_OS_Native_Thread failed. pthread_create returns %d
+001276dc Create_OS_Native_Thread failed. malloc returns NULL
+00127710 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init_thread_attr.c
+00127768 SAL_PRE(attr != NULL)
+00127784 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_thread.c
+001277d8 SAL_PRE((attr == NULL) || (attr->id > 0) || (attr->id == SAL_UNKNOWN_THREAD_ID))
+0012782c SAL_PRE((attr == NULL) || (attr->id <= (SAL_Thread_Id_T)SAL_I_Max_Number_Of_Threads))
+00127884 SAL_PRE(thread_attr->thread_id == SAL_UNKNOWN_THREAD_ID)
+001278c0 SAL_%d
+001278c8 Thread_Create %d failed. Error: %d
+001278ec SAL_POST_FAILED()
+00127900 SAL_PRE_FAILED()
+00127914 SAL_PRE(thread_attr->current_message == NULL)
+00127944 SAL_PRE(thread_attr->selected_count == 0)
+00127970 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_get_thread_priority.c
+001279c8 SAL_I_Get_Thread_Priority failed/pthread_getschedparam [%d], %s
+00127a08 SAL_PRE(thread_id >= 0)
+00127a20 SAL_PRE((size_t)thread_id <= SAL_I_Max_Number_Of_Threads)
+00127a5c SAL_I_Get_Thread_Priority: thread %d is not running
+00127a90 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_is_thread_alive.c
+00127ae4 SAL_PRE(thread_id > 0)
+00127afc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_signal_ready.c
+00127b50 SAL_PRE(thread_attr != NULL)
+00127b70 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_ready.c
+00127bc0 SAL_PRE(tid >= 0)
+00127bd4 SAL_PRE((size_t)tid <= SAL_I_Max_Number_Of_Threads)
+00127c08 SAL_POST(status)
+00127c1c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_set_thread_priority.c
+00127c74 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_queue.c
+00127cc8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_send.c
+00127d14 SAL_PRE(app_id < APP_LAST_ID)
+00127d34 SAL_PRE(msg.event_id >= 0)
+00127d50 SAL_PRE((data != NULL) || (data_size == 0u))
+00127d80 SAL_Send from (%d,%d) to (%d,%d) EV %d OBJ %d data size %d
+00127dbc SAL_Send fail, reopen connection the application %d
+00127df0 SAL_Send: Couldn't send to app %d
+00127e14 SAL_Send: Couldn't connect to app %d
+00127e3c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_publish.c
+00127e8c SAL_I_Local_Publish: to thread %d
+00127eb0 SAL_I_Local_Publish to (%d,%d) EV %d OBJ %d size %d
+00127ee4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_publish.c
+00127f30 SAL_PRE(msg.event_id >= EV_FIRST_EVENT_ID)
+00127f5c SAL_PRE(msg.event_id < EV_LAST_EVENT_ID)
+00127f88 SAL_Publish from (%d,%d) EV %d OBJ %d size %d
+00127fb8 SAL_Publish: to app %d
+00127fd0 SAL_Publish fail, reopen connection the application %d
+00128008 SAL_Publish: couldn't send to app %d EV %d OBJ %d data 0x%p size %d
+0012804c SAL_Publish: couldn't connect to app %d EV %d OBJ %d data 0x%p size %d
+00128094 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_subscribe.c
+001280e4 SAL_PRE(tid > 0)
+001280f8 SAL_PRE(tid <= (SAL_Thread_Id_T)SAL_I_Max_Number_Of_Threads)
+00128138 SAL_PRE((event_id_list != NULL) || (number_of_events == 0))
+00128174 SAL_PRE(ev_id >= EV_FIRST_EVENT_ID)
+00128198 SAL_PRE(ev_id < EV_LAST_EVENT_ID)
+001281bc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_timer.c
+00128210 SAL_PRE(timer_id != NULL)
+0012822c SAL_PRE(timer->event_id == -1)
+0012824c Too many timers were created.
+0012826a Increase max number of timer is the SAL configuration (see SAL_Init)
+001282b0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_start_timer.c
+00128300 SAL_PRE(timer_id >= 0)
+00128318 SAL_PRE((size_t)timer_id < SAL_I_Max_Number_Of_Timers)
+00128350 SAL_PRE((interval_msec != 0) || (!is_periodic))
+00128380 SAL_PRE(timer->event_id != -1)
+001283a0 SAL_PRE(timer->thread_id == SAL_I_Get_Thread_Id())
+001283d4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init.c
+00128420 XSAL 134 1442 2014-10-16
+0012843c SAL_PRE(SAL_I_App_Id == 0)
+00128458 SAL_PRE(sal_config != NULL)
+00128474 SAL_PRE(sal_config->app_id > 0)
+00128494 SAL_PRE(sal_config->app_id < APP_LAST_ID)
+001284c0 SAL_PRE(sal_config->max_number_of_threads > 0u)
+001284f0 SAL_PRE(sal_config->first_unknown_thread_id > 0)
+00128524 SAL_PRE(sal_config->first_unknown_thread_id <= (SAL_Thread_Id_T)sal_config->max_number_of_threads)
+00128588 Application has different number of the Channels, App IDs or Event IDs then the Name Server.
+001285e5 Re-compile your application or Process Manager.
+00128618 SAL_Init: SAL_NS_Init_Proxy failed. Check if Process Manager is running.
+00128664 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_run.c
+001286ac SAL_Run: no user threads were created
+001286d4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_receive.c
+00128720 SAL_PRE(queue_owner_thread != NULL)
+00128744 SAL_PRE(queue_owner_thread->thread_id > 0)
+00128770 SAL_PRE((size_t)queue_owner_thread->thread_id <= SAL_I_Max_Number_Of_Threads)
+001287c0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_local_publish.c
+00128814 SAL_Local_Publish: from App(%d, %d), event id %d, message size %d
+00128858 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_ns_proxy.c
+001288a8 SAL_PRE(SAL_I_NS_Proxy_Data != NULL)
+001288d0 SAL_PRE(app_id >= APP_FIRST_ID)
+001288f0 NS_Unsubscribe_App failed
+0012890c SAL_PRE(reply_app_id_list != NULL)
+00128930 Name_Server_Get_Running_Apps
+00128950 NS_Unbind_App error
+00128964 SAL_PRE(channel != NULL)
+00128980 NS_Resolve_Channel
+00128994 NS_Unbind_Channel error
+001289ac NS_Bind_Channel error
+001289c4 SAL_PRE(event_id_list != NULL)
+001289e4 SAL_PRE(number_of_events > 0)
+00128a04 NS_Unsubscribe
+00128a14 NS_Subscribe
+00128a24 SAL_PRE(SAL_I_NS_Sh_Mem_Handle.data != NULL)
+00128a54 SAL_PRE(SAL_I_NS_Proxy_Data == NULL)
+00128a7c NameServer
+00128a88 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_ns_thread.c
+00128ad8 SAL_Sync_Receive
+00128aec Pulse was received
+00128b00 Bind_Channel: APP_ID %d is reserved for ProccessManager application
+00128b44 Bind_Channel: re-bind app_id=%d, port_id=%d
+00128b70 Bind_Channel: app_id=%d, port_id=%d
+00128b94 Bind_Channel: app_id=%d, port_id=%d, too many entries (>%d)
+00128bd0 Unbind_Channel app_id=%d, port_id=%d
+00128bf8 Unbind_Channel: channel doesn't exist
+00128c20 Resolve_Channel: app_id=%d, port_id=%d
+00128c48 Resolve_Channel: app_id=%d, port_id=%d not bound
+00128c7c Unbind_App app_id=%d, port_id=%d
+00128ca0 Invalid event_id %d from app %d
+00128cc0 Invalid app_id %d
+00128cd4 Invalid command %d
+00128ce8 Name_Server/SAL_Create_Channel error
+00128d10 Name_Server/Create_Shared_Memory error
+00128d38 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_connections.c
+00128d8c SAL_PRE(app_id > 0)
+00128da0 SAL_PRE(app_id <= SAL_MAX_APPS)
+00128dc0 SAL_Init: SAL_I_Connection_Id_Mutex
+00128de4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_run.c
+00128e30 %s: thread %d doesn't have a queue
+00128e54 %s: thread's %d queue is full
+00128e74 %s: There is no free memory
+00128e90 %s: Too small buffer in thread's %d queue
+00128ebc %s: Communication error
+00128ed4 Invalid RouterThread command %d
+00128ef4 RT Message data is too large
+00128f14 SAL_Run: received pulse: %d, %d
+00128f34 SAL_Run: received message: from(%d, %d) to (%d, %d), EV %d OBJ %d, message size %d
+00128f88 Process_Publish
+00128f98 Read error. Message was dropped
+00128fb8 Received unknown event: %d
+00128fd4 Process_Send: Invalid message size
+00128ff8 Process_Send: SAL_Sync_Read error
+0012901c Process_Send
+0012902c Received event with invalid receiver thread Id : %d
+00129060 ERROR SAL_Receive
+00129074 SAL_I_Before_Run/SAL_Bind() failed
+00129098 SAL_I_Before_Run/SAL_Create_Connection() failed
+001290c8 SAL_I_Before_Run/SAL_Create_Channel() failed
+001290f8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_rpc_qnx.c
+00129144 SAL_PRE(receive_id != NULL)
+00129160 SAL_Sync_Reply error: %s
+0012917c SAL_PRE(((reply_buffers != NULL) && (number_of_buffers > 0)) || ((reply_buffers == NULL) && (number_of_buffers == 0)))
+001291f4 SAL_Sync_Reply_V error: %s
+00129210 SAL_PRE(buffer != NULL)
+00129228 SAL_PRE(buffer_size > 0)
+00129244 SAL_PRE(received_message_size != NULL)
+0012926c SAL_Sync_Read error: %s
+00129284 SAL_PRE(message_size != NULL)
+001292a4 SAL_PRE(is_pulse != NULL)
+001292c0 SAL_Sync_Receive error: %s
+001292dc SAL_PRE(connection != NULL)
+001292f8 SAL_PRE(message != NULL)
+00129314 SAL_PRE(reply_buffers != NULL)
+00129334 SAL_Sync_Send_SV error: %s
+00129350 SAL_PRE(message_buffers != NULL)
+00129374 SAL_PRE(number_of_buffers > 0)
+00129394 SAL_PRE(reply_status != NULL)
+001293b4 SAL_Sync_Send_VS error: %s
+001293d0 SAL_PRE(message_size > 0)
+001293ec SAL_Sync_Send error: %s
+00129404 SAL_Send_Pulse error: %s
+00129420 SAL_Disconnect error: %s
+0012943c SAL_Create_Connection error: %s
+0012945c SAL_Destroy_Channel error: %s
+0012947c SAL_Create_Channel error: %s
+0012949c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_mutex.c
+001294f0 SAL_PRE(mutex != NULL)
+00129508 SAL_Create_Mutex error: %s
+00129524 SAL_POST(status == EOK)
+0012953c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_mutex.c
+00129590 SAL_Destroy_Mutex error: %s
+001295ac SAL_PRE(status != EINVAL)
+001295c8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_lock_mutex.c
+00129618 SAL_Lock_Mutex error: %s
+00129634 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_unlock_mutex.c
+00129688 SAL_Unlock_Mutex error: %s
+001296a4 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_signal_semaphore.c
+001296fc SAL_PRE(sem != NULL)
+00129714 SAL_Signal_Semaphore error: %s
+00129734 SAL_POST(status == 0)
+0012974c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_wait_semaphore.c
+001297a0 SAL_Wait_Semaphore error: %s
+001297c0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_try_wait_semaphore.c
+00129818 SAL_Try_Wait_Semaphore error: %s
+0012983c SAL_POST((status == 0) || (err == EAGAIN))
+00129868 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_buffer_pools.c
+001298bc SAL_PRE(SAL_I_Buffer_Pools_Tab != NULL)
+001298e4 SAL_PRE(SAL_I_Buffer_Pools_Tab == NULL)
+0012990c SAL_I_Init_Buffer_Pools/SAL_Create_Mutex() failed
+00129940 SAL_Init_Buffer_Pools/malloc() failed
+00129968 SAL_I_Init_Buffer_Pools: max number of buffer pools == 0
+001299a4 SAL_I_Init_Buffer_Pools failed
+001299c8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_thread.c
+00129a18 SAL_I_Set_Thread_Priority failed: setschedparam [tid=%d, sc=%d, prio=%d], %s
+00129a68 SAL_I_Set_Thread_Priority failed: getschedparam [tid=%d, prio=%d], %s
+00129ab0 Destroy_Thread_Itself %d
+00129acc SAL_I_TLS_Set_Specific(%d, %p) error: %s
+00129af8 SAL_I_TLS_Key_Delete error: %s
+00129b18 SAL_I_TLS_Create error: %s
+00129b34 SAL_I_Init_Threads_Module: SAL_Create_Mutex
+00129b60 Cannot allocate memory for thread attributes table
+00129b94 Cannot create semaphore for thread startup synchronization
+00129bd0 Cannot initialize queue structure
+00129bf4 Init_Threads_Module: couldn't create or initialize TLS
+00129c2c XSAL-RT
+00129c34 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_message_queue.c
+00129c88 SAL_PRE(q != NULL)
+00129c9c SAL_PRE(queue != NULL)
+00129cb4 assertion failed: queue->end_marker->message.data == NULL
+00129cf0 SAL_PRE(queue_size > 0u)
+00129d0c SAL_PRE(queue->node_tab == NULL)
+00129d30 SAL_I_Create_Message_Queue: Couldn't allocate memory for queue data
+00129d74 SAL_I_Create_Message_Queue: Couldn't create semaphore
+00129dac Queue is full and a new urgent message has arived. The last non-urgent message is removed from queue
+00129e14 Queue is full of urgent message. The new urgent message is dropped.
+00129e58 SAL_PRE(err != NULL)
+00129e70 SAL_I_Post_Message: queue is not created
+00129e9c SAL_I_Post_Message: queue is full
+00129ec0 SAL_I_Post_Message: there is no free memory
+00129eec C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_event_property.c
+00129f44 SAL_PRE(SAL_I_Event_Property != NULL)
+00129f6c SAL_I_Init_Event_Property_Module/calloc() failed
+00129fa0 SAL_I_Init_Event_Property_Module/SAL_Create_Mutex() failed
+00129fdc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_timer_pulse.c
+0012a030 SAL_I_Destroy_Timer(%d) error: %s
+0012a054 SAL_I_Create_Timer: Timer for event_id=%d not created
+0012a08c SAL_I_Create_Timer: Get thread's priority error
+0012a0bc SAL_PRE(status)
+0012a0cc SAL_PRE(SAL_I_Timers == NULL)
+0012a0ec SAL_I_Init_Timer_Module: memory allocation failed
+0012a120 SAL_I_Init_Timer_Module/SAL_Create_Mutex() failed
+0012a154 SAL_I_Init_Timer_Module: max number of timers == 0
+0012a188 SAL_I_Init_Timer_Module failed
+0012a1a8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_timer.c
+0012a1f4 Dropped timer event: TID=%d, EV_ID=%d
+0012a21c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_receive_from.c
+0012a270 SAL_PRE(calling_thread != NULL)
+0012a290 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_shared_memory.c
+0012a2ec SAL_PRE(key >= 0)
+0012a300 SAL_PRE(subkey >= 0)
+0012a318 SAL_PRE(handle != NULL)
+0012a330 SAL_Create_Shared_Memory/mmap error: %s
+0012a358 SAL_Create_Shared_Memory/ftruncate error: %s
+0012a388 SAL_Create_Shared_Memory/shm_open (%s) error: %s
+0012a3bc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_open_shared_memory.c
+0012a414 SAL_Open_Shared_Memory/mmap error: %s
+0012a43c SAL_Open_Shared_Memory/fstat error: %s
+0012a464 SAL_Open_Shared_Memory/shm_open (%s) error: %s
+0012a494 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_close_shared_memory.c
+0012a4ec SAL_PRE(handle->data != NULL)
+0012a50c SAL_PRE(handle->size > 0)
+0012a528 SAL_PRE(handle->fd >= 0)
+0012a544 SAL_PRE(handle->key >= 0)
+0012a560 SAL_PRE(handle->subkey >= 0)
+0012a580 SAL_Close_Shared_Memory/munmap, name=[%d, %d], error: %s
+0012a5bc SAL_Close_Shared_Memory/close, name=[%d, %d], error: %s
+0012a5f4 SAL_Close_Shared_Memory/shm_unlink (%s) error: %s
+0012a628 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_init_semaphore_attr.c
+0012a680 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_create_semaphore.c
+0012a6d8 SAL_Create_Semaphore error: %s
+0012a6f8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_destroy_semaphore.c
+0012a750 SAL_Destroy_Semaphore error: %s
+0012a770 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_stat_queue.c
+0012a7c0 SAL_PRE(queue_stat != NULL)
+0012a7dc C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_pend_message.c
+0012a830 SAL_PRE(queue->node_tab != NULL)
+0012a854 SAL_Wait_Semaphore(&queue->message_available). Was the queue created?
+0012a8a4 %s%d_%d
+0012a8ac %s%s_%d_%d
+0012a8b8 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_XSAL/build/../source/xsal_i_shared_memory.c
+0012a90c Too long value of the environment variable: %s 
+0012a93c XSAL_INSTANCE_NAME
+0012a950 /XSAL_Shm_
+0012a95c /proc
+0012a964 pi_atoi
+0012a96c nptr != NULL
+0012a97c C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_PI/build/../source/pi_stdlib.c
+0012a9c4 value != NULL
+0012a9d4 DefApp
+0012a9dc default
+0012a9e4 DTS [%s (pid %d, tid %d)] %s: [%s] TraceClient lib mismatch, please recompile with correct one, logging disabled!
+0012aa68 DTS [%s (pid %d, tid %d)] %s: [%s] Couldn't load %s backend, skipping.
+0012aab0 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: path != 0
+0012ab00 DTS [%s (pid %d, tid %d)] %s: [%s] Can not open file %s! Errno: %d=%s
+0012ab48 DTS [%s (pid %d, tid %d)] %s: [%s] Can not stat file %s! Errno: %d=%s
+0012ab90 DTS [%s (pid %d, tid %d)] %s: [%s] Error reading file %s! Errno: %d=%s
+0012abd8 DTS [%s (pid %d, tid %d)] %s: [%s] File sizes are different! %u!=%u, Errno: %d=%s
+0012ac2c DTS [%s (pid %d, tid %d)] %s: [%s] Invalid level %d
+0012ac64 fatal
+0012ac6c error
+0012ac74 warning
+0012ac94 always_on
+0012aca0 DTS [%s (pid %d, tid %d)] %s: [%s] Invalid enum to translate %d 
+0012ace8 DTS [%s (pid %d, tid %d)] %s: [%s] trace_config.json parsing failed
+0012ad30 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: json_string != 0
+0012ad78 DTS [%s (pid %d, tid %d)] %s: [%s] trace_config.json not present, reading default config!
+0012add4 DTS [%s (pid %d, tid %d)] %s: [%s] presets.json parsing failed
+0012ae14 DTS [%s (pid %d, tid %d)] %s: [%s] presets.json not present, aborting!
+0012ae5c client
+0012ae64 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: config != 0
+0012aea8 default
+0012aeb0 settings
+0012aebc server
+0012aec4 filters
+0012aecc channels
+0012aed8 threads
+0012aee0 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: out_enable != 0
+0012af28 enabled
+0012af30 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: config->config_json != 0
+0012af80 backends
+0012af8c frontends
+0012af98 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: source_config != 0
+0012afe4 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: object_name != 0
+0012b02c DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: output_config != 0
+0012b078 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: out_int != 0
+0012b0bc DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: out_config != 0
+0012b104 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: out_string != 0
+0012b14c DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: cfg.config_json != 0
+0012b19c DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: source_config->config_json != 0
+0012b1f4 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: name != 0
+0012b234 TRACE_CONFIG_PATH
+0012b248 %s%c%s
+0012b250 trace_config.json
+0012b26c DTS [%s (pid %d, tid %d)] %s: [%s] Path to trace_config.json too long!
+0012b2b8 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: filters_array != 0
+0012b304 levels
+0012b30c                      {                                                          "client" : {                                                                                                    "default": {                                                     "enabled": true,                                     "levels": {                                              "channels": {                                           "*": "info"                                     },                                                     "threads": {                                             "*": "info"                                    }                                                  },                                                     "backends": {                                            "SerialBackend": {                                       "enabled": true                                  }                                                  }                                          }                                                  }                                                  }                                                            
+0012b798 filters
+0012b7a0 default
+0012b7a8 DTS [%s (pid %d, tid %d)] %s: [%s] Observer doesn't handle specified action!
+0012b810 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: tm != 0
+0012b850 ShmemBackend
+0012b860 DTS [%s (pid %d, tid %d)] %s: [%s] ShmBackend Init failed! Logging is not going to be enabled.
+0012b8d4 DTS [%s (pid %d, tid %d)] %s: [%s] Unhandled state, error occured when formating data!
+0012b92c SerialBackend
+0012b93c DefChn
+0012b944 DT_MAIN
+0012b94c DT_SAL
+0012b954 DT_JSAL
+0012b95c DT_XML
+0012b964 DT_MOST
+0012b96c DT_CAR_REF
+0012b978 DT_LAYERMANAGER
+0012b988 DT_AAF
+0012b990 DT_VIP
+0012b998 DT_SYSTEMTIME
+0012b9a8 DT_DSICPP
+0012b9b4 DT_PERSISTENCE
+0012b9c4 DT_MEDIA
+0012b9d0 DT_MEDIA_AFP
+0012b9e0 DT_NAVEBA
+0012b9ec DT_NAVMD
+0012b9f8 DT_NAVDG
+0012ba04 DT_NAVTMC
+0012ba10 DT_NAVPNAV
+0012ba1c DT_UPNP_RND
+0012ba28 DT_PERFORMANCE
+0012ba38 DT_DIAGNOSTICS
+0012ba48 DT_POWERMODE
+0012ba58 DT_KEYPANEL
+0012ba64 DT_SWUPDATE
+0012ba70 DT_SPEECH
+0012ba7c DT_TESTFRAMEWORK
+0012ba90 DT_NAVVP
+0012ba9c DT_NAVDS
+0012baa8 DT_NAVCORE
+0012bab4 DT_NAVIOM
+0012bac0 DT_SENSORHANDLER
+0012bad4 DT_AUDIOMANAGER
+0012bae4 DT_MEDIA_SRV
+0012baf4 DT_MEDIA_FFT
+0012bb04 DT_UPNP_CTRL
+0012bb14 DT_TUNER_AMFM
+0012bb24 DT_TUNER_ANNOUNCE
+0012bb38 DT_TUNER_STARTUP
+0012bb4c DT_TUNER_DAB_APP
+0012bb60 DT_TUNER_DAB_FE
+0012bb70 DT_NAVTEST
+0012bb7c DT_MCR
+0012bb84 DT_TUNER_SDARS_DRV
+0012bb98 DT_TUNER_SDARS_APP
+0012bbac DT_UPNP_SRV
+0012bbb8 DTS_COMMON_LAST
+0012bbc8 procman
+0012bbd0 test1
+0012bbd8 test2
+0012bbe0 test3
+0012bbec test5
+0012bbf8 copyimages
+0012bc04 displaymanagement
+0012bc18 audiomanager
+0012bc28 DiagnosticsManager
+0012bc3c sysservices
+0012bc48 persistenceservices
+0012bc5c persistencemanager
+0012bc70 systemmanager
+0012bc80 MediaHandler
+0012bc90 carservices
+0012bc9c MediaServer
+0012bcac dsplogger
+0012bcb8 keysim
+0012bcc0 speechservices
+0012bcd0 GenericRecorder
+0012bce0 vipmisc
+0012bce8 persistenceshell
+0012bcfc InfotainmentRecorder
+0012bd14 mostswitchapp
+0012bd24 imageloader
+0012bd3c sensorhandler
+0012bd4c gpsdriver
+0012bd58 cddriver
+0012bd6c im_hkpupdate
+0012bd7c viplogger
+0012bd88 debugmanager
+0012bd98 APP_SDSsdstartTART
+0012bdac phoneserver
+0012bdb8 navservices
+0012bdc4 waveplayer
+0012bdd0 pictureservices
+0012bde0 ttihandler
+0012bdec APP_PSD
+0012bdf4 powermodetool
+0012be0c mirrorlinkapp
+0012be1c installationmanager
+0012be30 MostCan
+0012be38 btstart
+0012be40 im_btupdate
+0012be4c im_abtupdate
+0012be5c APUpdate
+0012be68 applicationtestframework
+0012be84 onlineservices
+0012be94 im_inicupdate
+0012bea4 PRIOWD
+0012beac vipcmd
+0012beb4 hkpcmd
+0012bebc im_mostupdate
+0012becc hkplogger
+0012bed8 rearviewcam
+0012bee4 SysTime
+0012beec installationservices
+0012bf04 moststart
+0012bf10 i2cstart
+0012bf1c exlap
+0012bf24 setupnavigation
+0012bf34 im_packageupdate
+0012bf48 mirrorlink_setup
+0012bf5c cpumonitor
+0012bf68 startupsynctool
+0012bf78 im_gpsupdate
+0012bf88 im_sxmupdate
+0012bf98 startupsynctool2
+0012bfac startupsynctool3
+0012bfc0 startupsynctool4
+0012bfd4 startupsynctool5
+0012bfe8 positionhandler
+0012bff8 tcs_tcpip_manager
+0012c00c splashscreen
+0012c01c SDARS_TM
+0012c028 netfrontnx
+0012c038 screencda
+0012c04c thermalmanager
+0012c05c carplay
+0012c064 carplayservices
+0012c074 androidauto
+0012c080 androidautoservices
+0012c09c connectmcp
+0012c0a8 security
+0012c0b4 stressserver
+0012c0c4 ols_ca_updater
+0012c0d4 upnpmanager
+0012c0e0 upnpservices
+0012c0f0 clusterservices
+0012c100 appconnect
+0012c10c transportserver
+0012c11c decodeandsave
+0012c12c carlife
+0012c134 carlifeservices
+0012c158 VPController
+0012c16c DABSimClient
+0012c17c HDUtil
+0012c18c DefApp
+0012c19c default
+0012c1a4 DTS [%s (pid %d, tid %d)] %s: [%s] Could not allcate new thread - maximal number of threads reached. Please increase DTS_TRACE_MODEL_MAX_THREADS_TOTAL param
+0012c254 DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel(ERROR): unknown thread index %d returned to pool app: %d, %s
+0012c2c0 DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel(ERROR): thread idx %d already in free pool
+0012c31c DTS [%s (pid %d, tid %d)] %s: [%s] Could not allcate new thread - maximal number of thread per app reached. Please increase DTS_TRACE_MODEL_MAX_THREADS_PER_APP param
+0012c3c4 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: filters_num <= 64
+0012c410 DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel: application with name '%s' already exists in model, clearing %d threads
+0012c488 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: amodel != 0
+0012c4cc DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: amodel->id == DEFAULT_APP_ID
+0012c520 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: thread_model != 0
+0012c568 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: thread_model->id == DEFAULT_THREAD_INDEX
+0012c5c8 DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel: Could not register new client - max number of clients reached in model.
+0012c640 DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel: cannot register new channel %s, max is reached %u, or channel is already registered in app %s.
+0012c6d4 DTS [%s (pid %d, tid %d)] %s: [%s] Failed to allocate shared mem block for Trace Model, aborting!
+0012c738 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: model != 0
+0012c77c trace_model_shared_mtx
+0012c794 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: data_model->process_shared_mtx != 0
+0012c7f0 DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel: tid %u out of range, app: %d, %s, using default tid = %d
+0012c85c DTS [%s (pid %d, tid %d)] %s: [%s] TraceModel: ch_id %u out of range, app: %d, %s
+0012c8b0 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: dts_false
+0012c8f0 DTS [%s (pid %d, tid %d)] %s: [%s] Level out of range: %d
+0012c930 DTS [%s (pid %d, tid %d)] %s: [%s] Can not set if prev value was not 0 or different then being set prev: %u value: %u
+0012c9b8 DTS [%s (pid %d, tid %d)] %s: [%s] Invalid level %d
+0012c9f0 fatal
+0012c9f8 error
+0012ca00 warning
+0012ca20 always_on
+0012ca2c DTS [%s (pid %d, tid %d)] %s: [%s] Unknown DTS_Filter_Level_T!
+0012ca70 %02d:%02d:%02d.%03d
+0012ca84 max_msg_size
+0012ca94 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: pthread_mutex_init(&mutex->mtx.object, &attr) == 0
+0012cb10 FileBackend
+0012cb1c config
+0012cb2c DTS [%s (pid %d, tid %d)] %s: [%s] Failed to open specified file! FileBackend will be disabled!
+0012cb90 Error
+0012cb98 DTS [%s (pid %d, tid %d)] %s: [%s] Path for FileBackend config not present! FileBackend will be disabled!
+0012cc04 DTS [%s (pid %d, tid %d)] %s: [%s] Config for FileBackend not present! FileBackend will be disabled!
+0012cc98 u%04x
+0012cca8 false
+0012ccbc DefApp
+0012ccc4 DTS [%s (pid %d, tid %d)] %s: [%s] Channel ID not allocated: %s: %d, num: %d;
+0012cd24 DTS [%s (pid %d, tid %d)] %s: [%s] Channel ID out of bound: %s: %d, num: %d;
+0012cd74 DefApp
+0012cd7c DTS [%s (pid %d, tid %d)] %s: [%s] Could not register given backend - %s !
+0012cdd8 DTS [%s (pid %d, tid %d)] %s: [%s] Could not register backend: %p. Number of registered backends is: %d
+0012ce44 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: dts_false
+0012ce84 DTS [%s (pid %d, tid %d)] %s: [%s] Failed to get shared mem block for Backend Filter Model, aborting!
+0012cf00 file_name_printing
+0012cf14 func_name_printing
+0012cf28 line_nr_printing
+0012cf3c disable
+0012cf44 %s: %u-[%s]-%c-
+0012cf64 %02x 
+0012cf6c DTS [%s (pid %d, tid %d)] %s: [%s] Wriitng to buffer returned %d. Error occured!
+0012cfd4 DTS [%s (pid %d, tid %d)] %s: [%s] Unhandled state, error occured when formating data!
+0012d02c DTS [%s (pid %d, tid %d)] %s: [%s] Can not set if prev value was not 0 or different then being set prev: %u value: %u
+0012d0b8 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: pos->current_addr >= cbuf_begin
+0012d110 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: pos->current_addr < cbuf_end
+0012d164 DTS [%s (pid %d, tid %d)] %s: [%s] Shm alloc failure of %d bytes, needed: %d, max: %d
+0012d1bc DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: instance != 0
+0012d200 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: instance->cbuf != 0
+0012d24c DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: (max_elements & (max_elements - 1)) == 0
+0012d2ac DTS [%s (pid %d, tid %d)] %s: [%s] Opening Shm_Buffer failed!
+0012d2ec DTS [%s (pid %d, tid %d)] %s: [%s] SHmem ERROR: shared memory cannot be deinitialized
+0012d344 DTS [%s (pid %d, tid %d)] %s: [%s] SHmem ERROR: Opened shmem with different size - shmem is: %u, requested is: %u
+0012d3b8 DTS [%s (pid %d, tid %d)] %s: [%s] Resizing shmem buffer failed!
+0012d3fc DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend: Thread ID: %d, search start position: 0x%08x, current position: 0x%08x, index at current position: 0x%08x, write index: 0x%08x
+0012d4b0 DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(WARN): Timeout waiting for SYNCED_VALUE at current position
+0012d520 DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(WARN): Couldn't find new data max_search_pos:0x%x
+0012d584 DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(INFO): Found SYNCED_VALUE at position 0x%08x
+0012d5e4 DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(DEBUG): Reader too fast - sync value ok, but index from previous round
+0012d660 DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(ERROR): Gave up waiting for proper index, while sync value ok - skipping one entry
+0012d6e8 DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(ERROR): Sync value ok, but index invalid - skipping one entry
+0012d758 DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(ERROR): Trace buffer overflow
+0012d7a8 DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(ERROR): Sync value ok, but index too big - skipping one entry
+0012d818 DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(INFO): Reader too slow - skipped %d positions, %d entries
+0012d884 DTS [%s (pid %d, tid %d)] %s: [%s] Shmem: cannot read data, output buffer too small, data size is %d bytes
+0012d8f0 DTS [%s (pid %d, tid %d)] %s: [%s] ShmemFrontend(INFO): Data changed while reading at index 0x%08x - retrying
+0012d960 trace_buffer_size
+0012d974 DTS [%s (pid %d, tid %d)] %s: [%s] Trace buffer size from JSON file is not divisible by 2*DTS_CACHE_LINE_SIZE, using default value: %u!
+0012da00 DTS [%s (pid %d, tid %d)] %s: [%s] Settings not present in JSON file, using default value: %u!
+0012da68 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle != 0
+0012dabc DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle->data != 0
+0012db04 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle->size > 0
+0012db4c DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle->key >= 0
+0012db94 DTS [%s (pid %d, tid %d)] %s: [%s] Close_Shmem/munmap, name=[%d], error: %s
+0012dbe4 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: key >= 0
+0012dc24 DTS [%s (pid %d, tid %d)] %s: [%s] Cannot resize SHM file: %s
+0012dc64 DTS [%s (pid %d, tid %d)] %s: [%s] Create_Shmem/mmap error: %s
+0012dca4 DTS [%s (pid %d, tid %d)] %s: [%s] Create_Shmem/shm_open (%s) error: %s
+0012dcf0 DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle->size != size
+0012dd3c DTS [%s (pid %d, tid %d)] %s: [%s] Resizing shared memory from: %d to size: %d
+0012dd8c DTS [%s (pid %d, tid %d)] %s: [%s] DTS_Resize_Opened_Shared_Memory/ftruncate, Cannot resize SHM file: %s
+0012ddf8 DTS [%s (pid %d, tid %d)] %s: [%s] DTS_Resize_Opened_Shared_Memory/mmap error: %s
+0012de4c DTS [%s (pid %d, tid %d)] %s: [%s] Assertion failed: handle->fd >= 0
+0012de94 DTS [%s (pid %d, tid %d)] %s: [%s] Close_Shmem/close, name=[%d], error: %s
+0012dee0 /DTS_Shm_
+0012def0 C:/bd/MIB/SOP4.2/VAG_MIB20_STD_AP/sw/AP_ProcessManager/build/../source/process_observer.c
+0012df4c Process Observer Thread Started!!
+0012df70 /proc/dumper
+0012df80 Process Observer: Resource Manager attach FAILED!!
+0012dfb4 Process Observer: Prodispatch_block FAILED: %s
+0012dfe4 /proc/%d/as
+0012dff0 Process Observer: open(%s) FAILED!!
+0012e018 Process Observer: devctl(fd, DCMD_PROC_STATUS,..) FAILED!!
+0012e054 Process Observer: devctl(fd, DCMD_PROC_MAPDEBUG_BASE,..) FAILED!!
+0012e098 process %s ((%d) has %d threads and problem in thread %d 
+0012e0d4 died on SIGNAL %d 
+0012e0e8 faulted on  %d 
+0012e0fc terminated with exit code  %d 
+0012e11c terminated with  _DEBUG_WHY_REQUESTED
+0012e144 terminated with _DEBUG_WHY_JOBCONTROL
+0012e16c died with %d 
+0012e17c Core dump written
+0012e190 Termination info received by Process Observer. No other dumpers
+0012e1d0 TSDriver: error i/o memory mapping

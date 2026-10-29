@@ -1,0 +1,39 @@
+{
+  "kind": "isolated_observer_smoke",
+  "files": {
+    "observer_smoke": {
+      "sha256": "6a1bcc8f423727e3987cf22e87964df0af3a6799aa48604101464ecb6089c2ee",
+      "bytes": 7841,
+      "needed": [
+        "libautoreceiver.so",
+        "libc.so.3"
+      ]
+    },
+    "observer_smoke_guard": {
+      "sha256": "254e5dbe01f9a5128ac410eef1f8d713a9764d5d5e7921075f4a0184f002b06b",
+      "bytes": 8687,
+      "needed": [
+        "libc.so.3"
+      ]
+    },
+    "libautoreceiver.so": {
+      "sha256": "f9e167e7b8b27c8e5790edbf005103373880fe7fea5d4a6e3857570d748dcb83",
+      "bytes": 5674,
+      "needed": [
+        "libc.so.3"
+      ]
+    },
+    "libdelphi_observer.so": {
+      "sha256": "cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c",
+      "bytes": 8561,
+      "needed": [
+        "libc.so.3"
+      ]
+    }
+  },
+  "qnx_emulation_passed": true,
+  "vehicle_validated": false,
+  "synthetic_provider": "libautoreceiver.so",
+  "no_stock_app_control": true,
+  "qnx_log_sha256": "d20c555254d408c0621f4c75f18dc5b2e157b15337ccb651b9b3891115710194"
+}

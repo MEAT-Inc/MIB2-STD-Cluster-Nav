@@ -1,0 +1,129 @@
+{
+  "kind": "managed_androidauto_observer",
+  "deployment_hold": "persistent_black_screen_investigation",
+  "files": {
+    "observer_launch": {
+      "bytes": 18444,
+      "sha256": "68c01926f1b03e1f1a666dd62314df1fac9d6e38467735f21aade1bc2bf5a2bd",
+      "needed": [
+        "libc.so.3"
+      ],
+      "required_unit_libc_imports": [
+        "__get_errno_ptr",
+        "_exit",
+        "_fini_array",
+        "_init_array",
+        "_init_libc",
+        "_preinit_array",
+        "atexit",
+        "close",
+        "closedir",
+        "devctl",
+        "execv",
+        "exit",
+        "fflush",
+        "fork",
+        "free",
+        "ftruncate",
+        "getenv",
+        "getpid",
+        "getppid",
+        "kill",
+        "lstat",
+        "malloc",
+        "memchr",
+        "memcmp",
+        "memcpy",
+        "memset",
+        "mmap",
+        "nanosleep",
+        "open",
+        "opendir",
+        "pathmgr_symlink",
+        "pathmgr_unlink",
+        "printf",
+        "puts",
+        "read",
+        "readdir",
+        "readlink",
+        "setenv",
+        "setsid",
+        "sigaction",
+        "sigemptyset",
+        "snprintf",
+        "stat",
+        "strcmp",
+        "strcpy",
+        "strlen",
+        "strncmp",
+        "strstr",
+        "strtol",
+        "unlink",
+        "waitpid",
+        "write"
+      ]
+    },
+    "libdelphi_observer.so": {
+      "bytes": 8561,
+      "sha256": "cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c",
+      "needed": [
+        "libc.so.3"
+      ],
+      "required_unit_libc_imports": [
+        "__get_errno_ptr",
+        "_exit",
+        "close",
+        "dladdr",
+        "dlsym",
+        "ftruncate",
+        "getenv",
+        "getpid",
+        "memcpy",
+        "memset",
+        "mmap",
+        "open",
+        "pthread_self",
+        "snprintf",
+        "strcmp",
+        "strncmp",
+        "strrchr",
+        "write"
+      ]
+    }
+  },
+  "expected_stock": {
+    "AndroidAuto.original": [
+      "/extbin/apps/bin/AndroidAuto",
+      482967,
+      "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+    ],
+    "receiver.reference": [
+      "/extbin/apps/lib/libautoreceiver.so.1",
+      1621327,
+      "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+    ],
+    "procman.reference": [
+      "/proc/boot/procman",
+      196184,
+      "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    ]
+  },
+  "known_registration_callers": [
+    "0x124e54",
+    "0x127390",
+    "0x128764",
+    "0x12b95c",
+    "0x12ed44",
+    "0x12fa08",
+    "0x130b90",
+    "0x132a3c"
+  ],
+  "qnx_emulation_passed": true,
+  "actual_androidauto_interposition_tested": false,
+  "requires_explicit_run": true,
+  "capture_profiles": [
+    20,
+    60
+  ],
+  "qnx_log_sha256": "ebac2d720a509416602b7bd09d935bde1dd64b0f6fe25d522e130eeb32b06b18"
+}

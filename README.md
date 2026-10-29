@@ -2,7 +2,7 @@
 
 Research and diagnostic tooling for investigating Android Auto and CarPlay navigation video in the instrument cluster of a Delphi MIB2 infotainment system.
 
-**Status — October 28, 2026:** the native observer candidate has passed an isolated hardware smoke test on the unit using a synthetic registration provider. The capture records nine observer entries, zero drops, and unchanged stock AndroidAuto process identity. Firmware preflight and supervisor review are complete for the captured snapshots. Real AndroidAuto interception and phone-to-cluster video remain unproven.
+**Status — October 29, 2026:** real AndroidAuto registration, video configuration, outgoing discovery, and focus calls have been observed on the unit. The discovery offer contains one video service. A secondary phone display and working cluster maps have not been demonstrated. **Live restart/observer experiments are disabled while a persistent Android Auto black-view issue is investigated.** Current work uses existing evidence and passive tracing.
 
 Working folder: `.`.
 
@@ -13,91 +13,97 @@ Working folder: `.`.
 | Vehicle | User-reported 2019 USDM Volkswagen Golf R |
 | Infotainment | Discover Media, part number `3Q0035876B` |
 | Software | MU0890 / `MST2_US_VW_P0890D` (`P` followed by zero) |
-| Operating system | Inventory records QNX Neutrino 6.5.0 |
+| Operating system | QNX Neutrino 6.5.0 |
 | Platform | ARM little-endian, TI-DRA74X-PG1.1; two Cortex-A15 processors |
 
-Findings and sample fingerprints apply to this build. Compatibility with other units or software trains is unproven.
+Findings and fingerprints apply to this build. Compatibility with other units or software trains is unproven.
 
 ## Current progress
 
-| Area | Latest evidence | Remaining work |
+| Area | Evidence available | Remaining limits |
 | --- | --- | --- |
-| Acquisition | Initial software/configuration verification records 562 matching byte-count/SHA256 comparisons. Runtime bridge components and fresh vehicle preflight captures are available. | Manifest consistency is not vendor authentication or verification of loaded-memory bytes. |
-| Native video transport | Traced the `isoTX` encoder path, 188-byte MPEG-TS format, matching reconstructed PAT/PMT CRCs, synchronous copy behavior, and single-writer channel ownership. A full queue returns zero bytes with EOK. | Complete MOST consumer lifecycle and abnormal reader-close handling remain unaudited. |
-| Android Auto discovery | Identified protocol 1.3, service registration, discovery serialization, and buffer/queue ownership. Host fixtures exercise a secondary descriptor and buffer replacement. | The old schema lacks modern cluster-display metadata. Phone acceptance and a native discovery modification are unproven. |
-| HMI/control bridge | Traced `screen-cda` application `0x55`, activation/deactivation/rate messages, response fields, geometry propagation, and SAL millisecond clock units. Java analysis converted 19,406 classes and decompiled 414 for targeted inspection. | Active geometry, measured cadence, and precise encoder parameter units need corroboration. Conversion checks are not full bytecode verification. |
-| Native observer | Packaged an entry-only observer and decoder; host, QNX ARM, static, and packaging gates are reported passing. | Real application binding, constructor ordering, timing, and controlled stock restoration are not validated on the vehicle. |
-| Vehicle preflight | Fresh `AndroidAuto` and both receiver-library aliases match expected SHA256 values. AndroidAuto was running with `-t`; its receiver mapping was identified. | Captured process IDs and addresses are snapshots. File hashes do not verify loaded-memory contents. |
-| Supervisor review | Seven read-only checks succeeded. Process ancestry confirms AndroidAuto was a direct child of procman; configuration contains both AndroidAuto and AndroidAutoServices. | Vendor flag semantics/control API and a verified stock restoration procedure remain unresolved. |
-| Isolated hardware smoke | Baseline and observed synthetic children passed against the actual unit runtime. The decoded trace contains nine records with zero drops; before/after stock PID/arguments match. procman and libc were acquired for offline analysis. | This does not test interception in real AndroidAuto, phone negotiation, or cluster video. |
-| CarPlay | Initial screen registration and H.264 references provide a separate investigation path. | Additional phone-display support has not been established. |
+| Acquisition | Initial software/configuration verification records 562 matching byte-count/SHA256 comparisons; runtime and hardware captures are available locally. | File consistency does not establish vendor authenticity or loaded-memory identity. |
+| Native cluster transport | Traced `isoTX`, 188-byte MPEG-TS, reconstructed PAT/PMT CRCs, synchronous copying, and single-writer ownership. A full queue returns zero bytes with EOK. | MOST consumer lifecycle and abnormal reader-close behavior remain incomplete. |
+| HMI/control bridge | Traced `screen-cda` application `0x55`, activation/deactivation/rate messaging, geometry propagation, and SAL millisecond clock units. Java analysis converted 19,406 classes and decompiled 414 for inspection. | Active cluster geometry, measured cadence, and encoder parameter units need corroboration. |
+| Registration observer | Real-app phone capture contains nine entry records, zero drops, and eight known AndroidAuto caller matches, including video registration. | Pointer identities do not establish object ownership or a usable secondary endpoint. |
+| Display/discovery capture | Later hardware capture contains nine registrations and three display records, all with zero drops. Configuration, outgoing queue/discovery, and focus refer to the same video endpoint. | Offered configuration is not the phone's selected codec or a captured media stream. |
+| Discovery offer | A 386-byte response advertises services 1–8; only service 1 has video configuration. Native resolution enum 1 maps to 800×480. Services 5/6 are audio sinks. | No display ID/type metadata or secondary display is present. Active negotiated geometry is not proven by the offer. |
+| Secondary endpoint research | Static analysis recovers vtable/callback slots and the native construction chain. A host-only 430-byte paired video/input descriptor preserves original discovery bytes. | No second endpoints exist; router slots, lifecycle, input binding, phone acceptance, and transport integration remain unproven. |
+| Display fault investigation | Android Auto black-view reports coexist with working VW menus/radio. Restart experiments are blocked in the current runner. | Root cause and recovery are unconfirmed. Process restoration does not prove visual/session recovery. |
+| Passive tracing | TCP baseline and a later 180-second phone-mode logger capture completed; latest raw trace is 7,692,296 bytes with unchanged AndroidAuto PID. | Manual phone-interval coverage and display recovery remain explicitly unverified. |
+| CarPlay | Initial screen-registration and H.264 references provide a separate research path. | Additional phone-display support remains unproven. |
 
-The [consolidated status](delphi-analysis/INVESTIGATION-STATUS.txt) contains historical sections followed by updates. For current implementation evidence, start with [PRODUCTION-OBSERVER-RESULTS.txt](delphi-analysis/PRODUCTION-OBSERVER-RESULTS.txt) and the [observer instructions](native/observer/README.txt). Later captures supersede earlier statements that fingerprints, supervisor data, or an isolated hardware run are still missing. Some older instructions still state that no vehicle smoke test has run; use the captured result described below for current status.
+Start with [INVESTIGATION-STATUS.txt](delphi-analysis/INVESTIGATION-STATUS.txt), [OBSERVER-DISPLAY-HARDWARE-REVIEW.txt](delphi-analysis/OBSERVER-DISPLAY-HARDWARE-REVIEW.txt), and [ANDROID-AUTO-BLACK-SCREEN-INVESTIGATION.txt](delphi-analysis/ANDROID-AUTO-BLACK-SCREEN-INVESTIGATION.txt). These contain historical updates; newer raw captures can supersede older statements that a test is still pending.
 
-### Latest vehicle evidence
+## Hardware milestones and their limits
 
-[OBSERVER-PREFLIGHT-REVIEW.txt](delphi-analysis/OBSERVER-PREFLIGHT-REVIEW.txt) explains the initial map-parser false negative: `pidin` displayed the receiver as `bautoreceiver.so.1`, omitting the leading `li`. The corrected parser recognizes the shortened name. [OBSERVER-PREFLIGHT-LATEST-REVIEW.json](delphi-analysis/OBSERVER-PREFLIGHT-LATEST-REVIEW.json) records another passing standard preflight and 15 collector-review tests.
+The investigation progressed through firmware/process preflight, synthetic host/QNX tests, isolated hardware smoke, private-path/watchdog checks, real-app registration observation, and display/discovery capture. Supervisor evidence establishes AndroidAuto's procman parent and configuration entries. The diagnostic controller demonstrated a fresh stock process after observed execution, but **that process check does not establish that the Android Auto view or USB session recovered**.
 
-The [supervisor capture summary](delphi-dump/_observer_preflight_20261029_000006_d6c5d4d0/preflight-summary.json) records seven successful commands. The local follow-up review confirms AndroidAuto's procman parent and configuration entries for both smartphone processes. The `-l20`, `-x10`, `-r`, and `-c15` values are captured evidence; their precise vendor semantics are not assumed. Captured PIDs must not be hard-coded into a controller.
+Key local collections:
 
-The latest local smoke collection is `delphi-dump/_observer_smoke_20261029_005129_a1ecf3ce/`, approximately 8:51 p.m. Eastern on October 28 (the directory name uses UTC). Its `smoke-summary.json` records `passed=true`, `stock_processes_unchanged=true`, and `actual_androidauto_interposition_tested=false`. Baseline/observed children used the actual unit's libc/loader with a synthetic provider in a private RAM namespace. The decoded log contains nine entries and zero drops; procman/libc copies were retained for offline analysis.
+| Collection under `delphi-dump/` | Result |
+| --- | --- |
+| `_androidauto_observer_20261029_040547_7c22f85f/` | No-phone real-app launch/restoration completed; no registration calls captured. |
+| `_androidauto_observer_20261029_042655_dbdaa2d1/` | Phone session: nine registration records, zero drops, video caller seen, process restoration verified. |
+| `_androidauto_observer_20261029_130447_557863fc/` | Display/discovery capture: 14 artifact checks, 35 successful actions, nine registrations and three display records; process restoration verified. |
+| `_trace_tcp_20261029_201038_afbf8699/` | Thirty-second TCP trace baseline; no matching AndroidAuto startup/focus/visibility/shutdown events reported in that phone-unplugged window. |
+| `_phone_trace_20261029_205440_f6999121/` | Logger did not start: background-command composition produced invalid `&;` syntax. No phone handoff occurred. |
+| `_phone_trace_20261029_210643_a37ee951/` | Corrected launcher: 180,002 ms capture, 7,692,296 bytes, native error zero, unchanged stock PID. User entered normal phone view and no door opening. |
 
-The local `delphi-analysis/control-runtime/hardware-review.json` independently records seven verified artifact hashes and the same hardware result. These new smoke captures, control-runtime findings, and some runner/release files are pending local changes outside this README-only commit; a fresh remote checkout may not yet contain them. Their paths are listed as local evidence rather than download links.
+Directory timestamps use UTC. The latest listed passive capture began around 5:06 p.m. Eastern on October 29. Its summary records `capture_complete=true`, `logger_completed=true`, `phone_interval_verified=false`, and `display_recovery_verified=false`. A reported normal view in this baseline does not resolve the earlier fault. The trace needs event/timing analysis before claiming coverage of the whole phone session.
 
-The isolated test uploaded and executed synthetic test files in RAM. It did not instrument or restart the managed AndroidAuto process, modify startup configuration, or test cluster transport. A successful hardware fixture is a narrower result than successful real application interposition.
+The display capture ties the same endpoint to registration, configuration, and focus. Captured configuration arguments are `1, 2, 0, 0, 160, 0, 10000` and match outgoing discovery fields. Focus arguments are `1,true`; they do not constitute an incoming focus response. Only the offer's resolution mapping is established; no frame-rate enum label is inferred.
 
-## Observer candidate
+The host-only paired descriptor adds illustrative video service 9 and input service 10 for display 1. It has not been advertised on the unit. Existing router occupancy is not established, and primary callback/decoder ownership must not be reused for a secondary stream. See the display hardware review and `control-runtime/endpoint-abi-*` artifacts for the recovered ABI evidence.
 
-The [observer release instructions](native/observer/release/README.txt) describe the shared library, decoder, manifest, and operating limitations. The previously referenced `native/observer/delphi-observer-v1.zip` is absent from the current working tree; use the unpacked release files. The local smoke release is separate and includes a synthetic provider, guarded test executables, and the observer candidate.
+## Black-view investigation and current hold
 
-The observer records existing `registerService` call entries: caller address, opaque receiver/endpoint identities, process/thread IDs, and accepted-record sequences. It tail-forwards to the original function, replacing the earlier enter/leave design. It does not inspect endpoint objects, modify discovery, request video, or record return values, completion, or duration.
+The reported failure affects the Android Auto view while car/settings/radio remain usable. Recovery required a ten-second power-button hold; opening the driver door during an experiment appeared associated, with ignition on or the engine running. This is not established as a whole-unit crash, an expected interruption, or an ignition-off event.
 
-Logging uses a fixed RAM mapping with 1,024 records and a nonwaiting try-lock. Contended/full logs drop metadata while retaining forwarding. Logging failures disable logging; failure to resolve the original function or verify its owning module refuses startup with exit code 125. These behaviors and limits are detailed in [native/observer/README.txt](native/observer/README.txt).
+Earlier watchdog/controller success verifies process identity and restoration, not rendering health, USB rebind, focus recovery, or a healthy phone session. The timed restart could interact with an active session; door-related visibility/lifecycle handling and instrumentation stalls remain hypotheses. Existing evidence does not identify the cause.
 
-The recorded validation includes eight QNX ARM cases; multithreaded fixtures with 2,024 native calls; return/errno, exception, recursion, fork-forwarding, and ARM ABI checks; and eight decoder tests. The fixture C++ runtime is synthetic, not the vendor runtime. Those saved results were reviewed for this README update; the suites were not rerun.
+`scripts/run_androidauto_observer.py` now refuses live `--run` variants before connection or interruption, with no CLI override. Do not use an older observer bundle to recreate the fault. Offline decoding and analysis remain available. The current investigation collects display health and existing trace output without restarting AndroidAuto, injecting focus events, resetting USB, or changing trace filters.
 
-The [release manifest](native/observer/release/manifest.json) still records `vehicle_validated=false`, `runtime_fingerprints_verified=false`, and `deployment_ready=false`. These flags predate later file preflight and isolated hardware evidence. The manifest has not been recertified: the later results do not establish real application interception or deployment readiness.
-
-The smoke fixture now has a recorded isolated hardware pass. Its local runner, release, and source updates remain pending outside this documentation commit. Emulator baseline/observed/watchdog controls and nine offline runner tests are reported passing in the local supervisor review; this README review did not rerun them.
+The first passive phone-trace launch failed because a bare background `&` was combined with the shell completion suffix. The corrected launcher stores `$!` before the completion marker; the fix was checked against QNX ksh syntax and negative controls. The subsequent hardware capture demonstrates that this reader can collect trace bytes on the unit. It does not prove the black-view cause or recovery.
 
 ## Repository contents
 
 ```text
 .\
-|-- README.md                     Project overview and current status
-|-- .gitignore                   Excludes local tooling and Python caches
-|-- scripts/                     Collection, analysis, build, and test tools
-|   |-- USAGE.txt                General setup and collection instructions
-|   |-- OBSERVER-PREFLIGHT.txt   Read-only vehicle preflight instructions
-|   |-- RUNTIME-COLLECTION.txt   Targeted runtime acquisition notes
-|   |-- collect_observer_preflight.py  Full/supervisor-only preflight collector
-|   |-- run_observer_smoke.py   Local plan/opt-in isolated hardware runner
-|   |-- inspect_control_runtime.py  Local acquired-runtime analysis
-|   |-- trace_procman_control.py  Local process-manager control tracing
-|   |-- delphi_inventory.py      Selected FTP collection and optional inventory
-|   |-- collect_delphi_runtime.py  Runtime component acquisition/staging
-|   |-- inspect_delphi.py        Manifest verification and ELF/string triage
-|   |-- decode_delphi_observer.py  Capture decoder
-|   |-- test_delphi_observer.ps1  Host/QNX validation and packaging
-|   `-- ...                     Discovery/HMI/transport research and tests
+|-- README.md                       Overview, current evidence, and next steps
+|-- scripts/
+|   |-- USAGE.txt                  General acquisition setup
+|   |-- OBSERVER-PREFLIGHT.txt      Read-only firmware/process checks
+|   |-- DISPLAY-HEALTH-DIAGNOSTICS.txt  Health/trace procedures and history
+|   |-- delphi_inventory.py         FTP collector and optional inventory
+|   |-- collect_delphi_runtime.py   Runtime acquisition/optional RAM staging
+|   |-- run_androidauto_observer.py  Historical live observer; current hold enforced
+|   |-- decode_androidauto_display.py  Display/discovery decoder
+|   |-- review_androidauto_display.py  Local capture verification
+|   |-- collect_display_health.py   Read-only process/display/log inventory
+|   |-- collect_trace_snapshot.py   Historical DTS snapshot attempt
+|   |-- collect_trace_tcp.py        Bounded laptop TCP trace baseline
+|   |-- run_phone_trace.py          Passive on-unit logger and USB-handoff workflow
+|   `-- ...                        Analysis, packaging, and offline test utilities
 |-- native/
-|   |-- observer/               Sources, fixtures, build outputs, and release files
-|   |   |-- release/            Library, decoder, manifest, and instructions
-|   |   `-- smoke/              Smoke fixture, local release, and hardware runner support
-|   `-- loader-probe/           Isolated QNX loader experiment and emulator setup
-|-- delphi-analysis/             Findings, disassembly, JSON, and string extracts
-|   |-- control-runtime/        Local hardware verification and runtime analysis
-|   |-- extracted/              Extracted image artifacts
-|   |-- display-hmi-java/       Java HMI analysis
-|   `-- bench/                  Optional bench investigation plan
-|-- delphi-dump/                 Acquired files and per-run collection reports
-|   |-- delphi-inventory.txt    Original inventory transcript
-|   |-- _observer_preflight_*/  Preflight commands, payloads, and summaries
-|   `-- _observer_smoke_*/      Local isolated hardware logs and runtime captures
-`-- .tools/                     Local analysis/build dependencies (Git-ignored)
+|   |-- observer/                  Candidate, fixtures, and diagnostic launch stages
+|   |   |-- release/               Original observer library/decoder/manifest
+|   |   |-- smoke/, path-test/     Isolated hardware stages
+|   |   |-- transaction/, managed-bench/  QNX launch/restoration benches
+|   |   `-- launch/                Real-app/display observer releases (live hold)
+|   |-- trace-reader/              Bounded passive logger, tests, and release
+|   `-- loader-probe/              Isolated QNX loader experiment
+|-- delphi-analysis/
+|   |-- control-runtime/           Hardware reviews, ABI/discovery/trace evidence
+|   |-- extracted/                 Image extraction artifacts
+|   |-- display-hmi-java/          Java HMI analysis
+|   `-- bench/                     Optional bench investigation plan
+|-- delphi-dump/                   Acquisition, observer, health, and trace captures
+|   `-- delphi-inventory.txt       Original inventory transcript
+`-- .tools/                       Local dependencies (Git-ignored)
 ```
 
-This outline includes local work in progress as well as tracked files. Keep acquisition manifests with their payloads. String extracts, disassembly, and decompiled artifacts require interpretation using the associated findings.
+The working tree contains substantial staged and unstaged research/tooling changes. This README update does not commit or publish them; availability in a fresh checkout may differ. Earlier preflight payload directories and the original observer ZIP are absent locally. Preserve acquisition manifests with payloads. Raw discovery contains unit identifiers; configuration, environments, and traces may contain private data.
 
 ## Using the tools
 
@@ -105,60 +111,32 @@ This outline includes local work in progress as well as tracked files. Keep acqu
 Set-Location -LiteralPath '.'
 ```
 
-Read [scripts/USAGE.txt](scripts/USAGE.txt) for general setup and [OBSERVER-PREFLIGHT.txt](scripts/OBSERVER-PREFLIGHT.txt) for the current Python preflight interface. Historical notes mention a PowerShell preflight wrapper; the current entry point is `collect_observer_preflight.py`.
+Read [scripts/USAGE.txt](scripts/USAGE.txt), [OBSERVER-PREFLIGHT.txt](scripts/OBSERVER-PREFLIGHT.txt), and [DISPLAY-HEALTH-DIAGNOSTICS.txt](scripts/DISPLAY-HEALTH-DIAGNOSTICS.txt) for scope and prerequisites. General collectors use Python 3.10+ and the standard library; research/native builds require their documented dependencies. Substitute `python` for `py -3` if needed.
 
-The general collectors use Python 3.10+ and the standard library. Research utilities and native builds have script-specific dependencies; native validation uses prepared Docker/toolchain/emulator images. Substitute `python` for `py -3` if appropriate.
-
-Show collector options without connecting:
+Inspect passive workflow plans without connecting:
 
 ```powershell
-py -3 .\scripts\delphi_inventory.py --help
-py -3 .\scripts\collect_observer_preflight.py --help
+py -3 .\scripts\collect_display_health.py
+py -3 .\scripts\run_phone_trace.py
 ```
 
-For a future read-only supervisor refresh with the documented direct connection established:
+The passive phone-trace runner's opt-in mode stages a bounded RAM-only loopback reader and leaves AndroidAuto running. Its documented handoff starts on Ethernet, waits for `LOGGER READY`, swaps to the phone with the door closed, waits 210 seconds, then reconnects Ethernet for collection. The reader stops at 180 seconds or 16 MiB. A logger-complete result does not establish manual handoff coverage. Review the existing successful baseline before deciding on another capture.
+
+FTP access to DTS named memory objects was rejected on this unit; older snapshot instructions are historical, not a reason to repeat that failed acquisition. TraceServer's enabled text backend on TCP 15361 provides the current trace source. Baseline collectors avoid replacing an existing trace consumer and do not change filters or clear buffers. FTP/Telnet use the documented trusted direct connection and are unencrypted.
+
+For local display-capture review:
 
 ```powershell
-py -3 .\scripts\collect_observer_preflight.py --supervisor-only
+py -3 .\scripts\review_androidauto_display.py .\delphi-dump\_androidauto_observer_20261029_130447_557863fc
 ```
 
-Current full preflight collects fourteen shell commands plus three fresh firmware files; supervisor-only mode collects seven commands without FTP. Each creates a fresh `delphi-dump/_observer_preflight_*` directory. It does not upload files, stop/restart processes, or launch the observer. Process environment is saved locally. The existing supervisor capture has been reviewed for ancestry/configuration; its presence alone does not resolve the control API or restoration procedure.
-
-The general inventory collector defaults to the project's `delphi-dump/`, preserves existing final files, and keeps `_collection_*` reports. The runtime collector's optional `--stage-boot-files` mode creates temporary remote RAM-disk copies; read [RUNTIME-COLLECTION.txt](scripts/RUNTIME-COLLECTION.txt) for that distinct behavior. FTP/Telnet are unencrypted and use the documented trusted direct service connection.
-
-The local smoke runner defaults to a plan without connecting:
-
-```powershell
-py -3 .\scripts\run_observer_smoke.py
-```
-
-Its explicit `--run` mode uploads and executes synthetic tests in a fresh RAM directory, collects logs/runtime copies, and checks stock process identity before/after. It is an active hardware test, unlike read-only preflight. Review `native/observer/smoke/README.txt` and the local release before any rerun; the existing successful capture makes another run unnecessary for documenting this milestone. These runner files are pending outside this README commit.
-
-Offline validation commands:
-
-```powershell
-py -3 -m unittest discover -s .\scripts -p "test_*.py" -v
-.\scripts\test_delphi_observer.ps1
-.\scripts\test_qnx_probe.ps1
-py -3 .\scripts\validate_qnx_probe.py
-```
-
-Python discovery covers matching test modules; separately named research and native checks have their own runners. `inspect_delphi.py` regenerates verification/ELF/string reports from its hard-coded project dump path and selects the first globbed manifest. Confirm the intended acquisition before rerunning it when multiple manifests exist.
-
-Decode a copied observer capture with the script below; the filename is an example, not an existing capture claim:
-
-```powershell
-py -3 .\scripts\decode_delphi_observer.py .\delphi-dump\observer\capture.bin --output .\delphi-dump\observer\capture.json
-```
-
-Inventories, environments, configuration files, and logs may contain private data. Review acquisition artifacts before sharing them.
+Python unit-test discovery remains available with `py -3 -m unittest discover -s .\scripts -p "test_*.py" -v`; native and separately named research tests have their own runners. Saved reports describe wire/ABI, QNX fixture, runner, and shell-completion validation. This README review verifies saved evidence and does not rerun native suites or connect to the vehicle.
 
 ## Next steps
 
-1. Continue offline analysis of the acquired procman/libc binaries to establish the actual supervision/control mechanism and a verified stock restoration procedure.
-2. Reconcile release/readiness metadata and historical instructions with the successful preflight and isolated hardware evidence; review and publish the pending smoke tooling/evidence separately.
-3. Establish a controlled real-application diagnostic launch plan, including original-symbol binding, constructor ordering, timing, and return to stock behavior.
-4. Collect/decode actual registration evidence before changing discovery or requesting cluster video.
-5. Complete receiver lifetime/input contracts, remaining MOST lifecycle analysis, and active geometry/rate/codec corroboration before evaluating secondary phone video and transport integration.
+1. Correlate the completed passive trace with USB, AndroidAuto/AppConnect, visibility/focus, graphics, and user-observed timing. Establish actual phone-interval coverage rather than inferring it from logger duration.
+2. Diagnose the persistent black view and define explicit visual/session recovery criteria. Keep disruptive observer/restart experiments held until the fault is understood and recovery is demonstrated.
+3. Continue offboard endpoint factory/lifecycle work: independent video/input objects, callbacks, decoder/focus/ack state, cleanup, disconnect, and backpressure handling. Verify router slots before emitting new descriptors.
+4. Only after those gates, evaluate phone acceptance and a secondary stream, then geometry/codec and MPEG-TS/MOST compatibility with exclusive writer ownership/restoration.
 
-The isolated hardware observation path now works. The next milestone is verified observation of the real AndroidAuto application; cluster-navigation integration remains future work.
+Registration and outgoing-discovery observation are demonstrated. Reliable visual recovery and a working cluster-navigation integration remain open.

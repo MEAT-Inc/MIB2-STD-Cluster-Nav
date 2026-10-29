@@ -1,0 +1,143 @@
+Display configuration/discovery hardware result and secondary endpoint ABI
+2026-10-29; Delphi MST2_US_VW_P0890D only
+
+HARDWARE CAPTURE PASSED
+Collection: _androidauto_observer_20261029_130447_557863fc
+Reproducible independent review:
+  python scripts/review_androidauto_display.py delphi-dump/_androidauto_observer_20261029_130447_557863fc
+The review reads local files only; it does not connect to the car.
+
+All 14 collected artifact lengths/hashes and 35 successful actions verify.
+Raw logs decode identically to the stored decoded JSON. Controller, app identity,
+registration and display logs agree. Baseline PID 684109 -> observed PID 1228877
+-> fresh stock PID 1306694 under the same manager PID 417823. Restoration passed.
+Nine registrations / zero drops; three display records / zero drops:
+  config at app return address 0x125014;
+  actual discovery at receiver base + 0x761f0;
+  focus at app return address 0x12513c.
+All extra native function offsets match the exact acquired receiver profile.
+Video endpoint 0x001970f0 is the same object in registration, config and focus.
+The library-internal outgoing queue hook is now proven on this actual unit.
+
+The 386-byte outgoing discovery packet advertises services 1..8. Only service 1
+has a video configuration. Services 5 and 6 are audio media sinks, not additional
+video displays. No media display_id/type fields appear. The video configuration
+fields 1,2,3,4,5,6,8 exactly match the seven captured native arguments:
+  1, 2, 0, 0, 160, 0, 10000
+The native codecResolutionToPixels at 0x8da54 maps resolution enum 1 to 800x480.
+No frame-rate enum label is inferred here. This is an OFFERED configuration,
+not proof of the phone's selected codec/start/media stream. Focus call arguments
+are 1,true; this alone is not a captured incoming focus response.
+
+Saved machine review: control-runtime/display-capture-hardware-review.json
+Saved original wire: control-runtime/captured-discovery-main.bin
+The response contains unit identifiers, so avoid posting its raw bytes publicly.
+
+OFFBOARD WIRE PROGRESS
+The real response was used to test a paired descriptor: illustrative video
+service 9 + input service 10, both associated with display 1, video type 1.
+The 430-byte candidate retains all original response bytes in place. It is saved
+as control-runtime/captured-discovery-paired-host-only.bin. It is NEVER loaded or
+advertised by the laptop runner. Neither runtime router slot is proven empty.
+No new endpoint, phone acceptance or secondary stream is claimed.
+
+scripts/android_discovery_wire_fixture.py now has add_cluster_services(), which
+adds the minimal paired input descriptor and rejects collisions, invalid IDs,
+duplicate original IDs, malformed fields and ambiguous video templates.
+The independent byte-walking decoder verifies the appended services and display
+association. Existing six wire tests and three paired-descriptor tests pass.
+The 34 current Android runner/decoder/pair tests pass as well.
+
+External primary reference reviewed for input pairing:
+https://github.com/chopinwong01/mhi2-android-auto-video-vc/blob/main/src/video_sink_hook.c
+Its DHU reference describes an input descriptor associated with each display via
+InputSourceService field 5; the minimal secondary entry has keycodes 23 and 65536.
+That is evidence for the fixture shape, not proof of Delphi phone compatibility.
+The reference's in-object protobuf writes are incompatible with this Delphi ABI.
+Primary media metadata remains absent in the preserved candidate; whether modern
+phone negotiation needs explicit main metadata or another protocol version is
+still unresolved. Do not treat a correctly encoded candidate as acceptance.
+
+SECONDARY ENDPOINT ABI PROGRESS (READ-ONLY STATIC ANALYSIS)
+Reproduce with python scripts/trace_android_endpoint_abi.py. It fingerprints the
+app/receiver, resolves ELF vtable relocations, and writes targeted ARM assembly.
+No acquired instructions are executed by this trace.
+  control-runtime/endpoint-abi-vtables.json
+  control-runtime/endpoint-abi-app.assembly.txt
+  control-runtime/endpoint-abi-receiver.assembly.txt
+
+VideoSink table at receiver VA 0x117350, address point +8 = 0x117358.
+Slots below are relative to the address point, not the ELF table header:
+  00 complete destructor (0x8ef0c)
+  04 deleting destructor (0x8e304)
+  08 channel closed (0x82850)
+  0c may open channel (0x82844)
+  10 channel opened (0x82834)
+  14 MediaSinkBase::routeMessage (0x7e904)
+  18 raw message (0x6e190)
+  1c addDiscoveryInfo (0x8dc90)
+  20 handleSetup (0x8dc34)
+  24 handleCodecConfig (0x8da3c)
+  28 handleDataAvailable (0x8d9e0)
+  2c playbackStart (0x8dad4)
+  30 playbackStop (0x8daec)
+  34 handleMediaConfiguration (0x8dab8)
+  38 handleVideoFocusRequest (0x8db04)
+  3c getNumberOfConfigurations (0x8db34)
+
+App callback table at 0x175d08, address point 0x175d10, ten entries:
+  00/04 complete/deleting destructors 0x125e68 / 0x125ecc
+  08 app method 0x125168; complete semantics not established
+  0c data callback 0x125200
+  10 codec config callback 0x125338
+  14 setup callback 0x125420
+  18 playback start callback 0x1254e4
+  1c playback stop callback 0x1255d0
+  20 media configuration callback 0x1256bc
+  24 focus request callback 0x125778
+The native sink bodies establish these callback slot associations. The callback
+object is eight bytes (vptr + owner pointer at +4), constructed at app 0x125ca0.
+The data callback follows owner+0x18 to the existing decoder and calls the native
+ackFrames(session,1) path when its decoder entry returns zero. Media configuration
+writes owner+0x1c. The focus callback invokes the existing app controller paths.
+Therefore reusing the primary owner/adapter would entangle the main display.
+The secondary needs an independent callback object, decoder state and focus/ack
+state. It cannot safely use a byte copy of the live primary sink or callback.
+
+Native handleSetup accepts codec enum 3; it calls callback slot 0x14, then
+sendConfig(2). Byte +0x30 controls an additional setVideoFocus(1,true) after setup.
+This recovers the behavior of that constructor byte, but a new endpoint's focus
+policy must be independent and tested. Config/ack/focus queues use endpoint
+router+8/channel+5; they must never use the primary's channel/session by accident.
+
+Construction chain:
+- App allocates VideoSink with operator new(0x50).
+- Local constructor 0x12165c(this,id,router,auto-focus-byte) calls MediaSinkBase
+  constructor 0x1215d8, itself calling ProtocolEndpointBase constructor 0x1208fc.
+- Base initializes ready/channel bytes +4/+5 to zero, router +8, widened service
+  ID at +0xc and a byte at +0x10. Media base initializes session +0x18 to -1 and
+  its vector at +0x20; it does not establish every later wrapper setting.
+- Video constructor assigns its native vptr, byte +0x30, empty callback shared
+  pointer at +0x34, config vector at +0x3c, and zero word +0x4c.
+- Main initialization separately attaches callbacks and sets word +0x1c to 4.
+An empty vector includes ABI-specific allocator state; do not assume a byte copy
+of an existing vector or a guessed all-zero foreign C++ object is a constructor.
+The exported VideoSink constructor is absent. A future factory must either use
+the exact profiled native constructor with validated app relocation, or implement
+and verify the whole compatible endpoint/ownership ABI.
+
+GATES STILL REQUIRED BEFORE ADVERTISING A SECOND DISPLAY
+1. Independent video and input endpoint construction, ownership and cleanup;
+   no primary callback alias, stolen shared_ptr or borrowed buffer retention.
+2. Actual unoccupied router slots and successful endpoint registrations before
+   descriptors are emitted; unadvertised IDs alone do not establish this.
+3. Correct setup/start/stop/config/focus/ack handling and input binding per display,
+   tested with failure, disconnect and queue backpressure paths offboard first.
+4. Real phone acceptance under the Delphi version handshake. Outgoing discovery
+   capture does not prove an incoming response or protocol-version negotiation.
+5. Secondary video geometry, decode/encode or compatible stream conversion,
+   MPEG-TS/MOST transport, and exclusive native-map writer ownership/restoration.
+
+No new car capture is requested solely to re-prove discovery. The next work is
+an offboard-tested endpoint factory/lifecycle implementation. A deployable map
+bridge is not ready. The existing observation bundle remains unchanged.

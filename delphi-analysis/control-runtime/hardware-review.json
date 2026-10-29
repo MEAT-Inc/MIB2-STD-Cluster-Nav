@@ -1,0 +1,68 @@
+{
+  "collection": "_observer_smoke_20261029_005129_a1ecf3ce",
+  "verified_artifacts": [
+    {
+      "file": "stock-before.txt",
+      "bytes": 43,
+      "sha256": "65046a9129819af18e6dcb3dc5b198e80fe11176e8b22827a82409d5fc5420a2"
+    },
+    {
+      "file": "baseline.txt",
+      "bytes": 134,
+      "sha256": "fb6a6470679ed4aa48e7e6b25bcb7f86c4b1019fe4a14951b7026e7cca8ad8f9"
+    },
+    {
+      "file": "observed.txt",
+      "bytes": 194,
+      "sha256": "151624a5f33b81f8d21383d9ab6410bc5b81dc9d7033c228e7d61e88b0607f1f"
+    },
+    {
+      "file": "stock-after.txt",
+      "bytes": 43,
+      "sha256": "65046a9129819af18e6dcb3dc5b198e80fe11176e8b22827a82409d5fc5420a2"
+    },
+    {
+      "file": "observer.bin",
+      "bytes": 32896,
+      "sha256": "6a82f7720c40aa876a01daad123a73f5edfa5bbf076bf8b69f5bcf97cdc33fa8"
+    },
+    {
+      "file": "procman.captured",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "libc.so.3.captured",
+      "bytes": 490310,
+      "sha256": "76ff9b07201a77ad231905741b25a97fd722a163c26a7ca0e36f17331bd12e9b"
+    }
+  ],
+  "isolated_hardware_smoke_passed": true,
+  "stock_processes_unchanged": true,
+  "stock_pids": [
+    671823
+  ],
+  "smoke_pid": 1101919,
+  "records": 9,
+  "dropped": 0,
+  "actual_androidauto_interposition_tested": false,
+  "runtimes": {
+    "procman": {
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d",
+      "entry": 1059536,
+      "sections": 0,
+      "needed": [
+        "libsocket.so.3",
+        "libc.so.3"
+      ]
+    },
+    "libc.so.3": {
+      "bytes": 490310,
+      "sha256": "76ff9b07201a77ad231905741b25a97fd722a163c26a7ca0e36f17331bd12e9b",
+      "entry": 234596,
+      "sections": 3,
+      "needed": []
+    }
+  }
+}

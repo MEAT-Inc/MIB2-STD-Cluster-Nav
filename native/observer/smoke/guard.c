@@ -17,6 +17,7 @@ static int valid_directory(const char *path) {
 int main(int argc,char **argv) {
     char childpath[160],library[160],search[180],logpath[160];
     const char *suffix;
+    struct sigaction action;
     pid_t child,waited;
     int status=0,is_timeout;
     unsigned tick,limit;
@@ -29,6 +30,10 @@ int main(int argc,char **argv) {
     snprintf(library,sizeof(library),"%s/libdelphi_observer.so",argv[1]);
     snprintf(search,sizeof(search),"%s:/proc/boot",argv[1]);
     snprintf(logpath,sizeof(logpath),"/dev/shmem/delphi-observer-smoke-%s.bin",suffix);
+    memset(&action,0,sizeof(action));
+    action.sa_handler=SIG_DFL;
+    sigemptyset(&action.sa_mask);
+    if (sigaction(SIGCHLD,&action,0)) return 3;
     fflush(NULL);
     child=fork();
     if (child<0) return 4;

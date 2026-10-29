@@ -1,0 +1,66 @@
+{
+  "stock_processes_unchanged": true,
+  "stock_pids": [
+    99999999
+  ],
+  "native_report": {
+    "armed": 1,
+    "done": 0,
+    "watchdog_finished": 1,
+    "watchdog_removed": 1,
+    "app_runs": 6,
+    "observed_runs": 1,
+    "records": [
+      {
+        "sequence": 1,
+        "pid": 4101,
+        "ppid": 4,
+        "observed": 0,
+        "records": 0,
+        "args_ok": 1
+      },
+      {
+        "sequence": 2,
+        "pid": 12294,
+        "ppid": 4,
+        "observed": 1,
+        "records": 9,
+        "args_ok": 1
+      },
+      {
+        "sequence": 3,
+        "pid": 24582,
+        "ppid": 4,
+        "observed": 0,
+        "records": 0,
+        "args_ok": 1
+      },
+      {
+        "sequence": 4,
+        "pid": 45062,
+        "ppid": 4,
+        "observed": 0,
+        "records": 0,
+        "args_ok": 1
+      },
+      {
+        "sequence": 5,
+        "pid": 69637,
+        "ppid": 4,
+        "observed": 0,
+        "records": 0,
+        "args_ok": 1
+      },
+      {
+        "sequence": 6,
+        "pid": 86021,
+        "ppid": 4,
+        "observed": 0,
+        "records": 0,
+        "args_ok": 1
+      }
+    ]
+  },
+  "scope": "Private-path QNX emulation; stock snapshots above are offline fixtures",
+  "qnx_log_sha256": "689e35fc422f23a6b55165381606f61cca2078a43104040f606c4957e280e59f"
+}

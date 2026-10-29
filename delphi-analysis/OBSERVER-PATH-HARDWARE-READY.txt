@@ -1,0 +1,58 @@
+Private-path hardware test ready; next dependency is vehicle access
+
+Goal: enable the next real AndroidAuto registration capture, which is needed to
+inspect display-service negotiation before attempting cluster map video.
+
+Offline work completed:
+- native/observer/path-test tests the one-shot pathname redirect with only private
+  /ramdisk/delphi-path-test_<uuid>/path_child targets. Its strict path parser rejects
+  factory paths. It never signals AndroidAuto or procman.
+- Exact candidate files passed QNX 6.5 ARM emulation: baseline, observed launch,
+  normal restore, injected failure after detach, failure before detach and orphan
+  installer watchdog recovery. Six launches succeeded and the observed launch
+  recorded nine calls with zero drops. An invalid factory target was rejected.
+- report.bin (208 bytes) and observer.bin were exported from emulation and parsed
+  by the same Python assessor used by the laptop routine. Process identity,
+  arguments, watchdog restoration and log records cross-check successfully.
+- The final emulator uses private existing IFS executable paths and /dev/shmem
+  reports. A block-backed writable RAM filesystem is not required for this API
+  test. Real /ramdisk behavior remains the intended hardware gate.
+- scripts/run_observer_path_test.py is Python standard-library only; default is
+  offline plan. --run stages five hash-verified files in a fresh private RAM folder,
+  runs the bounded native suite, checks unchanged stock PID/argv and collects five
+  evidence files under common delphi-dump/_observer_path_*.
+- Native report storage is /dev/shmem/delphi-path-report-<uuid>.bin; its copy in the
+  private directory is collected as report.bin. Observer storage uses its own
+  /dev/shmem/delphi-observer-path-<uuid>.bin, collected as observer.bin.
+- Fourteen new runner tests, nine shared smoke-helper tests and six existing
+  manager-evidence tests pass (29 total). An independent agent reviewed the native
+  contract, runner scope and final portable package.
+- The portable ZIP has exactly 11 intended files, with no captured proprietary
+  programs, emulator runner, filesystem setup utilities or PowerShell scripts.
+  Extracted default plan returns 0 without connecting or creating delphi-dump.
+
+Focused actual-AndroidAuto launch review:
+- AndroidAuto hash da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271.
+- getopt string at 0x167e70 includes X:. X handler 0x105778..0x1057fc conditionally
+  logs optarg as text (format 0x167dd0); no crash-recovery action was seen there.
+- Neither AndroidAuto nor the acquired receiver has direct imports/strings for
+  readlink, realpath, chdir, dlopen, dlsym, /proc/ or exefile in the focused review.
+- ELF inspection confirms no DT_RPATH or DT_RUNPATH in these two files. App uses
+  /usr/lib/ldqnx.so.2 and the receiver dependency name libautoreceiver.so.1.
+- App resources include absolute /extbin/apps/bmp/, /tmp/, /home/root/, /dev/urandom
+  and /dev/fs0 paths. Preserve inherited working directory and environment in the
+  eventual wrapper; this is not a complete indirect dependency audit.
+- No signal/sigaction/sigwait direct imports were found in the two selected files.
+  This does not prove absence of handlers installed by dependencies. SIGINT is not
+  established as a graceful AndroidAuto shutdown.
+
+Next user action:
+Keep Ethernet connected with phone unplugged, vehicle parked, unit powered.
+Extract native/observer/path-test/observer-path-test-laptop.zip into the laptop
+project folder and run from that project root:
+  python scripts/run_observer_path_test.py --run
+Return the full new delphi-dump/_observer_path_* folder for review.
+
+This test establishes only the real unit's private pathname/observer mechanics.
+Factory AndroidAuto interposition, secondary video and a map in the cluster are
+still unproven. Actual factory-app launcher remains gated on the returned evidence.
