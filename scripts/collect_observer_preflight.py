@@ -1,5 +1,6 @@
 """Fresh, read-only vehicle preflight for the Delphi observer. Python stdlib only."""
 import argparse
+import codecs
 import datetime as dt
 import ftplib
 import getpass
@@ -29,7 +30,8 @@ def normalize(data):
     return data.replace(b'\r\x00', b'\n').replace(b'\r', b'\n')
 
 def has_android_process(data):
-    return bool(re.search(rb'(?m)^\s*\d+\s+[^\n]*\bAndroidAuto\b', normalize(data)))
+    rows = re.finditer(rb'(?m)^[ \t]*\d+[ \t]+(\S+)', normalize(data))
+    return any(row.group(1).rsplit(b'/', 1)[-1] == b'AndroidAuto' for row in rows)
 
 def receiver_mapping(data):
     """pidin uses a fixed-width name field; require a long, unique suffix."""
@@ -54,7 +56,12 @@ SUPERVISOR_COMMANDS = (
     ('android-maps', 'pidin -p AndroidAuto mapinfo'),
 )
 
-def inventory(a, run, commands=COMMANDS):
+# Full runs include launch-policy evidence; the targeted mode skips firmware FTP.
+DEFAULT_COMMANDS = COMMANDS + tuple(
+    item for item in SUPERVISOR_COMMANDS if item[0] not in {name for name, _ in COMMANDS})
+
+
+def inventory(a, run, commands=DEFAULT_COMMANDS):
     rows = []
     responses = {}
     prompts = [('login', re.compile(rb'(?i)(?:login|username):\s*$')),
@@ -78,11 +85,16 @@ def inventory(a, run, commands=COMMANDS):
                 with path.open('x', encoding='utf-8') as out:
                     out.write('COMMAND ' + command + '\n')
                     out.flush()
+                    decoder = codecs.getincrementaldecoder('utf-8')(errors='replace')
                     def save(chunk):
-                        out.write(normalize(chunk).decode('utf-8', errors='replace'))
+                        out.write(decoder.decode(chunk))
                         out.flush()
-                    reader.send(command + '; echo ' + marker + ':$?:END')
-                    _, response = reader.read_until([('done', done)], on_data=save)
+                    try:
+                        reader.send(command + '; echo ' + marker + ':$?:END')
+                        _, response = reader.read_until([('done', done)], on_data=save)
+                    finally:
+                        out.write(decoder.decode(b'', final=True))
+                        out.flush()
                 code = int(done.search(response).group(1))
                 responses[name] = response
                 rows.append(dict(command=command, file=path.name, exit_code=code))
@@ -94,6 +106,8 @@ def inventory(a, run, commands=COMMANDS):
 def download(a, password, remote, run, expected):
     path = run / remote.lstrip('/')
     path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists():
+        return dict(remote=remote, error='Fresh destination already exists; not overwritten', matches_expected=False)
     partial = path.with_name(path.name + '.partial')
     last_error = None
     for attempt in range(2):
@@ -135,8 +149,18 @@ def main(argv=None):
     if not 0 < a.timeout <= 120 or not 1 <= a.port <= 65535 or not 1 <= a.telnet_port <= 65535:
         parser.error('Invalid timeout/port')
     root = Path(__file__).resolve().parents[1]
-    manifest = json.loads((root / 'native/observer/release/manifest.json').read_text())
-    expected = manifest['expected_target_sha256']
+    expected = {}
+    if not a.supervisor_only:
+        manifest_path = root / 'native/observer/release/manifest.json'
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+            expected = manifest['expected_target_sha256']
+            for name in ('AndroidAuto', 'libautoreceiver.so'):
+                if not isinstance(expected[name], str) or not re.fullmatch(r'[0-9a-f]{64}', expected[name]):
+                    raise ValueError('Invalid SHA256 for ' + name)
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            parser.error('Full preflight needs a valid native/observer/release/manifest.json; '
+                         'copy that file with the project or use --supervisor-only. ' + str(exc))
     # Existing collector guards against symlink/reparse-point output roots.
     base = root / 'delphi-dump'
     d.reject_link(base)
@@ -145,7 +169,7 @@ def main(argv=None):
     run.mkdir()
     print('Saving fresh acquisition to ' + str(run), flush=True)
     password = getpass.getpass('FTP password: ') if a.ask_password and not a.supervisor_only else 'ftpuser'
-    commands = SUPERVISOR_COMMANDS if a.supervisor_only else COMMANDS
+    commands = SUPERVISOR_COMMANDS if a.supervisor_only else DEFAULT_COMMANDS
     rows, responses = inventory(a, run, commands)
     files = []
     for remote in (() if a.supervisor_only else FILES):
@@ -159,7 +183,7 @@ def main(argv=None):
     hashes_match = bool(files) and all(f['matches_expected'] for f in files)
     ready = commands_ok and active and mapped and (a.supervisor_only or hashes_match)
     summary = dict(acquired_utc=dt.datetime.now(dt.timezone.utc).isoformat(), read_only=True,
-        mode='supervisor' if a.supervisor_only else 'preflight', commands=rows, files=files, fresh_hashes_verified=hashes_match, receiver_mapping=mapping, all_commands_ok=commands_ok, android_process_found=active,
+        mode='supervisor' if a.supervisor_only else 'preflight', supervisor_capture_included=True, commands=rows, files=files, fresh_hashes_verified=hashes_match, receiver_mapping=mapping, all_commands_ok=commands_ok, android_process_found=active,
         receiver_in_mapinfo=mapped, ready_for_review=ready, deployment_authorized=False)
     (run / 'preflight-summary.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')
     print('Firmware hashes: ' + ('not recollected (supervisor-only)' if a.supervisor_only else 'MATCH' if hashes_match else 'MISMATCH / INCOMPLETE'))
