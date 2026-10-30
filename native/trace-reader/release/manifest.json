@@ -45,7 +45,8 @@
   "source_sha256": "2cc688e20fd1ae12c8525dbe019db361e5060e4efc2928dfa655b979d26bd2ed",
   "host_loopback_tested": true,
   "qnx_loader_root_refusal_tested": true,
-  "qnx_network_runtime_tested": false,
-  "actual_unit_reader_tested": false,
+  "qnx_network_emulation_tested": false,
+  "qnx_network_runtime_tested": true,
+  "actual_unit_reader_tested": true,
   "androidauto_restart": false
 }

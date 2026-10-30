@@ -40,16 +40,32 @@ def assess_report(data,raw,pid):
     logger_completed=int(rc)==0 and int(error)==0 and size>0 and reason in (b'duration',b'byte_limit')
     complete=logger_completed and reason==b'duration'
     return dict(bytes=size,elapsed_ms=elapsed,reason=reason.decode(),native_error=int(error),logger_completed=logger_completed,capture_complete=complete)
+def door_step(report,started):
+    answer=input('With the phone connected, is Android Auto displaying normally now? [y/n/u]: ').strip().lower()
+    report['phone_normal_before_door']=answer
+    if answer!='y':report['door_action_skipped']='phone_view_not_confirmed_normal';return
+    if time.monotonic()-started>90:report['door_action_skipped']='not_enough_capture_time';return
+    print('Keep the vehicle parked and ignition on. Waiting 30 seconds before the door action.',flush=True)
+    time.sleep(30)
+    if time.monotonic()-started>120:report['door_action_skipped']='not_enough_capture_time';return
+    input('Now open and close the driver door ONCE, then press Enter immediately: ')
+    elapsed=round(time.monotonic()-started,3)
+    report['door_action_host_elapsed_seconds']=elapsed
+    report['door_action_host_utc']=dt.datetime.now(dt.timezone.utc).isoformat()
+    report['door_action_within_planned_window']=elapsed<=120
+    print('Observe whether Android Auto goes black and returns. Keep the phone connected until collection time; do not reboot just to restore the view before collecting.',flush=True)
+
 def main(argv=None):
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--run',action='store_true');p.add_argument('--host',default='192.168.1.4');p.add_argument('--port',type=int,default=21);p.add_argument('--username',default='ftpuser');p.add_argument('--ask-password',action='store_true');p.add_argument('--telnet-port',type=int,default=23);p.add_argument('--telnet-user',default='root');p.add_argument('--timeout',type=float,default=20);a=p.parse_args(argv)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--run',action='store_true');p.add_argument('--scenario',choices=('baseline','door'),default='baseline');p.add_argument('--ignition',choices=('on','off','unknown'),default='unknown');p.add_argument('--host',default='192.168.1.4');p.add_argument('--port',type=int,default=21);p.add_argument('--username',default='ftpuser');p.add_argument('--ask-password',action='store_true');p.add_argument('--telnet-port',type=int,default=23);p.add_argument('--telnet-user',default='root');p.add_argument('--timeout',type=float,default=20);a=p.parse_args(argv)
     if not 1<=a.port<=65535 or not 1<=a.telnet_port<=65535 or not 0<a.timeout<=60:p.error('Invalid port or timeout')
+    if a.scenario=='door' and a.ignition!='on':p.error('Door scenario requires --ignition on; keep the vehicle parked')
     print('Passive loopback logger only: 180 seconds / 16 MiB. No AndroidAuto restart, observer or logging configuration change.')
     if not a.run:print('Plan only. Add --run; Ethernet stage -> phone for 210 seconds -> Ethernet collection.');return 0
     blob=package(ROOT/'native/trace-reader/release');base=ROOT/'delphi-dump'
     for parent in (base,*base.parents):d.reject_link(parent)
     base.mkdir(exist_ok=True);token=uuid.uuid4().hex;remote=valid_remote(PREFIX+token);folder=base/('_phone_trace_'+dt.datetime.now(dt.timezone.utc).strftime('%Y%m%d_%H%M%S')+'_'+token[:8]);folder.mkdir()
     password=getpass.getpass('FTP password: ') if a.ask_password else 'ftpuser'
-    report=dict(kind='passive_phone_trace',remote_directory=remote,reader_sha256=sha(blob),capture_complete=False,phone_interval_verified=False,phone_interval_coverage='unverified_manual_usb_handoff',display_recovery_verified=False,actions=[],artifacts=[])
+    report=dict(kind='passive_phone_trace',scenario=a.scenario,ignition=a.ignition,remote_directory=remote,reader_sha256=sha(blob),capture_complete=False,phone_interval_verified=False,phone_interval_coverage='unverified_manual_usb_handoff',display_recovery_verified=False,actions=[],artifacts=[])
     shell=None;cwd=False;namespace=False;history=[];blobs={};reader_pid=None
     def persist():(folder/'phone-trace-summary.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     def fetch(name,limit=16777216):
@@ -90,14 +106,19 @@ def main(argv=None):
         report.update(reader_pid=reader_pid,phone_handoff_ready=True,logger_ready_host_utc=dt.datetime.now(dt.timezone.utc).isoformat())
         (folder/'reader-ready.txt').write_bytes(first);report['artifacts'].append(dict(file='reader-ready.txt',bytes=len(first),sha256=sha(first)))
         history.extend(shell.actions);report['actions']=history.copy();persist();shell.close();shell=None;cwd=False
-        print('LOGGER READY: swap Ethernet for the phone now. Open Android Auto navigation. Keep the driver door closed for this baseline.',flush=True)
+        print('LOGGER READY: swap Ethernet for the phone now. Open Android Auto navigation.',flush=True)
+        if a.scenario=='baseline':print('Keep the driver door CLOSED for this baseline.',flush=True)
         print('Leave the phone connected for 210 seconds. The logger stops itself; AndroidAuto is never restarted.',flush=True)
         handoff_started=time.monotonic()
-        input('After 210 seconds, reconnect Ethernet, wait for its link, and press Enter: ')
+        if a.scenario=='door':door_step(report,handoff_started);persist()
+        input('After at least 210 seconds TOTAL since LOGGER READY, reconnect Ethernet, wait for its link, and press Enter: ')
         report['host_handoff_elapsed_seconds']=round(time.monotonic()-handoff_started,3)
         answer=input('Before unplugging the phone, was Android Auto displaying normally? [y/n/u]: ').strip().lower()
         report['phone_view_observation']={'y':'normal','n':'black','u':'unknown'}.get(answer,'unknown')
         report['door_opened']=input('Did the driver door open during that interval? [y/n/u]: ').strip().lower()
+        if a.scenario=='door':
+            report['black_after_door']=input('Did Android Auto go black after the door action? [y/n/u]: ').strip().lower()
+            report['recovered_without_reboot']=input('If it went black, did it return without a head-unit reboot? [y/n/u]: ').strip().lower()
         collection=folder/'collection-session';collection.mkdir();shell=Shell(a,collection);shell.command('cd '+shlex.quote(remote));cwd=True
     except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as exc:report['error']=(type(exc).__name__+': '+str(exc)).replace(password,'[redacted]') if password else str(exc)
     finally:

@@ -1,4 +1,8 @@
 {
+  "user_reported_door_black": null,
+  "user_reported_recovery": null,
+  "door_action_host_elapsed_seconds": null,
+  "door_action_in_window": null,
   "collection": "_phone_trace_20261029_210643_a37ee951",
   "verified_artifacts": 10,
   "successful_actions": 18,

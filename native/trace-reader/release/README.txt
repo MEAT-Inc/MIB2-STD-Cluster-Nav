@@ -1,61 +1,50 @@
-Passive phone-session trace baseline (AndroidAuto is never restarted)
+PASSIVE DOOR-EVENT TEST: stock AndroidAuto, no restart or instrumentation
+
+The closed-door baseline passed on this unit: 180 seconds/7692296 bytes, stock
+PID684110 unchanged, video startup/playback captured and user observed normal AA.
+The next test compares one driver-door action with the SAME passive logger.
 
 Extract passive-phone-trace-laptop.zip into the laptop project root, overwriting
-included Python scripts. Park and keep infotainment powered. Start on Ethernet,
-phone unplugged:
+the included files. Keep the vehicle parked, ignition ON as in the reported fault,
+head unit powered, Ethernet attached and phone unplugged. Run:
+  python scripts/run_phone_trace.py --run --scenario door --ignition on
+
+1. Only at LOGGER READY swap Ethernet for the phone and open AA navigation.
+2. The laptop asks if AA is displaying normally NOW. Enter y only if it is.
+   If not, the door action is skipped and the routine still collects the trace.
+3. The routine waits 30 seconds, then prompts you to open and close the driver
+   door ONCE and immediately press Enter. It skips the action if too little
+   capture time remains. If prompted, do the action then, not earlier.
+4. Observe whether AA goes black and returns. If the VW menus still work, leave
+   the unit on so the trace can be collected before any head-unit reboot.
+5. Wait until at least210 seconds TOTAL since LOGGER READY. Reconnect Ethernet,
+   press Enter, and answer the screen/door/recovery questions honestly (u=unknown).
+Return the entire new delphi-dump/_phone_trace_* folder, including partial results.
+If no LOGGER READY appears, leave Ethernet connected and return that folder.
+
+The reader receives existing TraceServer text from 127.0.0.1:15361 and writes only
+new files in a fresh private /ramdisk directory. It exits after180 seconds,16MiB,
+closure or error. It does not signal, hook, redirect, stop or restart AndroidAuto,
+change filters/USB/settings, or edit factory files. Logger hangup survival, local
+loopback networking and bounded capture have now passed on this actual unit.
+A logger-only fork may detach from ksh job control before sockets/files exist;
+that fork never concerns another process. RAM output stays until a unit reboot.
+
+The collector checks stock AA PID before/after and records your observations
+separately. If a PID changes during this door test, that is evidence to review;
+it is never automatically retried or repaired by sending a signal. Transfer
+failures preserve .partial bytes. Early buffer-cap stops, malformed final reports,
+short host waits and transfer errors cannot pass the full-window capture gate.
+Manual event timing is approximate; logs and your observation must be correlated.
+Receiving a complete trace does not by itself prove display recovery or cluster
+maps. The original disruptive/restart observer remains disabled.
+
+Baseline mode, only if specifically needed:
   python scripts/run_phone_trace.py --run
-Only at LOGGER READY, replace Ethernet with the phone and open Android Auto
-navigation. Leave the driver door CLOSED for this first stock-session baseline.
-Wait 210 seconds with the phone connected, then reconnect Ethernet and press
-Enter. Answer whether Android Auto was displaying normally immediately before
-unplugging, and whether the driver door opened during the interval.
-Return the entire new delphi-dump/_phone_trace_* directory, even if partial.
+It keeps the door closed. Do not use baseline mode for the requested door test.
 
-This routine uploads one hash-verified small reader to a unique private RAM
-folder, checks stock AndroidAuto arguments/PID, maps and existing trace-client
-state, then runs only the reader. The reader connects to the existing configured
-TraceServer text port via 127.0.0.1:15361. It sends no application commands and
-never attaches to an AndroidAuto process or changes a logging filter. No factory
-files, shared-memory objects, startup configuration or USB settings are edited.
-Its only output files are under its fresh /ramdisk/delphi-trace-reader_<uuid>.
-
-The logger ignores terminal hangup in its own session. If launched as a shell
-job-group leader it forks only its own logger child before opening files/sockets;
-this permits session detachment without changing another process. It stops itself after
-180 seconds or 16MiB, peer closure or error. It does NOT stop or restart Android
-Auto. Remaining RAM files disappear with a head-unit reboot; they are not erased
-by the collector. Before/after AndroidAuto PID equality is checked and reported.
-A changed PID, malformed final report, wrong raw-byte count, short handoff wait
-or collection failure cannot be called a complete capture. Early byte-limit stops
-are reported separately and cannot pass the full180-second-window gate. Interrupted
-FTP downloads are retained locally as .partial files. Manual USB handoff means
-phone-interval coverage is explicitly unverified until the trace is examined. A successful trace does not verify display
-recovery or mean cluster maps work. Your physical display observation is recorded
-separately. No automatic retry or kill is sent after errors.
-
-If no timely reader readiness is obtained, do not swap USB. Keep the result
-folder. Missing readiness, empty/early-closed capture or a failed reconnection
-are partial outcomes, not proof of a head-unit failure. Stock AndroidAuto is never
-interrupted by this routine, including failure paths. The separate restart
-observer routine remains disabled while black-view recovery is investigated.
-
-Validation scope: same C source passed Linux real-loopback tests for exact
-production16MiB bound, bytes, EOF/empty/refused connection, short duration, hangup
-survival and existing-output refusal. The production ARM executable passed QNX
-loader/import and invalid-root refusal tests. Networking on the real QNX unit
-has NOT yet been proven for this new reader; this is the first isolated reader
-test. QNX networking execution was not emulated. No proprietary binaries or test
-providers are in the ZIP. The laptop scripts use only Python's standard library.
-
-Launcher correction after _phone_trace_20261029_205440_f6999121:
-The old Python launch line ended with bare &, and Shell.command appended a
-semicolon plus completion marker, yielding invalid &; syntax. QNX ksh rejected
-that line; the reader did not reach startup and no phone handoff occurred.
-The launch now ends with & delphi_trace_job=$!, so the completion marker is a
-valid following statement. The exact wire generated by actual Shell.command
-passed QNX ksh parse-only testing; the old wire was rejected as a negative
-control. Shell.command now rejects bare-background commands before sending them
-and fails immediately on a reported shell syntax error instead of timing out.
-Native reader bytes are unchanged. First real-unit networking validation for
-this reader remains pending; do not infer a new head-unit fault from the failed
-launcher attempt. Return partial results if LOGGER READY does not appear.
+Validation: seven real-loopback host cases, QNX loader/root refusal and exact
+QNX ksh positive/negative launch-wire checks pass. The same native reader SHA256
+is confirmed by the successful unit capture. Thirteen Python workflow tests and
+the portable standard-library-only baseline/door plans pass. No acquired binaries
+or emulator fixtures are distributed. The native reader is unchanged for this test.

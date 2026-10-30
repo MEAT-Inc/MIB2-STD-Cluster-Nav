@@ -1,0 +1,149 @@
+{
+  "kind": "disconnected_observer_control_trial",
+  "protocol_version": 3,
+  "files": {
+    "observer_launch": {
+      "bytes": 20939,
+      "sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae",
+      "needed": [
+        "libc.so.3"
+      ],
+      "imports": [
+        "__get_errno_ptr",
+        "_exit",
+        "_fini_array",
+        "_init_array",
+        "_init_libc",
+        "_preinit_array",
+        "atexit",
+        "close",
+        "closedir",
+        "devctl",
+        "execv",
+        "exit",
+        "fflush",
+        "fork",
+        "free",
+        "fstat",
+        "ftruncate",
+        "getenv",
+        "getpid",
+        "getppid",
+        "kill",
+        "lstat",
+        "malloc",
+        "memchr",
+        "memcmp",
+        "memcpy",
+        "memset",
+        "mmap",
+        "nanosleep",
+        "open",
+        "opendir",
+        "pathmgr_symlink",
+        "pathmgr_unlink",
+        "printf",
+        "puts",
+        "read",
+        "readdir",
+        "readlink",
+        "setenv",
+        "setsid",
+        "sigaction",
+        "sigemptyset",
+        "snprintf",
+        "stat",
+        "strcmp",
+        "strcpy",
+        "strlen",
+        "strncmp",
+        "strstr",
+        "strtol",
+        "unlink",
+        "waitpid",
+        "write"
+      ]
+    },
+    "libdelphi_observer.so": {
+      "bytes": 8561,
+      "sha256": "cc425ccdc1a889caa2b4128a0a55f07cc8b26679065d7e293b274b80e83ad70c",
+      "needed": [
+        "libc.so.3"
+      ],
+      "imports": [
+        "__get_errno_ptr",
+        "_exit",
+        "close",
+        "dladdr",
+        "dlsym",
+        "ftruncate",
+        "getenv",
+        "getpid",
+        "memcpy",
+        "memset",
+        "mmap",
+        "open",
+        "pthread_self",
+        "snprintf",
+        "strcmp",
+        "strncmp",
+        "strrchr",
+        "write"
+      ]
+    }
+  },
+  "hardware_tested": true,
+  "hardware_validation_scope": "disconnected_20s_control_only",
+  "hardware_review_sha256": "6247eee1b7c32cf0ab82bfeedd026477026eb84568f8e4def41ed183a4aaef3e",
+  "capture_seconds": 20,
+  "capture_profiles": [
+    20,
+    60
+  ],
+  "phone_trial_enabled": true,
+  "phone_session_hardware_tested": false,
+  "expiry_signals_observed": false,
+  "cleanup_requires_explicit_disconnected_command": true,
+  "qnx_synthetic_lifecycle_passed": true,
+  "native_states": {
+    "DISCONNECT_PENDING": {
+      "phase": 4,
+      "observed_pid": 12293,
+      "restored_pid": 0,
+      "capture_seconds": 20,
+      "cleanup_authorized": 0,
+      "sha256": "e4f4fac45d6cdb65c8989d5b541d636709bc6e6f0fdc4a937b2650f4faf80dd0"
+    },
+    "DISCONNECT_FINAL": {
+      "phase": 6,
+      "observed_pid": 12293,
+      "restored_pid": 57349,
+      "capture_seconds": 20,
+      "cleanup_authorized": 1,
+      "sha256": "26e3a066309d83258f06cf84844097a8bf907b9d788ea1555425ba8f4d02f8b3"
+    },
+    "DISCONNECT_ORPHAN_PENDING": {
+      "phase": 4,
+      "observed_pid": 77829,
+      "restored_pid": 0,
+      "capture_seconds": 60,
+      "cleanup_authorized": 0,
+      "sha256": "09146ef2a77d0025a5f0992c469686a47b68a5e15b21ab0105882319a56e10a6"
+    },
+    "DISCONNECT_ORPHAN_FINAL": {
+      "phase": 6,
+      "observed_pid": 77829,
+      "restored_pid": 98309,
+      "capture_seconds": 60,
+      "cleanup_authorized": 1,
+      "sha256": "d723ce7d1da2c5d675c776b89ba377d17927a5292689fe773fe60ca76c7a4a80"
+    }
+  },
+  "scripts_sha256": {
+    "run_disconnected_observer.py": "7252a15afc98a36964ce340e5bae0678e55ec80dc7c2d9e356ddb1224ad84880",
+    "run_androidauto_observer.py": "510b9c77301b158f95ec55997e1c9882d11050780c0f1005d4aa32faecf57a0b",
+    "run_observer_smoke.py": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5",
+    "delphi_inventory.py": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25",
+    "decode_delphi_observer.py": "113906aee942b7245360806fcddb643b95210df976f23ce7f97cf3006264e13b"
+  }
+}

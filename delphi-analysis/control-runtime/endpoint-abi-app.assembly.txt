@@ -1,4 +1,46 @@
 
+FUNCTION Callback_shared_release @ 0x11c354 size 0xa0
+0011c354 str      lr, [sp, #-4]!                             
+0011c358 sub      sp, sp, #0xc                               
+0011c35c str      r0, [sp, #4]                               
+0011c360 ldr      r3, [sp, #4]                               
+0011c364 ldr      r3, [r3]                                   
+0011c368 mov      r0, r3                                     
+0011c36c mov      r1, #1                                     
+0011c370 bl       #0x104920                                   atomic_sub_value [PLT]
+0011c374 mov      r3, r0                                     
+0011c378 cmp      r3, #1                                     
+0011c37c movne    r3, #0                                     
+0011c380 moveq    r3, #1                                     
+0011c384 uxtb     r3, r3                                     
+0011c388 cmp      r3, #0                                     
+0011c38c beq      #0x11c3ec                                  
+0011c390 ldr      r3, [sp, #4]                               
+0011c394 ldr      r3, [r3, #4]                               
+0011c398 cmp      r3, #0                                     
+0011c39c beq      #0x11c3c4                                  
+0011c3a0 ldr      r3, [sp, #4]                               
+0011c3a4 ldr      r3, [r3, #4]                               
+0011c3a8 ldr      r3, [r3]                                   
+0011c3ac add      r3, r3, #4                                 
+0011c3b0 ldr      r3, [r3]                                   
+0011c3b4 ldr      r2, [sp, #4]                               
+0011c3b8 ldr      r2, [r2, #4]                               
+0011c3bc mov      r0, r2                                     
+0011c3c0 blx      r3                                         
+0011c3c4 ldr      r3, [sp, #4]                               
+0011c3c8 mov      r2, #0                                     
+0011c3cc str      r2, [r3, #4]                               
+0011c3d0 ldr      r3, [sp, #4]                               
+0011c3d4 ldr      r3, [r3]                                   
+0011c3d8 mov      r0, r3                                     
+0011c3dc bl       #0x104a40                                   _ZdlPv [PLT]
+0011c3e0 ldr      r3, [sp, #4]                               
+0011c3e4 mov      r2, #0                                     
+0011c3e8 str      r2, [r3]                                   
+0011c3ec add      sp, sp, #0xc                               
+0011c3f0 ldm      sp!, {pc}                                  
+
 FUNCTION ProtocolEndpointBase_local_constructor @ 0x1208fc size 0x88
 001208fc sub      sp, sp, #0x10                              
 00120900 ldr      ip, [pc, #0x74]                            
@@ -112,7 +154,27 @@ FUNCTION VideoSink_local_constructor @ 0x12165c size 0xa0
 001216f4 andeq    r4, r5, r0, asr #21                        
 001216f8 andeq    r0, r0, r0, asr #8                         
 
-FUNCTION VideoSink_allocation_wrapper @ 0x12174c size 0xc0
+FUNCTION VideoSink_owner_wrapper @ 0x1216fc size 0xec
+001216fc push     {r4, r5, r6, lr}                           
+00121700 sub      sp, sp, #0x10                              
+00121704 str      r0, [sp, #0xc]                             
+00121708 str      r1, [sp, #8]                               
+0012170c str      r3, [sp]                                   
+00121710 mov      r3, r2                                     
+00121714 strb     r3, [sp, #7]                               
+00121718 ldr      r3, [sp, #0xc]                             
+0012171c mov      r0, r3                                     
+00121720 ldr      r1, [sp, #8]                               
+00121724 bl       #0x1223e0                                   
+00121728 ldr      r3, [sp, #0xc]                             
+0012172c add      r5, r3, #8                                 
+00121730 ldr      r0, [sp, #8]                               
+00121734 bl       #0x122708                                   
+00121738 mov      r3, r0                                     
+0012173c mov      r0, r3                                     
+00121740 bl       #0x120d84                                   
+00121744 mov      r3, r0                                     
+00121748 mov      r6, r3                                     
 0012174c mov      r0, #0x50                                  
 00121750 bl       #0x10513c                                   _Znwj [PLT]
 00121754 mov      r3, r0                                     
@@ -152,15 +214,111 @@ FUNCTION VideoSink_allocation_wrapper @ 0x12174c size 0xc0
 001217dc mov      r0, r3                                     
 001217e0 add      sp, sp, #0x10                              
 001217e4 pop      {r4, r5, r6, pc}                           
-001217e8 push     {r4, lr}                                   
-001217ec sub      sp, sp, #0x10                              
-001217f0 ldr      r4, [pc, #0x6c]                            
-001217f4 add      r4, pc, r4                                 
-001217f8 str      r0, [sp, #0xc]                             
-001217fc mov      r3, r1                                     
-00121800 str      r2, [sp, #4]                               
-00121804 strb     r3, [sp, #0xb]                             
-00121808 ldr      r2, [sp, #0xc]                             
+
+FUNCTION InputSource_constructor @ 0x121ab0 size 0xc0
+00121ab0 push     {r4, lr}                                   
+00121ab4 sub      sp, sp, #0x10                              
+00121ab8 ldr      r4, [pc, #0xa8]                            
+00121abc add      r4, pc, r4                                 
+00121ac0 str      r0, [sp, #0xc]                             
+00121ac4 mov      r3, r1                                     
+00121ac8 str      r2, [sp, #4]                               
+00121acc strb     r3, [sp, #0xb]                             
+00121ad0 ldr      r2, [sp, #0xc]                             
+00121ad4 ldrb     r3, [sp, #0xb]                             
+00121ad8 mov      r0, r2                                     
+00121adc mov      r1, r3                                     
+00121ae0 ldr      r2, [sp, #4]                               
+00121ae4 mov      r3, #0                                     
+00121ae8 bl       #0x1208fc                                   
+00121aec ldr      r2, [sp, #0xc]                             
+00121af0 ldr      r3, [pc, #0x74]                            
+00121af4 ldr      r3, [r4, r3]                               
+00121af8 add      r3, r3, #8                                 
+00121afc str      r3, [r2]                                   
+00121b00 ldr      r3, [sp, #0xc]                             
+00121b04 mov      r2, #0                                     
+00121b08 strb     r2, [r3, #0x11]                            
+00121b0c ldr      r3, [sp, #0xc]                             
+00121b10 mov      r2, #0                                     
+00121b14 strb     r2, [r3, #0x20]                            
+00121b18 ldr      r3, [sp, #0xc]                             
+00121b1c add      r3, r3, #0x38                              
+00121b20 mov      r0, r3                                     
+00121b24 bl       #0x122858                                   
+00121b28 ldr      r3, [sp, #0xc]                             
+00121b2c add      r3, r3, #0x44                              
+00121b30 mov      r0, r3                                     
+00121b34 bl       #0x122858                                   
+00121b38 ldr      r3, [sp, #0xc]                             
+00121b3c add      r3, r3, #0x50                              
+00121b40 mov      r0, r3                                     
+00121b44 bl       #0x12289c                                   
+00121b48 ldr      r3, [sp, #0xc]                             
+00121b4c add      r3, r3, #0x5c                              
+00121b50 mov      r0, r3                                     
+00121b54 bl       #0x1228e0                                   
+00121b58 ldr      r3, [sp, #0xc]                             
+00121b5c mov      r0, r3                                     
+00121b60 add      sp, sp, #0x10                              
+00121b64 pop      {r4, pc}                                   
+00121b68 andeq    r4, r5, ip, ror #12                        
+00121b6c strdeq   r0, r1, [r0], -ip                          
+
+FUNCTION InputSource_owner_wrapper @ 0x121b70 size 0xd4
+00121b70 push     {r4, r5, r6, lr}                           
+00121b74 sub      sp, sp, #0x10                              
+00121b78 str      r0, [sp, #0xc]                             
+00121b7c str      r1, [sp, #8]                               
+00121b80 str      r3, [sp]                                   
+00121b84 mov      r3, r2                                     
+00121b88 strb     r3, [sp, #7]                               
+00121b8c ldr      r3, [sp, #0xc]                             
+00121b90 mov      r0, r3                                     
+00121b94 ldr      r1, [sp, #8]                               
+00121b98 bl       #0x1223e0                                   
+00121b9c ldr      r3, [sp, #0xc]                             
+00121ba0 add      r5, r3, #8                                 
+00121ba4 ldr      r0, [sp, #8]                               
+00121ba8 bl       #0x122708                                   
+00121bac mov      r3, r0                                     
+00121bb0 mov      r0, r3                                     
+00121bb4 bl       #0x120d84                                   
+00121bb8 mov      r3, r0                                     
+00121bbc mov      r6, r3                                     
+00121bc0 mov      r0, #0x64                                  
+00121bc4 bl       #0x10513c                                   _Znwj [PLT]
+00121bc8 mov      r3, r0                                     
+00121bcc mov      r4, r3                                     
+00121bd0 mov      r2, r4                                     
+00121bd4 ldrb     r3, [sp, #7]                               
+00121bd8 mov      r0, r2                                     
+00121bdc mov      r1, r3                                     
+00121be0 mov      r2, r6                                     
+00121be4 bl       #0x121ab0                                   
+00121be8 mov      r3, r4                                     
+00121bec mov      r0, r5                                     
+00121bf0 mov      r1, r3                                     
+00121bf4 bl       #0x122910                                   
+00121bf8 ldr      r3, [sp, #0xc]                             
+00121bfc ldr      r2, [sp]                                   
+00121c00 str      r2, [r3, #0xc]                             
+00121c04 ldr      r3, [sp, #0xc]                             
+00121c08 ldr      r2, [sp, #0x20]                            
+00121c0c str      r2, [r3, #0x10]                            
+00121c10 ldr      r3, [sp, #0xc]                             
+00121c14 ldrb     r2, [sp, #0x24]                            
+00121c18 strb     r2, [r3, #0x14]                            
+00121c1c ldr      r3, [sp, #0xc]                             
+00121c20 ldrb     r2, [sp, #0x28]                            
+00121c24 strb     r2, [r3, #0x15]                            
+00121c28 ldr      r3, [sp, #0xc]                             
+00121c2c ldrb     r2, [sp, #0x2c]                            
+00121c30 strb     r2, [r3, #0x16]                            
+00121c34 ldr      r3, [sp, #0xc]                             
+00121c38 mov      r0, r3                                     
+00121c3c add      sp, sp, #0x10                              
+00121c40 pop      {r4, r5, r6, pc}                           
 
 FUNCTION VideoSink_member_initializers @ 0x122690 size 0x78
 00122690 sub      sp, sp, #8                                 
@@ -1103,6 +1261,19 @@ FUNCTION AaVideoSinkCallbacks_methods @ 0x125168 size 0x988
 00125ae8 andeq    r0, r5, r4, lsl #13                        
 00125aec andeq    r0, r0, r8, lsl #8                         
 
+FUNCTION VideoSink_attach_callback @ 0x125b5c size 0x2c
+00125b5c str      lr, [sp, #-4]!                             
+00125b60 sub      sp, sp, #0xc                               
+00125b64 str      r0, [sp, #4]                               
+00125b68 str      r1, [sp]                                   
+00125b6c ldr      r3, [sp, #4]                               
+00125b70 add      r3, r3, #0x34                              
+00125b74 mov      r0, r3                                     
+00125b78 ldr      r1, [sp]                                   
+00125b7c bl       #0x125cfc                                   
+00125b80 add      sp, sp, #0xc                               
+00125b84 ldm      sp!, {pc}                                  
+
 FUNCTION AaVideoSinkCallbacks_constructor @ 0x125ca0 size 0x1c8
 00125ca0 push     {r4, lr}                                   
 00125ca4 sub      sp, sp, #8                                 
@@ -1218,6 +1389,29 @@ FUNCTION AaVideoSinkCallbacks_constructor @ 0x125ca0 size 0x1c8
 00125e5c bl       #0x104b3c                                   atomic_add_value [PLT]
 00125e60 add      sp, sp, #0xc                               
 00125e64 ldm      sp!, {pc}                                  
+
+FUNCTION Callback_shared_wrap @ 0x125d64 size 0x54
+00125d64 str      lr, [sp, #-4]!                             
+00125d68 sub      sp, sp, #0xc                               
+00125d6c str      r0, [sp, #4]                               
+00125d70 str      r1, [sp]                                   
+00125d74 ldr      r3, [sp, #4]                               
+00125d78 ldr      r2, [sp]                                   
+00125d7c str      r2, [r3, #4]                               
+00125d80 mov      r0, #4                                     
+00125d84 bl       #0x10513c                                   _Znwj [PLT]
+00125d88 mov      r3, r0                                     
+00125d8c mov      r2, r3                                     
+00125d90 ldr      r3, [sp, #4]                               
+00125d94 str      r2, [r3]                                   
+00125d98 ldr      r3, [sp, #4]                               
+00125d9c ldr      r3, [r3]                                   
+00125da0 mov      r2, #1                                     
+00125da4 str      r2, [r3]                                   
+00125da8 ldr      r3, [sp, #4]                               
+00125dac mov      r0, r3                                     
+00125db0 add      sp, sp, #0xc                               
+00125db4 ldm      sp!, {pc}                                  
 
 FUNCTION AaVideoSinkCallbacks_destructors @ 0x125e68 size 0x1a0
 00125e68 str      lr, [sp, #-4]!                             

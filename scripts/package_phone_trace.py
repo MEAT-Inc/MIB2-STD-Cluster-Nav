@@ -29,10 +29,13 @@ def main():
     libc={s['name'] for s in json.loads((ROOT/'delphi-analysis/control-runtime/libc.so.3.index.json').read_text())['symbols'] if s['defined']}
     if set(imports)-libc-{'socket','connect','getsockopt','recv','select'}:raise ValueError('Unexpected imports: '+repr(set(imports)-libc))
     if any(n in imports for n in ('kill','pathmgr_symlink','pathmgr_unlink','dlsym','send','sendto','system','execv')):raise ValueError('Unwanted process/control/network-write import')
+    hardware_file=ROOT/'delphi-analysis/control-runtime/phone-baseline-review.json'
+    hardware=json.loads(hardware_file.read_text()) if hardware_file.exists() else {}
+    hardware_ok=hardware.get('actual_unit_reader_validated') is True and hardware.get('reader_sha256')==sha(blob)
     release=BASE/'release';release.mkdir(exist_ok=True);(release/'trace_reader').write_bytes(blob)
-    manifest=dict(kind='passive_loopback_trace_reader',bytes=len(blob),sha256=sha(blob),seconds=180,byte_limit=16777216,network_peer='127.0.0.1:15361',needed=needs,imports=sorted(imports),source_sha256=sha(source),host_loopback_tested=True,qnx_loader_root_refusal_tested=True,qnx_network_runtime_tested=False,actual_unit_reader_tested=False,androidauto_restart=False)
+    manifest=dict(kind='passive_loopback_trace_reader',bytes=len(blob),sha256=sha(blob),seconds=180,byte_limit=16777216,network_peer='127.0.0.1:15361',needed=needs,imports=sorted(imports),source_sha256=sha(source),host_loopback_tested=True,qnx_loader_root_refusal_tested=True,qnx_network_emulation_tested=False,qnx_network_runtime_tested=hardware_ok,actual_unit_reader_tested=hardware_ok,androidauto_restart=False)
     (release/'manifest.json').write_text(json.dumps(manifest,indent=2));shutil.copy2(BASE/'README.txt',release/'README.txt')
-    names=('run_phone_trace.py','run_observer_smoke.py','delphi_inventory.py','decode_delphi_observer.py','run_androidauto_observer.py','collect_trace_tcp.py','collect_observer_preflight.py')
+    names=('run_phone_trace.py','run_observer_smoke.py','delphi_inventory.py','decode_delphi_observer.py','run_androidauto_observer.py','collect_trace_tcp.py','collect_observer_preflight.py','review_phone_trace.py')
     if b'LIVE_EXPERIMENT_HOLD=True' not in (ROOT/'scripts/run_androidauto_observer.py').read_bytes():raise ValueError('Disruptive observer hold missing')
     bundle=BASE/'passive-phone-trace-laptop.zip'
     with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
@@ -41,8 +44,9 @@ def main():
     with tempfile.TemporaryDirectory(prefix='phone-trace-package-') as t:
         folder=Path(t)
         with zipfile.ZipFile(bundle) as z:z.extractall(folder)
-        result=subprocess.run([sys.executable,'-S','-B',str(folder/'scripts/run_phone_trace.py')],cwd=folder,capture_output=True,text=True)
-        if result.returncode or 'Plan only' not in result.stdout or (folder/'delphi-dump').exists():raise ValueError('Portable plan failed: '+result.stderr)
+        for args in ([],['--scenario','door','--ignition','on']):
+            result=subprocess.run([sys.executable,'-S','-B',str(folder/'scripts/run_phone_trace.py'),*args],cwd=folder,capture_output=True,text=True)
+            if result.returncode or 'Plan only' not in result.stdout or (folder/'delphi-dump').exists():raise ValueError('Portable plan failed: '+result.stderr)
         code="import sys;from pathlib import Path;sys.path.insert(0,str(Path(sys.argv[1])/'scripts'));from run_phone_trace import package;print(len(package(Path(sys.argv[1])/'native/trace-reader/release')))"
         result=subprocess.run([sys.executable,'-S','-B','-c',code,str(folder)],cwd=folder,capture_output=True,text=True)
         if result.returncode or int(result.stdout)!=len(blob):raise ValueError('Portable reader asset verification failed')

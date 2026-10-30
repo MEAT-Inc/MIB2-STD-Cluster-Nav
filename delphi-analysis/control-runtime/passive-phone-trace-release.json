@@ -1,7 +1,7 @@
 {
   "bundle": "native\\trace-reader\\passive-phone-trace-laptop.zip",
-  "bytes": 43688,
-  "sha256": "aa4f4c4c7916fc08dd0e368364d0eda35cd55b6846a387b5b48d93b18c3f6ba1",
+  "bytes": 45978,
+  "sha256": "c5d54d71b93832e57a73df24ed39ad749a6e3cfbb28565ec8cac7347a08c61e4",
   "portable_plan_passed": true,
   "manifest": {
     "kind": "passive_loopback_trace_reader",
@@ -50,8 +50,9 @@
     "source_sha256": "2cc688e20fd1ae12c8525dbe019db361e5060e4efc2928dfa655b979d26bd2ed",
     "host_loopback_tested": true,
     "qnx_loader_root_refusal_tested": true,
-    "qnx_network_runtime_tested": false,
-    "actual_unit_reader_tested": false,
+    "qnx_network_emulation_tested": false,
+    "qnx_network_runtime_tested": true,
+    "actual_unit_reader_tested": true,
     "androidauto_restart": false
   }
 }

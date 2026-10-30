@@ -270,3 +270,217 @@ then reconnect Ethernet and collect. Return the entire new _phone_trace_*.
 Disruptive restart observer remains disabled; root cause of the original AA
 black view remains open. No vehicle commands were sent during this review.
 Bundle SHA256: aa4f4c4c7916fc08dd0e368364d0eda35cd55b6846a387b5b48d93b18c3f6ba1
+
+
+2026-10-29: Successful stock phone baseline verified; passive door comparison ready
+Returned _phone_trace_20261029_210643_a37ee951 independently verifies all ten
+artifacts and eighteen successful remote actions. The hardware reader emitted
+readiness/final reports for PID1773667, captured7692296 bytes over180002ms, stopped
+for duration with error0, and survived the Ethernet-to-phone handoff. Stock
+AndroidAuto remained PID684110 before and after, without observer mappings. User
+reported normal AA immediately before phone unplug and no driver-door opening.
+This validates the exact c53d50... reader binary on QNX networking/hardware. No
+application restart, hook or filter change was used in this baseline.
+
+Full raw trace:38873 lines,116 from AndroidAuto/AA services/AppConnect. It contains
+AOAP switch/connect and sink initialization, service started, codec3 video setup
+at800x480/density160, configuration index0, playback session0 and codec config.
+The early HMI focus warning at00:19:04.422 resolves to pending/projected focus
+at00:19:04.465, video available at00:19:04.470 and playback at00:19:04.476. That
+warning also occurs during a user-confirmed healthy startup and is not by itself
+a black-view failure. No AA stop/shutdown or video-stop event was found in the
+captured window; absence outside this window is not asserted. Original black-view
+cause and recovery after a fault remain unconfirmed. Closed-door baseline health
+does not clear a door transition or the earlier forced-restart flow.
+
+Reproduce review: python scripts/review_phone_trace.py <returned-folder>.
+Analysis preserves original summary's manual-handoff limitation while recording
+independent startup/playback evidence and human observation. Correctly hashed
+partial data or changed PIDs remain diagnostic findings rather than discarded
+traces. The known-good baseline review is retained separately from future door
+results so a failure cannot overwrite the hardware-validation reference.
+
+Next test uses the SAME hardware-proven native reader, with a Python scenario:
+  python scripts/run_phone_trace.py --run --scenario door --ignition on
+Vehicle parked, ignition on, Ethernet attached, phone unplugged. At LOGGER READY
+swap to phone and start navigation. Confirm AA is normal in the laptop prompt;
+the routine waits30 seconds, then prompts one driver-door open/close action and
+records an approximate host timestamp. It skips the action if the phone is not
+confirmed normal or insufficient capture time remains. Observe black/recovery;
+if VW menus remain usable, preserve the running trace before rebooting the unit.
+After at least210 seconds TOTAL from readiness, reconnect Ethernet and collect.
+Record AA view, actual door action, black response and return without reboot.
+Return the complete new _phone_trace_* folder, even when partial/AA fails.
+
+No AndroidAuto or factory configuration change is introduced. Disruptive observer
+experiments remain held. Thirteen workflow tests, exact QNX ksh positive/negative
+wire and loader checks, and extracted baseline/door plans plus native asset-hash
+checks pass. Host loopback tests remain bound to the unchanged C source/binary;
+no native network re-test was required for Python-only metadata/prompt changes.
+No head-unit connection was made while reviewing or packaging this returned data.
+Bundle: native/trace-reader/passive-phone-trace-laptop.zip
+Bytes: 45978
+SHA256: c5d54d71b93832e57a73df24ed39ad749a6e3cfbb28565ec8cac7347a08c61e4
+
+
+2026-10-29: Door test clean; disconnected-only observer controller ready for trial
+Returned _phone_trace_20261029_213916_05589f93 verifies ten artifacts and eighteen
+successful actions. Native reader completed180002ms/error0 with7665178 raw bytes.
+AA remained PID684110. Driver door opened inside the capture window (host elapsed
+92.796s); user confirmed normal AA and no black screen. Host handoff was earlier
+than requested, but native completion occurred during collection; this is useful
+completed data and does not need repetition solely for that warning.
+
+Trace contains healthy startup/configuration/focus/playback. Physical phone unplug
+is followed by video-unavailable and sink shutdown at00:53:00.896/.908 and service
+stopped at.919, with unchanged AA PID. Handle-invalidated read error at unplug is
+consistent with disconnect, not proof of an app crash. Door host time is approximate;
+no precise ECU door-event alignment is claimed.
+
+This supports retaining the passive workflow. It does not establish the original
+black-view cause or validate the old observer workflow. Leading suspect remains
+forced AA restart while a phone session is active, possibly interacting with hooks
+or HMI state. Old run_androidauto_observer.py live hold remains TRUE.
+
+New isolated native/observer/disconnect-launch controller (protocol3): capture
+expiry and controller loss leave observed AA RUNNING with a pending marker.
+Only explicit cleanup-disconnected may signal its verified observed process after
+root, manager, executable/start-time, stock-reference and exclusive-lock checks.
+No timed or exception-driven fallback performs cleanup. Late cleanup and repeat
+cleanup are supported when identities still match; ambiguous state fails closed.
+Original v1 observer is unchanged; no display hooks or endpoint changes included.
+
+QNX synthetic procman tests passed:20s expiry remains alive,60s capture survives
+controller HUP, stale observed/manager identities and existing lock refused, late
+cleanup restores stock, repeat cleanup leaves restored PID unchanged. Native test
+reports and binary hashes are gated by package_disconnected_observer.py. Seventeen
+Python tests pass including decline, explicit cleanup once, failure without retry,
+failed-cd containment, same-root resume and staged-controller tamper refusal.
+Portable extracted Python -S plan, native manifest and old live-hold checks pass.
+This is NOT actual-unit controller validation or visual/session recovery evidence.
+
+Next hardware test, Ethernet attached and phone UNPLUGGED for the entire run:
+  python scripts/run_disconnected_observer.py --run --phone-unplugged
+After20s, type PHONE REMOVED only while it is still physically unplugged. Return
+all of delphi-dump/_disconnect_observer_*. The README explains pending/resume and
+refusal handling. No phone swap or navigation capture in this control trial.
+Bundle: native/observer/disconnect-launch/disconnected-controller-laptop.zip
+Bytes:40330
+SHA256:7efa0df4eab53759049d81192fde5bebd3a8c8feee187f2cce9a52f2c0464172
+No vehicle connection/command was made during this review/build.
+
+End goal remains AA maps in Digital Cockpit. No secondary video endpoint, working
+cluster map transport or on-car map display has been demonstrated. This control
+trial is the gate before resuming phone endpoint/focus experiments safely.
+
+
+2026-10-29: Actual-unit disconnected controller PASS; phone-session baseline ready
+Returned _disconnect_observer_20261029_225707_669ee00c independently verified all
+13 artifact sizes/hashes and re-ran the strict native/stock/observer assessment.
+Pending phase4: capture_done1, cleanup_authorized0, cleanup_started0, observed
+PID1273935, no restored PID. Native log confirms capture expiry awaiting cleanup.
+Operator then explicitly requested cleanup; final phase6 flags1/1 and stock
+PID1392719 restored under manager417823. Stock-current agrees with stock-after.
+Baseline PID671823. No native error, pending cleanup, unexpected signal or stock
+reference mismatch in the returned evidence. Original v1 observer is READY;
+zero registration calls with no phone are expected, not a failed capture.
+
+Evidence: control-runtime/disconnected-controller-hardware-review.json. Scope:
+20s disconnected lifecycle and process restoration. No phone session or visual
+recovery was tested. Earlier connection timeout yielded no shell/capture evidence;
+the successful new collection supersedes that connectivity obstacle.
+
+Next step uses IDENTICAL native controller SHA980107c5... and v1 DSO SHA cc425ccd...:
+  python scripts/run_disconnected_observer.py --run --phone-capture --phone-unplugged
+Start with phone unplugged, Ethernet connected, ignition on and driver door closed.
+At CAPTURE READY swap to phone and open AA navigation. Wait at least90s; observe
+whether the view stays normal beyond the60s checkpoint. Then remove phone,
+reconnect Ethernet and answer observations. Only PHONE REMOVED requests cleanup.
+No timer/controller loss/exception signals the observed app. Bounded observer log
+remains active until cleanup;60s is a checkpoint, not a forced trace shutdown.
+Return the whole new _disconnect_observer_* folder. --resume reads the saved
+profile without another launch and still requires physical phone removal.
+
+Twenty-four Python tests pass including phone handoff, native readiness failure
+without handoff/cleanup, black view recorded as incomplete despite restored stock,
+decline without cleanup,60s resume, initial connection timeout and package gate.
+Portable extracted20/60 plans, enabled-profile native manifest checks, and old
+runner live hold pass. Hardware success gates packaging the phone profile; no
+new native build/QNX rerun was needed for unchanged binaries. Phone-session
+stability remains untested until this returned run. No live vehicle commands
+were executed while reviewing/building here. Next after a healthy phone baseline:
+resume secondary AndroidAuto endpoint/callback work toward cluster transport.
+Bundle: native/observer/disconnect-launch/disconnected-controller-laptop.zip
+Bytes: 41496
+SHA256: 7d33562f6a0fcbaa244277e0e928f4691d35de3d90c7592ceb406d4e8c5e57c5
+
+
+2026-10-29: Healthy phone observation verified; native paired-endpoint factory built
+Returned _disconnect_observer_20261029_233918_512db910 independently verified all14
+artifact sizes/hashes and re-ran the strict60s native/stock/observer assessment.
+Nine registrations, all eight known callers, zero drops. Phone view normal after
+136.672s; driver door was opened (human report only, not a timed door challenge).
+Pending observedPID1048654 had cleanup authorization0 and no restoredPID. Explicit
+cleanup restored stockPID1347662; stock-current agrees. Screen recovery after a
+fault remains unproven; this healthy run supports the replacement workflow.
+Evidence: control-runtime/observer-phone-hardware-review.json. No further baseline
+repeat requested. Original forced-restart observer remains held.
+
+Narrow work toward a second AA display: recovered missing InputSource ctor via
+app GOT relocation0x17652c (_ZTV11InputSource) and literal0x121b6c. Actual native
+constructor is app0x121ab0, size0xc0, args(this,id-byte,router), allocation0x64 in
+owner wrapper0x121b70. Vptr is receiver0x117070. Empty key/feedback sets and callback
+pair are initialized by native helpers; destructor receiver0x7a30c matches them.
+This corrects earlier negative conclusions based on symbol-name text searches.
+
+Also corrected VideoSink owner-wrapper trace start0x1216fc (0x12174c was inside
+that function). Video ctor remains0x12165c,size0x50. Shared_ptr layout is custom
+{count-pointer, object-pointer}, not a standard C++ control block. Native wrap
+helper125d64 allocates a four-byte count; attachment125b5c takes SINK, not sink+34
+(it adds34 internally); temporary release11b430. Destructor releases last owner
+and invokes callback deleting slot+4. Callback owner/adapter must be independent.
+Native data callback ABI keeps timestamp in r2:r3; native method fills r1=session
+and stack(buffer-ref,data,length), not a guessed host C++/timestamp signature.
+Corrected expanded static traces reproduced by trace_android_endpoint_abi.py.
+
+Implemented native/endpoint-factory: isolated construction/destruction using exact
+native helper entry points and byte-locked stock profiles. Independent8-byte
+callback adapter, count transitions1->2->1->final deletion, one stock configuration,
+private VideoSink9 and InputSource10. No native register/discovery/focus/ack/media
+calls for these objects. Primary VideoSink and entire router slot-table snapshots
+must remain unchanged. Candidate slots are observed only, never reserved; empty
+at first-video registration does not prove vacancy at a future registration.
+Unknown native layout/refcounts quarantine private objects until process exit,
+without guessed destructors or publishing pointers. Main registration still
+forwards original arguments, return, errno and stack through the tested shim.
+
+Native ARM32 QNX API fixture passes9 cases: two balanced lifecycles, allocation
+failure paths, bad constructor and refcount quarantine, invalid API. This fixture
+uses synthetic native helpers; it does NOT prove real firmware constructor
+execution. Full new DSO additionally passes original QNX baseline/observed9-call
+forwarding and timeout controls.29 Python tests pass, including factory report
+mutations, refused probe retaining restoration evidence and same-profile resume.
+Portable extracted factory plan/manifest checks pass. Native DSOSHA86e338f7...,
+tested protocol3 controller is unchanged SHA980107c5.... Only extra exported ELF
+runtime entry points are _init/_fini alongside existing observer APIs.
+
+Next required car test uses the isolated factory variant, not another baseline:
+ python scripts/run_disconnected_observer.py --run --phone-capture --factory-probe --phone-unplugged
+Start unplugged/Ethernet/ignition on/door closed. At CAPTURE READY swap to phone,
+open AA navigation, observe >=90s; then unplug phone/reconnect Ethernet and confirm
+PHONE REMOVED for explicit cleanup. Return entire new _disconnect_observer_*.
+Resume requires --factory-probe and --phone-unplugged, no --phone-capture.
+This checks real native constructor/ownership assumptions before registration.
+No second stream is advertised, and no cluster maps are expected in this test.
+No live vehicle commands were issued during this review/development.
+
+Remaining after a passing factory probe: independent streaming callbacks and
+channel/session/focus/ack state, paired input display association, checked router
+registration and rollback/lifetime, modern discovery metadata/phone acceptance,
+then native FPK/TransportServer video bridge ownership. No secondary stream or
+cluster-map display is claimed. Do not turn an empty-slot snapshot or factory
+success into permission to advertise an endpoint without its working callbacks.
+
+Bundle: native\endpoint-factory\endpoint-factory-laptop.zip
+Bytes: 45546
+SHA256: c3ab9869f9abfe23326fc0d728b8aaafee419c026404036064e320d1ec129bce

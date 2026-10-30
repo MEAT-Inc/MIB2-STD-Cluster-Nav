@@ -1,0 +1,77 @@
+{
+  "bundle": "native\\endpoint-factory\\endpoint-factory-laptop.zip",
+  "bytes": 45546,
+  "sha256": "c3ab9869f9abfe23326fc0d728b8aaafee419c026404036064e320d1ec129bce",
+  "python_tests": ".............................\n----------------------------------------------------------------------\nRan 29 tests in 0.420s\n\nOK",
+  "portable_plan_passed": true,
+  "portable_manifest_passed": true,
+  "manifest": {
+    "kind": "disconnected_observer_control_trial",
+    "experiment": "isolated_endpoint_factory_probe",
+    "capture_profiles": [
+      60
+    ],
+    "phone_trial_enabled": true,
+    "factory_probe_hardware_tested": false,
+    "secondary_endpoints_registered": false,
+    "discovery_changed": false,
+    "files": {
+      "observer_launch": {
+        "bytes": 20939,
+        "sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae"
+      },
+      "libdelphi_observer.so": {
+        "bytes": 15343,
+        "sha256": "86e338f7df9d6e4fb315948bc059b79677dd044ff33bd937ab511a4d87faa0ca"
+      }
+    },
+    "needed": [
+      "libc.so.3"
+    ],
+    "imports": [
+      "__get_errno_ptr",
+      "_exit",
+      "close",
+      "dladdr",
+      "dlsym",
+      "ftruncate",
+      "getenv",
+      "getpid",
+      "memcmp",
+      "memcpy",
+      "memset",
+      "mmap",
+      "open",
+      "pthread_self",
+      "snprintf",
+      "strcmp",
+      "strlen",
+      "strncmp",
+      "strrchr",
+      "write"
+    ],
+    "exports": [
+      "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase",
+      "_fini",
+      "_init",
+      "delphi_observer_view"
+    ],
+    "native_qnx_tested": true,
+    "controller_sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae",
+    "phone_baseline_review_sha256": "87d640c16419d1b63ffd6a4bdaf1b262c60a3a0e9c58bb2ed39cbf8f6dbc5303",
+    "source_sha256": {
+      "factory.c": "cf9660d8fd690168c7d1321412d8d2d70d8ba5cb0ca7cde442ce5a524539ca4a",
+      "factory.h": "4364bfeb12e9a8a9a25cba32524ea2f1c09b700f94fd9daaad8b698b61f1442d",
+      "probe.c": "9eb9ab67f47adbb152275e2fe20c838530707ced8d88a4accc4c1b9ac9837ee0",
+      "probe.h": "dc335c261487817cbd2dad2f075adda6dfb709a7e79dd99861703d31940533d8",
+      "profile.h": "14ebb5d2259a7d488f7716a8602a80ddb98a264b853337b2e0563a896dbfd75e"
+    },
+    "scripts_sha256": {
+      "run_disconnected_observer.py": "0dec558a3bb23888facab09b0397cd5b11756ddeea79456283dc6a00683cc5c1",
+      "run_androidauto_observer.py": "510b9c77301b158f95ec55997e1c9882d11050780c0f1005d4aa32faecf57a0b",
+      "run_observer_smoke.py": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5",
+      "delphi_inventory.py": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25",
+      "decode_delphi_observer.py": "113906aee942b7245360806fcddb643b95210df976f23ce7f97cf3006264e13b"
+    }
+  }
+}

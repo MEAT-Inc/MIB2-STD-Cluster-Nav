@@ -1,0 +1,199 @@
+"""Observer capture with a phone-disconnected start and explicit disconnected cleanup. Stdlib only."""
+import argparse,datetime as dt,ftplib,getpass,hashlib,io,json,re,shlex,struct,time,uuid
+from pathlib import Path
+import delphi_inventory as d
+import run_androidauto_observer as old
+from run_observer_smoke import Shell,retrieve
+ROOT=Path(__file__).resolve().parents[1]
+
+def wait_for_capture_ready(read_log,started,seconds,limit=25):
+    expected=f'LAUNCH_READY capture_seconds={seconds}'.encode()
+    while time.monotonic()-started<limit:
+        try:data=read_log()
+        except (ValueError,ftplib.error_perm):data=b''
+        lines=data.replace(b'\r',b'').splitlines()
+        if any(x in data for x in (b'LAUNCH_FAILED',b'LAUNCH_REFUSED',b'LAUNCH_COMPLETE',b'LAUNCH_RESTORED')):raise RuntimeError('Native experiment ended before phone handoff')
+        if expected in lines:return data
+        time.sleep(1)
+    raise RuntimeError('No timely native phone-capture readiness; no phone handoff performed')
+
+def package(path,phone=False,factory=False):
+    m=json.loads((path/'manifest.json').read_text());files={n:(path/n).read_bytes() for n in old.NAMES}
+    if m.get('kind')!='disconnected_observer_control_trial':raise ValueError('Wrong disconnected controller package')
+    if phone and (m.get('phone_trial_enabled') is not True or 60 not in m.get('capture_profiles',[])):raise ValueError('Package has not cleared the phone-profile gate')
+    if factory and m.get('experiment')!='isolated_endpoint_factory_probe':raise ValueError('Wrong endpoint factory package')
+    for n,b in files.items():
+        if len(b)!=m['files'][n]['bytes'] or hashlib.sha256(b).hexdigest()!=m['files'][n]['sha256'] or len(b)>131072:raise ValueError('Package mismatch: '+n)
+    return files
+
+def validate_report(data,remote,pending,seconds=20):
+    if seconds not in (20,60):raise ValueError('Invalid capture profile')
+    if len(data)!=512:raise ValueError('Wrong disconnected-controller report size')
+    h=struct.unpack_from('<16I',data);capture,done,authorized,started=struct.unpack_from('<4I',data,256)
+    raw=data[96:224]
+    if b'\0' not in raw:raise ValueError('Unterminated report root')
+    name,padding=raw.split(b'\0',1)
+    if name.decode('ascii')!=remote or any(padding) or h[:3]!=(0x314c4144,3,512) or h[15]!=1 or capture!=seconds or done!=1 or any(data[272:]):raise ValueError('Invalid version/root/capture flags')
+    if pending:
+        if h[3:10]!=(4,0,1,1,0,0,0) or h[11]!=0 or authorized or started:raise ValueError('Capture is not safely pending cleanup')
+    elif h[3]!=6 or h[4]!=0 or h[9]!=1 or (authorized,started)!=(1,1):raise ValueError('Explicit cleanup was not verified')
+    return dict(version=3,phase=h[3],observed_pid=h[10],restored_pid=h[11],capture_done=done,cleanup_authorized=authorized,cleanup_started=started)
+
+def assess_final(blobs,remote,seconds=20):
+    flags=validate_report(blobs['controller.bin'],remote,False,seconds)
+    normalized=bytearray(blobs['controller.bin']);struct.pack_into('<I',normalized,4,2);normalized[260:]=bytes(252)
+    evidence=dict(blobs);evidence['controller.bin']=bytes(normalized)
+    result=old.assess(evidence,remote)
+    result.update(disconnected_control_flags=flags,controller_trial_passed=True)
+    return result
+
+def assess_factory(data,observed,bias,trace):
+    if len(data)!=256:raise ValueError('Incorrect factory report size')
+    h=struct.unpack('<64I',data)
+    if h[:8]!=(0x31504645,1,256,observed,1,1,1,0) or h[8]!=bias or h[9]!=int(trace['module_base'],16):raise ValueError('Factory profile/process/status failed validation')
+    primary=[r for r in trace['records'] if int(r['caller'],16)==bias+0x124e54]
+    if len(primary)!=1 or h[10]!=int(primary[0]['receiver'],16) or h[11]!=int(primary[0]['endpoint'],16):raise ValueError('Factory/main registration identities differ')
+    if not h[10] or not h[11] or h[10]==h[11] or h[10]%4 or h[11]%4:raise ValueError('Invalid factory object identities')
+    if h[12:14]!=h[14:16] or h[16:18]!=(1,1):raise ValueError('Main endpoint/router table changed during isolated construction')
+    if h[18:30]!=(0,1,1,1,1,1,1,1,1,1,0,0) or any(h[30:]):raise ValueError('Factory ownership/configuration/destruction failed validation')
+    return dict(isolated_factory_passed=True,video_constructed=True,input_constructed=True,independent_callback_destroyed_once=True,configuration_count=1,primary_unchanged=True,router_table_unchanged=True,candidate_slots_empty_at_probe=h[12:14]==(0,0),slots_reserved=False,secondary_endpoints_registered=False,secondary_stream_received=False)
+
+def main(argv=None):
+    p=argparse.ArgumentParser(description=__doc__);g=p.add_mutually_exclusive_group();g.add_argument('--run',action='store_true');g.add_argument('--resume',type=Path)
+    p.add_argument('--factory-probe',action='store_true',help='Isolated native endpoint construction/destruction; no registration or advertisement')
+    p.add_argument('--phone-capture',action='store_true',help='Native phone capture: Ethernet -> phone -> Ethernet, explicit disconnected cleanup only')
+    p.add_argument('--phone-unplugged',action='store_true',help='Attest phone is physically unplugged before initial launch or resume')
+    p.add_argument('--host',default='192.168.1.4');p.add_argument('--port',type=int,default=21);p.add_argument('--username',default='ftpuser');p.add_argument('--ask-password',action='store_true');p.add_argument('--telnet-port',type=int,default=23);p.add_argument('--telnet-user',default='root');p.add_argument('--timeout',type=float,default=90);a=p.parse_args(argv)
+    if not 1<=a.port<=65535 or not 1<=a.telnet_port<=65535 or not 60<=a.timeout<=180:p.error('Invalid ports/timeout')
+    if a.factory_probe and a.run and not a.phone_capture:p.error('--factory-probe requires --phone-capture to reach native endpoint initialization')
+    if a.phone_capture and a.resume:p.error('Resume uses the profile saved in its summary; omit --phone-capture')
+    if (a.run or a.resume) and not a.phone_unplugged:p.error('Requires --phone-unplugged before initial launch or resume')
+    print('Capture ends pending; only explicit disconnected cleanup restarts the observed app.')
+    if a.phone_capture:print('Phone capture: start unplugged; swap only at CAPTURE READY; remove phone and reconnect Ethernet before cleanup.')
+    else:print('Default control trial: phone remains unplugged throughout.')
+    if not a.run and not a.resume:print('Plan only. Add --run --phone-unplugged; keep --phone-capture for the phone profile.');return 0
+    files=package(ROOT/('native/endpoint-factory/release' if a.factory_probe else 'native/observer/disconnect-launch/release'),phone=a.phone_capture,factory=a.factory_probe);base=ROOT/'delphi-dump'
+    for parent in (base,*base.parents):d.reject_link(parent)
+    base.mkdir(parents=True,exist_ok=True)
+    if a.resume:
+        folder=a.resume.resolve()
+        if folder.parent!=base.resolve() or not re.fullmatch(r'_disconnect_observer_[0-9_]+_[0-9a-f]{8}',folder.name):raise ValueError('Resume folder is outside this project trial scope')
+        report=json.loads((folder/'disconnect-summary.json').read_text());remote=old.validate_remote(report['remote_directory'])
+        if report['native_sha256']!=old.sha(files['observer_launch']):raise ValueError('Saved run and native controller differ')
+        if bool(report.get('factory_probe_requested',False))!=a.factory_probe:raise ValueError('Resume requires the saved factory-probe selection')
+        report['factory_probe_passed']=False
+        report['controller_trial_passed']=False
+        report['phone_capture_completed']=False
+        seconds=report.get('capture_profile_seconds',20)
+        if seconds not in (20,60):raise ValueError('Invalid saved capture profile')
+        report.setdefault('previous_errors',[]).extend([report.pop(n) for n in ('error','validation_error') if n in report])
+        session=folder/('resume-'+uuid.uuid4().hex[:8]);session.mkdir()
+    else:
+        token=uuid.uuid4().hex;remote=old.validate_remote(old.REMOTE_PREFIX+token);folder=base/('_disconnect_observer_'+dt.datetime.now(dt.timezone.utc).strftime('%Y%m%d_%H%M%S')+'_'+token[:8]);folder.mkdir();session=folder
+        seconds=60 if a.phone_capture else 20
+        report=dict(factory_probe_requested=a.factory_probe,factory_probe_passed=False,capture_profile_seconds=seconds,phone_capture_requested=a.phone_capture,phone_capture_completed=False,kind='disconnected_observer_control_trial',remote_directory=remote,native_sha256=old.sha(files['observer_launch']),controller_trial_passed=False,cleanup_pending=False,actions=[],artifacts=[])
+    token=remote.rsplit('_',1)[1];blobs={f.name:f.read_bytes() for f in folder.iterdir() if f.is_file() and f.suffix in ('.txt','.bin','.reference','.original','.cfg')}
+    shell=None;cwd=False;authorized=False;history=[];password=getpass.getpass('FTP password: ') if a.ask_password else 'ftpuser'
+    def persist():(folder/'disconnect-summary.json').write_text(json.dumps(report,indent=2),encoding='utf8')
+    def fetch(name):
+        with ftplib.FTP(timeout=a.timeout) as ftp:
+            ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I');b=retrieve(ftp,remote+'/'+name)
+        (folder/name).write_bytes(b);blobs[name]=b;report['artifacts']=[x for x in report['artifacts'] if x.get('file')!=name]
+        report['artifacts'].append(dict(file=name,bytes=len(b),sha256=old.sha(b)));return b
+    def command(cmd,required=True):return shell.command(cmd,required=required)
+    def copy_report(source,dest):
+        command('cp '+source+' '+dest);command('chmod 644 '+dest);return fetch(dest)
+    persist()
+    try:
+        with ftplib.FTP(timeout=a.timeout) as ftp:
+            ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I')
+            if not a.resume:
+                ftp.mkd(remote)
+                for name,b in files.items():
+                    ftp.storbinary('STOR '+remote+'/'+name,io.BytesIO(b))
+                    if retrieve(ftp,remote+'/'+name)!=b:raise ValueError('Upload readback mismatch: '+name)
+            elif retrieve(ftp,remote+'/observer_launch')!=files['observer_launch']:raise ValueError('Staged controller changed; cleanup not attempted')
+        shell=Shell(a,session);command('cd '+shlex.quote(remote));cwd=True
+        if not a.resume:
+            for name in old.NAMES:command('chmod 500 '+name)
+            command('pidin -p AndroidAuto arguments > stock-before.txt 2>&1');command('chmod 644 stock-before.txt');before=old.fresh_stock_pid(fetch('stock-before.txt'))
+            for name,(src,_,_) in old.REFERENCES.items():command('cp '+src+' '+name);command('chmod 644 '+name);old.verify_reference(name,fetch(name))
+            command('cp /etc/procman_core.cfg procman-core.cfg');command('chmod 644 procman-core.cfg');old.verify_manager_config(fetch('procman-core.cfg'))
+            command('pidin -p AndroidAuto arguments > stock-fresh.txt 2>&1');command('chmod 644 stock-fresh.txt');pid=old.fresh_stock_pid(fetch('stock-fresh.txt'))
+            if pid!=before:raise ValueError('Stock PID changed before staging')
+            command('chmod 500 AndroidAuto.original')
+            launch='LD_PRELOAD= ./observer_launch start-disconnected '+shlex.quote(remote)+' '+str(pid)
+            report['native_launch_requested']=True;persist()
+            if report.get('phone_capture_requested'):
+                command(': > start.txt');command('chmod 644 start.txt');started=time.monotonic()
+                command(launch+(' phone' if seconds==60 else '')+' > start.txt 2>&1 & delphi_aa_job=$!')
+                def read_ready():
+                    with ftplib.FTP(timeout=min(a.timeout,10)) as ftp:
+                        ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I');return retrieve(ftp,remote+'/start.txt',65536)
+                ready=wait_for_capture_ready(read_ready,started,seconds)
+                (folder/'launch-ready.txt').write_bytes(ready)
+                report['phone_handoff_ready']=True
+                report['artifacts'].append(dict(file='launch-ready.txt',bytes=len(ready),sha256=old.sha(ready)))
+                history.extend(shell.actions);report['actions']=list(history);persist();shell.close();shell=None;cwd=False
+                print('CAPTURE READY: swap Ethernet for the phone now and start Android Auto navigation.',flush=True)
+                handoff_started=time.monotonic()
+                input('Once navigation starts, unplug the phone, reconnect Ethernet, wait for its link, then press Enter: ')
+                report['host_handoff_elapsed_seconds']=round(time.monotonic()-handoff_started,3)
+                persist();collection=folder/'collection-session';collection.mkdir()
+                shell=Shell(a,collection);command('cd '+shlex.quote(remote));cwd=True
+            else:
+                code=command(launch+' > start.txt 2>&1',required=False)
+                if code!=2:raise ValueError('Expected a pending-cleanup exit, got '+str(code))
+        for name in old.REFERENCES:old.verify_reference(name,blobs[name])
+        old.verify_manager_config(blobs['procman-core.cfg'])
+        command('chmod 644 start.txt');fetch('start.txt')
+        final_exists=command('test -f /dev/shmem/delphi-aa-final-'+token+'.bin',required=False)==0
+        if not final_exists:
+            pending=copy_report('/dev/shmem/delphi-aa-report-'+token+'.bin','controller-pending.bin');report['pending_state']=validate_report(pending,remote,True,seconds);report['cleanup_pending']=True;persist()
+        if report.get('phone_capture_requested'):
+            deadline=time.monotonic()+30
+            while not blobs.get('controller-pending.bin') and time.monotonic()<deadline:
+                try:
+                    pending=copy_report('/dev/shmem/delphi-aa-report-'+token+'.bin','controller-pending.bin')
+                    report['pending_state']=validate_report(pending,remote,True,seconds);report['cleanup_pending']=True;persist()
+                except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error):time.sleep(1)
+        print('Capture has not authorized any interruption. Keep Ethernet connected and the phone physically unplugged.',flush=True)
+        if input('Type PHONE REMOVED to request the explicit disconnected-only cleanup (anything else leaves it pending): ').strip()!='PHONE REMOVED':
+            print('Cleanup remains pending. Use --resume "'+str(folder)+'" --phone-unplugged'+(' --factory-probe' if a.factory_probe else '')+' later.');return 2
+        authorized=True;report['cleanup_requested_host_utc']=dt.datetime.now(dt.timezone.utc).isoformat();persist()
+        command('if test ! -f cleanup.txt; then : > cleanup.txt; fi');command('chmod 644 cleanup.txt')
+        code=command('LD_PRELOAD= ./observer_launch cleanup-disconnected '+shlex.quote(remote)+' >> cleanup.txt 2>&1',required=False)
+        fetch('cleanup.txt')
+        if code:raise ValueError('Disconnected cleanup refused/incomplete: '+str(code))
+        copy_report('/dev/shmem/delphi-aa-final-'+token+'.bin','controller.bin')
+        copy_report('/dev/shmem/delphi-observer-aa-'+token+'.bin','observer.bin')
+        command('pidin -p AndroidAuto arguments > stock-after.txt 2>&1');command('chmod 644 stock-after.txt');fetch('stock-after.txt')
+        combined=blobs['start.txt']+b'\n'+blobs['cleanup.txt'];blobs['launch.txt']=combined;(folder/'launch.txt').write_bytes(combined)
+        report.update(assess_final(blobs,remote,seconds));report['cleanup_pending']=False
+        report['phone_capture_completed']=bool(report.get('phone_capture_requested') and report.get('captured_registration'))
+        if a.factory_probe:
+            copy_report('/dev/shmem/delphi-endpoint-factory-'+token+'.bin','factory.bin')
+            report['factory_probe']=assess_factory(blobs['factory.bin'],report['observed_pid'],report['executable_load_bias'],report['decoded_log'])
+            report['factory_probe_passed']=True
+        (folder/'observer-decoded.json').write_text(json.dumps(report.pop('decoded_log'),indent=2))
+    except (OSError,EOFError,ValueError,RuntimeError,KeyError,ftplib.Error) as exc:report['error']=(type(exc).__name__+': '+str(exc)).replace(password,'[redacted]') if password else str(exc)
+    finally:
+        # Always preserve available phase reports and current PID after errors;
+        # these commands never authorize cleanup or signal an application.
+        if shell and cwd and not shell.broken:
+            for source,dest in (('/dev/shmem/delphi-aa-report-'+token+'.bin','controller-pending.bin'),('/dev/shmem/delphi-aa-final-'+token+'.bin','controller.bin'))+((('/dev/shmem/delphi-endpoint-factory-'+token+'.bin','factory.bin'),) if a.factory_probe else ()):
+                try:
+                    command('if test -r '+source+'; then cp '+source+' '+dest+'; chmod 644 '+dest+'; fi',required=False)
+                    if dest not in blobs:fetch(dest)
+                except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as exc:report.setdefault('diagnostic_errors',[]).append(dict(file=dest,error=type(exc).__name__))
+            try:
+                command('pidin -p AndroidAuto arguments > stock-current.txt 2>&1',required=False);command('chmod 644 stock-current.txt',required=False);fetch('stock-current.txt')
+            except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as exc:report.setdefault('diagnostic_errors',[]).append(dict(file='stock-current.txt',error=type(exc).__name__))
+        if shell:
+            report['actions']=history+shell.actions;shell.close()
+        report['operator_cleanup_confirmed']=authorized;persist()
+    ok=report['controller_trial_passed'] and (not report.get('phone_capture_requested') or report.get('phone_capture_completed',False)) and (not a.factory_probe or report.get('factory_probe_passed',False))
+    print('Saved: '+str(folder))
+    print('Trial complete within its recorded scope; cluster maps and recovery after a fault are not inferred.' if ok else 'Partial/unhealthy session or pending cleanup: return this folder for review before another trial.')
+    return 0 if ok else 2
+if __name__=='__main__':raise SystemExit(main())

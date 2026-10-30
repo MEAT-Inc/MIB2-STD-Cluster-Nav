@@ -45,7 +45,7 @@ def inspect(name,relative,expected):
         for s in symbols:
             if s['st_value'] and s['st_size'] and s['st_info']['type']=='STT_FUNC' and any(k in s.name for k in ('9VideoSink','13MediaSinkBase','20ProtocolEndpointBase','11InputSource')):ranges.append((s.name,s['st_value'],s['st_size']))
     else:
-        ranges=[('ProtocolEndpointBase_local_constructor',0x1208fc,0x88),('MediaSinkBase_local_constructor',0x1215d8,0x84),('VideoSink_member_initializers',0x122690,0x78),('VideoSink_local_constructor',0x12165c,0xa0),('VideoSink_allocation_wrapper',0x12174c,0xc0),('app_video_initialize',0x124ccc,0x49c),('AaVideoSinkCallbacks_methods',0x125168,0x988),('AaVideoSinkCallbacks_constructor',0x125ca0,0x1c8),('AaVideoSinkCallbacks_destructors',0x125e68,0x1a0)]
+        ranges=[('ProtocolEndpointBase_local_constructor',0x1208fc,0x88),('MediaSinkBase_local_constructor',0x1215d8,0x84),('VideoSink_member_initializers',0x122690,0x78),('VideoSink_local_constructor',0x12165c,0xa0),('VideoSink_owner_wrapper',0x1216fc,0xec),('InputSource_constructor',0x121ab0,0xc0),('InputSource_owner_wrapper',0x121b70,0xd4),('VideoSink_attach_callback',0x125b5c,0x2c),('Callback_shared_wrap',0x125d64,0x54),('Callback_shared_release',0x11c354,0xa0),('app_video_initialize',0x124ccc,0x49c),('AaVideoSinkCallbacks_methods',0x125168,0x988),('AaVideoSinkCallbacks_constructor',0x125ca0,0x1c8),('AaVideoSinkCallbacks_destructors',0x125e68,0x1a0)]
     md=Cs(CS_ARCH_ARM,CS_MODE_ARM);md.detail=True;md.skipdata=True
     for method,address,size in sorted(ranges,key=lambda x:x[1]):
         lines.append('\nFUNCTION '+method+' @ '+hex(address)+' size '+hex(size))

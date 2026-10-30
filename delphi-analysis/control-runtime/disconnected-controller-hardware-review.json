@@ -1,0 +1,43 @@
+{
+  "collection": "_disconnect_observer_20261029_225707_669ee00c",
+  "native_sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae",
+  "verified_artifacts": 13,
+  "pending": {
+    "version": 3,
+    "phase": 4,
+    "observed_pid": 1273935,
+    "restored_pid": 0,
+    "capture_done": 1,
+    "cleanup_authorized": 0,
+    "cleanup_started": 0
+  },
+  "assessment": {
+    "completed_restored": true,
+    "process_restoration_verified": true,
+    "restoration_scope": "process_identity_and_stock_files_only",
+    "display_recovery_verified": false,
+    "captured_registration": false,
+    "capture_validated": false,
+    "capture_seconds": 20,
+    "observed_pid": 1273935,
+    "restored_pid": 1392719,
+    "baseline_pid": 671823,
+    "manager_pid": 417823,
+    "controller_pid": 1265758,
+    "executable_load_bias": 0,
+    "known_registration_callers": [],
+    "video_registration_seen": false,
+    "disconnected_control_flags": {
+      "version": 3,
+      "phase": 6,
+      "observed_pid": 1273935,
+      "restored_pid": 1392719,
+      "capture_done": 1,
+      "cleanup_authorized": 1,
+      "cleanup_started": 1
+    },
+    "controller_trial_passed": true
+  },
+  "actual_unit_disconnected_controller_validated": true,
+  "phone_session_tested": false
+}
