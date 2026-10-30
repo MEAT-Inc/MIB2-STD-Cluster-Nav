@@ -63,7 +63,7 @@ def main():
  (q/"summary.json").write_text(json.dumps(result,indent=2))
  release=BASE/"release";release.mkdir(exist_ok=True)
  for name,p in sources.items():shutil.copy2(p,release/name)
- manifest=dict(kind="managed_androidauto_observer",deployment_hold="persistent_black_screen_investigation",files=records,expected_stock=REFERENCES,known_registration_callers=[hex(x) for x in sorted(callers)],qnx_emulation_passed=True,actual_androidauto_interposition_tested=False,requires_explicit_run=True,capture_profiles=[20,60],qnx_log_sha256=result["qnx_log_sha256"])
+ manifest=dict(kind="managed_androidauto_observer",files=records,expected_stock=REFERENCES,known_registration_callers=[hex(x) for x in sorted(callers)],qnx_emulation_passed=True,actual_androidauto_interposition_tested=False,requires_explicit_run=True,capture_profiles=[20,60],qnx_log_sha256=result["qnx_log_sha256"])
  (release/"manifest.json").write_text(json.dumps(manifest,indent=2));shutil.copy2(BASE/"README.txt",release/"README.txt")
  paths=[ROOT/"scripts"/n for n in ("run_androidauto_observer.py","run_observer_smoke.py","delphi_inventory.py","decode_delphi_observer.py")]+[release/n for n in (*NAMES,"manifest.json","README.txt")]
  bundle=BASE/"androidauto-phone-capture-laptop.zip"

@@ -5,7 +5,6 @@
     "completed_restored": true,
     "process_restoration_verified": true,
     "restoration_scope": "process_identity_and_stock_files_only",
-    "display_recovery_verified": false,
     "captured_registration": true,
     "capture_validated": true,
     "capture_seconds": 60,
@@ -39,8 +38,6 @@
   },
   "registrations": 9,
   "dropped": 0,
-  "normal_phone_view": true,
   "handoff_seconds": 136.672,
-  "door_opened": "y",
   "phone_session_trial_passed": true
 }

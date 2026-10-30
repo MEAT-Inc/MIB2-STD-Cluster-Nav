@@ -1,19 +1,15 @@
 OBSERVER PHONE SESSION TRIAL - EXPLICIT DISCONNECTED CLEANUP
 
-Extract into the laptop project folder. Park the car, ignition on, door CLOSED.
+Extract into the laptop project folder. Park the car, ignition on.
 Initially connect Ethernet, with phone physically UNPLUGGED. Run:
   python scripts/run_disconnected_observer.py --run --phone-capture --phone-unplugged
-
-Wait for CAPTURE READY. ONLY THEN swap Ethernet for the phone and open Android
-Auto navigation. Keep the phone connected for at least90 seconds. Observe the
-AA view through the whole interval. Do not perform a door test in this run.
 
 The 60-second capture checkpoint DOES NOT restart AndroidAuto. The observed
 app and bounded observer log remain active until explicit cleanup. There is
 no forced timed restart, including on laptop/controller loss.
 
 After90 seconds unplug the phone, reconnect Ethernet, wait for link, then press
-Enter at the laptop prompt. Answer the screen/door questions. Type exactly
+Enter at the laptop prompt. Type exactly
 PHONE REMOVED only when the phone is physically unplugged; this requests the
 identity-checked cleanup and verifies a fresh stock AndroidAuto process.
 

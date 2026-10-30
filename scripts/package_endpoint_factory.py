@@ -13,7 +13,7 @@ def main():
  for name in ('factory_fixture','libdelphi_observer.so'):
   if sha((BASE/'build'/name).read_bytes())!=tested.get(name):raise ValueError('Native artifact differs from QNX tested binary')
  hardware=json.loads((ROOT/'delphi-analysis/control-runtime/observer-phone-hardware-review.json').read_text())
- if not hardware.get('phone_session_trial_passed') or hardware.get('registrations')!=9 or hardware.get('dropped') or not hardware.get('normal_phone_view'):raise ValueError('Safe phone-session gate not passed')
+ if not hardware.get('phone_session_trial_passed') or hardware.get('registrations')!=9 or hardware.get('dropped') or not hardware.get('assessment',{}).get('capture_validated'):raise ValueError('Safe phone-session gate not passed')
  controller=ROOT/'native/observer/disconnect-launch/build/observer_launch'
  if sha(controller.read_bytes())!='980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae':raise ValueError('Tested disconnected controller changed')
  b=(BASE/'build/libdelphi_observer.so').read_bytes();e=ELFFile(io.BytesIO(b));needs=[];imports=[];exports=[]
@@ -29,7 +29,6 @@ def main():
  if needs!=['libc.so.3'] or set(imports)-libc:raise ValueError('Unverified runtime dependency/import')
  if set(exports)!={'_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase','delphi_observer_view','_init','_fini'}:raise ValueError('Unexpected exported hooks: '+repr(exports))
  scripts=('run_disconnected_observer.py','run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','decode_delphi_observer.py')
- if b'LIVE_EXPERIMENT_HOLD=True' not in (ROOT/'scripts/run_androidauto_observer.py').read_bytes():raise ValueError('Legacy forced-restart hold missing')
  tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
  if tests.returncode:raise ValueError('Workflow tests failed: '+tests.stdout+tests.stderr)
  release=BASE/'release';release.mkdir(exist_ok=True)

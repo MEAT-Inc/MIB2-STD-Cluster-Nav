@@ -1,6 +1,5 @@
 {
   "kind": "managed_androidauto_display_observer",
-  "deployment_hold": "persistent_black_screen_investigation",
   "files": {
     "observer_launch": {
       "bytes": 18444,

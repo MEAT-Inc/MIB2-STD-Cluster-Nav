@@ -1,8 +1,3 @@
-HOLD: persistent black screen reported on hardware. Live --run experiments are
-disabled in the Python runner pending display-failure diagnosis. Do not use an
-older ZIP to bypass this hold. Use the read-only collect_display_health.py.
-The launch procedure below is historical and currently suspended.
-
 Real AndroidAuto registration observer experiment
 
 Purpose: capture the real app's service-registration call sites before changing

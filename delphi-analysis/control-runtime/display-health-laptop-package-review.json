@@ -1,8 +1,0 @@
-{
-  "bundle": "native\\observer\\display\\black-screen-diagnostics-laptop.zip",
-  "bytes": 35824,
-  "sha256": "7e0c5cd8fefce95e7249ac167041aa7397b85ed74f0a3e88cbea36b624dff843",
-  "portable_plan_passed": true,
-  "live_restart_blocked": true,
-  "contains_native_programs": false
-}

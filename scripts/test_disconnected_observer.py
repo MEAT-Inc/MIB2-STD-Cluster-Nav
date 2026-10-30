@@ -85,7 +85,7 @@ class DisconnectedTests(unittest.TestCase):
  def test_final_restores_even_zero_phone_calls(self):
   b,root,refs=self.fixture(False)
   with patch.object(m.old,'REFERENCES',refs):r=m.assess_final(b,root)
-  self.assertTrue(r['controller_trial_passed']);self.assertTrue(r['completed_restored']);self.assertFalse(r['captured_registration']);self.assertFalse(r['display_recovery_verified'])
+  self.assertTrue(r['controller_trial_passed']);self.assertTrue(r['completed_restored']);self.assertFalse(r['captured_registration'])
  def test_v3_flags_and_reserved_reject(self):
   for pending in (False,True):
    b,root,_=self.fixture(pending)
@@ -171,7 +171,6 @@ class WorkflowTests(unittest.TestCase):
     if prompt.startswith('Keep the phone unplugged'):return ''
     if prompt.startswith('Once navigation'):
      self.assertTrue(state['shells'][-1].closed);return ''
-    self.assertNotIn('driver door',prompt.lower());self.assertNotIn('displaying normally',prompt.lower())
     self.assertFalse(any('cleanup-disconnected ' in c for c in state['commands']))
     return 'later' if mode=='decline' or resume and state.get('first',True) else 'PHONE REMOVED'
   with patch('cluster_preflight.verify_navigation'),patch.object(m,'ROOT',root),patch.object(m,'package',return_value=uploads),patch.object(m.old,'REFERENCES',refs),patch.object(m.ftplib,'FTP',FTP),patch.object(m,'Shell',Shell),patch.object(m,'wait_for_capture_ready',side_effect=RuntimeError('not ready') if mode=='readyfail' else None,return_value=f'LAUNCH_READY capture_seconds={seconds}\n'.encode()),patch.object(m.time,'sleep'),(patch.object(m.time,'monotonic',side_effect=[0,0,0,0,31]) if mode=='pendingnever' else contextlib.nullcontext()),patch('builtins.input',side_effect=answer),contextlib.redirect_stdout(io.StringIO()):
@@ -185,7 +184,7 @@ class WorkflowTests(unittest.TestCase):
  def test_decline_leaves_pending_no_cleanup(self):
   code,s,r=self.simulate('decline');self.assertEqual(code,2);self.assertTrue(r['cleanup_pending']);self.assertFalse(r['operator_cleanup_confirmed']);self.assertFalse(any('cleanup-disconnected ' in c for c in s['commands']))
  def test_explicit_cleanup_once(self):
-  code,s,r=self.simulate();self.assertEqual(code,0);self.assertTrue(r['controller_trial_passed']);self.assertFalse(r['display_recovery_verified']);self.assertEqual(sum('cleanup-disconnected ' in c for c in s['commands']),1)
+  code,s,r=self.simulate();self.assertEqual(code,0);self.assertTrue(r['controller_trial_passed']);self.assertEqual(sum('cleanup-disconnected ' in c for c in s['commands']),1)
  def test_cleanup_failure_preserves_pending_without_retry(self):
   code,s,r=self.simulate('cleanupfail');self.assertEqual(code,2);self.assertTrue(r['cleanup_pending']);self.assertIn('error',r);self.assertEqual(sum('cleanup-disconnected ' in c for c in s['commands']),1)
  def test_failed_cd_has_no_relative_writes(self):

@@ -28,9 +28,8 @@ Native offsets and fingerprints are specific to this build. Relocating the lapto
 | Secondary phone video | Latest collection records 371 frames, 371 ACKs, 2,776,803 saved bytes, no drops/errors/fallback, and verified stock process restoration. Offboard decoding shows Google Maps navigation at 800Ã—480 Baseline AVC. | No separate audio stream or physical cluster playback demonstrated. Raw capture lacks per-frame timing. |
 | Offline mux | Real capture remuxed into 15,793 native-format TS packets; independent decoding produces identical RGB hashes for every frame. | Fixture uses explicit synthetic 30 fps, not measured phone timing or proof of cluster acceptance. |
 | Cluster preflight | Read-only native geometry helper and bounded callback timing recorder are built; QNX synthetic tests and portable package gates are recorded passing. | Actual NavigationServer geometry read and timestamp measurement are pending hardware work. |
-| Black-view investigation | A replacement explicit-cleanup workflow completed healthy phone sessions. The original forced-timer observer remains held. | Historical fault cause and recovery after a fault remain unproven; stock process restoration is not visual/session recovery. |
 
-The latest summary is [CLUSTER-BRIDGE-PROGRESS.txt](delphi-analysis/CLUSTER-BRIDGE-PROGRESS.txt). Also see [INVESTIGATION-STATUS.txt](delphi-analysis/INVESTIGATION-STATUS.txt), [display hardware findings](delphi-analysis/OBSERVER-DISPLAY-HARDWARE-REVIEW.txt), and the [black-view investigation](delphi-analysis/ANDROID-AUTO-BLACK-SCREEN-INVESTIGATION.txt). Historical sections can describe gates that later captures have completed.
+The latest summary is [CLUSTER-BRIDGE-PROGRESS.txt](delphi-analysis/CLUSTER-BRIDGE-PROGRESS.txt). Also see [INVESTIGATION-STATUS.txt](delphi-analysis/INVESTIGATION-STATUS.txt), [display hardware findings](delphi-analysis/OBSERVER-DISPLAY-HARDWARE-REVIEW.txt). Historical sections can describe gates that later captures have completed.
 
 The latest secondary-stream collection is `delphi-dump/_disconnect_observer_20261030_023947_1b83e2fa/` (about 10:39 p.m. Eastern on October 29; directory names use UTC). Its 18 artifact records and native/factory/stream assessments were independently reviewed. [video-review.json](delphi-analysis/cluster-bridge/video-review/video-review.json) records decoded source and remux pixel hashes; [frame-0180.png](delphi-analysis/cluster-bridge/video-review/frame-0180.png) shows the captured map. The offline TS fixture is evidence for byte/pixel preservation, not a deployment stream.
 
@@ -48,8 +47,6 @@ python scripts/run_disconnected_observer.py --cluster-preflight
 These display help/a plan without connecting or creating a capture. Script defaults locate the repository from `__file__`, independently of the launch directory. Explicit CLI input/output paths are relative to the current directory unless a script says otherwise. In particular, resume paths must identify the existing capture under this checkout; use the exact printed command.
 
 Read [scripts/USAGE.txt](scripts/USAGE.txt), [preflight instructions](scripts/OBSERVER-PREFLIGHT.txt), and [cluster preflight instructions](native/cluster-bridge/README.txt) before vehicle work. Cluster preflight actively runs the established AndroidAuto observation lifecycle, but reads NavigationServer through a read-only helper without signaling/restarting it or opening/writing cluster transport. The phone must be removed before explicit cleanup. A timer checkpoint is not permission for a forced restart.
-
-The original `scripts/run_androidauto_observer.py --run` remains disabled. Do not use an older timed observer package to recreate the black-view issue. Passive health/trace tools remain available; their logger completion does not by itself prove full phone-interval coverage or recovery.
 
 ### Optional offline analysis environment
 
@@ -114,7 +111,6 @@ Release manifests bind exact source/artifact hashes. Regenerate and validate the
 |   |-- endpoint-factory/       Native construction/ownership probe
 |   |-- secondary-display/      Paired endpoints, callbacks, wire rewrite, timing
 |   |-- cluster-bridge/         Read-only geometry helper and preflight release
-|   |-- trace-reader/           Passive trace reader and tests
 |   `-- loader-probe/           QNX loader experiments
 |-- delphi-analysis/              Findings, static analysis, machine reviews
 |   `-- cluster-bridge/video-review/  Source previews and offline TS fixture
@@ -130,4 +126,4 @@ Acquired firmware, discovery packets, video, configuration, and traces may conta
 1. Collect native encoder geometry/writer state and phone callback timestamps with the prepared cluster preflight. Missing active factory-map geometry must remain a partial result, not a guessed resolution.
 2. Establish the actual phone timestamp units and cluster geometry/cadence. The existing offline 30 fps fixture is deliberately synthetic.
 3. Implement bounded owned-buffer IPC and one coherent source substitution through NavigationServer's existing writer, preserving activation, MOST ownership, and restoration.
-4. Validate the actual cluster decoder and continue fault/recovery coverage. Do not infer working cluster maps from successful phone negotiation or offline muxing.
+4. Validate playback through the actual cluster decoder. Do not infer working cluster maps from successful phone negotiation or offline muxing.

@@ -4,7 +4,6 @@
   "sha256": "7d33562f6a0fcbaa244277e0e928f4691d35de3d90c7592ceb406d4e8c5e57c5",
   "portable_plan_passed": true,
   "portable_manifest_passed": true,
-  "old_live_hold_passed": true,
   "python_tests": "........................\n----------------------------------------------------------------------\nRan 24 tests in 0.342s\n\nOK",
   "manifest": {
     "kind": "disconnected_observer_control_trial",

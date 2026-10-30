@@ -62,8 +62,8 @@
     "profile.h": "e527d05d0f8076aed92bf4207e6b48cbe0a815e3d9dd3c7c611e48f7962b954a"
   },
   "scripts_sha256": {
-    "run_disconnected_observer.py": "2ae37889d79d4bc04a8154406ac1a04d4ba997a5c027a18c46edd3326990986d",
-    "run_androidauto_observer.py": "510b9c77301b158f95ec55997e1c9882d11050780c0f1005d4aa32faecf57a0b",
+    "run_disconnected_observer.py": "70d9cd8a76017f8f2c438df1b5720aa38d036c25479e36174787863b9c511086",
+    "run_androidauto_observer.py": "2a35a1ccb197a91223add8695787f3b8b6eb6f1fa1f6f3d437675dde3a6ec389",
     "run_observer_smoke.py": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5",
     "delphi_inventory.py": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25",
     "decode_delphi_observer.py": "113906aee942b7245360806fcddb643b95210df976f23ce7f97cf3006264e13b"

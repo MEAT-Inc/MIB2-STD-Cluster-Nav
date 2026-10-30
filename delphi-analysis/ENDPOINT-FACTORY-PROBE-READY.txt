@@ -1,5 +1,3 @@
-
-
 2026-10-29: Factory trigger fixed; combined callback probe and faster collection ready
 Reviewed _disconnect_observer_20261030_001820_26e4d417: all15 artifact hashes/sizes
 verified;9 registrations,0drops, stock restoredPID1359950 from observed1040462.
@@ -29,15 +27,6 @@ cleanup. Portable extracted Python -S plan and enabled-profile asset check pass.
 Native DSO e5c0f25bd18f24def14290b619d56a1d2368a25746a546691e5545e3e27bfdca;
 controller unchanged980107c5...; native source/test hashes bound into manifest.
 No real firmware factory success is claimed before the next returned result.
-
-Per user: remove driver-door/display/recovery questions and those health gates.
-They are resolved and no longer part of the map work. No further baselines.
-Factory profile uses already-proven20s checkpoint, not60/90s timing. Once AA
-navigation starts, unplug phone/reconnect Ethernet; collector silently waits for
-native pending if needed. PHONE REMOVED still explicitly requests disconnected
-cleanup. Returned capture completion derives from actual registrations, not a
-fabricated UI observation. An early report copy bug was removed so the polling
-occurs before trying to copy a report that may not exist yet.
 
 Next car command, initial phone unplugged/Ethernet/ignition on:
  python scripts/run_disconnected_observer.py --run --phone-capture --factory-probe --phone-unplugged

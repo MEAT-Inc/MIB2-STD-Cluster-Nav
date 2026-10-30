@@ -54,11 +54,11 @@
   ],
   "source_sha256": {
     "native/secondary-display/forward-fixture.c": "8ae0751d1f33ad339490b1bb1bedcdf32ea7c03cab4e186c2b3baf1d598a831d",
-    "native/secondary-display/observer.c": "ca60e958890153c862cf1fde975ffe38f19ab2676dc0f3bd2e5bc44aef69ee56",
+    "native/secondary-display/observer.c": "3e707e14dd744ebc4e6dd9f73ea694e9196d15e54141f7d4f6e953e699992266",
     "native/secondary-display/provider-extra.c": "46fc80899d1df5afdb7779037252d7632900630a0c5c939be82d7d3531ae1774",
-    "native/secondary-display/runtime-fixture.c": "e02b88f0e2684bb649ce74de148fa5bb181bdb3b1a92b6ff52cf780106c9e657",
-    "native/secondary-display/runtime.c": "eac2525d23073367d8ac8cd0186d62fa0bb3bae7ec580ca4b6d51322b3b37583",
-    "native/secondary-display/runtime.h": "bd0bb7b4e2d41a543126177cd3d4107658feb010f8c0fbc7aa7e88cca0080dd5",
+    "native/secondary-display/runtime-fixture.c": "7f90e79503a957e29f9c05d2f84c1c49476ac0e4727b87e8ba4702323ac22a7e",
+    "native/secondary-display/runtime.c": "18a8709fdfd4e9efd65f53331efb1d5543d8372955f5407a877c0119b7d22081",
+    "native/secondary-display/runtime.h": "ff2a562d4eff0b3ea2141b490c48fc4178fbd9d5858c5972bbf1464f5dbc24ff",
     "native/secondary-display/test-runner.c": "589c935ee9d9f9cc7fe876a33023dcac9a006c836918c42d3376486a44cb4498",
     "native/secondary-display/transaction-fixture.c": "c8a2f196e54cd89c26a5a5f5bcf4c70d6438f9e4defb481bf429b2af508f410f",
     "native/secondary-display/wire-fixture.c": "cdd5bc428669908d35e909321f4fc566b0a435b43b909b93bd874b3812b1e767",
@@ -71,8 +71,8 @@
     "native/endpoint-factory/profile.h": "ded726aa39fcc6d528262a817060f3ce7b56aa818236865da4991f38fa683cc8"
   },
   "scripts_sha256": {
-    "run_disconnected_observer.py": "9cd5da7becef8f0f2b10b7731c503bf5c9afac831ab8ee7bcd729ff5b4189c7c",
-    "run_androidauto_observer.py": "510b9c77301b158f95ec55997e1c9882d11050780c0f1005d4aa32faecf57a0b",
+    "run_disconnected_observer.py": "70d9cd8a76017f8f2c438df1b5720aa38d036c25479e36174787863b9c511086",
+    "run_androidauto_observer.py": "2a35a1ccb197a91223add8695787f3b8b6eb6f1fa1f6f3d437675dde3a6ec389",
     "run_observer_smoke.py": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5",
     "delphi_inventory.py": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25",
     "decode_delphi_observer.py": "113906aee942b7245360806fcddb643b95210df976f23ce7f97cf3006264e13b"

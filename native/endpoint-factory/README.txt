@@ -5,7 +5,7 @@ unplugged, ignition on. Run:
   python scripts/run_disconnected_observer.py --run --phone-capture --factory-probe --phone-unplugged
 At CAPTURE READY swap Ethernet for the phone and open Android Auto navigation.
 Once navigation starts, unplug phone and reconnect Ethernet. Press Enter when
-its link is ready. No90-second wait or door/display questions. The native20s
+its link is ready. No90-second wait is required. The native20s
 checkpoint leaves AndroidAuto running; Python waits for it if still pending.
 Type PHONE REMOVED only with phone unplugged to request explicit cleanup.
 Return the entire new delphi-dump/_disconnect_observer_* folder.

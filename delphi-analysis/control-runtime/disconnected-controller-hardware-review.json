@@ -15,7 +15,6 @@
     "completed_restored": true,
     "process_restoration_verified": true,
     "restoration_scope": "process_identity_and_stock_files_only",
-    "display_recovery_verified": false,
     "captured_registration": false,
     "capture_validated": false,
     "capture_seconds": 20,

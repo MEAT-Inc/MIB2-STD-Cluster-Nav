@@ -6,8 +6,7 @@ phone unplugged, Ethernet connected, ignition on. Run:
 At CAPTURE READY connect phone, open navigation and START A ROUTE. Let it run
 about10 seconds, then unplug phone and reconnect Ethernet. Follow the cleanup
 prompt; PHONE REMOVED must only be entered with phone physically unplugged.
-The20s native checkpoint leaves AA running. No90-second hold or extra door/
-display questions. Use ONE phone connection per run; collect rather than
+The20s native checkpoint leaves AA running. Use ONE phone connection per run; collect rather than
 reconnecting the phone again inside the same experiment.
 
 This is the first live second-stream experiment. It first self-checks the exact

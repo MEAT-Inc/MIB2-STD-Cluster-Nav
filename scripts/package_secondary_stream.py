@@ -31,7 +31,6 @@ def main(preflight=False):
  expected={'_init','_fini','_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase','delphi_observer_view','_ZN13MessageRouter32populateServiceDiscoveryResponseEP24ServiceDiscoveryResponse','_ZN13MessageRouter13queueOutgoingEhPvj'}
  if set(exports)!=expected:raise ValueError('Unexpected exported hooks: '+repr(exports))
  scripts=('secondary_timing.py','cluster_preflight.py','run_disconnected_observer.py','run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','decode_delphi_observer.py')
- if b'LIVE_EXPERIMENT_HOLD=True' not in (ROOT/'scripts/run_androidauto_observer.py').read_bytes():raise ValueError('Old timer-based workflow hold missing')
  tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
  if tests.returncode:raise ValueError('Workflow/report tests failed: '+tests.stdout+tests.stderr)
  source_files=[p for p in BASE.glob('*.[ch]')]+[ROOT/'native/endpoint-factory'/n for n in ('factory.c','factory.h','probe.c','probe.h','profile.h')]

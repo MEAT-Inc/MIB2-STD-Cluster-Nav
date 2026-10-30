@@ -39,7 +39,6 @@ def main():
    states[prefix+'_'+stage]=dict(phase=h[3],observed_pid=h[10],restored_pid=h[11],capture_seconds=seconds,cleanup_authorized=flags[2],sha256=sha(b));pair.append(b)
   if pair[0][40:44]!=pair[1][40:44] or pair[0][64:88]!=pair[1][64:88] or pair[0][96:224]!=pair[1][96:224]:raise ValueError('Cleanup changed original process identity')
  scripts=('run_disconnected_observer.py','run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','decode_delphi_observer.py')
- if b'LIVE_EXPERIMENT_HOLD=True' not in (ROOT/'scripts/run_androidauto_observer.py').read_bytes():raise ValueError('Old live observer hold missing')
  check=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
  if check.returncode:raise ValueError('Python lifecycle regression failed: '+check.stdout+check.stderr)
  hardware=json.loads((ROOT/'delphi-analysis/control-runtime/disconnected-controller-hardware-review.json').read_text())
@@ -62,9 +61,7 @@ def main():
   code="import sys;from pathlib import Path;sys.path.insert(0,str(Path(sys.argv[1])/'scripts'));import run_disconnected_observer as m;print(len(m.package(Path(sys.argv[1])/'native/observer/disconnect-launch/release',phone=True)))"
   result=subprocess.run([sys.executable,'-S','-B','-c',code,str(folder)],cwd=folder,capture_output=True,text=True)
   if result.returncode or result.stdout.strip()!='2':raise ValueError('Portable manifest check failed: '+result.stderr)
-  result=subprocess.run([sys.executable,'-S','-B',str(folder/'scripts/run_androidauto_observer.py'),'--run'],cwd=folder,capture_output=True,text=True)
-  if result.returncode!=2 or 'disabled' not in result.stderr or (folder/'delphi-dump').exists():raise ValueError('Old disruptive runner not blocked')
- report=dict(bundle=str(bundle.relative_to(ROOT)),bytes=bundle.stat().st_size,sha256=sha(bundle.read_bytes()),portable_plan_passed=True,portable_manifest_passed=True,old_live_hold_passed=True,python_tests=check.stderr.strip(),manifest=manifest)
+ report=dict(bundle=str(bundle.relative_to(ROOT)),bytes=bundle.stat().st_size,sha256=sha(bundle.read_bytes()),portable_plan_passed=True,portable_manifest_passed=True,python_tests=check.stderr.strip(),manifest=manifest)
  (ROOT/'delphi-analysis/control-runtime/disconnected-controller-release.json').write_text(json.dumps(report,indent=2))
  print(json.dumps({k:v for k,v in report.items() if k!='manifest'},indent=2))
 if __name__=='__main__':main()

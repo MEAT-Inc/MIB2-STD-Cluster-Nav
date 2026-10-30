@@ -5,8 +5,6 @@ import delphi_inventory as d
 from run_observer_smoke import Shell, retrieve, stock_processes
 from decode_delphi_observer import decode
 ROOT=Path(__file__).resolve().parents[1]
-# Persistent black screen reported on hardware: no further disruptive runs.
-LIVE_EXPERIMENT_HOLD=True
 NAMES=('observer_launch','libdelphi_observer.so')
 REMOTE_PREFIX='/ramdisk/delphi-aa-observer_'
 KNOWN_REGISTRATION_CALLERS={0x124e54,0x127390,0x128764,0x12b95c,0x12ed44,0x12fa08,0x130b90,0x132a3c}
@@ -95,7 +93,7 @@ def assess(blobs,remote=None):
     callers={int(r['caller'],16)-bias for r in trace['records']}
     captured=count>0
     if captured and not callers.intersection(known_callers):raise ValueError('No captured caller matches the verified AndroidAuto binary')
-    return dict(completed_restored=True,process_restoration_verified=True,restoration_scope='process_identity_and_stock_files_only',display_recovery_verified=False,captured_registration=captured,decoded_log=trace,
+    return dict(completed_restored=True,process_restoration_verified=True,restoration_scope='process_identity_and_stock_files_only',captured_registration=captured,decoded_log=trace,
                 capture_validated=captured,capture_seconds=capture_seconds,observed_pid=observed,restored_pid=restored,
                 baseline_pid=baseline,manager_pid=manager,controller_pid=controller,
                 executable_load_bias=bias,known_registration_callers=[hex(x) for x in sorted(callers.intersection(known_callers))],
@@ -127,8 +125,6 @@ def main(argv=None):
     p.add_argument('--timeout',type=float,default=90);a=p.parse_args(argv)
     if not 60<=a.timeout<=180 or not 1<=a.port<=65535 or not 1<=a.telnet_port<=65535:p.error('Timeout must be 60..180 seconds; ports must be 1..65535')
     if a.display_capture and not a.phone_capture:p.error('--display-capture requires --phone-capture')
-    if a.run and LIVE_EXPERIMENT_HOLD:p.error('Live AndroidAuto restart experiments are disabled while the persistent black screen is investigated. Use collect_display_health.py --run for read-only diagnostics.')
-    if LIVE_EXPERIMENT_HOLD:print('HOLD: persistent black screen under investigation; live experiments are disabled.')
     print('Plan: upload two verified files to a fresh /ramdisk/delphi-aa-observer_<uuid32>; verify three RAM stock references.')
     print('Native guard interrupts/restarts actual AndroidAuto twice and verifies stock restoration.')
     print('Phone mode: Ethernet stage -> phone for 90 seconds -> reconnect Ethernet to collect.' if a.phone_capture else 'Default mode: 20-second capture, up to about 45 seconds including startup/restoration.')

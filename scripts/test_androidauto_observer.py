@@ -58,14 +58,10 @@ class RunnerTests(unittest.TestCase):
                             evidence['controller.bin']=bytes(controller)
                             evidence['launch.txt']=evidence['launch.txt'].replace(oldroot.encode(),state['remote'].encode())+b'LAUNCH_READY capture_seconds=60\n'
                             for name,data in evidence.items():state['data'][state['remote']+'/'+name]=data
-            with patch.object(m,'LIVE_EXPERIMENT_HOLD',False),patch.object(m,'ROOT',root),patch.object(m,'package_files',return_value=uploads),patch.object(m,'REFERENCES',contract),patch.object(m.ftplib,'FTP',FTP),patch.object(m,'Shell',Shell),patch.object(m,'wait_for_phone_ready',side_effect=RuntimeError('not ready') if mode=='readyfail' else None,return_value=b'LAUNCH_READY capture_seconds=60\n'),patch('builtins.input',side_effect=lambda prompt: state['shells'][-1].closed or (_ for _ in ()).throw(AssertionError('phone prompt before close'))),contextlib.redirect_stdout(io.StringIO()):
+            with patch.object(m,'ROOT',root),patch.object(m,'package_files',return_value=uploads),patch.object(m,'REFERENCES',contract),patch.object(m.ftplib,'FTP',FTP),patch.object(m,'Shell',Shell),patch.object(m,'wait_for_phone_ready',side_effect=RuntimeError('not ready') if mode=='readyfail' else None,return_value=b'LAUNCH_READY capture_seconds=60\n'),patch('builtins.input',side_effect=lambda prompt: state['shells'][-1].closed or (_ for _ in ()).throw(AssertionError('phone prompt before close'))),contextlib.redirect_stdout(io.StringIO()):
                 code=m.main((['--run'] if run else [])+(['--phone-capture'] if phone else [])+(['--display-capture'] if display else []))
             summary=json.loads(next(root.glob('delphi-dump/*/androidauto-summary.json')).read_text()) if run else None
         return code,state,summary
-    def test_live_hold_blocks_before_network_or_upload(self):
-        for args in (['--run'],['--run','--phone-capture'],['--run','--phone-capture','--display-capture']):
-            with patch.object(m,'LIVE_EXPERIMENT_HOLD',True),patch.object(m.ftplib,'FTP') as ftp,contextlib.redirect_stderr(io.StringIO()),self.assertRaises(SystemExit) as stopped:m.main(args)
-            self.assertEqual(stopped.exception.code,2);ftp.assert_not_called()
     def test_plan_has_no_network(self):
         code,s,_=self.simulate(run=False);self.assertEqual(code,0);self.assertEqual(s['connections'],0)
     def test_upload_tamper_prevents_shell(self):

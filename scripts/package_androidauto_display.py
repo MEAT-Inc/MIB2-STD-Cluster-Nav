@@ -55,7 +55,7 @@ def main():
     if needed!=['libc.so.3'] or set(imports)-libc:raise ValueError('Missing unit runtime imports: '+repr(set(imports)-libc))
     if not set(SYMBOLS).issubset(exports) or '_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase' not in exports:raise ValueError('Missing interposed methods')
     manifest=copy.deepcopy(json.loads((release0/'manifest.json').read_text()))
-    manifest.update(kind='managed_androidauto_display_observer',deployment_hold='persistent_black_screen_investigation',display_capture_version=1,display_capacity=CAPACITY,display_payload_limit=4096,display_native_offsets={n:hex(v) for n,v in SYMBOLS.items()},display_qnx_log_sha256=sha((q/'qemu.log').read_bytes()),display_interposition_tested_on_car=False,mutates_packets=False,creates_endpoints=False)
+    manifest.update(kind='managed_androidauto_display_observer',display_capture_version=1,display_capacity=CAPACITY,display_payload_limit=4096,display_native_offsets={n:hex(v) for n,v in SYMBOLS.items()},display_qnx_log_sha256=sha((q/'qemu.log').read_bytes()),display_interposition_tested_on_car=False,mutates_packets=False,creates_endpoints=False)
     manifest['files']['libdelphi_observer.so']=dict(bytes=len(blob),sha256=sha(blob),needed=needed,required_unit_libc_imports=sorted(imports))
     release=BASE/'release';release.mkdir(exist_ok=True)
     (release/'observer_launch').write_bytes(files['observer_launch']);(release/'libdelphi_observer.so').write_bytes(blob)
