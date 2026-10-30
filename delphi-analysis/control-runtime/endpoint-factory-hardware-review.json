@@ -1,0 +1,49 @@
+{
+  "collection": "_disconnect_observer_20261030_010535_854fe87e",
+  "verified_artifacts": 15,
+  "controller": {
+    "completed_restored": true,
+    "process_restoration_verified": true,
+    "restoration_scope": "process_identity_and_stock_files_only",
+    "display_recovery_verified": false,
+    "captured_registration": true,
+    "capture_validated": true,
+    "capture_seconds": 20,
+    "observed_pid": 1171535,
+    "restored_pid": 1372239,
+    "baseline_pid": 671823,
+    "manager_pid": 417823,
+    "controller_pid": 1159259,
+    "executable_load_bias": 0,
+    "known_registration_callers": [
+      "0x124e54",
+      "0x127390",
+      "0x128764",
+      "0x12b95c",
+      "0x12ed44",
+      "0x12fa08",
+      "0x130b90",
+      "0x132a3c"
+    ],
+    "video_registration_seen": true,
+    "disconnected_control_flags": {
+      "version": 3,
+      "phase": 6,
+      "observed_pid": 1171535,
+      "restored_pid": 1372239,
+      "capture_done": 1,
+      "cleanup_authorized": 1,
+      "cleanup_started": 1
+    },
+    "controller_trial_passed": true
+  },
+  "registrations": 9,
+  "dropped": 0,
+  "native_constructors_and_ownership_verified": true,
+  "primary_unchanged": true,
+  "router_table_unchanged": true,
+  "configuration_check_bug": "Expected1 but native8e170 returns count-1: first index0",
+  "configuration_contract_corrected": true,
+  "callbacks_hardware_tested": false,
+  "secondary_stream_hardware_tested": false
+}

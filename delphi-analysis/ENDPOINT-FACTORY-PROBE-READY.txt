@@ -1,71 +1,52 @@
 
 
-2026-10-29: Healthy phone observation verified; native paired-endpoint factory built
-Returned _disconnect_observer_20261029_233918_512db910 independently verified all14
-artifact sizes/hashes and re-ran the strict60s native/stock/observer assessment.
-Nine registrations, all eight known callers, zero drops. Phone view normal after
-136.672s; driver door was opened (human report only, not a timed door challenge).
-Pending observedPID1048654 had cleanup authorization0 and no restoredPID. Explicit
-cleanup restored stockPID1347662; stock-current agrees. Screen recovery after a
-fault remains unproven; this healthy run supports the replacement workflow.
-Evidence: control-runtime/observer-phone-hardware-review.json. No further baseline
-repeat requested. Original forced-restart observer remains held.
+2026-10-29: Factory trigger fixed; combined callback probe and faster collection ready
+Reviewed _disconnect_observer_20261030_001820_26e4d417: all15 artifact hashes/sizes
+verified;9 registrations,0drops, stock restoredPID1359950 from observed1040462.
+Factory EFP1 header was valid but started/done/status/error all0: the old predicate
+never entered. This is a trigger defect, not a failed native constructor test.
+The gate used QNX dladdr main-text name/base identification; exact captured caller
+0x124e54 and fingerprinted ET_EXEC allow removing this unnecessary dependency.
+Native helper byte gates, controller/ref/source fingerprints remain in force.
+Review: control-runtime/endpoint-factory-hardware-review.json.
 
-Narrow work toward a second AA display: recovered missing InputSource ctor via
-app GOT relocation0x17652c (_ZTV11InputSource) and literal0x121b6c. Actual native
-constructor is app0x121ab0, size0xc0, args(this,id-byte,router), allocation0x64 in
-owner wrapper0x121b70. Vptr is receiver0x117070. Empty key/feedback sets and callback
-pair are initialized by native helpers; destructor receiver0x7a30c matches them.
-This corrects earlier negative conclusions based on symbol-name text searches.
+EFP2 now records trigger caller and total registration-hook calls. One isolated
+pair test combines construction/reference ownership/config/destruction with native
+MediaSinkBase start/stop and VideoSink codec, data and focus-request callback
+paths. Diagnostic data validates64-bit timestamp halves, session37, borrowed
+shared-buffer identity, byte offset/length and payload. No borrowed data is
+retained, no setup/ack/focus notification/input packet is sent, and no endpoint
+is registered or advertised. Native methods use local synchronous argument views
+only where all exact field reads are byte-profiled; they are not serialized or
+virtually invoked as protobuf objects. Primary object/router table must match.
+Setup/ack/backpressure and actual secondary registration still follow this gate.
 
-Also corrected VideoSink owner-wrapper trace start0x1216fc (0x12174c was inside
-that function). Video ctor remains0x12165c,size0x50. Shared_ptr layout is custom
-{count-pointer, object-pointer}, not a standard C++ control block. Native wrap
-helper125d64 allocates a four-byte count; attachment125b5c takes SINK, not sink+34
-(it adds34 internally); temporary release11b430. Destructor releases last owner
-and invokes callback deleting slot+4. Callback owner/adapter must be independent.
-Native data callback ABI keeps timestamp in r2:r3; native method fills r1=session
-and stack(buffer-ref,data,length), not a guessed host C++/timestamp signature.
-Corrected expanded static traces reproduced by trace_android_endpoint_abi.py.
+QNX tests pass new exact-caller once-only trigger cases and combined callback ABI
+checks, original9 ownership/failure cases and full observer forwarding/timeout
+controls.34 Python tests pass including EFP2 identity/count/field mutations,
+20s phone factory profile, early-reconnect polling and missing checkpoint without
+cleanup. Portable extracted Python -S plan and enabled-profile asset check pass.
+Native DSO e5c0f25bd18f24def14290b619d56a1d2368a25746a546691e5545e3e27bfdca;
+controller unchanged980107c5...; native source/test hashes bound into manifest.
+No real firmware factory success is claimed before the next returned result.
 
-Implemented native/endpoint-factory: isolated construction/destruction using exact
-native helper entry points and byte-locked stock profiles. Independent8-byte
-callback adapter, count transitions1->2->1->final deletion, one stock configuration,
-private VideoSink9 and InputSource10. No native register/discovery/focus/ack/media
-calls for these objects. Primary VideoSink and entire router slot-table snapshots
-must remain unchanged. Candidate slots are observed only, never reserved; empty
-at first-video registration does not prove vacancy at a future registration.
-Unknown native layout/refcounts quarantine private objects until process exit,
-without guessed destructors or publishing pointers. Main registration still
-forwards original arguments, return, errno and stack through the tested shim.
+Per user: remove driver-door/display/recovery questions and those health gates.
+They are resolved and no longer part of the map work. No further baselines.
+Factory profile uses already-proven20s checkpoint, not60/90s timing. Once AA
+navigation starts, unplug phone/reconnect Ethernet; collector silently waits for
+native pending if needed. PHONE REMOVED still explicitly requests disconnected
+cleanup. Returned capture completion derives from actual registrations, not a
+fabricated UI observation. An early report copy bug was removed so the polling
+occurs before trying to copy a report that may not exist yet.
 
-Native ARM32 QNX API fixture passes9 cases: two balanced lifecycles, allocation
-failure paths, bad constructor and refcount quarantine, invalid API. This fixture
-uses synthetic native helpers; it does NOT prove real firmware constructor
-execution. Full new DSO additionally passes original QNX baseline/observed9-call
-forwarding and timeout controls.29 Python tests pass, including factory report
-mutations, refused probe retaining restoration evidence and same-profile resume.
-Portable extracted factory plan/manifest checks pass. Native DSOSHA86e338f7...,
-tested protocol3 controller is unchanged SHA980107c5.... Only extra exported ELF
-runtime entry points are _init/_fini alongside existing observer APIs.
-
-Next required car test uses the isolated factory variant, not another baseline:
+Next car command, initial phone unplugged/Ethernet/ignition on:
  python scripts/run_disconnected_observer.py --run --phone-capture --factory-probe --phone-unplugged
-Start unplugged/Ethernet/ignition on/door closed. At CAPTURE READY swap to phone,
-open AA navigation, observe >=90s; then unplug phone/reconnect Ethernet and confirm
-PHONE REMOVED for explicit cleanup. Return entire new _disconnect_observer_*.
-Resume requires --factory-probe and --phone-unplugged, no --phone-capture.
-This checks real native constructor/ownership assumptions before registration.
-No second stream is advertised, and no cluster maps are expected in this test.
-No live vehicle commands were issued during this review/development.
-
-Remaining after a passing factory probe: independent streaming callbacks and
-channel/session/focus/ack state, paired input display association, checked router
-registration and rollback/lifetime, modern discovery metadata/phone acceptance,
-then native FPK/TransportServer video bridge ownership. No secondary stream or
-cluster-map display is claimed. Do not turn an empty-slot snapshot or factory
-success into permission to advertise an endpoint without its working callbacks.
+At CAPTURE READY connect phone/start navigation; once started reconnect Ethernet,
+then follow cleanup prompt. Return full new _disconnect_observer_* folder.
+No90s manual wait or extra door/display questionnaire. One run checks the real
+factory and callback ABI together. No cluster maps expected yet.
+No head-unit commands were sent during this local review/build.
 
 Bundle: native\endpoint-factory\endpoint-factory-laptop.zip
-Bytes: 45546
-SHA256: c3ab9869f9abfe23326fc0d728b8aaafee419c026404036064e320d1ec129bce
+Bytes: 46378
+SHA256: b9aee36842ada1fff448a1dcc1553aad7419272ea0410792d5935cd6e6894951

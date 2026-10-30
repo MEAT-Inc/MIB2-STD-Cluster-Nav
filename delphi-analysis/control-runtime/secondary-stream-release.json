@@ -1,0 +1,98 @@
+{
+  "bundle": "native\\secondary-display\\secondary-stream-laptop.zip",
+  "bytes": 56948,
+  "sha256": "a66cdb4bbd24dcd5966d52467b95a7d7b092576f812edde12d3d3fe5db239dc2",
+  "python_tests": "...........................................\n----------------------------------------------------------------------\nRan 43 tests in 0.595s\n\nOK",
+  "portable_plan_passed": true,
+  "portable_manifest_passed": true,
+  "manifest": {
+    "kind": "disconnected_observer_control_trial",
+    "experiment": "secondary_endpoint_negotiation",
+    "capture_profiles": [
+      20
+    ],
+    "phone_trial_enabled": true,
+    "factory_report_version": 2,
+    "factory_contract_revision": 4,
+    "secondary_stream_enabled": true,
+    "secondary_hardware_tested": false,
+    "cluster_transport_connected": false,
+    "video_service_id": 9,
+    "input_service_id": 10,
+    "display_id": 1,
+    "capture_byte_limit": 8388608,
+    "needed": [
+      "libc.so.3"
+    ],
+    "imports": [
+      "__get_errno_ptr",
+      "_exit",
+      "close",
+      "dladdr",
+      "dlsym",
+      "free",
+      "ftruncate",
+      "getenv",
+      "getpid",
+      "malloc",
+      "memcmp",
+      "memcpy",
+      "memset",
+      "mmap",
+      "open",
+      "pthread_mutex_init",
+      "pthread_mutex_lock",
+      "pthread_mutex_unlock",
+      "pthread_self",
+      "snprintf",
+      "strcmp",
+      "strlen",
+      "strncmp",
+      "strrchr",
+      "write"
+    ],
+    "exports": [
+      "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase",
+      "_ZN13MessageRouter13queueOutgoingEhPvj",
+      "_ZN13MessageRouter32populateServiceDiscoveryResponseEP24ServiceDiscoveryResponse",
+      "_fini",
+      "_init",
+      "delphi_observer_view"
+    ],
+    "source_sha256": {
+      "native/secondary-display/forward-fixture.c": "8ae0751d1f33ad339490b1bb1bedcdf32ea7c03cab4e186c2b3baf1d598a831d",
+      "native/secondary-display/observer.c": "ca60e958890153c862cf1fde975ffe38f19ab2676dc0f3bd2e5bc44aef69ee56",
+      "native/secondary-display/provider-extra.c": "46fc80899d1df5afdb7779037252d7632900630a0c5c939be82d7d3531ae1774",
+      "native/secondary-display/runtime-fixture.c": "e02b88f0e2684bb649ce74de148fa5bb181bdb3b1a92b6ff52cf780106c9e657",
+      "native/secondary-display/runtime.c": "eac2525d23073367d8ac8cd0186d62fa0bb3bae7ec580ca4b6d51322b3b37583",
+      "native/secondary-display/runtime.h": "bd0bb7b4e2d41a543126177cd3d4107658feb010f8c0fbc7aa7e88cca0080dd5",
+      "native/secondary-display/test-runner.c": "589c935ee9d9f9cc7fe876a33023dcac9a006c836918c42d3376486a44cb4498",
+      "native/secondary-display/transaction-fixture.c": "c8a2f196e54cd89c26a5a5f5bcf4c70d6438f9e4defb481bf429b2af508f410f",
+      "native/secondary-display/wire-fixture.c": "cdd5bc428669908d35e909321f4fc566b0a435b43b909b93bd874b3812b1e767",
+      "native/secondary-display/wire.c": "bfdf63338292fb7b703413556784ed3c8e19342cfd90f2d974991a8805762611",
+      "native/secondary-display/wire.h": "4c365fd7013e088b9b8716c54cbf82fef61edb49a5e7910d4d6a534718d8ea1d",
+      "native/endpoint-factory/factory.c": "a6012065f27575cfa59e3975ad5cb73bb8ebf1c663be5ebea7fbdf35e8f5d2b6",
+      "native/endpoint-factory/factory.h": "1384c7dfb2342003e4ae8ef7e01949bf95997e3ecb5585edea57ea0972e59e05",
+      "native/endpoint-factory/probe.c": "4361718455953d30ecd967e8847da733d5ff7b342ad351aee419d80ac1ca3d5c",
+      "native/endpoint-factory/probe.h": "cba5c2447798a9454f4f1ffb4494b2564e1d5be378e1b31312048a9d6c889275",
+      "native/endpoint-factory/profile.h": "ded726aa39fcc6d528262a817060f3ce7b56aa818236865da4991f38fa683cc8"
+    },
+    "scripts_sha256": {
+      "run_disconnected_observer.py": "9cd5da7becef8f0f2b10b7731c503bf5c9afac831ab8ee7bcd729ff5b4189c7c",
+      "run_androidauto_observer.py": "510b9c77301b158f95ec55997e1c9882d11050780c0f1005d4aa32faecf57a0b",
+      "run_observer_smoke.py": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5",
+      "delphi_inventory.py": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25",
+      "decode_delphi_observer.py": "113906aee942b7245360806fcddb643b95210df976f23ce7f97cf3006264e13b"
+    },
+    "files": {
+      "observer_launch": {
+        "bytes": 20939,
+        "sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae"
+      },
+      "libdelphi_observer.so": {
+        "bytes": 32817,
+        "sha256": "fb0adf65315326501ccdd7eda8f69af30a909f410782eeb2ccb11ccf5fd72fd5"
+      }
+    }
+  }
+}

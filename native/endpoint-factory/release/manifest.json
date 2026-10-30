@@ -2,8 +2,10 @@
   "kind": "disconnected_observer_control_trial",
   "experiment": "isolated_endpoint_factory_probe",
   "capture_profiles": [
-    60
+    20
   ],
+  "factory_report_version": 2,
+  "combined_callback_probe": true,
   "phone_trial_enabled": true,
   "factory_probe_hardware_tested": false,
   "secondary_endpoints_registered": false,
@@ -14,8 +16,8 @@
       "sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae"
     },
     "libdelphi_observer.so": {
-      "bytes": 15343,
-      "sha256": "86e338f7df9d6e4fb315948bc059b79677dd044ff33bd937ab511a4d87faa0ca"
+      "bytes": 17075,
+      "sha256": "e5c0f25bd18f24def14290b619d56a1d2368a25746a546691e5545e3e27bfdca"
     }
   },
   "needed": [
@@ -53,14 +55,14 @@
   "controller_sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae",
   "phone_baseline_review_sha256": "87d640c16419d1b63ffd6a4bdaf1b262c60a3a0e9c58bb2ed39cbf8f6dbc5303",
   "source_sha256": {
-    "factory.c": "cf9660d8fd690168c7d1321412d8d2d70d8ba5cb0ca7cde442ce5a524539ca4a",
-    "factory.h": "4364bfeb12e9a8a9a25cba32524ea2f1c09b700f94fd9daaad8b698b61f1442d",
-    "probe.c": "9eb9ab67f47adbb152275e2fe20c838530707ced8d88a4accc4c1b9ac9837ee0",
-    "probe.h": "dc335c261487817cbd2dad2f075adda6dfb709a7e79dd99861703d31940533d8",
-    "profile.h": "14ebb5d2259a7d488f7716a8602a80ddb98a264b853337b2e0563a896dbfd75e"
+    "factory.c": "0496cc7625175864ccafad81973e9fb197e8b959f0cff9dc44cc4eec3ca04beb",
+    "factory.h": "fcd1bb3b2b811b9e487a6e60e221aa8d47f6081d89d44cc61ebe37d7a2f2582c",
+    "probe.c": "62bbf198ec973b1382428988f147b3e59cbc2037edb500e6261d8e7a5f015b59",
+    "probe.h": "08604619ba3a1a155cae6d0a2655b4f4d6e3aa42c343a79d103941821cb7a220",
+    "profile.h": "e527d05d0f8076aed92bf4207e6b48cbe0a815e3d9dd3c7c611e48f7962b954a"
   },
   "scripts_sha256": {
-    "run_disconnected_observer.py": "0dec558a3bb23888facab09b0397cd5b11756ddeea79456283dc6a00683cc5c1",
+    "run_disconnected_observer.py": "2ae37889d79d4bc04a8154406ac1a04d4ba997a5c027a18c46edd3326990986d",
     "run_androidauto_observer.py": "510b9c77301b158f95ec55997e1c9882d11050780c0f1005d4aa32faecf57a0b",
     "run_observer_smoke.py": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5",
     "delphi_inventory.py": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25",

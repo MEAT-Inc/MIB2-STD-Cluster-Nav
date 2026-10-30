@@ -1,0 +1,45 @@
+2026-10-29 CURRENT STATUS: SECONDARY STREAM EXPERIMENT READY
+==========================================================
+This section supersedes historical next-step/blocker statements below.
+Latest collection: _disconnect_observer_20261030_010535_854fe87e.
+All 15 collected artifact sizes/hashes independently verified. Native VideoSink
+and InputSource construction, callback ownership and destruction ran on car;
+primary endpoint/router table remained unchanged; stock process restoration passed.
+The private self-test stopped before callback dispatch because OUR configuration
+check expected 1. The native API returns zero-based index 0 (instruction 0x8e170).
+The check now validates index 0 and separately validates configuration count 1.
+Callbacks and secondary registration have NOT yet been verified on the car.
+
+Next test is actual phone secondary-display negotiation, not another baseline.
+Native video service 9 and input service 10 are registered only after self-check
+passes and both slots are empty. Discovery associates primary endpoints with
+display 0 and secondary endpoints with display 1; private session callbacks ACK
+and capture up to 8 MiB of H.264. Original and offered discovery bytes are saved
+in the same run to diagnose phone acceptance without another collection.
+This build does not connect to the physical cluster transport.
+
+Validation: 43 focused Python workflow/report tests passed; QNX ARM synthetic
+factory, wire, registration/rollback, bounded capture/private ACK, transaction
+fallback, forwarding and controller fixtures passed. Synthetic fixtures do not
+prove real firmware callback behavior, phone acceptance or cluster display.
+ZIP and extracted portable plan/manifest passed; ARM ABI/import/export gates passed.
+Release: native/secondary-display/secondary-stream-laptop.zip (56948 bytes)
+SHA256: a66cdb4bbd24dcd5966d52467b95a7d7b092576f812edde12d3d3fe5db239dc2
+Review: delphi-analysis/control-runtime/secondary-stream-release.json
+Hardware review: delphi-analysis/control-runtime/endpoint-factory-hardware-review.json
+
+CAR TEST REQUIRED NOW
+Extract the ZIP into the laptop project directory, replacing bundled files.
+Start with ignition on, phone unplugged, Ethernet connected:
+  python scripts/run_disconnected_observer.py --run --secondary-stream --phone-unplugged
+At CAPTURE READY connect phone and start a navigation route. After about 10
+seconds unplug phone, reconnect Ethernet and follow the explicit cleanup prompt.
+Use one phone connection. Return the entire new delphi-dump/_disconnect_observer_*
+folder, including partial outcomes. Do not expect maps in the cluster yet.
+
+Distance to goal: two major unproven milestones remain: (1) receive a separate
+phone navigation video stream; (2) bridge that stream into the FPK/TransportServer/
+MOST cluster pipeline with correct geometry, timing and exclusive writer ownership.
+The next test addresses milestone 1. No defensible percentage or ETA yet.
+No vehicle commands were executed during this offboard development turn.
+

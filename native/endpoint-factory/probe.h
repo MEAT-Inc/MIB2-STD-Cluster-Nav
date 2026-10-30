@@ -7,6 +7,7 @@ struct factory_report {
  uint32_t app_bias,receiver_base,router,main_endpoint;
  uint32_t slot9_before,slot10_before,slot9_after,slot10_after,primary_unchanged,table_unchanged;
  struct factory_result result;
- uint32_t reserved[34];
+ uint32_t reserved[27];
 };
+int factory_profile_api(struct factory_api*,uintptr_t*,uintptr_t*,uintptr_t*);
 #endif

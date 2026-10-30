@@ -7,7 +7,7 @@ from elftools.elf.elffile import ELFFile
 def sha(b):return hashlib.sha256(b).hexdigest()
 def main():
  q=(BASE/'qemu/qemu.log').read_text(errors='replace')
- for marker in ('ENDPOINT_FACTORY_QNX_OWNERSHIP_FAILURE_PASS cases=9','Process 3 (factory_fixture) exited status=0.','DELPHI_SMOKE_PASS mode=baseline calls=9 registers_stack_errno_return=pass','DELPHI_SMOKE_PASS mode=observed calls=9 registers_stack_errno_return=pass','DELPHI_SMOKE_QNX_SUITE_PASS','DELPHI_SMOKE_QNX_END'):
+ for marker in ('ENDPOINT_FACTORY_QNX_TRIGGER_PASS','ENDPOINT_FACTORY_QNX_CALLBACK_ABI_PASS','ENDPOINT_FACTORY_QNX_OWNERSHIP_FAILURE_PASS cases=9','Process 3 (factory_fixture) exited status=0.','DELPHI_SMOKE_PASS mode=baseline calls=9 registers_stack_errno_return=pass','DELPHI_SMOKE_PASS mode=observed calls=9 registers_stack_errno_return=pass','DELPHI_SMOKE_QNX_SUITE_PASS','DELPHI_SMOKE_QNX_END'):
   if marker not in q:raise ValueError('Missing native test: '+marker)
  tested={r.split()[1]:r.split()[0] for r in (BASE/'qemu/factory-tested.sha256').read_text().splitlines()}
  for name in ('factory_fixture','libdelphi_observer.so'):
@@ -34,7 +34,7 @@ def main():
  if tests.returncode:raise ValueError('Workflow tests failed: '+tests.stdout+tests.stderr)
  release=BASE/'release';release.mkdir(exist_ok=True)
  blobs={'observer_launch':controller.read_bytes(),'libdelphi_observer.so':b}
- manifest=dict(kind='disconnected_observer_control_trial',experiment='isolated_endpoint_factory_probe',capture_profiles=[60],phone_trial_enabled=True,factory_probe_hardware_tested=False,secondary_endpoints_registered=False,discovery_changed=False,files={n:dict(bytes=len(v),sha256=sha(v)) for n,v in blobs.items()},needed=needs,imports=sorted(imports),exports=sorted(exports),native_qnx_tested=True,controller_sha256=sha(controller.read_bytes()),phone_baseline_review_sha256=sha((ROOT/'delphi-analysis/control-runtime/observer-phone-hardware-review.json').read_bytes()),source_sha256={n:sha((BASE/n).read_bytes()) for n in ('factory.c','factory.h','probe.c','probe.h','profile.h')},scripts_sha256={n:sha((ROOT/'scripts'/n).read_bytes()) for n in scripts})
+ manifest=dict(kind='disconnected_observer_control_trial',experiment='isolated_endpoint_factory_probe',capture_profiles=[20],factory_report_version=2,factory_contract_revision=4,combined_callback_probe=True,phone_trial_enabled=True,factory_probe_hardware_tested=False,secondary_endpoints_registered=False,discovery_changed=False,files={n:dict(bytes=len(v),sha256=sha(v)) for n,v in blobs.items()},needed=needs,imports=sorted(imports),exports=sorted(exports),native_qnx_tested=True,controller_sha256=sha(controller.read_bytes()),phone_baseline_review_sha256=sha((ROOT/'delphi-analysis/control-runtime/observer-phone-hardware-review.json').read_bytes()),source_sha256={n:sha((BASE/n).read_bytes()) for n in ('factory.c','factory.h','probe.c','probe.h','profile.h')},scripts_sha256={n:sha((ROOT/'scripts'/n).read_bytes()) for n in scripts})
  for n,v in blobs.items():(release/n).write_bytes(v)
  (release/'manifest.json').write_text(json.dumps(manifest,indent=2));shutil.copy2(BASE/'README.txt',release/'README.txt')
  bundle=BASE/'endpoint-factory-laptop.zip'

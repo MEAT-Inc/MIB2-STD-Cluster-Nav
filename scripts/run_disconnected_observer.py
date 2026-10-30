@@ -17,11 +17,13 @@ def wait_for_capture_ready(read_log,started,seconds,limit=25):
         time.sleep(1)
     raise RuntimeError('No timely native phone-capture readiness; no phone handoff performed')
 
-def package(path,phone=False,factory=False):
+def package(path,phone=False,factory=False,secondary=False):
     m=json.loads((path/'manifest.json').read_text());files={n:(path/n).read_bytes() for n in old.NAMES}
     if m.get('kind')!='disconnected_observer_control_trial':raise ValueError('Wrong disconnected controller package')
-    if phone and (m.get('phone_trial_enabled') is not True or 60 not in m.get('capture_profiles',[])):raise ValueError('Package has not cleared the phone-profile gate')
-    if factory and m.get('experiment')!='isolated_endpoint_factory_probe':raise ValueError('Wrong endpoint factory package')
+    if phone and (m.get('phone_trial_enabled') is not True or (20 if factory else 60) not in m.get('capture_profiles',[])):raise ValueError('Package has not cleared the phone-profile gate')
+    expected='secondary_endpoint_negotiation' if secondary else 'isolated_endpoint_factory_probe'
+    if factory and (m.get('experiment')!=expected or m.get('factory_report_version')!=2 or m.get('factory_contract_revision',0)<4):raise ValueError('Use the current endpoint bundle: configuration-index contract revision4 is required')
+    if secondary and not m.get('secondary_stream_enabled'):raise ValueError('Secondary-stream package is not enabled')
     for n,b in files.items():
         if len(b)!=m['files'][n]['bytes'] or hashlib.sha256(b).hexdigest()!=m['files'][n]['sha256'] or len(b)>131072:raise ValueError('Package mismatch: '+n)
     return files
@@ -50,20 +52,46 @@ def assess_final(blobs,remote,seconds=20):
 def assess_factory(data,observed,bias,trace):
     if len(data)!=256:raise ValueError('Incorrect factory report size')
     h=struct.unpack('<64I',data)
-    if h[:8]!=(0x31504645,1,256,observed,1,1,1,0) or h[8]!=bias or h[9]!=int(trace['module_base'],16):raise ValueError('Factory profile/process/status failed validation')
+    if h[:8]!=(0x31504645,2,256,observed,1,1,1,0) or h[8]!=bias or h[9]!=int(trace['module_base'],16):raise ValueError('Factory profile/process/status failed validation')
     primary=[r for r in trace['records'] if int(r['caller'],16)==bias+0x124e54]
     if len(primary)!=1 or h[10]!=int(primary[0]['receiver'],16) or h[11]!=int(primary[0]['endpoint'],16):raise ValueError('Factory/main registration identities differ')
     if not h[10] or not h[11] or h[10]==h[11] or h[10]%4 or h[11]%4:raise ValueError('Invalid factory object identities')
     if h[12:14]!=h[14:16] or h[16:18]!=(1,1):raise ValueError('Main endpoint/router table changed during isolated construction')
-    if h[18:30]!=(0,1,1,1,1,1,1,1,1,1,0,0) or any(h[30:]):raise ValueError('Factory ownership/configuration/destruction failed validation')
-    return dict(isolated_factory_passed=True,video_constructed=True,input_constructed=True,independent_callback_destroyed_once=True,configuration_count=1,primary_unchanged=True,router_table_unchanged=True,candidate_slots_empty_at_probe=h[12:14]==(0,0),slots_reserved=False,secondary_endpoints_registered=False,secondary_stream_received=False)
+    if h[18:30]!=(0,1,1,1,1,1,1,1,1,1,0,0) or h[30:37]!=(1,1,1,1,1,1,10) or h[37]!=trace['count']+trace['dropped'] or h[38]!=bias+0x124e54 or any(h[39:]):raise ValueError('Factory ownership/configuration/destruction failed validation')
+    return dict(isolated_factory_passed=True,native_callback_abi_checked=True,callback_sample_bytes=h[36],trigger_caller=hex(h[38]),video_constructed=True,input_constructed=True,independent_callback_destroyed_once=True,configuration_count=1,primary_unchanged=True,router_table_unchanged=True,candidate_slots_empty_at_probe=h[12:14]==(0,0),slots_reserved=False,secondary_endpoints_registered=False,secondary_stream_received=False)
+
+def assess_secondary(data,raw,observed,factory_router):
+    if len(data)!=512:raise ValueError('Incorrect secondary report size')
+    h=struct.unpack('<128I',data)
+    if h[:4]!=(0x31505253,1,512,observed) or h[4]>5 or h[39]!=8388608 or h[42]>2 or any(h[43:]):raise ValueError('Secondary report format/process/limit mismatch')
+    if h[8] not in (0,factory_router) or h[16] not in (0,2) or len(raw)>h[39] or h[28]>h[39] or h[29]>h[28]:raise ValueError('Secondary identity/registration/byte accounting invalid')
+    if h[16]==2 and (h[12:16]!=(9,10,0,0) or not all(h[9:12]) or len(set(h[9:12]))!=3 or h[40] not in (0,1) or h[42]!=2):raise ValueError('Paired secondary endpoint identities invalid')
+    nal_types=sorted({m[1][0]&31 for m in re.finditer(rb'\x00\x00(?:\x00)?\x01(.)',raw,re.S)})
+    advertised=h[16]==2 and h[18]>0
+    received=bool(advertised and h[20] and h[21] and h[26] and raw)
+    accounting=len(raw)==h[28]
+    flow=bool(h[26] and h[31]>=h[26] and 0<h[33]<255)
+    passed=bool(received and accounting and flow and not h[5] and not h[34])
+    state='video_received' if received else 'setup_no_frames' if h[20] else 'awaiting_phone_setup' if advertised else 'not_advertised'
+    return dict(secondary_attempt_completed=advertised,secondary_video_received=received,secondary_trial_passed=passed,state=state,native_error=h[5],registered_endpoints=h[16],discovery_calls=h[17],discovery_rewrites=h[18],fallbacks=h[19],setup_calls=h[20],codec_calls=h[21],playback_starts=h[22],playback_stops=h[23],frames=h[26],frame_bytes=h[27],saved_bytes=h[28],codec_saved_bytes=h[29],dropped=h[30],ack_requests=h[31],session=h[32],channel=h[33],io_error=h[34],wire_error=h[35],primary_backup_bytes=h[36],raw_accounting_matches=accounting,private_flow_control_observed=flow,annexb_nal_types=nal_types,supported_cluster_keys=[23,65536] if h[42]==2 else [],cluster_transport_connected=False)
+
+def assess_discovery_capture(data,observed):
+    if len(data)!=24600:raise ValueError('Incorrect discovery capture size')
+    magic,pid,original,sent,flags,committed=struct.unpack_from('<6I',data)
+    if (magic,pid)!=(0x32534344,observed) or original>8192 or sent>16384 or flags>3 or committed not in (0,1):raise ValueError('Discovery capture identity/bounds invalid')
+    if committed and (original<2 or sent<2 or data[24:26]!=b'\x00\x06' or data[8216:8218]!=b'\x00\x06'):raise ValueError('Discovery capture packet header invalid')
+    return dict(captured=bool(committed),original_bytes=original,sent_bytes=sent,input_truncated=bool(flags&1),fallback=bool(flags&2))
 
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__);g=p.add_mutually_exclusive_group();g.add_argument('--run',action='store_true');g.add_argument('--resume',type=Path)
+    p.add_argument('--secondary-stream',action='store_true',help='Register paired endpoints, advertise cluster display and capture secondary video; self-check gated')
     p.add_argument('--factory-probe',action='store_true',help='Isolated native endpoint construction/destruction; no registration or advertisement')
     p.add_argument('--phone-capture',action='store_true',help='Native phone capture: Ethernet -> phone -> Ethernet, explicit disconnected cleanup only')
     p.add_argument('--phone-unplugged',action='store_true',help='Attest phone is physically unplugged before initial launch or resume')
     p.add_argument('--host',default='192.168.1.4');p.add_argument('--port',type=int,default=21);p.add_argument('--username',default='ftpuser');p.add_argument('--ask-password',action='store_true');p.add_argument('--telnet-port',type=int,default=23);p.add_argument('--telnet-user',default='root');p.add_argument('--timeout',type=float,default=90);a=p.parse_args(argv)
+    if a.secondary_stream:
+        a.factory_probe=True
+        if not a.resume:a.phone_capture=True
     if not 1<=a.port<=65535 or not 1<=a.telnet_port<=65535 or not 60<=a.timeout<=180:p.error('Invalid ports/timeout')
     if a.factory_probe and a.run and not a.phone_capture:p.error('--factory-probe requires --phone-capture to reach native endpoint initialization')
     if a.phone_capture and a.resume:p.error('Resume uses the profile saved in its summary; omit --phone-capture')
@@ -72,7 +100,7 @@ def main(argv=None):
     if a.phone_capture:print('Phone capture: start unplugged; swap only at CAPTURE READY; remove phone and reconnect Ethernet before cleanup.')
     else:print('Default control trial: phone remains unplugged throughout.')
     if not a.run and not a.resume:print('Plan only. Add --run --phone-unplugged; keep --phone-capture for the phone profile.');return 0
-    files=package(ROOT/('native/endpoint-factory/release' if a.factory_probe else 'native/observer/disconnect-launch/release'),phone=a.phone_capture,factory=a.factory_probe);base=ROOT/'delphi-dump'
+    files=package(ROOT/('native/secondary-display/release' if a.secondary_stream else 'native/endpoint-factory/release' if a.factory_probe else 'native/observer/disconnect-launch/release'),phone=a.phone_capture,factory=a.factory_probe,secondary=a.secondary_stream);base=ROOT/'delphi-dump'
     for parent in (base,*base.parents):d.reject_link(parent)
     base.mkdir(parents=True,exist_ok=True)
     if a.resume:
@@ -81,6 +109,9 @@ def main(argv=None):
         report=json.loads((folder/'disconnect-summary.json').read_text());remote=old.validate_remote(report['remote_directory'])
         if report['native_sha256']!=old.sha(files['observer_launch']):raise ValueError('Saved run and native controller differ')
         if bool(report.get('factory_probe_requested',False))!=a.factory_probe:raise ValueError('Resume requires the saved factory-probe selection')
+        if bool(report.get('secondary_stream_requested',False))!=a.secondary_stream:raise ValueError('Resume requires the saved secondary-stream selection')
+        report['secondary_video_received']=False
+        report['secondary_trial_passed']=False
         report['factory_probe_passed']=False
         report['controller_trial_passed']=False
         report['phone_capture_completed']=False
@@ -90,14 +121,21 @@ def main(argv=None):
         session=folder/('resume-'+uuid.uuid4().hex[:8]);session.mkdir()
     else:
         token=uuid.uuid4().hex;remote=old.validate_remote(old.REMOTE_PREFIX+token);folder=base/('_disconnect_observer_'+dt.datetime.now(dt.timezone.utc).strftime('%Y%m%d_%H%M%S')+'_'+token[:8]);folder.mkdir();session=folder
-        seconds=60 if a.phone_capture else 20
-        report=dict(factory_probe_requested=a.factory_probe,factory_probe_passed=False,capture_profile_seconds=seconds,phone_capture_requested=a.phone_capture,phone_capture_completed=False,kind='disconnected_observer_control_trial',remote_directory=remote,native_sha256=old.sha(files['observer_launch']),controller_trial_passed=False,cleanup_pending=False,actions=[],artifacts=[])
+        seconds=20 if a.factory_probe else (60 if a.phone_capture else 20)
+        report=dict(secondary_stream_requested=a.secondary_stream,secondary_video_received=False,secondary_trial_passed=False,observer_sha256=old.sha(files['libdelphi_observer.so']),factory_probe_requested=a.factory_probe,factory_probe_passed=False,capture_profile_seconds=seconds,phone_capture_requested=a.phone_capture,phone_capture_completed=False,kind='disconnected_observer_control_trial',remote_directory=remote,native_sha256=old.sha(files['observer_launch']),controller_trial_passed=False,cleanup_pending=False,actions=[],artifacts=[])
     token=remote.rsplit('_',1)[1];blobs={f.name:f.read_bytes() for f in folder.iterdir() if f.is_file() and f.suffix in ('.txt','.bin','.reference','.original','.cfg')}
     shell=None;cwd=False;authorized=False;history=[];password=getpass.getpass('FTP password: ') if a.ask_password else 'ftpuser'
     def persist():(folder/'disconnect-summary.json').write_text(json.dumps(report,indent=2),encoding='utf8')
     def fetch(name):
         with ftplib.FTP(timeout=a.timeout) as ftp:
-            ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I');b=retrieve(ftp,remote+'/'+name)
+            ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I')
+            if name=='secondary.h264':
+                data=bytearray()
+                def save_video(block):
+                    if len(data)+len(block)>8388608:raise ValueError('Secondary capture exceeds8MiB')
+                    data.extend(block)
+                ftp.retrbinary('RETR '+remote+'/'+name,save_video);b=bytes(data)
+            else:b=retrieve(ftp,remote+'/'+name)
         (folder/name).write_bytes(b);blobs[name]=b;report['artifacts']=[x for x in report['artifacts'] if x.get('file')!=name]
         report['artifacts'].append(dict(file=name,bytes=len(b),sha256=old.sha(b)));return b
     def command(cmd,required=True):return shell.command(cmd,required=required)
@@ -137,7 +175,7 @@ def main(argv=None):
                 history.extend(shell.actions);report['actions']=list(history);persist();shell.close();shell=None;cwd=False
                 print('CAPTURE READY: swap Ethernet for the phone now and start Android Auto navigation.',flush=True)
                 handoff_started=time.monotonic()
-                input('Once navigation starts, unplug the phone, reconnect Ethernet, wait for its link, then press Enter: ')
+                input('Once navigation starts'+(', start a route and run it about10 seconds' if a.secondary_stream else '')+', unplug the phone, reconnect Ethernet, wait for its link, then press Enter: ')
                 report['host_handoff_elapsed_seconds']=round(time.monotonic()-handoff_started,3)
                 persist();collection=folder/'collection-session';collection.mkdir()
                 shell=Shell(a,collection);command('cd '+shlex.quote(remote));cwd=True
@@ -149,17 +187,16 @@ def main(argv=None):
         command('chmod 644 start.txt');fetch('start.txt')
         final_exists=command('test -f /dev/shmem/delphi-aa-final-'+token+'.bin',required=False)==0
         if not final_exists:
-            pending=copy_report('/dev/shmem/delphi-aa-report-'+token+'.bin','controller-pending.bin');report['pending_state']=validate_report(pending,remote,True,seconds);report['cleanup_pending']=True;persist()
-        if report.get('phone_capture_requested'):
-            deadline=time.monotonic()+30
-            while not blobs.get('controller-pending.bin') and time.monotonic()<deadline:
-                try:
-                    pending=copy_report('/dev/shmem/delphi-aa-report-'+token+'.bin','controller-pending.bin')
-                    report['pending_state']=validate_report(pending,remote,True,seconds);report['cleanup_pending']=True;persist()
-                except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error):time.sleep(1)
+            pending_source='/dev/shmem/delphi-aa-report-'+token+'.bin'
+            deadline=time.monotonic()+seconds+10
+            while command('test -r '+pending_source,required=False)!=0:
+                if time.monotonic()>=deadline:raise TimeoutError('Native pending checkpoint not ready; cleanup not attempted')
+                time.sleep(1)
+            pending=copy_report(pending_source,'controller-pending.bin')
+            report['pending_state']=validate_report(pending,remote,True,seconds);report['cleanup_pending']=True;persist()
         print('Capture has not authorized any interruption. Keep Ethernet connected and the phone physically unplugged.',flush=True)
         if input('Type PHONE REMOVED to request the explicit disconnected-only cleanup (anything else leaves it pending): ').strip()!='PHONE REMOVED':
-            print('Cleanup remains pending. Use --resume "'+str(folder)+'" --phone-unplugged'+(' --factory-probe' if a.factory_probe else '')+' later.');return 2
+            print('Cleanup remains pending. Use --resume "'+str(folder)+'" --phone-unplugged'+(' --secondary-stream' if a.secondary_stream else ' --factory-probe' if a.factory_probe else '')+' later.');return 2
         authorized=True;report['cleanup_requested_host_utc']=dt.datetime.now(dt.timezone.utc).isoformat();persist()
         command('if test ! -f cleanup.txt; then : > cleanup.txt; fi');command('chmod 644 cleanup.txt')
         code=command('LD_PRELOAD= ./observer_launch cleanup-disconnected '+shlex.quote(remote)+' >> cleanup.txt 2>&1',required=False)
@@ -175,13 +212,20 @@ def main(argv=None):
             copy_report('/dev/shmem/delphi-endpoint-factory-'+token+'.bin','factory.bin')
             report['factory_probe']=assess_factory(blobs['factory.bin'],report['observed_pid'],report['executable_load_bias'],report['decoded_log'])
             report['factory_probe_passed']=True
+        if a.secondary_stream:
+            copy_report('/dev/shmem/delphi-secondary-report-'+token+'.bin','secondary.bin')
+            copy_report('/dev/shmem/delphi-secondary-video-'+token+'.h264','secondary.h264')
+            copy_report('/dev/shmem/delphi-secondary-discovery-'+token+'.bin','discovery.bin')
+            report['secondary_discovery']=assess_discovery_capture(blobs['discovery.bin'],report['observed_pid'])
+            state=assess_secondary(blobs['secondary.bin'],blobs['secondary.h264'],report['observed_pid'],struct.unpack_from('<I',blobs['factory.bin'],40)[0])
+            report.update(secondary=state,secondary_video_received=state['secondary_video_received'],secondary_trial_passed=state['secondary_trial_passed'])
         (folder/'observer-decoded.json').write_text(json.dumps(report.pop('decoded_log'),indent=2))
     except (OSError,EOFError,ValueError,RuntimeError,KeyError,ftplib.Error) as exc:report['error']=(type(exc).__name__+': '+str(exc)).replace(password,'[redacted]') if password else str(exc)
     finally:
         # Always preserve available phase reports and current PID after errors;
         # these commands never authorize cleanup or signal an application.
         if shell and cwd and not shell.broken:
-            for source,dest in (('/dev/shmem/delphi-aa-report-'+token+'.bin','controller-pending.bin'),('/dev/shmem/delphi-aa-final-'+token+'.bin','controller.bin'))+((('/dev/shmem/delphi-endpoint-factory-'+token+'.bin','factory.bin'),) if a.factory_probe else ()):
+            for source,dest in (('/dev/shmem/delphi-aa-report-'+token+'.bin','controller-pending.bin'),('/dev/shmem/delphi-aa-final-'+token+'.bin','controller.bin'))+((('/dev/shmem/delphi-endpoint-factory-'+token+'.bin','factory.bin'),) if a.factory_probe else ())+((('/dev/shmem/delphi-secondary-report-'+token+'.bin','secondary.bin'),('/dev/shmem/delphi-secondary-video-'+token+'.h264','secondary.h264'),('/dev/shmem/delphi-secondary-discovery-'+token+'.bin','discovery.bin')) if a.secondary_stream else ()):
                 try:
                     command('if test -r '+source+'; then cp '+source+' '+dest+'; chmod 644 '+dest+'; fi',required=False)
                     if dest not in blobs:fetch(dest)
@@ -192,8 +236,10 @@ def main(argv=None):
         if shell:
             report['actions']=history+shell.actions;shell.close()
         report['operator_cleanup_confirmed']=authorized;persist()
-    ok=report['controller_trial_passed'] and (not report.get('phone_capture_requested') or report.get('phone_capture_completed',False)) and (not a.factory_probe or report.get('factory_probe_passed',False))
+    ok=report['controller_trial_passed'] and (not report.get('phone_capture_requested') or report.get('phone_capture_completed',False)) and (not a.factory_probe or report.get('factory_probe_passed',False)) and (not a.secondary_stream or report.get('secondary_trial_passed',False))
+    if a.secondary_stream and 'secondary' in report:print('Secondary state: '+report['secondary']['state']+'; frames='+str(report['secondary']['frames']))
+    if 'error' in report:print('Result: '+report['error'])
     print('Saved: '+str(folder))
-    print('Trial complete within its recorded scope; cluster maps and recovery after a fault are not inferred.' if ok else 'Partial/unhealthy session or pending cleanup: return this folder for review before another trial.')
+    print('Trial complete; the physical cluster transport is not connected.' if ok else 'Partial trial or pending cleanup: return this folder for review.')
     return 0 if ok else 2
 if __name__=='__main__':raise SystemExit(main())

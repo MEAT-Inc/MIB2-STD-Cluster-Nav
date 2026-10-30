@@ -1,6 +1,5 @@
-
+*.zip
 .tools/
-
 scripts/__pycache__/
 
 # Generated logs and identifying device/phone captures stay local

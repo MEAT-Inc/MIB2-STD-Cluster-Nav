@@ -1,3 +1,51 @@
+2026-10-29 CURRENT STATUS: SECONDARY STREAM EXPERIMENT READY
+==========================================================
+This section supersedes historical next-step/blocker statements below.
+Latest collection: _disconnect_observer_20261030_010535_854fe87e.
+All 15 collected artifact sizes/hashes independently verified. Native VideoSink
+and InputSource construction, callback ownership and destruction ran on car;
+primary endpoint/router table remained unchanged; stock process restoration passed.
+The private self-test stopped before callback dispatch because OUR configuration
+check expected 1. The native API returns zero-based index 0 (instruction 0x8e170).
+The check now validates index 0 and separately validates configuration count 1.
+Callbacks and secondary registration have NOT yet been verified on the car.
+
+Next test is actual phone secondary-display negotiation, not another baseline.
+Native video service 9 and input service 10 are registered only after self-check
+passes and both slots are empty. Discovery associates primary endpoints with
+display 0 and secondary endpoints with display 1; private session callbacks ACK
+and capture up to 8 MiB of H.264. Original and offered discovery bytes are saved
+in the same run to diagnose phone acceptance without another collection.
+This build does not connect to the physical cluster transport.
+
+Validation: 43 focused Python workflow/report tests passed; QNX ARM synthetic
+factory, wire, registration/rollback, bounded capture/private ACK, transaction
+fallback, forwarding and controller fixtures passed. Synthetic fixtures do not
+prove real firmware callback behavior, phone acceptance or cluster display.
+ZIP and extracted portable plan/manifest passed; ARM ABI/import/export gates passed.
+Release: native/secondary-display/secondary-stream-laptop.zip (56948 bytes)
+SHA256: a66cdb4bbd24dcd5966d52467b95a7d7b092576f812edde12d3d3fe5db239dc2
+Review: delphi-analysis/control-runtime/secondary-stream-release.json
+Hardware review: delphi-analysis/control-runtime/endpoint-factory-hardware-review.json
+
+CAR TEST REQUIRED NOW
+Extract the ZIP into the laptop project directory, replacing bundled files.
+Start with ignition on, phone unplugged, Ethernet connected:
+  python scripts/run_disconnected_observer.py --run --secondary-stream --phone-unplugged
+At CAPTURE READY connect phone and start a navigation route. After about 10
+seconds unplug phone, reconnect Ethernet and follow the explicit cleanup prompt.
+Use one phone connection. Return the entire new delphi-dump/_disconnect_observer_*
+folder, including partial outcomes. Do not expect maps in the cluster yet.
+
+Distance to goal: two major unproven milestones remain: (1) receive a separate
+phone navigation video stream; (2) bridge that stream into the FPK/TransportServer/
+MOST cluster pipeline with correct geometry, timing and exclusive writer ownership.
+The next test addresses milestone 1. No defensible percentage or ETA yet.
+No vehicle commands were executed during this offboard development turn.
+
+HISTORICAL INVESTIGATION NOTES FOLLOW
+====================================
+
 Delphi Android Auto cluster maps: consolidated investigation status
 =================================================================
 Workspace: .
@@ -865,3 +913,55 @@ success into permission to advertise an endpoint without its working callbacks.
 Bundle: native\endpoint-factory\endpoint-factory-laptop.zip
 Bytes: 45546
 SHA256: c3ab9869f9abfe23326fc0d728b8aaafee419c026404036064e320d1ec129bce
+
+
+2026-10-29: Factory trigger fixed; combined callback probe and faster collection ready
+Reviewed _disconnect_observer_20261030_001820_26e4d417: all15 artifact hashes/sizes
+verified;9 registrations,0drops, stock restoredPID1359950 from observed1040462.
+Factory EFP1 header was valid but started/done/status/error all0: the old predicate
+never entered. This is a trigger defect, not a failed native constructor test.
+The gate used QNX dladdr main-text name/base identification; exact captured caller
+0x124e54 and fingerprinted ET_EXEC allow removing this unnecessary dependency.
+Native helper byte gates, controller/ref/source fingerprints remain in force.
+Review: control-runtime/endpoint-factory-hardware-review.json.
+
+EFP2 now records trigger caller and total registration-hook calls. One isolated
+pair test combines construction/reference ownership/config/destruction with native
+MediaSinkBase start/stop and VideoSink codec, data and focus-request callback
+paths. Diagnostic data validates64-bit timestamp halves, session37, borrowed
+shared-buffer identity, byte offset/length and payload. No borrowed data is
+retained, no setup/ack/focus notification/input packet is sent, and no endpoint
+is registered or advertised. Native methods use local synchronous argument views
+only where all exact field reads are byte-profiled; they are not serialized or
+virtually invoked as protobuf objects. Primary object/router table must match.
+Setup/ack/backpressure and actual secondary registration still follow this gate.
+
+QNX tests pass new exact-caller once-only trigger cases and combined callback ABI
+checks, original9 ownership/failure cases and full observer forwarding/timeout
+controls.34 Python tests pass including EFP2 identity/count/field mutations,
+20s phone factory profile, early-reconnect polling and missing checkpoint without
+cleanup. Portable extracted Python -S plan and enabled-profile asset check pass.
+Native DSO e5c0f25bd18f24def14290b619d56a1d2368a25746a546691e5545e3e27bfdca;
+controller unchanged980107c5...; native source/test hashes bound into manifest.
+No real firmware factory success is claimed before the next returned result.
+
+Per user: remove driver-door/display/recovery questions and those health gates.
+They are resolved and no longer part of the map work. No further baselines.
+Factory profile uses already-proven20s checkpoint, not60/90s timing. Once AA
+navigation starts, unplug phone/reconnect Ethernet; collector silently waits for
+native pending if needed. PHONE REMOVED still explicitly requests disconnected
+cleanup. Returned capture completion derives from actual registrations, not a
+fabricated UI observation. An early report copy bug was removed so the polling
+occurs before trying to copy a report that may not exist yet.
+
+Next car command, initial phone unplugged/Ethernet/ignition on:
+ python scripts/run_disconnected_observer.py --run --phone-capture --factory-probe --phone-unplugged
+At CAPTURE READY connect phone/start navigation; once started reconnect Ethernet,
+then follow cleanup prompt. Return full new _disconnect_observer_* folder.
+No90s manual wait or extra door/display questionnaire. One run checks the real
+factory and callback ABI together. No cluster maps expected yet.
+No head-unit commands were sent during this local review/build.
+
+Bundle: native\endpoint-factory\endpoint-factory-laptop.zip
+Bytes: 46378
+SHA256: b9aee36842ada1fff448a1dcc1553aad7419272ea0410792d5935cd6e6894951

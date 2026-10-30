@@ -1,0 +1,39 @@
+[linker="(40;1;)qcc -bootstrap -nostdlib -Wl,--no-keep-memory -Vgcc_ntoarmv7%(m!=3,%(m!=6,%(e==0, -EL%)%(e==1, -EB%)%)%)%(h!=0, -Wl,-Ttext -Wl,0x%t%)%(d!=0, -Wl,-Tdata -Wl,0x%d%) -o%o %i %[M -L%^i -Wl,-uinit_%n -lmod_%n%] /w/libstartup.a -L/opt/qnx650/target/qnx6/armle-v7/lib -L/opt/qnx650/target/qnx6/armle-v7/usr/lib -llzo -lucl -ldrvr"]
+[linker="(40;2;)cp %i %o"]
+[image=0x40200000]
+[virtual=armle-v7,raw] .bootstrap = {
+    startup-virt -v -S
+    PATH=:/proc/boot LD_LIBRARY_PATH=:/proc/boot procnto-smp -vvv
+}
+[+script] .script = {
+    procmgr_symlink ../../proc/boot/libc.so.3 /usr/lib/ldqnx.so.2
+    procmgr_symlink /proc/boot /ramdisk/delphi-observer-smoke_00000000000000000000000000000000
+    devc-serdebug -e -F -S
+    waitfor /dev/ser1 4
+    reopen /dev/ser1
+    factory_fixture
+    wire_fixture
+    runtime_fixture
+    transaction_fixture
+    secondary_test_runner
+    smoke_qemu_runner
+    display_msg "DELPHI_SMOKE_QNX_END"
+}
+[type=link] /usr/lib/ldqnx.so.2=/proc/boot/libc.so.3
+[type=file]
+[data=copy]
+[perms=+r,+x]
+libc.so.3
+procnto-smp
+devc-serdebug
+libautoreceiver.so
+libdelphi_observer.so
+observer_smoke
+observer_smoke_guard
+smoke_qemu_runner
+factory_fixture
+wire_fixture
+runtime_fixture
+transaction_fixture
+secondary_forward_fixture
+secondary_test_runner
