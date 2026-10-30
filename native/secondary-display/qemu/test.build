@@ -11,6 +11,7 @@
     devc-serdebug -e -F -S
     waitfor /dev/ser1 4
     reopen /dev/ser1
+    nav_snapshot --self-test
     factory_fixture
     wire_fixture
     runtime_fixture
@@ -31,6 +32,7 @@ libdelphi_observer.so
 observer_smoke
 observer_smoke_guard
 smoke_qemu_runner
+nav_snapshot
 factory_fixture
 wire_fixture
 runtime_fixture

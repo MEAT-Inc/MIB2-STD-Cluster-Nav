@@ -11,13 +11,13 @@ static void ack(void *v,int session,unsigned count_ack){if(v!=expected_video||se
 static void focus_native(void *v,int m,unsigned char unsolicited){if(v!=expected_video||m!=1||!unsolicited)++bad;++focus_calls;}
 int main(void){
  struct stream_native api={{allocate,deallocate,video_ctor,input_ctor,wrap,attach,release,video_delete,input_delete,add_config,count,media_start,media_stop,codec,data,focus,input_key,0x80001000,0x80002000},reg,focus_native,ack};
- struct stream_context c;struct stream_report report;unsigned char router[0x500],payload[16];unsigned k,scenario;uint32_t start_view[3]={0,37,0},io[4];struct factory_shared borrowed={0,io};struct stat st;int fd;
+ struct stream_timing timing;struct stream_context c;struct stream_report report;unsigned char router[0x500],payload[16];unsigned k,scenario;uint32_t start_view[3]={0,37,0},io[4];struct factory_shared borrowed={0,io};struct stat st;int fd;
  for(scenario=0;scenario<4;++scenario){
   memset(router,0,sizeof(router));for(k=1;k<=8;++k)put(router,0x100+k*4,0x20000000+k*4);
   attempt=fail_at=bad=0;mode=scenario==1?3:scenario==3?4:0;reg_calls=ack_calls=focus_calls=0;
   if(scenario==2)put(router,0x100+9*4,0xbbccdd00);
   fd=open("/dev/shmem/secondary-runtime-fixture.bin",O_RDWR|O_CREAT|O_EXCL,0600);if(fd<0)return 1;
-  stream_init(&c,&report,fd);stream_arm(&c,&api,router);
+  stream_init(&c,&report,fd);memset(&timing,0,sizeof(timing));c.timing=&timing;stream_arm(&c,&api,router);
   if(scenario==0){
    if(!stream_install(&c)||reg_calls!=2||report.w[SREGISTERED]!=2||!c.installed)return 2;
    expected_video=c.video;((unsigned char*)c.video)[4]=1;((unsigned char*)c.video)[5]=9;
@@ -29,9 +29,11 @@ int main(void){
    (void)((int(*)(void*,int,unsigned char))vt(c.video)[9])(cb(c.video),1,1);
    if(report.w[SFRAMES]!=1||report.w[SSAVED]!=18||ack_calls!=1||focus_calls!=1||report.w[STSLOW]!=0x9abcdef0||report.w[STSHIGH]!=0x12345678||report.w[SCHANNEL]!=9||bad)return 6;
    if(fstat(fd,&st)||st.st_size!=18)return 7;
+   if(timing.count!=2||timing.clock_error||timing.records[0].kind!=1||timing.records[0].offset||timing.records[0].saved!=8||timing.records[1].kind!=2||timing.records[1].timestamp!=0x123456789abcdef0ULL||timing.records[1].offset!=8||timing.records[1].saved!=10||!timing.records[1].monotonic_ns)return 15;
+   timing.count=TIMING_CAPACITY;
    report.w[SSAVED]=STREAM_LIMIT;
    (void)api.object.data(c.video,1,&borrowed,3);
-   if(ack_calls!=2||report.w[SDROPPED]!=1||report.w[SSAVED]!=STREAM_LIMIT)return 8;
+   if(ack_calls!=2||report.w[SDROPPED]!=1||report.w[SSAVED]!=STREAM_LIMIT||timing.dropped!=1)return 8;
    stream_rollback(&c);if(get(router,0x100+9*4)||get(router,0x100+10*4))return 9;
   }else{
    if(stream_install(&c)||c.installed||report.w[SREGISTERED])return 10;

@@ -1,0 +1,8 @@
+# Optional offline ELF, disassembly, extraction, and video analysis dependencies.
+# Collection and prepared laptop runners use the Python standard library only.
+pyelftools==0.33
+capstone==5.0.9
+dissect.util==3.24
+av==19.0.2
+numpy>=1.24
+Pillow>=10

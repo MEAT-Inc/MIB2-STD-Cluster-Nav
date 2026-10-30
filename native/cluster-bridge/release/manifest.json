@@ -1,0 +1,138 @@
+{
+  "kind": "disconnected_observer_control_trial",
+  "experiment": "secondary_endpoint_negotiation",
+  "capture_profiles": [
+    20
+  ],
+  "phone_trial_enabled": true,
+  "factory_report_version": 2,
+  "factory_contract_revision": 5,
+  "secondary_stream_enabled": true,
+  "secondary_hardware_tested": false,
+  "cluster_transport_connected": false,
+  "video_service_id": 9,
+  "input_service_id": 10,
+  "display_id": 1,
+  "capture_byte_limit": 8388608,
+  "needed": [
+    "libc.so.3"
+  ],
+  "imports": [
+    "__get_errno_ptr",
+    "_exit",
+    "clock_gettime",
+    "close",
+    "dladdr",
+    "dlsym",
+    "free",
+    "ftruncate",
+    "getenv",
+    "getpid",
+    "malloc",
+    "memcmp",
+    "memcpy",
+    "memset",
+    "mmap",
+    "open",
+    "pthread_mutex_init",
+    "pthread_mutex_lock",
+    "pthread_mutex_unlock",
+    "pthread_self",
+    "snprintf",
+    "strcmp",
+    "strlen",
+    "strncmp",
+    "strrchr",
+    "write"
+  ],
+  "exports": [
+    "_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase",
+    "_ZN13MessageRouter13queueOutgoingEhPvj",
+    "_ZN13MessageRouter32populateServiceDiscoveryResponseEP24ServiceDiscoveryResponse",
+    "_fini",
+    "_init",
+    "delphi_observer_view"
+  ],
+  "source_sha256": {
+    "native/secondary-display/forward-fixture.c": "8ae0751d1f33ad339490b1bb1bedcdf32ea7c03cab4e186c2b3baf1d598a831d",
+    "native/secondary-display/observer.c": "3e707e14dd744ebc4e6dd9f73ea694e9196d15e54141f7d4f6e953e699992266",
+    "native/secondary-display/provider-extra.c": "46fc80899d1df5afdb7779037252d7632900630a0c5c939be82d7d3531ae1774",
+    "native/secondary-display/runtime-fixture.c": "7f90e79503a957e29f9c05d2f84c1c49476ac0e4727b87e8ba4702323ac22a7e",
+    "native/secondary-display/runtime.c": "18a8709fdfd4e9efd65f53331efb1d5543d8372955f5407a877c0119b7d22081",
+    "native/secondary-display/runtime.h": "ff2a562d4eff0b3ea2141b490c48fc4178fbd9d5858c5972bbf1464f5dbc24ff",
+    "native/secondary-display/test-runner.c": "589c935ee9d9f9cc7fe876a33023dcac9a006c836918c42d3376486a44cb4498",
+    "native/secondary-display/transaction-fixture.c": "c8a2f196e54cd89c26a5a5f5bcf4c70d6438f9e4defb481bf429b2af508f410f",
+    "native/secondary-display/wire-fixture.c": "cdd5bc428669908d35e909321f4fc566b0a435b43b909b93bd874b3812b1e767",
+    "native/secondary-display/wire.c": "bfdf63338292fb7b703413556784ed3c8e19342cfd90f2d974991a8805762611",
+    "native/secondary-display/wire.h": "4c365fd7013e088b9b8716c54cbf82fef61edb49a5e7910d4d6a534718d8ea1d",
+    "native/endpoint-factory/factory.c": "a6012065f27575cfa59e3975ad5cb73bb8ebf1c663be5ebea7fbdf35e8f5d2b6",
+    "native/endpoint-factory/factory.h": "1384c7dfb2342003e4ae8ef7e01949bf95997e3ecb5585edea57ea0972e59e05",
+    "native/endpoint-factory/probe.c": "4361718455953d30ecd967e8847da733d5ff7b342ad351aee419d80ac1ca3d5c",
+    "native/endpoint-factory/probe.h": "cba5c2447798a9454f4f1ffb4494b2564e1d5be378e1b31312048a9d6c889275",
+    "native/endpoint-factory/profile.h": "ded726aa39fcc6d528262a817060f3ce7b56aa818236865da4991f38fa683cc8",
+    "native/cluster-bridge/nav_snapshot.c": "9250d016a31c441b70917fbf338abe57e4686e4d31bbd3aa13b049e01957cd34",
+    "native/cluster-bridge/build.sh": "885ebe53016c1395597df669fda9eeffdaeec05a3ca147b9f02c4880539e1a9a",
+    "native/observer/launch/proc_guard.c": "e0e8f56b9280f456d8c8bf698cc3246b197696592f39196adc7f9870cb8998dd"
+  },
+  "scripts_sha256": {
+    "secondary_timing.py": "c4c6e7d8b239f0037ffad10a3ed48be4f58e366c350d9c29526e0d7ef5fb17d4",
+    "cluster_preflight.py": "31e9682f954dc6ce8197f5b154788b37a6ea3e493c1f20532956a8f01381b704",
+    "run_disconnected_observer.py": "70d9cd8a76017f8f2c438df1b5720aa38d036c25479e36174787863b9c511086",
+    "run_androidauto_observer.py": "510b9c77301b158f95ec55997e1c9882d11050780c0f1005d4aa32faecf57a0b",
+    "run_observer_smoke.py": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5",
+    "delphi_inventory.py": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25",
+    "decode_delphi_observer.py": "113906aee942b7245360806fcddb643b95210df976f23ce7f97cf3006264e13b"
+  },
+  "timing_capture_version": 1,
+  "native_geometry_readonly": true,
+  "navigation_server_restart": false,
+  "navigation_snapshot_hardware_tested": false,
+  "navigation_snapshot_imports": [
+    "__get_errno_ptr",
+    "_fini_array",
+    "_init_array",
+    "_init_libc",
+    "_preinit_array",
+    "atexit",
+    "close",
+    "devctl",
+    "exit",
+    "fprintf",
+    "free",
+    "getpid",
+    "malloc",
+    "memchr",
+    "memcmp",
+    "memcpy",
+    "memset",
+    "open",
+    "pread",
+    "printf",
+    "puts",
+    "snprintf",
+    "strcmp",
+    "strlen",
+    "strncmp",
+    "strspn",
+    "strstr",
+    "strtoul"
+  ],
+  "navigation_snapshot_optional_weak_imports": [
+    "__deregister_frame_info",
+    "__register_frame_info"
+  ],
+  "files": {
+    "observer_launch": {
+      "bytes": 20939,
+      "sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae"
+    },
+    "libdelphi_observer.so": {
+      "bytes": 33872,
+      "sha256": "99c62dff78197228598f13a5603035c6dc0c55ec05a0fa0a6a686f17cd0ce4f2"
+    },
+    "nav_snapshot": {
+      "bytes": 11264,
+      "sha256": "dfc40bbde8de33ae88d6b79112689ec39eeb8d06dcd2c77457398b26c2c5e7c6"
+    }
+  }
+}

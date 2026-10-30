@@ -17,13 +17,14 @@ def wait_for_capture_ready(read_log,started,seconds,limit=25):
         time.sleep(1)
     raise RuntimeError('No timely native phone-capture readiness; no phone handoff performed')
 
-def package(path,phone=False,factory=False,secondary=False):
-    m=json.loads((path/'manifest.json').read_text());files={n:(path/n).read_bytes() for n in old.NAMES}
+def package(path,phone=False,factory=False,secondary=False,cluster=False):
+    m=json.loads((path/'manifest.json').read_text());files={n:(path/n).read_bytes() for n in old.NAMES+ (('nav_snapshot',) if cluster else ())}
     if m.get('kind')!='disconnected_observer_control_trial':raise ValueError('Wrong disconnected controller package')
     if phone and (m.get('phone_trial_enabled') is not True or (20 if factory else 60) not in m.get('capture_profiles',[])):raise ValueError('Package has not cleared the phone-profile gate')
     expected='secondary_endpoint_negotiation' if secondary else 'isolated_endpoint_factory_probe'
     if factory and (m.get('experiment')!=expected or m.get('factory_report_version')!=2 or m.get('factory_contract_revision',0)<4):raise ValueError('Use the current endpoint bundle: configuration-index contract revision4 is required')
     if secondary and not m.get('secondary_stream_enabled'):raise ValueError('Secondary-stream package is not enabled')
+    if cluster and (m.get('timing_capture_version')!=1 or not m.get('native_geometry_readonly') or m.get('factory_contract_revision',0)<5):raise ValueError('Use the current cluster preflight bundle')
     for n,b in files.items():
         if len(b)!=m['files'][n]['bytes'] or hashlib.sha256(b).hexdigest()!=m['files'][n]['sha256'] or len(b)>131072:raise ValueError('Package mismatch: '+n)
     return files
@@ -84,11 +85,13 @@ def assess_discovery_capture(data,observed):
 
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__);g=p.add_mutually_exclusive_group();g.add_argument('--run',action='store_true');g.add_argument('--resume',type=Path)
+    p.add_argument('--cluster-preflight',action='store_true',help='Read native geometry and preserve secondary frame boundaries/timestamps')
     p.add_argument('--secondary-stream',action='store_true',help='Register paired endpoints, advertise cluster display and capture secondary video; self-check gated')
     p.add_argument('--factory-probe',action='store_true',help='Isolated native endpoint construction/destruction; no registration or advertisement')
     p.add_argument('--phone-capture',action='store_true',help='Native phone capture: Ethernet -> phone -> Ethernet, explicit disconnected cleanup only')
     p.add_argument('--phone-unplugged',action='store_true',help='Attest phone is physically unplugged before initial launch or resume')
     p.add_argument('--host',default='192.168.1.4');p.add_argument('--port',type=int,default=21);p.add_argument('--username',default='ftpuser');p.add_argument('--ask-password',action='store_true');p.add_argument('--telnet-port',type=int,default=23);p.add_argument('--telnet-user',default='root');p.add_argument('--timeout',type=float,default=90);a=p.parse_args(argv)
+    if a.cluster_preflight:a.secondary_stream=True
     if a.secondary_stream:
         a.factory_probe=True
         if not a.resume:a.phone_capture=True
@@ -100,7 +103,7 @@ def main(argv=None):
     if a.phone_capture:print('Phone capture: start unplugged; swap only at CAPTURE READY; remove phone and reconnect Ethernet before cleanup.')
     else:print('Default control trial: phone remains unplugged throughout.')
     if not a.run and not a.resume:print('Plan only. Add --run --phone-unplugged; keep --phone-capture for the phone profile.');return 0
-    files=package(ROOT/('native/secondary-display/release' if a.secondary_stream else 'native/endpoint-factory/release' if a.factory_probe else 'native/observer/disconnect-launch/release'),phone=a.phone_capture,factory=a.factory_probe,secondary=a.secondary_stream);base=ROOT/'delphi-dump'
+    files=package(ROOT/('native/cluster-bridge/release' if a.cluster_preflight else 'native/secondary-display/release' if a.secondary_stream else 'native/endpoint-factory/release' if a.factory_probe else 'native/observer/disconnect-launch/release'),phone=a.phone_capture,factory=a.factory_probe,secondary=a.secondary_stream,cluster=a.cluster_preflight);base=ROOT/'delphi-dump'
     for parent in (base,*base.parents):d.reject_link(parent)
     base.mkdir(parents=True,exist_ok=True)
     if a.resume:
@@ -108,6 +111,7 @@ def main(argv=None):
         if folder.parent!=base.resolve() or not re.fullmatch(r'_disconnect_observer_[0-9_]+_[0-9a-f]{8}',folder.name):raise ValueError('Resume folder is outside this project trial scope')
         report=json.loads((folder/'disconnect-summary.json').read_text());remote=old.validate_remote(report['remote_directory'])
         if report['native_sha256']!=old.sha(files['observer_launch']):raise ValueError('Saved run and native controller differ')
+        if bool(report.get('cluster_preflight_requested',False))!=a.cluster_preflight:raise ValueError('Resume requires the saved cluster-preflight selection')
         if bool(report.get('factory_probe_requested',False))!=a.factory_probe:raise ValueError('Resume requires the saved factory-probe selection')
         if bool(report.get('secondary_stream_requested',False))!=a.secondary_stream:raise ValueError('Resume requires the saved secondary-stream selection')
         report['secondary_video_received']=False
@@ -122,7 +126,7 @@ def main(argv=None):
     else:
         token=uuid.uuid4().hex;remote=old.validate_remote(old.REMOTE_PREFIX+token);folder=base/('_disconnect_observer_'+dt.datetime.now(dt.timezone.utc).strftime('%Y%m%d_%H%M%S')+'_'+token[:8]);folder.mkdir();session=folder
         seconds=20 if a.factory_probe else (60 if a.phone_capture else 20)
-        report=dict(secondary_stream_requested=a.secondary_stream,secondary_video_received=False,secondary_trial_passed=False,observer_sha256=old.sha(files['libdelphi_observer.so']),factory_probe_requested=a.factory_probe,factory_probe_passed=False,capture_profile_seconds=seconds,phone_capture_requested=a.phone_capture,phone_capture_completed=False,kind='disconnected_observer_control_trial',remote_directory=remote,native_sha256=old.sha(files['observer_launch']),controller_trial_passed=False,cleanup_pending=False,actions=[],artifacts=[])
+        report=dict(cluster_preflight_requested=a.cluster_preflight,secondary_stream_requested=a.secondary_stream,secondary_video_received=False,secondary_trial_passed=False,observer_sha256=old.sha(files['libdelphi_observer.so']),factory_probe_requested=a.factory_probe,factory_probe_passed=False,capture_profile_seconds=seconds,phone_capture_requested=a.phone_capture,phone_capture_completed=False,kind='disconnected_observer_control_trial',remote_directory=remote,native_sha256=old.sha(files['observer_launch']),controller_trial_passed=False,cleanup_pending=False,actions=[],artifacts=[])
     token=remote.rsplit('_',1)[1];blobs={f.name:f.read_bytes() for f in folder.iterdir() if f.is_file() and f.suffix in ('.txt','.bin','.reference','.original','.cfg')}
     shell=None;cwd=False;authorized=False;history=[];password=getpass.getpass('FTP password: ') if a.ask_password else 'ftpuser'
     def persist():(folder/'disconnect-summary.json').write_text(json.dumps(report,indent=2),encoding='utf8')
@@ -139,6 +143,15 @@ def main(argv=None):
         (folder/name).write_bytes(b);blobs[name]=b;report['artifacts']=[x for x in report['artifacts'] if x.get('file')!=name]
         report['artifacts'].append(dict(file=name,bytes=len(b),sha256=old.sha(b)));return b
     def command(cmd,required=True):return shell.command(cmd,required=required)
+    def snapshot_native(label,pid):
+        import cluster_preflight as cp
+        dest='nav-'+label+'.json'
+        code=command('LD_PRELOAD= ./nav_snapshot '+str(pid)+' > '+dest+' 2> nav-'+label+'-errors.txt',required=False)
+        if code:
+            try:fetch('nav-'+label+'-errors.txt')
+            except (OSError,ValueError,ftplib.Error):pass
+            raise ValueError('Read-only native geometry snapshot refused: '+str(code))
+        command('chmod 644 '+dest);return cp.assess_nav(fetch(dest),pid)
     def copy_report(source,dest):
         command('cp '+source+' '+dest);command('chmod 644 '+dest);return fetch(dest)
     persist()
@@ -159,6 +172,15 @@ def main(argv=None):
             command('cp /etc/procman_core.cfg procman-core.cfg');command('chmod 644 procman-core.cfg');old.verify_manager_config(fetch('procman-core.cfg'))
             command('pidin -p AndroidAuto arguments > stock-fresh.txt 2>&1');command('chmod 644 stock-fresh.txt');pid=old.fresh_stock_pid(fetch('stock-fresh.txt'))
             if pid!=before:raise ValueError('Stock PID changed before staging')
+            if a.cluster_preflight:
+                import cluster_preflight as cp
+                print('Before the phone test, display the VW factory navigation map in the instrument cluster.',flush=True)
+                input('Keep the phone unplugged and Ethernet connected. Press Enter when the native cluster map is visible (or if unavailable): ')
+                command('pidin -p NavigationServer arguments > nav-before-arguments.txt');command('chmod 644 nav-before-arguments.txt')
+                native_pid=cp.nav_pid(fetch('nav-before-arguments.txt'))
+                command('cp /extbin/apps/bin/NavigationServer NavigationServer.reference');command('chmod 644 NavigationServer.reference');cp.verify_navigation(fetch('NavigationServer.reference'))
+                command('chmod 500 nav_snapshot');report['native_before']=snapshot_native('before',native_pid);persist()
+                if not report['native_before']['active_geometry_observed']:print('Native encoder geometry is inactive; preserving that result and continuing timing capture.',flush=True)
             command('chmod 500 AndroidAuto.original')
             launch='LD_PRELOAD= ./observer_launch start-disconnected '+shlex.quote(remote)+' '+str(pid)
             report['native_launch_requested']=True;persist()
@@ -196,7 +218,7 @@ def main(argv=None):
             report['pending_state']=validate_report(pending,remote,True,seconds);report['cleanup_pending']=True;persist()
         print('Capture has not authorized any interruption. Keep Ethernet connected and the phone physically unplugged.',flush=True)
         if input('Type PHONE REMOVED to request the explicit disconnected-only cleanup (anything else leaves it pending): ').strip()!='PHONE REMOVED':
-            print('Cleanup remains pending. Use --resume "'+str(folder)+'" --phone-unplugged'+(' --secondary-stream' if a.secondary_stream else ' --factory-probe' if a.factory_probe else '')+' later.');return 2
+            print('Cleanup remains pending. Use --resume "'+str(folder)+'" --phone-unplugged'+(' --cluster-preflight' if a.cluster_preflight else ' --secondary-stream' if a.secondary_stream else ' --factory-probe' if a.factory_probe else '')+' later.');return 2
         authorized=True;report['cleanup_requested_host_utc']=dt.datetime.now(dt.timezone.utc).isoformat();persist()
         command('if test ! -f cleanup.txt; then : > cleanup.txt; fi');command('chmod 644 cleanup.txt')
         code=command('LD_PRELOAD= ./observer_launch cleanup-disconnected '+shlex.quote(remote)+' >> cleanup.txt 2>&1',required=False)
@@ -219,13 +241,24 @@ def main(argv=None):
             report['secondary_discovery']=assess_discovery_capture(blobs['discovery.bin'],report['observed_pid'])
             state=assess_secondary(blobs['secondary.bin'],blobs['secondary.h264'],report['observed_pid'],struct.unpack_from('<I',blobs['factory.bin'],40)[0])
             report.update(secondary=state,secondary_video_received=state['secondary_video_received'],secondary_trial_passed=state['secondary_trial_passed'])
+        if a.cluster_preflight:
+            from secondary_timing import assess_timing
+            import cluster_preflight as cp
+            copy_report('/dev/shmem/delphi-secondary-timing-'+token+'.bin','timing.bin')
+            report['timing']=assess_timing(blobs['timing.bin'],blobs['secondary.h264'],report['observed_pid'],report['secondary'])
+            command('pidin -p NavigationServer arguments > nav-after-arguments.txt');command('chmod 644 nav-after-arguments.txt');current_nav=cp.nav_pid(fetch('nav-after-arguments.txt'))
+            before_nav=report['native_before']
+            report['navigation_pid_unchanged']=current_nav==before_nav['pid']
+            report['native_after']=snapshot_native('after',current_nav)
+            report['navigation_identity_unchanged']=report['navigation_pid_unchanged'] and report['native_after']['start_time']==before_nav['start_time'] and report['native_after']['parent']==before_nav['parent']
+            report['cluster_preflight_passed']=bool(report['timing']['complete'] and before_nav['active_geometry_observed'] and report['navigation_identity_unchanged'])
         (folder/'observer-decoded.json').write_text(json.dumps(report.pop('decoded_log'),indent=2))
     except (OSError,EOFError,ValueError,RuntimeError,KeyError,ftplib.Error) as exc:report['error']=(type(exc).__name__+': '+str(exc)).replace(password,'[redacted]') if password else str(exc)
     finally:
         # Always preserve available phase reports and current PID after errors;
         # these commands never authorize cleanup or signal an application.
         if shell and cwd and not shell.broken:
-            for source,dest in (('/dev/shmem/delphi-aa-report-'+token+'.bin','controller-pending.bin'),('/dev/shmem/delphi-aa-final-'+token+'.bin','controller.bin'))+((('/dev/shmem/delphi-endpoint-factory-'+token+'.bin','factory.bin'),) if a.factory_probe else ())+((('/dev/shmem/delphi-secondary-report-'+token+'.bin','secondary.bin'),('/dev/shmem/delphi-secondary-video-'+token+'.h264','secondary.h264'),('/dev/shmem/delphi-secondary-discovery-'+token+'.bin','discovery.bin')) if a.secondary_stream else ()):
+            for source,dest in (('/dev/shmem/delphi-aa-report-'+token+'.bin','controller-pending.bin'),('/dev/shmem/delphi-aa-final-'+token+'.bin','controller.bin'))+((('/dev/shmem/delphi-endpoint-factory-'+token+'.bin','factory.bin'),) if a.factory_probe else ())+((('/dev/shmem/delphi-secondary-report-'+token+'.bin','secondary.bin'),('/dev/shmem/delphi-secondary-video-'+token+'.h264','secondary.h264'),('/dev/shmem/delphi-secondary-discovery-'+token+'.bin','discovery.bin')) if a.secondary_stream else ())+((('/dev/shmem/delphi-secondary-timing-'+token+'.bin','timing.bin'),) if a.cluster_preflight else ()):
                 try:
                     command('if test -r '+source+'; then cp '+source+' '+dest+'; chmod 644 '+dest+'; fi',required=False)
                     if dest not in blobs:fetch(dest)
@@ -237,6 +270,7 @@ def main(argv=None):
             report['actions']=history+shell.actions;shell.close()
         report['operator_cleanup_confirmed']=authorized;persist()
     ok=report['controller_trial_passed'] and (not report.get('phone_capture_requested') or report.get('phone_capture_completed',False)) and (not a.factory_probe or report.get('factory_probe_passed',False)) and (not a.secondary_stream or report.get('secondary_trial_passed',False))
+    if a.cluster_preflight:ok=ok and report.get('cluster_preflight_passed',False)
     if a.secondary_stream and 'secondary' in report:print('Secondary state: '+report['secondary']['state']+'; frames='+str(report['secondary']['frames']))
     if 'error' in report:print('Result: '+report['error'])
     print('Saved: '+str(folder))

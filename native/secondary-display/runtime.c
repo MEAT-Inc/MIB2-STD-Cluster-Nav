@@ -4,6 +4,7 @@
 #include <limits.h>
 #include <string.h>
 #include <unistd.h>
+#include <time.h>
 _Static_assert(sizeof(void*)==4,"ARM32 endpoint ABI");
 _Static_assert(sizeof(struct stream_report)==512,"stream report ABI");
 struct adapter { const void *vtable;struct stream_context *owner; };
@@ -20,16 +21,19 @@ static unsigned save(struct stream_context *c,const void *p,unsigned n){unsigned
  while(done<n&&tries++<8){written=write(c->fd,(const char*)p+done,n-done);if(written<0&&errno==EINTR)continue;if(written<=0){c->report->w[SIOERROR]=errno?errno:EIO;break;}done+=(unsigned)written;add(c,SSAVED,(unsigned)written);}
  return done;
 }
+static void timing_record(struct stream_context *c,unsigned kind,int session,uint64_t timestamp,unsigned offset,unsigned requested,unsigned saved){struct stream_timing *t=c->timing;struct stream_timing_record *r;struct timespec now;unsigned index;if(!t)return;index=t->count;if(index>=TIMING_CAPACITY){if(t->dropped!=UINT_MAX)++t->dropped;return;}r=&t->records[index];r->kind=kind;r->session=(uint32_t)session;r->timestamp=timestamp;if(clock_gettime(CLOCK_MONOTONIC,&now))t->clock_error=errno?errno:EIO;else r->monotonic_ns=(uint64_t)now.tv_sec*1000000000ULL+now.tv_nsec;r->offset=offset;r->requested=requested;r->saved=saved;__atomic_store_n(&t->count,index+1,__ATOMIC_RELEASE);}
 static int setup(void *p,int codec){struct stream_context *c=((struct adapter*)p)->owner;pthread_mutex_lock(&c->mutex);add(c,SSETUP,1);c->active=0;c->configured=0;c->session=-1;stage(c,4);if(codec!=3)error(c,21);pthread_mutex_unlock(&c->mutex);return codec==3?0:-1;}
 static int configuration(void *p,int index){struct stream_context *c=((struct adapter*)p)->owner;pthread_mutex_lock(&c->mutex);add(c,SCONFIG,1);c->configured=index==0;if(index!=0)error(c,22);pthread_mutex_unlock(&c->mutex);return index==0?0:-1;}
 static int start(void *p,int session){struct stream_context *c=((struct adapter*)p)->owner;pthread_mutex_lock(&c->mutex);add(c,SSTART,1);c->session=session;c->report->w[SSESSION]=(uint32_t)session;c->active=c->configured&&session>=0;pthread_mutex_unlock(&c->mutex);return 0;}
 static int stop(void *p,int session){struct stream_context *c=((struct adapter*)p)->owner;(void)session;pthread_mutex_lock(&c->mutex);add(c,SSTOP,1);c->active=0;pthread_mutex_unlock(&c->mutex);return 0;}
-static int codec(void *p,void *bytes,unsigned n){struct stream_context *c=((struct adapter*)p)->owner;unsigned saved;pthread_mutex_lock(&c->mutex);add(c,SCODEC,1);if(bytes&&n&&n<=65536){saved=save(c,bytes,n);add(c,SCODECBYTES,saved);if(saved!=n)add(c,SDROPPED,1);}else error(c,23);pthread_mutex_unlock(&c->mutex);return 0;}
-static int data(void *p,int session,uint64_t timestamp,const struct factory_shared *borrowed,const void *bytes,unsigned n){struct stream_context *c=((struct adapter*)p)->owner;int ack=0;unsigned saved=0;(void)borrowed;
+static int codec(void *p,void *bytes,unsigned n){struct stream_context *c=((struct adapter*)p)->owner;unsigned saved,offset;pthread_mutex_lock(&c->mutex);add(c,SCODEC,1);if(bytes&&n&&n<=65536){offset=c->report->w[SSAVED];saved=save(c,bytes,n);timing_record(c,1,c->session,0,offset,n,saved);add(c,SCODECBYTES,saved);if(saved!=n)add(c,SDROPPED,1);}else error(c,23);pthread_mutex_unlock(&c->mutex);return 0;}
+static int data(void *p,int session,uint64_t timestamp,const struct factory_shared *borrowed,const void *bytes,unsigned n){struct stream_context *c=((struct adapter*)p)->owner;int ack=0;unsigned saved=0,offset;(void)borrowed;
  pthread_mutex_lock(&c->mutex);
+ offset=c->report->w[SSAVED];
  c->report->w[STSLOW]=(uint32_t)timestamp;c->report->w[STSHIGH]=(uint32_t)(timestamp>>32);
  c->report->w[SCHANNEL]=((unsigned char*)c->video)[5];
  if(c->active&&session==c->session&&bytes&&n&&n<=1024*1024){add(c,SFRAMES,1);add(c,SFRAMEBYTES,n);saved=save(c,bytes,n);stage(c,5);}
+ timing_record(c,2,session,timestamp,offset,n,saved);
  if(!n||saved!=n)add(c,SDROPPED,1);
  ack=session>=0&&session==c->session&&((unsigned char*)c->video)[4]&&((unsigned char*)c->video)[5];
  if(ack)add(c,SACKS,1);

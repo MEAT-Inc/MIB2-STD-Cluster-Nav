@@ -1,3 +1,79 @@
+2026-10-29 CURRENT STATUS: PHONE MAP VIDEO VERIFIED; CLUSTER PREFLIGHT READY
+========================================================================
+Goal remains Android Auto maps in the Delphi P0890D instrument cluster.
+All work this turn was offboard; no car commands executed.
+
+Latest actual vehicle result: _disconnect_observer_20261030_023947_1b83e2fa.
+All18 manifest artifacts independently size/hash verified. Recomputed native
+controller restoration, factory/callback and secondary-stream assessments pass.
+Video9/Input10 accepted;371 frames,371 ACKs,2,776,803 saved bytes,zero drops,
+native/IO/wire errors or discovery fallback. Stock process restoration verified.
+Source H264 SHA256:2962fa64ead8aac8095daf65ac240b246e342d46404bc24f7b935881e051b3ee
+
+Actual video decoded:800x480 Baseline AVC,yuv420p,1 I-frame+370 P-frames.
+Decoded frame180 visually confirms full Google Maps navigation, including route
+and maneuver card. No separate audio stream. Preview/source-pixel hashes:
+  delphi-analysis/cluster-bridge/video-review/video-review.json
+  delphi-analysis/cluster-bridge/video-review/frame-0180.png
+
+Offline native-format mux implemented in scripts/cluster_ts_mux.py. Real capture
+parsed into371 access units, remuxed into15,793188-byte TS packets using native
+PAT/PMT/PIDs, reassembled byte-for-byte and independently decoded. Every decoded
+RGB frame hash equals the raw source. transport-fixture.ts is2,969,084 bytes,
+SHA256:9b1f64a047be58f2e4c3be2206a57e574f93ab4bbd69f8073c33604177fedfc0.
+IMPORTANT: this fixture uses explicit SYNTHETIC30fps timing. Raw capture lost
+callback timestamps; demuxer guessed cadence is not evidence. No cluster hardware
+acceptance or real-time vehicle playback is established by this offline test.
+
+Next narrow test combines both necessary measurements in one existing AA run:
+(1) native encoder width/height, backing size,padding,rate candidate and writer
+fd read through /proc/<pid>/as, exact P0890D code preimages and process identity;
+(2) each codec/frame callback offset,length,phone timestamp,local monotonic time.
+Geometry helper is read-only: NavigationServer is not restarted/stopped/signaled;
+no isoTX open/write, SAL send or native cluster control change. Helper required
+imports exclude kill/pwrite/ptrace/spawn/exec; optional weak GCC frame-info hooks
+are explicitly recorded. QNX tests validate read-only self-memory,stable samples,
+absent/invalid pointer refusal. Actual car read/geometry remains untested.
+Timing mapped buffer is81,952 bytes,capacity2048,40-byte records with release
+commit; no extra file I/O in frame callbacks. Existing8MiB raw limit/ACK remain.
+
+Validation:50 workflow/report tests and6 independent mux tests pass. QNX ARM
+factory,ownership,callback,wire,secondary runtime/timing,transaction rollback,
+forwarding and original smoke/controller suite pass. Native geometry helper QNX
+self-test passes. ZIP CRC/payload hashes,extracted stdlib-only plan/asset gate pass.
+Known working older secondary-stream-laptop.zip and controller remain intact.
+
+CAR REQUIRED FOR NEXT MEASUREMENTS
+Extract native/cluster-bridge/cluster-preflight-laptop.zip into laptop project.
+Start ignition on,phone unplugged,Ethernet connected:
+  python scripts/run_disconnected_observer.py --run --cluster-preflight --phone-unplugged
+When prompted,show the VW factory navigation map in the cluster and press Enter;
+if unavailable,Enter records absence and still captures phone timing (partial).
+At CAPTURE READY swap to phone,start a navigation route and run about10seconds.
+Unplug phone,reconnect Ethernet,press Enter and follow PHONE REMOVED cleanup.
+Return the whole new delphi-dump/_disconnect_observer_* folder including partial.
+Pending resume requires --cluster-preflight --phone-unplugged,not --phone-capture.
+No maps are sent to the cluster in this measurement build.
+
+Remaining implementation: resolve actual geometry/AA timebase; implement bounded
+owned-buffer IPC and one coherent source substitution through NavigationServer's
+existing writer, preserving native map/MOST activation and cleanup; test actual
+cluster decoder. Never open a competing isoTX writer. Native caller boundaries:
+open0x1ee75c/LR0x1ee760;write0x22cdb4/LR0x22cdb8;close0x1ee308/LR0x1ee30c.
+Singleton global0x5aeab0,fd+0x128,geometry+0xf8..0x108. NavigationServer arguments
+-fcfg ../cfg/NAV/v0/NC/Delphi/NavServer.cfg depend on inherited cwd; a future
+preload launcher must preserve it. Rate0 descriptor retention and deactivation's
+complete MOST teardown are unproven; do not use them as an assumed handoff trick.
+Timestamp units cannot be established in main AA sink0x126b88: timestamp is
+stored then unused. Receiver parses BE64 and forwards unchanged. Preserve records
+rather than guessing units. SAL clock is independently confirmed milliseconds.
+
+Release bytes: 65681
+Release SHA256: 390e637c0dcef19a2e074229498450b954c029f87dc72e7e686f958831499cc2
+Release review:delphi-analysis/control-runtime/cluster-preflight-release.json
+
+PRIOR CHECKPOINTS (superseded where inconsistent)
+================================================
 2026-10-29 CURRENT STATUS: SECONDARY STREAM EXPERIMENT READY
 ==========================================================
 This section supersedes historical next-step/blocker statements below.

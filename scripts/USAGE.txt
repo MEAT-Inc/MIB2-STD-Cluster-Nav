@@ -3,7 +3,7 @@ Project working folder
 .
 
 All commands below run from this base folder:
-  Set-Location -LiteralPath '.'
+  # Run from the root of your local checkout.
 
 Scripts live in scripts/; analysis reports live in delphi-analysis/; acquired
 files and per-run reports live in delphi-dump/. Both collection scripts default
@@ -28,7 +28,7 @@ Prerequisites and connection
    If your installation provides python instead, substitute python for py -3.
 
 2. Keep delphi_inventory.py in the project scripts folder. Save test and
-   report files outside OneDrive if you do not want automatic cloud syncing.
+   report files outside a synced folder if you do not want automatic cloud syncing.
    The output filesystem must support hard links (normal local NTFS does).
 
 3. Park the vehicle and keep the infotainment unit powered. Connect the laptop
@@ -61,7 +61,7 @@ Collect fresh inventory only, with NO FTP connection/downloads:
   py -3 .\scripts\delphi_inventory.py --inventory-only
 
 Custom output folder (recommended for a fresh independent collection):
-  py -3 .\scripts\delphi_inventory.py --collect-inventory --output "D:\CarData\delphi-dump-2026-10-28"
+  py -3 .\scripts\delphi_inventory.py --collect-inventory --output ".\delphi-dump-fresh"
 
 Custom connection settings, with password prompts:
   py -3 .\scripts\delphi_inventory.py --host 192.168.1.4 --port 21 --username ftpuser --ask-password --collect-inventory --telnet-port 23 --telnet-user root --ask-telnet-password
@@ -244,7 +244,7 @@ collection without staging, not to the optional staging writes.
 
 Offline manifest verification and binary triage:
   py -3 .\scripts\inspect_delphi.py
-Input ROOT is hard-coded to the project's delphi-dump folder. The script selects
+Input defaults to the project's delphi-dump folder; --dump/--output/--manifest override it. The script selects
 the first _collection_*/manifest.jsonl returned by glob: check the intended run
 when several manifests exist. It replaces generated verification.json,
 binary-triage.json and *.strings.txt under delphi-analysis/. It does not execute

@@ -1,11 +1,11 @@
 param([switch]$BuildToolchain, [switch]$BuildEmulator)
 $ErrorActionPreference = 'Stop'
+. (Join-Path $PSScriptRoot 'project-python.ps1')
 $projectRoot = Split-Path -Parent $PSScriptRoot
 Push-Location -LiteralPath $projectRoot
 try {
     if ($BuildToolchain) {
-        $pythonPath = Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-        & $pythonPath -B scripts/build_qnx_toolchain.py
+        Invoke-ProjectPython -B scripts/build_qnx_toolchain.py
         if ($LASTEXITCODE -ne 0) { throw 'Compiler build failed; see .tools/qnx-toolchain-tar-build.log' }
     }
     if ($BuildEmulator) {

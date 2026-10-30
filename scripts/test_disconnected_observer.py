@@ -15,6 +15,33 @@ def discovery_capture(empty=False):
  b=bytearray(24600);struct.pack_into('<6I',b,0,0x32534344,43,0 if empty else 2,0 if empty else 2,0,0 if empty else 1)
  if not empty:b[24:26]=b'\0\6';b[8216:8218]=b'\0\6'
  return bytes(b)
+def timing_capture():
+ b=bytearray(81952);struct.pack_into('<8I',b,0,0x314d4954,1,43,40,2048,3,0,0)
+ for i,(kind,offset,n) in enumerate(((1,0,8),(2,8,6),(2,14,6))):struct.pack_into('<IIQQ4I',b,32+40*i,kind,37,i*33333,1000000000+i*33333000,offset,n,n,0)
+ return bytes(b)
+class ClusterPreflightTests(unittest.TestCase):
+ def test_timing_records_account_for_raw_and_source_clock(self):
+  from secondary_timing import assess_timing
+  v=assess_timing(timing_capture(),secondary_raw(),43,dict(frames=2,codec_saved_bytes=8));self.assertTrue(v['complete']);self.assertAlmostEqual(v['source_units_per_arrival_second'],1000000);self.assertFalse(v['timestamp_units_confirmed'])
+ def test_corrupt_timing_bounds_identity_order_and_partial(self):
+  from secondary_timing import assess_timing
+  for off in (0,4,8,12,16,20,32,64,68,72,81948):
+   b=bytearray(timing_capture());struct.pack_into('<I',b,off,0xffffffff)
+   with self.subTest(off=off),self.assertRaises(ValueError):assess_timing(b,secondary_raw(),43,dict(frames=2,codec_saved_bytes=8))
+  b=bytearray(timing_capture());struct.pack_into('<I',b,24,1);self.assertFalse(assess_timing(b,secondary_raw(),43,dict(frames=2,codec_saved_bytes=8))['complete'])
+ def test_navigation_identity_and_inactive_geometry(self):
+  import cluster_preflight as cp
+  self.assertEqual(cp.nav_pid(b'pid Arguments\n 77 NavigationServer -fcfg ../cfg/NAV/v0/NC/Delphi/NavServer.cfg\n'),77)
+  with self.assertRaises(ValueError):cp.nav_pid(b'77 NavigationServer -other\n')
+  with self.assertRaises(ValueError):cp.verify_navigation(b'wrong firmware')
+ def test_combined_workflow_and_no_navigation_restart(self):
+  code,state,result=WorkflowTests().simulate(cluster=True);self.assertEqual(code,0);self.assertTrue(result['cluster_preflight_passed']);self.assertTrue(result['navigation_identity_unchanged']);self.assertTrue(result['timing']['complete']);self.assertFalse(any('kill' in c or 'start-disconnected' in c and 'Navigation' in c for c in state['commands']))
+ def test_native_refusal_prevents_androidauto_start(self):
+  code,state,result=WorkflowTests().simulate('navfail',cluster=True);self.assertEqual(code,2);self.assertFalse(any('start-disconnected' in c for c in state['commands']))
+ def test_inactive_native_map_retains_stream_and_timing(self):
+  code,state,result=WorkflowTests().simulate('navinactive',cluster=True);self.assertEqual(code,2);self.assertFalse(result['cluster_preflight_passed']);self.assertTrue(result['secondary_trial_passed']);self.assertTrue(result['timing']['complete'])
+ def test_resume_retains_native_identity_no_second_start(self):
+  code,state,result=WorkflowTests().simulate(resume=True,cluster=True);self.assertEqual(code,0);self.assertTrue(result['cluster_preflight_passed']);self.assertFalse(any('start-disconnected' in c for c in state['commands']))
 class SecondaryReportTests(unittest.TestCase):
  def test_received_video_is_not_a_cluster_transport_claim(self):
   r=m.assess_secondary(secondary_report(),secondary_raw(),43,0x1000);self.assertTrue(r['secondary_video_received']);self.assertTrue(r['secondary_trial_passed']);self.assertEqual(r['annexb_nal_types'],[5,7]);self.assertFalse(r['cluster_transport_connected'])
@@ -77,13 +104,14 @@ class DisconnectedTests(unittest.TestCase):
    with self.assertRaises(ValueError):m.package(p,phone=True)
    manifest.update(phone_trial_enabled=True,capture_profiles=[20,60]);(p/'manifest.json').write_text(json.dumps(manifest));self.assertEqual(m.package(p,phone=True),files)
 class WorkflowTests(unittest.TestCase):
- def simulate(self,mode='',resume=False,phone=False,factory=False,seconds=None,secondary=False):
+ def simulate(self,mode='',resume=False,phone=False,factory=False,seconds=None,secondary=False,cluster=False):
+  if cluster:secondary=True
   if secondary:phone=factory=True
   state=dict(data={},commands=[],connections=0)
   seconds=seconds or (20 if factory else (60 if phone else 20))
   pending,fixture_root,refs=DisconnectedTests().fixture(True,seconds,1 if phone else 0)
   final,_,_=DisconnectedTests().fixture(False,seconds,1 if phone else 0)
-  uploads={name:name.encode() for name in m.old.NAMES}
+  uploads={name:name.encode() for name in m.old.NAMES+(('nav_snapshot',) if cluster else ())}
   class FTP:
    def __init__(self,**kw):state['connections']+=1
    def __enter__(self):return self
@@ -105,7 +133,13 @@ class WorkflowTests(unittest.TestCase):
     if cmd.startswith('cd ') and mode=='cd':raise RuntimeError('failed cd')
     remote=state['remote'];data=state['data']
     if cmd.startswith('cp '):
-     source,dest=cmd.split()[1:];data[remote+'/'+dest]=pending[dest] if dest in refs or dest=='procman-core.cfg' else data[source]
+     source,dest=cmd.split()[1:];data[remote+'/'+dest]=b'nav-reference' if dest=='NavigationServer.reference' else pending[dest] if dest in refs or dest=='procman-core.cfg' else data[source]
+    if 'pidin -p NavigationServer arguments >' in cmd:
+     data[remote+'/'+cmd.split('> ')[1].split()[0]]=b'pid Arguments\n 77 NavigationServer -fcfg ../cfg/NAV/v0/NC/Delphi/NavServer.cfg\n'
+    if './nav_snapshot ' in cmd:
+     name=cmd.split('> ')[1].split()[0]
+     if mode=='navfail':data[remote+'/'+name.replace('.json','-errors.txt')]=b'refused';return 2
+     data[remote+'/'+name]=json.dumps(dict(version=1,pid=77,parent=66,start_time=1234,load_bias=0,readonly=True,stable=True,encoder=0 if mode=='navinactive' else 0x1000,rate_candidate=30,width=800,height=480,buffer_width=800,buffer_height=480,padding=0,writer_fd=9)).encode()
     if '> stock-' in cmd:
      name=cmd.split('> ')[1].split()[0];data[remote+'/'+name]=final['stock-after.txt'] if 'after' in name else final['stock-before.txt']
     if 'start-disconnected ' in cmd:
@@ -122,6 +156,7 @@ class WorkflowTests(unittest.TestCase):
       data['/dev/shmem/delphi-secondary-report-'+remote[-32:]+'.bin']=secondary_report(mode=='noframes')
       data['/dev/shmem/delphi-secondary-video-'+remote[-32:]+'.h264']=b'' if mode=='noframes' else secondary_raw()
       data['/dev/shmem/delphi-secondary-discovery-'+remote[-32:]+'.bin']=discovery_capture()
+      if cluster:data['/dev/shmem/delphi-secondary-timing-'+remote[-32:]+'.bin']=timing_capture()
     if cmd.startswith('test -r '):
      state['pending_checks']=state.get('pending_checks',0)+1
      return 1 if mode=='pendingnever' or mode=='pendinglater' and state['pending_checks']<3 else 0
@@ -133,18 +168,19 @@ class WorkflowTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as t:
    root=Path(t)
    def answer(prompt):
+    if prompt.startswith('Keep the phone unplugged'):return ''
     if prompt.startswith('Once navigation'):
      self.assertTrue(state['shells'][-1].closed);return ''
     self.assertNotIn('driver door',prompt.lower());self.assertNotIn('displaying normally',prompt.lower())
     self.assertFalse(any('cleanup-disconnected ' in c for c in state['commands']))
     return 'later' if mode=='decline' or resume and state.get('first',True) else 'PHONE REMOVED'
-  with patch.object(m,'ROOT',root),patch.object(m,'package',return_value=uploads),patch.object(m.old,'REFERENCES',refs),patch.object(m.ftplib,'FTP',FTP),patch.object(m,'Shell',Shell),patch.object(m,'wait_for_capture_ready',side_effect=RuntimeError('not ready') if mode=='readyfail' else None,return_value=f'LAUNCH_READY capture_seconds={seconds}\n'.encode()),patch.object(m.time,'sleep'),(patch.object(m.time,'monotonic',side_effect=[0,0,0,0,31]) if mode=='pendingnever' else contextlib.nullcontext()),patch('builtins.input',side_effect=answer),contextlib.redirect_stdout(io.StringIO()):
-    code=m.main(['--run','--phone-unplugged']+(['--phone-capture'] if phone else [])+(['--secondary-stream'] if secondary else ['--factory-probe'] if factory else []))
+  with patch('cluster_preflight.verify_navigation'),patch.object(m,'ROOT',root),patch.object(m,'package',return_value=uploads),patch.object(m.old,'REFERENCES',refs),patch.object(m.ftplib,'FTP',FTP),patch.object(m,'Shell',Shell),patch.object(m,'wait_for_capture_ready',side_effect=RuntimeError('not ready') if mode=='readyfail' else None,return_value=f'LAUNCH_READY capture_seconds={seconds}\n'.encode()),patch.object(m.time,'sleep'),(patch.object(m.time,'monotonic',side_effect=[0,0,0,0,31]) if mode=='pendingnever' else contextlib.nullcontext()),patch('builtins.input',side_effect=answer),contextlib.redirect_stdout(io.StringIO()):
+    code=m.main(['--run','--phone-unplugged']+(['--phone-capture'] if phone else [])+(['--cluster-preflight'] if cluster else ['--secondary-stream'] if secondary else ['--factory-probe'] if factory else []))
     folder=next((root/'delphi-dump').iterdir());summary=json.loads((folder/'disconnect-summary.json').read_text())
     if resume:
      self.assertTrue(summary['cleanup_pending']);state['first']=False;state['commands']=[]
      if mode=='tamper':state['data'][state['remote']+'/observer_launch']+=b'tamper'
-     code=m.main(['--resume',str(folder),'--phone-unplugged']+(['--secondary-stream'] if secondary else ['--factory-probe'] if factory else []));summary=json.loads((folder/'disconnect-summary.json').read_text())
+     code=m.main(['--resume',str(folder),'--phone-unplugged']+(['--cluster-preflight'] if cluster else ['--secondary-stream'] if secondary else ['--factory-probe'] if factory else []));summary=json.loads((folder/'disconnect-summary.json').read_text())
   return code,state,summary
  def test_decline_leaves_pending_no_cleanup(self):
   code,s,r=self.simulate('decline');self.assertEqual(code,2);self.assertTrue(r['cleanup_pending']);self.assertFalse(r['operator_cleanup_confirmed']);self.assertFalse(any('cleanup-disconnected ' in c for c in s['commands']))

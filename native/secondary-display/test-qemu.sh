@@ -1,5 +1,6 @@
 #!/bin/sh
 set -eu
+sh /src/native/cluster-bridge/build.sh
 sh /src/native/endpoint-factory/build.sh
 sh /src/native/secondary-display/build.sh
 sh /src/native/observer/smoke/build.sh
@@ -8,6 +9,7 @@ cd /w
 cp /src/native/observer/smoke/build/* /w/
 cp /src/native/endpoint-factory/build/factory_fixture /w/
 cp /src/native/secondary-display/build/* /w/
+cp /src/native/cluster-bridge/build/nav_snapshot /w/
 cp /src/.tools/qnx65-armv7-toolchain/tests/qemu/startup-virt /src/.tools/qnx65-armv7-toolchain/tests/qemu/libstartup.a /src/.tools/qnx65-armv7-toolchain/tests/qemu/devc-serdebug /src/.tools/qnx65-armv7-toolchain/tests/qemu/u-boot.bin /w/
 sed 's/\r$//' /src/.tools/qnx65-armv7-toolchain/tests/qemu/ifs-header.build > test.build
 cat >> test.build <<'EOF'
@@ -17,6 +19,7 @@ cat >> test.build <<'EOF'
     devc-serdebug -e -F -S
     waitfor /dev/ser1 4
     reopen /dev/ser1
+    nav_snapshot --self-test
     factory_fixture
     wire_fixture
     runtime_fixture
@@ -37,6 +40,7 @@ libdelphi_observer.so
 observer_smoke
 observer_smoke_guard
 smoke_qemu_runner
+nav_snapshot
 factory_fixture
 wire_fixture
 runtime_fixture
@@ -73,3 +77,6 @@ sha256sum libdelphi_observer.so libautoreceiver.so wire_fixture runtime_fixture 
 
 grep -q "SECONDARY_DISCOVERY_TRANSACTION_QNX_PASS" "$w/qemu.log"
 sha256sum libdelphi_observer.so libautoreceiver.so wire_fixture runtime_fixture transaction_fixture secondary_forward_fixture > "$w/secondary-tested.sha256"
+
+grep -q "NAV_SNAPSHOT_QNX_PASS" "$w/qemu.log"
+sha256sum nav_snapshot > /src/native/cluster-bridge/nav-snapshot-tested.sha256
