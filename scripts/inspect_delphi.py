@@ -1,4 +1,5 @@
 """Offline inventory verification and ELF/string triage; never executes dump files."""
+from project_console import console_session, log as print
 import argparse
 import hashlib
 import json
@@ -93,4 +94,5 @@ def main(argv=None):
 
 
 if __name__ == '__main__':
-    main()
+    with console_session(__file__, __doc__):
+        main()

@@ -2,6 +2,7 @@
 Never opens a network connection or writes to the vehicle. No acquired code is executed.
 """
 from __future__ import annotations
+from project_console import console_session, log as print
 import argparse,json
 from pathlib import Path
 
@@ -85,9 +86,10 @@ def reference_packet(pid:int,section:bytes,cc:int=1)->bytes:
     if len(payload)>184:raise ValueError('Reference section too large')
     return bytes([0x47,0x40|((pid>>8)&31),pid&255,0x10|(cc&15)])+payload+b'\xff'*(184-len(payload))
 
-if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--validate-ts',type=Path);args=p.parse_args()
-    if args.validate_ts:result=validate_ts(args.validate_ts.read_bytes())
-    else:
-        result={'reference':validate_ts(reference_packet(0,PAT_SECTION)+reference_packet(0x10,PMT_SECTION)), 'pat_crc':hex(crc32_mpeg2(PAT_SECTION[:-4])),'pmt_crc':hex(crc32_mpeg2(PMT_SECTION[:-4]))}
-    print(json.dumps(result,indent=2))
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        p=argparse.ArgumentParser(description=__doc__);p.add_argument('--validate-ts',type=Path);args=p.parse_args()
+        if args.validate_ts:result=validate_ts(args.validate_ts.read_bytes())
+        else:
+            result={'reference':validate_ts(reference_packet(0,PAT_SECTION)+reference_packet(0x10,PMT_SECTION)), 'pat_crc':hex(crc32_mpeg2(PAT_SECTION[:-4])),'pmt_crc':hex(crc32_mpeg2(PMT_SECTION[:-4]))}
+        print(json.dumps(result,indent=2))

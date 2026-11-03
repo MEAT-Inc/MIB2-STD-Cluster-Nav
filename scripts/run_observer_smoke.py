@@ -1,4 +1,5 @@
 """RAM-only observer smoke test. Default is a plan; --run uploads and executes synthetic tests."""
+from project_console import console_session, log as print, status, progress
 import argparse
 import datetime as dt
 import ftplib
@@ -27,6 +28,7 @@ def validate_remote(path):
 def sha(data): return hashlib.sha256(data).hexdigest()
 
 def retrieve(ftp,remote,limit=16*1024*1024):
+    progress('Retrieving '+remote.rsplit('/',1)[-1], key='retrieve:'+remote)
     data=bytearray()
     def save(block):
         if len(data)+len(block)>limit: raise ValueError('Transfer exceeds fixed limit')
@@ -40,6 +42,7 @@ class Shell:
         self.sock=None; self.broken=False; self.actions=[]
         self.transcript=(run/'telnet-actions.txt').open('x',encoding='utf-8')
         try:
+            status('Connecting to the head unit command shell.')
             self.sock=socket.create_connection((a.host,a.telnet_port),timeout=a.timeout)
             self.reader=d.TelnetReader(self.sock,a.timeout)
             prompts=[('login',re.compile(rb'(?i)(?:login|username):\s*$')),
@@ -150,10 +153,12 @@ def main(argv=None):
     persist()
     try:
         with ftplib.FTP(timeout=a.timeout) as ftp:
+            progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
             ftp.connect(a.host,a.port); ftp.login(a.username,password); ftp.voidcmd('TYPE I')
             ftp.mkd(remote) # must be NEW; no reuse or replacement of another directory
             for name,data in files.items():
                 import io
+                status('Uploading and verifying payload: '+name)
                 ftp.storbinary('STOR '+remote+'/'+name,io.BytesIO(data))
                 if retrieve(ftp,remote+'/'+name,128*1024)!=data: raise ValueError('Upload readback differs: '+name)
         shell=Shell(a,run)
@@ -187,6 +192,7 @@ def main(argv=None):
         for name in RESULTS:
             try:
                 with ftplib.FTP(timeout=a.timeout) as ftp:
+                    progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
                     ftp.connect(a.host,a.port); ftp.login(a.username,password); ftp.voidcmd('TYPE I')
                     data=retrieve(ftp,remote+'/'+name)
                 (run/name).write_bytes(data); blobs[name]=data
@@ -207,4 +213,6 @@ def main(argv=None):
     print('Result: '+('ISOLATED SMOKE PASS' if report['passed'] else 'INCOMPLETE / FAILED - preserve this folder for review'))
     print('RAM artifacts are retained until explicitly removed or the unit restarts.')
     return 0 if report['passed'] else 1
-if __name__=='__main__': raise SystemExit(main())
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        raise SystemExit(main())

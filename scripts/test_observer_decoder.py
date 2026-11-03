@@ -1,3 +1,4 @@
+from project_console import console_session
 import struct
 import unittest
 from pathlib import Path
@@ -33,4 +34,6 @@ class DecoderTests(unittest.TestCase):
         self.assertTrue(decode(self.change(48, 1))['dropped_is_lower_bound'])
     def test_arm_format(self):
         self.assertEqual(decode(self.change(20, 4))['pointer_bytes'], 4)
-if __name__ == '__main__': unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

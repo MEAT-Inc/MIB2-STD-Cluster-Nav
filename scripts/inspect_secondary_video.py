@@ -1,4 +1,5 @@
 """Offline verification/decoding of a secondary capture; never connects to the car."""
+from project_console import console_session, log as print
 import argparse,hashlib,json,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -85,5 +86,6 @@ def inspect(folder,out,recorded_microseconds=False):
  (out/'video-review.json').write_text(json.dumps(report,indent=2))
  print(json.dumps({k:v for k,v in report.items() if k not in ('decoded_rgb_sha256','secondary')},indent=2))
  return report
-if __name__=='__main__':
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('collection',type=Path);p.add_argument('--output',type=Path,required=True);p.add_argument('--recorded-microseconds',action='store_true');a=p.parse_args();inspect(a.collection,a.output,a.recorded_microseconds)
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        p=argparse.ArgumentParser(description=__doc__);p.add_argument('collection',type=Path);p.add_argument('--output',type=Path,required=True);p.add_argument('--recorded-microseconds',action='store_true');a=p.parse_args();inspect(a.collection,a.output,a.recorded_microseconds)

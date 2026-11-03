@@ -1,5 +1,8 @@
 #!/bin/sh
 set -eu
+. /src/scripts/project-console.sh
+console_start "Run cluster-bridge/replay QNX emulator tests." "$@"
+console_status STEP 'Running prerequisite native/cluster-bridge/replay/build.sh.'
 sh /src/native/cluster-bridge/replay/build.sh
 mkdir -p /w /src/native/cluster-bridge/replay/qemu
 cd /w
@@ -55,6 +58,7 @@ cp test.build "$out/test.build"
 mkifs test.build ifs.bin > "$out/mkifs.log" 2>&1
 mkdir -p fat
 cp ifs.bin fat/
+console_status STEP 'Booting QNX emulator; results are being collected in the test log.'
 ( printf '\n'; sleep 4; printf 'virtio scan\n'; sleep 2; printf 'fatload virtio 0:1 0x40200000 ifs.bin\n'; sleep 3; printf 'go 0x40200000\n'; sleep 15 ) | timeout 40 qemu-system-arm -M virt -nic none -m 256 -cpu cortex-a15 -bios u-boot.bin -drive file=fat:rw:/w/fat,format=raw,media=disk -display none -serial stdio > "$out/qemu.log" 2>&1 || true
 grep -q 'REPLAY_FIXTURE_PASS' "$out/qemu.log"
 grep -q 'REPLAY_QNX_END' "$out/qemu.log"
@@ -73,3 +77,6 @@ grep -q '"profile_matches":true' "$out/qemu.log"
 sha256sum /src/native/cluster-bridge/replay/build/replay_libc_check >> "$out/tested.sha256"
 
 grep -q "REPLAY_IDLE_IMPORT_INSPECTION_PASS" "$out/qemu.log"
+
+grep -q "REPLAY_ARMED_DESCRIPTOR_PASS" "$out/qemu.log"
+grep -q "REPLAY_PRELOAD_ARMED_DESCRIPTOR_PASS" "$out/qemu.log"

@@ -1,4 +1,5 @@
 """Independent packet/PES checks for the offline native-format mux."""
+from project_console import console_session
 import unittest
 from cluster_ts_mux import ClusterTSMux, MuxError
 
@@ -153,5 +154,6 @@ class MuxTests(unittest.TestCase):
                 mux.push(au(), 1)
             self.assertEqual(len(calls), 5)
 
-if __name__ == "__main__":
-    unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

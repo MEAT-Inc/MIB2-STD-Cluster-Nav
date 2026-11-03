@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Read-only Delphi MIB2 FTP collection, with optional Telnet inventory. Stdlib only."""
+from project_console import console_session, log as print, status
 import argparse
 import datetime as dt
 import ftplib
@@ -512,5 +513,6 @@ def main(argv=None):
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    with console_session(__file__, __doc__):
+        sys.exit(main())
 

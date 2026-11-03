@@ -1,0 +1,35 @@
+{
+  "bundle": "native/cluster-bridge/map-session/map-session-diagnostics-laptop.zip",
+  "bytes": 17007,
+  "sha256": "b498cc49f2d2c2044e0e68e6b679d95d1e4760613a1857908efa080bccafbe6e",
+  "workflow_tests": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.082s\n\nOK",
+  "portable_plan_passed": true,
+  "manifest": {
+    "kind": "readonly_map_session_snapshot",
+    "service_restarts": false,
+    "preload": false,
+    "video_writes": false,
+    "files": {
+      "scripts/collect_map_session.py": {
+        "bytes": 5238,
+        "sha256": "d21c7aad79eac8d46c096fb74e128cc0e3ed90e4dc4d9aca1f2de2183bfb0804"
+      },
+      "scripts/run_observer_smoke.py": {
+        "bytes": 11824,
+        "sha256": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5"
+      },
+      "scripts/delphi_inventory.py": {
+        "bytes": 23991,
+        "sha256": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25"
+      },
+      "scripts/decode_delphi_observer.py": {
+        "bytes": 2118,
+        "sha256": "113906aee942b7245360806fcddb643b95210df976f23ce7f97cf3006264e13b"
+      },
+      "README.txt": {
+        "bytes": 1809,
+        "sha256": "b0c040eb2525fdb7a5330f77c19f4d6abb2cc92c143944c530e602c902a4cd4a"
+      }
+    }
+  }
+}

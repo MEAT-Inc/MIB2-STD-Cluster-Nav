@@ -1,6 +1,8 @@
 #!/bin/sh
 # Run from the project root. Outputs are isolated from all acquired files.
 set -eu
+. /src/scripts/project-console.sh
+console_start "Build native loader-probe binaries." "$@"
 mode=${1:-qnx}
 case "$mode" in
   qnx) CC=arm-unknown-nto-qnx6.5.0eabi-gcc; out=native/loader-probe/build-qnx
@@ -11,10 +13,15 @@ esac
 mkdir -p "$out"
 src=native/loader-probe
 common="-std=c99 -O2 -Wall -Wextra -Werror -fno-strict-aliasing $arch"
+console_status STEP 'Compiling libprobe_provider.so.'
 $CC $common -fPIC -shared "$src/provider.c" -Wl,-soname,libprobe_provider.so -o "$out/libprobe_provider.so"
+console_status STEP 'Compiling libprobe_observer.so.'
 $CC $common -fPIC -shared "$src/observer.c" -Wl,-soname,libprobe_observer.so $libs -o "$out/libprobe_observer.so"
+console_status STEP 'Compiling probe_main.'
 $CC $common "$src/main.c" -L"$out" -lprobe_provider $libs -o "$out/probe_main"
+console_status STEP 'Compiling probe_linked.'
 $CC $common "$src/main.c" -L"$out" -lprobe_observer -lprobe_provider $libs -o "$out/probe_linked"
+console_status STEP 'Compiling probe_runner.'
 $CC $common "$src/runner.c" $libs -o "$out/probe_runner"
 if [ "$mode" = host ]; then
   LD_LIBRARY_PATH="$out" "$out/probe_main"

@@ -1,4 +1,5 @@
 """Package the read-only display observer after QNX and unit-ABI checks; no network."""
+from project_console import console_session, log as print
 from pathlib import Path
 import copy,hashlib,io,json,re,shutil,struct,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1]
@@ -61,11 +62,13 @@ def main():
     (release/'observer_launch').write_bytes(files['observer_launch']);(release/'libdelphi_observer.so').write_bytes(blob)
     (release/'manifest.json').write_text(json.dumps(manifest,indent=2));shutil.copy2(BASE/'README.txt',release/'README.txt')
     package_files(release,'managed_androidauto_display_observer')
-    paths=[ROOT/'scripts'/n for n in ('run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','decode_delphi_observer.py','decode_androidauto_display.py')]+[release/n for n in (*NAMES,'manifest.json','README.txt')]
+    paths=[ROOT/'scripts'/n for n in ('run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py','decode_androidauto_display.py')]+[release/n for n in (*NAMES,'manifest.json','README.txt')]
     bundle=BASE/'androidauto-display-capture-laptop.zip'
     with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
         for path in paths:z.write(path,path.relative_to(ROOT).as_posix())
     print('PASS: QNX forwarding, stack arguments, errno, payload preservation, disabled log, overflow, missing originals.')
     print('PASS: unchanged tested controller; ARM ABI, receiver symbols and actual unit libc imports.')
     print('Bundle:',bundle);print('SHA256:',sha(bundle.read_bytes()))
-if __name__=='__main__':main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

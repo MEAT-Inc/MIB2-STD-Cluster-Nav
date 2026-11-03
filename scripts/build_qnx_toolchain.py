@@ -2,6 +2,7 @@
 Windows checkout materializes symlinks as small text files. Never execute these.
 The tar is for Docker only and does not change the checkout or acquired dump.
 """
+from project_console import console_session, log as print, status
 from pathlib import Path
 import io, subprocess, tarfile, json, hashlib, argparse
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,9 +49,12 @@ def main():
             entries.append({'name': name, 'mode': mode, 'sha256': hashlib.sha256(data).hexdigest()})
     (ROOT / '.tools/qnx-build-context.json').write_text(json.dumps({'revision': head, 'entries': entries}, indent=2))
     print('Docker context prepared:', len(entries), 'files; Git symlinks and executable modes restored.', flush=True)
+    status('Building the Docker toolchain; detailed output is being saved under .tools/ in the build log.')
     with archive.open('rb') as source, (ROOT / ('.tools/qnx-sysroot-build.log' if args.sysroot_only else '.tools/qnx-toolchain-tar-build.log')).open('wb') as log:
         result = subprocess.run(['docker', 'build', '--platform=linux/amd64', '--target', target,
             '--build-arg', 'BASE=base-8.5', '-t', tag, '-'], stdin=source, stdout=log, stderr=subprocess.STDOUT)
     print('Docker build exit:', result.returncode, flush=True)
     raise SystemExit(result.returncode)
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

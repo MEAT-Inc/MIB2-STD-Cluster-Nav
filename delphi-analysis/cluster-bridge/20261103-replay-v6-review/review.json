@@ -1,0 +1,26 @@
+{
+  "collection": "delphi-dump/_cluster_replay_20261103_132444_537435f0",
+  "artifacts_verified": 23,
+  "arm_accepted": true,
+  "packets_accepted_by_transport": 5646,
+  "bytes_accepted": 1061448,
+  "zero_returns": 32,
+  "error": 5,
+  "error_source": "Synthetic EIO after32zero-progress writes; not direct system error",
+  "transport_default_maximum": 1048576,
+  "queue_semantics": "tryPush rejects queued+write >= max; rejected io_write replies EOK with count0",
+  "process_restoration_verified": true,
+  "restored_pid": 1413205,
+  "peer_pids_unchanged": true,
+  "functional_map_restoration": false,
+  "functional_map_evidence": "User reports both screens stuck Starting map after cleanup; radio reboot restores both",
+  "next_action": "Hold further replay, compare read-only healthy/broken thread waits/FDs/mappings/existing logs",
+  "limits": [
+    "Cannot establish physical delivery/decoder rejection from queue acceptance",
+    "Acceptedbytes exceedmax: smallinitialdrain or readerheldcapacity possible",
+    "Exact stalled map/MOST lifecycle component unproved",
+    "-X134 is prior exitcode, not inherited FD"
+  ],
+  "diagnostic_bundle": "native/cluster-bridge/map-session/map-session-diagnostics-laptop.zip",
+  "diagnostic_sha256": "b498cc49f2d2c2044e0e68e6b679d95d1e4760613a1857908efa080bccafbe6e"
+}

@@ -1,4 +1,5 @@
 """Gate and package the first recorded-map cluster display trial."""
+from project_console import console_session, log as print
 import hashlib,io,json,struct,subprocess,sys,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'native/cluster-bridge';R=BASE/'replay';N=BASE/'nav-launch'
@@ -60,7 +61,7 @@ def main():
  if refs['NavigationServer.original']['sha256']!='a999725350df8503c44a25da2676a8c1a99914a99a36f24bb6334a509def4afe':raise ValueError('Wrong NavigationServer')
  tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_cluster_replay.py')],cwd=ROOT,capture_output=True,text=True)
  if tests.returncode:raise ValueError(tests.stderr)
- scripts=('run_cluster_replay.py','cluster_preflight.py','run_observer_smoke.py','delphi_inventory.py','decode_delphi_observer.py');sources=[p for d in (R,N) for p in d.iterdir() if p.suffix in ('.c','.h','.S','.sh')]
+ scripts=('run_cluster_replay.py','cluster_preflight.py','run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py');sources=[p for d in (R,N) for p in d.iterdir() if p.suffix in ('.c','.h','.S','.sh')]
  manifest=dict(kind='native_cluster_recorded_map_replay',hook_mode='app_import_slots',startup_contract_revision=6,activation_mode="armed_native_descriptor",post_exec_identity_ack=True,canonical_image_exec=True,preserve_standard_streams=True,libc_profile=json.loads((R/'unit-libc-profile.json').read_text()),phone_must_stay_unplugged=True,live_phone_navigation=False,on_car_tested=False,cluster_display_proven=False,replay=dict(source_collection=source.name,frames=617,width=800,height=480,duration_ms=groups[-1][0],groups=len(groups),packets=len(ts)//188,transport_sha256=sha(ts),clock_discontinuity_prelude=True,explicit_arm_required=True),references=refs,elf=elf,files={n:dict(bytes=len(b),sha256=sha(b)) for n,b in files.items()},scripts_sha256={n:sha((ROOT/'scripts'/n).read_bytes()) for n in scripts},source_sha256={p.relative_to(ROOT).as_posix():sha(p.read_bytes()) for p in sources})
  release=R/'release';release.mkdir(exist_ok=True)
  for n,b in files.items():(release/n).write_bytes(b)
@@ -78,4 +79,6 @@ def main():
   if result.returncode or result.stdout.strip()!='4':raise ValueError('Portable assets: '+result.stderr)
  report=dict(bundle=bundle.relative_to(ROOT).as_posix(),bytes=bundle.stat().st_size,sha256=sha(bundle.read_bytes()),decoded617_frames_preserved=True,portable_plan_passed=True,portable_assets_passed=True,workflow_tests=tests.stderr.strip(),manifest=manifest)
  (ROOT/'delphi-analysis/control-runtime/cluster-map-replay-release.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='manifest'},indent=2))
-if __name__=='__main__':main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

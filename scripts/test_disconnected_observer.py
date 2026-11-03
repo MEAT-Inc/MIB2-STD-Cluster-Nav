@@ -1,4 +1,5 @@
 """Offline gates for the new version3 capture/cleanup split. No vehicle access."""
+from project_console import console_session, status
 import contextlib,ftplib,io,json,struct,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -235,5 +236,7 @@ class ReadinessTests(unittest.TestCase):
   with patch.object(m.time,'monotonic',return_value=1):self.assertEqual(m.wait_for_capture_ready(lambda:data,0,20),data)
  def test_wrong_profile_is_bounded(self):
   with patch.object(m.time,'monotonic',side_effect=[1,26]),patch.object(m.time,'sleep'),self.assertRaises(RuntimeError):m.wait_for_capture_ready(lambda:b'LAUNCH_READY capture_seconds=60\n',0,20)
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()
 

@@ -1,4 +1,5 @@
 """Offline allowlist and staging-command checks. Never connects to the car."""
+from project_console import console_session
 import unittest
 from collect_delphi_runtime import select_targets,copy_command
 class ScopeTests(unittest.TestCase):
@@ -20,4 +21,6 @@ class ScopeTests(unittest.TestCase):
         for source,root in [('/persistence/screen-cda','/ramdisk/delphi-stage_'+'a'*32),('/proc/boot/screen-cda','/extbin/apps'),('/proc/boot/screen-cda;reboot','/ramdisk/delphi-stage_'+'a'*32)]:
             with self.subTest(source=source,root=root):
                 with self.assertRaises(ValueError):copy_command(source,root,0)
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

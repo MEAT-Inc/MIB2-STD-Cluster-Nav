@@ -1,4 +1,5 @@
 """Verify a unit smoke capture and inspect native control files as data only."""
+from project_console import console_session, log as print
 from pathlib import Path
 import hashlib,io,json,re,struct,sys
 ROOT=Path(__file__).resolve().parents[1]
@@ -65,4 +66,6 @@ def main():
     pattern=re.compile(r'usage|procman|restart|respawn|launch|relaunch|command|monitor|shutdown|suspend|resume|register|unregister|environment|terminate',re.I)
     for row in runtimes['procman']['raw_strings']:
         if pattern.search(row['text']):print(hex(row['offset']),row['text'][:2400])
-if __name__=='__main__':main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

@@ -1,4 +1,5 @@
 """Package only QNX-tested private-path fixtures; no vehicle connection."""
+from project_console import console_session, log as print
 from pathlib import Path
 import hashlib,json,re,shutil,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1]
@@ -47,11 +48,13 @@ def main():
   vehicle_validated=False,no_stock_app_control=True,qnx_log_sha256=reviewed["qnx_log_sha256"])
  (release/"manifest.json").write_text(json.dumps(manifest,indent=2))
  shutil.copy2(BASE/"README.txt",release/"README.txt")
- files=[ROOT/"scripts"/name for name in ("run_observer_path_test.py","run_observer_smoke.py","delphi_inventory.py","decode_delphi_observer.py")]
+ files=[ROOT/"scripts"/name for name in ("run_observer_path_test.py","run_observer_smoke.py","delphi_inventory.py","project_console.py","decode_delphi_observer.py")]
  files += [release/name for name in (*NAMES,"manifest.json","README.txt")]
  bundle=BASE/"observer-path-test-laptop.zip"
  with zipfile.ZipFile(bundle,"w",zipfile.ZIP_DEFLATED) as z:
   for p in files:z.write(p,p.relative_to(ROOT).as_posix())
  print("PASS: exact five native files passed QNX emulation and Python evidence assessment.")
  print("Portable bundle:",bundle)
-if __name__=="__main__":main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

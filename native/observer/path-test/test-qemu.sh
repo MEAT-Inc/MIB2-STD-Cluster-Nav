@@ -1,5 +1,8 @@
 #!/bin/sh
 set -eu
+. /src/scripts/project-console.sh
+console_start "Run observer/path-test QNX emulator tests." "$@"
+console_status STEP 'Running prerequisite native/observer/path-test/build.sh.'
 sh /src/native/observer/path-test/build.sh
 mkdir -p /w /src/native/observer/path-test/qemu
 cd /w
@@ -45,6 +48,7 @@ cp test.build "$w/test.build"
 mkifs test.build ifs.bin > "$w/mkifs.log" 2>&1
 mkdir -p fat
 cp ifs.bin fat/
+console_status STEP 'Booting QNX emulator; results are being collected in the test log.'
 ( printf '\n'; sleep 4; printf 'virtio scan\n'; sleep 2; printf 'fatload virtio 0:1 0x40200000 ifs.bin\n'; sleep 3; printf 'go 0x40200000\n'; sleep 25 ) | timeout 50 qemu-system-arm -M virt -nic none -m 256 -cpu cortex-a15 -bios u-boot.bin -drive file=fat:rw:/w/fat,format=raw,media=disk -display none -serial stdio > "$w/qemu.log" 2>&1 || true
 grep -E 'PATH_.*PASS|PATH_INVALID_|PATH_CHECK_FAILED|exited status=' "$w/qemu.log" || true
 for marker in PATH_BASELINE_PASS PATH_ONE_SHOT_RESTORE_PASS PATH_AFTER_DETACH_FAILURE_PASS PATH_BEFORE_DETACH_FAILURE_PASS PATH_ORPHAN_WATCHDOG_PASS PATH_SUITE_PASS PATH_QNX_SUITE_PASS PATH_INVALID_FACTORY_TARGET_REJECTED PATH_QNX_END; do

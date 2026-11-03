@@ -1,4 +1,5 @@
 """Negative evidence controls for the managed-launch integration checker."""
+from project_console import console_session
 import unittest
 from pathlib import Path
 from review_managed_bench import assess,ROOT
@@ -16,4 +17,6 @@ class ReviewTests(unittest.TestCase):
   with self.assertRaises(ValueError):assess(self.log+"\nProcess 999 (unknown) terminated SIGSEGV code=0 by process 3 value=0.\n")
  def test_missing_restore(self):
   with self.assertRaises(ValueError):assess(self.log.replace("MANAGED_REAL_STOCK_RESTORE_PASS",""))
-if __name__=="__main__":unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

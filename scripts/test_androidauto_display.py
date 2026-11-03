@@ -1,3 +1,4 @@
+from project_console import console_session
 import json,struct,unittest
 from decode_androidauto_display import assess,decode,discovery,HEADER,RECORD,CAPACITY,MAGIC
 class DisplayTests(unittest.TestCase):
@@ -34,4 +35,6 @@ class DisplayTests(unittest.TestCase):
  def test_scalar_event_cannot_carry_payload(self):
   b=self.sample();struct.pack_into('<I',b,HEADER+52,1)
   with self.assertRaises(ValueError):decode(b)
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

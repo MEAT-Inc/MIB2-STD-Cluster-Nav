@@ -1,0 +1,33 @@
+2026-11-03: V6 hit transport backpressure; replay HELD pending map-session diagnosis
+Verified all23 artifacts from _cluster_replay_20261103_132444_537435f0.
+Arm0rc;5646packets/1,061,448bytes accepted by TransportServer, then32zero writes.
+Replayerror5 is synthesized EIO afterretrylimit, NOT a direct OSI/Oerror.
+Transportdefaultqueue max0x100000; tryPush rejectsqueued+new>=max; rejectedwrites
+replyEOK/count0. Above1MiB acceptance permits initialdrain/readerheldbuffers;
+it does not prove a consumer never ran. It does not establish decoder rejection.
+
+StockNavigationServer processrestoration verifiedPID1413205/controllererror0/
+peersunchanged. User confirms factorymapsremainStartingmap on BOTH screens and
+wholeHUreboot restores them. Processrestoration is therefore NOT functionalmap
+restoration. IsolatedNavrestart leaves the sharedmap/session lifecycle unready;
+the exact stalled dependency is not established. HMI DSIreadiness requires
+updateReady/zoomlist/viewFreeze callbacks, beyond encoderFD/geometry existence.
+-X134 is procman's recordedpreviousEXITCODE, not FD134 (offlinecodeproven).
+No evidence supports extendingzero-write retries, changingTS/codec, forceopening
+anotherwriter, or blindly restartingMost/Transport/screenpeers.
+
+Nextcar action is READONLY healthy/broken comparison, not anotherreplay.
+Use native/cluster-bridge/map-session/map-session-diagnostics-laptop.zip.
+While stillstuck BEFOREreboot:
+ python scripts/collect_map_session.py --run --state broken
+Afterradio reboot and confirmedworkingfactorymaps:
+ python scripts/collect_map_session.py --run --state healthy
+Ifalreadyrebooted, collecthealthyonly; do not runV6toinduceanotherfailure.
+Return whole new _map_session_* folders. Two passes of processwaitstates/fds/
+mappings/times, existing systemlog andcoremetadata; no uploadnativecode, no
+signals/restarts/preload/video writes, no UARTread or corepayload.3mockworkflow
+checks and portablePython-S no-connectionplan/hashchecks passed. Need runtime
+carstate toidentifyblockedmap/sessionconsumer before a concrete functionalfix.
+No carcommands issued during localreview. No functionalrecovery/display claim.
+
+BundleSHA256: b498cc49f2d2c2044e0e68e6b679d95d1e4760613a1857908efa080bccafbe6e

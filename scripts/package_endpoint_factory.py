@@ -1,4 +1,5 @@
 """Gate and package the isolated, unpublished endpoint factory trial."""
+from project_console import console_session, log as print
 import hashlib,io,json,shutil,subprocess,sys,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'native/endpoint-factory'
@@ -28,7 +29,7 @@ def main():
  libc={s['name'] for s in json.loads((ROOT/'delphi-analysis/control-runtime/libc.so.3.index.json').read_text())['symbols'] if s['defined']}
  if needs!=['libc.so.3'] or set(imports)-libc:raise ValueError('Unverified runtime dependency/import')
  if set(exports)!={'_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase','delphi_observer_view','_init','_fini'}:raise ValueError('Unexpected exported hooks: '+repr(exports))
- scripts=('run_disconnected_observer.py','run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','decode_delphi_observer.py')
+ scripts=('run_disconnected_observer.py','run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py')
  tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
  if tests.returncode:raise ValueError('Workflow tests failed: '+tests.stdout+tests.stderr)
  release=BASE/'release';release.mkdir(exist_ok=True)
@@ -50,4 +51,6 @@ def main():
   if result.returncode or result.stdout.strip()!='2':raise ValueError('Portable factory assets/gate failed: '+result.stderr)
  report=dict(bundle=str(bundle.relative_to(ROOT)),bytes=bundle.stat().st_size,sha256=sha(bundle.read_bytes()),python_tests=tests.stderr.strip(),portable_plan_passed=True,portable_manifest_passed=True,manifest=manifest)
  (ROOT/'delphi-analysis/control-runtime/endpoint-factory-release.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='manifest'},indent=2))
-if __name__=='__main__':main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

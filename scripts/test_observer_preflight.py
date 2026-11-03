@@ -1,4 +1,5 @@
 """Offline preflight regressions. No vehicle or network connection is made."""
+from project_console import console_session
 import contextlib
 import hashlib
 import io
@@ -182,4 +183,6 @@ class DownloadTests(WorkspaceTest):
         self.assertFalse(row['matches_expected'])
         self.assertEqual(target.read_bytes(),b'existing')
 
-if __name__=='__main__': unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

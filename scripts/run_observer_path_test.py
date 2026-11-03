@@ -1,4 +1,5 @@
 """RAM-only isolated observer pathname test. Defaults to an offline plan."""
+from project_console import console_session, log as print, status, progress
 import argparse
 import datetime as dt
 import ftplib
@@ -111,10 +112,12 @@ def main(argv=None):
     persist()
     try:
         with ftplib.FTP(timeout=a.timeout) as ftp:
+            progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
             ftp.connect(a.host,a.port); ftp.login(a.username,password); ftp.voidcmd('TYPE I')
             ftp.mkd(remote) # must be NEW; no reuse or replacement of another directory
             for name,data in files.items():
                 import io
+                status('Uploading and verifying payload: '+name)
                 ftp.storbinary('STOR '+remote+'/'+name,io.BytesIO(data))
                 if retrieve(ftp,remote+'/'+name,128*1024)!=data: raise ValueError('Upload readback differs: '+name)
         shell=Shell(a,run)
@@ -146,6 +149,7 @@ def main(argv=None):
         for name in (RESULTS if cwd_verified else ()):
             try:
                 with ftplib.FTP(timeout=a.timeout) as ftp:
+                    progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
                     ftp.connect(a.host,a.port); ftp.login(a.username,password); ftp.voidcmd('TYPE I')
                     data=retrieve(ftp,remote+'/'+name)
                 (run/name).write_bytes(data); blobs[name]=data
@@ -166,4 +170,6 @@ def main(argv=None):
     print('Result: '+('ISOLATED PATH TEST PASS' if report['passed'] else 'INCOMPLETE / FAILED - preserve this folder for review'))
     print('RAM artifacts are retained until explicitly removed or the unit restarts.')
     return 0 if report['passed'] else 1
-if __name__=='__main__': raise SystemExit(main())
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        raise SystemExit(main())

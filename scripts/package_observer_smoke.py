@@ -1,4 +1,5 @@
 """Build the small smoke release after QNX emulation; no vehicle connection."""
+from project_console import console_session, log as print
 from pathlib import Path
 import hashlib,json,shutil,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1]
@@ -38,10 +39,12 @@ def main():
     (release/'manifest.json').write_text(json.dumps(data,indent=2))
     if (SMOKE/'README.txt').exists(): shutil.copy2(SMOKE/'README.txt',release/'README.txt')
     bundle=SMOKE/'observer-smoke-laptop.zip'
-    paths=[ROOT/'scripts'/name for name in ('run_observer_smoke.py','delphi_inventory.py','decode_delphi_observer.py')]
+    paths=[ROOT/'scripts'/name for name in ('run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py')]
     paths += [release/name for name in (*NAMES,'manifest.json','README.txt')]
     with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as archive:
         for path in paths: archive.write(path,path.relative_to(ROOT).as_posix())
     print('PASS: four QNX-tested ARM files; libc-only synthetic test; observer candidate hash unchanged.')
     print('Portable bundle:',bundle)
-if __name__=='__main__': main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

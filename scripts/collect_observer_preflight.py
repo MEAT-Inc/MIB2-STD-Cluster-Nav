@@ -1,4 +1,5 @@
 """Fresh, read-only vehicle preflight for the Delphi observer. Python stdlib only."""
+from project_console import console_session, log as print, progress
 import argparse
 import codecs
 import datetime as dt
@@ -114,6 +115,7 @@ def download(a, password, remote, run, expected):
         digest, size = hashlib.sha256(), 0
         try:
             with ftplib.FTP(timeout=a.timeout) as ftp:
+                progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
                 ftp.connect(a.host, a.port)
                 ftp.login(a.username, password)
                 ftp.voidcmd('TYPE I')
@@ -192,4 +194,6 @@ def main(argv=None):
     print('Result: ' + ('READY FOR REVIEW' if ready else 'INCOMPLETE - review preflight-summary.json'))
     print('No upload, restart, process termination or vehicle file write was performed.')
     return 0 if ready else 1
-if __name__ == '__main__': raise SystemExit(main())
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        raise SystemExit(main())

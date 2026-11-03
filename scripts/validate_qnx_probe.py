@@ -1,4 +1,5 @@
 """Static acceptance gate for synthetic QNX probe artifacts, never executes them."""
+from project_console import console_session, log as print
 from pathlib import Path
 import hashlib, json, sys
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,4 +51,6 @@ def main():
     report = {'static_checks': 'PASS', 'vehicle_validated': False, 'artifacts': results}
     (OUT / 'elf-validation.json').write_text(json.dumps(report, indent=2))
     print('PASS: five ARM32 LE EABI5 artifacts; soft-float PCS; expected loader/dependencies/relocations.')
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

@@ -1,4 +1,5 @@
 """Replay captured AA maps through the native cluster writer. Phone stays unplugged."""
+from project_console import console_session, log as print, prompt as input, status, progress
 import argparse,datetime as dt,ftplib,getpass,hashlib,io,json,re,shlex,struct,time,uuid
 from pathlib import Path
 import delphi_inventory as d
@@ -62,6 +63,7 @@ def native_channel_missing(b):
 def wait_native_channel(fetch_report,pid,manifest,seconds=60,clock=None,sleep=None):
  clock=clock or time.monotonic;sleep=sleep or time.sleep;deadline=clock()+seconds
  while True:
+  progress('Waiting for the native map channel (limit '+str(seconds)+'s).', key='native-channel')
   b=fetch_report();v=assess_replay(b,pid,manifest);missing=native_channel_missing(b)
   if v['error'] or v['status']==4:missing.insert(0,'replay error '+str(v['error']))
   if not missing:return b,v,[]
@@ -110,6 +112,7 @@ def main(argv=None):
  def persist():(folder/'replay-summary.json').write_text(json.dumps(summary,indent=2))
  def fetch(name):
   with ftplib.FTP(timeout=a.timeout) as ftp:
+   progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
    ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I')
    if name in ('nav-startup.txt','libc-preflight-errors.txt'):
     data=bytearray()
@@ -151,10 +154,12 @@ def main(argv=None):
  persist()
  try:
   with ftplib.FTP(timeout=a.timeout) as ftp:
+   progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
    ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I')
    if not a.resume:
     ftp.mkd(remote)
     for name,b in files.items():
+     status('Uploading and verifying payload: '+name)
      ftp.storbinary('STOR '+remote+'/'+name,io.BytesIO(b))
      if retrieve(ftp,remote+'/'+name)!=b:raise ValueError('Upload readback mismatch')
    elif retrieve(ftp,remote+'/nav_launch')!=files['nav_launch']:raise ValueError('Staged controller changed')
@@ -200,6 +205,7 @@ def main(argv=None):
    while time.monotonic()<end:
     if cmd('test -r /dev/shmem/delphi-nav-report-'+token+'.bin',False)==0:
      b=copy('/dev/shmem/delphi-nav-report-'+token+'.bin','replay-progress.bin');w=struct.unpack('<128I',b)
+     progress('Replay packets delivered: '+str(w[10])+' / '+str(manifest['replay']['packets']), key='replay-packets')
      if w[4]!=last:print('Replay state:',{1:'waiting for native map writer',2:'playing recorded map',3:'recording finished',4:'stopped with error'}.get(w[4],'initializing'),flush=True);last=w[4]
      if w[4] in (3,4):break
      if w[15]&0x80000000 and w[4]==2:summary['native_channel_closed_early']=True;break
@@ -228,8 +234,12 @@ def main(argv=None):
    summary['actions']=summary.get('actions',[])+shell.actions;shell.close()
   persist()
  print('Saved:',folder)
+ status('Stock NavigationServer process restoration: '+('VERIFIED' if summary.get('restoration_verified') else 'NOT VERIFIED'), 'OK' if summary.get('restoration_verified') else 'WARN')
+ print('Replay packets delivered:',summary.get('replay',{}).get('packets',0),'/',manifest['replay']['packets'])
  if summary['cleanup_pending']:print('Cleanup pending. Keep phone unplugged; resume: python scripts/run_cluster_replay.py --resume "'+str(folder)+'" --phone-unplugged')
  passed=summary.get('restoration_verified') and summary.get('peer_pids_unchanged') and summary.get('replay',{}).get('packets_delivered') and summary.get('cluster_maps_seen')
  print('Recorded maps confirmed on cluster; live phone navigation remains separate.' if passed else 'Return this collection, including any partial result.')
  return 0 if passed else 2
-if __name__=='__main__':raise SystemExit(main())
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        raise SystemExit(main())

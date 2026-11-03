@@ -1,3 +1,4 @@
+from project_console import console_session
 import unittest
 from native_transport_packet_reference import *
 class NativePacketReferenceTests(unittest.TestCase):
@@ -24,4 +25,6 @@ class NativePacketReferenceTests(unittest.TestCase):
  def test_adaptation_overflow_rejected(self):
   packet=bytearray(reference_packet(0,PAT_SECTION));packet[3]=0x30;packet[4]=184
   with self.assertRaisesRegex(ValueError,'Adaptation'):validate_ts(bytes(packet))
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

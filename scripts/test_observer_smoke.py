@@ -1,4 +1,5 @@
 """Offline smoke-runner checks: no vehicle/network access."""
+from project_console import console_session
 import contextlib,ftplib,io,json,struct,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -115,4 +116,6 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(result,1)
         self.assertFalse(any('stock-after.txt' in c for c in state['commands']))
         self.assertFalse(summary['passed'])
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

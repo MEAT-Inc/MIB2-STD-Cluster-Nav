@@ -1,4 +1,5 @@
 """Decode a copied Delphi observer log without executing any target code."""
+from project_console import console_session, log as print
 from pathlib import Path
 import argparse, json, struct
 HEADER = struct.Struct('<32I')
@@ -44,4 +45,6 @@ def main():
     encoded = json.dumps(result, indent=2)
     if args.output: args.output.write_text(encoded, encoding='utf-8')
     else: print(encoded)
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

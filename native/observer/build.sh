@@ -1,5 +1,7 @@
 #!/bin/sh
 set -eu
+. /src/scripts/project-console.sh
+console_start "Build native observer binaries." "$@"
 project=/src
 scratch=$(mktemp -d /tmp/delphi-observer.XXXXXX)
 mkdir -p "$scratch/native/observer"
@@ -14,14 +16,23 @@ case "$mode" in
 esac
 mkdir -p "$out"
 common="-O2 -Wall -Wextra -Werror -fno-strict-aliasing $arch"
+console_status STEP 'Compiling observer.o.'
 $CC $common -std=gnu11 -fPIC -fvisibility=hidden -c "$src/observer.c" -o "$out/observer.o"
+console_status STEP 'Compiling entry.o.'
 $CC $arch -fPIC -c "$src/$asm" -o "$out/entry.o"
+console_status STEP 'Compiling libdelphi_observer.so.'
 $CC $arch -shared "$out/observer.o" "$out/entry.o" -Wl,-z,noexecstack -Wl,-z,now -Wl,-soname,libdelphi_observer.so -Wl,--version-script="$src/exports.map" $libs -lc -o "$out/libdelphi_observer.so"
+console_status STEP 'Compiling libautoreceiver.so.'
 $CXX $common -std=c++11 -fPIC -shared "$src/fixture-provider.cpp" $provider_args -Wl,-soname,libautoreceiver.so $libs -o "$out/libautoreceiver.so"
+console_status STEP 'Compiling observer_fixture.'
 $CXX $common -std=c++11 "$src/fixture-main.cpp" -L"$out" -lautoreceiver $libs -o "$out/observer_fixture"
+console_status STEP 'Compiling libwrong.so.'
 $CXX $common -std=c++11 -fPIC -shared "$src/fixture-provider.cpp" $provider_args -Wl,-soname,libwrong.so $libs -o "$out/libwrong.so"
+console_status STEP 'Compiling observer_wrong.'
 $CXX $common -std=c++11 "$src/fixture-main.cpp" -L"$out" -lwrong $libs -o "$out/observer_wrong"
+console_status STEP 'Compiling observer_runner.'
 $CC $common "$src/fixture-runner.c" -o "$out/observer_runner"
+console_status STEP 'Compiling observer_empty.'
 $CC $common "$src/empty.c" -o "$out/observer_empty"
 
 if [ "$mode" = qnx ]; then

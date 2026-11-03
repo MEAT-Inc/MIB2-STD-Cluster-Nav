@@ -1,5 +1,8 @@
 #!/bin/sh
 set -eu
+. /src/scripts/project-console.sh
+console_start "Run cluster-bridge QNX emulator tests." "$@"
+console_status STEP 'Running prerequisite native/cluster-bridge/build-mux.sh.'
 sh /src/native/cluster-bridge/build-mux.sh
 mkdir -p /w /src/native/cluster-bridge/mux-qemu
 cd /w
@@ -32,6 +35,7 @@ cp test.build "$out/test.build"
 mkifs test.build ifs.bin > "$out/mkifs.log" 2>&1
 mkdir -p fat
 cp ifs.bin fat/
+console_status STEP 'Booting QNX emulator; results are being collected in the test log.'
 ( printf '\n'; sleep 4; printf 'virtio scan\n'; sleep 2; printf 'fatload virtio 0:1 0x40200000 ifs.bin\n'; sleep 3; printf 'go 0x40200000\n'; sleep 15 ) | timeout 40 qemu-system-arm -M virt -nic none -m 256 -cpu cortex-a15 -bios u-boot.bin -drive file=fat:rw:/w/fat,format=raw,media=disk -display none -serial stdio > "$out/qemu.log" 2>&1 || true
 grep -q 'CLUSTER_MUX_FIXTURE_PASS' "$out/qemu.log"
 grep -q 'CLUSTER_MUX_QNX_END' "$out/qemu.log"

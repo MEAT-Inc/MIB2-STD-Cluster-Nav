@@ -1,5 +1,8 @@
 #!/bin/sh
 set -eu
+. /src/scripts/project-console.sh
+console_start "Run observer/launch QNX emulator tests." "$@"
+console_status STEP 'Running prerequisite native/observer/launch/build.sh.'
 sh /src/native/observer/launch/build.sh
 mkdir -p /w /src/native/observer/launch/qemu
 cd /w
@@ -70,6 +73,7 @@ echo "Emulator log: $runlog"
 mkifs test.build ifs.bin > "$w/mkifs.log" 2>&1
 mkdir -p fat
 cp ifs.bin fat/
+console_status STEP 'Booting QNX emulator; results are being collected in the test log.'
 ( printf '\n'; sleep 4; printf 'virtio scan\n'; sleep 2; printf 'fatload virtio 0:1 0x40200000 ifs.bin\n'; sleep 3; printf 'go 0x40200000\n'; sleep 105 ) | timeout -k 5 125 qemu-system-arm -M virt -nic none -m 256 -cpu cortex-a15 -bios u-boot.bin -drive file=fat:rw:/w/fat,format=raw,media=disk -display none -serial stdio > "$runlog" 2>&1 || true
 cp "$runlog" "$w/qemu.log"
 grep -E 'LAUNCH_.*PASS|LAUNCH_IDENTITY_|LAUNCH_RESTORED|LAUNCH_COMPLETE|LAUNCH_FAILED|LAUNCH_REFUSED|exited status=' "$w/qemu.log" || true

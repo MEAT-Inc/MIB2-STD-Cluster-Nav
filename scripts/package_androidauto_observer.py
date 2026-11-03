@@ -1,4 +1,5 @@
 """Package the guarded real-app experiment after native emulation; no network."""
+from project_console import console_session, log as print, status
 from pathlib import Path
 import hashlib,io,json,re,shutil,struct,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1]
@@ -65,11 +66,13 @@ def main():
  for name,p in sources.items():shutil.copy2(p,release/name)
  manifest=dict(kind="managed_androidauto_observer",files=records,expected_stock=REFERENCES,known_registration_callers=[hex(x) for x in sorted(callers)],qnx_emulation_passed=True,actual_androidauto_interposition_tested=False,requires_explicit_run=True,capture_profiles=[20,60],qnx_log_sha256=result["qnx_log_sha256"])
  (release/"manifest.json").write_text(json.dumps(manifest,indent=2));shutil.copy2(BASE/"README.txt",release/"README.txt")
- paths=[ROOT/"scripts"/n for n in ("run_androidauto_observer.py","run_observer_smoke.py","delphi_inventory.py","decode_delphi_observer.py")]+[release/n for n in (*NAMES,"manifest.json","README.txt")]
+ paths=[ROOT/"scripts"/n for n in ("run_androidauto_observer.py","run_observer_smoke.py","delphi_inventory.py","project_console.py","decode_delphi_observer.py")]+[release/n for n in (*NAMES,"manifest.json","README.txt")]
  bundle=BASE/"androidauto-phone-capture-laptop.zip"
  with zipfile.ZipFile(bundle,"w",zipfile.ZIP_DEFLATED) as z:
   for p in paths:z.write(p,p.relative_to(ROOT).as_posix())
  print("PASS: normal capture/restoration, identity rejection and group-hangup recovery.")
  print("PASS: required native imports present in actual unit libc; app callers match verified binary.")
  print("Bundle:",bundle)
-if __name__=="__main__":main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

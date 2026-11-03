@@ -1,4 +1,5 @@
 """Extract relocation-free libc entry fingerprints from a supplied ARM ELF."""
+from project_console import console_session, log as print
 import argparse,hashlib,json,struct
 from pathlib import Path
 
@@ -28,7 +29,8 @@ def generate(source,target):
  if any(v<=dst<v+32 for v in offsets for dst in relocs):raise ValueError('Mutable entry fingerprint')
  text='#ifndef REPLAY_EXPECTED_LIBC_H\n#define REPLAY_EXPECTED_LIBC_H\n#include "libc-profile.h"\nstatic const struct replay_libc_profile replay_expected_libc={{'+','.join(hex(v)+'u' for v in offsets)+'},{'+','.join('{'+','.join(hex(v) for v in p)+'}' for p in prefix)+'}};\n#endif\n'
  target.write_bytes(text.encode());return dict(bytes=len(b),sha256=hashlib.sha256(b).hexdigest(),offsets=offsets,code=[p.hex() for p in prefix],relocation_free=True)
-if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('source',type=Path);p.add_argument('target',type=Path);p.add_argument('--metadata',type=Path);a=p.parse_args();m=generate(a.source,a.target)
- if a.metadata:a.metadata.write_text(json.dumps(m,indent=2))
- print('Generated libc profile',m['sha256'])
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        p=argparse.ArgumentParser();p.add_argument('source',type=Path);p.add_argument('target',type=Path);p.add_argument('--metadata',type=Path);a=p.parse_args();m=generate(a.source,a.target)
+        if a.metadata:a.metadata.write_text(json.dumps(m,indent=2))
+        print('Generated libc profile',m['sha256'])

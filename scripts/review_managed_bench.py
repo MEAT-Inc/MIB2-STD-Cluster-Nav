@@ -1,4 +1,5 @@
 """Audit the emulated real-manager integration evidence; never connect to a car."""
+from project_console import console_session, log as print
 from pathlib import Path
 import hashlib,json,re
 ROOT=Path(__file__).resolve().parents[1]
@@ -56,4 +57,6 @@ def main():
  result["source_hashes"]={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in base.iterdir() if p.is_file()}
  (q/"summary.json").write_text(json.dumps(result,indent=2))
  print(json.dumps(result,indent=2))
-if __name__=="__main__":main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

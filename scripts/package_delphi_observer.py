@@ -1,4 +1,5 @@
 """Offline release gate. Proprietary vehicle binaries are read, never packaged."""
+from project_console import console_session, log as print
 from pathlib import Path
 import hashlib, json, shutil, sys, zipfile
 ROOT = Path(__file__).resolve().parents[1]
@@ -76,12 +77,15 @@ def main():
     release.mkdir(exist_ok=True)
     shutil.copy2(LIB, release / LIB.name)
     shutil.copy2(ROOT / 'scripts/decode_delphi_observer.py', release / 'decode_delphi_observer.py')
+    shutil.copy2(ROOT / 'scripts/project_console.py', release / 'project_console.py')
     if (ROOT / 'native/observer/README.txt').exists(): shutil.copy2(ROOT / 'native/observer/README.txt', release / 'README.txt')
-    report['files'] = {p.name: dict(sha256=sha(p), bytes=p.stat().st_size) for p in (release / LIB.name, release / 'decode_delphi_observer.py', release / 'README.txt')}
+    report['files'] = {p.name: dict(sha256=sha(p), bytes=p.stat().st_size) for p in (release / LIB.name, release / 'decode_delphi_observer.py', release / 'project_console.py', release / 'README.txt')}
     (release / 'manifest.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     with zipfile.ZipFile(release.parent / 'delphi-observer-v1.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
-        for name in ('libdelphi_observer.so', 'manifest.json', 'decode_delphi_observer.py', 'README.txt'):
+        for name in ('libdelphi_observer.so', 'manifest.json', 'decode_delphi_observer.py', 'project_console.py', 'README.txt'):
             archive.write(release / name, name)
     print('PASS: matched target samples; validated ARM tail wrapper, libc-only dependencies and QNX tests.')
     print('Release candidate:', release)
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

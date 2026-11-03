@@ -1,4 +1,5 @@
 """Synthetic host buffer/allocator model. NOT a native ABI shim or vehicle hook."""
+from project_console import console_session
 from dataclasses import dataclass
 import unittest
 from android_discovery_wire_fixture import uint,message,add_cluster_descriptor
@@ -96,4 +97,6 @@ class BufferTests(unittest.TestCase):
         rewrite_model(self.buf,self.heap,self.transform);self.heap.free(self.buf.pointer)
         with self.assertRaises(ValueError):self.heap.free(self.buf.pointer)
 
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

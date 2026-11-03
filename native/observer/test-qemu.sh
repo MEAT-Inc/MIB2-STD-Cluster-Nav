@@ -1,5 +1,8 @@
 #!/bin/sh
 set -eu
+. /src/scripts/project-console.sh
+console_start "Run observer QNX emulator tests." "$@"
+console_status STEP 'Running prerequisite native/observer/build.sh.'
 sh /src/native/observer/build.sh qnx
 w=/src/native/observer/build-qnx/qemu
 mkdir -p "$w" /w
@@ -43,6 +46,7 @@ cp test.build "$w/test.build"
 mkifs test.build ifs.bin > "$w/mkifs.log" 2>&1
 mkdir -p fat
 cp ifs.bin fat/
+console_status STEP 'Booting QNX emulator; results are being collected in the test log.'
 ( printf '\n'; sleep 4; printf 'virtio scan\n'; sleep 2; printf 'fatload virtio 0:1 0x40200000 ifs.bin\n'; sleep 3; printf 'go 0x40200000\n'; sleep 30 ) | \
  timeout 55 qemu-system-arm -M virt -nic none -m 256 -cpu cortex-a15 -bios u-boot.bin -drive file=fat:rw:/w/fat,format=raw,media=disk -display none -serial stdio > "$w/qemu.log" 2>&1 || true
 grep 'OBSERVER_' "$w/qemu.log" || true

@@ -1,34 +1,26 @@
-V5: launcher identifies NavigationServer only AFTER its nonce-bound module report
-acknowledges exec. Publishing a wrapper PID/canonical pathname is insufficient:
-QNX changes process start identity across exec, even when the PID is unchanged.
-Exact PID/start/parent/image checks remain in force for arm and stock cleanup.
-Native arm-refusal diagnostics are now collected even on a nonzero command exit.
-If the prior V4 run refused cleanup, restart the head unit (hold its power button
-about10seconds) before starting this build; the old pending identity cannot be
-safely reused by the new controller. Start with healthy factory navigation.
-V4: canonical NavigationServer executable, original stdout/stderr preserved.
-Unrelated writes/closes bypass the replay lock. Native map-channel readiness,
-retained hooks, encoder geometry and heartbeat are checked BEFORE arming.
-Only the replay initializer writes its own bounded private startup log.
-RECORDED ANDROID AUTO MAPS ON THE CLUSTER - FIRST DISPLAY TRIAL
-This plays saved Google Maps video, NOT live navigation/current guidance.
-Extract into laptop project. Ignition on, Ethernet connected. Keep phone
-unplugged throughout. Select the factory navigation MAP VIEW in the cluster.
+V6 RECORDED ANDROID AUTO MAPS IN THE CLUSTER - DISPLAY TRIAL
+This replays saved Google Maps video, not live navigation/current guidance.
+V5 armed successfully and restored the stock NavigationServer process, but no
+native video writes arrived. Its source-write-only activation never started.
+V6 starts from the explicitly armed, already-open native descriptor after fresh
+FD/800x480 geometry/import validation; no first native video frame is required.
+It opens no competing writer. Native writes/closes remain serialized; at EOF or
+error native packets stay muted until native close or supervised stock cleanup.
+Any unknown caller, stale FD, invalid geometry or report error prevents takeover.
+The V5 post-exec identity fix and exact process checks are retained unchanged.
+
+Extract into the laptop project. Ignition on, Ethernet connected; keep phone
+unplugged throughout. Select the navigation MAP VIEW in the instrument cluster.
+The cluster may say Starting map: V6 no longer requires factory map pixels.
 Run: python scripts/run_cluster_replay.py --run --phone-unplugged
-The routine uses a RAM-only alias and supervised NavigationServer restart.
-It leaves AndroidAuto,Most,TransportServer,DisplayManagement and procman running.
-When asked, wait until the FACTORY map is visible IN THE CLUSTER, then press
-Enter to arm the recorded-map playback. Type SKIP to restore without replay.
-Watch the cluster for about48seconds. Stock NavigationServer is then restored;
-answer whether the recorded Google Maps view appeared IN THE CLUSTER.
-Ethernet stays connected; do not connect phone. Native opens/owns its transport
-descriptor. The replay replaces its native packets only after explicit arming
-and current800x480/fd checks; never opens a competing transport writer.
-Clock-reset packets precede the saved recording. At EOF/error, native packets
-remain muted until native channel close or explicit supervised stock cleanup.
-No persistent firmware/config files changed. If interrupted/partial, follow:
- python scripts/run_cluster_replay.py --resume "delphi-dump/<folder>" --phone-unplugged
+After the native-channel checks, press Enter to arm, or SKIP to restore.
+Playback should begin within about1second of arming and last about48seconds.
+A10second activation deadline replaces an empty120second wait; missing channel,
+transport errors and partial playback retain reports and trigger stock cleanup.
+Observe whether the saved Google Maps view appears IN THE INSTRUMENT CLUSTER.
+Process restoration is printed separately from video delivery/display success;
+a verified new stock process does not prove that factory maps finished loading.
 Return the ENTIRE new delphi-dump/_cluster_replay_* folder, even if partial.
-QNX lifecycle,real preload caller/errno,arming and ownership tests passed.
-Hardware trials have not yet delivered replay packets to the cluster. Live phone feeding
-and phone-navigation cluster presentation remain later integration.
+If interrupted/pending use only the exact resume command printed by this build.
+No persistent firmware/config files changed. Actual cluster replay is unproven
+until this car test; live phone feeding and phone-session presentation follow.

@@ -1,4 +1,5 @@
 """Decode read-only video configuration/discovery observations. Standard library only."""
+from project_console import console_session, log as print
 import argparse,json,struct
 from pathlib import Path
 MAGIC=0x32434c44;HEADER=128;RECORD=4160;CAPACITY=32;PAYLOAD=4096
@@ -93,4 +94,6 @@ def main():
     result=json.dumps(decode(a.file.read_bytes()),indent=2)
     if a.output:a.output.write_text(result,encoding='utf-8')
     else:print(result)
-if __name__=='__main__':main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

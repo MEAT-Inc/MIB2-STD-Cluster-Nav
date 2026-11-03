@@ -1,7 +1,8 @@
 {
   "kind": "native_cluster_recorded_map_replay",
   "hook_mode": "app_import_slots",
-  "startup_contract_revision": 5,
+  "startup_contract_revision": 6,
+  "activation_mode": "armed_native_descriptor",
   "post_exec_identity_ack": true,
   "canonical_image_exec": true,
   "preserve_standard_streams": true,
@@ -200,8 +201,8 @@
       "sha256": "1b3094d5b7d86e2de588eae3e243e90ebd747e515dfd8703099cbde3bc2e570c"
     },
     "libdelphi_cluster.so": {
-      "bytes": 20792,
-      "sha256": "263ade39e22bd2ac8f0a9a7ca61c9e706d943c1f2f12d54baae3f4b48fa8dbea"
+      "bytes": 21071,
+      "sha256": "7f7e65dc980a726a66546008ddccefa29d88f86c4c7f12b3565b9933518d00ec"
     },
     "replay_libc_check": {
       "bytes": 9101,
@@ -213,7 +214,7 @@
     }
   },
   "scripts_sha256": {
-    "run_cluster_replay.py": "95d6356cc71a282ee7439c97fd9fe03152461354bed837f05de768b7f42c56fd",
+    "run_cluster_replay.py": "d070542220eb710d7d67f94283629d35c1cea39228ad1107bf9972db14727980",
     "cluster_preflight.py": "31e9682f954dc6ce8197f5b154788b37a6ea3e493c1f20532956a8f01381b704",
     "run_observer_smoke.py": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5",
     "delphi_inventory.py": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25",
@@ -224,9 +225,9 @@
     "native/cluster-bridge/replay/early-io.c": "c136e3eb20fbc115735263d0bb88849b029d9e39d6ce506d54e8c6923e2ae55e",
     "native/cluster-bridge/replay/entry-arm.S": "a80b30337e35d555328c5e2c39bf7103157a524b5047542ed4d4c9be15df1edf",
     "native/cluster-bridge/replay/entry-legacy.S": "6c5ee852ea19dc3580f773c4a77aa5eb94f0bb1c455de5b7929768c62be69c4f",
-    "native/cluster-bridge/replay/fixture.c": "70dbe1178efbf3d4e8d9a16920dfb34584ea0fea618c3a999d0990df43d241f8",
+    "native/cluster-bridge/replay/fixture.c": "c4933bdff87dcbbac979fbe3d17626d3fc8bc0316ebde35852bed24b0bc96621",
     "native/cluster-bridge/replay/hook-calls.S": "3af93e9d784ee1b056a57d523be930dae151c69c0cd333870283e87bd5cdfbea",
-    "native/cluster-bridge/replay/hook-fixture.c": "16127e64ef4f2a5e7faf9b7998463f0ea0abe3e0795c740cdc0bcb33568601ee",
+    "native/cluster-bridge/replay/hook-fixture.c": "33226a780d3bea740db7ba3e0c7d09c97aac061a6329d06b7651b18bdd34ea4c",
     "native/cluster-bridge/replay/hook-runner.c": "7b65d9fb9d2c2e5ca0c80de0e7d8e1cb01352713c020b64fe9e2fcf9f1d83b4c",
     "native/cluster-bridge/replay/imports-fixture.c": "2d385be1c1fa4a30d9bf1c23c170b4cc26a697108ddd22d35936101565f1686e",
     "native/cluster-bridge/replay/imports.c": "1beadc8393a3b65ef81e070e408dba1cbcef598a40773ea991cb853aa7116fa0",
@@ -236,9 +237,9 @@
     "native/cluster-bridge/replay/libc-preflight.c": "8916a3d872252924c16f4583e81d1138a4036af15ae79afdc96e0083816958f7",
     "native/cluster-bridge/replay/libc-profile.h": "1934ddad597347e456ab1abe2e925de821d52a2c975c22fce80d17108da483b6",
     "native/cluster-bridge/replay/loader.c": "abdd2eb9d2a1cf749ba03407e574dfafb8d231afa09988d29e3e56f180d6813f",
-    "native/cluster-bridge/replay/replay.c": "12ff0584bd9b16bfa427bfa2a5a71f073d8981b4ea07400a1710bec87caec5d7",
+    "native/cluster-bridge/replay/replay.c": "ccd0e3ac57f077ff4b8f98bd303d6546fcc2eea94e620a4d193f63b4dfc35562",
     "native/cluster-bridge/replay/replay.h": "530a16a71a77cb5deb733fdebd6cddb193060e62f9e3f07f0f9197f46bb9aca0",
-    "native/cluster-bridge/replay/test-qemu.sh": "d832d58d38eb5205025574fd8f11c162d4aca880116ed34a0cf21c27519e9f23",
+    "native/cluster-bridge/replay/test-qemu.sh": "daa118824e671258bf880093f4467a205312b7d481dbb6ff4a20cd4afe5eabb1",
     "native/cluster-bridge/replay/unit-libc-profile.h": "0830666e148bf8fb40cab71772fd5b22ce8a5232c9e1c14f83223ec40d0fec51",
     "native/cluster-bridge/nav-launch/build.sh": "097f70e127725c89e41327e78e1da32bf1caacbc08812a1d1c6c1f61090cf0f8",
     "native/cluster-bridge/nav-launch/controller.c": "e06b4bf7a990f49673e1ca34a66393f807426f25e3d4c158718a8ccde76950b0",

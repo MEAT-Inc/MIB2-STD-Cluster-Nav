@@ -1,4 +1,5 @@
 """Offline tests; no vehicle access."""
+from project_console import console_session
 import contextlib,ftplib,io,json,struct,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -193,5 +194,7 @@ class AssessmentTests(unittest.TestCase):
         for name in ('observer.bin','controller.bin','launch.txt','stock-after.txt','receiver.reference'):
             blobs,root,refs=self.fixture();blobs[name]=b'unknown'
             with patch.object(m,'REFERENCES',refs),self.subTest(name=name),self.assertRaises(ValueError):m.assess(blobs,root)
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()
 

@@ -1,4 +1,5 @@
 """Observer capture with a phone-disconnected start and explicit disconnected cleanup. Stdlib only."""
+from project_console import console_session, log as print, prompt as input, status, progress
 import argparse,datetime as dt,ftplib,getpass,hashlib,io,json,re,shlex,struct,time,uuid
 from pathlib import Path
 import delphi_inventory as d
@@ -132,6 +133,7 @@ def main(argv=None):
     def persist():(folder/'disconnect-summary.json').write_text(json.dumps(report,indent=2),encoding='utf8')
     def fetch(name):
         with ftplib.FTP(timeout=a.timeout) as ftp:
+            progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
             ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I')
             if name=='secondary.h264':
                 data=bytearray()
@@ -157,10 +159,12 @@ def main(argv=None):
     persist()
     try:
         with ftplib.FTP(timeout=a.timeout) as ftp:
+            progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
             ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I')
             if not a.resume:
                 ftp.mkd(remote)
                 for name,b in files.items():
+                    status('Uploading and verifying payload: '+name)
                     ftp.storbinary('STOR '+remote+'/'+name,io.BytesIO(b))
                     if retrieve(ftp,remote+'/'+name)!=b:raise ValueError('Upload readback mismatch: '+name)
             elif retrieve(ftp,remote+'/observer_launch')!=files['observer_launch']:raise ValueError('Staged controller changed; cleanup not attempted')
@@ -189,6 +193,7 @@ def main(argv=None):
                 command(launch+(' phone' if seconds==60 else '')+' > start.txt 2>&1 & delphi_aa_job=$!')
                 def read_ready():
                     with ftplib.FTP(timeout=min(a.timeout,10)) as ftp:
+                        progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
                         ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I');return retrieve(ftp,remote+'/start.txt',65536)
                 ready=wait_for_capture_ready(read_ready,started,seconds)
                 (folder/'launch-ready.txt').write_bytes(ready)
@@ -276,4 +281,6 @@ def main(argv=None):
     print('Saved: '+str(folder))
     print('Trial complete; the physical cluster transport is not connected.' if ok else 'Partial trial or pending cleanup: return this folder for review.')
     return 0 if ok else 2
-if __name__=='__main__':raise SystemExit(main())
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        raise SystemExit(main())

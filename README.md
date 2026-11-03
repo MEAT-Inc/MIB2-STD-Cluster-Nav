@@ -59,6 +59,32 @@ The reported "Navigation is active on the mobile device" message is consistent w
 This is a separate presentation/control issue for the eventual live bridge. Globally falsifying phone-navigation state or merely clearing the message does not establish video ownership. See [MOBILE-NAVIGATION-MESSAGE-REVIEW.txt](delphi-analysis/MOBILE-NAVIGATION-MESSAGE-REVIEW.txt).
 
 
+## Script console output
+
+Python tools, PowerShell launchers, and container shell scripts share a simple console style: an interactive run clears the screen, then shows the script name, version, supplied arguments, and use case. Timestamped steps and a final completion/error line separate each phase. Nested scripts keep the parent output visible. Polling/transfer progress is throttled to avoid flooding the screen.
+
+Colors distinguish steps (blue), information (cyan), success (green), warnings (yellow), errors (red), and operator prompts (magenta). Set `NO_COLOR=1` to disable colors. Redirected output has no colors or screen-clearing codes; banners and progress go to stderr so stdout can still carry JSON/data. Existing diagnostic transcripts and saved report formats are preserved.
+
+Shared helpers are `scripts/project_console.py`, `scripts/project-console.ps1`, and `scripts/project-console.sh`. New Python commands should use this pattern:
+
+```python
+"""Describe when to use this script."""
+from project_console import console_session, status
+
+
+def main():
+    status('Checking input files.')
+    # Perform work and report meaningful phases with status(...).
+    return 0
+
+
+if __name__ == '__main__':
+    with console_session(__file__, __doc__, version='1.0'):
+        raise SystemExit(main())
+```
+
+Use `progress(...)` for repeated waits, `prompt(...)` for operator questions, and `status(message, 'WARN')` or `'ERROR'` for problems. The initial shared script version is `1.0`; individual scripts can supply their own version. Portable package definitions include the Python helper. Previously generated archives and release snapshots acquire the changes when rebuilt through their normal validation gates.
+
 ## Run from any checkout location
 
 Clone or copy the complete project to any directory, including paths containing spaces. All commands below assume the repository root as the current directory. No Windows username, drive letter, Codex installation, or original checkout path is required. `.gitattributes` keeps shell scripts LF-terminated on Windows so they remain usable in Linux containers.

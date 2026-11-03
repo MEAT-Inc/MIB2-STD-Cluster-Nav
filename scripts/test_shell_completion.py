@@ -1,3 +1,4 @@
+from project_console import console_session
 import io,unittest
 from unittest.mock import Mock
 from run_observer_smoke import Shell
@@ -13,4 +14,6 @@ class ShellCompletionTests(unittest.TestCase):
   with self.assertRaisesRegex(RuntimeError,'syntax error'):s.command('bad syntax')
   self.assertTrue(s.broken);self.assertEqual(s.actions[-1]['error'],'shell_syntax_error')
   with self.assertRaises(RuntimeError):s.command('another command')
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

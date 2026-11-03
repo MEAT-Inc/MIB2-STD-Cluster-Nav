@@ -1,4 +1,5 @@
 """Regression coverage for Telnet marker handling; no vehicle connection."""
+from project_console import console_session, status
 import io,re,unittest
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -76,5 +77,7 @@ class CollectionRegressionTests(unittest.TestCase):
         self.assertEqual(result['libscreen.so.1'],'available_locally')
         self.assertEqual(result['screen-cda'],'not_collected')
 
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()
 

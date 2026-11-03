@@ -4,6 +4,7 @@ Preserves the input response bytes and appends a cloned video descriptor with
 new service ID and modern media-sink display metadata. A real receiver must
 ALSO register a working endpoint/input service and implement its lifecycle.
 """
+from project_console import console_session
 from dataclasses import dataclass
 from pathlib import Path
 import json, unittest
@@ -158,5 +159,6 @@ class WireTests(unittest.TestCase):
         result=add_cluster_descriptor(self.response+extension,2,64)
         self.assertTrue(result.startswith(self.response+extension))
 
-if __name__=='__main__':
-    unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

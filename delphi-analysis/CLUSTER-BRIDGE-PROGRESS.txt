@@ -1,3 +1,85 @@
+2026-11-03: V6 hit transport backpressure; replay HELD pending map-session diagnosis
+Verified all23 artifacts from _cluster_replay_20261103_132444_537435f0.
+Arm0rc;5646packets/1,061,448bytes accepted by TransportServer, then32zero writes.
+Replayerror5 is synthesized EIO afterretrylimit, NOT a direct OSI/Oerror.
+Transportdefaultqueue max0x100000; tryPush rejectsqueued+new>=max; rejectedwrites
+replyEOK/count0. Above1MiB acceptance permits initialdrain/readerheldbuffers;
+it does not prove a consumer never ran. It does not establish decoder rejection.
+
+StockNavigationServer processrestoration verifiedPID1413205/controllererror0/
+peersunchanged. User confirms factorymapsremainStartingmap on BOTH screens and
+wholeHUreboot restores them. Processrestoration is therefore NOT functionalmap
+restoration. IsolatedNavrestart leaves the sharedmap/session lifecycle unready;
+the exact stalled dependency is not established. HMI DSIreadiness requires
+updateReady/zoomlist/viewFreeze callbacks, beyond encoderFD/geometry existence.
+-X134 is procman's recordedpreviousEXITCODE, not FD134 (offlinecodeproven).
+No evidence supports extendingzero-write retries, changingTS/codec, forceopening
+anotherwriter, or blindly restartingMost/Transport/screenpeers.
+
+Nextcar action is READONLY healthy/broken comparison, not anotherreplay.
+Use native/cluster-bridge/map-session/map-session-diagnostics-laptop.zip.
+While stillstuck BEFOREreboot:
+ python scripts/collect_map_session.py --run --state broken
+Afterradio reboot and confirmedworkingfactorymaps:
+ python scripts/collect_map_session.py --run --state healthy
+Ifalreadyrebooted, collecthealthyonly; do not runV6toinduceanotherfailure.
+Return whole new _map_session_* folders. Two passes of processwaitstates/fds/
+mappings/times, existing systemlog andcoremetadata; no uploadnativecode, no
+signals/restarts/preload/video writes, no UARTread or corepayload.3mockworkflow
+checks and portablePython-S no-connectionplan/hashchecks passed. Need runtime
+carstate toidentifyblockedmap/sessionconsumer before a concrete functionalfix.
+No carcommands issued during localreview. No functionalrecovery/display claim.
+
+BundleSHA256: b498cc49f2d2c2044e0e68e6b679d95d1e4760613a1857908efa080bccafbe6e
+
+--- Earlier investigation notes ---
+
+2026-11-03: V5 arm/restoration verified; V6 removes first-native-frame dependency
+Collection _cluster_replay_20261103_130353_b925faeb: all23 artifact hashes/sizes
+verified. NAV_REPLAY_ARMED, controllererror0, arm1. Cleanupreturned0, finalphase6,
+restoredPID2052181, peerPIDsunchanged. This verifies a new stock NavigationServer
+process, not that factory map rendering finished; user saw Starting map.
+
+Playback remainedREADY with packets0. Native FD137 matched the800x480 encoder,
+GOTwrappers retained, heartbeat156/error0. ALL nativewritehook calls0 across run;
+open77/close130 show normal ongoing process activity. Source-write-only ownership
+activation never ran. The underlying reason for absent factory rendered frames
+is not established; it is not necessary to wait for those frames to test the
+recording on this already-open native descriptor.
+
+V6 shares one mutex-protected ownership gate between native writes and the idle
+worker: explicitarm1,fullyREADY,noerror/nopriorbadcaller,qualified trackedFD,
+notalreadyattempted and fresh native FD/800x480 geometry/import validation.
+Workerchecks within about1second. No new competingopen or unknownFDadoption.
+Nativewrite/close serialization, once-only replay and EOF/error mute remain.
+Completion no longer requires suppressed nativewrites (zero is legitimate when
+no nativeframesarrive). Historicalclose counts no longer stop a currentlyactive
+FD. If stillarmed/READY after10seconds, saveactivationreport and cleanup instead
+of waiting120seconds. Terminal reports process restoration and packet delivery
+separately. Operatorselects clusterMAPVIEW; factorymap pixels are not required.
+The V5 postexecidentity fix is unchanged. Video/timing/codec/617frames unchanged.
+
+Validated LinuxASAN/UBSAN+ARMQNX core fixtures including explicitprearmzero,
+no-sourcewrite replay,once-only and EOFmute; realQNX app-import/preload fixture
+nowarms then waits without another sourcewrite and verifies all3packets. All
+prior libc/import/earlyIO/errno/ownership/zero/short/reentry checks stillpass.
+20Pythonworkflowtests pass, portable extracted plan/assets pass, all617 decoded
+RGBhashes preserved. Physical cluster replay delivery/display remains unproven.
+
+Nextcar command, ignitionon/Ethernet/phoneunplugged throughout:
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Extract V6zip into laptopproject first; select navigationMAPVIEW INCLUSTER. It
+may say Starting map. PressEnter at arm prompt (SKIPrestores). Observe roughly
+48seconds and return WHOLE new _cluster_replay_* folder. No mandatoryrestart
+from this result: stock process restoration WASverified. No vehiclecommands
+were issued during local work. LiveAA feeding/presentation follows physical
+recordedmap playback. Do not claim liveguidance from this test.
+
+Bundle: native/cluster-bridge/replay/cluster-map-replay-v6-laptop.zip
+SHA256: 6c2e8fb4125af997aee2d07bbf4864972f17e60cb008f1cf1831d59fc9ae94e9
+
+--- Earlier investigation notes ---
+
 2026-11-03: V4 channel works; V5 corrects launcher exec-identity race
 Reviewed _cluster_replay_20261103_123923_179465c3; all17 artifact hashes/sizes
 verified. Native endpoint opened twice,2540 tracked writes,FD137 matches encoder,

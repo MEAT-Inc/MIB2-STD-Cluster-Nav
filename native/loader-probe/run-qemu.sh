@@ -1,6 +1,8 @@
 #!/bin/sh
 # Container-only QNX synthetic test. No vehicle/network access.
 set -eu
+. /src/scripts/project-console.sh
+console_start "Run loader-probe QNX emulator tests." "$@"
 cd /src
 sh native/loader-probe/build.sh qnx
 data_mode=${1:-copy}
@@ -47,6 +49,7 @@ cp test.build "$w/test.build"
 mkifs test.build ifs.bin > "$w/mkifs.log" 2>&1
 mkdir -p fat
 cp ifs.bin fat/
+console_status STEP 'Booting QNX emulator; results are being collected in the test log.'
 ( printf '\n'; sleep 4; printf 'virtio scan\n'; sleep 2; printf 'fatload virtio 0:1 0x40200000 ifs.bin\n'; sleep 3; printf 'go 0x40200000\n'; sleep 25 ) | \
  timeout 50 qemu-system-arm -M virt -nic none -m 256 -cpu cortex-a15 -bios u-boot.bin -drive file=fat:rw:/w/fat,format=raw,media=disk -display none -serial stdio > "$w/qemu.log" 2>&1 || true
 # All eight subprocesses must pass, including repeated launch and restoration.

@@ -1,4 +1,5 @@
 """Host-only scalar logging contract. No native code, loader, or pointer access."""
+from project_console import console_session
 import unittest
 
 U32_MAX = (1 << 32) - 1
@@ -87,4 +88,5 @@ class DiagnosticTests(unittest.TestCase):
                 observe_registration(lambda *args: self.fail('invalid capture'), DiagnosticLog(), value, 0, 0)
 
 if __name__ == '__main__':
-    unittest.main()
+    with console_session(__file__, __doc__):
+        unittest.main()

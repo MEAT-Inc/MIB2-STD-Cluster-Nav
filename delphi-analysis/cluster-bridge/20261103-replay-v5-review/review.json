@@ -1,0 +1,28 @@
+{
+  "collection": "delphi-dump/_cluster_replay_20261103_130353_b925faeb",
+  "artifacts_verified": 23,
+  "arm_accepted": true,
+  "arm": 1,
+  "controller_error": 0,
+  "process_restoration_verified": true,
+  "restored_pid": 2052181,
+  "peer_pids_unchanged": true,
+  "channel_fd": 137,
+  "encoder_fd": 137,
+  "geometry": [
+    800,
+    480,
+    800,
+    480,
+    0
+  ],
+  "heartbeat": 156,
+  "retained_imports_match": true,
+  "any_native_write_hook_calls": 0,
+  "tracked_native_writes": 0,
+  "packets": 0,
+  "interpretation": "V5 fixed launcher arming/restoration. Replay remained READY despite arm1 because takeover was only triggered by a native source write; no native writes arrived in the whole run. The exact reason the factory renderer stayed at Starting map is not established. V6 starts recording on the known native-open descriptor after fresh arm/geometry/import validation without waiting for a factory source frame. No competing transport open, UI-state spoof, or codec change.",
+  "display_proven": false,
+  "next_bundle": "native/cluster-bridge/replay/cluster-map-replay-v6-laptop.zip",
+  "next_bundle_sha256": "6c2e8fb4125af997aee2d07bbf4864972f17e60cb008f1cf1831d59fc9ae94e9"
+}

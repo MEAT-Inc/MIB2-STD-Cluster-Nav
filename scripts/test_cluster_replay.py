@@ -1,3 +1,4 @@
+from project_console import console_session
 import contextlib,ftplib,hashlib,io,json,re,shlex,struct,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -50,6 +51,8 @@ class Tests(unittest.TestCase):
       if required:raise RuntimeError('copy source absent')
       return 1
      db[remote+'/'+dest]=db[src]
+     if mode=='historicalclose' and dest=='replay-progress.bin' and sum(x.endswith(' replay-progress.bin') for x in commands)==1:
+      active=bytearray(report(w[10],True));struct.pack_into('<I',active,4*4,2);struct.pack_into('<I',active,13*4,1);struct.pack_into('<I',active,10*4,1);struct.pack_into('<I',active,11*4,188);db[remote+'/'+dest]=bytes(active)
     if c.startswith('test -r '):return 0 if (c[8:] if c[8:].startswith('/') else remote+'/'+c[8:]) in db else 1
     if 'pidin -p NavigationServer' in c:db[remote+'/'+c.split('> ')[1].split()[0]]=('%d NavigationServer -fcfg ../cfg/NAV/v0/NC/Delphi/NavServer.cfg\n'%(w[11] if 'after' in c else w[14])).encode()
     if 'pidin arguments >' in c:db[remote+'/'+c.split('> ')[1].split()[0]]=b'123 Most\n124 TransportServer\n125 AndroidAuto -t\n'
@@ -96,6 +99,8 @@ class Tests(unittest.TestCase):
   self.assertFalse(m.assess_replay(b,22,manifest,True)['physical_display_proven'])
  def test_stalled_activation_collects_report_and_restores_without_long_wait(self):
   rc,s,c=self.run_fake('activationfail');self.assertEqual(rc,2);self.assertTrue(s['activation_failed']);self.assertTrue(s['restoration_verified']);self.assertIn('within 10 seconds',s['error']);self.assertEqual(sum('arm-replay' in x for x in c),1)
+ def test_prior_native_close_does_not_stop_active_descriptor_playback(self):
+  rc,s,c=self.run_fake('historicalclose');self.assertEqual(rc,0);self.assertFalse(s.get('native_channel_closed_early',False));self.assertGreaterEqual(sum(x.endswith(' replay-progress.bin') for x in c),2)
  def test_successful_transport_with_no_visible_map_is_partial(self):
   rc,s,c=self.run_fake('invisible');self.assertEqual(rc,2);self.assertTrue(s['replay']['packets_delivered']);self.assertFalse(s['cluster_maps_seen'])
  def test_skip_restores_without_arming(self):
@@ -128,4 +133,6 @@ class Tests(unittest.TestCase):
   self.assertIsNone(m.assess_replay(old,22,manifest)['hook_calls'])
  def test_profile_mismatch_never_restarts_or_arms_navigation(self):
   rc,s,c=self.run_fake('preflightfail');self.assertEqual(rc,2);self.assertFalse(s.get('native_launch_requested',False));self.assertFalse(any('start-disconnected' in x or 'arm-replay' in x or 'cleanup-disconnected' in x for x in c));self.assertIn('not restarted',s['error']);self.assertFalse(s['libc_preflight']['profile_matches'])
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

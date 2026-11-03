@@ -1,4 +1,5 @@
 """Read-only endpoint/vtable ABI trace of the fingerprinted Delphi binaries."""
+from project_console import console_session, log as print
 import hashlib,io,json,struct,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -60,4 +61,6 @@ def main():
     result=dict(receiver=inspect('receiver','delphi-dump/extbin/apps/lib/libautoreceiver.so.1',REFERENCES['receiver.reference'][2]),app=inspect('app','delphi-dump/extbin/apps/bin/AndroidAuto',REFERENCES['AndroidAuto.original'][2]))
     (OUT/'endpoint-abi-vtables.json').write_text(json.dumps(result,indent=2))
     for name,r in result.items():print(name,':',r['functions_traced'],'traces;',len(r['vtables']),'vtables')
-if __name__=='__main__':main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        main()

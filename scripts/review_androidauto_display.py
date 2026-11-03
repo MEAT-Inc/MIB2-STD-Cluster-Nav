@@ -1,4 +1,5 @@
 """Independently review a returned display capture; offboard only, no network."""
+from project_console import console_session, log as print
 import argparse,hashlib,json
 from pathlib import Path
 from run_androidauto_observer import assess
@@ -40,5 +41,6 @@ def review(folder,output):
     (output/'captured-discovery-paired-host-only.bin').write_bytes(b'\x00\x06'+pair)
     result=dict(collection=folder.name,artifacts_verified=len(blobs),actions_verified=len(summary['actions']),completed_restored=registration['completed_restored'],observed_pid=registration['observed_pid'],restored_pid=registration['restored_pid'],manager_pid=registration['manager_pid'],registration_records=registration['decoded_log']['count'],registration_dropped=registration['decoded_log']['dropped'],display_records=display['count'],display_dropped=display['dropped'],video_endpoint=configuration['object'],configuration_arguments=configuration['integer_parameters'],configuration_matches_wire=True,discovery_bytes=len(packet),advertised_service_ids=packet_row['discovery']['advertised_service_ids'],video_service_id=sink['service_id'],advertised_video_sinks=len(video),main_display_id=media['display_id'],main_display_type=media['display_type'],focus_arguments=focus,host_only_candidate_service_ids=[9,10],host_only_candidate_bytes=2+len(pair),host_only_candidate_preserves_original=True,router_slots_verified_free=False,second_endpoints_created=False,second_stream_proven=False)
     (output/'display-capture-hardware-review.json').write_text(json.dumps(result,indent=2),encoding='utf-8');return result
-if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('folder',type=Path);p.add_argument('--output',type=Path,default=ROOT/'delphi-analysis/control-runtime');a=p.parse_args();print(json.dumps(review(a.folder,a.output),indent=2))
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        p=argparse.ArgumentParser(description=__doc__);p.add_argument('folder',type=Path);p.add_argument('--output',type=Path,default=ROOT/'delphi-analysis/control-runtime');a=p.parse_args();print(json.dumps(review(a.folder,a.output),indent=2))

@@ -1,4 +1,5 @@
 """Offline smoke-runner checks: no vehicle/network access."""
+from project_console import console_session
 import contextlib,ftplib,io,json,struct,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -151,4 +152,6 @@ class ReportTests(unittest.TestCase):
         for marker in m.MARKERS:
             data=blobs();data['path-test.txt']=data['path-test.txt'].replace(marker.encode(),b'')
             with self.subTest(marker=marker),self.assertRaises(ValueError):m.assess(data)
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

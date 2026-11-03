@@ -1,4 +1,5 @@
 """Release the gated secondary endpoint negotiation experiment after offboard checks."""
+from project_console import console_session, log as print
 import hashlib,io,json,shutil,subprocess,sys,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'native/secondary-display'
@@ -30,7 +31,7 @@ def main(preflight=False):
  if needs!=['libc.so.3'] or set(imports)-libc:raise ValueError('Unverified runtime dependency/import: '+repr(set(imports)-libc))
  expected={'_init','_fini','_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase','delphi_observer_view','_ZN13MessageRouter32populateServiceDiscoveryResponseEP24ServiceDiscoveryResponse','_ZN13MessageRouter13queueOutgoingEhPvj'}
  if set(exports)!=expected:raise ValueError('Unexpected exported hooks: '+repr(exports))
- scripts=('secondary_timing.py','cluster_preflight.py','run_disconnected_observer.py','run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','decode_delphi_observer.py')
+ scripts=('secondary_timing.py','cluster_preflight.py','run_disconnected_observer.py','run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py')
  tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
  if tests.returncode:raise ValueError('Workflow/report tests failed: '+tests.stdout+tests.stderr)
  source_files=[p for p in BASE.glob('*.[ch]')]+[ROOT/'native/endpoint-factory'/n for n in ('factory.c','factory.h','probe.c','probe.h','profile.h')]
@@ -72,6 +73,7 @@ def main(preflight=False):
   if result.returncode or result.stdout.strip()!=('3' if preflight else '2'):raise ValueError('Portable package assets/gates failed: '+result.stderr)
  report=dict(bundle=bundle.relative_to(ROOT).as_posix(),bytes=bundle.stat().st_size,sha256=sha(bundle.read_bytes()),python_tests=tests.stderr.strip(),portable_plan_passed=True,portable_manifest_passed=True,manifest=manifest)
  (ROOT/('delphi-analysis/control-runtime/cluster-preflight-release.json' if preflight else 'delphi-analysis/control-runtime/secondary-stream-release.json')).write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='manifest'},indent=2))
-if __name__=='__main__':
- import argparse
- p=argparse.ArgumentParser();p.add_argument('--cluster-preflight',action='store_true');main(p.parse_args().cluster_preflight)
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        import argparse
+        p=argparse.ArgumentParser();p.add_argument('--cluster-preflight',action='store_true');main(p.parse_args().cluster_preflight)

@@ -1,4 +1,5 @@
 """Actual AndroidAuto observer diagnostic. Defaults to an offline plan."""
+from project_console import console_session, log as print, prompt as input, status, progress
 import argparse, datetime as dt, ftplib, getpass, hashlib, io, json, re, shlex, struct, uuid, time
 from pathlib import Path
 import delphi_inventory as d
@@ -145,14 +146,17 @@ def main(argv=None):
     def persist():(run/'androidauto-summary.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     def fetch(name,source=None):
         with ftplib.FTP(timeout=a.timeout) as ftp:
+            progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
             ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I');data=retrieve(ftp,source or remote+'/'+name)
         (run/name).write_bytes(data);blobs[name]=data
         report['artifacts'].append(dict(file=name,bytes=len(data),sha256=sha(data)));return data
     persist()
     try:
         with ftplib.FTP(timeout=a.timeout) as ftp:
+            progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
             ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I');ftp.mkd(remote)
             for name,data in files.items():
+                status('Uploading and verifying payload: '+name)
                 ftp.storbinary('STOR '+remote+'/'+name,io.BytesIO(data))
                 if retrieve(ftp,remote+'/'+name,128*1024)!=data:raise ValueError('Upload readback differs: '+name)
         shell=Shell(a,run);shell.command('cd '+shlex.quote(remote));cwd_verified=True;namespace_verified=True
@@ -180,6 +184,7 @@ def main(argv=None):
             shell.command(command+' phone > launch.txt 2>&1 & delphi_aa_job=$!')
             def read_ready():
                 with ftplib.FTP(timeout=a.timeout) as ftp:
+                    progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
                     ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I')
                     return retrieve(ftp,remote+'/launch.txt',65536)
             try:ready=wait_for_phone_ready(read_ready,started)
@@ -244,4 +249,6 @@ def main(argv=None):
     partial_display=a.display_capture and report.get('completed_restored') and report.get('actual_androidauto_interposition_tested')
     print('Result: '+(('DISPLAY CONFIGURATION / DISCOVERY CAPTURE PASS' if a.display_capture else 'ACTUAL ANDROIDAUTO OBSERVER PASS') if report['passed'] else 'RESTORED - DISPLAY CAPTURE PARTIAL; preserve this folder for review' if partial_display else 'RESTORED - NO REGISTRATION CALLS; preserve this folder for review' if no_calls else 'INCOMPLETE / FAILED - preserve this folder for review'))
     return 0 if report['passed'] else 2 if no_calls else 1
-if __name__=='__main__':raise SystemExit(main())
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        raise SystemExit(main())

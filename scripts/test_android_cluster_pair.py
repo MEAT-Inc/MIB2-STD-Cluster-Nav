@@ -1,4 +1,5 @@
 """Offboard-only dual service descriptor tests. No unit access or advertisement."""
+from project_console import console_session
 import unittest
 from android_discovery_wire_fixture import add_cluster_services,message,uint,independent_decode
 class PairTests(unittest.TestCase):
@@ -18,4 +19,6 @@ class PairTests(unittest.TestCase):
  def test_invalid_or_ambiguous_video(self):
   for response in (self.response+message(1,uint(1,1)+message(3,message(4,b''))),b'\x0a\x80',uint(1,1)):
    with self.assertRaises(ValueError):add_cluster_services(response,1,9,10)
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        unittest.main()

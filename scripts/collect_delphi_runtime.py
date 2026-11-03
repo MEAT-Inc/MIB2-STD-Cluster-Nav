@@ -1,4 +1,5 @@
 """Targeted FTP collection; optional root-shell copies to a fresh RAM-disk directory."""
+from project_console import console_session, log as print
 import argparse, ftplib, getpass, json, re, shlex, socket, sys, uuid
 import delphi_inventory as d
 
@@ -160,4 +161,6 @@ def main(argv=None):
         if staging:staging.close()
     return c.finish(interrupted)
 
-if __name__=='__main__':sys.exit(main())
+if __name__ == '__main__':
+    with console_session(__file__, __doc__):
+        sys.exit(main())
