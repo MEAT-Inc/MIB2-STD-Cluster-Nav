@@ -1,0 +1,33 @@
+{
+  "collection": "delphi-dump/_cluster_replay_20261103_123923_179465c3",
+  "artifacts_verified": 17,
+  "bootstrap_stage": 7,
+  "native_channel_ready": true,
+  "qualified_opens": 2,
+  "tracked_native_writes": 2540,
+  "native_fd": 137,
+  "encoder_fd": 137,
+  "encoder": 12418832,
+  "geometry": [
+    800,
+    480,
+    800,
+    480,
+    0
+  ],
+  "retained_imports_match": true,
+  "heartbeat": 8,
+  "inspection_error": 0,
+  "arm": 0,
+  "packets": 0,
+  "arm_command_exit": 3,
+  "cleanup_command_exit": 3,
+  "controller_error": 1100,
+  "observed_pid": 1200213,
+  "observed_pid_still_present": true,
+  "restoration_verified": false,
+  "blocker": "Launcher refused arm before any packet delivery. Pre-exec wrapper publishes observed PID with already-canonical debug path. Watchdog can save wrapper start identity, which changes at exec. The same actual Nav PID then fails the exact start identity guard.",
+  "evidence_limit": "V4 lacks the later actual Nav start timestamp, so hardware timestamp mismatch is inferred from the refusal sequence and the deterministic QNX reproduction.",
+  "fix": "Require nonce-specific post-exec report with exact header/PID before acquiring observed identity. Keep PID/start/parent/image checks unchanged for arm and cleanup. Retain refusal output despite nonzero exit.",
+  "physical_replay_display_proven": false
+}

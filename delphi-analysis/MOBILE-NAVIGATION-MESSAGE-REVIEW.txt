@@ -1,0 +1,69 @@
+2026-11-02 CURRENT: CLUSTER GEOMETRY AND RECORDED MAP VIDEO TIMING REVIEWED
+========================================================================
+Actual collection: _disconnect_observer_20261103_022700_3b445220 (UTC folder).
+All24 manifest artifact sizes/hashes independently verified. Recomputed factory,
+callback,controller restoration,secondary and timing assessments pass. Received617
+frames and617 ACKs,5,485,067 bytes,zero reported drops/native/IO/wire errors.
+
+Native geometry BEFORE phone connection and AFTER phone disconnection is800x480,
+buffer800x480,padding0,rate candidate10,writer fd138. NavigationServer PID704597,
+parent417823,start1422774009265990734 and encoder pointer9011840 unchanged.
+These snapshots DO NOT measure the writer,encoded frame flow or cluster page
+selection DURING the phone route. Do not infer uninterrupted native video.
+
+Native and AA coded dimensions match; no scaler is needed on geometry evidence
+for this phone/configuration. All617 frames decode as800x480 Baseline yuv420p:
+1I-frame+616P. One codec record+617frame records account for every raw byte.
+Each callback exactly matches one demuxed AVC AU (codec prefix on first AU).
+Source timestamp span48,266,456 units over48.203951796 local monotonic seconds
+supports microseconds (~1,001,296.66 units/sec). This is measured evidence,not a
+formal protocol-spec verification. Conversion explicitly uses relative timestamps
+in microseconds -> floor(relative/1000) native milliseconds. No guessed fps.
+
+Recorded-timing Python remux decoded pixel-identically for all617frames. Ported
+packetizer to allocation-free native C with supplied time,IDR gate,1MiB AU bound,
+native PSI/PIDs/PES/PCR and sticky output failure. Linux address/undefined-behavior
+sanitizer fixture and separate QNX ARM fixture pass. Real record input generated
+from validated callbacks produces byte-identical TS in native C vs Python:
+6,013,556 bytes;SHA256 dd0936938df0c1829e197071354db2b61f6596664f56317c844a17e3e5d8f0e0.
+This establishes a native packetizer component,NOT a connected live bridge.
+Sources native/cluster-bridge/mux.[ch],mux-fixture.c,mux-file.c.
+Reproduce offboard with build-mux.sh/test-mux-qemu.sh in existing Docker image.
+No phone/car connection or vehicle writes occurred during this review.
+
+USER'S MOBILE-NAVIGATION MESSAGE
+The report 'Navigation is active on the mobile device' matches stock phone-nav
+handover policy. Exact cluster text rendering is outside captured Java; the
+association with BAP state6 is strongly supported by firmware control flow and
+the reported trigger,not independently captured BAP traffic.
+InfoStates.java getFunctionId returns38;getCurrentBAPInfoState prioritizes any
+phone route active ->states6,including AndroidAuto property2910005. RequestHandler
+focus type2 stops native ROUTE GUIDANCE via NavigationListener.stopGuidance(6),
+then sets that property true,acknowledges phone focus and informs EXBOX. These
+methods do not themselves close isoTX or request a native encoder rate change.
+The message therefore does not establish a capture fault or native video teardown.
+It is a separate cluster presentation/control concern for the eventual bridge.
+
+Do not globally falsify2910005: that affects real phone/nav focus and consumers.
+Future owned-source handoff must preserve truthful phone state and the stock map
+activation lifecycle; if needed,gate ONLY incompatible BAP38 presentation while
+verified AA cluster video is owned/healthy,restoring stock behavior on failure.
+Replacement state/context must be validated; do not blindly force0 or assume
+clearing the message enables video. Live writer/consumer/context still untested.
+During-route writer health can be measured in the eventual controlled handoff
+trial; no repeat standalone collection requested merely to explain this message.
+
+Source evidence under delphi-analysis/display-hmi-java/decompiled/de/vw/mib/:
+  bap/mqbab2/navsd/functions/InfoStates.java (function38 and states6 branch)
+  asl/internal/androidauto/target/RequestHandler.java (phone focus handler)
+  asl/internal/androidauto/target/NavigationListener.java (stopGuidance6)
+See display-hmi-FINDINGS.txt and bridge-analysis-findings.txt for native control.
+Raw native encoder snapshot source native/cluster-bridge/nav_snapshot.c.
+Detailed latest review:
+  delphi-analysis/cluster-bridge/20261103-review/video-review.json
+  delphi-analysis/cluster-bridge/20261103-review/native-mux-review.json
+
+Remaining scope: bounded AA-to-native-writer IPC,exclusive source arbitration,
+cluster control/presentation coordination,and physical decoder/display validation.
+No new firmware patch,HMI patch,source takeover or laptop test release this turn.
+

@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'.tools/video-python'))
 def digest(b):return hashlib.sha256(b).hexdigest()
-def inspect(folder,out):
+def inspect(folder,out,recorded_microseconds=False):
  folder=folder.resolve();out=out.resolve()
  import av
  import run_disconnected_observer as observer
@@ -38,15 +38,33 @@ def inspect(folder,out):
  from native_transport_packet_reference import validate_ts
  output=bytearray()
  def sink(packet):output.extend(packet);return len(packet)
- mux=ClusterTSMux(sink);access_units=[];next_tick=0
+ mux=ClusterTSMux(sink);access_units=[];next_tick=0;timing_review=None;recorded_frames=[]
+ if recorded_microseconds:
+  from secondary_timing import assess_timing
+  timing_review=assess_timing(blobs['timing.bin'],blobs['secondary.h264'],control['observed_pid'],stream)
+  if not timing_review['complete'] or timing_review['source_timestamp_regressed']:raise ValueError('Incomplete/regressed timing cannot drive remux')
+  if not 950000<timing_review['source_units_per_arrival_second']<1050000:raise ValueError('Captured clock does not corroborate microseconds')
+  details=timing_review.pop('records_detail');recorded_frames=[v for v in details if v['kind']==2]
+  codec=[v for v in details if v['kind']==1]
+  if len(codec)!=1 or codec[0]['offset']!=0:raise ValueError('Changed codec needs explicit access-unit assembly')
+  first_timestamp=recorded_frames[0]['timestamp']
+  timing_review.update(timestamp_unit_used='microseconds',unit_basis='Explicit review choice corroborated by phone/local clock ratio; not a protocol-spec assertion')
+
  with av.open(str(folder/'secondary.h264'),format='h264') as source:
   for packet in source.demux(video=0):
    if not packet.size:continue
-   au=bytes(packet);ms=len(access_units)*1000//30
+   au=bytes(packet);index=len(access_units)
+   if recorded_microseconds:
+    record=recorded_frames[index];raw=blobs['secondary.h264'];expected=raw[record['offset']:record['offset']+record['saved']]
+    if index==0:expected=raw[:codec[0]['saved']]+expected
+    if au!=expected:raise ValueError('Callback boundary is not one parsed access unit')
+    ms=(record['timestamp']-first_timestamp)//1000
+   else:ms=index*1000//30
    while next_tick<ms:mux.tick(next_tick);next_tick+=16
    if not mux.push(au,ms):raise ValueError('Parsed stream did not start at IDR')
    access_units.append(au)
- transport=out/'transport-fixture.ts';transport.write_bytes(output)
+ if recorded_microseconds and len(access_units)!=len(recorded_frames):raise ValueError('Timing/access-unit count differs')
+ transport=out/('transport-recorded-timing.ts' if recorded_microseconds else 'transport-fixture.ts');transport.write_bytes(output)
  wire=validate_ts(output)
  # Independent payload reassembly verifies every AVC byte survives the mux.
  pes=[]
@@ -63,9 +81,9 @@ def inspect(folder,out):
   for f in decoded.decode(video=0):remux_hashes.append(digest(f.to_ndarray(format='rgb24').tobytes()))
  if remux_hashes!=frames:raise ValueError('Remuxed frames differ from source')
 
- report=dict(collection=folder.name,verified_artifacts=len(summary['artifacts']),control_restored=control['process_restoration_verified'],secondary=stream,source_sha256=digest(blobs['secondary.h264']),decoded_frames=len(frames),dimensions=size,pixel_format=pixel,profile=profile,keyframe_indices=keys,picture_types=pictures,decoded_rgb_sha256=frames,preview_files=image_paths,timing='Raw capture lacks per-access-unit timestamps; demuxer guessed frame rate is not a measurement.',cluster_decoder_tested=False,mux_source_sha256=digest((ROOT/'scripts/cluster_ts_mux.py').read_bytes()),offline_remux=dict(file=transport.relative_to(ROOT).as_posix(),bytes=len(output),sha256=digest(output),access_units=len(access_units),decoded_pixels_identical=True,synthetic_fps=30,original_timing_preserved=False,wire=wire))
+ report=dict(collection=folder.name,verified_artifacts=len(summary['artifacts']),control_restored=control['process_restoration_verified'],secondary=stream,source_sha256=digest(blobs['secondary.h264']),decoded_frames=len(frames),dimensions=size,pixel_format=pixel,profile=profile,keyframe_indices=keys,picture_types=pictures,decoded_rgb_sha256=frames,preview_files=image_paths,timing=timing_review if recorded_microseconds else 'Raw capture lacks per-access-unit timestamps; demuxer guessed frame rate is not a measurement.',cluster_decoder_tested=False,mux_source_sha256=digest((ROOT/'scripts/cluster_ts_mux.py').read_bytes()),offline_remux=dict(file=transport.relative_to(ROOT).as_posix(),bytes=len(output),sha256=digest(output),access_units=len(access_units),decoded_pixels_identical=True,synthetic_fps=None if recorded_microseconds else 30,original_timing_preserved=recorded_microseconds,timestamp_quantization_ms=1 if recorded_microseconds else None,wire=wire))
  (out/'video-review.json').write_text(json.dumps(report,indent=2))
  print(json.dumps({k:v for k,v in report.items() if k not in ('decoded_rgb_sha256','secondary')},indent=2))
  return report
 if __name__=='__main__':
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('collection',type=Path);p.add_argument('--output',type=Path,required=True);a=p.parse_args();inspect(a.collection,a.output)
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('collection',type=Path);p.add_argument('--output',type=Path,required=True);p.add_argument('--recorded-microseconds',action='store_true');a=p.parse_args();inspect(a.collection,a.output,a.recorded_microseconds)

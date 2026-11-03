@@ -1,0 +1,66 @@
+2026-11-03 CURRENT: V2 STOPPED AT LIBC GATE; V3 CODE-VALIDATED REPLAY READY
+=====================================================================
+User correction: factory maps return after script finishes. Treat Starting
+Navigation as the startup transition in this run,not a persistent hang. Don't
+expand recovery investigation; focus remains maps on cluster.
+
+V2 hardware collection _cluster_replay_20261103_040408_6f1d5bef: all9 manifest
+artifact hashes verified. Report exists,Nav remained alive at checkpoint(error0).
+Replay status4,error1002,bootstrapstage1,allpacket/suppression counters0. This is
+exactly our dladdr/filename provenance check. NOhooks installed,NOarm,NOstream sent.
+This does not exercise decoder,transport pacing or recorded map compatibility.
+No actualfunction/name data was captured before this guard,so whether dladdr
+returnedfalse or an unexpectedname is unknown. Cleanup command returned0 and
+wrote LAUNCH_RESTORED/LAUNCH_COMPLETE. FTP/telnet connection reset then prevented
+final snapshotverification; user's visiblefactorymap recovery is separate evidence.
+
+V3 directly opens the already-needed libc.so.3 object with dlopen and resolves
+open/write/close from that handle,not RTLD_DEFAULT/NEXT global search. SDK testing
+showed RTLD_DEFAULT returned app importstubs foropen/close; this demonstrates the
+lookup hazard,not proof of the original unit's exact resolved pointers. Removed
+all dladdr/name checks from loader (diagnostic only in read-only helper).
+New guard verifies actualunit libc: mappedELF32LE ARM ET_DYN header,relative symbol
+offsets(open17ffc,write1a334,close163d4) and32immutable codebytes for each. Prefixes
+are extracted from captured libcSHA76ff9b07201a77ad231905741b25a97fd722a163c26a7ca0e36f17331bd12e9b;
+generator rejects code relocations. Code/profile validation doesn't trust names.
+Bounded pread64 loops handle high32bit addresses,EINTR and partialreads. Unitopen
+entry crosses a page boundary. QNX regression forces aligned2bytefingerprintreads
+and still passes fullprofile+app-import replay. NormalELFstring reads remainfull
+request withshort-read handling; QNX rejects some artificialunaligned2byte requests.
+
+New replay_libc_check standalone program runs BEFORE nav_launch. It uses the same
+unit profile,outputs resolvedaddresses/bytes/base and optionaldladdr diagnostics.
+If profile mismatches,hoststops WITHOUT restarting NavigationServer or arming any
+video. Helper is a fourth hashednativeasset. It reads onlyitsownprocessmemory.
+FullNav app-only3import transaction,explicitvisiblemap arm,geometry/currentfd gate,
+recording/timebase/clock-reset packets and sourceownership remain unchanged.
+
+Startup logs now fetched BEFORE cleanup as well as after,to retain them if the
+post-cleanup connection resets. Nativecleanup acknowledgement/complete marker are
+recorded separately from final PID/hostverification. No repeatedcleanup signal or
+newradio/services recovery logic introduced. Reportword36 validatedlibcbase;37+
+reserved. Manifeststartup contract3; V1/V2 held bynewrunner. ActualV3 car nottested.
+
+Validation:13Python workflow tests pass,including mismatch -> noNavrestart/arm/
+cleanup,bootstraplogs,loading/errors,SKIP/interruption/cleanuprefusal/resume. QNX
+libc profilepositive/negative fixtures,read-only helper,forcedpartialreads,3slot
+transaction,replay pacing/ownership,earlylegacyexit126 and correctedrealapp replay
+pass. Navlaunch/stdout/stderr/arming/restoration lifecycle tests remainpassed.
+All617 sourceRGBframes stillidentical; portable-S plan/assets,ELF imports,ZIPCRC
+and everynative/script hash pass. No newcar commands executed this turn.
+
+NEXTCAR RUN: extract V3 bundle into laptopproject,replacingbundledfiles. Factory
+navavailable,ignitionon,Ethernetconnected,phoneunplugged throughout:
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Read-onlylibc check runsfirst. Ifitpasses,Navrestarts; waitforfactorymap INCLUSTER
+thenEnter to arm48s recording. SKIP ifnotavailable. Returnentirenew
+ delphi-dump/_cluster_replay_* folder includingpartial. No separatepreflight run
+needed. This is stillrecordedGoogleMaps,notliveguidance. Physicaldecoder path
+remainsuntested because bothpriorattemptsstopped before sendingvideo.
+
+V3 bundle: native/cluster-bridge/replay/cluster-map-replay-v3-laptop.zip
+Bytes: 5520868
+SHA256: e7b1e0884bbb6a8c3764a1f85744163e6947ecac4dd7bbccdff6ba01f764cc30
+Release review:delphi-analysis/control-runtime/cluster-map-replay-release.json
+Hardware review:delphi-analysis/cluster-bridge/20261103-replay-v2-review/review.json
+

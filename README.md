@@ -2,7 +2,7 @@
 
 Research and diagnostic tooling for Android Auto navigation video in the instrument cluster of a Delphi MIB2 infotainment system, with a separate initial CarPlay investigation.
 
-**Status â€” October 29, 2026:** the phone accepted a secondary video/input pair and supplied a Google Maps H.264 stream. All 371 captured frames decode offboard at 800Ã—480. An offline MPEG-TS fixture preserves every decoded frame, but uses synthetic timing. **No video has been played through the physical cluster decoder.** The next prepared build measures native cluster geometry and phone-frame timestamps; it does not replace cluster output.
+**Status - November 3, 2026:** secondary Android Auto map video, native cluster geometry, recorded frame timing, and native MPEG-TS packetization are demonstrated. The first physical cluster replay remains incomplete: the latest vehicle run reached the native map channel but stopped before replay packets were sent. The V5 launcher corrects a reproduced post-exec identity race and is prepared for vehicle validation. **Visible Google Maps playback in the cluster and live phone-to-cluster navigation are not yet demonstrated.**
 
 ## Target system
 
@@ -14,24 +14,50 @@ Research and diagnostic tooling for Android Auto navigation video in the instrum
 | Operating system | QNX Neutrino 6.5.0, ARM little-endian |
 | Platform | TI-DRA74X-PG1.1; two Cortex-A15 processors |
 
-Native offsets and fingerprints are specific to this build. Relocating the laptop project does not establish compatibility with another head unit or firmware train.
+Native offsets and fingerprints are specific to this build. A portable laptop checkout does not establish compatibility with another head unit or firmware train.
 
-## Progress and evidence
+## Progress so far
 
-| Area | Current result | Limits |
+| Area | Demonstrated progress | Remaining limits |
 | --- | --- | --- |
-| Acquisition | Initial verification records 562 matching byte-count/SHA256 comparisons; subsequent runtime and hardware captures are retained. | File hashes do not authenticate vendor origin or loaded-memory contents. |
-| Native map transport | Traced `isoTX`, 188-byte MPEG-TS, PAT/PMT/PIDs, synchronous copies, queue backpressure, and single-writer ownership. | Complete MOST teardown and a safe source-substitution implementation remain open. Never add a competing `isoTX` writer. |
-| HMI/control | Traced `screen-cda` application `0x55`, map activation/rate messages, geometry propagation, and SAL millisecond clock units. | Active native geometry and actual rate/timebase need measurement. |
-| Observation | Real-app registration, configuration, outgoing discovery, and focus captured. The original offer has one video service; services 5/6 are audio sinks. | Offer/configuration observation alone does not prove received video. |
-| Endpoint lifecycle | Native constructors/ownership and independent callback state were implemented and tested; later hardware evidence includes successful video 9/input 10 registration and negotiation. | Not a general ABI implementation for other firmware; continued lifecycle/cleanup coverage is required. |
-| Secondary phone video | Latest collection records 371 frames, 371 ACKs, 2,776,803 saved bytes, no drops/errors/fallback, and verified stock process restoration. Offboard decoding shows Google Maps navigation at 800Ã—480 Baseline AVC. | No separate audio stream or physical cluster playback demonstrated. Raw capture lacks per-frame timing. |
-| Offline mux | Real capture remuxed into 15,793 native-format TS packets; independent decoding produces identical RGB hashes for every frame. | Fixture uses explicit synthetic 30 fps, not measured phone timing or proof of cluster acceptance. |
-| Cluster preflight | Read-only native geometry helper and bounded callback timing recorder are built; QNX synthetic tests and portable package gates are recorded passing. | Actual NavigationServer geometry read and timestamp measurement are pending hardware work. |
+| Acquisition and analysis | Firmware/configuration collection, manifest verification, ELF/disassembly, Java HMI inspection, and successive hardware captures are retained in the repository. | Local hashes establish consistency, not vendor authenticity or loaded-memory identity. |
+| Cluster control/transport | Traced HMI activation, `screen-cda`, NavigationServer encoder control, `isoTX`, MPEG-TS format, queue behavior, and single-writer ownership. | Complete live source substitution and MOST lifecycle handling remain unfinished. |
+| Secondary phone video | Native video 9/input 10 endpoints, independent callback ownership, discovery negotiation, setup, focus, ACKs, and capture have worked on the unit. The latest timed capture contains 617 frames/617 ACKs, 5,485,067 bytes, and no reported drops or native/I/O/wire errors. | This is a received secondary stream, not physical cluster output. |
+| Geometry and timing | Native image/buffer snapshots before and after the phone session are 800x480, padding 0, rate candidate 10. Every callback matches a captured AVC access unit. Timestamp measurements support microsecond source units. | Snapshots do not prove uninterrupted native writer activity during the phone route. Timestamp-unit evidence is empirical, not formal protocol verification. |
+| Decode and packetizer | All 617 frames decode as 800x480 Baseline AVC. Recorded-timing Python remux is pixel-identical. Allocation-free native C produces byte-identical MPEG-TS to Python: 6,013,556 bytes. | Native packetization and offboard decoding do not prove acceptance by the physical cluster decoder. |
+| Recorded cluster replay | A supervised NavigationServer launcher and app-only open/write/close hooks preserve native transport ownership. V4 observed two qualified opens, 2,540 tracked writes, matching encoder FD/800x480 geometry, retained hooks, and a live heartbeat. | V4 arming was refused, replay packets remained zero, and cleanup was refused. No decoder result can be inferred. |
+| Latest launcher | V5 waits for a nonce-bound module report confirming initialization before recording the post-exec process identity. The failure was reproduced under QNX; the candidate has recorded emulator/workflow/package validation. | V5 has not yet been demonstrated on the vehicle. |
+| CarPlay | Initial screen-registration and H.264 references provide a separate investigation path. | Additional CarPlay display support is not established. |
 
-The latest summary is [CLUSTER-BRIDGE-PROGRESS.txt](delphi-analysis/CLUSTER-BRIDGE-PROGRESS.txt). Also see [INVESTIGATION-STATUS.txt](delphi-analysis/INVESTIGATION-STATUS.txt), [display hardware findings](delphi-analysis/OBSERVER-DISPLAY-HARDWARE-REVIEW.txt). Historical sections can describe gates that later captures have completed.
+The current summaries are [CLUSTER-BRIDGE-PROGRESS.txt](delphi-analysis/CLUSTER-BRIDGE-PROGRESS.txt) and [INVESTIGATION-STATUS.txt](delphi-analysis/INVESTIGATION-STATUS.txt). They retain earlier milestones; use the newest dated section when older notes describe a completed gate as pending.
 
-The latest secondary-stream collection is `delphi-dump/_disconnect_observer_20261030_023947_1b83e2fa/` (about 10:39 p.m. Eastern on October 29; directory names use UTC). Its 18 artifact records and native/factory/stream assessments were independently reviewed. [video-review.json](delphi-analysis/cluster-bridge/video-review/video-review.json) records decoded source and remux pixel hashes; [frame-0180.png](delphi-analysis/cluster-bridge/video-review/frame-0180.png) shows the captured map. The offline TS fixture is evidence for byte/pixel preservation, not a deployment stream.
+### Measured map capture and native packetization
+
+The timed collection is `delphi-dump/_disconnect_observer_20261103_022700_3b445220/` (UTC folder name). The saved review reports 24 artifact size/hash checks, successful controller/factory/stream/timing assessments, and verified stock process restoration.
+
+One codec record plus 617 frame records account for every captured byte. Source timestamps span 48,266,456 units over approximately 48.204 local monotonic seconds, supporting conversion from relative microseconds to native milliseconds. This replaces the earlier synthetic 30 fps fixture for recorded playback. Matching native and phone dimensions mean no scaler is required on the geometry evidence for this particular configuration.
+
+See [video-review.json](delphi-analysis/cluster-bridge/20261103-review/video-review.json), [native-mux-review.json](delphi-analysis/cluster-bridge/20261103-review/native-mux-review.json), and the [map preview](delphi-analysis/cluster-bridge/20261103-review/frame-0180.png). The recorded-timing native/Python TS comparison has SHA256 `dd0936938df0c1829e197071354db2b61f6596664f56317c844a17e3e5d8f0e0`. Older 371-frame/synthetic-timing artifacts remain historical evidence.
+
+### Physical replay progress
+
+Replay intentionally uses a saved map recording with the phone unplugged. It separates cluster decoder/writer validation from live phone-session policy. The shim uses NavigationServer's existing descriptor; it does not open a competing `isoTX` writer. Playback requires an explicit operator arm after the factory map appears in the cluster.
+
+The vehicle iterations have narrowed the remaining startup issue:
+
+- V1 did not complete startup/restoration; V2 stopped at a libc provenance check before installing hooks or sending replay packets.
+- V3 initialized and armed, but observed no qualified native map-channel traffic; zero replay packets were sent.
+- V4 restored canonical executable/stdio behavior and demonstrated native channel activity. Arming and cleanup rejected a stale process-start identity despite the observed PID remaining alive.
+- QNX reproduction showed that a wrapper can publish the final PID/canonical pathname before `exec` changes the start identity. V5 waits for the initialized module's nonce-bound acknowledgement before capturing that identity, while retaining exact PID/start/parent/image checks and better refusal logs.
+
+The latest reviewed V4 collection is `delphi-dump/_cluster_replay_20261103_123923_179465c3/`. Its channel telemetry is progress toward delivery, not evidence of replay or live maps. Read [CLUSTER-REPLAY-V5-EXEC-HANDOFF.txt](delphi-analysis/CLUSTER-REPLAY-V5-EXEC-HANDOFF.txt) and the [replay instructions](native/cluster-bridge/replay/README.txt) for the current candidate and the required reset of the prior refused-cleanup state before another vehicle attempt. No further vehicle action was performed for this documentation update.
+
+### Stock mobile-navigation message
+
+The reported "Navigation is active on the mobile device" message is consistent with the stock phone-navigation handover policy. Firmware analysis ties phone-route activity to BAP function 38/state 6 and AndroidAuto property `2910005`; it does not independently capture the exact displayed text or BAP traffic. The focus handler stops native route guidance, but those methods do not themselves establish transport closure or an encoder-rate change.
+
+This is a separate presentation/control issue for the eventual live bridge. Globally falsifying phone-navigation state or merely clearing the message does not establish video ownership. See [MOBILE-NAVIGATION-MESSAGE-REVIEW.txt](delphi-analysis/MOBILE-NAVIGATION-MESSAGE-REVIEW.txt).
+
 
 ## Run from any checkout location
 
@@ -41,12 +67,12 @@ Prepared collection/laptop runners require **Python 3.10+** and its standard lib
 
 ```shell
 python scripts/collect_observer_preflight.py --help
-python scripts/run_disconnected_observer.py --cluster-preflight
+python scripts/run_cluster_replay.py
 ```
 
 These display help/a plan without connecting or creating a capture. Script defaults locate the repository from `__file__`, independently of the launch directory. Explicit CLI input/output paths are relative to the current directory unless a script says otherwise. In particular, resume paths must identify the existing capture under this checkout; use the exact printed command.
 
-Read [scripts/USAGE.txt](scripts/USAGE.txt), [preflight instructions](scripts/OBSERVER-PREFLIGHT.txt), and [cluster preflight instructions](native/cluster-bridge/README.txt) before vehicle work. Cluster preflight actively runs the established AndroidAuto observation lifecycle, but reads NavigationServer through a read-only helper without signaling/restarting it or opening/writing cluster transport. The phone must be removed before explicit cleanup. A timer checkpoint is not permission for a forced restart.
+Read [scripts/USAGE.txt](scripts/USAGE.txt), [preflight instructions](scripts/OBSERVER-PREFLIGHT.txt), and [current replay instructions](native/cluster-bridge/replay/README.txt) before vehicle work. The current replay experiment restarts NavigationServer under its supervisor and requires the phone to remain unplugged. It uses recorded video and explicit arming/cleanup. Default runner invocation shows a plan without connecting. Follow the current bundle instructions rather than an earlier replay release.
 
 ### Optional offline analysis environment
 
@@ -89,7 +115,7 @@ docker run --rm --network none --mount "type=bind,source=.,target=/src" --workdi
 
 Docker versions that require an absolute bind source can use the current directory expanded by the shell (`$(pwd)` on POSIX or `$PWD.Path` in PowerShell); this is a runtime value, not a fixed checkout location. Native build/test scripts run inside this container contract. `/src`, `/w`, `/tmp`, compiler paths, and QNX device/process paths such as `/proc` and `/dev/shmem` intentionally refer to container/target filesystems. They must not be rewritten as laptop-relative paths. Historical raw captures can retain original provenance paths and are not executable configuration.
 
-Release manifests bind exact source/artifact hashes. Regenerate and validate the corresponding package after changing covered code; copying an arbitrary rebuilt library over a known-working release does not preserve its gates. ZIPs are ignored in Git and can be recreated by the corresponding `scripts/package_*.py` command. The new preflight package is built with `python scripts/package_secondary_stream.py --cluster-preflight`; it preserves the older secondary release unless explicitly rebuilt.
+Release manifests bind exact source/artifact hashes. Regenerate and validate the corresponding package after changing covered code; copying an arbitrary rebuilt library over a known-working release does not preserve its gates. ZIPs are ignored in Git and can be recreated by the corresponding `scripts/package_*.py` command. The current recorded-replay package is generated by `python scripts/package_cluster_replay.py`. The preflight package remains available through `python scripts/package_secondary_stream.py --cluster-preflight` for its documented measurement scope.
 
 ## Repository contents
 
@@ -103,17 +129,19 @@ Release manifests bind exact source/artifact hashes. Regenerate and validate the
 |   |-- run_disconnected_observer.py  Explicit-cleanup observation/probe runner
 |   |-- cluster_preflight.py     Native geometry/identity validation
 |   |-- secondary_timing.py      Bounded callback timestamp assessment
-|   |-- cluster_ts_mux.py        Offline native-format TS mux
+|   |-- cluster_ts_mux.py        Recorded-timing TS reference mux
+|   |-- run_cluster_replay.py    Supervised recorded-map replay runner
+|   |-- package_cluster_replay.py  Replay package generation
 |   |-- inspect_secondary_video.py  AVC decode/remux pixel comparison
 |   `-- project-python.ps1       PATH/override-based PowerShell Python helper
 |-- native/
 |   |-- observer/               Original observer and launch/cleanup benches
 |   |-- endpoint-factory/       Native construction/ownership probe
 |   |-- secondary-display/      Paired endpoints, callbacks, wire rewrite, timing
-|   |-- cluster-bridge/         Read-only geometry helper and preflight release
+|   |-- cluster-bridge/         Geometry helper, native mux, replay hooks/launcher
 |   `-- loader-probe/           QNX loader experiments
 |-- delphi-analysis/              Findings, static analysis, machine reviews
-|   `-- cluster-bridge/video-review/  Source previews and offline TS fixture
+|   `-- cluster-bridge/         Video/mux reviews and replay iteration evidence
 |-- delphi-dump/                  Acquired firmware, manifests, and captures
 |-- .tools/                      Optional local tools (ignored)
 `-- .venv/                       Optional local Python environment (ignored)
@@ -123,7 +151,9 @@ Acquired firmware, discovery packets, video, configuration, and traces may conta
 
 ## Next steps
 
-1. Collect native encoder geometry/writer state and phone callback timestamps with the prepared cluster preflight. Missing active factory-map geometry must remain a partial result, not a guessed resolution.
-2. Establish the actual phone timestamp units and cluster geometry/cadence. The existing offline 30 fps fixture is deliberately synthetic.
-3. Implement bounded owned-buffer IPC and one coherent source substitution through NavigationServer's existing writer, preserving activation, MOST ownership, and restoration.
-4. Validate playback through the actual cluster decoder. Do not infer working cluster maps from successful phone negotiation or offline muxing.
+1. Validate the V5 post-exec identity handoff on the vehicle, confirm native channel readiness, and deliver the recorded stream to the physical cluster decoder.
+2. Confirm visible recorded Google Maps playback and verified stock restoration. A recorded-map result must be reported separately from live/current navigation.
+3. After physical replay works, implement bounded live phone-to-native IPC/source substitution while preserving timing, backpressure, single-writer ownership, and cleanup.
+4. Address phone-session cluster presentation only while verified video is owned and healthy, preserving truthful phone-navigation state and restoring stock behavior on failure.
+
+The current milestone is physical recorded-map delivery. A working live phone-to-cluster navigation bridge remains future work.

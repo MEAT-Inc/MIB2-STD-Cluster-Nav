@@ -1,0 +1,18 @@
+{
+  "collection": "_cluster_replay_20261103_032936_b7116dbc",
+  "verified_artifacts": 9,
+  "observed_pid": 1163349,
+  "controller_first_error": 1100,
+  "replay_report_created": false,
+  "replay_armed": false,
+  "recorded_video_delivery_exercised": false,
+  "restoration_verified": false,
+  "hardware_exit_code_available": false,
+  "proven_offboard_startup_hazard": "Global open/write/close can be called before callback bind, causing _exit(126)",
+  "hardware_cause_inference": "Consistent with missing report and early observed-child exit; original start/stdout/stderr not retained",
+  "regression": "QNX early-I/O legacy global exports exit126; app-only import-slot build survives and completes replay",
+  "correction": "Unique hidden wrappers; validate all3 main-image writable imports; CAS transaction after full init; deferredREADY; rollback/nohook on failure",
+  "revised_bundle": "native/cluster-bridge/replay/cluster-map-replay-v2-laptop.zip",
+  "sha256": "6800f180ef69ea87a0bdf4dd5f04805d520eeae8eafab754295e2b81f9ed3439",
+  "on_car_tested": false
+}

@@ -1,0 +1,29 @@
+{
+  "collection": "delphi-dump/_cluster_replay_20261103_045557_f11ecfa8",
+  "artifacts_verified": 15,
+  "libc_preflight_matches": true,
+  "stage": 7,
+  "status": 1,
+  "error": 0,
+  "arm": 1,
+  "qualified_native_opens": 0,
+  "tracked_writes": 0,
+  "packets_delivered": 0,
+  "native_fd": -1,
+  "instrumented_image": "RAM NavigationServer.original",
+  "observed_pid": 1237077,
+  "cleanup_command_exit": 0,
+  "cleanup_markers_complete": true,
+  "final_restoration_independently_verified": false,
+  "interpretation": "Bootstrap/import installation and arm succeeded. No qualified native open or replay delivery. V3 lacks any-hook counters/current GOT/native encoder samples, so it cannot distinguish inactive native pipeline from hook path failure. No cluster decoder rejection is established. User reports factory maps return after the script.",
+  "next_release": "native/cluster-bridge/replay/cluster-map-replay-v4-laptop.zip",
+  "startup_changes": [
+    "Execute canonical factory NavigationServer path; staged original remains reference",
+    "Preserve factory stdout/stderr; initializer writes bounded private log",
+    "Bypass replay mutex for unrelated writes/closes",
+    "Sample hook calls, retained imports, encoder FD/geometry, heartbeat",
+    "Require native channel readiness before visual confirmation/arm; 60sec bounded wait then cleanup"
+  ],
+  "hardware_root_cause_proven": false,
+  "physical_replay_display_proven": false
+}

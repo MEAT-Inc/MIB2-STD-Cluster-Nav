@@ -1,0 +1,36 @@
+#define _POSIX_C_SOURCE 200809L
+#include "replay.h"
+#include <pthread.h>
+#include <errno.h>
+#include <string.h>
+#include <time.h>
+#include <limits.h>
+#include <unistd.h>
+static struct replay_config c;
+static pthread_mutex_t mu=PTHREAD_MUTEX_INITIALIZER;
+static pthread_cond_t cv=PTHREAD_COND_INITIALIZER;
+static pthread_t thread;
+static int initialized,running,quit,fd=-1,owned,disabled,fault,attempted;
+static unsigned generation;
+static int fast_initialized,fast_fd=-1;
+static volatile uint32_t *event_report;
+static void event(unsigned n){volatile uint32_t *r=__atomic_load_n(&event_report,__ATOMIC_ACQUIRE);if(r)__atomic_fetch_add(&r[n],1,__ATOMIC_RELAXED);}
+static int tracked(int f){return __atomic_load_n(&fast_initialized,__ATOMIC_ACQUIRE)&&f==__atomic_load_n(&fast_fd,__ATOMIC_ACQUIRE);}
+static uint32_t u32(const unsigned char *p){return (uint32_t)p[0]|(uint32_t)p[1]<<8|(uint32_t)p[2]<<16|(uint32_t)p[3]<<24;}
+static void inc(unsigned n,unsigned v){if(c.report)c.report[n]+=v;}
+static void set(unsigned n,unsigned v){if(c.report)c.report[n]=v;}
+static void fail(unsigned e){fault=1;if(c.report&&!c.report[RP_ERROR])c.report[RP_ERROR]=e;set(RP_STATUS,RPL_ERROR);}
+static uint64_t nowms(void){struct timespec t;if(clock_gettime(CLOCK_MONOTONIC,&t)){fail(errno?errno:EIO);return 0;}return (uint64_t)t.tv_sec*1000+t.tv_nsec/1000000;}
+static void replay_delay(void){struct timespec t={0,1000000};nanosleep(&t,0);}
+static int validate(const unsigned char *p,size_t n){size_t at=32;uint32_t i,j,groups,packets=0,last=0;if(!p||n<32||n>8u*1024*1024||u32(p)!=RPL_MAGIC||u32(p+4)!=1||u32(p+8)!=n||u32(p+20)>120000||u32(p+24)||u32(p+28))return -1;groups=u32(p+12);if(!groups)return -1;for(i=0;i<groups;i++){uint32_t t,b;if(n-at<8)return -1;t=u32(p+at);b=u32(p+at+4);at+=8;if(t<last||t>u32(p+20)||!b||b%188||b>n-at)return -1;for(j=0;j<b;j+=188)if(p[at+j]!=0x47)return -1;packets+=b/188;at+=b;last=t;}return at==n&&packets==u32(p+16)?0:-1;}
+/* Arm grants writes on the known native descriptor; caller holds mu. */
+static int take_ownership(void){if(!initialized||quit||owned||disabled||attempted||fault||fd<0||!c.report||__atomic_load_n(&c.report[21],__ATOMIC_ACQUIRE)!=1||c.report[RP_ERROR]||c.report[RP_STATUS]!=RPL_READY)return 0;if(c.geometry(c.opaque,fd)!=1)return 0;owned=attempted=1;set(RP_STATUS,RPL_ACTIVE);pthread_cond_broadcast(&cv);return 1;}
+static void idle_wait(void){struct timespec t;int rc;if(clock_gettime(CLOCK_REALTIME,&t)){pthread_cond_wait(&cv,&mu);return;}++t.tv_sec;rc=pthread_cond_timedwait(&cv,&mu,&t);if(rc==ETIMEDOUT&&!quit&&c.inspect){pthread_mutex_unlock(&mu);c.inspect(c.opaque,c.report);event(RP_INSPECT_HEARTBEAT);pthread_mutex_lock(&mu);}}
+static void *worker(void *unused){(void)unused;pthread_mutex_lock(&mu);while(!quit){unsigned g;size_t at=32;uint32_t i;uint64_t start;while(!quit&&!owned){if(take_ownership())break;idle_wait();}if(quit)break;g=generation;start=nowms();for(i=0;i<u32(c.file_bytes+12)&&!quit&&owned&&!fault&&g==generation;i++){uint32_t due=u32(c.file_bytes+at),bytes=u32(c.file_bytes+at+4),j;at+=8;while(!quit&&owned&&!fault&&g==generation&&nowms()-start<due){pthread_mutex_unlock(&mu);replay_delay();pthread_mutex_lock(&mu);}if(quit||!owned||fault||g!=generation)break;for(j=0;j<bytes;j+=188){unsigned zeros=0,tries=0;ssize_t n;for(;;){n=c.native_write(fd,c.file_bytes+at+j,188);if(n==188)break;if(n<0&&errno==EINTR&&++tries<32)continue;if(n==0){inc(RP_ZERO,1);if(++zeros<32){pthread_mutex_unlock(&mu);replay_delay();pthread_mutex_lock(&mu);if(quit||!owned||fault||g!=generation)break;continue;}}fail(n<0?(unsigned)errno:EIO);break;}if(quit||!owned||fault||g!=generation||n!=188)break;inc(RP_PACKETS,1);inc(RP_BYTES,188);}if(j!=bytes)break;at+=bytes;inc(RP_GROUPS,1);}if(owned&&g==generation){if(!fault&&i==u32(c.file_bytes+12))set(RP_STATUS,RPL_DONE);while(!quit&&owned&&g==generation)idle_wait();}}pthread_mutex_unlock(&mu);return 0;}
+void replay_bind_callbacks(int (*o)(const char *,int,...),ssize_t (*w)(int,const void *,size_t),int (*cl)(int)){pthread_mutex_lock(&mu);if(initialized){pthread_mutex_unlock(&mu);_exit(126);}c.native_open=o;c.native_write=w;c.native_close=cl;pthread_mutex_unlock(&mu);}
+int replay_init(const struct replay_config *cfg){int e;if(!cfg||!cfg->native_open||!cfg->native_write||!cfg->native_close||!cfg->geometry||validate(cfg->file_bytes,cfg->file_size))return -1;pthread_mutex_lock(&mu);if(initialized){pthread_mutex_unlock(&mu);return -1;}c=*cfg;__atomic_store_n(&event_report,c.report,__ATOMIC_RELEASE);quit=owned=disabled=fault=attempted=0;fd=-1;generation=0;set(RP_STATUS,c.defer_ready?0:RPL_READY);set(RP_FD,(unsigned)-1);set(RP_DURATION,u32(c.file_bytes+20));set(RP_EXPECTED,u32(c.file_bytes+16));set(RP_LOADED,c.file_size);initialized=1;__atomic_store_n(&fast_fd,-1,__ATOMIC_RELEASE);__atomic_store_n(&fast_initialized,1,__ATOMIC_RELEASE);e=pthread_create(&thread,0,worker,0);if(e){initialized=0;__atomic_store_n(&fast_initialized,0,__ATOMIC_RELEASE);fail(e);}else running=1;pthread_mutex_unlock(&mu);return e?-1:0;}
+int replay_publish_ready(void){int ok;pthread_mutex_lock(&mu);ok=initialized&&!fault&&!owned;if(ok)set(RP_STATUS,RPL_READY);pthread_mutex_unlock(&mu);return ok?0:-1;}
+void replay_stop(void){int join;pthread_mutex_lock(&mu);quit=1;owned=0;++generation;pthread_cond_broadcast(&cv);join=running;pthread_mutex_unlock(&mu);if(join)pthread_join(thread,0);pthread_mutex_lock(&mu);running=initialized=0;fd=-1;__atomic_store_n(&fast_fd,-1,__ATOMIC_RELEASE);__atomic_store_n(&fast_initialized,0,__ATOMIC_RELEASE);pthread_mutex_unlock(&mu);}
+int replay_open_impl(const char *path,int flags,unsigned mode,uintptr_t lr){int n,e;event(RP_HOOK_OPENS);if(!c.native_open)_exit(126);n=c.native_open(path,flags,mode);e=errno;pthread_mutex_lock(&mu);if(initialized&&lr==c.open_lr&&path&&!strcmp(path,"/dev/transport_server/spawn/isoTX")&&flags==1&&n>=0){inc(RP_OPENS,1);if(fd<0){fd=n;__atomic_store_n(&fast_fd,n,__ATOMIC_RELEASE);disabled=fault=0;++generation;set(RP_GENERATION,generation);set(RP_FD,fd);}}pthread_mutex_unlock(&mu);errno=e;return n;}
+ssize_t replay_write_impl(int f,const void *p,size_t n,uintptr_t lr){ssize_t result;int e=errno;event(RP_HOOK_WRITES);if(!c.native_write)_exit(126);if(!tracked(f))return c.native_write(f,p,n);pthread_mutex_lock(&mu);if(!initialized||f!=fd){pthread_mutex_unlock(&mu);errno=e;return c.native_write(f,p,n);}inc(RP_WRITES,1);inc(RP_REQUESTED,(unsigned)n);if(lr!=c.write_lr){inc(RP_BAD_CALLERS,1);disabled=1;if(owned)fail(EPERM);}if(lr==c.write_lr)take_ownership();if(owned){inc(RP_SUPPRESSED,1);pthread_mutex_unlock(&mu);errno=e;return (ssize_t)n;}errno=e;result=c.native_write(f,p,n);e=errno;pthread_mutex_unlock(&mu);errno=e;return result;}
+int replay_close_impl(int f,uintptr_t lr){int n,e=errno;event(RP_HOOK_CLOSES);if(!c.native_close)_exit(126);if(!tracked(f))return c.native_close(f);pthread_mutex_lock(&mu);if(!initialized||f!=fd){pthread_mutex_unlock(&mu);errno=e;return c.native_close(f);}inc(RP_CLOSES,1);if(lr!=c.close_lr)inc(RP_BAD_CALLERS,1);owned=0;fd=-1;disabled=0;++generation;set(RP_GENERATION,generation);set(RP_FD,(unsigned)-1);pthread_cond_broadcast(&cv);errno=e;n=c.native_close(f);e=errno;__atomic_store_n(&fast_fd,-1,__ATOMIC_RELEASE);pthread_mutex_unlock(&mu);errno=e;return n;}

@@ -1,0 +1,72 @@
+2026-11-02 CURRENT: FIRST VISIBLE CLUSTER MAP REPLAY TEST READY
+=============================================================
+User priority: make visible-map progress; narrow scope remains AA cluster maps.
+Next car run attempts ACTUAL Google Maps pixels on the instrument cluster using
+our captured recording, with phone unplugged to separate decoder/writer validation
+from the live phone-navigation display policy. This is recorded playback, not live
+or current guidance. No car commands executed during this development turn.
+
+Implemented isolated NavigationServer launcher preserving procman argv,cwd and
+relative config identity,with stock binary/config references and owned RAM alias
+removed before exec. Exact firmware pin remains a999725350df8503c44a25da2676a8c1a99914a99a36f24bb6334a509def4afe.
+No AndroidAuto,Most,TransportServer,DisplayManagement or procman restart requested.
+A20-second checkpoint leaves observed Nav running; no timed post-capture signal.
+Host keeps phone unplugged throughout,waits for replay completion then requests
+explicit disconnected cleanup. Pending/error cleanup supports a no-relaunch resume.
+
+Replay shim interposes only app open/write/close imports. Exact native caller LR
+0x1ee760/0x22cdb8/0x1ee30c and firmware code preimages,libc origin,ELF ABI and native
+800x480 current encoder descriptor gate activation. Native opens/owns isoTX; shim
+never opens a competing writer. Worker serializes native source suppression and
+188-byte playback writes with descriptor generation/close. Native fragments remain
+muted through EOF/error until native close or supervised stock restoration. Owned
+source is one-shot; fd reuse cannot accidentally replay again. Zero writes retry
+bounded32times; positive short writes and capped EINTR fail without prefix replay.
+
+Arming is explicit: initial Nav runs in passive forwarding mode until operator
+confirms the factory map is visibly present IN THE CLUSTER. nav_launch arm-replay
+validates report and active process/start/reference identity,then CAS reportword21.
+This avoids playing the sole recorded IDR before cluster view readiness. Phone
+property2910005/BAP38 remain stock during this disconnected recording experiment.
+
+Input is the validated617-frame,800x480 Baseline Google Maps recording. Actual
+microsecond timestamp deltas map to native milliseconds for paced48.266s playback.
+Four adaptation-only discontinuity packets reset PAT/PMT/video/PCR continuity and
+PCR timeline before the recording. Independent FFmpeg decode verifies all617RGB
+frame hashes still exactly equal source after this prelude. No phone IPC/HMI patch
+or persistent firmware/config write is included in this first display experiment.
+
+Offboard gates passed: native replay ownership/errno/pacing/EOF/zero/short/fd reuse;
+actual QNX preload with original caller-LR hooks,passive-before-arm then takeover;
+QNX stock-procman lifecycle,argv/cwd/config,identity and lock refusal,controller-loss,
+explicit cleanup and idempotence; new arm identity refusal/idempotence.9 host workflow
+tests cover visible/invisible,SKIP,interruption,single refused cleanup and resume
+without a second launch/arm. Portable extracted Python -S plan and asset checks,
+ARM32EABIv5/libc-only/export gates,ZIPCRC and every payload/script hash passed.
+These are offboard tests. Actual NavigationServer/FPK/cluster playback is untested.
+
+CAR NEEDED NOW
+Extract native/cluster-bridge/replay/cluster-map-replay-laptop.zip into laptop project.
+Ignition on,Ethernet connected,phone unplugged THROUGHOUT:
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Select factory VW map view in instrument cluster. Wait for it to appear after the
+Nav restart,then press Enter at prompt to arm playback. SKIP restores without arming.
+Watch cluster for about48seconds. Script restores stock Nav,then asks whether the
+recorded Google Maps appeared IN THE CLUSTER. Do not swap Ethernet for phone.
+Return ENTIRE new delphi-dump/_cluster_replay_* folder,including partial results.
+Pending cleanup command printed with exactfolder:
+ python scripts/run_cluster_replay.py --resume "delphi-dump/<folder>" --phone-unplugged
+Release manifest/provenance are copied into every collection. Cleanup uses saved
+profile and verifies same controller; resume never launches or arms again.
+
+Distance: this is the first physical display test,not final live navigation. If
+replay succeeds,the native writer/decoder path is established. Remaining live work
+is bounded phone-to-writer feed,session/source arbitration integration and cluster
+phone-navigation presentation policy. No reliable ETA/test count until car result.
+
+Release bytes: 5511980
+SHA256: b02ae8e0ae51f74929d17d9d38dbee683bd778a0dd6991fb35fa4862520b9da5
+Release review:delphi-analysis/control-runtime/cluster-map-replay-release.json
+Native sources:native/cluster-bridge/replay/ and native/cluster-bridge/nav-launch/
+Python runner:scripts/run_cluster_replay.py; tests:scripts/test_cluster_replay.py
+

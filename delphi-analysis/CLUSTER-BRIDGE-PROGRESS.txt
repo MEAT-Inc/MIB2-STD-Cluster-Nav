@@ -1,3 +1,368 @@
+2026-11-03: V4 channel works; V5 corrects launcher exec-identity race
+Reviewed _cluster_replay_20261103_123923_179465c3; all17 artifact hashes/sizes
+verified. Native endpoint opened twice,2540 tracked writes,FD137 matches encoder,
+800x480 image/buffer geometry with no padding, retained GOT wrappers, heartbeat8,
+inspection error0. This clears native startup/channel activation observed in V3.
+Arm stayed0 and packets0: host arm command returned3 before playback. Controller
+error1100 and cleanup refusal3 occurred although observedPID1200213 still ran.
+No cluster-decoder result or live-map success can be inferred from this run.
+
+Root cause reproduced under ARM QNX: the wrapper publishes its PID before exec;
+its alias-loaded debug pathname is already canonical NavigationServer. The old
+watchdog could save that wrapper identity before exec changed its start time.
+The final NavigationServer has the same PID but a new start identity. Exact
+identity checks correctly rejected both arm and cleanup against the stale saved
+identity. V4 did not capture the later native start timestamp; this hardware
+interpretation is supported by the matching failure sequence and deterministic
+QNX reproduction rather than a direct pair of hardware timestamp snapshots.
+
+V5 requires a regular512-byte nonce-bound module report with exact magic/version/
+PID and post-initialization status before acquiring the observed identity. It
+retains exact PID/start/parent/image checks; no adoption/repair of unknown state.
+The same-PID/unknown-start case also cannot be accepted as restored stock. Native
+arm refusal now records stage and expected/current identity; the Python runner
+retains arm.txt even when the command fails. No video/packetizer/codec changes.
+QNX checks cover the actual production launcher lifecycle plus a separate
+compile-only delayed race fixture proving the pre/postexec identity difference.
+No test delay is included in production.17 Python workflow tests pass including
+arm refusal/log retention/one cleanup and no false playback claim.
+
+V4 cleanup was refused. Restart the head unit once (hold power about10seconds)
+before the next test so factory navigation and the RAM launch namespace reset.
+Extract native/cluster-bridge/replay/cluster-map-replay-v5-laptop.zip into laptop
+project. Ignition on, Ethernet connected, phone unplugged throughout. Run:
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Select factory map view IN THE CLUSTER and follow the explicit arm prompt. Return
+the whole new _cluster_replay_* folder. This remains recorded-map replay; live AA
+feeding and phone-session presentation follow only after physical replay works.
+No head-unit commands were issued by this local review/build.
+
+--- Earlier investigation notes ---
+
+2026-11-03: V3 reviewed; V4 startup-equivalence replay bundle ready
+Collection _cluster_replay_20261103_045557_f11ecfa8: all15 artifact hashes/sizes
+verified. Libc profile matches base0x01000000, dladdr name /usr/lib/ldqnx.so.2.
+Bootstrap reached stage7/READY error0 and arm1. Qualified native opens0, tracked
+writes0, replay packets0. This is BEFORE replay video delivery, not evidence of
+cluster decoder rejection. V3 did not count unrelated hook calls or inspect live
+GOT/encoder state, so the exact inactive-path cause remains unproved.
+User reports factory maps return after the routine. Cleanup returned0 and complete
+markers; connection reset prevented independent final process verification.
+
+V4 executes the canonical factory NavigationServer image (RAM copy remains only
+reference), preserves factory stdout/stderr, and bypasses the replay mutex for
+unrelated writes/closes. Only initializer messages use a private bounded log.
+Read-only idle telemetry captures hook calls, current GOT, native encoder pointer,
+FD, dimensions/padding, inspection error and heartbeat. No automatic GOT repair or
+adoption of unknown native descriptors. Fresh geometry also rechecks retained hooks.
+The host waits up to60sec for qualified native open, matching descriptors, retained
+hooks,800x480 geometry and heartbeat BEFORE operator confirmation/arming. If absent,
+collect replay-channel.bin and restore stock without arming an empty120sec loop.
+Validated617-frame recording, timing and transport are unchanged. Actual physical
+replay packets have NOT yet been delivered. Startup fixes are candidates pending
+car validation; successful offline tests do not prove the car's native startup.
+
+Validation: Linux ASAN/UBSAN replay fixture (including unrelated/reentrant I/O);
+ARM QNX fixtures for idle inspection, real import/preload calls, libc profile,
+early-I/O regression, ownership/errno/pacing/short/zero/fd reuse; canonical image,
+preserved stdio, explicit arm/refusal and stock restoration lifecycle.16 Python
+workflow tests; portable extracted plan/assets and617 decoded RGB hashes all pass.
+
+Next car test (Python laptop bundle; no commands issued to car during this work):
+Extract native/cluster-bridge/replay/cluster-map-replay-v4-laptop.zip into laptop
+project. Ignition on, Ethernet connected, phone unplugged throughout. Select the
+factory navigation map view in the instrument cluster.
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Arm only when factory map is visible IN THE CLUSTER. Return the whole new
+_cluster_replay_* folder even if the native-channel gate fails. The next result
+will distinguish no hook traffic, overwritten imports, absent encoder and FD/
+geometry mismatch before considering codec/transport changes.
+
+After physical recorded-map delivery works, live AA feeding and phone-session
+cluster presentation remain necessary. Do not claim live navigation from replay.
+
+BundleSHA256: a9730cd9115ef2a3070a0e0122e8eb4f65da4fad520e31f7b5d0323166adf114
+
+--- Earlier investigation notes ---
+
+2026-11-03 CURRENT: V2 STOPPED AT LIBC GATE; V3 CODE-VALIDATED REPLAY READY
+=====================================================================
+User correction: factory maps return after script finishes. Treat Starting
+Navigation as the startup transition in this run,not a persistent hang. Don't
+expand recovery investigation; focus remains maps on cluster.
+
+V2 hardware collection _cluster_replay_20261103_040408_6f1d5bef: all9 manifest
+artifact hashes verified. Report exists,Nav remained alive at checkpoint(error0).
+Replay status4,error1002,bootstrapstage1,allpacket/suppression counters0. This is
+exactly our dladdr/filename provenance check. NOhooks installed,NOarm,NOstream sent.
+This does not exercise decoder,transport pacing or recorded map compatibility.
+No actualfunction/name data was captured before this guard,so whether dladdr
+returnedfalse or an unexpectedname is unknown. Cleanup command returned0 and
+wrote LAUNCH_RESTORED/LAUNCH_COMPLETE. FTP/telnet connection reset then prevented
+final snapshotverification; user's visiblefactorymap recovery is separate evidence.
+
+V3 directly opens the already-needed libc.so.3 object with dlopen and resolves
+open/write/close from that handle,not RTLD_DEFAULT/NEXT global search. SDK testing
+showed RTLD_DEFAULT returned app importstubs foropen/close; this demonstrates the
+lookup hazard,not proof of the original unit's exact resolved pointers. Removed
+all dladdr/name checks from loader (diagnostic only in read-only helper).
+New guard verifies actualunit libc: mappedELF32LE ARM ET_DYN header,relative symbol
+offsets(open17ffc,write1a334,close163d4) and32immutable codebytes for each. Prefixes
+are extracted from captured libcSHA76ff9b07201a77ad231905741b25a97fd722a163c26a7ca0e36f17331bd12e9b;
+generator rejects code relocations. Code/profile validation doesn't trust names.
+Bounded pread64 loops handle high32bit addresses,EINTR and partialreads. Unitopen
+entry crosses a page boundary. QNX regression forces aligned2bytefingerprintreads
+and still passes fullprofile+app-import replay. NormalELFstring reads remainfull
+request withshort-read handling; QNX rejects some artificialunaligned2byte requests.
+
+New replay_libc_check standalone program runs BEFORE nav_launch. It uses the same
+unit profile,outputs resolvedaddresses/bytes/base and optionaldladdr diagnostics.
+If profile mismatches,hoststops WITHOUT restarting NavigationServer or arming any
+video. Helper is a fourth hashednativeasset. It reads onlyitsownprocessmemory.
+FullNav app-only3import transaction,explicitvisiblemap arm,geometry/currentfd gate,
+recording/timebase/clock-reset packets and sourceownership remain unchanged.
+
+Startup logs now fetched BEFORE cleanup as well as after,to retain them if the
+post-cleanup connection resets. Nativecleanup acknowledgement/complete marker are
+recorded separately from final PID/hostverification. No repeatedcleanup signal or
+newradio/services recovery logic introduced. Reportword36 validatedlibcbase;37+
+reserved. Manifeststartup contract3; V1/V2 held bynewrunner. ActualV3 car nottested.
+
+Validation:13Python workflow tests pass,including mismatch -> noNavrestart/arm/
+cleanup,bootstraplogs,loading/errors,SKIP/interruption/cleanuprefusal/resume. QNX
+libc profilepositive/negative fixtures,read-only helper,forcedpartialreads,3slot
+transaction,replay pacing/ownership,earlylegacyexit126 and correctedrealapp replay
+pass. Navlaunch/stdout/stderr/arming/restoration lifecycle tests remainpassed.
+All617 sourceRGBframes stillidentical; portable-S plan/assets,ELF imports,ZIPCRC
+and everynative/script hash pass. No newcar commands executed this turn.
+
+NEXTCAR RUN: extract V3 bundle into laptopproject,replacingbundledfiles. Factory
+navavailable,ignitionon,Ethernetconnected,phoneunplugged throughout:
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Read-onlylibc check runsfirst. Ifitpasses,Navrestarts; waitforfactorymap INCLUSTER
+thenEnter to arm48s recording. SKIP ifnotavailable. Returnentirenew
+ delphi-dump/_cluster_replay_* folder includingpartial. No separatepreflight run
+needed. This is stillrecordedGoogleMaps,notliveguidance. Physicaldecoder path
+remainsuntested because bothpriorattemptsstopped before sendingvideo.
+
+V3 bundle: native/cluster-bridge/replay/cluster-map-replay-v3-laptop.zip
+Bytes: 5520868
+SHA256: e7b1e0884bbb6a8c3764a1f85744163e6947ecac4dd7bbccdff6ba01f764cc30
+Release review:delphi-analysis/control-runtime/cluster-map-replay-release.json
+Hardware review:delphi-analysis/cluster-bridge/20261103-replay-v2-review/review.json
+
+PRIOR CHECKPOINTS (superseded where inconsistent)
+================================================
+2026-11-02 CURRENT: REPLAY V1 STARTUP FAILURE; APP-ONLY V2 READY
+============================================================
+User steering: don't spend effort on the Starting Navigation hang; radio reboot
+fixes it. Focus on replay startup and actual maps. No new car actions this turn.
+
+Actual collection _cluster_replay_20261103_032936_b7116dbc: all9 artifact hashes
+verified. Staged Nav/CFG/procman match expected unit. ObservedRAM NavPID1163349
+exited before replay report creation. First controllererror1100. No arm command,
+no replay packets attempted, no decoder/format result. Cleanup did NOT verify
+stock restoration (finalphase4,restoredpid0); do not treat process-only tests as
+on-car recovery proof. User reports radio reboot resolves navigation hang.
+
+The old collector failed to retain start.txt and the wrapped process's output.
+Actual exit code/signal therefore unknown. Reproduced a concrete startup hazard:
+old shim exported global open/write/close before its constructor bound callbacks;
+an early libc I/O call invokes _exit126. QNX regression with an earlier I/O
+constructor proves legacy global-export branch exits126 with no report. This
+fits the car result but does not prove its exact exitcode was126.
+
+V2 removes ALL standard libc exports. Unique hidden wrappers are installed ONLY
+in the main NavigationServer image's three import slots AFTER callbacks,report,
+profile,input and worker are initialized. No hooks exist during dependency init.
+ELF/PT_DYNAMIC names and writable PT_LOAD validated; exact slotsopen5a77e8,
+write5a7554,close5a78ac; original entries must equal actual libc function or the
+pinned lazyPLT122418. Atomic compare-and-swap transaction validatesall before
+stores; rollback preserves foreign changes. No textpatch/mprotect/otherprocess
+memory write. DeferredREADY publishes onlyafterall slotsreadback successfully.
+Arming still requires visible factory map and exact800x480/currentfd geometry.
+
+Reportword22 bootstrapstage0..7;23..25originalGOT;26..28nativefunctions;29..31
+wrappers;32..34slots;35installerresult. Errors beforeREADY retainreport/stage and
+leave hooks absent or rolledback. reportmagic/versionunchanged,manifestcontract2.
+Controller now captures wrappedstdout/stderr to privateRAM nav-startup.txt BEFORE
+exec; QNX lifecycle verifies stderr retention. Host ALWAYS collects start.txt,
+nav-startup.txt (includingempty),cleanup and currentNav/peer/path snapshots,even
+if replay readiness or cleanup fails. Old global-hook manifests are held by the
+new runner. No hang-specific recovery algorithm or extra service restarts added.
+
+Validated: legacy earlyI/O exit126 reproduced; corrected earlyI/O succeeds and
+actual QNX appGOT open/write/close interception completes replay. Import installer
+resolved/lazy/invalid/duplicate/rollback fixtures pass; ownedwriter/errno/pacing/
+short/zero/fd lifecycle pass; startupstderr+launcher/arming/cleanup QNX suitepass.
+12Python workflow tests pass including earlybootstrapfailure logs,noarming on
+failure,oldreleasehold,SKIP,interruption,cleanuprefusal and no-relaunch resume.
+All617 recordedRGB frames remainidentical; portable -S plan/assets,ELFimport/export
+gates,ZIPCRC and every packagedfile/script hash pass. PhysicalNav/cluster V2
+playback is NOT yet tested. Recordedpayload/timing/codec unchanged fromV1.
+
+CAR REQUIRED NEXT: use corrected V2 ZIP,not prior replay ZIP. With normalVW nav
+available,ignitionon,Ethernetconnected,phoneunplugged THROUGHOUT:
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Wait for factory map IN THE CLUSTER,then Enter to arm48s recording (SKIP ifnot
+available). Return fullnew delphi-dump/_cluster_replay_* folder,includingpartial.
+This remains recordedmap playback,not liveguidance. No need to repeat the prior
+failure or make a separate hang-recovery collection. Ifstartupfailsagain,the
+missingdiagnostics/stage evidence nowarrive in the same collection.
+
+V2 bundle: native/cluster-bridge/replay/cluster-map-replay-v2-laptop.zip
+Bytes: 5515049
+SHA256: 6800f180ef69ea87a0bdf4dd5f04805d520eeae8eafab754295e2b81f9ed3439
+Release review:delphi-analysis/control-runtime/cluster-map-replay-release.json
+Hardware review:delphi-analysis/cluster-bridge/20261103-replay-startup-review/review.json
+
+PRIOR CHECKPOINTS (superseded where inconsistent)
+================================================
+2026-11-02 CURRENT: FIRST VISIBLE CLUSTER MAP REPLAY TEST READY
+=============================================================
+User priority: make visible-map progress; narrow scope remains AA cluster maps.
+Next car run attempts ACTUAL Google Maps pixels on the instrument cluster using
+our captured recording, with phone unplugged to separate decoder/writer validation
+from the live phone-navigation display policy. This is recorded playback, not live
+or current guidance. No car commands executed during this development turn.
+
+Implemented isolated NavigationServer launcher preserving procman argv,cwd and
+relative config identity,with stock binary/config references and owned RAM alias
+removed before exec. Exact firmware pin remains a999725350df8503c44a25da2676a8c1a99914a99a36f24bb6334a509def4afe.
+No AndroidAuto,Most,TransportServer,DisplayManagement or procman restart requested.
+A20-second checkpoint leaves observed Nav running; no timed post-capture signal.
+Host keeps phone unplugged throughout,waits for replay completion then requests
+explicit disconnected cleanup. Pending/error cleanup supports a no-relaunch resume.
+
+Replay shim interposes only app open/write/close imports. Exact native caller LR
+0x1ee760/0x22cdb8/0x1ee30c and firmware code preimages,libc origin,ELF ABI and native
+800x480 current encoder descriptor gate activation. Native opens/owns isoTX; shim
+never opens a competing writer. Worker serializes native source suppression and
+188-byte playback writes with descriptor generation/close. Native fragments remain
+muted through EOF/error until native close or supervised stock restoration. Owned
+source is one-shot; fd reuse cannot accidentally replay again. Zero writes retry
+bounded32times; positive short writes and capped EINTR fail without prefix replay.
+
+Arming is explicit: initial Nav runs in passive forwarding mode until operator
+confirms the factory map is visibly present IN THE CLUSTER. nav_launch arm-replay
+validates report and active process/start/reference identity,then CAS reportword21.
+This avoids playing the sole recorded IDR before cluster view readiness. Phone
+property2910005/BAP38 remain stock during this disconnected recording experiment.
+
+Input is the validated617-frame,800x480 Baseline Google Maps recording. Actual
+microsecond timestamp deltas map to native milliseconds for paced48.266s playback.
+Four adaptation-only discontinuity packets reset PAT/PMT/video/PCR continuity and
+PCR timeline before the recording. Independent FFmpeg decode verifies all617RGB
+frame hashes still exactly equal source after this prelude. No phone IPC/HMI patch
+or persistent firmware/config write is included in this first display experiment.
+
+Offboard gates passed: native replay ownership/errno/pacing/EOF/zero/short/fd reuse;
+actual QNX preload with original caller-LR hooks,passive-before-arm then takeover;
+QNX stock-procman lifecycle,argv/cwd/config,identity and lock refusal,controller-loss,
+explicit cleanup and idempotence; new arm identity refusal/idempotence.9 host workflow
+tests cover visible/invisible,SKIP,interruption,single refused cleanup and resume
+without a second launch/arm. Portable extracted Python -S plan and asset checks,
+ARM32EABIv5/libc-only/export gates,ZIPCRC and every payload/script hash passed.
+These are offboard tests. Actual NavigationServer/FPK/cluster playback is untested.
+
+CAR NEEDED NOW
+Extract native/cluster-bridge/replay/cluster-map-replay-laptop.zip into laptop project.
+Ignition on,Ethernet connected,phone unplugged THROUGHOUT:
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Select factory VW map view in instrument cluster. Wait for it to appear after the
+Nav restart,then press Enter at prompt to arm playback. SKIP restores without arming.
+Watch cluster for about48seconds. Script restores stock Nav,then asks whether the
+recorded Google Maps appeared IN THE CLUSTER. Do not swap Ethernet for phone.
+Return ENTIRE new delphi-dump/_cluster_replay_* folder,including partial results.
+Pending cleanup command printed with exactfolder:
+ python scripts/run_cluster_replay.py --resume "delphi-dump/<folder>" --phone-unplugged
+Release manifest/provenance are copied into every collection. Cleanup uses saved
+profile and verifies same controller; resume never launches or arms again.
+
+Distance: this is the first physical display test,not final live navigation. If
+replay succeeds,the native writer/decoder path is established. Remaining live work
+is bounded phone-to-writer feed,session/source arbitration integration and cluster
+phone-navigation presentation policy. No reliable ETA/test count until car result.
+
+Release bytes: 5511980
+SHA256: b02ae8e0ae51f74929d17d9d38dbee683bd778a0dd6991fb35fa4862520b9da5
+Release review:delphi-analysis/control-runtime/cluster-map-replay-release.json
+Native sources:native/cluster-bridge/replay/ and native/cluster-bridge/nav-launch/
+Python runner:scripts/run_cluster_replay.py; tests:scripts/test_cluster_replay.py
+
+PRIOR CHECKPOINTS (superseded where inconsistent)
+================================================
+2026-11-02 CURRENT: CLUSTER GEOMETRY AND RECORDED MAP VIDEO TIMING REVIEWED
+========================================================================
+Actual collection: _disconnect_observer_20261103_022700_3b445220 (UTC folder).
+All24 manifest artifact sizes/hashes independently verified. Recomputed factory,
+callback,controller restoration,secondary and timing assessments pass. Received617
+frames and617 ACKs,5,485,067 bytes,zero reported drops/native/IO/wire errors.
+
+Native geometry BEFORE phone connection and AFTER phone disconnection is800x480,
+buffer800x480,padding0,rate candidate10,writer fd138. NavigationServer PID704597,
+parent417823,start1422774009265990734 and encoder pointer9011840 unchanged.
+These snapshots DO NOT measure the writer,encoded frame flow or cluster page
+selection DURING the phone route. Do not infer uninterrupted native video.
+
+Native and AA coded dimensions match; no scaler is needed on geometry evidence
+for this phone/configuration. All617 frames decode as800x480 Baseline yuv420p:
+1I-frame+616P. One codec record+617frame records account for every raw byte.
+Each callback exactly matches one demuxed AVC AU (codec prefix on first AU).
+Source timestamp span48,266,456 units over48.203951796 local monotonic seconds
+supports microseconds (~1,001,296.66 units/sec). This is measured evidence,not a
+formal protocol-spec verification. Conversion explicitly uses relative timestamps
+in microseconds -> floor(relative/1000) native milliseconds. No guessed fps.
+
+Recorded-timing Python remux decoded pixel-identically for all617frames. Ported
+packetizer to allocation-free native C with supplied time,IDR gate,1MiB AU bound,
+native PSI/PIDs/PES/PCR and sticky output failure. Linux address/undefined-behavior
+sanitizer fixture and separate QNX ARM fixture pass. Real record input generated
+from validated callbacks produces byte-identical TS in native C vs Python:
+6,013,556 bytes;SHA256 dd0936938df0c1829e197071354db2b61f6596664f56317c844a17e3e5d8f0e0.
+This establishes a native packetizer component,NOT a connected live bridge.
+Sources native/cluster-bridge/mux.[ch],mux-fixture.c,mux-file.c.
+Reproduce offboard with build-mux.sh/test-mux-qemu.sh in existing Docker image.
+No phone/car connection or vehicle writes occurred during this review.
+
+USER'S MOBILE-NAVIGATION MESSAGE
+The report 'Navigation is active on the mobile device' matches stock phone-nav
+handover policy. Exact cluster text rendering is outside captured Java; the
+association with BAP state6 is strongly supported by firmware control flow and
+the reported trigger,not independently captured BAP traffic.
+InfoStates.java getFunctionId returns38;getCurrentBAPInfoState prioritizes any
+phone route active ->states6,including AndroidAuto property2910005. RequestHandler
+focus type2 stops native ROUTE GUIDANCE via NavigationListener.stopGuidance(6),
+then sets that property true,acknowledges phone focus and informs EXBOX. These
+methods do not themselves close isoTX or request a native encoder rate change.
+The message therefore does not establish a capture fault or native video teardown.
+It is a separate cluster presentation/control concern for the eventual bridge.
+
+Do not globally falsify2910005: that affects real phone/nav focus and consumers.
+Future owned-source handoff must preserve truthful phone state and the stock map
+activation lifecycle; if needed,gate ONLY incompatible BAP38 presentation while
+verified AA cluster video is owned/healthy,restoring stock behavior on failure.
+Replacement state/context must be validated; do not blindly force0 or assume
+clearing the message enables video. Live writer/consumer/context still untested.
+During-route writer health can be measured in the eventual controlled handoff
+trial; no repeat standalone collection requested merely to explain this message.
+
+Source evidence under delphi-analysis/display-hmi-java/decompiled/de/vw/mib/:
+  bap/mqbab2/navsd/functions/InfoStates.java (function38 and states6 branch)
+  asl/internal/androidauto/target/RequestHandler.java (phone focus handler)
+  asl/internal/androidauto/target/NavigationListener.java (stopGuidance6)
+See display-hmi-FINDINGS.txt and bridge-analysis-findings.txt for native control.
+Raw native encoder snapshot source native/cluster-bridge/nav_snapshot.c.
+Detailed latest review:
+  delphi-analysis/cluster-bridge/20261103-review/video-review.json
+  delphi-analysis/cluster-bridge/20261103-review/native-mux-review.json
+
+Remaining scope: bounded AA-to-native-writer IPC,exclusive source arbitration,
+cluster control/presentation coordination,and physical decoder/display validation.
+No new firmware patch,HMI patch,source takeover or laptop test release this turn.
+
+PRIOR CHECKPOINT
+================
 2026-10-29 CURRENT STATUS: PHONE MAP VIDEO VERIFIED; CLUSTER PREFLIGHT READY
 ========================================================================
 Goal remains Android Auto maps in the Delphi P0890D instrument cluster.

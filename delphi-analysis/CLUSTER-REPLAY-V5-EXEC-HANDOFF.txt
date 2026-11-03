@@ -1,0 +1,38 @@
+2026-11-03: V4 channel works; V5 corrects launcher exec-identity race
+Reviewed _cluster_replay_20261103_123923_179465c3; all17 artifact hashes/sizes
+verified. Native endpoint opened twice,2540 tracked writes,FD137 matches encoder,
+800x480 image/buffer geometry with no padding, retained GOT wrappers, heartbeat8,
+inspection error0. This clears native startup/channel activation observed in V3.
+Arm stayed0 and packets0: host arm command returned3 before playback. Controller
+error1100 and cleanup refusal3 occurred although observedPID1200213 still ran.
+No cluster-decoder result or live-map success can be inferred from this run.
+
+Root cause reproduced under ARM QNX: the wrapper publishes its PID before exec;
+its alias-loaded debug pathname is already canonical NavigationServer. The old
+watchdog could save that wrapper identity before exec changed its start time.
+The final NavigationServer has the same PID but a new start identity. Exact
+identity checks correctly rejected both arm and cleanup against the stale saved
+identity. V4 did not capture the later native start timestamp; this hardware
+interpretation is supported by the matching failure sequence and deterministic
+QNX reproduction rather than a direct pair of hardware timestamp snapshots.
+
+V5 requires a regular512-byte nonce-bound module report with exact magic/version/
+PID and post-initialization status before acquiring the observed identity. It
+retains exact PID/start/parent/image checks; no adoption/repair of unknown state.
+The same-PID/unknown-start case also cannot be accepted as restored stock. Native
+arm refusal now records stage and expected/current identity; the Python runner
+retains arm.txt even when the command fails. No video/packetizer/codec changes.
+QNX checks cover the actual production launcher lifecycle plus a separate
+compile-only delayed race fixture proving the pre/postexec identity difference.
+No test delay is included in production.17 Python workflow tests pass including
+arm refusal/log retention/one cleanup and no false playback claim.
+
+V4 cleanup was refused. Restart the head unit once (hold power about10seconds)
+before the next test so factory navigation and the RAM launch namespace reset.
+Extract native/cluster-bridge/replay/cluster-map-replay-v5-laptop.zip into laptop
+project. Ignition on, Ethernet connected, phone unplugged throughout. Run:
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Select factory map view IN THE CLUSTER and follow the explicit arm prompt. Return
+the whole new _cluster_replay_* folder. This remains recorded-map replay; live AA
+feeding and phone-session presentation follow only after physical replay works.
+No head-unit commands were issued by this local review/build.

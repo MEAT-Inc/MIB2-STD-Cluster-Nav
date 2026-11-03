@@ -1,0 +1,63 @@
+2026-11-02 CURRENT: REPLAY V1 STARTUP FAILURE; APP-ONLY V2 READY
+============================================================
+User steering: don't spend effort on the Starting Navigation hang; radio reboot
+fixes it. Focus on replay startup and actual maps. No new car actions this turn.
+
+Actual collection _cluster_replay_20261103_032936_b7116dbc: all9 artifact hashes
+verified. Staged Nav/CFG/procman match expected unit. ObservedRAM NavPID1163349
+exited before replay report creation. First controllererror1100. No arm command,
+no replay packets attempted, no decoder/format result. Cleanup did NOT verify
+stock restoration (finalphase4,restoredpid0); do not treat process-only tests as
+on-car recovery proof. User reports radio reboot resolves navigation hang.
+
+The old collector failed to retain start.txt and the wrapped process's output.
+Actual exit code/signal therefore unknown. Reproduced a concrete startup hazard:
+old shim exported global open/write/close before its constructor bound callbacks;
+an early libc I/O call invokes _exit126. QNX regression with an earlier I/O
+constructor proves legacy global-export branch exits126 with no report. This
+fits the car result but does not prove its exact exitcode was126.
+
+V2 removes ALL standard libc exports. Unique hidden wrappers are installed ONLY
+in the main NavigationServer image's three import slots AFTER callbacks,report,
+profile,input and worker are initialized. No hooks exist during dependency init.
+ELF/PT_DYNAMIC names and writable PT_LOAD validated; exact slotsopen5a77e8,
+write5a7554,close5a78ac; original entries must equal actual libc function or the
+pinned lazyPLT122418. Atomic compare-and-swap transaction validatesall before
+stores; rollback preserves foreign changes. No textpatch/mprotect/otherprocess
+memory write. DeferredREADY publishes onlyafterall slotsreadback successfully.
+Arming still requires visible factory map and exact800x480/currentfd geometry.
+
+Reportword22 bootstrapstage0..7;23..25originalGOT;26..28nativefunctions;29..31
+wrappers;32..34slots;35installerresult. Errors beforeREADY retainreport/stage and
+leave hooks absent or rolledback. reportmagic/versionunchanged,manifestcontract2.
+Controller now captures wrappedstdout/stderr to privateRAM nav-startup.txt BEFORE
+exec; QNX lifecycle verifies stderr retention. Host ALWAYS collects start.txt,
+nav-startup.txt (includingempty),cleanup and currentNav/peer/path snapshots,even
+if replay readiness or cleanup fails. Old global-hook manifests are held by the
+new runner. No hang-specific recovery algorithm or extra service restarts added.
+
+Validated: legacy earlyI/O exit126 reproduced; corrected earlyI/O succeeds and
+actual QNX appGOT open/write/close interception completes replay. Import installer
+resolved/lazy/invalid/duplicate/rollback fixtures pass; ownedwriter/errno/pacing/
+short/zero/fd lifecycle pass; startupstderr+launcher/arming/cleanup QNX suitepass.
+12Python workflow tests pass including earlybootstrapfailure logs,noarming on
+failure,oldreleasehold,SKIP,interruption,cleanuprefusal and no-relaunch resume.
+All617 recordedRGB frames remainidentical; portable -S plan/assets,ELFimport/export
+gates,ZIPCRC and every packagedfile/script hash pass. PhysicalNav/cluster V2
+playback is NOT yet tested. Recordedpayload/timing/codec unchanged fromV1.
+
+CAR REQUIRED NEXT: use corrected V2 ZIP,not prior replay ZIP. With normalVW nav
+available,ignitionon,Ethernetconnected,phoneunplugged THROUGHOUT:
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Wait for factory map IN THE CLUSTER,then Enter to arm48s recording (SKIP ifnot
+available). Return fullnew delphi-dump/_cluster_replay_* folder,includingpartial.
+This remains recordedmap playback,not liveguidance. No need to repeat the prior
+failure or make a separate hang-recovery collection. Ifstartupfailsagain,the
+missingdiagnostics/stage evidence nowarrive in the same collection.
+
+V2 bundle: native/cluster-bridge/replay/cluster-map-replay-v2-laptop.zip
+Bytes: 5515049
+SHA256: 6800f180ef69ea87a0bdf4dd5f04805d520eeae8eafab754295e2b81f9ed3439
+Release review:delphi-analysis/control-runtime/cluster-map-replay-release.json
+Hardware review:delphi-analysis/cluster-bridge/20261103-replay-startup-review/review.json
+

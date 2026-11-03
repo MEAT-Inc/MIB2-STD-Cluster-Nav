@@ -1,0 +1,26 @@
+{
+  "collection": "_disconnect_observer_20261103_022700_3b445220",
+  "native_mux_qnx_tested": true,
+  "linux_address_undefined_sanitizer_fixture_passed": true,
+  "real_capture_frames": 617,
+  "native_ts_bytes": 6013556,
+  "native_ts_sha256": "dd0936938df0c1829e197071354db2b61f6596664f56317c844a17e3e5d8f0e0",
+  "native_ts_equals_independently_decoded_python_reference": true,
+  "real_timing_used": true,
+  "clock_units_used": "microseconds supported by observed source/arrival clock ratio",
+  "vehicle_transport_connected": false,
+  "physical_cluster_decoder_tested": false,
+  "source_sha256": {
+    "native/cluster-bridge/mux-file.c": "dad4919bbc49a9a8423dbf28e8d5cc0da9051fc1bce079989111b89ae11235b6",
+    "native/cluster-bridge/mux-fixture.c": "3ae0d30021df0e155aaff9d16a4835127cc2723fef32f1c4dc1a891452c888bc",
+    "native/cluster-bridge/mux.c": "eb206a216c1cb2ded6d2e472cb0797dd5bfa9f24119006162e7ae8eb50127517",
+    "native/cluster-bridge/mux.h": "7a4f9acd2cf9bdbc2b93d79fe90d9d826954ddc6a1a8b797a2146746f8dbaf26"
+  },
+  "artifact_sha256": {
+    "mux-file-linux": "2d159a785462312eb5da0d3f8a76eddfff4be64527c4806fe594ccaa2a314df7",
+    "mux-file-qnx": "3e58676330f9939e479365b7e41a34b36a2be889c6ddd960557010a55c038eef",
+    "mux-fixture-linux": "9aade99f62dc21c5d379097f30cc2fe1c88bb531f95f98b098a3cae6eb4e5cd5",
+    "mux-fixture-qnx": "002681886e4375b082bc27208b8f18d8e2db7944c9cd0b806a7890d2910c261f",
+    "mux-qnx.o": "3fa35c991987448b7d82a610a6f5a529cc04d87120af08c34d898136010e95d0"
+  }
+}

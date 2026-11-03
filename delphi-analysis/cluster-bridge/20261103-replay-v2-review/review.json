@@ -1,0 +1,20 @@
+{
+  "collection": "_cluster_replay_20261103_040408_6f1d5bef",
+  "verified_artifacts": 9,
+  "bootstrap_stage": 1,
+  "bootstrap_error": 1002,
+  "controller_checkpoint_error": 0,
+  "hooks_installed": false,
+  "packets_sent": 0,
+  "native_cleanup_command_exit": 0,
+  "native_cleanup_markers": [
+    "LAUNCH_RESTORED",
+    "LAUNCH_COMPLETE"
+  ],
+  "host_final_verification_incomplete": "Connection reset during collection",
+  "user_observation": "Factory maps return after script finishes",
+  "exact_dladdr_failure_variant_unknown": true,
+  "v3_bundle": "native/cluster-bridge/replay/cluster-map-replay-v3-laptop.zip",
+  "v3_sha256": "e7b1e0884bbb6a8c3764a1f85744163e6947ecac4dd7bbccdff6ba01f764cc30",
+  "v3_car_tested": false
+}

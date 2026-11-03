@@ -1,0 +1,43 @@
+2026-11-03: V3 reviewed; V4 startup-equivalence replay bundle ready
+Collection _cluster_replay_20261103_045557_f11ecfa8: all15 artifact hashes/sizes
+verified. Libc profile matches base0x01000000, dladdr name /usr/lib/ldqnx.so.2.
+Bootstrap reached stage7/READY error0 and arm1. Qualified native opens0, tracked
+writes0, replay packets0. This is BEFORE replay video delivery, not evidence of
+cluster decoder rejection. V3 did not count unrelated hook calls or inspect live
+GOT/encoder state, so the exact inactive-path cause remains unproved.
+User reports factory maps return after the routine. Cleanup returned0 and complete
+markers; connection reset prevented independent final process verification.
+
+V4 executes the canonical factory NavigationServer image (RAM copy remains only
+reference), preserves factory stdout/stderr, and bypasses the replay mutex for
+unrelated writes/closes. Only initializer messages use a private bounded log.
+Read-only idle telemetry captures hook calls, current GOT, native encoder pointer,
+FD, dimensions/padding, inspection error and heartbeat. No automatic GOT repair or
+adoption of unknown native descriptors. Fresh geometry also rechecks retained hooks.
+The host waits up to60sec for qualified native open, matching descriptors, retained
+hooks,800x480 geometry and heartbeat BEFORE operator confirmation/arming. If absent,
+collect replay-channel.bin and restore stock without arming an empty120sec loop.
+Validated617-frame recording, timing and transport are unchanged. Actual physical
+replay packets have NOT yet been delivered. Startup fixes are candidates pending
+car validation; successful offline tests do not prove the car's native startup.
+
+Validation: Linux ASAN/UBSAN replay fixture (including unrelated/reentrant I/O);
+ARM QNX fixtures for idle inspection, real import/preload calls, libc profile,
+early-I/O regression, ownership/errno/pacing/short/zero/fd reuse; canonical image,
+preserved stdio, explicit arm/refusal and stock restoration lifecycle.16 Python
+workflow tests; portable extracted plan/assets and617 decoded RGB hashes all pass.
+
+Next car test (Python laptop bundle; no commands issued to car during this work):
+Extract native/cluster-bridge/replay/cluster-map-replay-v4-laptop.zip into laptop
+project. Ignition on, Ethernet connected, phone unplugged throughout. Select the
+factory navigation map view in the instrument cluster.
+ python scripts/run_cluster_replay.py --run --phone-unplugged
+Arm only when factory map is visible IN THE CLUSTER. Return the whole new
+_cluster_replay_* folder even if the native-channel gate fails. The next result
+will distinguish no hook traffic, overwritten imports, absent encoder and FD/
+geometry mismatch before considering codec/transport changes.
+
+After physical recorded-map delivery works, live AA feeding and phone-session
+cluster presentation remain necessary. Do not claim live navigation from replay.
+
+BundleSHA256: a9730cd9115ef2a3070a0e0122e8eb4f65da4fad520e31f7b5d0323166adf114
