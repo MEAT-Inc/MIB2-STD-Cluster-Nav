@@ -2,7 +2,7 @@
 
 Research and diagnostic tooling for Android Auto navigation video in the instrument cluster of a Delphi MIB2 infotainment system, with a separate initial CarPlay investigation.
 
-**Status - November 3, 2026:** secondary phone map video, measured geometry/timing, and native MPEG-TS packetization are demonstrated. V6 delivered 5,646 replay packets (1,061,448 bytes) to TransportServer before queue backpressure stopped delivery. Visible recorded maps and live phone-to-cluster navigation remain unconfirmed. Replay experiments are currently held while read-only comparison identifies why the shared factory map session remains unready after a NavigationServer restart.
+**Status - November 3, 2026:** secondary phone map video, measured geometry/timing, and native MPEG-TS packetization are demonstrated. V6 delivered 5,646 replay packets (1,061,448 bytes) to TransportServer before queue backpressure stopped delivery. Visible recorded maps and live phone-to-cluster navigation remain unconfirmed. Replay remains held. Healthy/incomplete session comparison points to a lifecycle problem after abort-based restarts; a guarded orderly shutdown/start helper now passes QNX emulation. The next car gate is functional stock-map recovery on both screens.
 
 ## Target system
 
@@ -53,7 +53,15 @@ The latest reviewed collection is `delphi-dump/_cluster_replay_20261103_132444_5
 
 Stock NavigationServer process restoration and unchanged peer process identities were verified. The user nevertheless observed Starting map on both factory screens until a whole-unit reboot restored them. The unresolved issue is the shared map/session lifecycle; encoder geometry and an open descriptor do not establish HMI/consumer readiness. Longer zero-write retries, codec changes, competing writers, or arbitrary peer restarts are not supported by the current evidence.
 
-**Current next step: read-only map-session comparison, not another replay.** The prepared collector captures two passes of process wait states, descriptors, mappings/timing, existing logs, and core metadata. It does not upload native code, signal/restart processes, preload libraries, or write video. If the unit is already rebooted, collect the healthy state only; do not rerun replay solely to recreate the incomplete session.
+**Current next step: one orderly stock navigation cycle, with the phone unplugged.** Both read-only session captures have been reviewed (120 artifacts verified). The incomplete session has a Screen buffer-registration error after Nav aborts and a non-draining MOST video path; this correlation does not yet establish the stale owner or a proven repair.
+
+The captured factory protocol and guarded helper pass private QNX emulation: Nav app29 receives shutdown event0x163, exits cleanly, then procman app1 receives start event0x161 with uint32 app29. A stale process identity is refused. Actual NavigationServer graphics/components have not been exercised by that synthetic test.
+
+Use [the graceful-cycle instructions](native/cluster-bridge/nav-control/README.txt) and the generated nav-graceful-cycle-laptop.zip. Start with factory maps working on both screens, phone unplugged, parked and ignition on:
+```shell
+python scripts/run_nav_graceful.py --run --phone-unplugged --factory-maps-working
+```
+Return the complete printed _nav_graceful_* folder. The script separately records clean process recovery and your observation of maps on both screens. It sends no fallback signals, performs no replay, and never retries the cycle automatically.
 
 See [CLUSTER-MAP-SESSION-READONLY.txt](delphi-analysis/CLUSTER-MAP-SESSION-READONLY.txt), [map-session collection instructions](native/cluster-bridge/map-session/README.txt), and [CLUSTER-REPLAY-V6-ACTIVATION.txt](delphi-analysis/CLUSTER-REPLAY-V6-ACTIVATION.txt). Earlier [V5 identity findings](delphi-analysis/CLUSTER-REPLAY-V5-EXEC-HANDOFF.txt) remain useful history. No vehicle action was performed for this README update.
 
@@ -77,7 +85,7 @@ python scripts/collect_map_session.py
 
 These display help/a plan without connecting or creating a capture. Script defaults locate the repository from `__file__`, independently of the launch directory. Explicit CLI input/output paths are relative to the current directory unless a script says otherwise. In particular, resume paths must identify the existing capture under this checkout; use the exact printed command.
 
-Read [scripts/USAGE.txt](scripts/USAGE.txt), and [current map-session instructions](native/cluster-bridge/map-session/README.txt) before vehicle work. The current collector is read-only; its default invocation shows a plan without connecting. Replay runners remain in the repository as development history, but replay is held pending the map-session comparison. Use the latest map-session package instructions for the current vehicle collection.
+Read [scripts/USAGE.txt](scripts/USAGE.txt), and [current map-session instructions](native/cluster-bridge/map-session/README.txt) before vehicle work. The current collector is read-only; its default invocation shows a plan without connecting. Replay runners remain held pending functional map restoration. Use the graceful-cycle package instructions for the next vehicle test; the read-only collector remains available for comparison.
 
 ### Optional offline analysis environment
 
@@ -164,8 +172,8 @@ Acquired firmware, discovery packets, video, configuration, and traces may conta
 
 ## Next steps
 
-1. Compare read-only factory-map session evidence from healthy and incomplete states, using only the healthy state if the unit has already been rebooted.
-2. Identify the blocked HMI/consumer/session dependency and establish functional factory-map restoration before resuming replay. Do not substitute a fresh process identity for working map rendering.
+1. Run the prepared single orderly stock-map cycle and verify factory maps return on both screens. The captured protocol and guarded cycle pass QNX; physical component teardown remains untested.
+2. If functional recovery passes, replace replay's abort-based lifecycle with the validated orderly shutdown/explicit-start path. If it fails, use the collected existing traces to identify the remaining shared-session dependency.
 3. Resume controlled recorded playback only after a concrete lifecycle fix; verify sustained delivery and visible Google Maps pixels in the cluster.
 4. After physical replay works, implement bounded live phone-to-native source substitution and phone-session presentation while preserving timing, backpressure, single-writer ownership, and stock restoration.
 

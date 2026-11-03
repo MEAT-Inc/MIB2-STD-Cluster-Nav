@@ -26,6 +26,8 @@ libc.so.3
 procnto-smp
 devc-serdebug
 sal_init_fixture
+nav_cycle
+nav_cycle_test
 idle_fixture
 procman
 manager.cfg

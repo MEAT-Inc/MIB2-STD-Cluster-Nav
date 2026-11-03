@@ -75,7 +75,7 @@
     "New stock Nav process does not certify functional map restoration"
   ],
   "native_contract": {
-    "nav_app": 30,
+    "nav_app": 29,
     "procman_app": 1,
     "shutdown_event": 355,
     "shutdown_payload_bytes": 0,
@@ -89,7 +89,7 @@
       "stop app threads"
     ],
     "start_event": 353,
-    "start_payload_u32": 30,
+    "start_payload_u32": 29,
     "start_queue": 0,
     "start_receiver": "0x104f1c",
     "clean_exit_requires_explicit_start": true
@@ -102,6 +102,18 @@
     "permission_sleep_return": "0x1bd544",
     "retry_sleep_return": "0x1bd9a0"
   },
-  "status": "replay_held_graceful_control_emulator_validation_in_progress",
-  "car_commands_issued": false
+  "status": "replay_held_guarded_graceful_cycle_qnx_passed_car_recovery_pending",
+  "car_commands_issued": false,
+  "native_control_validation": {
+    "nav_app": 29,
+    "id_table_base": "0x12653c",
+    "id_table_layout": "uint32 id, pointer name; stride 8",
+    "qnx_guarded_cycle_passed": true,
+    "wrong_start_identity_refused": true,
+    "clean_exit_status": 0,
+    "explicit_start_required": true,
+    "helper_sha256": "afc23211f53710925c695b5204f41c6fbb6e335103c186e480b57b2d1bfb1b6a",
+    "actual_nav_components_executed_in_emulator": false,
+    "functional_map_recovery_tested": false
+  }
 }

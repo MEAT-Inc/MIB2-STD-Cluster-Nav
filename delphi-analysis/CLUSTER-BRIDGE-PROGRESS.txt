@@ -1,3 +1,37 @@
+2026-11-03: Guarded orderly navigation cycle passes QNX; next car gate prepared
+Healthy and incomplete map-session captures have been compared: 120 artifacts
+verified. Broken MOST VID_TX sleeps in both samples while healthy VID_TX waits
+on TransportServer. MOST's isoTX connection remains open in both. NANOSLEEP
+alone cannot distinguish permission-off from transmit retries.
+The incomplete session uniquely reports Screen peer_register_buffer errno13
+after NavigationServer aborts. This supports investigating orderly teardown;
+it does not yet prove the stale owner or that a clean cycle repairs it.
+
+Recovered factory lifecycle: NavigationServer SAL app29 (not30), shutdown
+event0x163 with no payload. Explicit procman app1 event0x161 with uint32 app29
+starts it again after clean exit0; -r only auto-restarts nonzero exits.
+The ID table at0x12653c consists of {uint32 id, name pointer} with stride8.
+Nav's handler stops, disconnects, and uninitializes components and app threads.
+
+Captured procman/libXSAL pass a private QNX 6.5 ARM protocol fixture. The guarded
+helper also passes stale-start refusal and one clean stop/explicit-start cycle.
+Production helper SHA256:
+afc23211f53710925c695b5204f41c6fbb6e335103c186e480b57b2d1bfb1b6a
+This test does not execute the actual NavigationServer/GPU components.
+
+Next car action: ONE STOCK factory-map recovery test, no replay or AA phone.
+Bundle: native/cluster-bridge/nav-control/nav-graceful-cycle-laptop.zip
+Start parked, ignition on, phone unplugged, factory maps working BOTH screens:
+ python scripts/run_nav_graceful.py --run --phone-unplugged --factory-maps-working
+Answer the final BOTH-screen map question. Return the whole _nav_graceful_* dump.
+Native code verifies PID/start/parent, loaded code, manager registry, SAL routes,
+and clean exit. No fallback signals, forced flags, repeated cycles, or video writes.
+Existing logs/threads/DTS rings are copied for diagnosis. Process recovery and
+user-reported visible map recovery are recorded separately.
+Replay remains HELD until real functional factory-map recovery is established.
+After that, integrate orderly lifecycle into replay and verify visible recorded
+pixels before implementing live phone substitution. No car commands issued here.
+
 2026-11-03: V6 hit transport backpressure; replay HELD pending map-session diagnosis
 Verified all23 artifacts from _cluster_replay_20261103_132444_537435f0.
 Arm0rc;5646packets/1,061,448bytes accepted by TransportServer, then32zero writes.

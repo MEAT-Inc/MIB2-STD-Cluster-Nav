@@ -1,10 +1,10 @@
 {
-  "status": "contract_recovered_client_init_unvalidated",
-  "nav_app_id": 30,
+  "status": "qnx_guarded_cycle_passed_car_functional_recovery_pending",
+  "nav_app_id": 29,
   "procman_app_id": 1,
   "shutdown": {
     "event": 355,
-    "destination_app": 30,
+    "destination_app": 29,
     "queue": 0,
     "payload_bytes": 0,
     "receiver": "0x506740",
@@ -20,7 +20,7 @@
     "event": 353,
     "destination_app": 1,
     "queue": 0,
-    "payload": "uint32 app id30",
+    "payload": "uint32 app id29",
     "receiver": "0x104f1c"
   },
   "restart_limitation": "-r autorestart requires nonzero recorded exit; clean exit requires explicit start",
@@ -35,5 +35,19 @@
     ],
     "limitation": "NANOSLEEP alone cannot distinguish two paths; do not force flags"
   },
-  "car_control_enabled": false
+  "car_control_enabled": true,
+  "id_table": {
+    "base": "0x12653c",
+    "layout": "uint32 id, pointer name",
+    "stride": 8,
+    "nav_entry": "0x126624"
+  },
+  "car_commands_issued": false,
+  "functional_maps_verified": false,
+  "validation": {
+    "environment": "private QNX 6.5 ARM emulator with captured procman and libXSAL",
+    "guarded_cycle_passed": true,
+    "stale_identity_refused": true,
+    "helper_sha256": "afc23211f53710925c695b5204f41c6fbb6e335103c186e480b57b2d1bfb1b6a"
+  }
 }
