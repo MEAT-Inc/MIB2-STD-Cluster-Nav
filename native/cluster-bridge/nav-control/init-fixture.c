@@ -1,17 +1,20 @@
 #define _QNX_SOURCE 1
-#include <dlfcn.h>
-#include <stdint.h>
+#include "sal-fixture-api.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
+#include <fcntl.h>
 #include <time.h>
-int main(void){pid_t p;void *h;void (*get)(void*),(*deinit)(void);int (*init)(void*),(*id)(void);uint32_t config[5]={0};struct timespec wait={2,0};
- if(setenv("XSAL_INSTANCE_NAME","delphi_graceful_fixture",1))return 1;
- p=fork();if(!p){execl("/proc/boot/procman","procman","-f","/proc/boot/manager.cfg","-c","0","-t",(char*)0);_exit(99);}if(p<0)return 2;
- nanosleep(&wait,0);h=dlopen("/proc/boot/libXSAL.so",RTLD_NOW);if(!h){printf("SAL_LIBRARY_REFUSED %s\n",dlerror());return 3;}
- get=dlsym(h,"SAL_Get_Config");init=dlsym(h,"SAL_Init");deinit=dlsym(h,"SAL_Deinit");id=dlsym(h,"SAL_Get_App_Id");if(!get||!init||!deinit||!id)return 4;
- get(config);if(config[0]||config[1]||config[2]!=64||config[3]!=32||config[4]!=0xffffffffu)return 5;
- ((unsigned char*)config)[0]=2;config[1]=1;printf("SAL_CLIENT_INIT_BEGIN app=2 threads=1\n");fflush(stdout);
- if(init(config)!=1){puts("SAL_CLIENT_INIT_FAILED");return 6;}if(id()!=2)return 7;puts("SAL_CLIENT_INIT_PASS app=2");fflush(stdout);
- deinit();puts("SAL_CLIENT_DEINIT_PASS");fflush(stdout);return 0;}
+#include <errno.h>
+static void pause_ms(unsigned ms){struct timespec t={ms/1000,(ms%1000)*1000000};nanosleep(&t,0);}
+static uint32_t target(void){uint32_t p=0;int f=open("/dev/shmem/sal-target-ready.bin",O_RDONLY);if(f>=0){if(read(f,&p,4)!=4)p=0;close(f);}return p;}
+static uint32_t wait_target(void){unsigned i;uint32_t p;for(i=0;i<3000;i++){p=target();if(p)return p;pause_ms(1);}return 0;}
+static int wait_gone(uint32_t p){unsigned i;char path[64];snprintf(path,sizeof(path),"/proc/%u/as",p);for(i=0;i<3000;i++){int f=open(path,O_RDONLY);if(f<0&&errno==ENOENT&&!target())return 0;if(f>=0)close(f);pause_ms(1);}return -1;}
+int main(void){pid_t p;struct api a;uint32_t first,second,id=30;if(setenv("XSAL_INSTANCE_NAME","delphi_graceful_fixture",1))return 1;p=fork();if(!p){execl("/proc/boot/procman","procman","-f","/proc/boot/manager.cfg","-c","1","-t",(char*)0);_exit(99);}if(p<0)return 2;pause_ms(2000);
+ if(resolve(&a)||initialize(&a,2)){puts("SAL_CLIENT_INIT_FAILED");return 3;}puts("SAL_CLIENT_INIT_PASS app=2");fflush(stdout);first=wait_target();if(!first)return 4;
+ if(a.send(30,0,0x163,0,0)!=1||wait_gone(first)){return 5;}
+ pause_ms(1200);if(target())return 6;puts("SAL_CLEAN_EXIT_NO_AUTORESTART_PASS");
+ if(a.send(1,0,0x161,&id,4)!=1){return 7;}
+ second=wait_target();if(!second||first==second)return 8;puts("SAL_EXPLICIT_START_PASS");
+ if(a.send(30,0,0x163,0,0)!=1||wait_gone(second)){return 9;}
+ a.deinit();puts("SAL_CLIENT_DEINIT_PASS");puts("SAL_GRACEFUL_CONTROL_QNX_PASS");fflush(stdout);return 0;}
