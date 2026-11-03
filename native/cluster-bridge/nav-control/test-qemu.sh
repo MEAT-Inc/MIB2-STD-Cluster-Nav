@@ -10,7 +10,7 @@ $P-gcc $flags init-fixture.c dts-fixture.c -Wl,-E -Wl,-z,noexecstack -o sal_init
 $P-gcc $flags idle-fixture.c dts-fixture.c -Wl,-E -Wl,-z,noexecstack -o idle_fixture
 cp /src/delphi-dump/_observer_smoke_20261029_005129_a1ecf3ce/procman.captured procman
 cp /src/delphi-dump/ramdisk/delphi-stage_4b0597ac42d84f0ca7dc8a8c7e138c00/01_libXSAL.so libXSAL.so
-printf '%s\n' '-f /proc/boot/idle_fixture -n"navigationserver" -l0 -r -c6' > manager.cfg
+printf '%s\n' '-f /proc/boot/idle_fixture -n"navigationserver" -l0 -x1 -r -c0' > manager.cfg
 cp /src/.tools/qnx65-armv7-toolchain/tests/qemu/startup-virt /src/.tools/qnx65-armv7-toolchain/tests/qemu/libstartup.a /src/.tools/qnx65-armv7-toolchain/tests/qemu/devc-serdebug /src/.tools/qnx65-armv7-toolchain/tests/qemu/u-boot.bin .
 sed 's/\r$//' /src/.tools/qnx65-armv7-toolchain/tests/qemu/ifs-header.build > test.build
 cat >> test.build <<'EOF'
@@ -23,6 +23,9 @@ cat >> test.build <<'EOF'
     display_msg "NAV_CONTROL_QNX_END"
 }
 [type=dir]
+/etc
+/extbin
+/extbin/apps
 /extbin/apps/bin
 [type=link] /usr/lib/ldqnx.so.2=/proc/boot/libc.so.3
 [type=file]

@@ -14,6 +14,9 @@
     display_msg "NAV_CONTROL_QNX_END"
 }
 [type=dir]
+/etc
+/extbin
+/extbin/apps
 /extbin/apps/bin
 [type=link] /usr/lib/ldqnx.so.2=/proc/boot/libc.so.3
 [type=file]

@@ -1,0 +1,107 @@
+{
+  "states": {
+    "broken": {
+      "collection": "_map_session_20261103_135144_d6cf370d",
+      "artifacts_verified": 60,
+      "same_process_ids": true,
+      "pids": {
+        "screen-cda": 221196,
+        "Most": 434218,
+        "MediaHandler": 479283,
+        "DisplayManagement": 520246,
+        "TransportServer": 569402,
+        "NavServices": 704596,
+        "NavigationServer": 1413205
+      },
+      "video_threads": [
+        "434218 tbin/apps/bin/Most VID_TX               NANOSLEEP",
+        "434218 tbin/apps/bin/Most VID_TX               NANOSLEEP"
+      ],
+      "most_iso_tx_connection": [
+        "8  569402 r- 282782080 /dev/transport_server/connect/isoTX"
+      ],
+      "screen_registration_error": true,
+      "nav_abort_lines": [
+        "Feb 01 07:16:11.357    5    21     0 run fault pid 704597 tid 1 signal 6 code 0 ip 0x103856c extbin/apps/bin/NavigationServer",
+        "Feb 01 07:17:58.122    5    21     0 run fault pid 1187925 tid 1 signal 6 code 0 ip 0x103856c extbin/apps/bin/NavigationServer"
+      ],
+      "optional_metadata_unavailable": [
+        {
+          "file": "nav-coredump-metadata.txt",
+          "error": "command exit 2"
+        }
+      ]
+    },
+    "healthy": {
+      "collection": "_map_session_20261103_140126_5effcc26",
+      "artifacts_verified": 60,
+      "same_process_ids": true,
+      "pids": {
+        "screen-cda": 221196,
+        "Most": 434218,
+        "MediaHandler": 479283,
+        "DisplayManagement": 520246,
+        "TransportServer": 569405,
+        "NavServices": 704596,
+        "NavigationServer": 704597
+      },
+      "video_threads": [
+        "434218 tbin/apps/bin/Most VID_TX               REPLY       569405",
+        "434218 tbin/apps/bin/Most VID_TX               REPLY       569405"
+      ],
+      "most_iso_tx_connection": [
+        "8  569405 r- 12489968 /dev/transport_server/connect/isoTX"
+      ],
+      "screen_registration_error": false,
+      "nav_abort_lines": [],
+      "optional_metadata_unavailable": [
+        {
+          "file": "nav-coredump-metadata.txt",
+          "error": "command exit 2"
+        }
+      ]
+    }
+  },
+  "findings": [
+    "MOST isoTX connection exists in both states; broken VID_TX sleeps while healthy VID_TX has outstanding TransportServer read in both samples",
+    "Transport worker waits on queue in healthy capture; broken workers wait to receive requests",
+    "Map databases and current-Nav connections exist; no evidence supports missing SD card or whole-process deadlock",
+    "Broken capture uniquely reports Screen peer buffer physical-address registration errno13 after Nav aborts",
+    "Generic PVR per-process deallocation errors also occur healthy; not a specific failure indicator"
+  ],
+  "limits": [
+    "MOST sleep may mean TX permission false (10ms) OR transmit_data retry (5ms); snapshots do not distinguish",
+    "Screen error correlation does not prove exact stale owner or repair",
+    "New stock Nav process does not certify functional map restoration"
+  ],
+  "native_contract": {
+    "nav_app": 30,
+    "procman_app": 1,
+    "shutdown_event": 355,
+    "shutdown_payload_bytes": 0,
+    "shutdown_queue": 0,
+    "shutdown_receiver": "0x506740",
+    "shutdown_handler": "0x5063ac",
+    "phases": [
+      "stop components",
+      "disconnect components",
+      "uninitialize components",
+      "stop app threads"
+    ],
+    "start_event": 353,
+    "start_payload_u32": 30,
+    "start_queue": 0,
+    "start_receiver": "0x104f1c",
+    "clean_exit_requires_explicit_start": true
+  },
+  "most_profile": {
+    "tx_allowed": "0x24e9b4 u32",
+    "config_ok": "0x24e914 u8",
+    "tx_state": "0x24e9c0 u32",
+    "video_tid": "0x247ea4 u32",
+    "permission_sleep_return": "0x1bd544",
+    "retry_sleep_return": "0x1bd9a0"
+  },
+  "status": "replay_held_graceful_control_emulator_validation_in_progress",
+  "car_commands_issued": false
+}
