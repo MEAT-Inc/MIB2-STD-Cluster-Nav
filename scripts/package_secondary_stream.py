@@ -32,7 +32,7 @@ def main(preflight=False):
  expected={'_init','_fini','_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase','delphi_observer_view','_ZN13MessageRouter32populateServiceDiscoveryResponseEP24ServiceDiscoveryResponse','_ZN13MessageRouter13queueOutgoingEhPvj'}
  if set(exports)!=expected:raise ValueError('Unexpected exported hooks: '+repr(exports))
  scripts=('secondary_timing.py','cluster_preflight.py','run_disconnected_observer.py','run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py')
- tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
+ tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/tests/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
  if tests.returncode:raise ValueError('Workflow/report tests failed: '+tests.stdout+tests.stderr)
  source_files=[p for p in BASE.glob('*.[ch]')]+[ROOT/'native/endpoint-factory'/n for n in ('factory.c','factory.h','probe.c','probe.h','profile.h')]
  manifest=dict(kind='disconnected_observer_control_trial',experiment='secondary_endpoint_negotiation',capture_profiles=[20],phone_trial_enabled=True,factory_report_version=2,factory_contract_revision=4,secondary_stream_enabled=True,secondary_hardware_tested=False,cluster_transport_connected=False,video_service_id=9,input_service_id=10,display_id=1,capture_byte_limit=8388608,needed=needs,imports=sorted(imports),exports=sorted(exports),source_sha256={p.relative_to(ROOT).as_posix():sha(p.read_bytes()) for p in source_files},scripts_sha256={n:sha((ROOT/'scripts'/n).read_bytes()) for n in scripts})
@@ -46,7 +46,7 @@ def main(preflight=False):
    if seg['p_type']=='PT_GNU_STACK' and seg['p_flags']&1:raise ValueError('Snapshot executable stack')
   helper_needs=[t.needed for seg in e.iter_segments() if seg['p_type']=='PT_DYNAMIC' for t in seg.iter_tags() if t.entry.d_tag=='DT_NEEDED']
   if helper_needs!=['libc.so.3'] or not 0<len(helper)<=131072:raise ValueError('Snapshot dependency/size differs')
-  mux_tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_cluster_ts_mux.py')],cwd=ROOT,capture_output=True,text=True)
+  mux_tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/tests/test_cluster_ts_mux.py')],cwd=ROOT,capture_output=True,text=True)
   if mux_tests.returncode:raise ValueError('Offline mux tests failed: '+mux_tests.stderr)
   video=json.loads((ROOT/'delphi-analysis/cluster-bridge/video-review/video-review.json').read_text())
   if video['decoded_frames']!=371 or not video['offline_remux']['decoded_pixels_identical'] or video['mux_source_sha256']!=sha((ROOT/'scripts/cluster_ts_mux.py').read_bytes()):raise ValueError('Real-video offline mux check missing or stale')

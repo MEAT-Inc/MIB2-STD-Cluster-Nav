@@ -217,7 +217,7 @@ Troubleshooting
 Offline verification (never connects to the vehicle)
 ---------------------------------------------------
 Run the available Python unittest modules from the project base folder:
-  py -3 -m unittest discover -s .\scripts -p "test_*.py" -v
+  py -3 -m unittest discover -s .\scripts\tests -p "test_*.py" -v
 
 Tests use fake FTP/socket objects and temporary local directories. They cover
 binary bytes/hash, retries, retained incomplete files, size mismatch, listing
@@ -250,10 +250,13 @@ when several manifests exist. It replaces generated verification.json,
 binary-triage.json and *.strings.txt under delphi-analysis/. It does not execute
 dump binaries or extract IFS contents.
 
-Native synthetic diagnostic checks (local host/emulator work):
-  .\scripts\test_delphi_observer.ps1
-  .\scripts\test_qnx_probe.ps1
-  py -3 .\scripts\validate_qnx_probe.py
+Native synthetic diagnostic checks (local host/emulator work, Docker images prepared):
+  docker run --rm --network none --mount "type=bind,source=$PWD,target=/src" --workdir /src delphi-qnx65:qemu sh native/observer/test-host.sh
+  docker run --rm --network none --mount "type=bind,source=$PWD,target=/src" --workdir /src delphi-qnx65:qemu sh native/observer/test-qemu.sh
+  python -B scripts/tests/test_observer_decoder.py
+  python -B scripts/package_delphi_observer.py
+Obsolete prototype entry points and PowerShell wrappers have been removed.
+For native loader fixture commands, see native/loader-probe/README.txt.
 These require the relevant local compiler/emulator tooling. See
 delphi-analysis/NATIVE-DIAGNOSTIC-PROGRESS.txt and LAUNCH-MECHANISM-RESOLVED.txt
 for recorded results and limits. Synthetic observer success is not approval or

@@ -30,7 +30,7 @@ def main():
  if needs!=['libc.so.3'] or set(imports)-libc:raise ValueError('Unverified runtime dependency/import')
  if set(exports)!={'_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase','delphi_observer_view','_init','_fini'}:raise ValueError('Unexpected exported hooks: '+repr(exports))
  scripts=('run_disconnected_observer.py','run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py')
- tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
+ tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/tests/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
  if tests.returncode:raise ValueError('Workflow tests failed: '+tests.stdout+tests.stderr)
  release=BASE/'release';release.mkdir(exist_ok=True)
  blobs={'observer_launch':controller.read_bytes(),'libdelphi_observer.so':b}

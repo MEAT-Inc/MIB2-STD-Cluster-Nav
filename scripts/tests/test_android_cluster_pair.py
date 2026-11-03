@@ -1,4 +1,7 @@
 """Offboard-only dual service descriptor tests. No unit access or advertisement."""
+from pathlib import Path as _TestPath
+import sys as _test_sys
+_test_sys.path.insert(0, str(_TestPath(__file__).resolve().parents[1]))
 from project_console import console_session
 import unittest
 from android_discovery_wire_fixture import add_cluster_services,message,uint,independent_decode

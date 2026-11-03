@@ -1,9 +1,12 @@
+from pathlib import Path as _TestPath
+import sys as _test_sys
+_test_sys.path.insert(0, str(_TestPath(__file__).resolve().parents[1]))
 from project_console import console_session
 import struct
 import unittest
 from pathlib import Path
 from decode_delphi_observer import decode
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 class DecoderTests(unittest.TestCase):
     def setUp(self):
         self.data = (ROOT / 'native/observer/build-host/host-capture.bin').read_bytes()

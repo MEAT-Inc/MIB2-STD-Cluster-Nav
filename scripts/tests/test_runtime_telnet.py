@@ -1,4 +1,7 @@
 """Regression coverage for Telnet marker handling; no vehicle connection."""
+from pathlib import Path as _TestPath
+import sys as _test_sys
+_test_sys.path.insert(0, str(_TestPath(__file__).resolve().parents[1]))
 from project_console import console_session, status
 import io,re,unittest
 from types import SimpleNamespace

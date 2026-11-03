@@ -40,7 +40,7 @@ def main():
    states[prefix+'_'+stage]=dict(phase=h[3],observed_pid=h[10],restored_pid=h[11],capture_seconds=seconds,cleanup_authorized=flags[2],sha256=sha(b));pair.append(b)
   if pair[0][40:44]!=pair[1][40:44] or pair[0][64:88]!=pair[1][64:88] or pair[0][96:224]!=pair[1][96:224]:raise ValueError('Cleanup changed original process identity')
  scripts=('run_disconnected_observer.py','run_androidauto_observer.py','run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py')
- check=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
+ check=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/tests/test_disconnected_observer.py')],cwd=ROOT,capture_output=True,text=True)
  if check.returncode:raise ValueError('Python lifecycle regression failed: '+check.stdout+check.stderr)
  hardware=json.loads((ROOT/'delphi-analysis/control-runtime/disconnected-controller-hardware-review.json').read_text())
  if hardware.get('actual_unit_disconnected_controller_validated') is not True or hardware.get('native_sha256')!=sha(blobs['observer_launch']) or hardware['assessment'].get('controller_trial_passed') is not True or hardware['pending'].get('cleanup_authorized')!=0:raise ValueError('Actual-unit disconnected controller gate not cleared')

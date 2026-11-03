@@ -1,3 +1,6 @@
+from pathlib import Path as _TestPath
+import sys as _test_sys
+_test_sys.path.insert(0, str(_TestPath(__file__).resolve().parents[1]))
 from project_console import console_session
 import json,struct,unittest
 from decode_androidauto_display import assess,decode,discovery,HEADER,RECORD,CAPACITY,MAGIC

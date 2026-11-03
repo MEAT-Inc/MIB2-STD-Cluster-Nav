@@ -1,4 +1,7 @@
 """Offline allowlist and staging-command checks. Never connects to the car."""
+from pathlib import Path as _TestPath
+import sys as _test_sys
+_test_sys.path.insert(0, str(_TestPath(__file__).resolve().parents[1]))
 from project_console import console_session
 import unittest
 from collect_delphi_runtime import select_targets,copy_command

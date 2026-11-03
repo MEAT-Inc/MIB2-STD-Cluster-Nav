@@ -4,7 +4,7 @@ import hashlib,json,subprocess,sys,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'native/cluster-bridge/map-session'
 def main():
- t=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/test_collect_map_session.py')],cwd=ROOT,capture_output=True,text=True)
+ t=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/tests/test_collect_map_session.py')],cwd=ROOT,capture_output=True,text=True)
  if t.returncode:raise RuntimeError(t.stderr)
  files={('scripts/'+n):(ROOT/'scripts'/n).read_bytes() for n in ('collect_map_session.py','run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py')};files['README.txt']=(OUT/'README.txt').read_bytes();sha=lambda b:hashlib.sha256(b).hexdigest();manifest=dict(kind='readonly_map_session_snapshot',service_restarts=False,preload=False,video_writes=False,files={n:dict(bytes=len(b),sha256=sha(b)) for n,b in files.items()});files['manifest.json']=json.dumps(manifest,indent=2).encode();bundle=OUT/'map-session-diagnostics-laptop.zip'
  with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:

@@ -1,4 +1,7 @@
 """Verify shared console output, exit handling, and portable CLI startup."""
+from pathlib import Path as _TestPath
+import sys as _test_sys
+_test_sys.path.insert(0, str(_TestPath(__file__).resolve().parents[1]))
 from contextlib import redirect_stderr, redirect_stdout
 import io
 import os
@@ -91,7 +94,7 @@ class ConsoleTests(unittest.TestCase):
         self.assertIn('\033[93m', err.getvalue())
 
     def test_portable_plan_runs_with_only_bundled_scripts(self):
-        scripts = Path(__file__).resolve().parent
+        scripts = Path(__file__).resolve().parents[1]
         names = ('project_console.py', 'run_cluster_replay.py', 'cluster_preflight.py',
                  'run_observer_smoke.py', 'delphi_inventory.py', 'decode_delphi_observer.py',
                  'collect_map_session.py')

@@ -75,7 +75,10 @@ and a test-log/binary hash match. This checks local samples, not live target fil
 Release files
 libdelphi_observer.so, manifest.json, decode_delphi_observer.py, README.txt.
 Rebuild/test/package from project root (Docker images already prepared):
-  .\scripts\test_delphi_observer.ps1
+  docker run --rm --network none --mount "type=bind,source=$PWD,target=/src" --workdir /src delphi-qnx65:qemu sh native/observer/test-host.sh
+  docker run --rm --network none --mount "type=bind,source=$PWD,target=/src" --workdir /src delphi-qnx65:qemu sh native/observer/test-qemu.sh
+  python -B scripts/tests/test_observer_decoder.py
+  python -B scripts/package_delphi_observer.py
 
 This candidate is NOT vehicle validated or approved for unattended deployment.
 Before a vehicle run: verify the live executable/receiver hashes against manifest,

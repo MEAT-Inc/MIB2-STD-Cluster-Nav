@@ -1,0 +1,39 @@
+{
+  "status": "contract_recovered_client_init_unvalidated",
+  "nav_app_id": 30,
+  "procman_app_id": 1,
+  "shutdown": {
+    "event": 355,
+    "destination_app": 30,
+    "queue": 0,
+    "payload_bytes": 0,
+    "receiver": "0x506740",
+    "handler": "0x5063ac",
+    "phases": [
+      "stop",
+      "disconnect",
+      "uninitialize",
+      "stop application threads"
+    ]
+  },
+  "start": {
+    "event": 353,
+    "destination_app": 1,
+    "queue": 0,
+    "payload": "uint32 app id30",
+    "receiver": "0x104f1c"
+  },
+  "restart_limitation": "-r autorestart requires nonzero recorded exit; clean exit requires explicit start",
+  "most": {
+    "tx_allowed_address": "0x24e9b4",
+    "config_ok_address": "0x24e914",
+    "tx_state_address": "0x24e9c0",
+    "video_tid_address": "0x247ea4",
+    "sleep_paths": [
+      "10ms permission false",
+      "5ms MOST transmit retry"
+    ],
+    "limitation": "NANOSLEEP alone cannot distinguish two paths; do not force flags"
+  },
+  "car_control_enabled": false
+}

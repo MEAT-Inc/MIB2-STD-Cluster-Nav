@@ -1,4 +1,7 @@
 """Negative evidence controls for the managed-launch integration checker."""
+from pathlib import Path as _TestPath
+import sys as _test_sys
+_test_sys.path.insert(0, str(_TestPath(__file__).resolve().parents[1]))
 from project_console import console_session
 import unittest
 from pathlib import Path

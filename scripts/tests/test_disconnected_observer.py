@@ -1,4 +1,7 @@
 """Offline gates for the new version3 capture/cleanup split. No vehicle access."""
+from pathlib import Path as _TestPath
+import sys as _test_sys
+_test_sys.path.insert(0, str(_TestPath(__file__).resolve().parents[1]))
 from project_console import console_session, status
 import contextlib,ftplib,io,json,struct,tempfile,unittest
 from pathlib import Path

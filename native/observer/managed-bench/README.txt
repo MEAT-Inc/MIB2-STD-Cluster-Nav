@@ -7,7 +7,7 @@ No captured AndroidAuto executable is run. No vehicle connection is made.
 Build and QEMU launch: test-qemu.sh, inside the existing delphi-qnx65:qemu container
 with the project mounted at /src. Host evidence review:
   python -B scripts/review_managed_bench.py
-  python -B -m unittest discover -s scripts -p test_managed_bench_review.py
+  python -B -m unittest discover -s scripts/tests -p test_managed_bench_review.py
 
 The private emulator starts the captured manager under a unique XSAL instance.
 Only its synthetic configuration is loaded. Its one app entry uses the built-in

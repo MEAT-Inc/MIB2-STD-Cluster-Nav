@@ -1,4 +1,7 @@
 """Offline preflight regressions. No vehicle or network connection is made."""
+from pathlib import Path as _TestPath
+import sys as _test_sys
+_test_sys.path.insert(0, str(_TestPath(__file__).resolve().parents[1]))
 from project_console import console_session
 import contextlib
 import hashlib
@@ -11,7 +14,7 @@ import unittest
 from unittest.mock import patch
 import collect_observer_preflight as p
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 TOOLS = (ROOT / '.tools').resolve()
 ARGS = b' 684110 /extbin/apps/bin/AndroidAuto -t\r\n'
 MAPS = b'             bautoreceiver.so.1 @78100000 1112K 28K\r\n'
