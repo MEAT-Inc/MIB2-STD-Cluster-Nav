@@ -5,6 +5,7 @@ mkdir -p "$w"
 cp /src/native/cluster-bridge/nav-control/*.[ch] "$w/"
 cd "$w"
 cp /src/native/cluster-bridge/nav-launch/proc_guard.[ch] .
+cp /src/native/cluster-bridge/nav-control/fixtures/stall.* .
 sed '/^int pg_interrupt(/,$d' proc_guard.c > proc_readonly.c
 P=arm-unknown-nto-qnx6.5.0eabi
 flags='-std=gnu11 -O2 -Wall -Wextra -Werror -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=softfp -marm'
@@ -45,6 +46,8 @@ idle_fixture
 procman
 manager.cfg
 libXSAL.so
+stall.stack
+stall.mutex
 EOF
 T=/opt/qnx650/target/qnx6/armle-v7
 cp "$T/lib/libc.so.3" "$T/lib/libsocket.so.3" "$T/boot/sys/procnto-smp" .
@@ -58,6 +61,13 @@ cp test.build "$out/qemu/test.build"
 mkifs test.build ifs.bin > "$out/qemu/mkifs.log" 2>&1
 cp ifs.bin fat/
 ( printf '\n'; sleep 4; printf 'virtio scan\n'; sleep 2; printf 'fatload virtio 0:1 0x40200000 ifs.bin\n'; sleep 3; printf 'go 0x40200000\n'; sleep 14 ) | timeout 35 qemu-system-arm -M virt -nic none -m 256 -cpu cortex-a15 -bios u-boot.bin -drive file=fat:rw:$w/fat,format=raw,media=disk -display none -serial stdio > "$out/qemu/qemu.log" 2>&1 || true
+grep -q NAV_STALL_CAPTURE_GUARD_PASS "$out/qemu/qemu.log"
+grep -q NAV_RECOVER_HEALTHY_REFUSAL_PASS "$out/qemu/qemu.log"
+grep -q NAV_RECOVER_STALE_REFUSAL_PASS "$out/qemu/qemu.log"
+grep -q NAV_RECOVER_FACTORY_AUTORESTART_PASS "$out/qemu/qemu.log"
+grep -q NAV_PAGE_READ_QNX_PASS "$out/qemu/qemu.log"
+grep -q NAV_PAGE_STALE_IDENTITY_REFUSAL_PASS "$out/qemu/qemu.log"
+grep -q NAV_PAGE_BAD_ADDRESS_REFUSAL_PASS "$out/qemu/qemu.log"
 grep -q NAV_CONTROL_GUARDED_CYCLE_PASS "$out/qemu/qemu.log"
 grep -q NAV_CONTROL_IDENTITY_REFUSAL_PASS "$out/qemu/qemu.log"
 grep -q SAL_GRACEFUL_CONTROL_QNX_PASS "$out/qemu/qemu.log"

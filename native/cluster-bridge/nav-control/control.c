@@ -15,6 +15,10 @@
 #include <time.h>
 #include <unistd.h>
 #include "sal-profile.h"
+#include "stall-guard.h"
+#include <sys/procfs.h>
+#include <sys/states.h>
+#include <devctl.h>
 #ifdef NAV_CONTROL_TEST
 #define NAV_PATH "/proc/boot/idle_fixture"
 #else
@@ -56,9 +60,25 @@ return (uint64_t)t.tv_sec*1000+t.tv_nsec/1000000;}
 static int gone(pid_t p){char b[64];int f;snprintf(b,sizeof(b),"/proc/%u/as",(unsigned)p);f=open(b,O_RDONLY);if(f>=0){close(f);return 0;}return errno==ENOENT||errno==ESRCH;}
 static uint64_t number(const char *s){char *e;unsigned long long v;if(!s||!*s||strspn(s,"0123456789")!=strlen(s)) { return 0; }
 errno=0;v=strtoull(s,&e,10);return errno||*e?0:v;}
-int main(int argc,char **argv){uint64_t requested,ns,ms,end;pg_identity nav,pm,newnav;struct record before={0},after={0};struct api a;uint32_t app=29;int nf=-1,mf=-1,nf2=-1,active=0,code=3;const char *stage="identity";sigset_t unblocked;struct sigaction sa;memset(&a,0,sizeof(a));memset(&newnav,0,sizeof(newnav));
+static int crash_guard(int f,pid_t pid){
+ procfs_status z;uint32_t words[STALL_WORDS],mutex[2];size_t at=0;
+ memset(&z,0,sizeof(z));z.tid=2;
+ if(devctl(f,DCMD_PROC_TIDSTATUS,&z,sizeof(z),0)||z.state!=STATE_MUTEX||
+    (z.ip!=0x1038714u&&z.ip!=0x1038710u)||z.sp>0xbffff000u||z.blocked.sync.sync!=0x1076ee8u){fprintf(stderr,"NAV_RECOVER_WAIT_REFUSED state=%u ip=%llx sp=%llx mutex=%lx\n",z.state,(unsigned long long)z.ip,(unsigned long long)z.sp,(unsigned long)z.blocked.sync.sync);return 0;}
+ while(at<sizeof(words)){
+  size_t n=sizeof(words)-at;if(n>512){n=512;}
+  if(read_at(f,(uint32_t)z.sp+at,(char*)words+at,n)){return 0;}at+=n;
+ }
+ if(read_at(f,0x1076ee8,mutex,sizeof(mutex))){return 0;}
+ {int match=stall_blob(words,mutex,(uint32_t)z.sp,(uint32_t)pid);fprintf(stderr,"NAV_RECOVER_CRASH_SIGNATURE match=%d state=%u ip=%llx sp=%llx owner=%x signal=%u fault_pc=%x map_delete_return=%x\n",match,z.state,(unsigned long long)z.ip,(unsigned long long)z.sp,mutex[1],words[55],words[59],words[192]);return match;}
+}
+int main(int argc,char **argv){uint64_t requested,ns,ms,end;pg_identity nav,pm,newnav;struct record before={0},after={0};struct api a;uint32_t app=29;int nf=-1,mf=-1,nf2=-1,active=0,code=3,recovery=0,fixture_recovery=0,sent_signal=0;const char *stage="identity";sigset_t unblocked;struct sigaction sa;memset(&a,0,sizeof(a));memset(&newnav,0,sizeof(newnav));
+ recovery=argc==6&&!strcmp(argv[1],"recover");
+#ifdef NAV_CONTROL_TEST
+ fixture_recovery=argc==6&&!strcmp(argv[1],"recover-fixture");recovery|=fixture_recovery;
+#endif
  if(argc==1){puts("Plan only: inspect <NavPID>; cycle <NavPID> <NavStart> <ManagerPID> <ManagerStart>");return 0;}
- if((argc!=3||strcmp(argv[1],"inspect"))&&(argc!=6||strcmp(argv[1],"cycle"))) { return 2; }
+ if((argc!=3||strcmp(argv[1],"inspect"))&&(argc!=6||(strcmp(argv[1],"cycle")&&!recovery))&&(argc!=7||strcmp(argv[1],"page"))) { return 2; }
 
  requested=number(argv[2]);if(!requested||requested>0x7fffffff) { return 2; }
 nf=pg_open(requested,0,&nav);if(nf<0||strcmp(nav.executable,NAV_PATH)||nav.base_address!=0x100000||!nav_profile(nf)) { goto done; }
@@ -67,9 +87,55 @@ mf=pg_open(nav.parent,0,&pm);if(mf<0||strcmp(pm.executable,PM_PATH)||!pm_profile
  if(argc==3){printf("{\"version\":1,\"readonly\":true,\"pid\":%u,\"start_time\":%llu,\"manager_pid\":%u,\"manager_start\":%llu,\"app_id\":29,\"state\":%u}\n",(unsigned)nav.pid,(unsigned long long)nav.start_time,(unsigned)pm.pid,(unsigned long long)pm.start_time,before.state);code=0;goto done;}
  ns=number(argv[3]);ms=number(argv[5]);if(!ns||!ms||nav.start_time!=ns||pm.start_time!=ms||number(argv[4])!=(uint64_t)pm.pid) { goto done; }
 
+ if(argc==7){
+  unsigned char page[4096];uint64_t address=number(argv[6]);size_t at=0;
+  stage="read_page";
+  if(address<4096||address>0xbffff000u||(address&4095)){goto done;}
+  while(at<sizeof(page)){
+   if(read_at(nf,(uint32_t)address+at,page+at,512)){goto done;}
+   at+=512;
+  }
+  if(pg_matches(nf,&nav)||pg_matches(mf,&pm)){goto done;}
+  at=0;
+  while(at<sizeof(page)){
+   ssize_t n=write(STDOUT_FILENO,page+at,sizeof(page)-at);
+   if(n<0&&errno==EINTR){continue;}
+   if(n<=0){goto done;}
+   at+=(size_t)n;
+  }
+  code=0;goto done;
+ }
  memset(&sa,0,sizeof(sa));sa.sa_handler=SIG_DFL;sigemptyset(&sa.sa_mask);if(sigaction(SIGALRM,&sa,0)) { goto done; }
 sigemptyset(&unblocked);sigaddset(&unblocked,SIGALRM);if(sigprocmask(SIG_UNBLOCK,&unblocked,0)) { goto done; }
 alarm(60);
+ if(recovery){
+  uint32_t restart=0;
+  stage="recover_guard";
+  if(read_at(mf,before.address+0x2c,&restart,4)||restart!=1||
+     (!fixture_recovery&&!crash_guard(nf,nav.pid))){goto done;}
+  pause_ms();
+  if(pg_matches(nf,&nav)||pg_matches(mf,&pm)||record(mf,&after)||
+     after.address!=before.address||after.pid!=(uint32_t)nav.pid||after.state!=3||
+     (!fixture_recovery&&!crash_guard(nf,nav.pid))){goto done;}
+  /* Checked PID/start/parent and exact repeated crash signature. Recheck+kill
+   * are separate calls, not an atomic procfs signal. Never retry another PID. */
+  stage="recover_terminate";
+  if(kill(nav.pid,SIGKILL)){goto done;}sent_signal=1;close(nf);nf=-1;
+  stage="recover_restart";end=now()+25000;
+  while(now()<end){
+   if(pg_matches(mf,&pm)||record(mf,&after)||after.address!=before.address){goto done;}
+   if(after.pid&&after.pid!=(uint32_t)nav.pid&&after.state==3){
+    nf2=pg_open(after.pid,0,&newnav);
+    if(nf2>=0){
+     if(newnav.parent==pm.pid&&newnav.start_time!=nav.start_time&&
+        !strcmp(newnav.executable,NAV_PATH)&&nav_profile(nf2)&&!pg_matches(nf2,&newnav)&&after.status==SIGKILL){code=0;break;}
+     close(nf2);nf2=-1;
+    }
+   }
+   pause_ms();
+  }
+  goto done;
+ }
  stage="sal_profile";if(start_api(&a)) { goto done; }
 active=1;stage="namespace";if(!route(&a,1,pm.pid)||!route(&a,29,nav.pid)||pg_matches(nf,&nav)||pg_matches(mf,&pm)) { goto done; }
 
@@ -84,4 +150,4 @@ if(a.send(1,0,0x161,&app,4)!=1) { goto done; }
 fprintf(stderr,"NAV_GRACEFUL_START_REQUEST app=29\n");
  stage="new_process";end=now()+25000;while(now()<end){if(pg_matches(mf,&pm)||record(mf,&after)||after.address!=before.address) { goto done; }
 if(after.pid&&after.pid!=(uint32_t)nav.pid&&after.state==3){nf2=pg_open(after.pid,0,&newnav);if(nf2>=0){if(newnav.parent==pm.pid&&newnav.start_time!=nav.start_time&&!strcmp(newnav.executable,NAV_PATH)&&nav_profile(nf2)&&route(&a,29,newnav.pid)&&!pg_matches(nf2,&newnav)){code=0;break;}close(nf2);nf2=-1;}}pause_ms();}
- done:if(active){a.deinit();}alarm(0);if(argc==6)printf("{\"version\":1,\"process_cycle_verified\":%s,\"functional_maps_verified\":false,\"stage\":\"%s\",\"old_pid\":%u,\"new_pid\":%u,\"new_start\":%llu,\"last_exit_raw\":%u,\"signals_to_nav\":false}\n",code?"false":"true",stage,(unsigned)requested,(unsigned)newnav.pid,(unsigned long long)newnav.start_time,after.status);if(code)fprintf(stderr,"NAV_GRACEFUL_REFUSED_OR_PARTIAL stage=%s errno=%d\n",stage,errno);if(nf>=0){close(nf);}if(nf2>=0){close(nf2);}if(mf>=0){close(mf);}return code;}
+ done:if(active){a.deinit();}alarm(0);if(argc==6)printf("{\"version\":1,\"process_cycle_verified\":%s,\"functional_maps_verified\":false,\"stage\":\"%s\",\"old_pid\":%u,\"new_pid\":%u,\"new_start\":%llu,\"last_exit_raw\":%u,\"signals_to_nav\":%s,\"termination_signal\":%d}\n",code?"false":"true",stage,(unsigned)requested,(unsigned)newnav.pid,(unsigned long long)newnav.start_time,after.status,sent_signal?"true":"false",sent_signal?SIGKILL:0);if(code)fprintf(stderr,"NAV_GRACEFUL_REFUSED_OR_PARTIAL stage=%s errno=%d\n",stage,errno);if(nf>=0){close(nf);}if(nf2>=0){close(nf2);}if(mf>=0){close(mf);}return code;}

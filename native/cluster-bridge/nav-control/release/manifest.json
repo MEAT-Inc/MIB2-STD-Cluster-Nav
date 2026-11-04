@@ -1,5 +1,12 @@
 {
-  "kind": "stock_nav_graceful_cycle",
+  "kind": "nav_shutdown_allocator_diagnostic",
+  "diagnostic_only": true,
+  "diagnostic_revision": 2,
+  "qnx_page_reader_passed": true,
+  "page_reader": "native_guarded_pread64",
+  "allocator_pages": true,
+  "preflight_revision": 2,
+  "reference_method": "shell_copy_to_ram_then_ftp",
   "nav_app_id": 29,
   "qnx_guarded_cycle_passed": true,
   "car_validated": false,
@@ -8,8 +15,8 @@
   "functional_maps_verified": false,
   "files": {
     "nav_cycle": {
-      "bytes": 16656,
-      "sha256": "afc23211f53710925c695b5204f41c6fbb6e335103c186e480b57b2d1bfb1b6a"
+      "bytes": 17154,
+      "sha256": "49707d8bbaaaf45887ac248d06693e19f11296b89358587dbe2c0733d47da9fb"
     }
   },
   "elf": {
@@ -31,6 +38,7 @@
       "sigaddset",
       "alarm",
       "nanosleep",
+      "write",
       "fprintf",
       "memchr",
       "__get_errno_ptr",
@@ -60,10 +68,10 @@
     ]
   },
   "sources": {
-    "control.c": "c9f825a082b498dec51721965a5fbeaba02e44991970677d17c53841c58d58a3",
+    "control.c": "a276cd0d06d523fb04d437b432c8bf5bd2f9c1c0291c8c4a8fc187dfbdc7bd4d",
     "dts-fixture.c": "3c3c2c6ff345031ad6e205fde24892d29aec70bd2aa8ae105b96bd531f432640",
     "idle-fixture.c": "a6b55ee098d1576f85295eb241e9e17ba0e15bf05d576279b26c1d91758cea92",
-    "init-fixture.c": "bc8049c737e51a8cd802d3734aeb4625cdecafaf9dc3459fea2f3a59871048b6",
+    "init-fixture.c": "ca969ec518c9d572fce0797cb3a069e5cd01eacace51f5da2f29340f9a7ba1f1",
     "sal-fixture-api.h": "24371235475ce971b4993b0d13fdb8c465e6e0cd1a7c16e95fcf856a957dbc63",
     "sal-profile.h": "b2f9025ef7e4d92398aec31c369d78703d334321cfec21a8efbd94201ea3309b",
     "proc_guard.c": "3cfb6e334414214d4cdc5abfc9d3f4e9d04127ade9705e5b9f95d886cc7f8ec3",
@@ -71,8 +79,8 @@
     "proc_readonly.c": "8dda5469e2d99a779735db18c2b4990518c66411c0effab0e9f3f65b2a59d37d"
   },
   "scripts": {
-    "run_nav_graceful.py": "421a5234fa90156a6b068371f6f6840bf5fdb0a43f178e25b2e2ee9e58367461",
-    "collect_map_session.py": "4dfd5d7c0995bcc8fbad3d537d45836468fe1a327d0b15e06f1fa798de4a88dd",
+    "run_nav_graceful.py": "26e50474f41bae0d71496c8d2ed39e02a98f07d1f32273eedf2ff088dcf28769",
+    "collect_map_session.py": "d733f07b44558dde57df563690dad4f0dc70996163577d93271275f5696d7693",
     "run_observer_smoke.py": "5baab0bfe920faedb3aa8c64ade5264b2646f3e81b69a03d27912418849465e4",
     "delphi_inventory.py": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518",
     "decode_delphi_observer.py": "beb7d8e74a58aaffd45769b614ed85e11bf38d647206ab4d631b2266857599d9",

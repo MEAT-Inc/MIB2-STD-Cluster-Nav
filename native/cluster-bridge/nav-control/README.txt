@@ -1,4 +1,9 @@
-Stock factory-map graceful lifecycle test — MU0890 Delphi only
+HELD - November 4: stock orderly shutdown stalled on the unit.
+Do not run the cycle command. Current action: updated map-session package:
+ python scripts/collect_map_session.py --run --state broken --shutdown-stack
+Capture while still stalled, return results, then reboot the radio.
+
+Stock factory-map graceful lifecycle test - MU0890 Delphi only (preflight v2)
 =============================================================
 
 Purpose: verify functional factory-map recovery using an orderly SAL shutdown
@@ -31,7 +36,11 @@ helper if control stalls; the host uses a longer command timeout.
 
 Native helper uploads are confined to a unique /ramdisk/delphi-nav-cycle_*
 directory. Exact NavigationServer, procman, and libXSAL file hashes are checked
-before upload. Existing logs/threads and read-only copies of existing DTS rings
+before helper upload. Preflight v2 uses the previously working shell copy to a
+regular RAM file before FTP retrieval, instead of FTP-reading /proc/boot files
+directly. All reference bytes, copy logs, expected/actual sizes and hashes are
+retained in the dump. A mismatch still blocks helper upload and all control.
+Existing logs/threads and read-only copies of existing DTS rings
 are collected; concurrently written rings are not atomic snapshots. Trace
 settings and firmware files are unchanged. RAM artifacts are retained for review.
 

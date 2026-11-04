@@ -1,3 +1,129 @@
+2026-11-04: FUNCTIONAL factory-map recovery PASSED; exit2 was reporting error
+Verified31 artifacts from _nav_stall_recovery_20261104_152525_5b8251a7.
+Exact crash matched twice; native recovery helper returned0 in0.5s, raw exit9,
+factory manager restarted Nav704597 ->3522645. Other map service PIDs unchanged.
+User confirms factory maps returned on radio AND cluster when selected in turn.
+This unit's map-location button selects one display at a time; simultaneous
+maps are not a valid recovery requirement.
+Python exit2 came solely from visual confirmation: user typed Y; old parser
+converted it to unsure and left functional_maps_verified false. No native or
+collection error was recorded. Raw capture stays unchanged; follow-up evidence
+and effective passed assessment are saved separately.
+Source now accepts y/yes/n/no case-insensitively and asks for each location
+using the toggle. No rerun is needed for this successful recovery.
+Physical lifecycle recovery after graceful teardown + exact crash termination
+is demonstrated. This does not yet prove AA or recorded replay pixels.
+Next work: integrate that lifecycle into recorded replay start/restoration;
+verify native cluster map selected before replay. Do not rerun old V6 or the
+already-consumed pinned recovery bundle.
+Review: delphi-analysis/cluster-bridge/20261104-recovery-success-review/review.json
+
+2026-11-04: Primary shutdown fault decoded; pinned recovery trial ready
+Verified all57 artifacts from _nav_shutdown_diag_20261104_144616_5cd1a4aa.
+Native memory reader worked; helper reached its25.031s clean-exit bound.
+Recovered SIGSEGV context: pc0x1026384 in libc _list_release, memory reference
+0x062c7ce8 = r4(0x03163f44)+r7(0x03163da4). Outer free returns to Nav0x1b8f2c,
+a deleting-destructor path in map cleanup. Exact invalid-lifetime cause unproven.
+The signal frame enters AAF handler; printf return0x3df0a4 -> libc file-lock
+cleanup -> nested free -> SyncMutexLock_r. __malloc_mutex is nonrecursive,
+owner NavMain2, so crash reporting deadlocks on its interrupted allocator lock.
+The process never exits, preventing normal factory autorestart.
+
+Recovery bundle: native/cluster-bridge/nav-control/nav-stalled-recovery-laptop.zip
+ python scripts/run_nav_graceful.py --run --recover-stalled --phone-unplugged
+Use ONLY while still in this captured failed state; no radio reboot first.
+The manifest pins exact Nav/manager PID+start identities. Live guard rechecks
+the exact crash frame, mutex owner and wait state twice before one SIGKILL.
+It confirms factory autorestart flag and then verifies new stock Nav PID,
+parent/start/code and raw exit9. No heap mutation, new shutdown request,
+extra start request, competing writer, or signal retry.
+QNX: guard accepts real captured crash bytes; healthy and stale requests refused;
+factory manager autorestart after SIGKILL verified. Test-only force command is
+absent from production.15host workflow tests and portable payload/plan passed.
+User must report visible factory maps on BOTH displays after process recovery.
+Return the entire _nav_stall_recovery_* folder. Functional recovery and visible
+AA replay remain unproven until car results. Widened cluster layout alone is
+not proof of video. Normal cycle/replay modes remain held.
+Review: delphi-analysis/cluster-bridge/20261104-fault-recovery-review/review.json
+
+2026-11-04: Diagnostic preflight hit missing dd; native page reader replaces it
+Reviewed _nav_shutdown_diag_20261104_142905_1095382e: all30 artifacts verified.
+Four references/native inspect passed. Baseline failed: ksh dd cannot execute.
+control_attempts0: no shutdown/start occurred. This was a runner dependency error.
+The unit remaining online is consistent with no control request.
+nav_cycle now offers a read-only bounded page command using pread64 with exact
+Nav PID/start/parent/executable/code and manager identity checks. It validates
+alignment/userspace bounds and rechecks identities before emitting one4KiB page.
+No optional car memory-copy utility is used. QNX tests require successful real
+process read plus zero-output refusal for stale ID, misaligned/unmapped address.
+
+Next authorized car action: nav-shutdown-diagnostic-v2-laptop.zip, same command:
+ python scripts/run_nav_graceful.py --run --diagnose-shutdown --phone-unplugged --factory-maps-working
+One baseline + one control attempt + two post-control raw samples in one folder.
+Normal cycle/replay modes remain held. No code unlocks/writes the allocator.
+Return whole _nav_shutdown_diag_* folder; reboot manually after capture if stuck.
+Review: delphi-analysis/cluster-bridge/20261104-native-page-reader-review/review.json
+
+2026-11-04: libc allocator lock confirmed; one combined diagnostic authorized
+Verified16 artifacts from _map_session_20261104_140759_85e5a63d.
+Both samples show NavMain/timer in __free at return0x1028088 blocked at
+SyncMutexLock_r pc0x1038714. Lock0x1076ee8 is exactly libc __malloc_mutex,
+not an SDK-specific mutex. Built-in unwind stops before the Nav caller.
+MOST VID_TX waits on TransportServer in both samples, unlike abort-only failure;
+this supports investigating teardown further, not a claim of visible maps.
+No evidence yet distinguishes allocator recursion, corruption or stale owner.
+User rebooted; raw caller frames from that occurrence are gone.
+User explicitly authorized reproducing the issue on the car.
+
+New bundle: native/cluster-bridge/nav-control/nav-shutdown-diagnostic-laptop.zip
+ python scripts/run_nav_graceful.py --run --diagnose-shutdown --phone-unplugged --factory-maps-working
+Start parked/ignition on/phone unplugged with factory maps BOTH screens working.
+Four exact references are RAM-copied/verified, then baseline raw-page capability
+is checked before any control. One native shutdown/start cycle at most, followed
+by two timed samples of NavMain/timer SP pages and __malloc_mutex page.
+No retry, fallback termination, allocator changes or video writes. Baseline or
+partial raw capture failure blocks control or remains incomplete; no fake pass.
+Data collection completion is separate from helper exit3/map restoration.
+Return the whole _nav_shutdown_diag_* folder, then reboot if maps stay stuck.
+Normal cycle/replay modes remain held. Native helper/QNX protocol code unchanged.
+Review: delphi-analysis/cluster-bridge/20261104-allocator-stall-review/review.json
+
+2026-11-04: Factory orderly shutdown stalls; further cycle/replay runs HELD
+Reviewed _nav_graceful_20261104_135331_dede29be: all27 artifacts verified.
+All3 firmware references match; RAM preflight and native inspect worked.
+Nav received shutdown0x163 from app2, entered teardown, and fell from64 thread
+rows to8 (including one DEAD). No clean exit/new process occurred.
+NavMain and PropalTimer wait on mutex0x1076ee8, reported owner NavMain733268-02.
+DTS strings report failure closing libHmiModuleLoader-3.1.so, SDK shutdown
+failed, then continued DS cleanup and MDMapProvider::deleteAllMaps().
+Exact blocking call requires stacks. errno22 is not proof of the cause.
+Do not repeat the graceful cycle; its --run entry now refuses all control.
+The user confirms the unit remains in the failed-test state.
+
+Next car action: updated map-session ZIP, short READ-ONLY capture:
+ python scripts/collect_map_session.py --run --state broken --shutdown-stack
+Two passes: Nav backtraces/registers/mappings/waits, peer waits and retained log.
+No helper upload, shutdown, signal, restart, or video. Return the entire new
+_map_session_* folder, then reboot for normal maps. If already rebooted, do not
+reproduce the failure. Need stacks before changing the factory teardown path.
+Review: delphi-analysis/cluster-bridge/20261104-graceful-shutdown-review/review.json
+
+2026-11-04: Graceful-cycle trial stopped before helper upload; preflight v2 prepared
+_nav_graceful_20261103_202152_80cb1f98 reports procman file-profile mismatch,
+control_attempts0, no artifacts or command transcript. No native helper ran.
+Original direct FTP preflight omitted actual bytes/digest; the exact mismatch
+cannot be diagnosed retrospectively. All16 earlier shell-staged procman files
+match the expected196184 bytes and SHA256c32c018b...45f05d.
+Preflight v2 now uses that established shell-copy-to-RAM/FTP route for all three
+references. It retains copy logs, full reference bytes and actual/expected
+sizes/hashes. A genuine mismatch still prevents helper upload and all control.
+The native helper and its previous QNX validation are unchanged.
+Next car action remains the same ONE stock-map graceful-cycle command using the
+updated nav-graceful-cycle-laptop.zip. Start with factory maps working both
+screens and phone unplugged; return the whole _nav_graceful_* folder.
+No physical orderly-cycle or map-recovery result has been obtained yet.
+Review: delphi-analysis/cluster-bridge/20261104-graceful-preflight-review/review.json
+
 2026-11-03: Guarded orderly navigation cycle passes QNX; next car gate prepared
 Healthy and incomplete map-session captures have been compared: 120 artifacts
 verified. Broken MOST VID_TX sleeps in both samples while healthy VID_TX waits

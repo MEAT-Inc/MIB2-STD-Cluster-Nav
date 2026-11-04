@@ -1,3 +1,11 @@
+> **November 4 milestone: functional factory-map recovery passed.** Native helper returned0 and the user confirms maps work on radio or cluster when selected with the toggle. Python exit2 was a false negative because Y became unsure; the prompt also wrongly implied simultaneous maps. Source now accepts y/n and checks each location in turn. No rerun is needed. Next work is integrating this validated lifecycle into recorded replay; older car instructions below are history.
+
+> **Current car action, November 4:** use nav-stalled-recovery-laptop.zip while the exact captured Starting map session is still present. The trial validates the known SIGSEGV/allocator deadlock, terminates that already-crashed Nav process once, and observes factory autorestart. Command: python scripts/run_nav_graceful.py --run --recover-stalled --phone-unplugged. Details: native/cluster-bridge/nav-control/RECOVERY-README.txt. Earlier reproduction instructions below are held history.
+
+> **Current car action, November 4:** user-approved single shutdown diagnostic with automatic allocator/caller page collection. Use nav-shutdown-diagnostic-laptop.zip and the command in native/cluster-bridge/nav-control/DIAGNOSTIC-README.txt. Return the _nav_shutdown_diag_* folder, then reboot if needed. Ordinary cycle/replay experiments remain held; earlier instructions below are history.
+
+> **November 4: cycle/replay tests HELD.** Stock orderly shutdown stalled. While still in that state, use the updated map-session ZIP: python scripts/collect_map_session.py --run --state broken --shutdown-stack. Return the dump, then reboot. Earlier cycle instructions below are held history.
+
 # MIB2 Cluster Navigation
 
 Research and diagnostic tooling for Android Auto navigation video in the instrument cluster of a Delphi MIB2 infotainment system, with a separate initial CarPlay investigation.

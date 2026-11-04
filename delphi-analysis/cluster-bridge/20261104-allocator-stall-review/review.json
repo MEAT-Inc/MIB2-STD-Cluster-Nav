@@ -1,0 +1,30 @@
+{
+  "collection": "_map_session_20261104_140759_85e5a63d",
+  "artifacts_verified": 16,
+  "same_process_ids": true,
+  "backtraces_identical": true,
+  "libc_base": "0x01000000",
+  "blocked_pc": "0x01038714",
+  "blocked_symbol": "SyncMutexLock_r+12",
+  "caller_return": "0x01028088",
+  "caller_symbol": "__free+0x140",
+  "malloc_mutex_symbol": "__malloc_mutex",
+  "malloc_mutex_offset": "0x76ee8",
+  "malloc_mutex_runtime": "0x01076ee8",
+  "navmain_sp": "0x0007eaa4",
+  "timer_sp": "0x00fcce1c",
+  "findings": [
+    "Both stable snapshots show NavMain/timer blocked in libc allocator lock acquisition from __free.",
+    "Mutex address matches captured libc __malloc_mutex exactly; not an SDK-specific mutex.",
+    "MOST VID_TX is REPLY to TransportServer in both samples, unlike earlier abort-only incomplete state.",
+    "Built-in backtrace does not expose the Nav caller above __free."
+  ],
+  "limits": [
+    "No raw allocator mutex or caller frames were captured; recursive re-entry, corruption, and abandoned owner causes remain unresolved.",
+    "SDK module close error is correlated, not proven causal.",
+    "MOST read activity does not prove visible map output."
+  ],
+  "state": "User rebooted after capture; original raw caller frames unavailable.",
+  "authorization": "User explicitly authorized reproducing the issue on the car.",
+  "next_action": "One approved diagnostic run with baseline and two timed post-control raw page captures. No retries, fallback termination, or allocator writes."
+}

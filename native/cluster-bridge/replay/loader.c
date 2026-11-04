@@ -59,7 +59,7 @@ static int (*test_geometry)(void*,int);
 static int armed_test_geometry(void *p,int fd){return arm_report&&arm_report[21]==1&&test_geometry&&test_geometry(p,fd);}
 #endif
 __attribute__((constructor)) static void load(void){
- struct replay_config c;struct replay_import hooks[3];const char *report=getenv("DELPHI_NAV_REPORT"),*prefix="/dev/shmem/delphi-nav-report-";char path[192];unsigned i,n=strlen(prefix);int fd=-1,raw=-1,logfd=-1,saved=errno,error=1001,started=0;struct stat st;unsigned char code[4],*bytes=0;size_t at=0;uint32_t *out=fallback,slot[3],v;ssize_t got;uint32_t functions[3],libc_base;void *libc_handle;
+ struct replay_config c;struct replay_import hooks[3];const char *report=getenv("DELPHI_NAV_REPORT"),*prefix="/dev/shmem/delphi-nav-report-";char path[192];unsigned i,n=strlen(prefix);int fd=-1,raw=-1,logfd=-1,capturefd=-1,saved=errno,error=1001,started=0;struct stat st;unsigned char code[4],*bytes=0;size_t at=0;uint32_t *out=fallback,slot[3],v;ssize_t got;uint32_t functions[3],libc_base;void *libc_handle;
  memset(&c,0,sizeof(c));memset(hooks,0,sizeof(hooks));libc_handle=dlopen("libc.so.3",RTLD_NOW);c.native_open=libc_handle?dlsym(libc_handle,"open"):0;c.native_write=libc_handle?dlsym(libc_handle,"write"):0;c.native_close=libc_handle?dlsym(libc_handle,"close"):0;
  if(!c.native_open||!c.native_write||!c.native_close){return;}
  replay_bind_callbacks(c.native_open,c.native_write,c.native_close);
@@ -69,6 +69,7 @@ __attribute__((constructor)) static void load(void){
  fd=c.native_open(report,O_CREAT|O_EXCL|O_RDWR,0600);if(fd<0||ftruncate(fd,512))goto end;
  {void *m=mmap(0,512,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);if(m==MAP_FAILED)goto end;out=m;arm_report=out;memset(out,0,512);}
  out[RP_MAGIC]=RPL_REPORT_MAGIC;out[RP_VERSION]=1;out[RP_SIZE]=512;out[RP_PID]=getpid();out[22]=1;
+ snprintf(path,sizeof(path),"/dev/shmem/delphi-nav-source-%.*s.bin",32,report+n);capturefd=c.native_open(path,O_CREAT|O_EXCL|O_RDWR,0600);if(capturefd>=0&&!ftruncate(capturefd,1024*1024)){void *m=mmap(0,1024*1024,PROT_READ|PROT_WRITE,MAP_SHARED,capturefd,0);if(m!=MAP_FAILED){c.capture=m;c.capture_capacity=1024*1024;}}
  functions[0]=(uintptr_t)c.native_open;functions[1]=(uintptr_t)c.native_write;functions[2]=(uintptr_t)c.native_close;for(i=0;i<3;i++)out[26+i]=functions[i];
  snprintf(path,sizeof(path),"/proc/%u/as",(unsigned)getpid());memfd=c.native_open(path,O_RDONLY);error=1002;
  if(memfd<0||replay_libc_validate(&replay_expected_libc,functions,profile_read,0,&libc_base))goto end;
@@ -98,5 +99,5 @@ __attribute__((constructor)) static void load(void){
  {int result=replay_imports_install(hooks,3);out[35]=(uint32_t)result;if(result){error=1007;goto end;}}out[22]=6;
  for(i=0;i<3;i++)if(*hooks[i].slot!=hooks[i].replacement){(void)replay_imports_restore(hooks,3);error=1008;goto end;}
  out[22]=7;if(replay_publish_ready()){(void)replay_imports_restore(hooks,3);error=1009;goto end;}error=0;
- end:if(fd>=0)c.native_close(fd);if(raw>=0)c.native_close(raw);if(error){if(started)replay_stop();out[RP_MAGIC]=RPL_REPORT_MAGIC;out[RP_VERSION]=1;out[RP_SIZE]=512;out[RP_PID]=getpid();out[RP_STATUS]=RPL_ERROR;out[RP_ERROR]=error;}if(logfd>=0){int len=snprintf(path,sizeof(path),"REPLAY_INIT stage=%u error=%d app_imports=%u\n",out[22],error,error?0:3);if(len>0&&(unsigned)len<sizeof(path)){size_t done=0;unsigned tries=0;while(done<(size_t)len&&tries++<32){ssize_t w=c.native_write(logfd,path+done,len-done);if(w<0&&errno==EINTR)continue;if(w<=0)break;done+=w;}}c.native_close(logfd);}errno=saved;
+ end:if(capturefd>=0)c.native_close(capturefd);if(fd>=0)c.native_close(fd);if(raw>=0)c.native_close(raw);if(error){if(started)replay_stop();out[RP_MAGIC]=RPL_REPORT_MAGIC;out[RP_VERSION]=1;out[RP_SIZE]=512;out[RP_PID]=getpid();out[RP_STATUS]=RPL_ERROR;out[RP_ERROR]=error;}if(logfd>=0){int len=snprintf(path,sizeof(path),"REPLAY_INIT stage=%u error=%d app_imports=%u\n",out[22],error,error?0:3);if(len>0&&(unsigned)len<sizeof(path)){size_t done=0;unsigned tries=0;while(done<(size_t)len&&tries++<32){ssize_t w=c.native_write(logfd,path+done,len-done);if(w<0&&errno==EINTR)continue;if(w<=0)break;done+=w;}}c.native_close(logfd);}errno=saved;
 }

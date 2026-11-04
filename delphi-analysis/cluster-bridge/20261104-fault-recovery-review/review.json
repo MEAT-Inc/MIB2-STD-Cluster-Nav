@@ -1,0 +1,63 @@
+{
+  "collection": "_nav_shutdown_diag_20261104_144616_5cd1a4aa",
+  "artifacts_verified": 57,
+  "diagnostics_complete": true,
+  "cycle_elapsed_seconds": 25.031,
+  "primary_fault": {
+    "signal": 11,
+    "code": 1,
+    "errno": 0,
+    "fault_number": 11,
+    "pc": "0x1026384",
+    "address": "0x62c7ce8",
+    "symbol": "_list_release+0x1a8",
+    "instruction": "ldr r1,[r4,r7]",
+    "r4": "0x3163f44",
+    "r7": "0x3163da4",
+    "saved_sp": "0x7ed58",
+    "saved_lr": "0x1027fd4",
+    "nav_delete_return": "0x1b8f2c",
+    "inferred_free_pointer": "0x3163f48"
+  },
+  "secondary_stall": {
+    "signal_handler_printf_return": "0x3df0a4",
+    "printf_return": "0x10516f8",
+    "file_lock_cleanup_return": "0x105708c",
+    "nested_free_return": "0x1028088",
+    "blocked_pc": "0x1038714",
+    "malloc_mutex": "0x1076ee8",
+    "mutex_words": [
+      "0x80000000",
+      "0xc0550002"
+    ],
+    "owner": "NavMain thread2",
+    "cause": "Fatal-signal handler invokes printf which re-enters free while the fault-interrupted allocator lock is held by the same thread."
+  },
+  "limits": [
+    "The source of invalid heap metadata remains unproven: double release, invalid allocation lifetime or other corruption have not been distinguished.",
+    "Widened cluster layout proves layout/state change, not decoded video or successful map rendering.",
+    "Recovery after partially completed teardown has not yet been verified on the car."
+  ],
+  "recovery_trial": {
+    "pinned_identity": {
+      "version": 1,
+      "readonly": true,
+      "pid": 704597,
+      "start_time": 1422774009162990837,
+      "manager_pid": 417823,
+      "manager_start": 1422774000998999001,
+      "app_id": 29,
+      "state": 3
+    },
+    "guard": "Exact repeated live kernel wait state, mutex owner, SIGSEGV context, Nav deletion return path and process/manager identity",
+    "action": "One SIGKILL of this already-crashed Nav process, followed by factory-manager autorestart observation; no new shutdown or explicit-start request",
+    "qnx_capture_guard_passed": true,
+    "qnx_healthy_refusal_passed": true,
+    "qnx_stale_refusal_passed": true,
+    "qnx_factory_autorestart_status9_passed": true,
+    "production_test_bypass_absent": true,
+    "helper_sha256": "b71b08297a82cb866b57768f218a338458f86b4e86ceeeae7f53b1e6d5cb7451",
+    "car_tested": false,
+    "refusal_diagnostics": "Records wait state, IP/SP, mutex and each repeated decoded crash signature; accepts call/return IP within exact SyncMutexLock_r stub."
+  }
+}

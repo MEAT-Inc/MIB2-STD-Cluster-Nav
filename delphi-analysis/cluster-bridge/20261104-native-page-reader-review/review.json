@@ -1,0 +1,16 @@
+{
+  "collection": "_nav_shutdown_diag_20261104_142905_1095382e",
+  "artifacts_verified": 30,
+  "control_attempts": 0,
+  "native_shutdown_requested": false,
+  "failure": "ksh: dd: cannot execute - No such file or directory\n",
+  "conclusion": "The diagnostic stopped at baseline memory acquisition because dd could not execute. No shutdown/start was attempted; no new stalled-state caller memory exists in this collection.",
+  "fix": "Replace dd with bounded identity-guarded native pread64 page command, validated against real process memory under QNX emulation, including negative cases. Retain one controlled reproduction with automatic baseline and post-control capture; no extra car action before baseline succeeds.",
+  "qnx_validation": {
+    "real_page_read_passed": true,
+    "stale_identity_zero_output_passed": true,
+    "misaligned_unmapped_zero_output_passed": true,
+    "existing_lifecycle_suite_passed": true,
+    "helper_sha256": "49707d8bbaaaf45887ac248d06693e19f11296b89358587dbe2c0733d47da9fb"
+  }
+}

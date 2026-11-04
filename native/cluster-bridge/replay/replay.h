@@ -5,7 +5,7 @@
 #include <sys/types.h>
 enum { RPL_MAGIC=0x314c5052, RPL_REPORT_MAGIC=0x31504c52, RPL_READY=1,RPL_ACTIVE,RPL_DONE,RPL_ERROR };
 enum { RP_MAGIC,RP_VERSION,RP_SIZE,RP_PID,RP_STATUS,RP_ERROR,RP_OPENS,RP_WRITES,RP_SUPPRESSED,RP_REQUESTED,RP_PACKETS,RP_BYTES,RP_ZERO,RP_CLOSES,RP_GENERATION,RP_FD,RP_GROUPS,RP_DURATION,RP_EXPECTED,RP_LOADED,RP_BAD_CALLERS };
-enum { RP_HOOK_OPENS=37,RP_HOOK_WRITES=38,RP_HOOK_CLOSES=39,RP_INSPECT_HEARTBEAT=50 };
+enum { RP_HOOK_OPENS=37,RP_HOOK_WRITES=38,RP_HOOK_CLOSES=39,RP_INSPECT_HEARTBEAT=50,RP_NATIVE_BYTES=52,RP_CAPTURE_BYTES=53,RP_NATIVE_WRITES=54 };
 struct replay_config {
  int (*native_open)(const char *,int,...);
  ssize_t (*native_write)(int,const void *,size_t);
@@ -15,6 +15,8 @@ struct replay_config {
  const unsigned char *file_bytes;
  size_t file_size;
  volatile uint32_t *report;
+ unsigned char *capture;
+ size_t capture_capacity;
  uintptr_t open_lr,write_lr,close_lr;
  int defer_ready;
  void (*inspect)(void *,volatile uint32_t *);

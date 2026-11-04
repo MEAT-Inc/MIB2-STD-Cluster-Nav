@@ -1,0 +1,84 @@
+{
+  "collection": "_nav_graceful_20261104_135331_dede29be",
+  "artifacts_verified": 27,
+  "references_verified": true,
+  "identity": {
+    "version": 1,
+    "readonly": true,
+    "pid": 733268,
+    "start_time": 1793779960714990285,
+    "manager_pid": 413728,
+    "manager_start": 1793779951979999020,
+    "app_id": 29,
+    "state": 3
+  },
+  "cycle": {
+    "version": 1,
+    "process_cycle_verified": false,
+    "functional_maps_verified": false,
+    "stage": "clean_exit",
+    "old_pid": 733268,
+    "new_pid": 0,
+    "new_start": 0,
+    "last_exit_raw": 0,
+    "signals_to_nav": false
+  },
+  "cycle_errors": "NAV_GRACEFUL_STOP_REQUEST pid=733268\nNAV_GRACEFUL_REFUSED_OR_PARTIAL stage=clean_exit errno=22\n",
+  "nav_threads_before": 64,
+  "nav_threads_after": 8,
+  "nav_waits_after": [
+    "  733268 n/NavigationServer XSAL-RT              RECEIVE     3                           ",
+    "  733268 n/NavigationServer NavMain              MUTEX       (0x1076ee8) 733268-02 #0    ",
+    "  733268 n/NavigationServer NavSub               SEM         e6c74230                    ",
+    "  733268 n/NavigationServer NavWDog1             SEM         e6c742a8                    ",
+    "  733268 n/NavigationServer NavWDog2             NANOSLEEP                               ",
+    "  733268 n/NavigationServer PropalTimer[FW]      MUTEX       (0x1076ee8) 733268-02 #0    ",
+    "  733268 n/NavigationServer inThreadInvoker [FW] CONDVAR     (0x99ba620)                 ",
+    "  733268 n/NavigationServer tryProvider[Routing] DEAD                                    "
+  ],
+  "trace_excerpts": [
+    {
+      "offset": "0x75469",
+      "text": "navapplMainThread.cppoM EV_SHUTDOWN_APP E=355 s=0 A=2 L=0 O=0"
+    },
+    {
+      "offset": "0x7c119",
+      "text": "MDCore.cpp::endFPKMap(..) shutdown FPK encoder by internal handling"
+    },
+    {
+      "offset": "0x7c5b9",
+      "text": "MDCore.cpp::endedFPKMap() end of FPK rendering, switch to normal: isOkay='1' isFPKInternalShutdown='1'"
+    },
+    {
+      "offset": "0x80c69",
+      "text": "NavExtPNavHandlerThread.cppPNAV: ERROR shutdownPredNavCore failed"
+    },
+    {
+      "offset": "0x834d9",
+      "text": "SdkModuleImpl.cppfailed closing 'libHmiModuleLoader-3.1.so'"
+    },
+    {
+      "offset": "0x83559",
+      "text": "navcoreNavigationKernel.cppSdkModule shutdown failed"
+    },
+    {
+      "offset": "0x83ad9",
+      "text": "MDMapProvider.cpp::deleteAllMaps()"
+    }
+  ],
+  "trace_extraction": "Printable strings/byte offsets only, not binary ring timestamp decoding.",
+  "findings": [
+    "Firmware references and native inspect passed. RAM-staged preflight worked.",
+    "Factory Nav received event0x163 from app2 and performed substantial teardown.",
+    "NavMain and PropalTimer wait on mutex0x1076ee8 reported owner733268-02.",
+    "Trace records SDK close failure followed by continued cleanup; last NavMain printable message is MDMapProvider::deleteAllMaps().",
+    "No clean exit or explicit start was recorded. Same Nav PID remains; no replay/video writes."
+  ],
+  "limits": [
+    "errno22 is not proven causal; helper omitted detailed subcheck/elapsed-time diagnostics.",
+    "Helper may have left clean-exit wait early on guard/read failure or reached its time bound.",
+    "Same-owner mutex wait suggests recursive locking; exact blocked call requires stacks.",
+    "SDK close failure and map deletion are correlated with the stall, not proven causal repair targets."
+  ],
+  "next_action": "Read-only short shutdown stack capture from still-stalled unit; do not repeat shutdown."
+}

@@ -1,0 +1,30 @@
+{
+  "collection": "_nav_stall_recovery_20261104_152525_5b8251a7",
+  "summary_sha256": "ee8e9fcdfafc7c699467a91aa87d18913f2bedf84cf5307e635383ecc66c817f",
+  "artifacts_verified": 31,
+  "native_helper_exit": 0,
+  "native_recovery_verified": true,
+  "old_nav_pid": 704597,
+  "new_nav_pid": 3522645,
+  "peer_process_ids_unchanged": true,
+  "helper_elapsed_seconds": 0.5,
+  "original_visual_answer_recorded": "unsure",
+  "original_functional_flag": false,
+  "python_exit_code_reported": 2,
+  "exit2_reason": "User entered Y. Original parser accepted only yes/no, normalized Y to unsure, and returned2 solely because functional_maps_verified was false. Native recovery succeeded with helper exit0.",
+  "user_followup": {
+    "answer_entered": "Y",
+    "factory_map_works_on_radio": true,
+    "factory_map_works_on_cluster": true,
+    "display_locations_selected_sequentially": true,
+    "simultaneous_maps_supported": false
+  },
+  "effective_assessment": {
+    "functional_factory_map_recovery_verified": true,
+    "evidence": "Native identity/manager recovery plus explicit user report of map rendering in each selected location.",
+    "simultaneous_display_required": false,
+    "android_auto_cluster_playback_proven": false
+  },
+  "source_fix": "Accept y/n and yes/no case-insensitively; prompt for each selected location in turn. Preserve original capture unchanged.",
+  "next_step": "Integrate the now car-validated graceful-then-exact-crash-recovery lifecycle into recorded replay startup/restoration, and require cluster map selected before replay. No repeat recovery test is needed."
+}

@@ -1,8 +1,8 @@
 {
   "bundle": "native/cluster-bridge/map-session/map-session-diagnostics-laptop.zip",
-  "bytes": 17007,
-  "sha256": "b498cc49f2d2c2044e0e68e6b679d95d1e4760613a1857908efa080bccafbe6e",
-  "workflow_tests": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.082s\n\nOK",
+  "bytes": 20213,
+  "sha256": "e9762026440b969689d3b81c260162f5776a2d81cccafa39b7c18e73bda88c97",
+  "workflow_tests": "========================================================================\ntest_collect_map_session.py | version 1.0\nArguments: (none)\nUse case: test collect map session\n========================================================================\n[10:04:42] [STEP  ] Starting script.\n.[10:04:42] [STEP  ] Connecting to the head unit over FTP.\n....\n----------------------------------------------------------------------\nRan 5 tests in 0.226s\n\nOK\n[10:04:43] [OK    ] Finished with exit 0 (0.2s).",
   "portable_plan_passed": true,
   "manifest": {
     "kind": "readonly_map_session_snapshot",
@@ -11,24 +11,28 @@
     "video_writes": false,
     "files": {
       "scripts/collect_map_session.py": {
-        "bytes": 5238,
-        "sha256": "d21c7aad79eac8d46c096fb74e128cc0e3ed90e4dc4d9aca1f2de2183bfb0804"
+        "bytes": 5858,
+        "sha256": "1cdaa2e1917de5483220e40c2dfb7293c63d4a1828c2c1eb57c320bf2ef76fd3"
       },
       "scripts/run_observer_smoke.py": {
-        "bytes": 11824,
-        "sha256": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5"
+        "bytes": 12132,
+        "sha256": "5baab0bfe920faedb3aa8c64ade5264b2646f3e81b69a03d27912418849465e4"
       },
       "scripts/delphi_inventory.py": {
-        "bytes": 23991,
-        "sha256": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25"
+        "bytes": 23590,
+        "sha256": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518"
+      },
+      "scripts/project_console.py": {
+        "bytes": 5652,
+        "sha256": "1693776432be4b45937221882f281f24c6a30701877ea72e921735bb85ce7c5f"
       },
       "scripts/decode_delphi_observer.py": {
-        "bytes": 2118,
-        "sha256": "113906aee942b7245360806fcddb643b95210df976f23ce7f97cf3006264e13b"
+        "bytes": 2228,
+        "sha256": "beb7d8e74a58aaffd45769b614ed85e11bf38d647206ab4d631b2266857599d9"
       },
       "README.txt": {
-        "bytes": 1809,
-        "sha256": "b0c040eb2525fdb7a5330f77c19f4d6abb2cc92c143944c530e602c902a4cd4a"
+        "bytes": 2970,
+        "sha256": "3102d38c2948112f84b7038b74cd91630d600f0c1dc0497258d08e19fb7b6ff6"
       }
     }
   }

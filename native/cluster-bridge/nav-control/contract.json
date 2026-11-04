@@ -1,5 +1,5 @@
 {
-  "status": "qnx_guarded_cycle_passed_car_functional_recovery_pending",
+  "status": "car_functional_factory_map_recovery_passed",
   "nav_app_id": 29,
   "procman_app_id": 1,
   "shutdown": {
@@ -42,12 +42,36 @@
     "stride": 8,
     "nav_entry": "0x126624"
   },
-  "car_commands_issued": false,
-  "functional_maps_verified": false,
+  "car_commands_issued": true,
+  "functional_maps_verified": true,
   "validation": {
     "environment": "private QNX 6.5 ARM emulator with captured procman and libXSAL",
     "guarded_cycle_passed": true,
     "stale_identity_refused": true,
     "helper_sha256": "afc23211f53710925c695b5204f41c6fbb6e335103c186e480b57b2d1bfb1b6a"
-  }
+  },
+  "normal_cycle_enabled": false,
+  "diagnostic_shutdown_enabled": true,
+  "diagnostic_user_authorized": true,
+  "page_reader": {
+    "mode": "bounded_guarded_pread64",
+    "bytes": 4096,
+    "qnx_positive_negative_tests_passed": true,
+    "helper_sha256": "49707d8bbaaaf45887ac248d06693e19f11296b89358587dbe2c0733d47da9fb"
+  },
+  "recovery_enabled": true,
+  "recovery_pinned_identity": {
+    "version": 1,
+    "readonly": true,
+    "pid": 704597,
+    "start_time": 1422774009162990837,
+    "manager_pid": 417823,
+    "manager_start": 1422774000998999001,
+    "app_id": 29,
+    "state": 3
+  },
+  "current_helper_sha256": "b71b08297a82cb866b57768f218a338458f86b4e86ceeeae7f53b1e6d5cb7451",
+  "functional_evidence": "User confirmed factory map rendering on each display selected sequentially after verified stock restart.",
+  "simultaneous_maps_required": false,
+  "recovery_pinned_session_consumed": true
 }

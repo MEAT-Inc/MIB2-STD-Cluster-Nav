@@ -1,0 +1,94 @@
+{
+  "collection": "_nav_graceful_20261103_202152_80cb1f98",
+  "summary_sha256": "cd914626d448ce4fcca388856abe1c41ad0cf3f21de728eedce1ad57d589dd61",
+  "control_attempts": 0,
+  "helper_uploaded": false,
+  "helper_executed": false,
+  "artifacts_returned": 0,
+  "observed_failure": "Unit profile mismatch: /proc/boot/procman",
+  "diagnosis": "Failure occurred during direct FTP reference verification before helper upload. Original runner did not retain actual reference bytes, size, or hash, so mismatch cause cannot be determined from this result.",
+  "prior_procman_references": [
+    {
+      "file": "delphi-dump/_androidauto_observer_20261029_040547_7c22f85f/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_androidauto_observer_20261029_042655_dbdaa2d1/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_androidauto_observer_20261029_130447_557863fc/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_cluster_replay_20261103_032936_b7116dbc/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_cluster_replay_20261103_040408_6f1d5bef/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_cluster_replay_20261103_045557_f11ecfa8/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_cluster_replay_20261103_123923_179465c3/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_cluster_replay_20261103_130353_b925faeb/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_cluster_replay_20261103_132444_537435f0/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_disconnect_observer_20261029_225707_669ee00c/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_disconnect_observer_20261029_233918_512db910/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_disconnect_observer_20261030_001820_26e4d417/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_disconnect_observer_20261030_010535_854fe87e/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_disconnect_observer_20261030_023947_1b83e2fa/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_disconnect_observer_20261103_022700_3b445220/procman.reference",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    },
+    {
+      "file": "delphi-dump/_observer_smoke_20261029_005129_a1ecf3ce/procman.captured",
+      "bytes": 196184,
+      "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+    }
+  ],
+  "change": "Preflight v2 stages all references via shell cp to unique RAM directory before FTP retrieval, preserving bytes/copy logs/expected and actual hashes. Exact firmware gates and native helper remain unchanged.",
+  "limitation": "Whether RAM staging resolves the physical-unit mismatch requires another on-car test. This collection did not exercise orderly shutdown/start or map recovery."
+}

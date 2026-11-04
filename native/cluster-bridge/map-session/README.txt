@@ -1,3 +1,24 @@
+November 4: SHORT READ-ONLY SHUTDOWN STACK CAPTURE
+================================================
+The latest orderly shutdown entered native teardown but stalled with NavMain
+waiting on a mutex reported as owned by that same thread. The trace reports an
+SDK close failure followed by map-provider cleanup. The exact blocked call is
+not identified. Do not repeat the graceful-cycle or replay experiments.
+
+If still in that failed-test state, collect before reboot:
+ python scripts/collect_map_session.py --run --state broken --shutdown-stack
+
+Two short passes capture Nav threads, backtrace, registers and mappings, plus
+MOST/screen waits, process inventory and retained log. No native helper upload,
+shutdown, restart, signal or video is sent. Return the entire _map_session_*
+folder, then reboot the radio to restore normal operation. If already rebooted,
+do not recreate the failure by rerunning shutdown.
+
+QNX6.5 pidin backtrace/regs documentation:
+https://qnx.com/developers/docs/6.5.0SP1.update/com.qnx.doc.neutrino_utilities/p/pidin.html
+Target backtrace/register support is not yet verified. Unsupported queries
+are saved as optional errors and do not discard other diagnostics.
+
 READ-ONLY MAP SESSION COMPARISON
 V6 accepted5646 transport packets then32zero writes; no cluster image. A new
 stock NavigationServer process was verified after cleanup, but factory map

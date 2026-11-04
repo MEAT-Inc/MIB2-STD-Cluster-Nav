@@ -32,4 +32,6 @@ idle_fixture
 procman
 manager.cfg
 libXSAL.so
+stall.stack
+stall.mutex
 libsocket.so.3

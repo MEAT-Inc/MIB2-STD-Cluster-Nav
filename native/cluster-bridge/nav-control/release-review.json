@@ -1,12 +1,14 @@
 {
   "bundle": "native/cluster-bridge/nav-control/nav-graceful-cycle-laptop.zip",
-  "bytes": 33555,
-  "sha256": "a28da5e6660828da3105971672e6d79a2a53bf2577eec33c3d85e7c8e0634f15",
+  "bytes": 34117,
+  "sha256": "8db49eb70c33d9ee4fb3e301cfbff3e6fd63bfba6cba0abeb191a8b5a391e5e2",
   "portable_plan_passed": true,
   "portable_assets_passed": true,
-  "workflow_tests": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.119s\n\nOK",
+  "workflow_tests": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.187s\n\nOK",
   "manifest": {
     "kind": "stock_nav_graceful_cycle",
+    "preflight_revision": 2,
+    "reference_method": "shell_copy_to_ram_then_ftp",
     "nav_app_id": 29,
     "qnx_guarded_cycle_passed": true,
     "car_validated": false,
@@ -78,7 +80,7 @@
       "proc_readonly.c": "8dda5469e2d99a779735db18c2b4990518c66411c0effab0e9f3f65b2a59d37d"
     },
     "scripts": {
-      "run_nav_graceful.py": "421a5234fa90156a6b068371f6f6840bf5fdb0a43f178e25b2e2ee9e58367461",
+      "run_nav_graceful.py": "6d4cd801689873de4777388464aa78e85065b05413e82ebc04df9f39bc077220",
       "collect_map_session.py": "4dfd5d7c0995bcc8fbad3d537d45836468fe1a327d0b15e06f1fa798de4a88dd",
       "run_observer_smoke.py": "5baab0bfe920faedb3aa8c64ade5264b2646f3e81b69a03d27912418849465e4",
       "delphi_inventory.py": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518",
