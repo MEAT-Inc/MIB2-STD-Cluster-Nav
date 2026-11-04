@@ -9,7 +9,7 @@ import run_cluster_replay as m
 LOG=(m.ROOT/'native/cluster-bridge/nav-launch/qemu/qemu.log').read_text()
 def state(final=False):return bytes.fromhex(re.search(r'^NAV_DISCONNECT_'+('FINAL' if final else 'PENDING')+r'_HEX ([0-9a-f]+)$',LOG,re.M)[1])
 def report(pid,done=False):
- w=[0]*128;w[:6]=[0x31504c52,1,512,pid,3 if done else 1,0];w[6]=1;w[7]=2;w[8]=1 if done else 0;w[10]=3 if done else 0;w[11]=564 if done else 0;w[16]=2 if done else 0;w[17]=30;w[18]=3;w[19]=612;w[21]=int(done);w[22]=7;w[36]=0x78000000;w[15]=17;w[29:32]=[200,201,202];w[37:40]=[1,2,3];w[40:43]=w[29:32];w[43]=0x123400;w[44]=17;w[45:50]=[800,480,800,480,0];w[50]=1;return struct.pack('<128I',*w)
+ w=[0]*128;w[:6]=[0x31504c52,1,512,pid,3 if done else 1,0];w[6]=1;w[7]=2;w[8]=1 if done else 0;w[10]=3 if done else 0;w[11]=564 if done else 0;w[16]=2 if done else 0;w[17]=30;w[18]=3;w[19]=612;w[21]=int(done);w[22]=7;w[36]=0x78000000;w[15]=17;w[29:32]=[200,201,202];w[37:40]=[1,2,3];w[40:43]=w[29:32];w[43]=0x123400;w[44]=17;w[45:50]=[800,480,800,480,0];w[50]=1;w[52]=564;w[53]=564;w[54]=2;return struct.pack('<128I',*w)
 class Tests(unittest.TestCase):
  def test_plan_and_phone_attestation_no_network(self):
   with patch.object(m.ftplib,'FTP') as ftp,contextlib.redirect_stdout(io.StringIO()):self.assertEqual(m.main([]),0)
@@ -24,13 +24,13 @@ class Tests(unittest.TestCase):
    if offset in (64,72,80,88):struct.pack_into('<Q',b,offset,0)
    with self.subTest(offset=offset),self.assertRaises(ValueError):m.assess_controller(b,root,True)
  def test_delivery_never_implies_visible_maps(self):
-  manifest=dict(hook_mode='app_import_slots',startup_contract_revision=6,canonical_image_exec=True,preserve_standard_streams=True,post_exec_identity_ack=True,activation_mode="armed_native_descriptor",replay=dict(packets=3,groups=2),files={'replay.bin':dict(bytes=612)})
+  manifest=dict(hook_mode='app_import_slots',startup_contract_revision=7,canonical_image_exec=True,preserve_standard_streams=True,post_exec_identity_ack=True,activation_mode="native_frames_then_explicit_arm",lifecycle_mode="sal_shutdown_exact_crash_recovery",replay=dict(packets=3,groups=2),files={'replay.bin':dict(bytes=612)})
   v=m.assess_replay(report(22,True),22,manifest,True);self.assertTrue(v['packets_delivered']);self.assertFalse(v['physical_display_proven'])
   for i in (0,1,2,3,4,18,19,21,22,127):
    b=bytearray(report(22,True));struct.pack_into('<I',b,i*4,0xffffffff)
    with self.subTest(i=i),self.assertRaises(ValueError):m.assess_replay(b,22,manifest,True)
  def run_fake(self,mode='',resume=False):
-  pending,final=state(),state(True);oldroot=pending[96:224].split(b'\0')[0].decode();w=struct.unpack_from('<16I',final);files={n:(bytes(612) if n=='replay.bin' else n.encode()) for n in m.NAMES};refs={n:dict(path='/stock/'+n,bytes=len(n),sha256=m.sha(n.encode())) for n in ('NavigationServer.original','NavServer.cfg.reference','procman.reference','procman-core.cfg')};profile=dict(offsets=[0x100,0x200,0x300],code=['11'*32,'22'*32,'33'*32]);manifest=dict(libc_profile=profile,hook_mode='app_import_slots',startup_contract_revision=6,canonical_image_exec=True,preserve_standard_streams=True,post_exec_identity_ack=True,activation_mode="armed_native_descriptor",references=refs,replay=dict(packets=3,groups=2),files={n:dict(bytes=len(v),sha256=m.sha(v)) for n,v in files.items()});db={v['path']:n.encode() for n,v in refs.items()};commands=[];remote=None
+  pending,final=state(),state(True);oldroot=pending[96:224].split(b'\0')[0].decode();w=struct.unpack_from('<16I',final);files={n:(bytes(612) if n=='replay.bin' else n.encode()) for n in m.NAMES};refs={n:dict(path='/stock/'+n,bytes=len(n),sha256=m.sha(n.encode())) for n in ('NavigationServer.original','NavServer.cfg.reference','procman.reference','procman-core.cfg')};profile=dict(offsets=[0x100,0x200,0x300],code=['11'*32,'22'*32,'33'*32]);manifest=dict(libc_profile=profile,hook_mode='app_import_slots',startup_contract_revision=7,canonical_image_exec=True,preserve_standard_streams=True,post_exec_identity_ack=True,activation_mode="native_frames_then_explicit_arm",lifecycle_mode="sal_shutdown_exact_crash_recovery",references=refs,replay=dict(packets=3,groups=2),files={n:dict(bytes=len(v),sha256=m.sha(v)) for n,v in files.items()});db={v['path']:n.encode() for n,v in refs.items()};commands=[];remote=None
   class FTP:
    def __init__(self,**kw):pass
    def __enter__(self):return self
@@ -58,12 +58,17 @@ class Tests(unittest.TestCase):
       active=bytearray(report(w[10],True));struct.pack_into('<I',active,4*4,2);struct.pack_into('<I',active,13*4,1);struct.pack_into('<I',active,10*4,1);struct.pack_into('<I',active,11*4,188);db[remote+'/'+dest]=bytes(active)
     if c.startswith('test -r '):return 0 if (c[8:] if c[8:].startswith('/') else remote+'/'+c[8:]) in db else 1
     if 'pidin -p NavigationServer' in c:db[remote+'/'+c.split('> ')[1].split()[0]]=('%d NavigationServer -fcfg ../cfg/NAV/v0/NC/Delphi/NavServer.cfg\n'%(w[11] if 'after' in c else w[14])).encode()
+    if 'most-status ' in c:db[remote+'/'+c.split('> ')[1].split()[0]]=b'{}'
     if 'pidin arguments >' in c:db[remote+'/'+c.split('> ')[1].split()[0]]=b'123 Most\n124 TransportServer\n125 AndroidAuto -t\n'
     if './replay_libc_check ' in c:
      db[remote+'/libc-preflight-errors.txt']=b'';db[remote+'/libc-preflight.json']=json.dumps(dict(version=1,profile_matches=mode!='preflightfail',base=0x78000000,functions=[0x78000000+v for v in profile['offsets']],entry_code=profile['code'])).encode()
      if mode=='preflightfail':return 1
     if 'start-disconnected ' in c:
-     db['/dev/shmem/delphi-nav-launch-report-'+token+'.bin']=pending.replace(oldroot.encode(),remote.encode());db['/dev/shmem/delphi-nav-report-'+token+'.bin']=report(w[10]);db[remote+'/start.txt']=b'LAUNCH_OBSERVED\n';db[remote+'/nav-startup.txt']=b'REPLAY_INIT ready\n'
+     db['/dev/shmem/delphi-nav-launch-report-'+token+'.bin']=pending.replace(oldroot.encode(),remote.encode());db['/dev/shmem/delphi-nav-report-'+token+'.bin']=report(w[10]);db['/dev/shmem/delphi-nav-source-'+token+'.bin']=(b'\x47'+bytes(187))*3+bytes(1048576-564);db[remote+'/start.txt']=b'LAUNCH_OBSERVED\n';db[remote+'/nav-startup.txt']=b'REPLAY_INIT ready\n'
+     if mode=='nativestalled':
+      bad=bytearray(report(w[10]))
+      for slot in (7,52,54):struct.pack_into('<I',bad,slot*4,0)
+      db['/dev/shmem/delphi-nav-report-'+token+'.bin']=bytes(bad)
      if mode=='channelmissing':
       bad=bytearray(report(w[10]));struct.pack_into('<I',bad,6*4,0);db['/dev/shmem/delphi-nav-report-'+token+'.bin']=bytes(bad)
      if mode=='bootstrapfail':
@@ -85,21 +90,28 @@ class Tests(unittest.TestCase):
     return 'SKIP' if mode=='skip' else ''
    return 'n' if mode=='invisible' else 'y'
   ticks=iter(range(0,100000,20))
-  with patch.object(m.time,'monotonic',side_effect=lambda:next(ticks)),tempfile.TemporaryDirectory() as t,patch.object(m,'ROOT',Path(t)),patch.object(m,'package',return_value=(files,manifest)),patch.object(m,'verify_navigation'),patch.object(m.ftplib,'FTP',FTP),patch.object(m,'Shell',Shell),patch.object(m.time,'sleep'),patch('builtins.input',side_effect=answer),contextlib.redirect_stdout(io.StringIO()):
-   rc=m.main(['--run','--phone-unplugged']);folder=next((Path(t)/'delphi-dump').iterdir());summary=json.loads((folder/'replay-summary.json').read_text())
+  with patch.object(m.time,'monotonic',side_effect=lambda:next(ticks)),tempfile.TemporaryDirectory() as t,patch.object(m,'ROOT',Path(t)),patch.object(m,'package',return_value=(files,manifest)),patch.object(m,'verify_navigation'),patch.object(m.ftplib,'FTP',FTP),patch.object(m,'Shell',Shell),patch.object(m.time,'sleep'),patch.object(m,'input',side_effect=answer),contextlib.redirect_stdout(io.StringIO()),contextlib.redirect_stderr(io.StringIO()):
+   rc=m.main(['--run','--phone-unplugged','--cluster-map-selected']);folder=next((Path(t)/'delphi-dump').iterdir());summary=json.loads((folder/'replay-summary.json').read_text())
    if resume:
     mode='';commands.clear();rc=m.main(['--resume',str(folder),'--phone-unplugged']);summary=json.loads((folder/'replay-summary.json').read_text())
   return rc,summary,commands
  def test_visible_replay_restore_and_one_arm(self):
   rc,s,c=self.run_fake();self.assertEqual(rc,0);self.assertTrue(s['restoration_verified']);self.assertTrue(s['cluster_maps_seen']);self.assertEqual(sum('arm-replay' in x for x in c),1);self.assertEqual(sum('cleanup-disconnected' in x for x in c),1)
+ def test_radio_evidence_collected_before_arm_and_around_restore(self):
+  rc,s,c=self.run_fake();self.assertEqual(rc,0)
+  self.assertEqual(s['native_source_capture']['valid_bytes'],564)
+  self.assertEqual(s['native_source_capture']['format'],'mpeg_ts')
+  self.assertIn('native-map-prefix.bin',{v['file'] for v in s['artifacts']})
+  self.assertEqual({v['file'] for v in s['most_snapshots']},{'most-'+v+'.json' for v in ('before-start','before-arm','after-playback','before-cleanup','after-restore')})
+  self.assertLess(next(i for i,v in enumerate(c) if v.endswith(' native-map-prefix.bin')),next(i for i,v in enumerate(c) if 'arm-replay ' in v))
  def test_arm_refusal_keeps_native_log_and_cleans_up_without_playback(self):
   rc,s,c=self.run_fake('armfail');self.assertEqual(rc,2);self.assertEqual(s['arm_command_exit'],3);self.assertIn('arm.txt',{v['file'] for v in s['artifacts']});self.assertIn('details saved in arm.txt',s['error']);self.assertTrue(s['restoration_verified']);self.assertFalse(s.get('cluster_maps_seen',False));self.assertEqual(sum('arm-replay' in x for x in c),1)
- def test_no_native_frames_does_not_preclude_complete_replay(self):
+ def test_delivery_report_stays_separate_from_prearm_native_frame_gate(self):
   b=bytearray(report(22,True))
   for i in (7,8,9,38):struct.pack_into('<I',b,i*4,0)
-  manifest=dict(hook_mode='app_import_slots',startup_contract_revision=6,replay=dict(packets=3,groups=2),files={'replay.bin':dict(bytes=612)})
+  manifest=dict(hook_mode='app_import_slots',startup_contract_revision=7,replay=dict(packets=3,groups=2),files={'replay.bin':dict(bytes=612)})
   self.assertTrue(m.assess_replay(b,22,manifest,True)['packets_delivered'])
-  self.assertFalse(m.assess_replay(b,22,manifest,True)['physical_display_proven'])
+  self.assertFalse(m.assess_replay(b,22,manifest,True)['physical_display_proven']);self.assertIn('no native map writes observed',m.native_channel_missing(b))
  def test_stalled_activation_collects_report_and_restores_without_long_wait(self):
   rc,s,c=self.run_fake('activationfail');self.assertEqual(rc,2);self.assertTrue(s['activation_failed']);self.assertTrue(s['restoration_verified']);self.assertIn('within 10 seconds',s['error']);self.assertEqual(sum('arm-replay' in x for x in c),1)
  def test_prior_native_close_does_not_stop_active_descriptor_playback(self):
@@ -118,7 +130,7 @@ class Tests(unittest.TestCase):
   rc,s,c=self.run_fake('bootstrapfail');self.assertEqual(rc,2);self.assertTrue(s['restoration_verified']);self.assertIn('stage 3 code 1003',s['error']);self.assertFalse(any('arm-replay' in x for x in c));self.assertTrue({'start.txt','nav-startup.txt'}<={v['file'] for v in s['artifacts']})
  def test_loading_and_error_reports_do_not_require_completed_payload_profile(self):
   mft=dict(hook_mode='app_import_slots',startup_contract_revision=4,replay=dict(packets=3,groups=2),files={'replay.bin':dict(bytes=612)})
-  b=bytearray(report(22));struct.pack_into('<I',b,16,0);struct.pack_into('<I',b,22*4,1);struct.pack_into('<2I',b,18*4,0,0);self.assertEqual(m.assess_replay(b,22,mft)['status'],0)
+  b=bytearray(report(22));b[52*4:55*4]=bytes(12);struct.pack_into('<I',b,16,0);struct.pack_into('<I',b,22*4,1);struct.pack_into('<2I',b,18*4,0,0);self.assertEqual(m.assess_replay(b,22,mft)['status'],0)
   struct.pack_into('<I',b,16,4);struct.pack_into('<I',b,20,1004);self.assertEqual(m.assess_replay(b,22,mft)['error'],1004)
  def test_old_global_hook_bundle_is_held_before_asset_reads(self):
   with tempfile.TemporaryDirectory() as t:
@@ -126,9 +138,18 @@ class Tests(unittest.TestCase):
    with self.assertRaisesRegex(ValueError,'global-hook'):m.package(p)
  def test_missing_channel_collects_diagnostics_restores_and_never_arms(self):
   rc,s,c=self.run_fake('channelmissing');self.assertEqual(rc,2);self.assertTrue(s['restoration_verified']);self.assertFalse(s['native_channel']['ready']);self.assertIn('no qualified native endpoint open',s['native_channel']['missing']);self.assertFalse(any('arm-replay' in x for x in c));self.assertIn('replay-channel.bin',{v['file'] for v in s['artifacts']})
+ def test_no_accepted_native_frames_never_arms(self):
+  rc,s,c=self.run_fake('nativestalled')
+  self.assertEqual(rc,2);self.assertTrue(s['restoration_verified'])
+  self.assertIn('no positive native map writes accepted',s['native_channel']['missing'])
+  self.assertFalse(any('arm-replay' in x for x in c))
+ def test_cluster_selection_required_before_network(self):
+  with patch.object(m.ftplib,'FTP') as ftp,contextlib.redirect_stderr(io.StringIO()),contextlib.redirect_stdout(io.StringIO()),self.assertRaises(SystemExit):
+   m.main(['--run','--phone-unplugged'])
+  ftp.assert_not_called()
  def test_channel_gate_checks_each_native_condition(self):
   good=report(22);self.assertEqual(m.native_channel_missing(good),[])
-  for i,value in ((6,0),(15,0xffffffff),(44,99),(43,0),(45,799),(46,479),(47,832),(48,479),(49,32),(40,0),(29,0),(50,0),(51,9)):
+  for i,value in ((6,0),(7,0),(52,0),(54,0),(15,0xffffffff),(44,99),(43,0),(45,799),(46,479),(47,832),(48,479),(49,32),(40,0),(29,0),(50,0),(51,9)):
    bad=bytearray(good);struct.pack_into('<I',bad,i*4,value)
    with self.subTest(i=i):self.assertTrue(m.native_channel_missing(bad))
  def test_older_report_remains_readable_for_resume(self):

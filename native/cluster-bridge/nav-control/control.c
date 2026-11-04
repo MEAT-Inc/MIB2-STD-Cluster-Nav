@@ -72,7 +72,33 @@ static int crash_guard(int f,pid_t pid){
  if(read_at(f,0x1076ee8,mutex,sizeof(mutex))){return 0;}
  {int match=stall_blob(words,mutex,(uint32_t)z.sp,(uint32_t)pid);fprintf(stderr,"NAV_RECOVER_CRASH_SIGNATURE match=%d state=%u ip=%llx sp=%llx owner=%x signal=%u fault_pc=%x map_delete_return=%x\n",match,z.state,(unsigned long long)z.ip,(unsigned long long)z.sp,mutex[1],words[55],words[59],words[192]);return match;}
 }
+/* Read-only snapshot of the captured unit's MOST video state. */
+static int most_status(const char *arg){
+ uint64_t requested=number(arg);pg_identity most,pm;int f=-1,mf=-1,rc=3;
+ uint32_t allowed,txstate,tid,tid_after;unsigned char config,bytes[16];procfs_status z;
+ const uint32_t addresses[3]={0x1bcd60,0x1a72f8,0x1bdeb4};
+ const unsigned char expected[3][16]={
+  {0xb4,0x39,0x0e,0xe3,0x24,0x30,0x40,0xe3,0x00,0x30,0x93,0xe5,0x00,0x00,0x53,0xe3},
+  {0x14,0x39,0x0e,0xe3,0x24,0x30,0x40,0xe3,0x00,0x30,0xd3,0xe5,0x00,0x00,0x53,0xe3},
+  {0xc0,0x39,0x0e,0xe3,0x24,0x30,0x40,0xe3,0x00,0x30,0x93,0xe5,0x03,0x00,0xa0,0xe1}};
+ unsigned i;
+ if(!requested||requested>0x7fffffff) return 2;
+ f=pg_open(requested,0,&most);
+ if(f<0||strcmp(most.executable,"/extbin/apps/bin/Most")||most.base_address!=0x100000||!elf(f)) goto out;
+ mf=pg_open(most.parent,0,&pm);
+ if(mf<0||strcmp(pm.executable,PM_PATH)||!pm_profile(mf)) goto out;
+ for(i=0;i<3;i++) if(read_at(f,addresses[i],bytes,16)||memcmp(bytes,expected[i],16)) goto out;
+ if(read_at(f,0x24e9b4,&allowed,4)||read_at(f,0x24e914,&config,1)||
+    read_at(f,0x24e9c0,&txstate,4)||read_at(f,0x247ea4,&tid,4)||!tid||tid>0x7fffffff) goto out;
+ memset(&z,0,sizeof(z));z.tid=tid;
+ if(devctl(f,DCMD_PROC_TIDSTATUS,&z,sizeof(z),0)||(uint32_t)z.tid!=tid||
+    read_at(f,0x247ea4,&tid_after,4)||tid_after!=tid||pg_matches(f,&most)||pg_matches(mf,&pm)) goto out;
+ printf("{\"version\":1,\"readonly\":true,\"pid\":%u,\"start_time\":%llu,\"manager_pid\":%u,\"manager_start\":%llu,\"tx_allowed\":%u,\"config_ok\":%u,\"tx_state\":%u,\"video_tid\":%u,\"thread_state\":%u,\"thread_ip\":%llu,\"thread_sp\":%llu}\n",(unsigned)most.pid,(unsigned long long)most.start_time,(unsigned)pm.pid,(unsigned long long)pm.start_time,allowed,(unsigned)config,txstate,tid,(unsigned)z.state,(unsigned long long)z.ip,(unsigned long long)z.sp);
+ rc=0;
+ out:if(f>=0)close(f);if(mf>=0)close(mf);if(rc)fprintf(stderr,"MOST_STATUS_REFUSED errno=%d\n",errno);return rc;
+}
 int main(int argc,char **argv){uint64_t requested,ns,ms,end;pg_identity nav,pm,newnav;struct record before={0},after={0};struct api a;uint32_t app=29;int nf=-1,mf=-1,nf2=-1,active=0,code=3,recovery=0,fixture_recovery=0,sent_signal=0;const char *stage="identity";sigset_t unblocked;struct sigaction sa;memset(&a,0,sizeof(a));memset(&newnav,0,sizeof(newnav));
+ if(argc==3&&!strcmp(argv[1],"most-status")) return most_status(argv[2]);
  recovery=argc==6&&!strcmp(argv[1],"recover");
 #ifdef NAV_CONTROL_TEST
  fixture_recovery=argc==6&&!strcmp(argv[1],"recover-fixture");recovery|=fixture_recovery;

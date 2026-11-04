@@ -1,0 +1,241 @@
+{
+  "collection": "_cluster_replay_20261104_173326_25006ed4",
+  "verified_artifacts": 32,
+  "streams": {
+    "factory": {
+      "transport": {
+        "packet_size": 188,
+        "packets": 5577,
+        "pid_counts": {
+          "0": 13,
+          "16": 13,
+          "4096": 57,
+          "8191": 2,
+          "17": 5492
+        },
+        "pat": {
+          "transport_stream_id": 0,
+          "programs": {
+            "1": 16
+          }
+        },
+        "pmts": {
+          "16": {
+            "program_number": 1,
+            "pcr_pid": 4096,
+            "streams": [
+              {
+                "stream_type": 27,
+                "pid": 17,
+                "descriptors": "2a077fff000005dddf28044280323f"
+              }
+            ]
+          }
+        },
+        "limitation": "No multi-packet PSI/PES reassembly, SPS check, PCR timing analysis or vehicle compatibility validation."
+      },
+      "sha256": "80e212e18907bd423e45619fb3c5a14116bcfb2f59c19924a76bbbc7e0fd7b7a",
+      "pcr_first": [
+        11486610,
+        11498040,
+        11503080,
+        11511900,
+        11519550
+      ],
+      "pcr_last": [
+        11921220,
+        11926800,
+        11934720
+      ],
+      "pts_first": [
+        11503081,
+        11511901,
+        11519551,
+        11525761,
+        11533501
+      ],
+      "pts_last": [
+        11921221,
+        11926801,
+        11934721
+      ],
+      "adaptation_flags": {
+        "16": 57,
+        "0": 59
+      },
+      "nal_counts": {
+        "7": 13,
+        "8": 13,
+        "5": 13,
+        "1": 48
+      },
+      "parameter_sets": {
+        "7": "2742801f8b9501907b20",
+        "8": "28de01ae20"
+      },
+      "codec": {
+        "name": "h264",
+        "profile": "Baseline",
+        "width": 800,
+        "height": 480,
+        "rate": "0/0",
+        "start": 11503081
+      },
+      "decoded_frames": 61,
+      "first_frames": [
+        {
+          "pts": 11503081,
+          "time_base": "1/90000",
+          "keyframe": true
+        },
+        {
+          "pts": 11511901,
+          "time_base": "1/90000",
+          "keyframe": false
+        },
+        {
+          "pts": 11519551,
+          "time_base": "1/90000",
+          "keyframe": false
+        },
+        {
+          "pts": 11525761,
+          "time_base": "1/90000",
+          "keyframe": false
+        },
+        {
+          "pts": 11533501,
+          "time_base": "1/90000",
+          "keyframe": false
+        }
+      ]
+    },
+    "replay": {
+      "transport": {
+        "packet_size": 188,
+        "packets": 31991,
+        "pid_counts": {
+          "0": 145,
+          "16": 145,
+          "17": 30191,
+          "4096": 1510
+        },
+        "pat": {
+          "transport_stream_id": 0,
+          "programs": {
+            "1": 16
+          }
+        },
+        "pmts": {
+          "16": {
+            "program_number": 1,
+            "pcr_pid": 4096,
+            "streams": [
+              {
+                "stream_type": 27,
+                "pid": 17,
+                "descriptors": "2a077fff000005dddf28044280323f"
+              }
+            ]
+          }
+        },
+        "limitation": "No multi-packet PSI/PES reassembly, SPS check, PCR timing analysis or vehicle compatibility validation."
+      },
+      "sha256": "f9c74ccebcbe45370da8a5b40adb17928458e29eeae63c0671587bc647527df8",
+      "pcr_first": [
+        0,
+        2880,
+        5760,
+        8640,
+        11520
+      ],
+      "pcr_last": [
+        4337280,
+        4340160,
+        4343040
+      ],
+      "pts_first": [
+        1,
+        2971,
+        27001,
+        54001,
+        56971
+      ],
+      "pts_last": [
+        4325941,
+        4334941,
+        4343941
+      ],
+      "adaptation_flags": {
+        "128": 4,
+        "0": 895,
+        "16": 1509
+      },
+      "nal_counts": {
+        "7": 1,
+        "8": 1,
+        "5": 1,
+        "1": 616
+      },
+      "parameter_sets": {
+        "7": "6742801fda0320f69a8080808368509a80",
+        "8": "68ce06f2"
+      },
+      "codec": {
+        "name": "h264",
+        "profile": "Baseline",
+        "width": 800,
+        "height": 480,
+        "rate": "0/0",
+        "start": 1
+      },
+      "decoded_frames": 617,
+      "first_frames": [
+        {
+          "pts": 1,
+          "time_base": "1/90000",
+          "keyframe": true
+        },
+        {
+          "pts": 2971,
+          "time_base": "1/90000",
+          "keyframe": false
+        },
+        {
+          "pts": 27001,
+          "time_base": "1/90000",
+          "keyframe": false
+        },
+        {
+          "pts": 54001,
+          "time_base": "1/90000",
+          "keyframe": false
+        },
+        {
+          "pts": 56971,
+          "time_base": "1/90000",
+          "keyframe": false
+        }
+      ]
+    }
+  },
+  "replay_final": {
+    "status": 3,
+    "error": 0,
+    "packets": 31991,
+    "expected_packets": 31991,
+    "bytes": 6014308,
+    "groups": 2165,
+    "bad_callers": 0,
+    "native_close_events": 1,
+    "generation": 3,
+    "tracked_fd": 142,
+    "encoder_fd": 137,
+    "heartbeat": 51
+  },
+  "restoration": {
+    "verified": false,
+    "cleanup_guard": "STATE_CONDVAR, IP 0x103868c; different from captured allocator SIGSEGV/mutex signature",
+    "signal_sent_during_cleanup": false
+  }
+}

@@ -2,7 +2,7 @@
 from project_console import console_session, log as print
 import hashlib,io,json,struct,subprocess,sys,tempfile,zipfile
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'native/cluster-bridge';R=BASE/'replay';N=BASE/'nav-launch'
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'native/cluster-bridge';R=BASE/'replay';N=BASE/'nav-launch';C=BASE/'nav-control'
 sys.path.insert(0,str(ROOT/'.tools/python'));sys.path.insert(0,str(ROOT/'.tools/video-python'))
 from elftools.elf.elffile import ELFFile
 from cluster_ts_mux import ClusterTSMux
@@ -22,14 +22,20 @@ def elf_gate(p):
  if needed!=['libc.so.3'] or set(imports)-libc:raise ValueError('Unverified native dependencies')
  return b,dict(imports=imports,exports=exports,needed=needed)
 def main():
- for d,markers in ((R,('REPLAY_FIXTURE_PASS','REPLAY_ARMED_DESCRIPTOR_PASS','REPLAY_PRELOAD_ARMED_DESCRIPTOR_PASS','REPLAY_IDLE_IMPORT_INSPECTION_PASS','REPLAY_ACTUAL_PRELOAD_PASS','REPLAY_HOOK_RUNNER rc=0','REPLAY_QNX_END','REPLAY_EARLY_LEGACY_EXIT126_PASS','REPLAY_EARLY_IO_PASS','REPLAY_IMPORTS_PASS','REPLAY_LIBC_PROFILE_PASS','"profile_matches":true')),(N,('NAV_FIXTURE_ARGV_CWD_CONFIG_PASS','NAV_STDIO_PRESERVED_PASS','NAV_POST_EXEC_IDENTITY_PASS','NAV_PRODUCTION_LIFECYCLE_PASS','NAV_FIXTURE_CANONICAL_IMAGE_PASS','NAV_REPLAY_ARM_PASS','NAV_REPLAY_ARM_REFUSED','NAV_DISCONNECT_PENDING_NO_SIGNAL_PASS','NAV_DISCONNECT_STATE_MISMATCH_REFUSED','NAV_DISCONNECT_LOCK_REFUSED','NAV_DISCONNECT_LATE_CLEANUP_PASS','NAV_DISCONNECT_IDEMPOTENT_PASS','NAV_DISCONNECT_ORPHAN_CLEANUP_PASS','NAV_DISCONNECT_QNX_SUITE_PASS'))):
+ for d,markers in ((R,('REPLAY_FIXTURE_PASS','REPLAY_ARMED_DESCRIPTOR_PASS','REPLAY_PRELOAD_ARMED_DESCRIPTOR_PASS','REPLAY_IDLE_IMPORT_INSPECTION_PASS','REPLAY_ACTUAL_PRELOAD_PASS','REPLAY_HOOK_RUNNER rc=0','REPLAY_QNX_END','REPLAY_EARLY_LEGACY_EXIT126_PASS','REPLAY_EARLY_IO_PASS','REPLAY_IMPORTS_PASS','REPLAY_LIBC_PROFILE_PASS','"profile_matches":true')),(N,('NAV_LIFECYCLE_DELAYED_START_PASS','NAV_LIFECYCLE_INTEGRATION_PASS','NAV_FIXTURE_ARGV_CWD_CONFIG_PASS','NAV_STDIO_PRESERVED_PASS','NAV_POST_EXEC_IDENTITY_PASS','NAV_PRODUCTION_LIFECYCLE_PASS','NAV_FIXTURE_CANONICAL_IMAGE_PASS','NAV_REPLAY_ARM_PASS','NAV_REPLAY_ARM_REFUSED','NAV_DISCONNECT_PENDING_NO_SIGNAL_PASS','NAV_DISCONNECT_STATE_MISMATCH_REFUSED','NAV_DISCONNECT_LOCK_REFUSED','NAV_DISCONNECT_LATE_CLEANUP_PASS','NAV_DISCONNECT_IDEMPOTENT_PASS','NAV_DISCONNECT_ORPHAN_CLEANUP_PASS','NAV_DISCONNECT_QNX_SUITE_PASS'))):
   log=(d/'qemu/qemu.log').read_text();checked={Path(v.split()[1]).name:v.split()[0] for v in (d/'qemu/tested.sha256').read_text().splitlines()};name='nav_launch' if d==N else 'libdelphi_cluster.so'
   if not all(v in log for v in markers) or checked[name]!=sha((d/'build'/name).read_bytes()):raise ValueError('Native QNX gate failed')
  files={};elf={}
- for name,p in (('nav_launch',N/'build/nav_launch'),('libdelphi_cluster.so',R/'build/libdelphi_cluster.so'),('replay_libc_check',R/'build/replay_libc_check')):files[name],elf[name]=elf_gate(p)
+ for name,p in (('nav_launch',N/'build/nav_launch'),('libdelphi_cluster.so',R/'build/libdelphi_cluster.so'),('replay_libc_check',R/'build/replay_libc_check'),('nav_cycle',C/'build/nav_cycle')):files[name],elf[name]=elf_gate(p)
  if checked.get('replay_libc_check')!=sha(files['replay_libc_check']):
   helper_checked={Path(v.split()[1]).name:v.split()[0] for v in (R/'qemu/tested.sha256').read_text().splitlines()}
   if helper_checked.get('replay_libc_check')!=sha(files['replay_libc_check']):raise ValueError('Untested libc preflight helper')
+ control_log=(C/'qemu/qemu.log').read_text()
+ control_checked={Path(v.split()[1]).name:v.split()[0] for v in (C/'qemu/tested.sha256').read_text().splitlines()}
+ for marker in ('NAV_STALL_CAPTURE_GUARD_PASS','NAV_RECOVER_HEALTHY_REFUSAL_PASS','NAV_RECOVER_FACTORY_AUTORESTART_PASS','NAV_PAGE_READ_QNX_PASS','SAL_GRACEFUL_CONTROL_QNX_PASS'):
+  if marker not in control_log:raise ValueError('Lifecycle helper QNX gate missing '+marker)
+ if control_checked.get('nav_cycle')!=sha(files['nav_cycle']) or b'recover-fixture' in files['nav_cycle']:raise ValueError('Lifecycle helper release mismatch')
+ if 'kill' in elf['nav_launch']['imports']:raise ValueError('Controller still imports generic kill')
  if b'NAV_PREEXEC_CANONICAL_RACE_PROVEN' in files['nav_launch']:raise ValueError('Race-delay fixture in production launcher')
  if set(elf['libdelphi_cluster.so']['exports'])!={'_init','_fini'}:raise ValueError('Wrong shim exports')
  if any(n.encode() in files['libdelphi_cluster.so'] for n in ('test_geometry','test_open_return','test_write_return')):raise ValueError('Test profile in production')
@@ -58,14 +64,16 @@ def main():
  refs={}
  for name,remote,p in (('NavigationServer.original','/extbin/apps/bin/NavigationServer',source/'NavigationServer.reference'),('NavServer.cfg.reference','/extbin/apps/cfg/NAV/v0/NC/Delphi/NavServer.cfg',ROOT/'delphi-dump/extbin/apps/cfg/NAV/v0/NC/Delphi/NavServer.cfg'),('procman.reference','/proc/boot/procman',source/'procman.reference'),('procman-core.cfg','/etc/procman_core.cfg',source/'procman-core.cfg')):
   b=p.read_bytes();refs[name]=dict(path=remote,bytes=len(b),sha256=sha(b))
+ for name,remote,p in (('libc.so.3.reference','/proc/boot/libc.so.3',ROOT/'delphi-dump/_observer_smoke_20261029_005129_a1ecf3ce/libc.so.3.captured'),('libXSAL.so.reference','/proc/boot/libXSAL.so',ROOT/'delphi-dump/ramdisk/delphi-stage_4b0597ac42d84f0ca7dc8a8c7e138c00/01_libXSAL.so')):
+  b=p.read_bytes();refs[name]=dict(path=remote,bytes=len(b),sha256=sha(b))
  if refs['NavigationServer.original']['sha256']!='a999725350df8503c44a25da2676a8c1a99914a99a36f24bb6334a509def4afe':raise ValueError('Wrong NavigationServer')
  tests=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/tests/test_cluster_replay.py')],cwd=ROOT,capture_output=True,text=True)
  if tests.returncode:raise ValueError(tests.stderr)
- scripts=('run_cluster_replay.py','cluster_preflight.py','run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py');sources=[p for d in (R,N) for p in d.iterdir() if p.suffix in ('.c','.h','.S','.sh')]
- manifest=dict(kind='native_cluster_recorded_map_replay',hook_mode='app_import_slots',startup_contract_revision=6,activation_mode="armed_native_descriptor",post_exec_identity_ack=True,canonical_image_exec=True,preserve_standard_streams=True,libc_profile=json.loads((R/'unit-libc-profile.json').read_text()),phone_must_stay_unplugged=True,live_phone_navigation=False,on_car_tested=False,cluster_display_proven=False,replay=dict(source_collection=source.name,frames=617,width=800,height=480,duration_ms=groups[-1][0],groups=len(groups),packets=len(ts)//188,transport_sha256=sha(ts),clock_discontinuity_prelude=True,explicit_arm_required=True),references=refs,elf=elf,files={n:dict(bytes=len(b),sha256=sha(b)) for n,b in files.items()},scripts_sha256={n:sha((ROOT/'scripts'/n).read_bytes()) for n in scripts},source_sha256={p.relative_to(ROOT).as_posix():sha(p.read_bytes()) for p in sources})
+ scripts=('run_cluster_replay.py','cluster_preflight.py','run_observer_smoke.py','delphi_inventory.py','project_console.py','decode_delphi_observer.py');sources=[p for d in (R,N,C) for p in d.iterdir() if p.suffix in ('.c','.h','.S','.sh')]
+ manifest=dict(kind='native_cluster_recorded_map_replay',hook_mode='app_import_slots',startup_contract_revision=7,activation_mode="native_frames_then_explicit_arm",lifecycle_mode="sal_shutdown_exact_crash_recovery",cluster_map_selected_required=True,native_source_capture_limit=1048576,post_exec_identity_ack=True,canonical_image_exec=True,preserve_standard_streams=True,libc_profile=json.loads((R/'unit-libc-profile.json').read_text()),phone_must_stay_unplugged=True,live_phone_navigation=False,on_car_tested=False,cluster_display_proven=False,replay=dict(source_collection=source.name,frames=617,width=800,height=480,duration_ms=groups[-1][0],groups=len(groups),packets=len(ts)//188,transport_sha256=sha(ts),clock_discontinuity_prelude=True,explicit_arm_required=True),references=refs,elf=elf,files={n:dict(bytes=len(b),sha256=sha(b)) for n,b in files.items()},scripts_sha256={n:sha((ROOT/'scripts'/n).read_bytes()) for n in scripts},source_sha256={p.relative_to(ROOT).as_posix():sha(p.read_bytes()) for p in sources})
  release=R/'release';release.mkdir(exist_ok=True)
  for n,b in files.items():(release/n).write_bytes(b)
- (release/'manifest.json').write_text(json.dumps(manifest,indent=2));(release/'README.txt').write_bytes((R/'README.txt').read_bytes());bundle=R/'cluster-map-replay-v6-laptop.zip'
+ (release/'manifest.json').write_text(json.dumps(manifest,indent=2));(release/'README.txt').write_bytes((R/'README.txt').read_bytes());bundle=R/'cluster-map-replay-v7-laptop.zip'
  with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
   for n in scripts:z.write(ROOT/'scripts'/n,'scripts/'+n)
   for n in (*files,'manifest.json','README.txt'):z.write(release/n,(release/n).relative_to(ROOT).as_posix())
@@ -76,7 +84,7 @@ def main():
   if result.returncode or 'Plan only' not in result.stdout or (p/'delphi-dump').exists():raise ValueError('Portable plan: '+result.stderr)
   code="import sys;from pathlib import Path;sys.path.insert(0,str(Path(sys.argv[1])/'scripts'));import run_cluster_replay as r;print(len(r.package(Path(sys.argv[1])/'native/cluster-bridge/replay/release')[0]))"
   result=subprocess.run([sys.executable,'-S','-B','-c',code,str(p)],cwd=p,capture_output=True,text=True)
-  if result.returncode or result.stdout.strip()!='4':raise ValueError('Portable assets: '+result.stderr)
+  if result.returncode or result.stdout.strip()!='5':raise ValueError('Portable assets: '+result.stderr)
  report=dict(bundle=bundle.relative_to(ROOT).as_posix(),bytes=bundle.stat().st_size,sha256=sha(bundle.read_bytes()),decoded617_frames_preserved=True,portable_plan_passed=True,portable_assets_passed=True,workflow_tests=tests.stderr.strip(),manifest=manifest)
  (ROOT/'delphi-analysis/control-runtime/cluster-map-replay-release.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='manifest'},indent=2))
 if __name__ == '__main__':

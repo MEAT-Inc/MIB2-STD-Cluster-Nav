@@ -16,7 +16,7 @@
 #include <time.h>
 #include <unistd.h>
 static struct launch_state *state;
-static char root[128],original[192],wrapper[192],library[192],nav_config[192],manager_ref[192],config_ref[192],logpath[192],reportpath[192],finalpath[192],lockpath[192];
+static char root[128],original[192],wrapper[192],lifecycle[192],xsref[192],cref[192],library[192],nav_config[192],manager_ref[192],config_ref[192],logpath[192],reportpath[192],finalpath[192],lockpath[192];
 static const struct timespec tick={0,100000000};
 static int regular(const char *path) {struct stat s;return !lstat(path,&s)&&S_ISREG(s.st_mode);}
 static int paths(const char *path) {
@@ -27,6 +27,9 @@ static int paths(const char *path) {
  strcpy(root,path);
  snprintf(original,sizeof(original),"%s/NavigationServer.original",root);
  snprintf(wrapper,sizeof(wrapper),"%s/nav_launch",root);
+ snprintf(lifecycle,sizeof(lifecycle),"%s/nav_cycle",root);
+ snprintf(xsref,sizeof(xsref),"%s/libXSAL.so.reference",root);
+ snprintf(cref,sizeof(cref),"%s/libc.so.3.reference",root);
  snprintf(library,sizeof(library),"%s/libdelphi_cluster.so",root);
  snprintf(nav_config,sizeof(nav_config),"%s/NavServer.cfg.reference",root);
  snprintf(manager_ref,sizeof(manager_ref),"%s/procman.reference",root);
@@ -46,7 +49,7 @@ static int identical(const char *a,const char *b) {
  for(;;){n=read(f,x,sizeof(x));m=read(g,y,sizeof(y));if(n<0||m<0||n!=m)break;if(!n){result=1;break;}if(memcmp(x,y,(size_t)n))break;}
  done:if(f>=0)close(f);if(g>=0)close(g);return result;
 }
-static int references(void) {return identical(NAV_TARGET,original)&&identical(NAV_CONFIG,nav_config)&&identical(MANAGER_TARGET,manager_ref)&&identical("/etc/procman_core.cfg",config_ref);}
+static int references(void) {int ok=regular(lifecycle)&&identical("/proc/boot/libXSAL.so",xsref)&&identical("/proc/boot/libc.so.3",cref)&&identical(NAV_TARGET,original)&&identical(NAV_CONFIG,nav_config)&&identical(MANAGER_TARGET,manager_ref)&&identical("/etc/procman_core.cfg",config_ref);if(!ok)fprintf(stderr,"NAV_REFERENCES_REFUSED helper=%d xsal=%d libc=%d nav=%d cfg=%d manager=%d core=%d\n",regular(lifecycle),identical("/proc/boot/libXSAL.so",xsref),identical("/proc/boot/libc.so.3",cref),identical(NAV_TARGET,original),identical(NAV_CONFIG,nav_config),identical(MANAGER_TARGET,manager_ref),identical("/etc/procman_core.cfg",config_ref));return ok;}
 static int own_alias(void) {char b[192];ssize_t n=readlink(NAV_TARGET,b,sizeof(b)-1);if(n<0)return 0;b[n]=0;return !strcmp(b,wrapper);}
 static void record_error(unsigned code) {if(!state->error)state->error=code;}
 static int remove_alias(void) {
@@ -110,11 +113,40 @@ static int stock_now(pg_identity manager) {
  if(m<0||pg_matches(m,&manager)||own_alias()||!references()||pg_matches(f,&stock)){if(m>=0)close(m);close(f);return -1;}
  close(m);close(f);state->restored_pid=stock.pid;state->restored_start=stock.start_time;state->restoration_verified=1;state->phase=6;return 0;
 }
+/* Same car-validated SAL shutdown + exact-crash recovery helper for both edges.
+ * The controller never substitutes a generic signal when helper checks fail. */
+static int lifecycle_child(const char *mode,const char *edge,pg_identity nav,pg_identity manager){
+ char pid[24],start[32],mp[24],ms[32],log[192];pid_t child;int status,fd;struct sigaction sa;
+ if(!regular(lifecycle)){return 126;}
+ snprintf(pid,sizeof(pid),"%u",(unsigned)nav.pid);snprintf(start,sizeof(start),"%llu",(unsigned long long)nav.start_time);
+ snprintf(mp,sizeof(mp),"%u",(unsigned)manager.pid);snprintf(ms,sizeof(ms),"%llu",(unsigned long long)manager.start_time);
+ snprintf(log,sizeof(log),"/dev/shmem/delphi-nav-lifecycle-%s-%s-%s.txt",root+strlen(LAUNCH_PREFIX),edge,mode);
+ memset(&sa,0,sizeof(sa));sa.sa_handler=SIG_DFL;sigemptyset(&sa.sa_mask);if(sigaction(SIGCHLD,&sa,0)){return 126;}
+ fflush(0);child=fork();if(!child){
+  fd=open(log,O_WRONLY|O_CREAT|O_EXCL,0600);if(fd<0||dup2(fd,STDOUT_FILENO)<0||dup2(fd,STDERR_FILENO)<0){_exit(126);}close(fd);
+  execl(lifecycle,"nav_cycle",mode,pid,start,mp,ms,(char*)0);_exit(127);
+ }
+ if(child<0){return 126;}
+ while(waitpid(child,&status,0)<0){if(errno!=EINTR){return 126;}}
+ return WIFEXITED(status)?WEXITSTATUS(status):124;
+}
+static int lifecycle_cycle(const char *edge,int navfd,pg_identity nav,int managerfd,pg_identity manager){
+ int rc;
+ if(pg_matches(navfd,&nav)||pg_matches(managerfd,&manager)){return 3;}
+ rc=lifecycle_child("cycle",edge,nav,manager);
+ printf("NAV_LIFECYCLE edge=%s mode=cycle exit=%d\n",edge,rc);fflush(stdout);
+ if(rc==3){
+  if(pg_matches(navfd,&nav)||pg_matches(managerfd,&manager)){return 3;}
+  rc=lifecycle_child("recover",edge,nav,manager);
+  printf("NAV_LIFECYCLE edge=%s mode=recover exit=%d\n",edge,rc);fflush(stdout);
+ }
+ return rc;
+}
 /* Capture expiry and controller loss NEVER authorize a post-capture signal. */
 static int watchdog(pg_identity manager) {
  unsigned i;int ready=0,ofd=-1;pg_identity observed;
  state->guard_armed=1;
- for(i=0;i<150&&!state->guard_done;++i){
+ for(i=0;i<1000&&!state->guard_done;++i){
   if(state->observed_pid&&sample_trace()){ofd=pg_open(state->observed_pid,0,&observed);if(ofd>=0){if(observed.parent==manager.pid&&!strcmp(observed.executable,NAV_TARGET)&&!pg_matches(ofd,&observed))break;close(ofd);ofd=-1;}}
   nanosleep(&tick,0);
  }
@@ -164,7 +196,7 @@ static int cleanup_disconnected(const char *path) {
  lock=open(lockpath,O_WRONLY|O_CREAT|O_EXCL,0600);if(lock<0)goto done;close(lock);lock=-1;
  if(pg_matches(m,&manager)||!references()||(o>=0&&pg_matches(o,&observed))||remove_alias())goto done;
  state->cleanup_authorized=1;state->cleanup_started=1;
- if(o>=0&&pg_interrupt(o,&observed)){state->observed_signal_error=errno;record_error(1005);}
+ if(o>=0){int rc=lifecycle_cycle("cleanup",o,observed,m,manager);if(rc){state->observed_signal_error=(unsigned)rc;record_error(1005);}}
  if(o>=0){close(o);o=-1;}
  for(i=0;i<100;++i){if(!stock_now(manager))break;nanosleep(&tick,0);}
  if(!state->restoration_verified)record_error(1006);else sample_trace();
@@ -235,7 +267,7 @@ int main(int argc,char **argv) {
  else if(pathmgr_symlink(wrapper,NAV_TARGET)||!own_alias()){record_error(1012);state->guard_done=1;}
  else {
   state->phase=2;
-  if(pg_interrupt(afd,&baseline)){state->initial_signal_error=(unsigned)errno;record_error(1013);state->guard_done=1;}
+  {int rc=lifecycle_cycle("start",afd,baseline,mfd,manager);if(rc){state->initial_signal_error=(unsigned)rc;record_error(1013);state->guard_done=1;}}
  }
  close(afd);close(mfd);
  while(waitpid(guard,&status,0)<0){if(errno!=EINTR){puts("LAUNCH_FAILED wait");return 1;}}

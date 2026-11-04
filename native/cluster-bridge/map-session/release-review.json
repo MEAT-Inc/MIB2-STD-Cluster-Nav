@@ -1,8 +1,8 @@
 {
   "bundle": "native/cluster-bridge/map-session/map-session-diagnostics-laptop.zip",
-  "bytes": 20213,
-  "sha256": "e9762026440b969689d3b81c260162f5776a2d81cccafa39b7c18e73bda88c97",
-  "workflow_tests": "========================================================================\ntest_collect_map_session.py | version 1.0\nArguments: (none)\nUse case: test collect map session\n========================================================================\n[10:04:42] [STEP  ] Starting script.\n.[10:04:42] [STEP  ] Connecting to the head unit over FTP.\n....\n----------------------------------------------------------------------\nRan 5 tests in 0.226s\n\nOK\n[10:04:43] [OK    ] Finished with exit 0 (0.2s).",
+  "bytes": 21470,
+  "sha256": "68ad49ac01fa7fab58f3300860ac462e910d9ff33d318a1f96bc5f0b72af2c68",
+  "workflow_tests": "========================================================================\ntest_collect_map_session.py | version 1.0\nArguments: (none)\nUse case: test collect map session\n========================================================================\n[13:48:47] [STEP  ] Starting script.\n.[13:48:47] [STEP  ] Connecting to the head unit over FTP.\n....\n----------------------------------------------------------------------\nRan 5 tests in 0.185s\n\nOK\n[13:48:47] [OK    ] Finished with exit 0 (0.2s).",
   "portable_plan_passed": true,
   "manifest": {
     "kind": "readonly_map_session_snapshot",
@@ -11,8 +11,8 @@
     "video_writes": false,
     "files": {
       "scripts/collect_map_session.py": {
-        "bytes": 5858,
-        "sha256": "1cdaa2e1917de5483220e40c2dfb7293c63d4a1828c2c1eb57c320bf2ef76fd3"
+        "bytes": 9297,
+        "sha256": "d733f07b44558dde57df563690dad4f0dc70996163577d93271275f5696d7693"
       },
       "scripts/run_observer_smoke.py": {
         "bytes": 12132,

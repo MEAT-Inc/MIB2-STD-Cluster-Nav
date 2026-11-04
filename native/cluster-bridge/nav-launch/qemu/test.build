@@ -17,8 +17,11 @@
 [type=file]
 [data=copy]
 [perms=+r,+x]
+[+raw -autolink]
 libc.so.3
 libsocket.so.3
+libXSAL.so
+[-raw +autolink]
 procnto-smp
 devc-serdebug
 [type=dir]
@@ -41,12 +44,22 @@ devc-serdebug
 /proc/boot/procman=/w/procman.captured
 /extbin/apps/bin/NavigationServer=/w/nav_launch_fixture
 /extbin/apps/cfg/NAV/v0/NC/Delphi/NavServer.cfg=/w/NavServer.cfg
+/ramdisk/delphi-nav-bridge_00000000000000000000000000000000/nav_cycle=/w/nav_lifecycle_fixture
+[+raw -autolink]
+/ramdisk/delphi-nav-bridge_00000000000000000000000000000000/libXSAL.so.reference=/w/libXSAL.so
+/ramdisk/delphi-nav-bridge_00000000000000000000000000000000/libc.so.3.reference=/w/libc.so.3
+[+raw]
 /ramdisk/delphi-nav-bridge_00000000000000000000000000000000/nav_launch=/w/nav_launch
 /ramdisk/delphi-nav-bridge_00000000000000000000000000000000/NavigationServer.original=/w/nav_launch_fixture
 /ramdisk/delphi-nav-bridge_00000000000000000000000000000000/NavServer.cfg.reference=/w/NavServer.cfg
 /ramdisk/delphi-nav-bridge_00000000000000000000000000000000/procman.reference=/w/procman.captured
 /ramdisk/delphi-nav-bridge_00000000000000000000000000000000/procman-core.cfg=/w/launch-manager.cfg
 /ramdisk/delphi-nav-bridge_00000000000000000000000000000000/libdelphi_cluster.so=/w/libdelphi_cluster.so
+/ramdisk/delphi-nav-bridge_11111111111111111111111111111111/nav_cycle=/w/nav_lifecycle_fixture
+[+raw -autolink]
+/ramdisk/delphi-nav-bridge_11111111111111111111111111111111/libXSAL.so.reference=/w/libXSAL.so
+/ramdisk/delphi-nav-bridge_11111111111111111111111111111111/libc.so.3.reference=/w/libc.so.3
+[+raw]
 /ramdisk/delphi-nav-bridge_11111111111111111111111111111111/nav_launch=/w/nav_launch_race_fixture
 /ramdisk/delphi-nav-bridge_11111111111111111111111111111111/NavigationServer.original=/w/nav_launch_fixture
 /ramdisk/delphi-nav-bridge_11111111111111111111111111111111/NavServer.cfg.reference=/w/NavServer.cfg

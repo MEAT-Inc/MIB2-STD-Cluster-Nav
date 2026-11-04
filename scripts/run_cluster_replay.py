@@ -7,7 +7,7 @@ from run_observer_smoke import Shell,retrieve
 from cluster_preflight import nav_pid,verify_navigation
 ROOT=Path(__file__).resolve().parents[1]
 PREFIX='/ramdisk/delphi-nav-bridge_'
-NAMES=('nav_launch','libdelphi_cluster.so','replay.bin','replay_libc_check')
+NAMES=('nav_launch','libdelphi_cluster.so','replay.bin','replay_libc_check','nav_cycle')
 def sha(b):return hashlib.sha256(b).hexdigest()
 def remote_root(v):
  if not re.fullmatch(re.escape(PREFIX)+r'[0-9a-f]{32}',v):raise ValueError('Invalid replay namespace')
@@ -15,7 +15,7 @@ def remote_root(v):
 
 def package(p):
  m=json.loads((p/'manifest.json').read_text())
- if m.get('hook_mode')!='app_import_slots' or m.get('startup_contract_revision')!=6 or m.get('canonical_image_exec') is not True or m.get('preserve_standard_streams') is not True or m.get('post_exec_identity_ack') is not True or m.get('activation_mode')!='armed_native_descriptor':raise ValueError('Old global-hook/name-guard replay bundle is held; extract the corrected v6 bundle')
+ if m.get('hook_mode')!='app_import_slots' or m.get('startup_contract_revision')!=7 or m.get('canonical_image_exec') is not True or m.get('preserve_standard_streams') is not True or m.get('post_exec_identity_ack') is not True or m.get('activation_mode')!='native_frames_then_explicit_arm' or m.get('lifecycle_mode')!='sal_shutdown_exact_crash_recovery':raise ValueError('Old global-hook/name-guard replay bundle is held; extract the v7 lifecycle bundle')
  if m.get('kind')!='native_cluster_recorded_map_replay' or m.get('phone_must_stay_unplugged') is not True or m.get('live_phone_navigation') is not False or set(m['files'])!=set(NAMES):raise ValueError('Wrong replay release')
  result={}
  for name in NAMES:
@@ -40,18 +40,22 @@ def assess_controller(b,remote,final):
 
 def assess_replay(b,pid,manifest,final=False):
  if len(b)!=512:raise ValueError('Replay size')
- w=struct.unpack('<128I',b);app_only=manifest.get('hook_mode')=='app_import_slots';telemetry=app_only and manifest.get('startup_contract_revision',0)>=4
- if w[:4]!=(0x31504c52,1,512,pid) or w[4] not in (0,1,2,3,4) or w[21] not in (0,1) or (any(w[52:] if telemetry else w[37:]) if app_only else any(w[22:])):raise ValueError('Replay report identity/profile')
+ w=struct.unpack('<128I',b);app_only=manifest.get('hook_mode')=='app_import_slots';telemetry=app_only and manifest.get('startup_contract_revision',0)>=4;source_metrics=manifest.get('startup_contract_revision',0)>=7
+ if w[:4]!=(0x31504c52,1,512,pid) or w[4] not in (0,1,2,3,4) or w[21] not in (0,1) or (any(w[55:] if source_metrics else w[52:] if telemetry else w[37:]) if app_only else any(w[22:])):raise ValueError('Replay report identity/profile')
  if app_only and w[22]>7:raise ValueError('Unknown bootstrap stage')
  if app_only and manifest.get('startup_contract_revision',0)>=3 and w[4] in (1,2,3) and (not w[36] or w[36]&4095):raise ValueError('Validated libc base missing')
  if w[4] in (1,2,3) and (w[18]!=manifest['replay']['packets'] or w[19]!=manifest['files']['replay.bin']['bytes'] or app_only and w[22]!=7):raise ValueError('Replay not fully initialized')
  complete=w[4]==3 and w[21]==1 and not w[5] and w[10]==w[18] and w[11]==188*w[18] and w[16]==manifest['replay']['groups'] and w[6]>=1 and not w[20]
  if final and w[10]>manifest['replay']['packets']:raise ValueError('Replay sent too many packets')
- return dict(status=w[4],error=w[5],bootstrap_stage=w[22] if app_only else None,import_before=list(w[23:26]) if app_only else [],native_functions=list(w[26:29]) if app_only else [],import_slots=list(w[32:35]) if app_only else [],import_install_result=struct.unpack_from('<i',b,140)[0] if app_only else None,libc_base=w[36] if app_only else None,packets=w[10],bytes=w[11],suppressed_writes=w[8],zero_progress_writes=w[12],bad_callers=w[20],groups=w[16],packets_delivered=complete,physical_display_proven=False,hook_calls=dict(open=w[37],write=w[38],close=w[39]) if telemetry else None,retained_imports=list(w[40:43]) if telemetry else [],encoder=w[43] if telemetry else None,encoder_fd=struct.unpack_from('<i',b,176)[0] if telemetry else None,encoder_geometry=list(w[45:50]) if telemetry else [],inspection_heartbeat=w[50] if telemetry else None,inspection_error=w[51] if telemetry else None)
+ return dict(status=w[4],error=w[5],bootstrap_stage=w[22] if app_only else None,import_before=list(w[23:26]) if app_only else [],native_functions=list(w[26:29]) if app_only else [],import_slots=list(w[32:35]) if app_only else [],import_install_result=struct.unpack_from('<i',b,140)[0] if app_only else None,libc_base=w[36] if app_only else None,packets=w[10],bytes=w[11],suppressed_writes=w[8],zero_progress_writes=w[12],bad_callers=w[20],groups=w[16],packets_delivered=complete,physical_display_proven=False,hook_calls=dict(open=w[37],write=w[38],close=w[39]) if telemetry else None,retained_imports=list(w[40:43]) if telemetry else [],encoder=w[43] if telemetry else None,encoder_fd=struct.unpack_from('<i',b,176)[0] if telemetry else None,encoder_geometry=list(w[45:50]) if telemetry else [],inspection_heartbeat=w[50] if telemetry else None,inspection_error=w[51] if telemetry else None,native_accepted_bytes=w[52] if source_metrics else None,native_capture_bytes=w[53] if source_metrics else None,native_accepted_writes=w[54] if source_metrics else None)
 
 def native_channel_missing(b):
  w=struct.unpack('<128I',b);missing=[]
+ if w[4]!=1 or w[5]:missing.append('replay bootstrap is not ready')
+ if w[20]:missing.append('unqualified writer on owned descriptor')
  if not w[6]:missing.append('no qualified native endpoint open')
+ if not w[7]:missing.append('no native map writes observed')
+ if not w[52] or not w[54]:missing.append('no positive native map writes accepted')
  if w[15]&0x80000000 or w[44]&0x80000000 or w[15]!=w[44]:missing.append('native and encoder descriptor mismatch or absent')
  if not w[43]:missing.append('encoder absent')
  if tuple(w[45:50])!=(800,480,800,480,0):missing.append('encoder geometry is not native 800x480')
@@ -82,10 +86,11 @@ def peers(data):
  return result
 
 def main(argv=None):
- p=argparse.ArgumentParser(description=__doc__);g=p.add_mutually_exclusive_group();g.add_argument('--run',action='store_true');g.add_argument('--resume',type=Path);p.add_argument('--phone-unplugged',action='store_true');p.add_argument('--host',default='192.168.1.4');p.add_argument('--port',type=int,default=21);p.add_argument('--username',default='ftpuser');p.add_argument('--ask-password',action='store_true');p.add_argument('--telnet-port',type=int,default=23);p.add_argument('--telnet-user',default='root');p.add_argument('--timeout',type=float,default=90);a=p.parse_args(argv)
- if not 1<=a.port<=65535 or not 1<=a.telnet_port<=65535 or not 60<=a.timeout<=180:p.error('Invalid ports/timeout')
+ p=argparse.ArgumentParser(description=__doc__);g=p.add_mutually_exclusive_group();g.add_argument('--run',action='store_true');g.add_argument('--resume',type=Path);p.add_argument('--phone-unplugged',action='store_true');p.add_argument('--cluster-map-selected',action='store_true',help='Factory map is visibly working in the cluster before this test; check radio/cluster sequentially using toggle');p.add_argument('--host',default='192.168.1.4');p.add_argument('--port',type=int,default=21);p.add_argument('--username',default='ftpuser');p.add_argument('--ask-password',action='store_true');p.add_argument('--telnet-port',type=int,default=23);p.add_argument('--telnet-user',default='root');p.add_argument('--timeout',type=float,default=120);a=p.parse_args(argv)
+ if not 1<=a.port<=65535 or not 1<=a.telnet_port<=65535 or not 120<=a.timeout<=180:p.error('Invalid ports/timeout')
  print('RECORDED MAP REPLAY: this is the saved map video, not live guidance. Keep phone unplugged throughout.')
- if not a.run and not a.resume:print('Plan only: --run --phone-unplugged; ignition on, Ethernet connected. Select factory map on cluster when requested.');return 0
+ if not a.run and not a.resume:print('Plan only: --run --phone-unplugged --cluster-map-selected; ignition on, Ethernet connected. Select factory map on cluster when requested.');return 0
+ if a.run and not a.cluster_map_selected:p.error('--cluster-map-selected is required; first select a working factory map in the cluster')
  if not a.phone_unplugged:p.error('--phone-unplugged is required for the entire replay and cleanup')
  files,manifest=package(ROOT/'native/cluster-bridge/replay/release');base=ROOT/'delphi-dump'
  for parent in (base,*base.parents):d.reject_link(parent)
@@ -114,7 +119,7 @@ def main(argv=None):
   with ftplib.FTP(timeout=a.timeout) as ftp:
    progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
    ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I')
-   if name in ('nav-startup.txt','libc-preflight-errors.txt'):
+   if name in ('nav-startup.txt','libc-preflight-errors.txt') or name.startswith('lifecycle-'):
     data=bytearray()
     def save_log(block):
      if len(data)+len(block)>1048576:raise ValueError('Startup log exceeds1MiB')
@@ -124,6 +129,28 @@ def main(argv=None):
   (folder/name).write_bytes(b);blobs[name]=b;summary['artifacts']=[x for x in summary['artifacts'] if x['file']!=name]+[dict(file=name,bytes=len(b),sha256=sha(b))];return b
  def cmd(s,required=True):return shell.command(s,required=required)
  def copy(source,name):cmd('cp '+shlex.quote(source)+' '+name);cmd('chmod 644 '+name);return fetch(name)
+ def most_snapshot(label):
+  try:
+   source=summary.get('peers_before',{}).get('Most')
+   if not source:return
+   name='most-'+label+'.json'
+   rc=cmd('LD_PRELOAD= ./nav_cycle most-status '+str(source)+' > '+name+' 2>&1',False)
+   cmd('chmod 644 '+name);fetch(name)
+   summary.setdefault('most_snapshots',[]).append(dict(file=name,exit_code=rc))
+  except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as e:
+   summary.setdefault('diagnostic_errors',[]).append(dict(file='most-'+label,error=str(e)))
+ def native_source_snapshot(b):
+  w=struct.unpack('<128I',b);length=w[53]
+  summary['native_source_capture']=dict(valid_bytes=length,best_effort=True)
+  if not length:return
+  if length>1048576:raise ValueError('Native source prefix exceeds bound')
+  try:
+   raw=copy('/dev/shmem/delphi-nav-source-'+token+'.bin','native-map-prefix.bin')
+   if len(raw)!=1048576:raise ValueError('Native prefix mapping size mismatch')
+   prefix=raw[:length];kind='mpeg_ts' if len(prefix)>=377 and prefix[0]==prefix[188]==prefix[376]==0x47 else 'annex_b' if prefix.startswith((bytes.fromhex('000001'),bytes.fromhex('00000001'))) else 'unclassified'
+   summary['native_source_capture'].update(sha256=sha(prefix),format=kind)
+  except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as e:
+   summary['native_source_capture']['error']=str(e)
  cleanup_attempted=False
  def startup_logs():
   if not shell or shell.broken:return
@@ -133,6 +160,7 @@ def main(argv=None):
    except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as e:summary.setdefault('diagnostic_errors',[]).append(dict(file=name,error=str(e)))
  def cleanup_native():
   nonlocal cleanup_attempted
+  most_snapshot('before-cleanup')
   startup_logs()
   summary['cleanup_pending']=True;persist()
   final_path='/dev/shmem/delphi-nav-launch-final-'+token+'.bin'
@@ -169,13 +197,13 @@ def main(argv=None):
     b=fetch(name)
     if len(b)!=ref['bytes'] or sha(b)!=ref['sha256']:raise ValueError('Saved stock reference changed')
   if not a.resume:
-   for name in ('nav_launch','libdelphi_cluster.so','replay_libc_check'):cmd('chmod 500 '+name)
+   for name in ('nav_launch','libdelphi_cluster.so','replay_libc_check','nav_cycle'):cmd('chmod 500 '+name)
    for name,ref in manifest['references'].items():
     b=copy(ref['path'],name)
     if len(b)!=ref['bytes'] or sha(b)!=ref['sha256']:raise ValueError('Stock firmware/config differs: '+name)
    verify_navigation(blobs['NavigationServer.original']);cmd('chmod 500 NavigationServer.original')
    cmd('pidin -p NavigationServer arguments > nav-before.txt');cmd('chmod 644 nav-before.txt');pid=nav_pid(fetch('nav-before.txt'))
-   cmd('pidin arguments > peers-before.txt');cmd('chmod 644 peers-before.txt');summary['peers_before']=peers(fetch('peers-before.txt'))
+   cmd('pidin arguments > peers-before.txt');cmd('chmod 644 peers-before.txt');summary['peers_before']=peers(fetch('peers-before.txt'));most_snapshot('before-start')
    preflight_code=cmd('LD_PRELOAD= ./replay_libc_check > libc-preflight.json 2> libc-preflight-errors.txt',False)
    cmd('chmod 644 libc-preflight-errors.txt');fetch('libc-preflight-errors.txt');cmd('chmod 644 libc-preflight.json');preflight=json.loads(fetch('libc-preflight.json'));summary['libc_preflight']=preflight;persist()
    profile=manifest['libc_profile'];base_address=preflight.get('base',0)
@@ -183,7 +211,7 @@ def main(argv=None):
    print('Captured libc profile matches; starting the navigation replay setup.',flush=True)
    summary['native_launch_requested']=True;summary['cleanup_pending']=True;persist();cmd('LD_PRELOAD= ./nav_launch start-disconnected '+shlex.quote(remote)+' '+str(pid)+' > start.txt 2>&1 & nav_replay_job=$!')
    print('Select the factory navigation MAP VIEW in the instrument cluster. The test will substitute the saved Android Auto map recording.',flush=True)
-   deadline=time.monotonic()+25
+   deadline=time.monotonic()+120
    while True:
     ready=wait_copy('/dev/shmem/delphi-nav-report-'+token+'.bin','replay-ready.bin',max(0,deadline-time.monotonic()));w=struct.unpack('<128I',ready)
     if not any(w):
@@ -198,7 +226,12 @@ def main(argv=None):
    channel,channel_state,missing=wait_native_channel(lambda:copy('/dev/shmem/delphi-nav-report-'+token+'.bin','replay-channel.bin'),w[3],manifest)
    summary['native_channel']=dict(ready=not missing,missing=missing,report=channel_state);persist()
    if missing:raise RuntimeError('Native map channel unavailable; recording was not armed: '+'; '.join(missing))
-   if input('Select the navigation MAP VIEW IN THE CLUSTER (it may say Starting map). Press Enter to play the recording; type SKIP to restore instead: ').strip().upper()=='SKIP':raise RuntimeError('Replay skipped by operator')
+   if input('Select the factory MAP in the CLUSTER and wait until actual map graphics are visible. Press Enter only when the factory map is visibly rendering, or type SKIP to restore: ').strip().upper()=='SKIP':raise RuntimeError('Replay skipped by operator')
+   summary['factory_cluster_map_visible_before_arm']=True
+   most_snapshot('before-arm')
+   fresh=copy('/dev/shmem/delphi-nav-report-'+token+'.bin','replay-native-source-state.bin')
+   if native_channel_missing(fresh):raise RuntimeError('Native map channel changed before arm; playback cancelled')
+   native_source_snapshot(fresh);persist()
    summary['arm_command_exit']=cmd('LD_PRELOAD= ./nav_launch arm-replay '+shlex.quote(remote)+' > arm.txt 2>&1',False);fetch('arm.txt');persist()
    if summary['arm_command_exit']:raise RuntimeError('Replay arm refused (code '+str(summary['arm_command_exit'])+'); details saved in arm.txt')
    activation_deadline=time.monotonic()+10;end=time.monotonic()+120;last=None
@@ -213,18 +246,24 @@ def main(argv=None):
       summary['activation_failed']=True;summary['activation_report']=assess_replay(b,w[3],manifest);persist();raise RuntimeError('Armed replay did not activate within 10 seconds; current descriptor/hook/encoder report saved')
     time.sleep(.5)
    else:summary['playback_timeout']=True
+  most_snapshot('after-playback')
   cleanup_native()
+  most_snapshot('after-restore')
   summary['cluster_maps_seen']=input('Did the recorded Google Maps view appear IN THE INSTRUMENT CLUSTER? [y/n/unknown]: ').strip().lower() in ('y','yes')
+  summary['factory_maps_restored']=input('Using the location toggle, does the factory map work on the radio, then in the cluster, when each is selected? [y/n/unknown]: ').strip().lower() in ('y','yes')
  except (OSError,EOFError,ValueError,RuntimeError,KeyboardInterrupt,ftplib.Error) as e:summary['error']=(type(e).__name__+': '+str(e)).replace(password,'[redacted]')
  finally:
   if shell and not shell.broken and summary.get('native_launch_requested') and not summary.get('restoration_verified') and not cleanup_attempted:
    try:cleanup_native()
    except (OSError,EOFError,ValueError,RuntimeError,KeyboardInterrupt,ftplib.Error) as e:summary['cleanup_error']=type(e).__name__+': '+str(e)
   if shell and not shell.broken and summary.get('native_launch_requested'):
-   for name in ('start.txt','nav-startup.txt','cleanup.txt'):
+   for name in ('start.txt','nav-startup.txt','cleanup.txt','lifecycle-start-cycle.txt','lifecycle-start-recover.txt','lifecycle-cleanup-cycle.txt','lifecycle-cleanup-recover.txt'):
     if shell.broken:break
     try:
-     if cmd('test -r '+name,False)==0:cmd('chmod 644 '+name);fetch(name)
+     source=('/dev/shmem/delphi-nav-lifecycle-'+token+'-'+name[len('lifecycle-'):]) if name.startswith('lifecycle-') else name
+     if cmd('test -r '+source,False)==0:
+      if source!=name:copy(source,name)
+      else:cmd('chmod 644 '+name);fetch(name)
     except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as e:summary.setdefault('diagnostic_errors',[]).append(dict(file=name,error=str(e)))
    for name,command in (('nav-current.txt','pidin -p NavigationServer arguments'),('peers-current.txt','pidin arguments'),('nav-path-current.txt','ls -l /extbin/apps/bin/NavigationServer')):
     if shell.broken:break
@@ -237,7 +276,7 @@ def main(argv=None):
  status('Stock NavigationServer process restoration: '+('VERIFIED' if summary.get('restoration_verified') else 'NOT VERIFIED'), 'OK' if summary.get('restoration_verified') else 'WARN')
  print('Replay packets delivered:',summary.get('replay',{}).get('packets',0),'/',manifest['replay']['packets'])
  if summary['cleanup_pending']:print('Cleanup pending. Keep phone unplugged; resume: python scripts/run_cluster_replay.py --resume "'+str(folder)+'" --phone-unplugged')
- passed=summary.get('restoration_verified') and summary.get('peer_pids_unchanged') and summary.get('replay',{}).get('packets_delivered') and summary.get('cluster_maps_seen')
+ passed=summary.get('restoration_verified') and summary.get('peer_pids_unchanged') and summary.get('replay',{}).get('packets_delivered') and summary.get('cluster_maps_seen') and summary.get('factory_maps_restored')
  print('Recorded maps confirmed on cluster; live phone navigation remains separate.' if passed else 'Return this collection, including any partial result.')
  return 0 if passed else 2
 if __name__ == '__main__':

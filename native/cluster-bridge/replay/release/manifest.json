@@ -1,8 +1,11 @@
 {
   "kind": "native_cluster_recorded_map_replay",
   "hook_mode": "app_import_slots",
-  "startup_contract_revision": 6,
-  "activation_mode": "armed_native_descriptor",
+  "startup_contract_revision": 7,
+  "activation_mode": "native_frames_then_explicit_arm",
+  "lifecycle_mode": "sal_shutdown_exact_crash_recovery",
+  "cluster_map_selected_required": true,
+  "native_source_capture_limit": 1048576,
   "post_exec_identity_ack": true,
   "canonical_image_exec": true,
   "preserve_standard_streams": true,
@@ -57,6 +60,16 @@
       "path": "/etc/procman_core.cfg",
       "bytes": 6408,
       "sha256": "004783991da86ca2956470636265be212ab189c5f393afa161affead873680a1"
+    },
+    "libc.so.3.reference": {
+      "path": "/proc/boot/libc.so.3",
+      "bytes": 490310,
+      "sha256": "76ff9b07201a77ad231905741b25a97fd722a163c26a7ca0e36f17331bd12e9b"
+    },
+    "libXSAL.so.reference": {
+      "path": "/proc/boot/libXSAL.so",
+      "bytes": 130364,
+      "sha256": "b754301a9656e9d8f296d9ab0f9326749073cca602e79e63689d0290228ad4e1"
     }
   },
   "elf": {
@@ -73,8 +86,10 @@
         "getpid",
         "_preinit_array",
         "memcpy",
+        "execl",
         "readlink",
         "puts",
+        "dup2",
         "malloc",
         "readdir",
         "fflush",
@@ -85,7 +100,7 @@
         "nanosleep",
         "write",
         "fstat",
-        "kill",
+        "fprintf",
         "memchr",
         "__get_errno_ptr",
         "devctl",
@@ -132,6 +147,7 @@
         "snprintf",
         "getenv",
         "getpid",
+        "memcpy",
         "malloc",
         "ftruncate",
         "mmap",
@@ -193,20 +209,84 @@
       "needed": [
         "libc.so.3"
       ]
+    },
+    "nav_cycle": {
+      "imports": [
+        "clock_gettime",
+        "printf",
+        "_init_array",
+        "sigemptyset",
+        "snprintf",
+        "getenv",
+        "getpid",
+        "_preinit_array",
+        "memcpy",
+        "puts",
+        "malloc",
+        "sigaddset",
+        "alarm",
+        "nanosleep",
+        "write",
+        "fprintf",
+        "kill",
+        "memchr",
+        "__get_errno_ptr",
+        "devctl",
+        "strstr",
+        "pread64",
+        "strncmp",
+        "dlopen",
+        "memcmp",
+        "sigaction",
+        "dlsym",
+        "strtoull",
+        "_init_libc",
+        "memset",
+        "open64",
+        "_fini_array",
+        "strcmp",
+        "atexit",
+        "fwrite",
+        "exit",
+        "strspn",
+        "strlen",
+        "open",
+        "close",
+        "free",
+        "sigprocmask"
+      ],
+      "exports": [
+        "DTS_Client_Set_Dt_Level",
+        "pg_open",
+        "pg_read_identity",
+        "_init",
+        "_start",
+        "main",
+        "pg_matches",
+        "DTS_Client_Get_Frontend",
+        "_fini"
+      ],
+      "needed": [
+        "libc.so.3"
+      ]
     }
   },
   "files": {
     "nav_launch": {
-      "bytes": 23379,
-      "sha256": "1b3094d5b7d86e2de588eae3e243e90ebd747e515dfd8703099cbde3bc2e570c"
+      "bytes": 25634,
+      "sha256": "85bb4c9aee0ff531508a68db3c2faefed715d73277661c822a7eb83cf5c412f9"
     },
     "libdelphi_cluster.so": {
-      "bytes": 21071,
-      "sha256": "7f7e65dc980a726a66546008ddccefa29d88f86c4c7f12b3565b9933518d00ec"
+      "bytes": 21458,
+      "sha256": "8dafc743e0f5f2a536f63c7bcc72c747ed4d32075550e9d4b4ee9383a192b2c7"
     },
     "replay_libc_check": {
       "bytes": 9101,
       "sha256": "4c651d2d275ce4c945478f7197bb9e9a583f5fa044c3dcf29cd913d2a6b47ed3"
+    },
+    "nav_cycle": {
+      "bytes": 20454,
+      "sha256": "047110895cdb6c0098457ecd2f2b01bcdf9208103e3790dae3159282512d23c0"
     },
     "replay.bin": {
       "bytes": 6031660,
@@ -214,18 +294,19 @@
     }
   },
   "scripts_sha256": {
-    "run_cluster_replay.py": "d070542220eb710d7d67f94283629d35c1cea39228ad1107bf9972db14727980",
+    "run_cluster_replay.py": "a58bc68eee1a52ffb529e197730196fb0c3269c51e94013931f38c1f378fc210",
     "cluster_preflight.py": "31e9682f954dc6ce8197f5b154788b37a6ea3e493c1f20532956a8f01381b704",
-    "run_observer_smoke.py": "6a07f2539ffac55b3cded40fd0847158c6d93ab4e8bc2be7fdac37a678e1d4f5",
-    "delphi_inventory.py": "64c7311793c7af665ccd0728bb10cafe5301dec1c1daf79cfbf5627519f0be25",
-    "decode_delphi_observer.py": "113906aee942b7245360806fcddb643b95210df976f23ce7f97cf3006264e13b"
+    "run_observer_smoke.py": "5baab0bfe920faedb3aa8c64ade5264b2646f3e81b69a03d27912418849465e4",
+    "delphi_inventory.py": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518",
+    "project_console.py": "1693776432be4b45937221882f281f24c6a30701877ea72e921735bb85ce7c5f",
+    "decode_delphi_observer.py": "beb7d8e74a58aaffd45769b614ed85e11bf38d647206ab4d631b2266857599d9"
   },
   "source_sha256": {
-    "native/cluster-bridge/replay/build.sh": "7226b7eefc038a4ec80c05fcdc984baf4a440c18a0f7cdf02a4d154a3cbae91f",
+    "native/cluster-bridge/replay/build.sh": "ad323c05dd0a42b2115940a0a443c4e71f45c852bd9e27eb4316312eb5879379",
     "native/cluster-bridge/replay/early-io.c": "c136e3eb20fbc115735263d0bb88849b029d9e39d6ce506d54e8c6923e2ae55e",
     "native/cluster-bridge/replay/entry-arm.S": "a80b30337e35d555328c5e2c39bf7103157a524b5047542ed4d4c9be15df1edf",
     "native/cluster-bridge/replay/entry-legacy.S": "6c5ee852ea19dc3580f773c4a77aa5eb94f0bb1c455de5b7929768c62be69c4f",
-    "native/cluster-bridge/replay/fixture.c": "c4933bdff87dcbbac979fbe3d17626d3fc8bc0316ebde35852bed24b0bc96621",
+    "native/cluster-bridge/replay/fixture.c": "9023f080244ab5c31d660069db580c0ef34f6a3c9c94dcdbfa0341688c2a0ae2",
     "native/cluster-bridge/replay/hook-calls.S": "3af93e9d784ee1b056a57d523be930dae151c69c0cd333870283e87bd5cdfbea",
     "native/cluster-bridge/replay/hook-fixture.c": "33226a780d3bea740db7ba3e0c7d09c97aac061a6329d06b7651b18bdd34ea4c",
     "native/cluster-bridge/replay/hook-runner.c": "7b65d9fb9d2c2e5ca0c80de0e7d8e1cb01352713c020b64fe9e2fcf9f1d83b4c",
@@ -236,19 +317,28 @@
     "native/cluster-bridge/replay/libc-fixture.c": "a124944a955b7cf1f0307bf9a6d493c1a4ff260295f0e0d79e3205426994f5b2",
     "native/cluster-bridge/replay/libc-preflight.c": "8916a3d872252924c16f4583e81d1138a4036af15ae79afdc96e0083816958f7",
     "native/cluster-bridge/replay/libc-profile.h": "1934ddad597347e456ab1abe2e925de821d52a2c975c22fce80d17108da483b6",
-    "native/cluster-bridge/replay/loader.c": "abdd2eb9d2a1cf749ba03407e574dfafb8d231afa09988d29e3e56f180d6813f",
-    "native/cluster-bridge/replay/replay.c": "ccd0e3ac57f077ff4b8f98bd303d6546fcc2eea94e620a4d193f63b4dfc35562",
-    "native/cluster-bridge/replay/replay.h": "530a16a71a77cb5deb733fdebd6cddb193060e62f9e3f07f0f9197f46bb9aca0",
-    "native/cluster-bridge/replay/test-qemu.sh": "daa118824e671258bf880093f4467a205312b7d481dbb6ff4a20cd4afe5eabb1",
+    "native/cluster-bridge/replay/loader.c": "ed9a8a636af20c7dd53b5c6126cbcde0a5c9163c303683a8d3feb9bbe9c07aa6",
+    "native/cluster-bridge/replay/replay.c": "0ecfc6c13c2a4a1f95122ed550ff1dddfc3c38c34cdc657609397baaa231e909",
+    "native/cluster-bridge/replay/replay.h": "e6a0ccf3fa0d36e4cc83a1a3380734bf32400f05d4285fc521d9e1def07097f5",
+    "native/cluster-bridge/replay/test-qemu.sh": "ed323b275b95fc6958c13c24f50e32355a1fc623575cd501d57909ecf9b9a8d4",
     "native/cluster-bridge/replay/unit-libc-profile.h": "0830666e148bf8fb40cab71772fd5b22ce8a5232c9e1c14f83223ec40d0fec51",
-    "native/cluster-bridge/nav-launch/build.sh": "097f70e127725c89e41327e78e1da32bf1caacbc08812a1d1c6c1f61090cf0f8",
-    "native/cluster-bridge/nav-launch/controller.c": "e06b4bf7a990f49673e1ca34a66393f807426f25e3d4c158718a8ccde76950b0",
+    "native/cluster-bridge/nav-launch/build.sh": "980bb9f656c295605b44c5aed636017c54f958f81764dbca2eb42d75a80f7c13",
+    "native/cluster-bridge/nav-launch/controller.c": "d298ec72aa6f2a10ac59a9c30af7130e132a7f03316c16ff74e11c77782dfa8a",
     "native/cluster-bridge/nav-launch/fixture-preload.c": "80e966f9841f562b6e9000b507a1d24187e4401f862e8f774b3a48a076f3645d",
     "native/cluster-bridge/nav-launch/fixture.c": "a4b28df31fb5270c6f1d2afbddd4b73d04a5eb2d2c60dd3c1c2f60a5e6eabc62",
     "native/cluster-bridge/nav-launch/launch.h": "c6c3b56fafbf1d6009f54c19c84431b0d2243b796c0f67e9b82debc65467e66d",
+    "native/cluster-bridge/nav-launch/lifecycle-fixture.c": "a9d1ae55b30dc39be46906919919b1b1aa5bb3adf1dd9db31de22b2e279afd6f",
     "native/cluster-bridge/nav-launch/proc_guard.c": "3cfb6e334414214d4cdc5abfc9d3f4e9d04127ade9705e5b9f95d886cc7f8ec3",
     "native/cluster-bridge/nav-launch/proc_guard.h": "72e574f9b8b90c07ef6209300f0cae68b4f03561857026d7c98c5354e0f1522b",
-    "native/cluster-bridge/nav-launch/qemu-runner.c": "0bc661499ece3311028fa7472109738d405dab9bc3d00aa60ac3b1f7799fedb0",
-    "native/cluster-bridge/nav-launch/test-qemu.sh": "09bfb386ad3999e574af1b38dd7e8c8e479695ef201b8fa71e5ed343c5c343fd"
+    "native/cluster-bridge/nav-launch/qemu-runner.c": "152ec6288d24c7e2cee0c9bca41bb125713330f789415d7ab67e5d9c084bc7c3",
+    "native/cluster-bridge/nav-launch/test-qemu.sh": "e9ad461d4f27e76dd85b77014dce526b65449dc1643842891a289f55bf3110cf",
+    "native/cluster-bridge/nav-control/control.c": "199a45d2c82e24d920cdf317fbf3346ddff1fe16053b29bd662c7d1b42732b25",
+    "native/cluster-bridge/nav-control/dts-fixture.c": "3c3c2c6ff345031ad6e205fde24892d29aec70bd2aa8ae105b96bd531f432640",
+    "native/cluster-bridge/nav-control/idle-fixture.c": "a6b55ee098d1576f85295eb241e9e17ba0e15bf05d576279b26c1d91758cea92",
+    "native/cluster-bridge/nav-control/init-fixture.c": "602a82e65e0251ecced35946676411ed37741ca1185b1165bd9b97175f527f3d",
+    "native/cluster-bridge/nav-control/sal-fixture-api.h": "24371235475ce971b4993b0d13fdb8c465e6e0cd1a7c16e95fcf856a957dbc63",
+    "native/cluster-bridge/nav-control/sal-profile.h": "b2f9025ef7e4d92398aec31c369d78703d334321cfec21a8efbd94201ea3309b",
+    "native/cluster-bridge/nav-control/stall-guard.h": "eef96f712f14e219f4ab71f05e9856c6bc1bc81b6160cbdfe419d84611c7cddd",
+    "native/cluster-bridge/nav-control/test-qemu.sh": "b4bf7f21fe794eb70a7962663328fb196af6c245199e91f89eb7659101e8e2f5"
   }
 }

@@ -10,6 +10,7 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+#include <sys/stat.h>
 static const char *roots[]={LAUNCH_PREFIX "00000000000000000000000000000000",LAUNCH_PREFIX "11111111111111111111111111111111"};
 static const struct timespec tick={0,100000000};
 static int read_state(const char *path,struct launch_state *s){int fd=open(path,O_RDONLY);ssize_t n;if(fd<0)return -1;n=read(fd,s,sizeof(*s));close(fd);return n==(ssize_t)sizeof(*s)?0:-1;}
@@ -22,6 +23,9 @@ int main(void){pid_t manager,p;pg_identity stock;struct launch_state s,final;int
  if(chdir("/extbin/apps/bin")||sizeof(s)!=512||setenv("XSAL_INSTANCE_NAME","delphi_disconnect_emulator",1))return 1;
  manager=fork();if(!manager){execl(MANAGER_TARGET,"procman","-f","/proc/boot/launch-manager.cfg","-c","0","-t",(char*)0);_exit(99);}if(manager<0)return 2;
  for(i=0;i<50;++i){fd=pg_find(NAV_TARGET,manager,&stock);if(fd>=0)break;nanosleep(&tick,0);}if(fd<0)return 3;close(fd);
+ {const char *names[]={"/proc/boot/libc.so.3","/proc/boot/libXSAL.so",LAUNCH_PREFIX "00000000000000000000000000000000/libc.so.3.reference",LAUNCH_PREFIX "00000000000000000000000000000000/libXSAL.so.reference"};unsigned j;
+  for(j=0;j<4;j++){struct stat st;unsigned char b[16]={0};int q=open(names[j],O_RDONLY);ssize_t n=q<0?-1:read(q,b,sizeof(b));if(q>=0)close(q);if(!lstat(names[j],&st))printf("FIXTURE_REF path=%s mode=%o bytes=%llu read=%d first=%02x%02x%02x%02x\n",names[j],(unsigned)st.st_mode,(unsigned long long)st.st_size,(int)n,b[0],b[1],b[2],b[3]);}
+ }
  for(k=0;k<2;++k){
   p=start(roots[k],stock.pid,k!=0);if(p<0)return 4;
   if(k){
@@ -31,6 +35,13 @@ int main(void){pid_t manager,p;pg_identity stock;struct launch_state s,final;int
   snprintf(path,sizeof(path),"/dev/shmem/delphi-nav-launch-report-%s.bin",roots[k]+strlen(LAUNCH_PREFIX));
   for(i=0;i<750;++i){if(!read_state(path,&s)&&s.guard_done)break;nanosleep(&tick,0);}if(i==750)return 8;
   if(s.version!=1||s.phase!=4||s.error||!s.capture_done||!s.guard_done||s.cleanup_authorized||s.cleanup_started||s.restoration_verified||s.restored_pid||strcmp(s.inherited_cwd,"/extbin/apps/bin")||!s.obs_count||s.obs_count!=9||s.obs_dropped)return 9;
+  {char logfile[192],text[256]={0};int lf;
+   snprintf(logfile,sizeof(logfile),"/dev/shmem/delphi-nav-lifecycle-%s-start-cycle.txt",roots[k]+strlen(LAUNCH_PREFIX));lf=open(logfile,O_RDONLY);
+   if(lf<0||read(lf,text,sizeof(text)-1)<=0){return 31;}close(lf);
+   if(!strstr(text,"NAV_LIFECYCLE_FIXTURE_RESTART_PASS")){return 32;}
+   if(!k){if(!strstr(text,"NAV_LIFECYCLE_DELAYED_START_PASS")){return 33;}puts("NAV_LIFECYCLE_DELAYED_START_PASS");}
+   puts("NAV_LIFECYCLE_INTEGRATION_PASS");
+  }
   if(k){if(!((uint64_t)s.reserved[0]|((uint64_t)s.reserved[1]<<32))||((uint64_t)s.reserved[0]|((uint64_t)s.reserved[1]<<32))==s.observed_start)return 29;puts("NAV_POST_EXEC_IDENTITY_PASS");}
   else {if(s.reserved[0]||s.reserved[1])return 30;puts("NAV_PRODUCTION_LIFECYCLE_PASS");}
   for(i=0;i<10;++i)nanosleep(&tick,0);
