@@ -1,0 +1,2128 @@
+_ZNK16MediaSinkService8ByteSizeEv 0xcdcf4
+000cdcf4 push     {r4, r5, r6, r7, r8, lr}       
+000cdcf8 mov      r4, r0                         
+000cdcfc ldr      r3, [r0, #0x54]                
+000cdd00 tst      r3, #0xff                      
+000cdd04 moveq    r7, #0                         
+000cdd08 beq      #0xcdd64                       
+000cdd0c tst      r3, #1                         
+000cdd10 moveq    r7, #0                         
+000cdd14 beq      #0xcdd30                       
+000cdd18 ldr      r0, [r0, #4]                   
+000cdd1c cmp      r0, #0                         
+000cdd20 movlt    r0, #0xa                       
+000cdd24 blt      #0xcdd2c                       
+000cdd28 bl       #0x6936c                       _ZN6google8protobuf2io17CodedOutputStream12VarintSize32Ej
+000cdd2c add      r7, r0, #1                     
+000cdd30 ldr      r3, [r4, #0x54]                
+000cdd34 tst      r3, #2                         
+000cdd38 beq      #0xcdd58                       
+000cdd3c ldr      r0, [r4, #8]                   
+000cdd40 cmp      r0, #0                         
+000cdd44 movlt    r0, #0xa                       
+000cdd48 blt      #0xcdd50                       
+000cdd4c bl       #0x6936c                       _ZN6google8protobuf2io17CodedOutputStream12VarintSize32Ej
+000cdd50 add      r7, r7, #1                     
+000cdd54 add      r7, r7, r0                     
+000cdd58 ldr      r3, [r4, #0x54]                
+000cdd5c tst      r3, #0x10                      
+000cdd60 addne    r7, r7, #2                     
+000cdd64 ldr      r3, [r4, #0x10]                
+000cdd68 add      r7, r7, r3                     
+000cdd6c cmp      r3, #0                         
+000cdd70 ble      #0xcddb4                       
+000cdd74 mov      r5, #0                         
+000cdd78 mov      r8, #1                         
+000cdd7c ldr      r3, [r4, #0xc]                 
+000cdd80 ldr      r0, [r3, r5, lsl #2]           
+000cdd84 bl       #0x6b658                       _ZNK18AudioConfiguration8ByteSizeEv
+000cdd88 mov      r6, r0                         
+000cdd8c cmp      r6, #0x7f                      
+000cdd90 movls    r0, r8                         
+000cdd94 bls      #0xcdd9c                       
+000cdd98 bl       #0x69870                       _ZN6google8protobuf2io17CodedOutputStream20VarintSize32FallbackEj
+000cdd9c add      r6, r0, r6                     
+000cdda0 add      r7, r7, r6                     
+000cdda4 add      r5, r5, #1                     
+000cdda8 ldr      r3, [r4, #0x10]                
+000cddac cmp      r5, r3                         
+000cddb0 blt      #0xcdd7c                       
+000cddb4 ldr      r3, [r4, #0x30]                
+000cddb8 add      r7, r7, r3                     
+000cddbc cmp      r3, #0                         
+000cddc0 ble      #0xcde04                       
+000cddc4 mov      r5, #0                         
+000cddc8 mov      r8, #1                         
+000cddcc ldr      r3, [r4, #0x2c]                
+000cddd0 ldr      r0, [r3, r5, lsl #2]           
+000cddd4 bl       #0x6b670                       _ZNK18VideoConfiguration8ByteSizeEv
+000cddd8 mov      r6, r0                         
+000cdddc cmp      r6, #0x7f                      
+000cdde0 movls    r0, r8                         
+000cdde4 bls      #0xcddec                       
+000cdde8 bl       #0x69870                       _ZN6google8protobuf2io17CodedOutputStream20VarintSize32FallbackEj
+000cddec add      r6, r0, r6                     
+000cddf0 add      r7, r7, r6                     
+000cddf4 add      r5, r5, #1                     
+000cddf8 ldr      r3, [r4, #0x30]                
+000cddfc cmp      r5, r3                         
+000cde00 blt      #0xcddcc                       
+000cde04 str      r7, [r4, #0x50]                
+000cde08 mov      r0, r7                         
+000cde0c pop      {r4, r5, r6, r7, r8, pc}       
+_ZN13MediaSinkBase12routeMessageEhtRK10shared_ptrI8IoBufferE 0x7e904
+0007e904 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr} 
+0007e908 sub      sp, sp, #0x34                  
+0007e90c ldr      r4, [pc, #0x3d4]               
+0007e910 add      r4, pc, r4                     
+0007e914 mov      r6, r0                         
+0007e918 mov      ip, r2                         
+0007e91c mov      r0, r3                         
+0007e920 ldr      r2, [r3, #4]                   
+0007e924 ldr      r1, [r2, #8]                   
+0007e928 ldr      r7, [r2]                       
+0007e92c add      r7, r7, r1                     
+0007e930 add      r7, r7, #2                     
+0007e934 ldr      r3, [r2, #0xc]                 
+0007e938 rsb      r1, r1, r3                     
+0007e93c sub      r8, r1, #2                     
+0007e940 cmp      ip, #0x8000                    
+0007e944 beq      #0x7e980                       
+0007e948 bhi      #0x7e960                       
+0007e94c cmp      ip, #0                         
+0007e950 beq      #0x7eadc                       
+0007e954 cmp      ip, #1                         
+0007e958 bne      #0x7ec50                       
+0007e95c b        #0x7ebbc                       
+0007e960 movw     r3, #0x8002                    
+0007e964 cmp      ip, r3                         
+0007e968 beq      #0x7ea68                       
+0007e96c blo      #0x7e9f4                       
+0007e970 movw     r3, #0x8007                    
+0007e974 cmp      ip, r3                         
+0007e978 bne      #0x7ec50                       
+0007e97c b        #0x7ebdc                       
+0007e980 add      r5, sp, #0x18                  
+0007e984 mov      r0, r5                         
+0007e988 bl       #0x68d00                       _ZN5SetupC1Ev
+0007e98c mov      r0, r5                         
+0007e990 mov      r1, r7                         
+0007e994 mov      r2, r8                         
+0007e998 bl       #0x6bb20                       _ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi
+0007e99c cmp      r0, #0                         
+0007e9a0 bne      #0x7ec80                       
+0007e9a4 mov      r3, #0xe                       
+0007e9a8 str      r3, [sp]                       
+0007e9ac movw     r0, #0x2710                    
+0007e9b0 movt     r0, #0x10                      
+0007e9b4 mov      r1, #5                         
+0007e9b8 ldr      r2, [pc, #0x32c]               
+0007e9bc add      r2, r4, r2                     
+0007e9c0 ldr      r3, [pc, #0x328]               
+0007e9c4 add      r3, r4, r3                     
+0007e9c8 bl       #0x6c990                       slogf
+0007e9cc mvn      r4, #0xfc                      
+0007e9d0 b        #0x7e9e8                       
+0007e9d4 mov      r4, r0                         
+0007e9d8 add      r0, sp, #0x18                  
+0007e9dc bl       #0x6d1d0                       _ZN5SetupD1Ev
+0007e9e0 mov      r0, r4                         
+0007e9e4 bl       #0x6b688                       __cxa_end_cleanup
+0007e9e8 add      r0, sp, #0x18                  
+0007e9ec bl       #0x6d1d0                       _ZN5SetupD1Ev
+0007e9f0 b        #0x7ec74                       
+0007e9f4 add      r5, sp, #0x18                  
+0007e9f8 mov      r0, r5                         
+0007e9fc bl       #0x6c654                       _ZN5StartC1Ev
+0007ea00 mov      r0, r5                         
+0007ea04 mov      r1, r7                         
+0007ea08 mov      r2, r8                         
+0007ea0c bl       #0x6bb20                       _ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi
+0007ea10 cmp      r0, #0                         
+0007ea14 bne      #0x7ec9c                       
+0007ea18 mov      r3, #0x15                      
+0007ea1c str      r3, [sp]                       
+0007ea20 movw     r0, #0x2710                    
+0007ea24 movt     r0, #0x10                      
+0007ea28 mov      r1, #5                         
+0007ea2c ldr      r2, [pc, #0x2b8]               
+0007ea30 add      r2, r4, r2                     
+0007ea34 ldr      r3, [pc, #0x2b4]               
+0007ea38 add      r3, r4, r3                     
+0007ea3c bl       #0x6c990                       slogf
+0007ea40 mvn      r4, #0xfc                      
+0007ea44 b        #0x7ea5c                       
+0007ea48 mov      r4, r0                         
+0007ea4c add      r0, sp, #0x18                  
+0007ea50 bl       #0x6ccd8                       _ZN5StartD1Ev
+0007ea54 mov      r0, r4                         
+0007ea58 bl       #0x6b688                       __cxa_end_cleanup
+0007ea5c add      r0, sp, #0x18                  
+0007ea60 bl       #0x6ccd8                       _ZN5StartD1Ev
+0007ea64 b        #0x7ec74                       
+0007ea68 add      r5, sp, #0x18                  
+0007ea6c mov      r0, r5                         
+0007ea70 bl       #0x6c078                       _ZN4StopC1Ev
+0007ea74 mov      r0, r5                         
+0007ea78 mov      r1, r7                         
+0007ea7c mov      r2, r8                         
+0007ea80 bl       #0x6bb20                       _ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi
+0007ea84 cmp      r0, #0                         
+0007ea88 bne      #0x7ecb0                       
+0007ea8c mov      r3, #0x1c                      
+0007ea90 str      r3, [sp]                       
+0007ea94 movw     r0, #0x2710                    
+0007ea98 movt     r0, #0x10                      
+0007ea9c mov      r1, #5                         
+0007eaa0 ldr      r2, [pc, #0x244]               
+0007eaa4 add      r2, r4, r2                     
+0007eaa8 ldr      r3, [pc, #0x240]               
+0007eaac add      r3, r4, r3                     
+0007eab0 bl       #0x6c990                       slogf
+0007eab4 mvn      r4, #0xfc                      
+0007eab8 b        #0x7ead0                       
+0007eabc mov      r4, r0                         
+0007eac0 add      r0, sp, #0x18                  
+0007eac4 bl       #0x6d020                       _ZN4StopD1Ev
+0007eac8 mov      r0, r4                         
+0007eacc bl       #0x6b688                       __cxa_end_cleanup
+0007ead0 add      r0, sp, #0x18                  
+0007ead4 bl       #0x6d020                       _ZN4StopD1Ev
+0007ead8 b        #0x7ec74                       
+0007eadc ldrb     r2, [r7]                       
+0007eae0 mov      r3, #0                         
+0007eae4 lsl      r5, r2, #0x18                  
+0007eae8 mov      r4, #0                         
+0007eaec mov      r3, r7                         
+0007eaf0 ldrb     sl, [r3, #1]!                  
+0007eaf4 mov      fp, #0                         
+0007eaf8 lsl      sb, sl, #0x10                  
+0007eafc orr      sl, r4, r4                     
+0007eb00 orr      fp, sb, r5                     
+0007eb04 strd     sl, fp, [sp, #8]               
+0007eb08 ldrb     sl, [r3, #1]!                  
+0007eb0c mov      fp, #0                         
+0007eb10 lsl      sb, sl, #8                     
+0007eb14 ldrd     sl, fp, [sp, #8]               
+0007eb18 orr      sl, sl, r4                     
+0007eb1c orr      fp, fp, sb                     
+0007eb20 ldrb     sb, [r3, #1]!                  
+0007eb24 orr      sl, sl, r4                     
+0007eb28 orr      fp, fp, sb                     
+0007eb2c strd     sl, fp, [sp, #0x10]            
+0007eb30 ldrb     sl, [r3, #1]!                  
+0007eb34 mov      fp, #0                         
+0007eb38 lsl      sb, fp, #0x18                  
+0007eb3c lsl      r8, sl, #0x18                  
+0007eb40 ldrd     sl, fp, [sp, #0x10]            
+0007eb44 orr      sl, sl, r8                     
+0007eb48 orr      fp, fp, sb                     
+0007eb4c strd     sl, fp, [sp, #0x10]            
+0007eb50 ldrb     sl, [r3, #1]!                  
+0007eb54 mov      fp, #0                         
+0007eb58 lsl      sb, fp, #0x10                  
+0007eb5c lsl      r8, sl, #0x10                  
+0007eb60 ldrd     sl, fp, [sp, #0x10]            
+0007eb64 orr      sl, sl, r8                     
+0007eb68 orr      fp, fp, sb                     
+0007eb6c strd     sl, fp, [sp, #0x10]            
+0007eb70 ldrb     sl, [r3, #1]!                  
+0007eb74 mov      fp, #0                         
+0007eb78 lsl      sb, fp, #8                     
+0007eb7c lsl      r8, sl, #8                     
+0007eb80 ldrd     sl, fp, [sp, #0x10]            
+0007eb84 orr      r8, r8, sl                     
+0007eb88 orr      sb, sb, fp                     
+0007eb8c ldr      r1, [r6]                       
+0007eb90 ldrb     r2, [r3, #1]                   
+0007eb94 mov      r3, #0                         
+0007eb98 str      r0, [sp]                       
+0007eb9c mov      r0, #0xa                       
+0007eba0 str      r0, [sp, #4]                   
+0007eba4 ldr      r1, [r1, #0x28]                
+0007eba8 mov      r0, r6                         
+0007ebac orr      r2, r2, r8                     
+0007ebb0 orr      r3, r3, sb                     
+0007ebb4 blx      r1                             
+0007ebb8 b        #0x7ec74                       
+0007ebbc ldr      r3, [r6]                       
+0007ebc0 ldr      r3, [r3, #0x24]                
+0007ebc4 mov      r0, r6                         
+0007ebc8 mov      r1, r7                         
+0007ebcc mov      r2, r8                         
+0007ebd0 blx      r3                             
+0007ebd4 mov      r4, #0                         
+0007ebd8 b        #0x7ec74                       
+0007ebdc add      r5, sp, #0x18                  
+0007ebe0 mov      r0, r5                         
+0007ebe4 bl       #0x6b940                       _ZN29VideoFocusRequestNotificationC1Ev
+0007ebe8 mov      r0, r5                         
+0007ebec mov      r1, r7                         
+0007ebf0 mov      r2, r8                         
+0007ebf4 bl       #0x6bb20                       _ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi
+0007ebf8 cmp      r0, #0                         
+0007ebfc bne      #0x7ecc4                       
+0007ec00 mov      r3, #0x2c                      
+0007ec04 str      r3, [sp]                       
+0007ec08 movw     r0, #0x2710                    
+0007ec0c movt     r0, #0x10                      
+0007ec10 mov      r1, #5                         
+0007ec14 ldr      r2, [pc, #0xd0]                
+0007ec18 add      r2, r4, r2                     
+0007ec1c ldr      r3, [pc, #0xcc]                
+0007ec20 add      r3, r4, r3                     
+0007ec24 bl       #0x6c990                       slogf
+0007ec28 b        #0x7ec40                       
+0007ec2c mov      r4, r0                         
+0007ec30 add      r0, sp, #0x18                  
+0007ec34 bl       #0x699d8                       _ZN29VideoFocusRequestNotificationD1Ev
+0007ec38 mov      r0, r4                         
+0007ec3c bl       #0x6b688                       __cxa_end_cleanup
+0007ec40 mvn      r4, #0xfc                      
+0007ec44 add      r0, sp, #0x18                  
+0007ec48 bl       #0x699d8                       _ZN29VideoFocusRequestNotificationD1Ev
+0007ec4c b        #0x7ec74                       
+0007ec50 str      r1, [sp]                       
+0007ec54 movw     r0, #0x2710                    
+0007ec58 movt     r0, #0x10                      
+0007ec5c mov      r1, #2                         
+0007ec60 ldr      r2, [pc, #0x8c]                
+0007ec64 add      r2, r4, r2                     
+0007ec68 mov      r3, ip                         
+0007ec6c bl       #0x6c990                       slogf
+0007ec70 mvn      r4, #0xfc                      
+0007ec74 mov      r0, r4                         
+0007ec78 add      sp, sp, #0x34                  
+0007ec7c pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc} 
+0007ec80 ldr      r3, [r6]                       
+0007ec84 ldr      r3, [r3, #0x20]                
+0007ec88 mov      r0, r6                         
+0007ec8c ldr      r1, [sp, #0x1c]                
+0007ec90 blx      r3                             
+0007ec94 mov      r4, r0                         
+0007ec98 b        #0x7e9e8                       
+0007ec9c mov      r0, r6                         
+0007eca0 add      r1, sp, #0x18                  
+0007eca4 bl       #0x6d944                       _ZN13MediaSinkBase11handleStartERK5Start
+0007eca8 mov      r4, r0                         
+0007ecac b        #0x7ea5c                       
+0007ecb0 mov      r0, r6                         
+0007ecb4 add      r1, sp, #0x18                  
+0007ecb8 bl       #0x6b808                       _ZN13MediaSinkBase10handleStopERK4Stop
+0007ecbc mov      r4, r0                         
+0007ecc0 b        #0x7ead0                       
+0007ecc4 ldr      r3, [r6]                       
+0007ecc8 ldr      r3, [r3, #0x38]                
+0007eccc mov      r0, r6                         
+0007ecd0 add      r1, sp, #0x18                  
+0007ecd4 blx      r3                             
+0007ecd8 cmp      r0, #0                         
+0007ecdc movne    r4, #0                         
+0007ece0 bne      #0x7ec44                       
+0007ece4 b        #0x7ec40                       
+0007ece8 andeq    fp, sb, r0, ror #22            
+_ZN30GalVerificationMediaSinkStatusC2Ev 0xa3f28
+000a3f28 push     {r4, r5, r6, lr}               
+000a3f2c ldr      r3, [pc, #0x38]                
+000a3f30 add      r3, pc, r3                     
+000a3f34 mov      r4, r0                         
+000a3f38 ldr      r2, [pc, #0x30]                
+000a3f3c ldr      r2, [r3, r2]                   
+000a3f40 add      r2, r2, #8                     
+000a3f44 str      r2, [r0]                       
+000a3f48 bl       #0x6d524                       _ZN30GalVerificationMediaSinkStatus10SharedCtorEv
+000a3f4c b        #0xa3f64                       
+000a3f50 mov      r5, r0                         
+000a3f54 mov      r0, r4                         
+000a3f58 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000a3f5c mov      r0, r5                         
+000a3f60 bl       #0x6b688                       __cxa_end_cleanup
+000a3f64 mov      r0, r4                         
+000a3f68 pop      {r4, r5, r6, pc}               
+000a3f6c andeq    r6, r7, r0, asr #10            
+000a3f70 andeq    r1, r0, ip, lsl #30            
+_ZN16MediaSinkServiceD2Ev 0xb8268
+000b8268 push     {r4, r5, r6, lr}               
+000b826c ldr      r3, [pc, #0x78]                
+000b8270 add      r3, pc, r3                     
+000b8274 mov      r4, r0                         
+000b8278 ldr      r2, [pc, #0x70]                
+000b827c ldr      r2, [r3, r2]                   
+000b8280 add      r2, r2, #8                     
+000b8284 str      r2, [r0]                       
+000b8288 bl       #0x6c3cc                       _ZN16MediaSinkService10SharedDtorEv
+000b828c b        #0xb82a0                       
+000b8290 mov      r5, r0                         
+000b8294 add      r0, r4, #0x2c                  
+000b8298 bl       #0x6a9bc                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev
+000b829c b        #0xb82b0                       
+000b82a0 add      r0, r4, #0x2c                  
+000b82a4 bl       #0x6a9bc                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev
+000b82a8 b        #0xb82bc                       
+000b82ac mov      r5, r0                         
+000b82b0 add      r0, r4, #0xc                   
+000b82b4 bl       #0x6a050                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationED1Ev
+000b82b8 b        #0xb82cc                       
+000b82bc add      r0, r4, #0xc                   
+000b82c0 bl       #0x6a050                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationED1Ev
+000b82c4 b        #0xb82dc                       
+000b82c8 mov      r5, r0                         
+000b82cc mov      r0, r4                         
+000b82d0 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000b82d4 mov      r0, r5                         
+000b82d8 bl       #0x6b688                       __cxa_end_cleanup
+000b82dc mov      r0, r4                         
+000b82e0 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000b82e4 mov      r0, r4                         
+000b82e8 pop      {r4, r5, r6, pc}               
+000b82ec andeq    r2, r6, r0, lsl #4             
+000b82f0 andeq    r1, r0, r4, ror #28            
+_ZN16MediaSinkServiceC2ERKS_ 0xc4e90
+000c4e90 push     {r4, r5, r6, lr}               
+000c4e94 ldr      r3, [pc, #0x88]                
+000c4e98 add      r3, pc, r3                     
+000c4e9c mov      r4, r0                         
+000c4ea0 mov      r5, r1                         
+000c4ea4 ldr      r2, [pc, #0x7c]                
+000c4ea8 ldr      r2, [r3, r2]                   
+000c4eac add      r2, r2, #8                     
+000c4eb0 mov      r3, r0                         
+000c4eb4 str      r2, [r3], #0x1c                
+000c4eb8 str      r3, [r0, #0xc]                 
+000c4ebc mov      r3, #0                         
+000c4ec0 str      r3, [r0, #0x10]                
+000c4ec4 str      r3, [r0, #0x14]                
+000c4ec8 mov      r2, #4                         
+000c4ecc str      r2, [r0, #0x18]                
+000c4ed0 add      r1, r0, #0x3c                  
+000c4ed4 str      r1, [r0, #0x2c]                
+000c4ed8 str      r3, [r0, #0x30]                
+000c4edc str      r3, [r0, #0x34]                
+000c4ee0 str      r2, [r0, #0x38]                
+000c4ee4 bl       #0x6a680                       _ZN16MediaSinkService10SharedCtorEv
+000c4ee8 mov      r0, r4                         
+000c4eec mov      r1, r5                         
+000c4ef0 bl       #0x6d9c8                       _ZN16MediaSinkService9MergeFromERKS_
+000c4ef4 b        #0xc4f1c                       
+000c4ef8 mov      r5, r0                         
+000c4efc add      r0, r4, #0x2c                  
+000c4f00 bl       #0x6a9bc                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev
+000c4f04 add      r0, r4, #0xc                   
+000c4f08 bl       #0x6a050                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationED1Ev
+000c4f0c mov      r0, r4                         
+000c4f10 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000c4f14 mov      r0, r5                         
+000c4f18 bl       #0x6b688                       __cxa_end_cleanup
+000c4f1c mov      r0, r4                         
+000c4f20 pop      {r4, r5, r6, pc}               
+000c4f24 ldrdeq   r5, r6, [r5], -r8              
+000c4f28 andeq    r1, r0, r4, ror #28            
+_ZN13MediaSinkBase9ackFramesEij 0x7e650
+0007e650 push     {r4, r5, r6, r7, lr}           
+0007e654 sub      sp, sp, #0x2c                  
+0007e658 mov      r4, r0                         
+0007e65c mov      r6, r1                         
+0007e660 mov      r7, r2                         
+0007e664 add      r5, sp, #4                     
+0007e668 mov      r0, r5                         
+0007e66c bl       #0x6c330                       _ZN3AckC1Ev
+0007e670 str      r6, [sp, #8]                   
+0007e674 ldr      r3, [sp, #0x14]                
+0007e678 orr      r3, r3, #3                     
+0007e67c str      r3, [sp, #0x14]                
+0007e680 str      r7, [sp, #0xc]                 
+0007e684 mov      r3, #0                         
+0007e688 str      r3, [sp, #0x18]                
+0007e68c str      r3, [sp, #0x1c]                
+0007e690 str      r3, [sp, #0x20]                
+0007e694 str      r3, [sp, #0x24]                
+0007e698 ldr      r0, [r4, #8]                   
+0007e69c movw     r1, #0x8004                    
+0007e6a0 mov      r2, r5                         
+0007e6a4 add      r3, sp, #0x18                  
+0007e6a8 bl       #0x6c5c4                       _ZN13MessageRouter13marshallProtoEtRKN6google8protobuf11MessageLiteEP8IoBuffer
+0007e6ac ldr      r2, [sp, #0x18]                
+0007e6b0 ldr      r3, [sp, #0x20]                
+0007e6b4 ldr      ip, [sp, #0x24]                
+0007e6b8 ldrb     r1, [r4, #4]                   
+0007e6bc cmp      r1, #0                         
+0007e6c0 moveq    r4, #0                         
+0007e6c4 beq      #0x7e6e0                       
+0007e6c8 ldr      r0, [r4, #8]                   
+0007e6cc ldrb     r1, [r4, #5]                   
+0007e6d0 add      r2, r2, r3                     
+0007e6d4 rsb      r3, r3, ip                     
+0007e6d8 bl       #0x6b928                       _ZN13MessageRouter13queueOutgoingEhPvj
+0007e6dc mov      r4, r0                         
+0007e6e0 ldr      r0, [sp, #0x18]                
+0007e6e4 bl       #0x6cf84                       free
+0007e6e8 mov      r3, #0                         
+0007e6ec str      r3, [sp, #0x18]                
+0007e6f0 str      r3, [sp, #0x1c]                
+0007e6f4 str      r3, [sp, #0x20]                
+0007e6f8 str      r3, [sp, #0x24]                
+0007e6fc add      r0, sp, #4                     
+0007e700 bl       #0x6c684                       _ZN3AckD1Ev
+0007e704 subs     r0, r4, #0                     
+0007e708 movne    r0, #1                         
+0007e70c add      sp, sp, #0x2c                  
+0007e710 pop      {r4, r5, r6, r7, pc}           
+0007e714 mov      r4, r0                         
+0007e718 ldr      r0, [sp, #0x18]                
+0007e71c bl       #0x6cf84                       free
+0007e720 mov      r3, #0                         
+0007e724 str      r3, [sp, #0x18]                
+0007e728 str      r3, [sp, #0x1c]                
+0007e72c str      r3, [sp, #0x20]                
+0007e730 str      r3, [sp, #0x24]                
+0007e734 add      r0, sp, #4                     
+0007e738 bl       #0x6c684                       _ZN3AckD1Ev
+0007e73c mov      r0, r4                         
+0007e740 bl       #0x6b688                       __cxa_end_cleanup
+_ZNK16MediaSinkService3NewEv 0xb8380
+000b8380 push     {r4, r5, r6, lr}               
+000b8384 mov      r0, #0x58                      
+000b8388 bl       #0x6d44c                       _Znwj
+000b838c mov      r4, r0                         
+000b8390 mov      r5, r0                         
+000b8394 bl       #0x6b5bc                       _ZN16MediaSinkServiceC1Ev
+000b8398 b        #0xb83b0                       
+000b839c mov      r5, r0                         
+000b83a0 mov      r0, r4                         
+000b83a4 bl       #0x69d98                       _ZdlPv
+000b83a8 mov      r0, r5                         
+000b83ac bl       #0x6b688                       __cxa_end_cleanup
+000b83b0 mov      r0, r4                         
+000b83b4 pop      {r4, r5, r6, pc}               
+_ZN30GalVerificationMediaSinkStatusC2ERKS_ 0xa3e48
+000a3e48 push     {r4, r5, r6, lr}               
+000a3e4c ldr      r3, [pc, #0x48]                
+000a3e50 add      r3, pc, r3                     
+000a3e54 mov      r4, r0                         
+000a3e58 mov      r5, r1                         
+000a3e5c ldr      r2, [pc, #0x3c]                
+000a3e60 ldr      r2, [r3, r2]                   
+000a3e64 add      r2, r2, #8                     
+000a3e68 str      r2, [r0]                       
+000a3e6c bl       #0x6d524                       _ZN30GalVerificationMediaSinkStatus10SharedCtorEv
+000a3e70 mov      r0, r4                         
+000a3e74 mov      r1, r5                         
+000a3e78 bl       #0x6bf64                       _ZN30GalVerificationMediaSinkStatus9MergeFromERKS_
+000a3e7c b        #0xa3e94                       
+000a3e80 mov      r5, r0                         
+000a3e84 mov      r0, r4                         
+000a3e88 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000a3e8c mov      r0, r5                         
+000a3e90 bl       #0x6b688                       __cxa_end_cleanup
+000a3e94 mov      r0, r4                         
+000a3e98 pop      {r4, r5, r6, pc}               
+000a3e9c andeq    r6, r7, r0, lsr #12            
+000a3ea0 andeq    r1, r0, ip, lsl #30            
+_ZN13MediaSinkBase26resetAllowedConfigurationsEPjj 0x7ecf8
+0007ecf8 push     {r4, r5, r6, r7, r8, sb, sl, lr} 
+0007ecfc mov      r4, r0                         
+0007ed00 mov      r5, r1                         
+0007ed04 mov      r6, r2                         
+0007ed08 ldr      r3, [r0]                       
+0007ed0c ldr      r3, [r3, #0x3c]                
+0007ed10 blx      r3                             
+0007ed14 cmp      r0, r6                         
+0007ed18 blo      #0x7ede4                       
+0007ed1c cmp      r6, #0                         
+0007ed20 beq      #0x7ed54                       
+0007ed24 sub      r0, r0, #1                     
+0007ed28 ldr      r3, [r5]                       
+0007ed2c cmp      r0, r3                         
+0007ed30 movhs    r3, #0                         
+0007ed34 bhs      #0x7ed48                       
+0007ed38 b        #0x7ede4                       
+0007ed3c ldr      r2, [r5, r3, lsl #2]           
+0007ed40 cmp      r0, r2                         
+0007ed44 blo      #0x7ede4                       
+0007ed48 add      r3, r3, #1                     
+0007ed4c cmp      r6, r3                         
+0007ed50 bhi      #0x7ed3c                       
+0007ed54 ldr      r0, [r4, #0x24]                
+0007ed58 cmp      r0, #0                         
+0007ed5c beq      #0x7ed64                       
+0007ed60 bl       #0x69d98                       _ZdlPv
+0007ed64 mov      r3, #0                         
+0007ed68 str      r3, [r4, #0x24]                
+0007ed6c str      r3, [r4, #0x28]                
+0007ed70 str      r3, [r4, #0x2c]                
+0007ed74 cmp      r6, r3                         
+0007ed78 beq      #0x7edec                       
+0007ed7c add      sl, r4, #0x20                  
+0007ed80 mov      r7, r3                         
+0007ed84 mov      r8, #1                         
+0007ed88 mov      r3, r5                         
+0007ed8c ldr      r2, [r4, #0x24]                
+0007ed90 cmp      r2, #0                         
+0007ed94 beq      #0x7edc0                       
+0007ed98 ldr      r1, [r4, #0x28]                
+0007ed9c rsb      r0, r2, r1                     
+0007eda0 ldr      ip, [r4, #0x2c]                
+0007eda4 rsb      r2, r2, ip                     
+0007eda8 asr      r2, r2, #2                     
+0007edac cmp      r2, r0, asr #2                 
+0007edb0 ldrhi    r3, [r5]                       
+0007edb4 strhi    r3, [r1], #4                   
+0007edb8 strhi    r1, [r4, #0x28]                
+0007edbc bhi      #0x7edd0                       
+0007edc0 mov      r0, sl                         
+0007edc4 ldr      r1, [r4, #0x28]                
+0007edc8 mov      r2, r8                         
+0007edcc bl       #0x6d0f8                       _ZNSt6vectorIjSaIjEE9_Insert_nESt16_Vector_iteratorIjS0_EjRKj
+0007edd0 add      r7, r7, #1                     
+0007edd4 add      r5, r5, #4                     
+0007edd8 cmp      r6, r7                         
+0007eddc bhi      #0x7ed88                       
+0007ede0 b        #0x7edec                       
+0007ede4 mov      r0, #0                         
+0007ede8 pop      {r4, r5, r6, r7, r8, sb, sl, pc} 
+0007edec mov      r0, #1                         
+0007edf0 pop      {r4, r5, r6, r7, r8, sb, sl, pc} 
+_ZN30GalVerificationMediaSinkStatusC1ERKS_ 0xa3dec
+000a3dec push     {r4, r5, r6, lr}               
+000a3df0 ldr      r3, [pc, #0x48]                
+000a3df4 add      r3, pc, r3                     
+000a3df8 mov      r4, r0                         
+000a3dfc mov      r5, r1                         
+000a3e00 ldr      r2, [pc, #0x3c]                
+000a3e04 ldr      r2, [r3, r2]                   
+000a3e08 add      r2, r2, #8                     
+000a3e0c str      r2, [r0]                       
+000a3e10 bl       #0x6d524                       _ZN30GalVerificationMediaSinkStatus10SharedCtorEv
+000a3e14 mov      r0, r4                         
+000a3e18 mov      r1, r5                         
+000a3e1c bl       #0x6bf64                       _ZN30GalVerificationMediaSinkStatus9MergeFromERKS_
+000a3e20 b        #0xa3e38                       
+000a3e24 mov      r5, r0                         
+000a3e28 mov      r0, r4                         
+000a3e2c bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000a3e30 mov      r0, r5                         
+000a3e34 bl       #0x6b688                       __cxa_end_cleanup
+000a3e38 mov      r0, r4                         
+000a3e3c pop      {r4, r5, r6, pc}               
+000a3e40 andeq    r6, r7, ip, ror r6             
+000a3e44 andeq    r1, r0, ip, lsl #30            
+_ZN16MediaSinkServiceC2Ev 0xb83b8
+000b83b8 push     {r4, r5, r6, lr}               
+000b83bc ldr      r3, [pc, #0x78]                
+000b83c0 add      r3, pc, r3                     
+000b83c4 mov      r4, r0                         
+000b83c8 ldr      r2, [pc, #0x70]                
+000b83cc ldr      r2, [r3, r2]                   
+000b83d0 add      r2, r2, #8                     
+000b83d4 mov      r3, r0                         
+000b83d8 str      r2, [r3], #0x1c                
+000b83dc str      r3, [r0, #0xc]                 
+000b83e0 mov      r3, #0                         
+000b83e4 str      r3, [r0, #0x10]                
+000b83e8 str      r3, [r0, #0x14]                
+000b83ec mov      r2, #4                         
+000b83f0 str      r2, [r0, #0x18]                
+000b83f4 add      r1, r0, #0x3c                  
+000b83f8 str      r1, [r0, #0x2c]                
+000b83fc str      r3, [r0, #0x30]                
+000b8400 str      r3, [r0, #0x34]                
+000b8404 str      r2, [r0, #0x38]                
+000b8408 bl       #0x6a680                       _ZN16MediaSinkService10SharedCtorEv
+000b840c b        #0xb8434                       
+000b8410 mov      r5, r0                         
+000b8414 add      r0, r4, #0x2c                  
+000b8418 bl       #0x6a9bc                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev
+000b841c add      r0, r4, #0xc                   
+000b8420 bl       #0x6a050                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationED1Ev
+000b8424 mov      r0, r4                         
+000b8428 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000b842c mov      r0, r5                         
+000b8430 bl       #0x6b688                       __cxa_end_cleanup
+000b8434 mov      r0, r4                         
+000b8438 pop      {r4, r5, r6, pc}               
+000b843c strheq   r2, [r6], -r0                  
+000b8440 andeq    r1, r0, r4, ror #28            
+_ZNK16MediaSinkService13GetCachedSizeEv 0xfb1c0
+000fb1c0 ldr      r0, [r0, #0x50]                
+000fb1c4 bx       lr                             
+_ZN30GalVerificationMediaSinkStatus21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE 0x980e8
+000980e8 push     {r4, lr}                       
+000980ec bl       #0x6bf64                       _ZN30GalVerificationMediaSinkStatus9MergeFromERKS_
+000980f0 pop      {r4, pc}                       
+_ZNK16MediaSinkService11GetTypeNameEv 0xe44c0
+000e44c0 push     {r4, lr}                       
+000e44c4 ldr      r3, [pc, #0x18]                
+000e44c8 add      r3, pc, r3                     
+000e44cc mov      r4, r0                         
+000e44d0 ldr      r1, [pc, #0x10]                
+000e44d4 add      r1, r3, r1                     
+000e44d8 bl       #0x697bc                       _ZNSsC1EPKc
+000e44dc mov      r0, r4                         
+000e44e0 pop      {r4, pc}                       
+000e44e4 andeq    r5, r3, r8, lsr #31            
+_ZN30GalVerificationMediaSinkStatusD1Ev 0xa3d44
+000a3d44 push     {r4, r5, r6, lr}               
+000a3d48 ldr      r3, [pc, #0x40]                
+000a3d4c add      r3, pc, r3                     
+000a3d50 mov      r4, r0                         
+000a3d54 ldr      r2, [pc, #0x38]                
+000a3d58 ldr      r2, [r3, r2]                   
+000a3d5c add      r2, r2, #8                     
+000a3d60 str      r2, [r0]                       
+000a3d64 bl       #0x6cd8c                       _ZN30GalVerificationMediaSinkStatus10SharedDtorEv
+000a3d68 b        #0xa3d80                       
+000a3d6c mov      r5, r0                         
+000a3d70 mov      r0, r4                         
+000a3d74 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000a3d78 mov      r0, r5                         
+000a3d7c bl       #0x6b688                       __cxa_end_cleanup
+000a3d80 mov      r0, r4                         
+000a3d84 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000a3d88 mov      r0, r4                         
+000a3d8c pop      {r4, r5, r6, pc}               
+000a3d90 andeq    r6, r7, r4, lsr #14            
+000a3d94 andeq    r1, r0, ip, lsl #30            
+_ZN16MediaSinkServiceC1ERKS_ 0xc4df4
+000c4df4 push     {r4, r5, r6, lr}               
+000c4df8 ldr      r3, [pc, #0x88]                
+000c4dfc add      r3, pc, r3                     
+000c4e00 mov      r4, r0                         
+000c4e04 mov      r5, r1                         
+000c4e08 ldr      r2, [pc, #0x7c]                
+000c4e0c ldr      r2, [r3, r2]                   
+000c4e10 add      r2, r2, #8                     
+000c4e14 mov      r3, r0                         
+000c4e18 str      r2, [r3], #0x1c                
+000c4e1c str      r3, [r0, #0xc]                 
+000c4e20 mov      r3, #0                         
+000c4e24 str      r3, [r0, #0x10]                
+000c4e28 str      r3, [r0, #0x14]                
+000c4e2c mov      r2, #4                         
+000c4e30 str      r2, [r0, #0x18]                
+000c4e34 add      r1, r0, #0x3c                  
+000c4e38 str      r1, [r0, #0x2c]                
+000c4e3c str      r3, [r0, #0x30]                
+000c4e40 str      r3, [r0, #0x34]                
+000c4e44 str      r2, [r0, #0x38]                
+000c4e48 bl       #0x6a680                       _ZN16MediaSinkService10SharedCtorEv
+000c4e4c mov      r0, r4                         
+000c4e50 mov      r1, r5                         
+000c4e54 bl       #0x6d9c8                       _ZN16MediaSinkService9MergeFromERKS_
+000c4e58 b        #0xc4e80                       
+000c4e5c mov      r5, r0                         
+000c4e60 add      r0, r4, #0x2c                  
+000c4e64 bl       #0x6a9bc                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev
+000c4e68 add      r0, r4, #0xc                   
+000c4e6c bl       #0x6a050                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationED1Ev
+000c4e70 mov      r0, r4                         
+000c4e74 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000c4e78 mov      r0, r5                         
+000c4e7c bl       #0x6b688                       __cxa_end_cleanup
+000c4e80 mov      r0, r4                         
+000c4e84 pop      {r4, r5, r6, pc}               
+000c4e88 andeq    r5, r5, r4, ror r6             
+000c4e8c andeq    r1, r0, r4, ror #28            
+_ZN30GalVerificationMediaSinkStatusD0Ev 0xa3ce8
+000a3ce8 push     {r4, r5, r6, lr}               
+000a3cec ldr      r3, [pc, #0x48]                
+000a3cf0 add      r3, pc, r3                     
+000a3cf4 mov      r4, r0                         
+000a3cf8 ldr      r2, [pc, #0x40]                
+000a3cfc ldr      r2, [r3, r2]                   
+000a3d00 add      r2, r2, #8                     
+000a3d04 str      r2, [r0]                       
+000a3d08 bl       #0x6cd8c                       _ZN30GalVerificationMediaSinkStatus10SharedDtorEv
+000a3d0c b        #0xa3d24                       
+000a3d10 mov      r5, r0                         
+000a3d14 mov      r0, r4                         
+000a3d18 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000a3d1c mov      r0, r5                         
+000a3d20 bl       #0x6b688                       __cxa_end_cleanup
+000a3d24 mov      r0, r4                         
+000a3d28 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000a3d2c mov      r0, r4                         
+000a3d30 bl       #0x69d98                       _ZdlPv
+000a3d34 mov      r0, r4                         
+000a3d38 pop      {r4, r5, r6, pc}               
+000a3d3c andeq    r6, r7, r0, lsl #15            
+000a3d40 andeq    r1, r0, ip, lsl #30            
+_ZN30GalVerificationMediaSinkStatus21InitAsDefaultInstanceEv 0x96e78
+00096e78 bx       lr                             
+_ZNK30GalVerificationMediaSinkStatus3NewEv 0xa3ef0
+000a3ef0 push     {r4, r5, r6, lr}               
+000a3ef4 mov      r0, #0x14                      
+000a3ef8 bl       #0x6d44c                       _Znwj
+000a3efc mov      r4, r0                         
+000a3f00 mov      r5, r0                         
+000a3f04 bl       #0x6bd54                       _ZN30GalVerificationMediaSinkStatusC1Ev
+000a3f08 b        #0xa3f20                       
+000a3f0c mov      r5, r0                         
+000a3f10 mov      r0, r4                         
+000a3f14 bl       #0x69d98                       _ZdlPv
+000a3f18 mov      r0, r5                         
+000a3f1c bl       #0x6b688                       __cxa_end_cleanup
+000a3f20 mov      r0, r4                         
+000a3f24 pop      {r4, r5, r6, pc}               
+_ZN16MediaSinkService16default_instanceEv 0xc2c80
+000c2c80 push     {r4, lr}                       
+000c2c84 ldr      r4, [pc, #0x28]                
+000c2c88 add      r4, pc, r4                     
+000c2c8c ldr      r3, [pc, #0x24]                
+000c2c90 ldr      r3, [r4, r3]                   
+000c2c94 ldr      r3, [r3]                       
+000c2c98 cmp      r3, #0                         
+000c2c9c bne      #0xc2ca4                       
+000c2ca0 bl       #0x6acb0                       _Z31protobuf_AddDesc_protos_2eprotov
+000c2ca4 ldr      r3, [pc, #0xc]                 
+000c2ca8 ldr      r3, [r4, r3]                   
+000c2cac ldr      r0, [r3]                       
+000c2cb0 pop      {r4, pc}                       
+000c2cb4 andeq    r7, r5, r8, ror #15            
+000c2cb8 muleq    r0, r4, fp                     
+_ZN16MediaSinkService10SharedCtorEv 0xa1dc0
+000a1dc0 push     {r4, lr}                       
+000a1dc4 mov      r1, #0                         
+000a1dc8 str      r1, [r0, #0x50]                
+000a1dcc mov      r3, #1                         
+000a1dd0 str      r3, [r0, #4]                   
+000a1dd4 str      r3, [r0, #8]                   
+000a1dd8 strb     r1, [r0, #0x4c]                
+000a1ddc add      r0, r0, #0x54                  
+000a1de0 mov      r2, #4                         
+000a1de4 bl       #0x6bf1c                       memset
+000a1de8 pop      {r4, pc}                       
+_ZNK30GalVerificationMediaSinkStatus24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE 0xbab70
+000bab70 push     {r4, r5, r6, lr}               
+000bab74 mov      r4, r0                         
+000bab78 mov      r5, r1                         
+000bab7c ldr      r3, [r0, #0x10]                
+000bab80 tst      r3, #1                         
+000bab84 beq      #0xbab98                       
+000bab88 mov      r0, #1                         
+000bab8c ldr      r1, [r4, #4]                   
+000bab90 mov      r2, r5                         
+000bab94 bl       #0x6951c                       _ZN6google8protobuf8internal14WireFormatLite10WriteInt32EiiPNS0_2io17CodedOutputStreamE
+000bab98 ldr      r3, [r4, #0x10]                
+000bab9c tst      r3, #2                         
+000baba0 popeq    {r4, r5, r6, pc}               
+000baba4 mov      r0, #2                         
+000baba8 ldr      r1, [r4, #8]                   
+000babac mov      r2, r5                         
+000babb0 bl       #0x69dec                       _ZN6google8protobuf8internal14WireFormatLite9WriteEnumEiiPNS0_2io17CodedOutputStreamE
+000babb4 pop      {r4, r5, r6, pc}               
+_ZN16MediaSinkServiceD0Ev 0xb8148
+000b8148 push     {r4, r5, r6, lr}               
+000b814c ldr      r3, [pc, #0x80]                
+000b8150 add      r3, pc, r3                     
+000b8154 mov      r4, r0                         
+000b8158 ldr      r2, [pc, #0x78]                
+000b815c ldr      r2, [r3, r2]                   
+000b8160 add      r2, r2, #8                     
+000b8164 str      r2, [r0]                       
+000b8168 bl       #0x6c3cc                       _ZN16MediaSinkService10SharedDtorEv
+000b816c b        #0xb8180                       
+000b8170 mov      r5, r0                         
+000b8174 add      r0, r4, #0x2c                  
+000b8178 bl       #0x6a9bc                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev
+000b817c b        #0xb8190                       
+000b8180 add      r0, r4, #0x2c                  
+000b8184 bl       #0x6a9bc                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev
+000b8188 b        #0xb819c                       
+000b818c mov      r5, r0                         
+000b8190 add      r0, r4, #0xc                   
+000b8194 bl       #0x6a050                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationED1Ev
+000b8198 b        #0xb81ac                       
+000b819c add      r0, r4, #0xc                   
+000b81a0 bl       #0x6a050                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationED1Ev
+000b81a4 b        #0xb81bc                       
+000b81a8 mov      r5, r0                         
+000b81ac mov      r0, r4                         
+000b81b0 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000b81b4 mov      r0, r5                         
+000b81b8 bl       #0x6b688                       __cxa_end_cleanup
+000b81bc mov      r0, r4                         
+000b81c0 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000b81c4 mov      r0, r4                         
+000b81c8 bl       #0x69d98                       _ZdlPv
+000b81cc mov      r0, r4                         
+000b81d0 pop      {r4, r5, r6, pc}               
+000b81d4 andeq    r2, r6, r0, lsr #6             
+000b81d8 andeq    r1, r0, r4, ror #28            
+_ZN16MediaSinkService27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE 0xe5168
+000e5168 push     {r4, r5, r6, r7, r8, sb, sl, fp, lr} 
+000e516c sub      sp, sp, #0x14                  
+000e5170 mov      r5, r0                         
+000e5174 mov      r4, r1                         
+000e5178 add      fp, r0, #0xc                   
+000e517c add      r3, r0, #0x2c                  
+000e5180 str      r3, [sp, #4]                   
+000e5184 mov      sl, #0x18                      
+000e5188 add      r8, sp, #0xc                   
+000e518c mov      sb, #0x2c                      
+000e5190 b        #0xe5674                       
+000e5194 lsr      r3, r1, #3                     
+000e5198 sub      r3, r3, #1                     
+000e519c cmp      r3, #4                         
+000e51a0 addls    pc, pc, r3, lsl #2             
+000e51a4 b        #0xe5658                       
+000e51a8 b        #0xe51bc                       
+000e51ac b        #0xe5250                       
+000e51b0 b        #0xe52e4                       
+000e51b4 b        #0xe5454                       
+000e51b8 b        #0xe55c4                       
+000e51bc tst      r1, #7                         
+000e51c0 bne      #0xe5658                       
+000e51c4 ldr      r3, [r4, #4]                   
+000e51c8 ldr      r2, [r4, #8]                   
+000e51cc cmp      r3, r2                         
+000e51d0 bhs      #0xe51f4                       
+000e51d4 ldrb     r3, [r3]                       
+000e51d8 tst      r3, #0x80                      
+000e51dc bne      #0xe51f4                       
+000e51e0 str      r3, [sp, #0xc]                 
+000e51e4 ldr      r3, [r4, #4]                   
+000e51e8 add      r3, r3, #1                     
+000e51ec str      r3, [r4, #4]                   
+000e51f0 b        #0xe5208                       
+000e51f4 mov      r0, r4                         
+000e51f8 mov      r1, r8                         
+000e51fc bl       #0x6a6e0                       _ZN6google8protobuf2io16CodedInputStream20ReadVarint32FallbackEPj
+000e5200 cmp      r0, #0                         
+000e5204 beq      #0xe56b8                       
+000e5208 ldr      r6, [sp, #0xc]                 
+000e520c mov      r0, r6                         
+000e5210 bl       #0x6c234                       _Z22MediaCodecType_IsValidi
+000e5214 cmp      r0, #0                         
+000e5218 ldrne    r3, [r5, #0x54]                
+000e521c orrne    r3, r3, #1                     
+000e5220 strne    r3, [r5, #0x54]                
+000e5224 strne    r6, [r5, #4]                   
+000e5228 ldr      r3, [r4, #4]                   
+000e522c ldr      r2, [r4, #8]                   
+000e5230 cmp      r3, r2                         
+000e5234 bhs      #0xe5674                       
+000e5238 ldrb     r2, [r3]                       
+000e523c cmp      r2, #0x10                      
+000e5240 addeq    r3, r3, #1                     
+000e5244 streq    r3, [r4, #4]                   
+000e5248 bne      #0xe5674                       
+000e524c b        #0xe5258                       
+000e5250 tst      r1, #7                         
+000e5254 bne      #0xe5658                       
+000e5258 ldr      r3, [r4, #4]                   
+000e525c ldr      r2, [r4, #8]                   
+000e5260 cmp      r3, r2                         
+000e5264 bhs      #0xe5288                       
+000e5268 ldrb     r3, [r3]                       
+000e526c tst      r3, #0x80                      
+000e5270 bne      #0xe5288                       
+000e5274 str      r3, [sp, #0xc]                 
+000e5278 ldr      r3, [r4, #4]                   
+000e527c add      r3, r3, #1                     
+000e5280 str      r3, [r4, #4]                   
+000e5284 b        #0xe529c                       
+000e5288 mov      r0, r4                         
+000e528c mov      r1, r8                         
+000e5290 bl       #0x6a6e0                       _ZN6google8protobuf2io16CodedInputStream20ReadVarint32FallbackEPj
+000e5294 cmp      r0, #0                         
+000e5298 beq      #0xe56b8                       
+000e529c ldr      r6, [sp, #0xc]                 
+000e52a0 mov      r0, r6                         
+000e52a4 bl       #0x68b74                       _Z23AudioStreamType_IsValidi
+000e52a8 cmp      r0, #0                         
+000e52ac ldrne    r3, [r5, #0x54]                
+000e52b0 orrne    r3, r3, #2                     
+000e52b4 strne    r3, [r5, #0x54]                
+000e52b8 strne    r6, [r5, #8]                   
+000e52bc ldr      r3, [r4, #4]                   
+000e52c0 ldr      r2, [r4, #8]                   
+000e52c4 cmp      r3, r2                         
+000e52c8 bhs      #0xe5674                       
+000e52cc ldrb     r2, [r3]                       
+000e52d0 cmp      r2, #0x1a                      
+000e52d4 addeq    r3, r3, #1                     
+000e52d8 streq    r3, [r4, #4]                   
+000e52dc bne      #0xe5674                       
+000e52e0 b        #0xe52f0                       
+000e52e4 and      r3, r1, #7                     
+000e52e8 cmp      r3, #2                         
+000e52ec bne      #0xe5658                       
+000e52f0 ldr      r3, [r5, #0x10]                
+000e52f4 ldr      r1, [r5, #0x14]                
+000e52f8 cmp      r3, r1                         
+000e52fc bge      #0xe5314                       
+000e5300 ldr      r2, [r5, #0xc]                 
+000e5304 ldr      r6, [r2, r3, lsl #2]           
+000e5308 add      r3, r3, #1                     
+000e530c str      r3, [r5, #0x10]                
+000e5310 b        #0xe5378                       
+000e5314 ldr      r3, [r5, #0x18]                
+000e5318 cmp      r1, r3                         
+000e531c bne      #0xe532c                       
+000e5320 mov      r0, fp                         
+000e5324 add      r1, r1, #1                     
+000e5328 bl       #0x6af68                       _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi
+000e532c ldr      r3, [r5, #0x14]                
+000e5330 add      r3, r3, #1                     
+000e5334 str      r3, [r5, #0x14]                
+000e5338 mov      r0, sl                         
+000e533c bl       #0x6d44c                       _Znwj
+000e5340 mov      r7, r0                         
+000e5344 mov      r6, r0                         
+000e5348 bl       #0x6cdb0                       _ZN18AudioConfigurationC1Ev
+000e534c b        #0xe5364                       
+000e5350 mov      r4, r0                         
+000e5354 mov      r0, r7                         
+000e5358 bl       #0x69d98                       _ZdlPv
+000e535c mov      r0, r4                         
+000e5360 bl       #0x6b688                       __cxa_end_cleanup
+000e5364 ldr      r3, [r5, #0x10]                
+000e5368 ldr      r2, [r5, #0xc]                 
+000e536c str      r7, [r2, r3, lsl #2]           
+000e5370 add      r3, r3, #1                     
+000e5374 str      r3, [r5, #0x10]                
+000e5378 ldr      r3, [r4, #4]                   
+000e537c ldr      r2, [r4, #8]                   
+000e5380 cmp      r3, r2                         
+000e5384 bhs      #0xe53a8                       
+000e5388 ldrb     r3, [r3]                       
+000e538c tst      r3, #0x80                      
+000e5390 bne      #0xe53a8                       
+000e5394 str      r3, [sp, #0xc]                 
+000e5398 ldr      r3, [r4, #4]                   
+000e539c add      r3, r3, #1                     
+000e53a0 str      r3, [r4, #4]                   
+000e53a4 b        #0xe53bc                       
+000e53a8 mov      r0, r4                         
+000e53ac mov      r1, r8                         
+000e53b0 bl       #0x6a6e0                       _ZN6google8protobuf2io16CodedInputStream20ReadVarint32FallbackEPj
+000e53b4 cmp      r0, #0                         
+000e53b8 beq      #0xe56b8                       
+000e53bc ldr      r3, [r4, #0x2c]                
+000e53c0 add      r3, r3, #1                     
+000e53c4 str      r3, [r4, #0x2c]                
+000e53c8 ldr      r2, [r4, #0x30]                
+000e53cc cmp      r3, r2                         
+000e53d0 bgt      #0xe56b8                       
+000e53d4 mov      r0, r4                         
+000e53d8 ldr      r1, [sp, #0xc]                 
+000e53dc bl       #0x6d2d8                       _ZN6google8protobuf2io16CodedInputStream9PushLimitEi
+000e53e0 mov      r7, r0                         
+000e53e4 mov      r0, r6                         
+000e53e8 mov      r1, r4                         
+000e53ec bl       #0x6cf3c                       _ZN18AudioConfiguration27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE
+000e53f0 cmp      r0, #0                         
+000e53f4 beq      #0xe56b8                       
+000e53f8 ldrb     r3, [r4, #0x18]                
+000e53fc cmp      r3, #0                         
+000e5400 beq      #0xe56b8                       
+000e5404 mov      r0, r4                         
+000e5408 mov      r1, r7                         
+000e540c bl       #0x6d47c                       _ZN6google8protobuf2io16CodedInputStream8PopLimitEi
+000e5410 ldr      r3, [r4, #0x2c]                
+000e5414 cmp      r3, #0                         
+000e5418 subgt    r3, r3, #1                     
+000e541c strgt    r3, [r4, #0x2c]                
+000e5420 ldr      r3, [r4, #4]                   
+000e5424 ldr      r2, [r4, #8]                   
+000e5428 cmp      r3, r2                         
+000e542c bhs      #0xe5674                       
+000e5430 ldrb     r2, [r3]                       
+000e5434 cmp      r2, #0x1a                      
+000e5438 bne      #0xe56cc                       
+000e543c add      r3, r3, #1                     
+000e5440 str      r3, [r4, #4]                   
+000e5444 b        #0xe52f0                       
+000e5448 add      r3, r3, #1                     
+000e544c str      r3, [r4, #4]                   
+000e5450 b        #0xe5460                       
+000e5454 and      r3, r1, #7                     
+000e5458 cmp      r3, #2                         
+000e545c bne      #0xe5658                       
+000e5460 ldr      r3, [r5, #0x30]                
+000e5464 ldr      r1, [r5, #0x34]                
+000e5468 cmp      r3, r1                         
+000e546c bge      #0xe5484                       
+000e5470 ldr      r2, [r5, #0x2c]                
+000e5474 ldr      r6, [r2, r3, lsl #2]           
+000e5478 add      r3, r3, #1                     
+000e547c str      r3, [r5, #0x30]                
+000e5480 b        #0xe54e8                       
+000e5484 ldr      r3, [r5, #0x38]                
+000e5488 cmp      r1, r3                         
+000e548c bne      #0xe549c                       
+000e5490 ldr      r0, [sp, #4]                   
+000e5494 add      r1, r1, #1                     
+000e5498 bl       #0x6af68                       _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi
+000e549c ldr      r3, [r5, #0x34]                
+000e54a0 add      r3, r3, #1                     
+000e54a4 str      r3, [r5, #0x34]                
+000e54a8 mov      r0, sb                         
+000e54ac bl       #0x6d44c                       _Znwj
+000e54b0 mov      r7, r0                         
+000e54b4 mov      r6, r0                         
+000e54b8 bl       #0x69858                       _ZN18VideoConfigurationC1Ev
+000e54bc b        #0xe54d4                       
+000e54c0 mov      r4, r0                         
+000e54c4 mov      r0, r7                         
+000e54c8 bl       #0x69d98                       _ZdlPv
+000e54cc mov      r0, r4                         
+000e54d0 bl       #0x6b688                       __cxa_end_cleanup
+000e54d4 ldr      r3, [r5, #0x30]                
+000e54d8 ldr      r2, [r5, #0x2c]                
+000e54dc str      r7, [r2, r3, lsl #2]           
+000e54e0 add      r3, r3, #1                     
+000e54e4 str      r3, [r5, #0x30]                
+000e54e8 ldr      r3, [r4, #4]                   
+000e54ec ldr      r2, [r4, #8]                   
+000e54f0 cmp      r3, r2                         
+000e54f4 bhs      #0xe5518                       
+000e54f8 ldrb     r3, [r3]                       
+000e54fc tst      r3, #0x80                      
+000e5500 bne      #0xe5518                       
+000e5504 str      r3, [sp, #0xc]                 
+000e5508 ldr      r3, [r4, #4]                   
+000e550c add      r3, r3, #1                     
+000e5510 str      r3, [r4, #4]                   
+000e5514 b        #0xe552c                       
+000e5518 mov      r0, r4                         
+000e551c mov      r1, r8                         
+000e5520 bl       #0x6a6e0                       _ZN6google8protobuf2io16CodedInputStream20ReadVarint32FallbackEPj
+000e5524 cmp      r0, #0                         
+000e5528 beq      #0xe56b8                       
+000e552c ldr      r3, [r4, #0x2c]                
+000e5530 add      r3, r3, #1                     
+000e5534 str      r3, [r4, #0x2c]                
+000e5538 ldr      r2, [r4, #0x30]                
+000e553c cmp      r3, r2                         
+000e5540 bgt      #0xe56b8                       
+000e5544 mov      r0, r4                         
+000e5548 ldr      r1, [sp, #0xc]                 
+000e554c bl       #0x6d2d8                       _ZN6google8protobuf2io16CodedInputStream9PushLimitEi
+000e5550 mov      r7, r0                         
+000e5554 mov      r0, r6                         
+000e5558 mov      r1, r4                         
+000e555c bl       #0x6d0b0                       _ZN18VideoConfiguration27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE
+000e5560 cmp      r0, #0                         
+000e5564 beq      #0xe56b8                       
+000e5568 ldrb     r3, [r4, #0x18]                
+000e556c cmp      r3, #0                         
+000e5570 beq      #0xe56b8                       
+000e5574 mov      r0, r4                         
+000e5578 mov      r1, r7                         
+000e557c bl       #0x6d47c                       _ZN6google8protobuf2io16CodedInputStream8PopLimitEi
+000e5580 ldr      r3, [r4, #0x2c]                
+000e5584 cmp      r3, #0                         
+000e5588 subgt    r3, r3, #1                     
+000e558c strgt    r3, [r4, #0x2c]                
+000e5590 ldr      r3, [r4, #4]                   
+000e5594 ldr      r2, [r4, #8]                   
+000e5598 cmp      r3, r2                         
+000e559c bhs      #0xe5674                       
+000e55a0 ldrb     r2, [r3]                       
+000e55a4 cmp      r2, #0x22                      
+000e55a8 bne      #0xe56dc                       
+000e55ac add      r3, r3, #1                     
+000e55b0 str      r3, [r4, #4]                   
+000e55b4 b        #0xe5460                       
+000e55b8 add      r3, r3, #1                     
+000e55bc str      r3, [r4, #4]                   
+000e55c0 b        #0xe55cc                       
+000e55c4 tst      r1, #7                         
+000e55c8 bne      #0xe5658                       
+000e55cc ldr      r3, [r4, #4]                   
+000e55d0 ldr      r2, [r4, #8]                   
+000e55d4 cmp      r3, r2                         
+000e55d8 bhs      #0xe55fc                       
+000e55dc ldrb     r3, [r3]                       
+000e55e0 tst      r3, #0x80                      
+000e55e4 bne      #0xe55fc                       
+000e55e8 str      r3, [sp, #0xc]                 
+000e55ec ldr      r3, [r4, #4]                   
+000e55f0 add      r3, r3, #1                     
+000e55f4 str      r3, [r4, #4]                   
+000e55f8 b        #0xe5610                       
+000e55fc mov      r0, r4                         
+000e5600 mov      r1, r8                         
+000e5604 bl       #0x6a6e0                       _ZN6google8protobuf2io16CodedInputStream20ReadVarint32FallbackEPj
+000e5608 cmp      r0, #0                         
+000e560c beq      #0xe56b8                       
+000e5610 ldr      r3, [sp, #0xc]                 
+000e5614 subs     r3, r3, #0                     
+000e5618 movne    r3, #1                         
+000e561c strb     r3, [r5, #0x4c]                
+000e5620 ldr      r3, [r5, #0x54]                
+000e5624 orr      r3, r3, #0x10                  
+000e5628 str      r3, [r5, #0x54]                
+000e562c ldmib    r4, {r2, r3}                   
+000e5630 cmp      r2, r3                         
+000e5634 bne      #0xe5674                       
+000e5638 ldr      r3, [r4, #0x20]                
+000e563c cmp      r3, #0                         
+000e5640 beq      #0xe5674                       
+000e5644 mov      r3, #0                         
+000e5648 str      r3, [r4, #0x14]                
+000e564c mov      r0, #1                         
+000e5650 strb     r0, [r4, #0x18]                
+000e5654 b        #0xe56c4                       
+000e5658 and      r3, r1, #7                     
+000e565c cmp      r3, #4                         
+000e5660 beq      #0xe56c0                       
+000e5664 mov      r0, r4                         
+000e5668 bl       #0x6bbbc                       _ZN6google8protobuf8internal14WireFormatLite9SkipFieldEPNS0_2io16CodedInputStreamEj
+000e566c cmp      r0, #0                         
+000e5670 beq      #0xe56b8                       
+000e5674 ldr      r3, [r4, #4]                   
+000e5678 ldr      r2, [r4, #8]                   
+000e567c cmp      r3, r2                         
+000e5680 bhs      #0xe569c                       
+000e5684 ldrb     r1, [r3]                       
+000e5688 tst      r1, #0x80                      
+000e568c streq    r1, [r4, #0x14]                
+000e5690 addeq    r3, r3, #1                     
+000e5694 streq    r3, [r4, #4]                   
+000e5698 beq      #0xe56ac                       
+000e569c mov      r0, r4                         
+000e56a0 bl       #0x6a008                       _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv
+000e56a4 mov      r1, r0                         
+000e56a8 str      r0, [r4, #0x14]                
+000e56ac cmp      r1, #0                         
+000e56b0 bne      #0xe5194                       
+000e56b4 b        #0xe56c0                       
+000e56b8 mov      r0, #0                         
+000e56bc b        #0xe56c4                       
+000e56c0 mov      r0, #1                         
+000e56c4 add      sp, sp, #0x14                  
+000e56c8 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc} 
+000e56cc ldrb     r2, [r3]                       
+000e56d0 cmp      r2, #0x22                      
+000e56d4 bne      #0xe5674                       
+000e56d8 b        #0xe5448                       
+000e56dc ldrb     r2, [r3]                       
+000e56e0 cmp      r2, #0x28                      
+000e56e4 bne      #0xe5674                       
+000e56e8 b        #0xe55b8                       
+_ZN16MediaSinkService21InitAsDefaultInstanceEv 0x925f8
+000925f8 bx       lr                             
+_ZN16MediaSinkService4SwapEPS_ 0xbcda4
+000bcda4 push     {r4, r5, r6, lr}               
+000bcda8 mov      r5, r0                         
+000bcdac mov      r4, r1                         
+000bcdb0 cmp      r1, r0                         
+000bcdb4 popeq    {r4, r5, r6, pc}               
+000bcdb8 ldr      r3, [r0, #4]                   
+000bcdbc ldr      r2, [r1, #4]                   
+000bcdc0 str      r2, [r0, #4]                   
+000bcdc4 str      r3, [r1, #4]                   
+000bcdc8 ldr      r3, [r0, #8]                   
+000bcdcc ldr      r2, [r1, #8]                   
+000bcdd0 str      r2, [r0, #8]                   
+000bcdd4 str      r3, [r1, #8]                   
+000bcdd8 add      r0, r0, #0xc                   
+000bcddc add      r1, r1, #0xc                   
+000bcde0 bl       #0x6be98                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationE4SwapEPS3_
+000bcde4 add      r0, r5, #0x2c                  
+000bcde8 add      r1, r4, #0x2c                  
+000bcdec bl       #0x69e7c                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationE4SwapEPS3_
+000bcdf0 ldrb     r3, [r5, #0x4c]                
+000bcdf4 ldrb     r2, [r4, #0x4c]                
+000bcdf8 strb     r2, [r5, #0x4c]                
+000bcdfc strb     r3, [r4, #0x4c]                
+000bce00 ldr      r3, [r5, #0x54]                
+000bce04 ldr      r2, [r4, #0x54]                
+000bce08 str      r2, [r5, #0x54]                
+000bce0c str      r3, [r4, #0x54]                
+000bce10 ldr      r3, [r5, #0x50]                
+000bce14 ldr      r2, [r4, #0x50]                
+000bce18 str      r2, [r5, #0x50]                
+000bce1c str      r3, [r4, #0x50]                
+000bce20 pop      {r4, r5, r6, pc}               
+_ZNK16MediaSinkService24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE 0xbbabc
+000bbabc push     {r4, r5, r6, r7, r8, lr}       
+000bbac0 mov      r4, r0                         
+000bbac4 mov      r6, r1                         
+000bbac8 ldr      r3, [r0, #0x54]                
+000bbacc tst      r3, #1                         
+000bbad0 beq      #0xbbae4                       
+000bbad4 mov      r0, #1                         
+000bbad8 ldr      r1, [r4, #4]                   
+000bbadc mov      r2, r6                         
+000bbae0 bl       #0x69dec                       _ZN6google8protobuf8internal14WireFormatLite9WriteEnumEiiPNS0_2io17CodedOutputStreamE
+000bbae4 ldr      r3, [r4, #0x54]                
+000bbae8 tst      r3, #2                         
+000bbaec beq      #0xbbb00                       
+000bbaf0 mov      r0, #2                         
+000bbaf4 ldr      r1, [r4, #8]                   
+000bbaf8 mov      r2, r6                         
+000bbafc bl       #0x69dec                       _ZN6google8protobuf8internal14WireFormatLite9WriteEnumEiiPNS0_2io17CodedOutputStreamE
+000bbb00 ldr      r3, [r4, #0x10]                
+000bbb04 cmp      r3, #0                         
+000bbb08 ble      #0xbbb38                       
+000bbb0c mov      r5, #0                         
+000bbb10 mov      r7, #3                         
+000bbb14 ldr      r3, [r4, #0xc]                 
+000bbb18 mov      r0, r7                         
+000bbb1c ldr      r1, [r3, r5, lsl #2]           
+000bbb20 mov      r2, r6                         
+000bbb24 bl       #0x6a950                       _ZN6google8protobuf8internal14WireFormatLite12WriteMessageEiRKNS0_11MessageLiteEPNS0_2io17CodedOutputStreamE
+000bbb28 add      r5, r5, #1                     
+000bbb2c ldr      r3, [r4, #0x10]                
+000bbb30 cmp      r5, r3                         
+000bbb34 blt      #0xbbb14                       
+000bbb38 ldr      r3, [r4, #0x30]                
+000bbb3c cmp      r3, #0                         
+000bbb40 ble      #0xbbb70                       
+000bbb44 mov      r5, #0                         
+000bbb48 mov      r7, #4                         
+000bbb4c ldr      r3, [r4, #0x2c]                
+000bbb50 mov      r0, r7                         
+000bbb54 ldr      r1, [r3, r5, lsl #2]           
+000bbb58 mov      r2, r6                         
+000bbb5c bl       #0x6a950                       _ZN6google8protobuf8internal14WireFormatLite12WriteMessageEiRKNS0_11MessageLiteEPNS0_2io17CodedOutputStreamE
+000bbb60 add      r5, r5, #1                     
+000bbb64 ldr      r3, [r4, #0x30]                
+000bbb68 cmp      r5, r3                         
+000bbb6c blt      #0xbbb4c                       
+000bbb70 ldr      r3, [r4, #0x54]                
+000bbb74 tst      r3, #0x10                      
+000bbb78 popeq    {r4, r5, r6, r7, r8, pc}       
+000bbb7c mov      r0, #5                         
+000bbb80 ldrb     r1, [r4, #0x4c]                
+000bbb84 mov      r2, r6                         
+000bbb88 bl       #0x6da04                       _ZN6google8protobuf8internal14WireFormatLite9WriteBoolEibPNS0_2io17CodedOutputStreamE
+000bbb8c pop      {r4, r5, r6, r7, r8, pc}       
+_ZN13MediaSinkBaseD0Ev 0x7edf4
+0007edf4 push     {r4, r5, r6, lr}               
+0007edf8 ldr      r5, [pc, #0x54]                
+0007edfc add      r5, pc, r5                     
+0007ee00 mov      r4, r0                         
+0007ee04 ldr      r3, [pc, #0x4c]                
+0007ee08 ldr      r3, [r5, r3]                   
+0007ee0c add      r3, r3, #8                     
+0007ee10 str      r3, [r0]                       
+0007ee14 ldr      r0, [r0, #0x24]                
+0007ee18 cmp      r0, #0                         
+0007ee1c beq      #0x7ee24                       
+0007ee20 bl       #0x69d98                       _ZdlPv
+0007ee24 mov      r3, #0                         
+0007ee28 str      r3, [r4, #0x24]                
+0007ee2c str      r3, [r4, #0x28]                
+0007ee30 str      r3, [r4, #0x2c]                
+0007ee34 ldr      r3, [pc, #0x20]                
+0007ee38 ldr      r3, [r5, r3]                   
+0007ee3c add      r3, r3, #8                     
+0007ee40 str      r3, [r4]                       
+0007ee44 mov      r0, r4                         
+0007ee48 bl       #0x69d98                       _ZdlPv
+0007ee4c mov      r0, r4                         
+0007ee50 pop      {r4, r5, r6, pc}               
+0007ee54 andeq    fp, sb, r4, ror r6             
+0007ee58 andeq    r1, r0, ip, lsr fp             
+0007ee5c ldrdeq   r1, r2, [r0], -ip              
+_ZNK30GalVerificationMediaSinkStatus13SetCachedSizeEi 0x96e80
+00096e80 str      r1, [r0, #0xc]                 
+00096e84 bx       lr                             
+_ZNK16MediaSinkService13SetCachedSizeEi 0x92600
+00092600 str      r1, [r0, #0x50]                
+00092604 bx       lr                             
+_ZN16MediaSinkServiceC1Ev 0xb82f4
+000b82f4 push     {r4, r5, r6, lr}               
+000b82f8 ldr      r3, [pc, #0x78]                
+000b82fc add      r3, pc, r3                     
+000b8300 mov      r4, r0                         
+000b8304 ldr      r2, [pc, #0x70]                
+000b8308 ldr      r2, [r3, r2]                   
+000b830c add      r2, r2, #8                     
+000b8310 mov      r3, r0                         
+000b8314 str      r2, [r3], #0x1c                
+000b8318 str      r3, [r0, #0xc]                 
+000b831c mov      r3, #0                         
+000b8320 str      r3, [r0, #0x10]                
+000b8324 str      r3, [r0, #0x14]                
+000b8328 mov      r2, #4                         
+000b832c str      r2, [r0, #0x18]                
+000b8330 add      r1, r0, #0x3c                  
+000b8334 str      r1, [r0, #0x2c]                
+000b8338 str      r3, [r0, #0x30]                
+000b833c str      r3, [r0, #0x34]                
+000b8340 str      r2, [r0, #0x38]                
+000b8344 bl       #0x6a680                       _ZN16MediaSinkService10SharedCtorEv
+000b8348 b        #0xb8370                       
+000b834c mov      r5, r0                         
+000b8350 add      r0, r4, #0x2c                  
+000b8354 bl       #0x6a9bc                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev
+000b8358 add      r0, r4, #0xc                   
+000b835c bl       #0x6a050                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationED1Ev
+000b8360 mov      r0, r4                         
+000b8364 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000b8368 mov      r0, r5                         
+000b836c bl       #0x6b688                       __cxa_end_cleanup
+000b8370 mov      r0, r4                         
+000b8374 pop      {r4, r5, r6, pc}               
+000b8378 andeq    r2, r6, r4, ror r1             
+000b837c andeq    r1, r0, r4, ror #28            
+_ZNK30GalVerificationMediaSinkStatus8ByteSizeEv 0xcae58
+000cae58 push     {r4, r5, r6, lr}               
+000cae5c mov      r4, r0                         
+000cae60 ldr      r3, [r0, #0x10]                
+000cae64 tst      r3, #0xff                      
+000cae68 moveq    r5, #0                         
+000cae6c beq      #0xcaed4                       
+000cae70 tst      r3, #1                         
+000cae74 moveq    r5, #0                         
+000cae78 beq      #0xcaea0                       
+000cae7c ldr      r0, [r0, #4]                   
+000cae80 cmp      r0, #0                         
+000cae84 movlt    r0, #0xa                       
+000cae88 blt      #0xcae9c                       
+000cae8c cmp      r0, #0x7f                      
+000cae90 movls    r0, #1                         
+000cae94 bls      #0xcae9c                       
+000cae98 bl       #0x69870                       _ZN6google8protobuf2io17CodedOutputStream20VarintSize32FallbackEj
+000cae9c add      r5, r0, #1                     
+000caea0 ldr      r3, [r4, #0x10]                
+000caea4 tst      r3, #2                         
+000caea8 beq      #0xcaed4                       
+000caeac ldr      r0, [r4, #8]                   
+000caeb0 cmp      r0, #0                         
+000caeb4 movlt    r0, #0xa                       
+000caeb8 blt      #0xcaecc                       
+000caebc cmp      r0, #0x7f                      
+000caec0 movls    r0, #1                         
+000caec4 bls      #0xcaecc                       
+000caec8 bl       #0x69870                       _ZN6google8protobuf2io17CodedOutputStream20VarintSize32FallbackEj
+000caecc add      r5, r5, #1                     
+000caed0 add      r5, r5, r0                     
+000caed4 str      r5, [r4, #0xc]                 
+000caed8 mov      r0, r5                         
+000caedc pop      {r4, r5, r6, pc}               
+_ZN30GalVerificationMediaSinkStatus27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE 0xe944c
+000e944c push     {r4, r5, r6, r7, lr}           
+000e9450 sub      sp, sp, #0xc                   
+000e9454 mov      r5, r0                         
+000e9458 mov      r4, r1                         
+000e945c add      r7, sp, #4                     
+000e9460 b        #0xe95b8                       
+000e9464 lsr      r3, r1, #3                     
+000e9468 cmp      r3, #1                         
+000e946c beq      #0xe947c                       
+000e9470 cmp      r3, #2                         
+000e9474 bne      #0xe959c                       
+000e9478 b        #0xe9504                       
+000e947c tst      r1, #7                         
+000e9480 bne      #0xe959c                       
+000e9484 ldr      r3, [r4, #4]                   
+000e9488 ldr      r2, [r4, #8]                   
+000e948c cmp      r3, r2                         
+000e9490 bhs      #0xe94b4                       
+000e9494 ldrb     r3, [r3]                       
+000e9498 tst      r3, #0x80                      
+000e949c bne      #0xe94b4                       
+000e94a0 str      r3, [sp, #4]                   
+000e94a4 ldr      r3, [r4, #4]                   
+000e94a8 add      r3, r3, #1                     
+000e94ac str      r3, [r4, #4]                   
+000e94b0 b        #0xe94c8                       
+000e94b4 mov      r0, r4                         
+000e94b8 mov      r1, r7                         
+000e94bc bl       #0x6a6e0                       _ZN6google8protobuf2io16CodedInputStream20ReadVarint32FallbackEPj
+000e94c0 cmp      r0, #0                         
+000e94c4 beq      #0xe95fc                       
+000e94c8 ldr      r3, [sp, #4]                   
+000e94cc str      r3, [r5, #4]                   
+000e94d0 ldr      r3, [r5, #0x10]                
+000e94d4 orr      r3, r3, #1                     
+000e94d8 str      r3, [r5, #0x10]                
+000e94dc ldr      r3, [r4, #4]                   
+000e94e0 ldr      r2, [r4, #8]                   
+000e94e4 cmp      r3, r2                         
+000e94e8 bhs      #0xe95b8                       
+000e94ec ldrb     r2, [r3]                       
+000e94f0 cmp      r2, #0x10                      
+000e94f4 addeq    r3, r3, #1                     
+000e94f8 streq    r3, [r4, #4]                   
+000e94fc bne      #0xe95b8                       
+000e9500 b        #0xe950c                       
+000e9504 tst      r1, #7                         
+000e9508 bne      #0xe959c                       
+000e950c ldr      r3, [r4, #4]                   
+000e9510 ldr      r2, [r4, #8]                   
+000e9514 cmp      r3, r2                         
+000e9518 bhs      #0xe953c                       
+000e951c ldrb     r3, [r3]                       
+000e9520 tst      r3, #0x80                      
+000e9524 bne      #0xe953c                       
+000e9528 str      r3, [sp, #4]                   
+000e952c ldr      r3, [r4, #4]                   
+000e9530 add      r3, r3, #1                     
+000e9534 str      r3, [r4, #4]                   
+000e9538 b        #0xe9550                       
+000e953c mov      r0, r4                         
+000e9540 mov      r1, r7                         
+000e9544 bl       #0x6a6e0                       _ZN6google8protobuf2io16CodedInputStream20ReadVarint32FallbackEPj
+000e9548 cmp      r0, #0                         
+000e954c beq      #0xe95fc                       
+000e9550 ldr      r6, [sp, #4]                   
+000e9554 mov      r0, r6                         
+000e9558 bl       #0x6c0c0                       _Z21Config_Status_IsValidi
+000e955c cmp      r0, #0                         
+000e9560 ldrne    r3, [r5, #0x10]                
+000e9564 orrne    r3, r3, #2                     
+000e9568 strne    r3, [r5, #0x10]                
+000e956c strne    r6, [r5, #8]                   
+000e9570 ldmib    r4, {r2, r3}                   
+000e9574 cmp      r2, r3                         
+000e9578 bne      #0xe95b8                       
+000e957c ldr      r3, [r4, #0x20]                
+000e9580 cmp      r3, #0                         
+000e9584 beq      #0xe95b8                       
+000e9588 mov      r3, #0                         
+000e958c str      r3, [r4, #0x14]                
+000e9590 mov      r0, #1                         
+000e9594 strb     r0, [r4, #0x18]                
+000e9598 b        #0xe9608                       
+000e959c and      r3, r1, #7                     
+000e95a0 cmp      r3, #4                         
+000e95a4 beq      #0xe9604                       
+000e95a8 mov      r0, r4                         
+000e95ac bl       #0x6bbbc                       _ZN6google8protobuf8internal14WireFormatLite9SkipFieldEPNS0_2io16CodedInputStreamEj
+000e95b0 cmp      r0, #0                         
+000e95b4 beq      #0xe95fc                       
+000e95b8 ldr      r3, [r4, #4]                   
+000e95bc ldr      r2, [r4, #8]                   
+000e95c0 cmp      r3, r2                         
+000e95c4 bhs      #0xe95e0                       
+000e95c8 ldrb     r1, [r3]                       
+000e95cc tst      r1, #0x80                      
+000e95d0 streq    r1, [r4, #0x14]                
+000e95d4 addeq    r3, r3, #1                     
+000e95d8 streq    r3, [r4, #4]                   
+000e95dc beq      #0xe95f0                       
+000e95e0 mov      r0, r4                         
+000e95e4 bl       #0x6a008                       _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv
+000e95e8 mov      r1, r0                         
+000e95ec str      r0, [r4, #0x14]                
+000e95f0 cmp      r1, #0                         
+000e95f4 bne      #0xe9464                       
+000e95f8 b        #0xe9604                       
+000e95fc mov      r0, #0                         
+000e9600 b        #0xe9608                       
+000e9604 mov      r0, #1                         
+000e9608 add      sp, sp, #0xc                   
+000e960c pop      {r4, r5, r6, r7, pc}           
+_ZN13MediaSinkBase10handleStopERK4Stop 0x7e634
+0007e634 push     {r4, lr}                       
+0007e638 ldr      r3, [r0]                       
+0007e63c ldr      r3, [r3, #0x30]                
+0007e640 ldr      r1, [r0, #0x18]                
+0007e644 blx      r3                             
+0007e648 mov      r0, #0                         
+0007e64c pop      {r4, pc}                       
+_ZNK30GalVerificationMediaSinkStatus11GetTypeNameEv 0xe2cdc
+000e2cdc push     {r4, lr}                       
+000e2ce0 ldr      r3, [pc, #0x18]                
+000e2ce4 add      r3, pc, r3                     
+000e2ce8 mov      r4, r0                         
+000e2cec ldr      r1, [pc, #0x10]                
+000e2cf0 add      r1, r3, r1                     
+000e2cf4 bl       #0x697bc                       _ZNSsC1EPKc
+000e2cf8 mov      r0, r4                         
+000e2cfc pop      {r4, pc}                       
+000e2d00 andeq    r7, r3, ip, lsl #15            
+_ZN30GalVerificationMediaSinkStatus4SwapEPS_ 0x96ea0
+00096ea0 cmp      r1, r0                         
+00096ea4 bxeq     lr                             
+00096ea8 ldr      r3, [r0, #4]                   
+00096eac ldr      r2, [r1, #4]                   
+00096eb0 str      r2, [r0, #4]                   
+00096eb4 str      r3, [r1, #4]                   
+00096eb8 ldr      r3, [r0, #8]                   
+00096ebc ldr      r2, [r1, #8]                   
+00096ec0 str      r2, [r0, #8]                   
+00096ec4 str      r3, [r1, #8]                   
+00096ec8 ldr      r3, [r0, #0x10]                
+00096ecc ldr      r2, [r1, #0x10]                
+00096ed0 str      r2, [r0, #0x10]                
+00096ed4 str      r3, [r1, #0x10]                
+00096ed8 ldr      r3, [r0, #0xc]                 
+00096edc ldr      r2, [r1, #0xc]                 
+00096ee0 str      r2, [r0, #0xc]                 
+00096ee4 str      r3, [r1, #0xc]                 
+00096ee8 bx       lr                             
+_ZN16MediaSinkService5ClearEv 0xa1d78
+000a1d78 push     {r4, lr}                       
+000a1d7c mov      r4, r0                         
+000a1d80 ldrb     r3, [r0, #0x54]                
+000a1d84 cmp      r3, #0                         
+000a1d88 movne    r3, #1                         
+000a1d8c strne    r3, [r0, #4]                   
+000a1d90 strne    r3, [r0, #8]                   
+000a1d94 movne    r3, #0                         
+000a1d98 strbne   r3, [r0, #0x4c]                
+000a1d9c add      r0, r0, #0xc                   
+000a1da0 bl       #0x6bc40                       _ZN6google8protobuf8internal20RepeatedPtrFieldBase5ClearINS0_16RepeatedPtrFieldI18AudioConfigurationE11TypeHandlerEEEvv
+000a1da4 add      r0, r4, #0x2c                  
+000a1da8 bl       #0x6d218                       _ZN6google8protobuf8internal20RepeatedPtrFieldBase5ClearINS0_16RepeatedPtrFieldI18VideoConfigurationE11TypeHandlerEEEvv
+000a1dac add      r0, r4, #0x54                  
+000a1db0 mov      r1, #0                         
+000a1db4 mov      r2, #4                         
+000a1db8 bl       #0x6bf1c                       memset
+000a1dbc pop      {r4, pc}                       
+_ZN30GalVerificationMediaSinkStatusD2Ev 0xa3d98
+000a3d98 push     {r4, r5, r6, lr}               
+000a3d9c ldr      r3, [pc, #0x40]                
+000a3da0 add      r3, pc, r3                     
+000a3da4 mov      r4, r0                         
+000a3da8 ldr      r2, [pc, #0x38]                
+000a3dac ldr      r2, [r3, r2]                   
+000a3db0 add      r2, r2, #8                     
+000a3db4 str      r2, [r0]                       
+000a3db8 bl       #0x6cd8c                       _ZN30GalVerificationMediaSinkStatus10SharedDtorEv
+000a3dbc b        #0xa3dd4                       
+000a3dc0 mov      r5, r0                         
+000a3dc4 mov      r0, r4                         
+000a3dc8 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000a3dcc mov      r0, r5                         
+000a3dd0 bl       #0x6b688                       __cxa_end_cleanup
+000a3dd4 mov      r0, r4                         
+000a3dd8 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000a3ddc mov      r0, r4                         
+000a3de0 pop      {r4, r5, r6, pc}               
+000a3de4 ldrdeq   r6, r7, [r7], -r0              
+000a3de8 andeq    r1, r0, ip, lsl #30            
+_ZN30GalVerificationMediaSinkStatusC1Ev 0xa3ea4
+000a3ea4 push     {r4, r5, r6, lr}               
+000a3ea8 ldr      r3, [pc, #0x38]                
+000a3eac add      r3, pc, r3                     
+000a3eb0 mov      r4, r0                         
+000a3eb4 ldr      r2, [pc, #0x30]                
+000a3eb8 ldr      r2, [r3, r2]                   
+000a3ebc add      r2, r2, #8                     
+000a3ec0 str      r2, [r0]                       
+000a3ec4 bl       #0x6d524                       _ZN30GalVerificationMediaSinkStatus10SharedCtorEv
+000a3ec8 b        #0xa3ee0                       
+000a3ecc mov      r5, r0                         
+000a3ed0 mov      r0, r4                         
+000a3ed4 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000a3ed8 mov      r0, r5                         
+000a3edc bl       #0x6b688                       __cxa_end_cleanup
+000a3ee0 mov      r0, r4                         
+000a3ee4 pop      {r4, r5, r6, pc}               
+000a3ee8 andeq    r6, r7, r4, asr #11            
+000a3eec andeq    r1, r0, ip, lsl #30            
+_ZNK30GalVerificationMediaSinkStatus13IsInitializedEv 0x96e88
+00096e88 ldr      r0, [r0, #0x10]                
+00096e8c and      r0, r0, #3                     
+00096e90 cmp      r0, #3                         
+00096e94 movne    r0, #0                         
+00096e98 moveq    r0, #1                         
+00096e9c bx       lr                             
+_ZN30GalVerificationMediaSinkStatus9MergeFromERKS_ 0x97fe0
+00097fe0 push     {r4, r5, r6, r7, lr}           
+00097fe4 sub      sp, sp, #0x34                  
+00097fe8 ldr      r6, [pc, #0xbc]                
+00097fec add      r6, pc, r6                     
+00097ff0 mov      r5, r0                         
+00097ff4 mov      r4, r1                         
+00097ff8 mov      r7, #0                         
+00097ffc cmp      r1, r0                         
+00098000 bne      #0x98064                       
+00098004 add      r0, sp, #8                     
+00098008 mov      r1, #3                         
+0009800c ldr      r2, [pc, #0x9c]                
+00098010 add      r2, r6, r2                     
+00098014 movw     r3, #0x88d3                    
+00098018 bl       #0x69930                       _ZN6google8protobuf8internal10LogMessageC1ENS0_8LogLevelEPKci
+0009801c mov      r7, #1                         
+00098020 add      r0, sp, #8                     
+00098024 ldr      r1, [pc, #0x88]                
+00098028 add      r1, r6, r1                     
+0009802c bl       #0x6b64c                       _ZN6google8protobuf8internal10LogMessagelsEPKc
+00098030 mov      r1, r0                         
+00098034 add      r0, sp, #4                     
+00098038 bl       #0x6ace0                       _ZN6google8protobuf8internal11LogFinisheraSERNS1_10LogMessageE
+0009803c b        #0x9805c                       
+00098040 mov      r4, r0                         
+00098044 cmp      r7, #0                         
+00098048 beq      #0x98054                       
+0009804c add      r0, sp, #8                     
+00098050 bl       #0x6abcc                       _ZN6google8protobuf8internal10LogMessageD1Ev
+00098054 mov      r0, r4                         
+00098058 bl       #0x6b688                       __cxa_end_cleanup
+0009805c add      r0, sp, #8                     
+00098060 bl       #0x6abcc                       _ZN6google8protobuf8internal10LogMessageD1Ev
+00098064 ldr      r3, [r4, #0x10]                
+00098068 tst      r3, #0xff                      
+0009806c beq      #0x980a4                       
+00098070 tst      r3, #1                         
+00098074 ldrne    r3, [r4, #4]                   
+00098078 ldrne    r2, [r5, #0x10]                
+0009807c orrne    r2, r2, #1                     
+00098080 strne    r2, [r5, #0x10]                
+00098084 strne    r3, [r5, #4]                   
+00098088 ldr      r3, [r4, #0x10]                
+0009808c tst      r3, #2                         
+00098090 ldrne    r3, [r4, #8]                   
+00098094 ldrne    r2, [r5, #0x10]                
+00098098 orrne    r2, r2, #2                     
+0009809c strne    r2, [r5, #0x10]                
+000980a0 strne    r3, [r5, #8]                   
+000980a4 add      sp, sp, #0x34                  
+000980a8 pop      {r4, r5, r6, r7, pc}           
+000980ac andeq    r2, r8, r4, lsl #9             
+_ZN16MediaSinkService21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE 0xc4de8
+000c4de8 push     {r4, lr}                       
+000c4dec bl       #0x6d9c8                       _ZN16MediaSinkService9MergeFromERKS_
+000c4df0 pop      {r4, pc}                       
+_ZNK30GalVerificationMediaSinkStatus13GetCachedSizeEv 0xfb618
+000fb618 ldr      r0, [r0, #0xc]                 
+000fb61c bx       lr                             
+_ZN16MediaSinkService10SharedDtorEv 0x925fc
+000925fc bx       lr                             
+_ZN13MediaSinkBaseD1Ev 0x7ee60
+0007ee60 push     {r4, r5, r6, lr}               
+0007ee64 ldr      r5, [pc, #0x4c]                
+0007ee68 add      r5, pc, r5                     
+0007ee6c mov      r4, r0                         
+0007ee70 ldr      r3, [pc, #0x44]                
+0007ee74 ldr      r3, [r5, r3]                   
+0007ee78 add      r3, r3, #8                     
+0007ee7c str      r3, [r0]                       
+0007ee80 ldr      r0, [r0, #0x24]                
+0007ee84 cmp      r0, #0                         
+0007ee88 beq      #0x7ee90                       
+0007ee8c bl       #0x69d98                       _ZdlPv
+0007ee90 mov      r3, #0                         
+0007ee94 str      r3, [r4, #0x24]                
+0007ee98 str      r3, [r4, #0x28]                
+0007ee9c str      r3, [r4, #0x2c]                
+0007eea0 ldr      r3, [pc, #0x18]                
+0007eea4 ldr      r3, [r5, r3]                   
+0007eea8 add      r3, r3, #8                     
+0007eeac str      r3, [r4]                       
+0007eeb0 mov      r0, r4                         
+0007eeb4 pop      {r4, r5, r6, pc}               
+0007eeb8 andeq    fp, sb, r8, lsl #12            
+0007eebc andeq    r1, r0, ip, lsr fp             
+0007eec0 ldrdeq   r1, r2, [r0], -ip              
+_ZN16MediaSinkService8CopyFromERKS_ 0xc4db8
+000c4db8 push     {r4, r5, r6, lr}               
+000c4dbc mov      r4, r0                         
+000c4dc0 mov      r5, r1                         
+000c4dc4 cmp      r1, r0                         
+000c4dc8 popeq    {r4, r5, r6, pc}               
+000c4dcc ldr      r3, [r0]                       
+000c4dd0 ldr      r3, [r3, #0x10]                
+000c4dd4 blx      r3                             
+000c4dd8 mov      r0, r4                         
+000c4ddc mov      r1, r5                         
+000c4de0 bl       #0x6d9c8                       _ZN16MediaSinkService9MergeFromERKS_
+000c4de4 pop      {r4, r5, r6, pc}               
+_ZN30GalVerificationMediaSinkStatus16default_instanceEv 0xc0a30
+000c0a30 push     {r4, lr}                       
+000c0a34 ldr      r4, [pc, #0x28]                
+000c0a38 add      r4, pc, r4                     
+000c0a3c ldr      r3, [pc, #0x24]                
+000c0a40 ldr      r3, [r4, r3]                   
+000c0a44 ldr      r3, [r3]                       
+000c0a48 cmp      r3, #0                         
+000c0a4c bne      #0xc0a54                       
+000c0a50 bl       #0x6acb0                       _Z31protobuf_AddDesc_protos_2eprotov
+000c0a54 ldr      r3, [pc, #0xc]                 
+000c0a58 ldr      r3, [r4, r3]                   
+000c0a5c ldr      r0, [r3]                       
+000c0a60 pop      {r4, pc}                       
+000c0a64 andeq    sb, r5, r8, lsr sl             
+000c0a68 muleq    r0, r8, ip                     
+_ZN30GalVerificationMediaSinkStatus5ClearEv 0x9f12c
+0009f12c push     {r4, lr}                       
+0009f130 ldrb     r3, [r0, #0x10]                
+0009f134 cmp      r3, #0                         
+0009f138 movne    r3, #0                         
+0009f13c strne    r3, [r0, #4]                   
+0009f140 movne    r3, #1                         
+0009f144 strne    r3, [r0, #8]                   
+0009f148 add      r0, r0, #0x10                  
+0009f14c mov      r1, #0                         
+0009f150 mov      r2, #4                         
+0009f154 bl       #0x6bf1c                       memset
+0009f158 pop      {r4, pc}                       
+_ZN30GalVerificationMediaSinkStatus10SharedDtorEv 0x96e7c
+00096e7c bx       lr                             
+_ZN13MediaSinkBase10sendConfigEi 0x7e744
+0007e744 push     {r4, r5, r6, r7, lr}           
+0007e748 sub      sp, sp, #0x44                  
+0007e74c mov      r4, r0                         
+0007e750 mov      r5, r1                         
+0007e754 mov      r0, sp                         
+0007e758 bl       #0x6c9cc                       _ZN6ConfigC1Ev
+0007e75c str      r5, [sp, #4]                   
+0007e760 ldr      r3, [r4, #0x1c]                
+0007e764 ldr      r2, [sp, #0x2c]                
+0007e768 orr      r2, r2, #3                     
+0007e76c str      r2, [sp, #0x2c]                
+0007e770 str      r3, [sp, #8]                   
+0007e774 ldr      r3, [r4, #0x24]                
+0007e778 cmp      r3, #0                         
+0007e77c beq      #0x7e7d4                       
+0007e780 ldr      r2, [r4, #0x28]                
+0007e784 rsb      r3, r3, r2                     
+0007e788 lsrs     r3, r3, #2                     
+0007e78c movne    r5, #0                         
+0007e790 addne    r7, sp, #0xc                   
+0007e794 bne      #0x7e830                       
+0007e798 b        #0x7e7d4                       
+0007e79c ldr      r1, [sp, #0x10]                
+0007e7a0 ldr      r3, [sp, #0x14]                
+0007e7a4 cmp      r1, r3                         
+0007e7a8 bne      #0x7e7b8                       
+0007e7ac mov      r0, r6                         
+0007e7b0 add      r1, r1, #1                     
+0007e7b4 bl       #0x69cb4                       _ZN6google8protobuf13RepeatedFieldIjE7ReserveEi
+0007e7b8 ldr      r3, [sp, #0x10]                
+0007e7bc ldr      r2, [sp, #0xc]                 
+0007e7c0 str      r5, [r2, r3, lsl #2]           
+0007e7c4 add      r3, r3, #1                     
+0007e7c8 str      r3, [sp, #0x10]                
+0007e7cc add      r5, r5, #1                     
+0007e7d0 b        #0x7e7dc                       
+0007e7d4 mov      r5, #0                         
+0007e7d8 add      r6, sp, #0xc                   
+0007e7dc ldr      r3, [r4]                       
+0007e7e0 ldr      r3, [r3, #0x3c]                
+0007e7e4 mov      r0, r4                         
+0007e7e8 blx      r3                             
+0007e7ec cmp      r5, r0                         
+0007e7f0 blo      #0x7e79c                       
+0007e7f4 b        #0x7e84c                       
+0007e7f8 ldr      r6, [r3, r5, lsl #2]           
+0007e7fc ldr      r1, [sp, #0x10]                
+0007e800 ldr      r3, [sp, #0x14]                
+0007e804 cmp      r1, r3                         
+0007e808 bne      #0x7e818                       
+0007e80c mov      r0, r7                         
+0007e810 add      r1, r1, #1                     
+0007e814 bl       #0x69cb4                       _ZN6google8protobuf13RepeatedFieldIjE7ReserveEi
+0007e818 ldr      r3, [sp, #0x10]                
+0007e81c ldr      r2, [sp, #0xc]                 
+0007e820 str      r6, [r2, r3, lsl #2]           
+0007e824 add      r3, r3, #1                     
+0007e828 str      r3, [sp, #0x10]                
+0007e82c add      r5, r5, #1                     
+0007e830 ldr      r3, [r4, #0x24]                
+0007e834 cmp      r3, #0                         
+0007e838 beq      #0x7e84c                       
+0007e83c ldr      r2, [r4, #0x28]                
+0007e840 rsb      r2, r3, r2                     
+0007e844 cmp      r5, r2, asr #2                 
+0007e848 blo      #0x7e7f8                       
+0007e84c mov      r3, #0                         
+0007e850 str      r3, [sp, #0x30]                
+0007e854 str      r3, [sp, #0x34]                
+0007e858 str      r3, [sp, #0x38]                
+0007e85c str      r3, [sp, #0x3c]                
+0007e860 ldr      r0, [r4, #8]                   
+0007e864 movw     r1, #0x8003                    
+0007e868 mov      r2, sp                         
+0007e86c add      r3, sp, #0x30                  
+0007e870 bl       #0x6c5c4                       _ZN13MessageRouter13marshallProtoEtRKN6google8protobuf11MessageLiteEP8IoBuffer
+0007e874 ldr      r2, [sp, #0x30]                
+0007e878 ldr      r3, [sp, #0x38]                
+0007e87c ldr      ip, [sp, #0x3c]                
+0007e880 ldrb     r1, [r4, #4]                   
+0007e884 cmp      r1, #0                         
+0007e888 beq      #0x7e8a0                       
+0007e88c ldr      r0, [r4, #8]                   
+0007e890 ldrb     r1, [r4, #5]                   
+0007e894 add      r2, r2, r3                     
+0007e898 rsb      r3, r3, ip                     
+0007e89c bl       #0x6b928                       _ZN13MessageRouter13queueOutgoingEhPvj
+0007e8a0 ldr      r0, [sp, #0x30]                
+0007e8a4 bl       #0x6cf84                       free
+0007e8a8 mov      r3, #0                         
+0007e8ac str      r3, [sp, #0x30]                
+0007e8b0 str      r3, [sp, #0x34]                
+0007e8b4 str      r3, [sp, #0x38]                
+0007e8b8 str      r3, [sp, #0x3c]                
+0007e8bc mov      r0, sp                         
+0007e8c0 bl       #0x6ae24                       _ZN6ConfigD1Ev
+0007e8c4 add      sp, sp, #0x44                  
+0007e8c8 pop      {r4, r5, r6, r7, pc}           
+0007e8cc mov      r4, r0                         
+0007e8d0 ldr      r0, [sp, #0x30]                
+0007e8d4 bl       #0x6cf84                       free
+0007e8d8 mov      r3, #0                         
+0007e8dc str      r3, [sp, #0x30]                
+0007e8e0 str      r3, [sp, #0x34]                
+0007e8e4 str      r3, [sp, #0x38]                
+0007e8e8 str      r3, [sp, #0x3c]                
+0007e8ec b        #0x7e8f4                       
+0007e8f0 mov      r4, r0                         
+0007e8f4 mov      r0, sp                         
+0007e8f8 bl       #0x6ae24                       _ZN6ConfigD1Ev
+0007e8fc mov      r0, r4                         
+0007e900 bl       #0x6b688                       __cxa_end_cleanup
+_ZNK16MediaSinkService13IsInitializedEv 0x92608
+00092608 push     {r4, r5, r6, lr}               
+0009260c mov      r5, r0                         
+00092610 ldr      r3, [r0, #0x10]                
+00092614 cmp      r3, #0                         
+00092618 ble      #0x9264c                       
+0009261c mov      r4, #0                         
+00092620 ldr      r3, [r5, #0xc]                 
+00092624 ldr      r0, [r3, r4, lsl #2]           
+00092628 ldr      r3, [r0]                       
+0009262c ldr      r3, [r3, #0x14]                
+00092630 blx      r3                             
+00092634 cmp      r0, #0                         
+00092638 popeq    {r4, r5, r6, pc}               
+0009263c add      r4, r4, #1                     
+00092640 ldr      r3, [r5, #0x10]                
+00092644 cmp      r4, r3                         
+00092648 blt      #0x92620                       
+0009264c mov      r0, #1                         
+00092650 pop      {r4, r5, r6, pc}               
+_ZN30GalVerificationMediaSinkStatus10SharedCtorEv 0x9f15c
+0009f15c push     {r4, lr}                       
+0009f160 mov      r1, #0                         
+0009f164 str      r1, [r0, #0xc]                 
+0009f168 str      r1, [r0, #4]                   
+0009f16c mov      r3, #1                         
+0009f170 str      r3, [r0, #8]                   
+0009f174 add      r0, r0, #0x10                  
+0009f178 mov      r2, #4                         
+0009f17c bl       #0x6bf1c                       memset
+0009f180 pop      {r4, pc}                       
+_ZN16MediaSinkServiceD1Ev 0xb81dc
+000b81dc push     {r4, r5, r6, lr}               
+000b81e0 ldr      r3, [pc, #0x78]                
+000b81e4 add      r3, pc, r3                     
+000b81e8 mov      r4, r0                         
+000b81ec ldr      r2, [pc, #0x70]                
+000b81f0 ldr      r2, [r3, r2]                   
+000b81f4 add      r2, r2, #8                     
+000b81f8 str      r2, [r0]                       
+000b81fc bl       #0x6c3cc                       _ZN16MediaSinkService10SharedDtorEv
+000b8200 b        #0xb8214                       
+000b8204 mov      r5, r0                         
+000b8208 add      r0, r4, #0x2c                  
+000b820c bl       #0x6a9bc                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev
+000b8210 b        #0xb8224                       
+000b8214 add      r0, r4, #0x2c                  
+000b8218 bl       #0x6a9bc                       _ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev
+000b821c b        #0xb8230                       
+000b8220 mov      r5, r0                         
+000b8224 add      r0, r4, #0xc                   
+000b8228 bl       #0x6a050                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationED1Ev
+000b822c b        #0xb8240                       
+000b8230 add      r0, r4, #0xc                   
+000b8234 bl       #0x6a050                       _ZN6google8protobuf16RepeatedPtrFieldI18AudioConfigurationED1Ev
+000b8238 b        #0xb8250                       
+000b823c mov      r5, r0                         
+000b8240 mov      r0, r4                         
+000b8244 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000b8248 mov      r0, r5                         
+000b824c bl       #0x6b688                       __cxa_end_cleanup
+000b8250 mov      r0, r4                         
+000b8254 bl       #0x69e64                       _ZN6google8protobuf11MessageLiteD2Ev
+000b8258 mov      r0, r4                         
+000b825c pop      {r4, r5, r6, pc}               
+000b8260 andeq    r2, r6, ip, lsl #5             
+000b8264 andeq    r1, r0, r4, ror #28            
+_ZN30GalVerificationMediaSinkStatus8CopyFromERKS_ 0x980b8
+000980b8 push     {r4, r5, r6, lr}               
+000980bc mov      r4, r0                         
+000980c0 mov      r5, r1                         
+000980c4 cmp      r1, r0                         
+000980c8 popeq    {r4, r5, r6, pc}               
+000980cc ldr      r3, [r0]                       
+000980d0 ldr      r3, [r3, #0x10]                
+000980d4 blx      r3                             
+000980d8 mov      r0, r4                         
+000980dc mov      r1, r5                         
+000980e0 bl       #0x6bf64                       _ZN30GalVerificationMediaSinkStatus9MergeFromERKS_
+000980e4 pop      {r4, r5, r6, pc}               
+_ZN13MediaSinkBase11handleStartERK5Start 0x7e5f0
+0007e5f0 push     {r4, r5, r6, lr}               
+0007e5f4 mov      r4, r0                         
+0007e5f8 ldr      r3, [r1, #4]                   
+0007e5fc str      r3, [r0, #0x18]                
+0007e600 ldr      r3, [r0]                       
+0007e604 ldr      r3, [r3, #0x34]                
+0007e608 ldr      r1, [r1, #8]                   
+0007e60c blx      r3                             
+0007e610 subs     r5, r0, #0                     
+0007e614 bne      #0x7e62c                       
+0007e618 ldr      r3, [r4]                       
+0007e61c ldr      r3, [r3, #0x2c]                
+0007e620 mov      r0, r4                         
+0007e624 ldr      r1, [r4, #0x18]                
+0007e628 blx      r3                             
+0007e62c mov      r0, r5                         
+0007e630 pop      {r4, r5, r6, pc}               
+_ZN16MediaSinkService9MergeFromERKS_ 0xc4b1c
+000c4b1c push     {r4, r5, r6, r7, r8, sb, sl, fp, lr} 
+000c4b20 sub      sp, sp, #0x34                  
+000c4b24 ldr      r4, [pc, #0x280]               
+000c4b28 add      r4, pc, r4                     
+000c4b2c mov      sb, r0                         
+000c4b30 mov      r5, r1                         
+000c4b34 mov      r6, #0                         
+000c4b38 cmp      r1, r0                         
+000c4b3c bne      #0xc4ba0                       
+000c4b40 add      r0, sp, #8                     
+000c4b44 mov      r1, #3                         
+000c4b48 ldr      r2, [pc, #0x260]               
+000c4b4c add      r2, r4, r2                     
+000c4b50 movw     r3, #0xec2                     
+000c4b54 bl       #0x69930                       _ZN6google8protobuf8internal10LogMessageC1ENS0_8LogLevelEPKci
+000c4b58 mov      r6, #1                         
+000c4b5c add      r0, sp, #8                     
+000c4b60 ldr      r1, [pc, #0x24c]               
+000c4b64 add      r1, r4, r1                     
+000c4b68 bl       #0x6b64c                       _ZN6google8protobuf8internal10LogMessagelsEPKc
+000c4b6c mov      r1, r0                         
+000c4b70 add      r0, sp, #4                     
+000c4b74 bl       #0x6ace0                       _ZN6google8protobuf8internal11LogFinisheraSERNS1_10LogMessageE
+000c4b78 b        #0xc4b98                       
+000c4b7c mov      r4, r0                         
+000c4b80 cmp      r6, #0                         
+000c4b84 beq      #0xc4b90                       
+000c4b88 add      r0, sp, #8                     
+000c4b8c bl       #0x6abcc                       _ZN6google8protobuf8internal10LogMessageD1Ev
+000c4b90 mov      r0, r4                         
+000c4b94 bl       #0x6b688                       __cxa_end_cleanup
+000c4b98 add      r0, sp, #8                     
+000c4b9c bl       #0x6abcc                       _ZN6google8protobuf8internal10LogMessageD1Ev
+000c4ba0 add      r4, sb, #0xc                   
+000c4ba4 ldr      r1, [r5, #0x10]                
+000c4ba8 ldr      r3, [sb, #0x10]                
+000c4bac mov      r0, r4                         
+000c4bb0 add      r1, r1, r3                     
+000c4bb4 bl       #0x6af68                       _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi
+000c4bb8 ldr      r3, [r5, #0x10]                
+000c4bbc cmp      r3, #0                         
+000c4bc0 ble      #0xc4c74                       
+000c4bc4 mov      r6, #0                         
+000c4bc8 mov      fp, #0x18                      
+000c4bcc ldr      r3, [r5, #0xc]                 
+000c4bd0 ldr      r8, [r3, r6, lsl #2]           
+000c4bd4 ldr      r3, [r4, #4]                   
+000c4bd8 ldr      r1, [r4, #8]                   
+000c4bdc cmp      r3, r1                         
+000c4be0 bge      #0xc4bf8                       
+000c4be4 ldr      r2, [r4]                       
+000c4be8 ldr      r7, [r2, r3, lsl #2]           
+000c4bec add      r3, r3, #1                     
+000c4bf0 str      r3, [r4, #4]                   
+000c4bf4 b        #0xc4c58                       
+000c4bf8 ldr      r3, [r4, #0xc]                 
+000c4bfc cmp      r1, r3                         
+000c4c00 bne      #0xc4c10                       
+000c4c04 mov      r0, r4                         
+000c4c08 add      r1, r1, #1                     
+000c4c0c bl       #0x6af68                       _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi
+000c4c10 ldr      r3, [r4, #8]                   
+000c4c14 add      r3, r3, #1                     
+000c4c18 str      r3, [r4, #8]                   
+000c4c1c mov      r0, fp                         
+000c4c20 bl       #0x6d44c                       _Znwj
+000c4c24 mov      sl, r0                         
+000c4c28 mov      r7, r0                         
+000c4c2c bl       #0x6cdb0                       _ZN18AudioConfigurationC1Ev
+000c4c30 b        #0xc4c48                       
+000c4c34 mov      r4, r0                         
+000c4c38 mov      r0, sl                         
+000c4c3c bl       #0x69d98                       _ZdlPv
+000c4c40 mov      r0, r4                         
+000c4c44 bl       #0x6b688                       __cxa_end_cleanup
+000c4c48 ldm      r4, {r2, r3}                   
+000c4c4c str      sl, [r2, r3, lsl #2]           
+000c4c50 add      r3, r3, #1                     
+000c4c54 str      r3, [r4, #4]                   
+000c4c58 mov      r0, r7                         
+000c4c5c mov      r1, r8                         
+000c4c60 bl       #0x696f0                       _ZN18AudioConfiguration9MergeFromERKS_
+000c4c64 add      r6, r6, #1                     
+000c4c68 ldr      r3, [r5, #0x10]                
+000c4c6c cmp      r6, r3                         
+000c4c70 blt      #0xc4bcc                       
+000c4c74 add      r4, sb, #0x2c                  
+000c4c78 ldr      r1, [r5, #0x30]                
+000c4c7c ldr      r3, [sb, #0x30]                
+000c4c80 mov      r0, r4                         
+000c4c84 add      r1, r1, r3                     
+000c4c88 bl       #0x6af68                       _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi
+000c4c8c ldr      r3, [r5, #0x30]                
+000c4c90 cmp      r3, #0                         
+000c4c94 ble      #0xc4d48                       
+000c4c98 mov      r6, #0                         
+000c4c9c mov      fp, #0x2c                      
+000c4ca0 ldr      r3, [r5, #0x2c]                
+000c4ca4 ldr      r8, [r3, r6, lsl #2]           
+000c4ca8 ldr      r3, [r4, #4]                   
+000c4cac ldr      r1, [r4, #8]                   
+000c4cb0 cmp      r3, r1                         
+000c4cb4 bge      #0xc4ccc                       
+000c4cb8 ldr      r2, [r4]                       
+000c4cbc ldr      r7, [r2, r3, lsl #2]           
+000c4cc0 add      r3, r3, #1                     
+000c4cc4 str      r3, [r4, #4]                   
+000c4cc8 b        #0xc4d2c                       
+000c4ccc ldr      r3, [r4, #0xc]                 
+000c4cd0 cmp      r1, r3                         
+000c4cd4 bne      #0xc4ce4                       
+000c4cd8 mov      r0, r4                         
+000c4cdc add      r1, r1, #1                     
+000c4ce0 bl       #0x6af68                       _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi
+000c4ce4 ldr      r3, [r4, #8]                   
+000c4ce8 add      r3, r3, #1                     
+000c4cec str      r3, [r4, #8]                   
+000c4cf0 mov      r0, fp                         
+000c4cf4 bl       #0x6d44c                       _Znwj
+000c4cf8 mov      sl, r0                         
+000c4cfc mov      r7, r0                         
+000c4d00 bl       #0x69858                       _ZN18VideoConfigurationC1Ev
+000c4d04 b        #0xc4d1c                       
+000c4d08 mov      r4, r0                         
+000c4d0c mov      r0, sl                         
+000c4d10 bl       #0x69d98                       _ZdlPv
+000c4d14 mov      r0, r4                         
+000c4d18 bl       #0x6b688                       __cxa_end_cleanup
+000c4d1c ldm      r4, {r2, r3}                   
+000c4d20 str      sl, [r2, r3, lsl #2]           
+000c4d24 add      r3, r3, #1                     
+000c4d28 str      r3, [r4, #4]                   
+000c4d2c mov      r0, r7                         
+000c4d30 mov      r1, r8                         
+000c4d34 bl       #0x6cb34                       _ZN18VideoConfiguration9MergeFromERKS_
+000c4d38 add      r6, r6, #1                     
+000c4d3c ldr      r3, [r5, #0x30]                
+000c4d40 cmp      r6, r3                         
+000c4d44 blt      #0xc4ca0                       
+000c4d48 ldr      r3, [r5, #0x54]                
+000c4d4c tst      r3, #0xff                      
+000c4d50 beq      #0xc4da4                       
+000c4d54 tst      r3, #1                         
+000c4d58 ldrne    r3, [r5, #4]                   
+000c4d5c ldrne    r2, [sb, #0x54]                
+000c4d60 orrne    r2, r2, #1                     
+000c4d64 strne    r2, [sb, #0x54]                
+000c4d68 strne    r3, [sb, #4]                   
+000c4d6c ldr      r3, [r5, #0x54]                
+000c4d70 tst      r3, #2                         
+000c4d74 ldrne    r3, [r5, #8]                   
+000c4d78 ldrne    r2, [sb, #0x54]                
+000c4d7c orrne    r2, r2, #2                     
+000c4d80 strne    r2, [sb, #0x54]                
+000c4d84 strne    r3, [sb, #8]                   
+000c4d88 ldr      r3, [r5, #0x54]                
+000c4d8c tst      r3, #0x10                      
+000c4d90 ldrbne   r3, [r5, #0x4c]                
+000c4d94 ldrne    r2, [sb, #0x54]                
+000c4d98 orrne    r2, r2, #0x10                  
+000c4d9c strne    r2, [sb, #0x54]                
+000c4da0 strbne   r3, [sb, #0x4c]                
+000c4da4 add      sp, sp, #0x34                  
+000c4da8 pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc} 
+000c4dac andeq    r5, r5, r8, asr #18            

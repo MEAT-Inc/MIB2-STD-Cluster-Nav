@@ -45,6 +45,12 @@ __attribute__((constructor)) static void secondary_init(void){
  enabled=raw>=0&&discovery_capture;
  initialized:if(fd>=0)close(fd);if(df>=0)close(df);stream_init(&context,r,raw);
  if(enabled){int tf;snprintf(path,sizeof(path),"/dev/shmem/delphi-secondary-timing-%.*s.bin",32,p+n);tf=open(path,O_CREAT|O_EXCL|O_RDWR,0600);if(tf>=0){if(!ftruncate(tf,sizeof(struct stream_timing))){void *m=mmap(0,sizeof(struct stream_timing),PROT_READ|PROT_WRITE,MAP_SHARED,tf,0);if(m!=MAP_FAILED){context.timing=m;memset(m,0,sizeof(struct stream_timing));context.timing->magic=0x314d4954;context.timing->version=1;context.timing->pid=getpid();context.timing->record_bytes=40;context.timing->capacity=TIMING_CAPACITY;}}close(tf);}}
+#ifdef SECONDARY_KEYFRAME_PROBE
+ if(enabled){char value[9];unsigned k;context.probe_enabled=1;context.report->w[43]=1;context.live_enabled=1;context.live_codec=malloc(65536);if(!context.live_codec)context.report->w[49]=ENOMEM;
+ snprintf(context.live_path,sizeof(context.live_path),"/dev/shmem/delphi-live-%.*s.bin",32,p+n);
+ for(k=0;k<4;k++){memcpy(value,p+n+k*8,8);value[8]=0;context.live_nonce[k]=(uint32_t)strtoul(value,0,16);}
+}
+#endif
  if(!enabled&&r!=&fallback_report)r->w[SERROR]=30;errno=saved;
 }
 /* Stock discovery bytes are backed by the same native marshaller heap. They

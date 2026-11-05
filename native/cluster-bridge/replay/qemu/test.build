@@ -14,6 +14,7 @@
     replay_libc_check_test
     replay_imports_fixture
     replay_fixture
+    replay_timeline_fixture
     replay_hook_runner
     display_msg "REPLAY_QNX_END"
 }
@@ -25,6 +26,7 @@ libc.so.3
 procnto-smp
 devc-serdebug
 replay_fixture
+replay_timeline_fixture
 replay_hook_runner
 replay_hook_fixture
 replay_imports_fixture

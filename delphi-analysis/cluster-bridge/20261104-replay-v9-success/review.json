@@ -1,0 +1,12 @@
+{
+  "collection": "_cluster_replay_20261104_194219_44022e92",
+  "artifacts_verified": 37,
+  "continuous_recorded_cluster_playback_confirmed": true,
+  "factory_maps_restored": true,
+  "restoration_verified": true,
+  "peer_process_ids_unchanged": true,
+  "packets": 31669,
+  "first_close_after_completed_playback": true,
+  "live_phone_video_proven": false,
+  "next": "Bounded AA-to-Nav shared-memory transport and fresh-keyframe control"
+}

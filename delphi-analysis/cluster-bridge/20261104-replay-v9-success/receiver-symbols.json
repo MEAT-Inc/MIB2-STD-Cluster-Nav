@@ -1,0 +1,410 @@
+{
+  "_ZNSt6vectorI10shared_ptrI18VideoConfigurationESaIS2_EE6_UcopyIPS2_EES6_T_S7_S6_": [
+    582208,
+    196
+  ],
+  "_ZNK16MediaSinkService8ByteSizeEv": [
+    842996,
+    284
+  ],
+  "_ZN9VideoSink23codecResolutionToPixelsERK18VideoConfigurationPiS3_": [
+    580180,
+    100
+  ],
+  "_ZN13MediaSinkBase12routeMessageEhtRK10shared_ptrI8IoBufferE": [
+    518404,
+    1012
+  ],
+  "_ZN30GalVerificationMediaSinkStatusC2Ev": [
+    671528,
+    76
+  ],
+  "_ZN16MediaSinkServiceD2Ev": [
+    754280,
+    140
+  ],
+  "_ZN18VideoConfiguration10SharedDtorEv": [
+    599640,
+    4
+  ],
+  "_ZNK18VideoConfiguration13IsInitializedEv": [
+    599652,
+    8
+  ],
+  "_ZN16MediaSinkServiceC2ERKS_": [
+    806544,
+    156
+  ],
+  "_ZN9VideoSinkD0Ev": [
+    582404,
+    440
+  ],
+  "_ZN9VideoSink13playbackStartEi": [
+    580308,
+    24
+  ],
+  "_ZN13MediaSinkBase9ackFramesEij": [
+    517712,
+    244
+  ],
+  "_ZNK16MediaSinkService3NewEv": [
+    754560,
+    56
+  ],
+  "_ZNK18VideoConfiguration11GetTypeNameEv": [
+    935060,
+    44
+  ],
+  "_ZN30GalVerificationMediaSinkStatusC2ERKS_": [
+    671304,
+    92
+  ],
+  "_ZNK18VideoConfiguration3NewEv": [
+    753860,
+    56
+  ],
+  "_ZN13MediaSinkBase26resetAllowedConfigurationsEPjj": [
+    519416,
+    252
+  ],
+  "_ZN30GalVerificationMediaSinkStatusC1ERKS_": [
+    671212,
+    92
+  ],
+  "_ZN16MediaSinkServiceC2Ev": [
+    754616,
+    140
+  ],
+  "_ZN9VideoSink16addDiscoveryInfoEP24ServiceDiscoveryResponse": [
+    580752,
+    740
+  ],
+  "_ZNK16MediaSinkService13GetCachedSizeEv": [
+    1028544,
+    8
+  ],
+  "_ZN6google8protobuf8internal20RepeatedPtrFieldBase7DestroyINS0_16RepeatedPtrFieldI18VideoConfigurationE11TypeHandlerEEEvv": [
+    1037792,
+    96
+  ],
+  "_ZN18VideoConfigurationC1Ev": [
+    753784,
+    76
+  ],
+  "_ZN30GalVerificationMediaSinkStatus21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE": [
+    622824,
+    12
+  ],
+  "_ZN18VideoConfigurationD0Ev": [
+    753340,
+    92
+  ],
+  "_ZNK16MediaSinkService11GetTypeNameEv": [
+    935104,
+    44
+  ],
+  "_ZN18VideoConfiguration8CopyFromERKS_": [
+    645576,
+    48
+  ],
+  "_ZN30GalVerificationMediaSinkStatusD1Ev": [
+    671044,
+    84
+  ],
+  "_ZN16MediaSinkServiceC1ERKS_": [
+    806388,
+    156
+  ],
+  "_ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationE4SwapEPS3_": [
+    1038760,
+    12
+  ],
+  "_ZN30GalVerificationMediaSinkStatusD0Ev": [
+    670952,
+    92
+  ],
+  "_ZN9VideoSink19handleDataAvailableEyRK10shared_ptrI8IoBufferEj": [
+    580064,
+    92
+  ],
+  "_ZN30GalVerificationMediaSinkStatus21InitAsDefaultInstanceEv": [
+    618104,
+    4
+  ],
+  "_ZNK18VideoConfiguration13SetCachedSizeEi": [
+    599644,
+    8
+  ],
+  "_ZNK30GalVerificationMediaSinkStatus3NewEv": [
+    671472,
+    56
+  ],
+  "_ZN18VideoConfiguration21InitAsDefaultInstanceEv": [
+    599636,
+    4
+  ],
+  "_ZN16MediaSinkService16default_instanceEv": [
+    797824,
+    60
+  ],
+  "_ZN9VideoSink24handleMediaConfigurationEi": [
+    580280,
+    28
+  ],
+  "_ZN16MediaSinkService10SharedCtorEv": [
+    662976,
+    44
+  ],
+  "_ZNK30GalVerificationMediaSinkStatus24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE": [
+    764784,
+    72
+  ],
+  "_ZN16MediaSinkServiceD0Ev": [
+    753992,
+    148
+  ],
+  "_ZN6google8protobuf16RepeatedPtrFieldI18VideoConfigurationED1Ev": [
+    1037888,
+    20
+  ],
+  "_ZN16MediaSinkService27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE": [
+    938344,
+    1412
+  ],
+  "_ZN16MediaSinkService21InitAsDefaultInstanceEv": [
+    599544,
+    4
+  ],
+  "_ZN18VideoConfigurationD2Ev": [
+    753516,
+    84
+  ],
+  "_ZN16MediaSinkService4SwapEPS_": [
+    773540,
+    128
+  ],
+  "_ZN18VideoConfiguration10SharedCtorEv": [
+    662840,
+    64
+  ],
+  "_ZNK16MediaSinkService24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE": [
+    768700,
+    212
+  ],
+  "_ZN13MediaSinkBaseD0Ev": [
+    519668,
+    108
+  ],
+  "_ZNK30GalVerificationMediaSinkStatus13SetCachedSizeEi": [
+    618112,
+    8
+  ],
+  "_ZN18VideoConfigurationC1ERKS_": [
+    753600,
+    92
+  ],
+  "_ZN9VideoSink11handleSetupEi": [
+    580660,
+    92
+  ],
+  "_ZNK16MediaSinkService13SetCachedSizeEi": [
+    599552,
+    8
+  ],
+  "_ZN16MediaSinkServiceC1Ev": [
+    754420,
+    140
+  ],
+  "_ZNK30GalVerificationMediaSinkStatus8ByteSizeEv": [
+    831064,
+    136
+  ],
+  "_ZN30GalVerificationMediaSinkStatus27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE": [
+    955468,
+    452
+  ],
+  "_ZNK18VideoConfiguration8ByteSizeEv": [
+    842620,
+    376
+  ],
+  "_ZN13MediaSinkBase10handleStopERK4Stop": [
+    517684,
+    28
+  ],
+  "_ZNK30GalVerificationMediaSinkStatus11GetTypeNameEv": [
+    928988,
+    44
+  ],
+  "_ZN30GalVerificationMediaSinkStatus4SwapEPS_": [
+    618144,
+    76
+  ],
+  "_ZN9VideoSink12playbackStopEi": [
+    580332,
+    24
+  ],
+  "_ZN16MediaSinkService5ClearEv": [
+    662904,
+    72
+  ],
+  "_ZN9VideoSink13setVideoFocusEib": [
+    580432,
+    228
+  ],
+  "_ZN30GalVerificationMediaSinkStatusD2Ev": [
+    671128,
+    84
+  ],
+  "_ZN18VideoConfiguration16default_instanceEv": [
+    797764,
+    60
+  ],
+  "_ZN30GalVerificationMediaSinkStatusC1Ev": [
+    671396,
+    76
+  ],
+  "_ZN18VideoConfiguration4SwapEPS_": [
+    599660,
+    172
+  ],
+  "_ZNK30GalVerificationMediaSinkStatus13IsInitializedEv": [
+    618120,
+    24
+  ],
+  "_ZN9VideoSink25addSupportedConfigurationEiiiiiii": [
+    581492,
+    552
+  ],
+  "_ZN10shared_ptrI19IVideoSinkCallbacksED1Ev": [
+    582120,
+    88
+  ],
+  "_ZN18VideoConfiguration5ClearEv": [
+    662764,
+    76
+  ],
+  "_ZN30GalVerificationMediaSinkStatus9MergeFromERKS_": [
+    622560,
+    216
+  ],
+  "_ZN16MediaSinkService21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE": [
+    806376,
+    12
+  ],
+  "_ZN9VideoSink23handleVideoFocusRequestERK29VideoFocusRequestNotification": [
+    580356,
+    48
+  ],
+  "_ZN9VideoSinkD1Ev": [
+    585484,
+    432
+  ],
+  "_ZNK30GalVerificationMediaSinkStatus13GetCachedSizeEv": [
+    1029656,
+    8
+  ],
+  "_ZN18VideoConfigurationC2ERKS_": [
+    753692,
+    92
+  ],
+  "_ZN16MediaSinkService10SharedDtorEv": [
+    599548,
+    4
+  ],
+  "_ZNK18VideoConfiguration24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE": [
+    771020,
+    240
+  ],
+  "_ZN13MediaSinkBaseD1Ev": [
+    519776,
+    100
+  ],
+  "_ZN9VideoSink17handleCodecConfigEPvj": [
+    580156,
+    24
+  ],
+  "_ZN18VideoConfigurationC2Ev": [
+    753916,
+    76
+  ],
+  "_ZN18VideoConfigurationD1Ev": [
+    753432,
+    84
+  ],
+  "_ZN16MediaSinkService8CopyFromERKS_": [
+    806328,
+    48
+  ],
+  "_ZN30GalVerificationMediaSinkStatus16default_instanceEv": [
+    789040,
+    60
+  ],
+  "_ZN18VideoConfiguration9MergeFromERKS_": [
+    645192,
+    384
+  ],
+  "_ZNSt6vectorI10shared_ptrI18VideoConfigurationESaIS2_EE9_Insert_nESt16_Vector_iteratorIS2_S3_EjRKS2_": [
+    582844,
+    2640
+  ],
+  "_ZN30GalVerificationMediaSinkStatus5ClearEv": [
+    651564,
+    48
+  ],
+  "_ZN30GalVerificationMediaSinkStatus10SharedDtorEv": [
+    618108,
+    4
+  ],
+  "_ZNK18VideoConfiguration13GetCachedSizeEv": [
+    1028552,
+    8
+  ],
+  "_ZN13MediaSinkBase10sendConfigEi": [
+    517956,
+    448
+  ],
+  "_ZN18VideoConfiguration27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE": [
+    922448,
+    1292
+  ],
+  "_ZN6google8protobuf8internal20RepeatedPtrFieldBase5ClearINS0_16RepeatedPtrFieldI18VideoConfigurationE11TypeHandlerEEEvv": [
+    1030000,
+    72
+  ],
+  "_ZN9VideoSink25getNumberOfConfigurationsEv": [
+    580404,
+    28
+  ],
+  "_ZNK16MediaSinkService13IsInitializedEv": [
+    599560,
+    76
+  ],
+  "_ZN30GalVerificationMediaSinkStatus10SharedCtorEv": [
+    651612,
+    40
+  ],
+  "_ZN18VideoConfiguration21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE": [
+    645624,
+    12
+  ],
+  "_ZN16MediaSinkServiceD1Ev": [
+    754140,
+    140
+  ],
+  "_ZN10shared_ptrI18VideoConfigurationE6putRefEv": [
+    582044,
+    76
+  ],
+  "_ZN30GalVerificationMediaSinkStatus8CopyFromERKS_": [
+    622776,
+    48
+  ],
+  "_ZN13MediaSinkBase11handleStartERK5Start": [
+    517616,
+    68
+  ],
+  "_ZN16MediaSinkService9MergeFromERKS_": [
+    805660,
+    668
+  ]
+}

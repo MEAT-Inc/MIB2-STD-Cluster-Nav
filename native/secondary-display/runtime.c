@@ -5,6 +5,9 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 _Static_assert(sizeof(void*)==4,"ARM32 endpoint ABI");
 _Static_assert(sizeof(struct stream_report)==512,"stream report ABI");
 struct adapter { const void *vtable;struct stream_context *owner; };
@@ -22,24 +25,44 @@ static unsigned save(struct stream_context *c,const void *p,unsigned n){unsigned
  return done;
 }
 static void timing_record(struct stream_context *c,unsigned kind,int session,uint64_t timestamp,unsigned offset,unsigned requested,unsigned saved){struct stream_timing *t=c->timing;struct stream_timing_record *r;struct timespec now;unsigned index;if(!t)return;index=t->count;if(index>=TIMING_CAPACITY){if(t->dropped!=UINT_MAX)++t->dropped;return;}r=&t->records[index];r->kind=kind;r->session=(uint32_t)session;r->timestamp=timestamp;if(clock_gettime(CLOCK_MONOTONIC,&now))t->clock_error=errno?errno:EIO;else r->monotonic_ns=(uint64_t)now.tv_sec*1000000000ULL+now.tv_nsec;r->offset=offset;r->requested=requested;r->saved=saved;__atomic_store_n(&t->count,index+1,__ATOMIC_RELEASE);}
-static int setup(void *p,int codec){struct stream_context *c=((struct adapter*)p)->owner;pthread_mutex_lock(&c->mutex);add(c,SSETUP,1);c->active=0;c->configured=0;c->session=-1;stage(c,4);if(codec!=3)error(c,21);pthread_mutex_unlock(&c->mutex);return codec==3?0:-1;}
+static int setup(void *p,int codec){struct stream_context *c=((struct adapter*)p)->owner;pthread_mutex_lock(&c->mutex);add(c,SSETUP,1);c->active=0;c->configured=0;c->session=-1;c->live_codec_bytes=0;stage(c,4);if(codec!=3)error(c,21);pthread_mutex_unlock(&c->mutex);return codec==3?0:-1;}
 static int configuration(void *p,int index){struct stream_context *c=((struct adapter*)p)->owner;pthread_mutex_lock(&c->mutex);add(c,SCONFIG,1);c->configured=index==0;if(index!=0)error(c,22);pthread_mutex_unlock(&c->mutex);return index==0?0:-1;}
 static int start(void *p,int session){struct stream_context *c=((struct adapter*)p)->owner;pthread_mutex_lock(&c->mutex);add(c,SSTART,1);c->session=session;c->report->w[SSESSION]=(uint32_t)session;c->active=c->configured&&session>=0;pthread_mutex_unlock(&c->mutex);return 0;}
 static int stop(void *p,int session){struct stream_context *c=((struct adapter*)p)->owner;(void)session;pthread_mutex_lock(&c->mutex);add(c,SSTOP,1);c->active=0;pthread_mutex_unlock(&c->mutex);return 0;}
-static int codec(void *p,void *bytes,unsigned n){struct stream_context *c=((struct adapter*)p)->owner;unsigned saved,offset;pthread_mutex_lock(&c->mutex);add(c,SCODEC,1);if(bytes&&n&&n<=65536){offset=c->report->w[SSAVED];saved=save(c,bytes,n);timing_record(c,1,c->session,0,offset,n,saved);add(c,SCODECBYTES,saved);if(saved!=n)add(c,SDROPPED,1);}else error(c,23);pthread_mutex_unlock(&c->mutex);return 0;}
-static int data(void *p,int session,uint64_t timestamp,const struct factory_shared *borrowed,const void *bytes,unsigned n){struct stream_context *c=((struct adapter*)p)->owner;int ack=0;unsigned saved=0,offset;(void)borrowed;
+static void attach_live(struct stream_context *c){int fd;struct stat st;struct live_shared *q;uint32_t consumer;
+ if(!c->live_enabled||c->live_attempted){return;}c->live_attempted=1;
+ fd=open(c->live_path,O_RDWR);if(fd<0){c->report->w[49]=errno?errno:EIO;return;}
+ if(fstat(fd,&st)||!S_ISREG(st.st_mode)||(uint64_t)st.st_size!=sizeof(*q)){close(fd);c->report->w[49]=EINVAL;return;}
+ q=mmap(0,sizeof(*q),PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);close(fd);if(q==MAP_FAILED){c->report->w[49]=errno?errno:EIO;return;}
+ consumer=__atomic_load_n(&q->consumer_pid,__ATOMIC_ACQUIRE);
+ if(!consumer||consumer>0x7fffffff||live_bind(&c->live,q,sizeof(*q),c->live_nonce,(uint32_t)getpid(),consumer)){munmap(q,sizeof(*q));c->report->w[49]=EPROTO;return;}
+ c->report->w[48]=1;c->report->w[55]=consumer;
+}
+static int codec(void *p,void *bytes,unsigned n){struct stream_context *c=((struct adapter*)p)->owner;unsigned saved,offset;pthread_mutex_lock(&c->mutex);add(c,SCODEC,1);if(bytes&&n&&n<=65536){if(c->live_enabled&&c->live_codec){memcpy(c->live_codec,bytes,n);c->live_codec_bytes=n;attach_live(c);}offset=c->report->w[SSAVED];saved=save(c,bytes,n);timing_record(c,1,c->session,0,offset,n,saved);add(c,SCODECBYTES,saved);if(saved!=n)add(c,SDROPPED,1);}else error(c,23);pthread_mutex_unlock(&c->mutex);return 0;}
+static int contains_idr(const unsigned char *p,unsigned n){unsigned i;for(i=0;i+3<n;i++){unsigned k=0;if(!p[i]&&!p[i+1]&&p[i+2]==1)k=3;else if(i+4<n&&!p[i]&&!p[i+1]&&!p[i+2]&&p[i+3]==1)k=4;if(k&&i+k<n&&(p[i+k]&31)==5)return 1;}return 0;}
+static int data(void *p,int session,uint64_t timestamp,const struct factory_shared *borrowed,const void *bytes,unsigned n){struct stream_context *c=((struct adapter*)p)->owner;int ack=0,probe=0;unsigned saved=0,offset;(void)borrowed;
  pthread_mutex_lock(&c->mutex);
  offset=c->report->w[SSAVED];
  c->report->w[STSLOW]=(uint32_t)timestamp;c->report->w[STSHIGH]=(uint32_t)(timestamp>>32);
  c->report->w[SCHANNEL]=((unsigned char*)c->video)[5];
- if(c->active&&session==c->session&&bytes&&n&&n<=1024*1024){add(c,SFRAMES,1);add(c,SFRAMEBYTES,n);saved=save(c,bytes,n);stage(c,5);}
+ if(c->active&&session==c->session&&bytes&&n&&n<=1024*1024){add(c,SFRAMES,1);add(c,SFRAMEBYTES,n);saved=save(c,bytes,n);stage(c,5);if(c->probe_enabled&&contains_idr(bytes,n))add(c,45,1);
+ }
  timing_record(c,2,session,timestamp,offset,n,saved);
+ if(c->live_enabled&&c->active&&session==c->session&&bytes&&n&&n<=1024*1024){int rc;int key=contains_idr(bytes,n);attach_live(c);if(c->live.q){rc=live_publish(&c->live,key?c->live_codec:0,key?c->live_codec_bytes:0,bytes,n,(uint32_t)session,timestamp);if(rc>0)add(c,50,1);else if(!rc)add(c,51,1);else if(__atomic_load_n(&c->live.q->closed,__ATOMIC_ACQUIRE))c->report->w[56]=1;else add(c,52,1);}}
  if(!n||saved!=n)add(c,SDROPPED,1);
  ack=session>=0&&session==c->session&&((unsigned char*)c->video)[4]&&((unsigned char*)c->video)[5];
  if(ack)add(c,SACKS,1);
+ if(c->probe_enabled&&ack&&n&&saved==n&&c->active&&c->installed&&c->api.focus&&c->probe_requests<3&&word(c->video,12)==9&&((unsigned char*)c->video)[5]==9){
+  struct timespec now;if(clock_gettime(CLOCK_MONOTONIC,&now))c->report->w[47]=errno?errno:EIO;
+  else{uint64_t ns=(uint64_t)now.tv_sec*1000000000ULL+now.tv_nsec;
+   if(!c->probe_next_ns)c->probe_next_ns=ns+2000000000ULL;
+   else if(ns>=c->probe_next_ns){c->probe_next_ns=ns+(uint64_t)(3+c->probe_requests)*1000000000ULL;c->probe_requests++;add(c,44,1);c->report->w[46]=c->report->w[SFRAMES];timing_record(c,3,session,timestamp,c->report->w[SSAVED],0,0);probe=1;}
+  }
+ }
  pthread_mutex_unlock(&c->mutex);
  /* ACK only this endpoint/session after synchronous consumption or drop. */
  if(ack)c->api.ack(c->video,session,1);
+ if(probe)c->api.focus(c->video,1,1);
  return 0;
 }
 static int focus(void *p,int mode,unsigned char unsolicited){struct stream_context *c=((struct adapter*)p)->owner;int valid=mode>=0&&mode<=2;pthread_mutex_lock(&c->mutex);add(c,SFOCUS,1);if(!valid)error(c,24);pthread_mutex_unlock(&c->mutex);if(valid)c->api.focus(c->video,mode,unsolicited);return 0;}

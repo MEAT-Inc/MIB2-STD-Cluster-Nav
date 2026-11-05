@@ -12,4 +12,19 @@ static int stall_blob(const uint32_t w[STALL_WORDS],const uint32_t m[2],uint32_t
  w[102]==0x1026384&&w[101]==0x1027fd4&&w[100]==sp+0x2b4&&
  w[192]==0x1b8f2c&&w[60]&&w[60]<0xc0000000u&&w[60]==w[91]+w[94];
 }
+#define STALL_EXT_WORDS 209
+/* Replay inserts its worker before NavMain. Exact second captured fault path:
+ * AAF SIGSEGV reporting through the native logger instead of printf.
+ * Thread2/printf remains the original guard; thread3/logger is separately pinned. */
+static int stall_blob_tid(const uint32_t w[STALL_EXT_WORDS],const uint32_t m[2],uint32_t sp,uint32_t pid,uint32_t tid) {
+ uint32_t owner=((pid&0x7fffu)<<16)|tid;
+ if(tid==2)return stall_blob(w,m,sp,pid);
+ if(tid!=3)return 0;
+ return m[0]==0x80000000u&&(m[1]&0x7fffffffu)==owner&&
+ w[0]==0x1028088&&w[10]==0x1338f4&&w[28]==0x133704&&w[46]==0x3df1dc&&
+ w[56]==11&&w[57]==0x1026384&&w[58]==w[76]&&w[59]==1&&w[60]==0&&
+ w[71]==11&&w[72]==1&&w[73]==0&&w[74]==11&&w[75]==0x1026384&&
+ w[118]==0x1026384&&w[117]==0x1027fd4&&w[116]==sp+0x2f4&&
+ w[208]==0x1b8f2c&&w[76]&&w[76]<0xc0000000u&&w[76]==w[107]+w[110];
+}
 #endif

@@ -13,9 +13,12 @@ console_status STEP 'Compiling host validation fixture.'
 /usr/bin/gcc -B/usr/bin/ -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -pthread replay.c fixture.c -o fixture-linux
 console_status STEP 'Running ./fixture-linux'
 ./fixture-linux
+/usr/bin/gcc -B/usr/bin/ -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -pthread replay.c timeline-fixture.c -o timeline-linux
+./timeline-linux
 P=arm-unknown-nto-qnx6.5.0eabi
 flags='-std=gnu11 -O2 -Wall -Wextra -Werror -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=softfp -marm'
 console_status STEP 'Compiling replay_fixture.'
+$P-gcc $flags replay.c timeline-fixture.c -Wl,-z,noexecstack -o replay_timeline_fixture
 $P-gcc $flags replay.c fixture.c -Wl,-z,noexecstack -o replay_fixture
 console_status STEP 'Compiling native object files.'
 $P-gcc $flags -fPIC -fvisibility=hidden -c replay.c loader.c imports.c libc-check.c
@@ -45,4 +48,4 @@ console_status STEP 'Compiling replay_hook_fixture.'
 $P-gcc $flags -Wl,-E hook-fixture.c hook-calls.S -Wl,-z,noexecstack -o replay_hook_fixture
 console_status STEP 'Compiling replay_hook_runner.'
 $P-gcc $flags hook-runner.c -Wl,-z,noexecstack -o replay_hook_runner
-cp replay_libc_fixture replay_libc_check replay_libc_check_test replay_imports_fixture libdelphi_cluster_early_legacy.so fixture-linux replay_fixture libdelphi_cluster.so libdelphi_cluster_test.so replay_hook_fixture replay_hook_runner "$out/"
+cp replay_timeline_fixture replay_libc_fixture replay_libc_check replay_libc_check_test replay_imports_fixture libdelphi_cluster_early_legacy.so fixture-linux replay_fixture libdelphi_cluster.so libdelphi_cluster_test.so replay_hook_fixture replay_hook_runner "$out/"

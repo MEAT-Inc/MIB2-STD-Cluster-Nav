@@ -34,4 +34,6 @@ manager.cfg
 libXSAL.so
 stall.stack
 stall.mutex
+stall.replay.stack
+stall.replay.mutex
 libsocket.so.3

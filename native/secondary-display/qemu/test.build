@@ -12,9 +12,12 @@
     waitfor /dev/ser1 4
     reopen /dev/ser1
     nav_snapshot --self-test
+    nav_snapshot_timed --self-test
     factory_fixture
     wire_fixture
     runtime_fixture
+    keyframe_probe_fixture
+    live_capture_test --self-test
     transaction_fixture
     secondary_test_runner
     smoke_qemu_runner
@@ -33,9 +36,12 @@ observer_smoke
 observer_smoke_guard
 smoke_qemu_runner
 nav_snapshot
+nav_snapshot_timed
 factory_fixture
 wire_fixture
 runtime_fixture
+keyframe_probe_fixture
+live_capture_test
 transaction_fixture
 secondary_forward_fixture
 secondary_test_runner

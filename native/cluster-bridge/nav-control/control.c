@@ -61,16 +61,19 @@ static int gone(pid_t p){char b[64];int f;snprintf(b,sizeof(b),"/proc/%u/as",(un
 static uint64_t number(const char *s){char *e;unsigned long long v;if(!s||!*s||strspn(s,"0123456789")!=strlen(s)) { return 0; }
 errno=0;v=strtoull(s,&e,10);return errno||*e?0:v;}
 static int crash_guard(int f,pid_t pid){
- procfs_status z;uint32_t words[STALL_WORDS],mutex[2];size_t at=0;
- memset(&z,0,sizeof(z));z.tid=2;
- if(devctl(f,DCMD_PROC_TIDSTATUS,&z,sizeof(z),0)||z.state!=STATE_MUTEX||
+ procfs_status z;uint32_t words[STALL_EXT_WORDS],mutex[2],confirm[2],tid;size_t at=0;
+ if(read_at(f,0x1076ee8,mutex,sizeof(mutex))){return 0;}
+ tid=mutex[1]&0xffffu;
+ if((tid!=2&&tid!=3)||mutex[0]!=0x80000000u||(mutex[1]&0x7fff0000u)!=(((uint32_t)pid&0x7fffu)<<16)){fprintf(stderr,"NAV_RECOVER_OWNER_REFUSED owner=%x\n",mutex[1]);return 0;}
+ memset(&z,0,sizeof(z));z.tid=tid;
+ if(devctl(f,DCMD_PROC_TIDSTATUS,&z,sizeof(z),0)||(uint32_t)z.tid!=tid||z.state!=STATE_MUTEX||
     (z.ip!=0x1038714u&&z.ip!=0x1038710u)||z.sp>0xbffff000u||z.blocked.sync.sync!=0x1076ee8u){fprintf(stderr,"NAV_RECOVER_WAIT_REFUSED state=%u ip=%llx sp=%llx mutex=%lx\n",z.state,(unsigned long long)z.ip,(unsigned long long)z.sp,(unsigned long)z.blocked.sync.sync);return 0;}
  while(at<sizeof(words)){
   size_t n=sizeof(words)-at;if(n>512){n=512;}
   if(read_at(f,(uint32_t)z.sp+at,(char*)words+at,n)){return 0;}at+=n;
  }
- if(read_at(f,0x1076ee8,mutex,sizeof(mutex))){return 0;}
- {int match=stall_blob(words,mutex,(uint32_t)z.sp,(uint32_t)pid);fprintf(stderr,"NAV_RECOVER_CRASH_SIGNATURE match=%d state=%u ip=%llx sp=%llx owner=%x signal=%u fault_pc=%x map_delete_return=%x\n",match,z.state,(unsigned long long)z.ip,(unsigned long long)z.sp,mutex[1],words[55],words[59],words[192]);return match;}
+ if(read_at(f,0x1076ee8,confirm,sizeof(confirm))||memcmp(mutex,confirm,sizeof(mutex))){return 0;}
+ {int match=stall_blob_tid(words,mutex,(uint32_t)z.sp,(uint32_t)pid,tid);fprintf(stderr,"NAV_RECOVER_CRASH_SIGNATURE match=%d tid=%u state=%u ip=%llx sp=%llx owner=%x signal=%u fault_pc=%x map_delete_return=%x\n",match,tid,z.state,(unsigned long long)z.ip,(unsigned long long)z.sp,mutex[1],words[tid==3?71:55],words[tid==3?75:59],words[tid==3?208:192]);return match;}
 }
 /* Read-only snapshot of the captured unit's MOST video state. */
 static int most_status(const char *arg){

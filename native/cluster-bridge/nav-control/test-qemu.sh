@@ -48,6 +48,8 @@ manager.cfg
 libXSAL.so
 stall.stack
 stall.mutex
+stall.replay.stack
+stall.replay.mutex
 EOF
 T=/opt/qnx650/target/qnx6/armle-v7
 cp "$T/lib/libc.so.3" "$T/lib/libsocket.so.3" "$T/boot/sys/procnto-smp" .
@@ -76,3 +78,5 @@ grep -q SAL_CLIENT_DEINIT_PASS "$out/qemu/qemu.log"
 grep -q NAV_CONTROL_QNX_END "$out/qemu/qemu.log"
 sha256sum "$out/build/sal_init_fixture" "$out/build/idle_fixture" "$out/build/nav_cycle" "$out/build/nav_cycle_test" > "$out/qemu/tested.sha256"
 printf 'NAV_CONTROL_INIT_QNX_PASS\n'
+
+grep -q NAV_REPLAY_STALL_CAPTURE_GUARD_PASS "$out/qemu/qemu.log"

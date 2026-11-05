@@ -21,6 +21,7 @@ cat >> test.build <<'EOF'
     replay_libc_check_test
     replay_imports_fixture
     replay_fixture
+    replay_timeline_fixture
     replay_hook_runner
     display_msg "REPLAY_QNX_END"
 }
@@ -32,6 +33,7 @@ libc.so.3
 procnto-smp
 devc-serdebug
 replay_fixture
+replay_timeline_fixture
 replay_hook_runner
 replay_hook_fixture
 replay_imports_fixture
@@ -88,3 +90,5 @@ grep -q "REPLAY_IDLE_IMPORT_INSPECTION_PASS" "$out/qemu.log"
 
 grep -q "REPLAY_ARMED_DESCRIPTOR_PASS" "$out/qemu.log"
 grep -q "REPLAY_PRELOAD_ARMED_DESCRIPTOR_PASS" "$out/qemu.log"
+
+grep -q REPLAY_TIMELINE_PASS "$out/qemu.log"

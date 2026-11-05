@@ -19,6 +19,7 @@ struct replay_config {
  size_t capture_capacity;
  uintptr_t open_lr,write_lr,close_lr;
  int defer_ready;
+ int timeline_required;
  void (*inspect)(void *,volatile uint32_t *);
 };
 void replay_bind_callbacks(int (*)(const char *,int,...),ssize_t (*)(int,const void *,size_t),int (*)(int));

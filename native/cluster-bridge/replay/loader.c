@@ -86,6 +86,9 @@ __attribute__((constructor)) static void load(void){
  if(lstat(path,&st)||!S_ISREG(st.st_mode)||st.st_size<32||st.st_size>8*1024*1024)goto end;
  raw=c.native_open(path,O_RDONLY);if(raw<0||fstat(raw,&st))goto end;bytes=malloc(st.st_size);if(!bytes)goto end;
  while(at<(size_t)st.st_size){got=read(raw,bytes+at,st.st_size-at);if(got<0&&errno==EINTR)continue;if(got<=0)goto end;at+=got;}
+ #ifndef REPLAY_LOADER_TEST
+ c.timeline_required=1;
+#endif
  out[22]=4;c.file_bytes=bytes;c.file_size=at;c.report=out;c.defer_ready=1;
  if(replay_init(&c)){error=1005;goto end;}started=1;out[22]=5;
  hooks[0].native=(uintptr_t)c.native_open;hooks[1].native=(uintptr_t)c.native_write;hooks[2].native=(uintptr_t)c.native_close;hooks[0].replacement=(uintptr_t)delphi_replay_open;hooks[1].replacement=(uintptr_t)delphi_replay_write;hooks[2].replacement=(uintptr_t)delphi_replay_close;

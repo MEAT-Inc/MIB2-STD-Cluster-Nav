@@ -15,7 +15,7 @@ def remote_root(v):
 
 def package(p):
  m=json.loads((p/'manifest.json').read_text())
- if m.get('hook_mode')!='app_import_slots' or m.get('startup_contract_revision')!=7 or m.get('canonical_image_exec') is not True or m.get('preserve_standard_streams') is not True or m.get('post_exec_identity_ack') is not True or m.get('activation_mode')!='native_frames_then_explicit_arm' or m.get('lifecycle_mode')!='sal_shutdown_exact_crash_recovery':raise ValueError('Old global-hook/name-guard replay bundle is held; extract the v7 lifecycle bundle')
+ if m.get('hook_mode')!='app_import_slots' or m.get('startup_contract_revision')!=9 or m.get('canonical_image_exec') is not True or m.get('preserve_standard_streams') is not True or m.get('post_exec_identity_ack') is not True or m.get('activation_mode')!='native_frames_then_explicit_arm' or m.get('lifecycle_mode')!='sal_shutdown_exact_crash_recovery' or m.get('timeline_mode')!='continue_live_clock_and_cc' or m.get('video_mode')!='periodic_idr':raise ValueError('Old global-hook/name-guard replay bundle is held; extract the v9 frequent-keyframe bundle')
  if m.get('kind')!='native_cluster_recorded_map_replay' or m.get('phone_must_stay_unplugged') is not True or m.get('live_phone_navigation') is not False or set(m['files'])!=set(NAMES):raise ValueError('Wrong replay release')
  result={}
  for name in NAMES:
@@ -40,14 +40,14 @@ def assess_controller(b,remote,final):
 
 def assess_replay(b,pid,manifest,final=False):
  if len(b)!=512:raise ValueError('Replay size')
- w=struct.unpack('<128I',b);app_only=manifest.get('hook_mode')=='app_import_slots';telemetry=app_only and manifest.get('startup_contract_revision',0)>=4;source_metrics=manifest.get('startup_contract_revision',0)>=7
- if w[:4]!=(0x31504c52,1,512,pid) or w[4] not in (0,1,2,3,4) or w[21] not in (0,1) or (any(w[55:] if source_metrics else w[52:] if telemetry else w[37:]) if app_only else any(w[22:])):raise ValueError('Replay report identity/profile')
+ w=struct.unpack('<128I',b);app_only=manifest.get('hook_mode')=='app_import_slots';telemetry=app_only and manifest.get('startup_contract_revision',0)>=4;source_metrics=manifest.get('startup_contract_revision',0)>=7;timeline_metrics=manifest.get('startup_contract_revision',0)>=8
+ if w[:4]!=(0x31504c52,1,512,pid) or w[4] not in (0,1,2,3,4) or w[21] not in (0,1) or (any(w[67:] if manifest.get('startup_contract_revision',0)>=9 else w[65:] if timeline_metrics else w[55:] if source_metrics else w[52:] if telemetry else w[37:]) if app_only else any(w[22:])):raise ValueError('Replay report identity/profile')
  if app_only and w[22]>7:raise ValueError('Unknown bootstrap stage')
  if app_only and manifest.get('startup_contract_revision',0)>=3 and w[4] in (1,2,3) and (not w[36] or w[36]&4095):raise ValueError('Validated libc base missing')
  if w[4] in (1,2,3) and (w[18]!=manifest['replay']['packets'] or w[19]!=manifest['files']['replay.bin']['bytes'] or app_only and w[22]!=7):raise ValueError('Replay not fully initialized')
  complete=w[4]==3 and w[21]==1 and not w[5] and w[10]==w[18] and w[11]==188*w[18] and w[16]==manifest['replay']['groups'] and w[6]>=1 and not w[20]
  if final and w[10]>manifest['replay']['packets']:raise ValueError('Replay sent too many packets')
- return dict(status=w[4],error=w[5],bootstrap_stage=w[22] if app_only else None,import_before=list(w[23:26]) if app_only else [],native_functions=list(w[26:29]) if app_only else [],import_slots=list(w[32:35]) if app_only else [],import_install_result=struct.unpack_from('<i',b,140)[0] if app_only else None,libc_base=w[36] if app_only else None,packets=w[10],bytes=w[11],suppressed_writes=w[8],zero_progress_writes=w[12],bad_callers=w[20],groups=w[16],packets_delivered=complete,physical_display_proven=False,hook_calls=dict(open=w[37],write=w[38],close=w[39]) if telemetry else None,retained_imports=list(w[40:43]) if telemetry else [],encoder=w[43] if telemetry else None,encoder_fd=struct.unpack_from('<i',b,176)[0] if telemetry else None,encoder_geometry=list(w[45:50]) if telemetry else [],inspection_heartbeat=w[50] if telemetry else None,inspection_error=w[51] if telemetry else None,native_accepted_bytes=w[52] if source_metrics else None,native_capture_bytes=w[53] if source_metrics else None,native_accepted_writes=w[54] if source_metrics else None)
+ return dict(status=w[4],error=w[5],bootstrap_stage=w[22] if app_only else None,import_before=list(w[23:26]) if app_only else [],native_functions=list(w[26:29]) if app_only else [],import_slots=list(w[32:35]) if app_only else [],import_install_result=struct.unpack_from('<i',b,140)[0] if app_only else None,libc_base=w[36] if app_only else None,packets=w[10],bytes=w[11],suppressed_writes=w[8],zero_progress_writes=w[12],bad_callers=w[20],groups=w[16],packets_delivered=complete,physical_display_proven=False,hook_calls=dict(open=w[37],write=w[38],close=w[39]) if telemetry else None,retained_imports=list(w[40:43]) if telemetry else [],encoder=w[43] if telemetry else None,encoder_fd=struct.unpack_from('<i',b,176)[0] if telemetry else None,encoder_geometry=list(w[45:50]) if telemetry else [],inspection_heartbeat=w[50] if telemetry else None,inspection_error=w[51] if telemetry else None,native_accepted_bytes=w[52] if source_metrics else None,native_capture_bytes=w[53] if source_metrics else None,native_accepted_writes=w[54] if source_metrics else None,timeline=dict(required=w[55],seen_mask=w[56],native_pcr=w[57]|w[58]<<32,age_ms=w[59],offset=w[60]|w[61]<<32,rewritten_packets=w[62],error=w[63],native_partial_packet_bytes=w[64],first_close_status=w[65],packets_at_first_close=w[66]) if timeline_metrics else None)
 
 def native_channel_missing(b):
  w=struct.unpack('<128I',b);missing=[]
@@ -60,6 +60,8 @@ def native_channel_missing(b):
  if not w[43]:missing.append('encoder absent')
  if tuple(w[45:50])!=(800,480,800,480,0):missing.append('encoder geometry is not native 800x480')
  if not all(w[29:32]) or w[40:43]!=w[29:32]:missing.append('application imports no longer point at replay wrappers')
+ if w[55]!=1 or w[56]!=15:missing.append('live clock/channel counters not established')
+ if w[63]:missing.append('live clock packet profile error '+str(w[63]))
  if not w[50]:missing.append('inspection heartbeat absent')
  if w[51]:missing.append('inspection error '+str(w[51]))
  return missing
@@ -246,10 +248,12 @@ def main(argv=None):
       summary['activation_failed']=True;summary['activation_report']=assess_replay(b,w[3],manifest);persist();raise RuntimeError('Armed replay did not activate within 10 seconds; current descriptor/hook/encoder report saved')
     time.sleep(.5)
    else:summary['playback_timeout']=True
+  final_before_cleanup=copy('/dev/shmem/delphi-nav-report-'+token+'.bin','replay-final-before-cleanup.bin')
+  summary['replay']=assess_replay(final_before_cleanup,struct.unpack_from('<I',final_before_cleanup,12)[0],manifest,True);persist()
+  summary['cluster_maps_seen']=input('Did the recorded Google Maps view play continuously IN THE INSTRUMENT CLUSTER? [y/n/unknown]: ').strip().lower() in ('y','yes');persist()
   most_snapshot('after-playback')
   cleanup_native()
   most_snapshot('after-restore')
-  summary['cluster_maps_seen']=input('Did the recorded Google Maps view appear IN THE INSTRUMENT CLUSTER? [y/n/unknown]: ').strip().lower() in ('y','yes')
   summary['factory_maps_restored']=input('Using the location toggle, does the factory map work on the radio, then in the cluster, when each is selected? [y/n/unknown]: ').strip().lower() in ('y','yes')
  except (OSError,EOFError,ValueError,RuntimeError,KeyboardInterrupt,ftplib.Error) as e:summary['error']=(type(e).__name__+': '+str(e)).replace(password,'[redacted]')
  finally:
@@ -269,6 +273,13 @@ def main(argv=None):
     if shell.broken:break
     try:cmd(command+' > '+name+' 2>&1',False);cmd('chmod 644 '+name,False);fetch(name)
     except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as e:summary.setdefault('diagnostic_errors',[]).append(dict(file=name,error=str(e)))
+  if shell and not shell.broken and summary.get('cleanup_pending'):
+   pid=summary.get('pending_state',{}).get('observed_pid')
+   if type(pid) is int and 0<pid<=0x7fffffff:
+    for view in ('threads','backtrace','regs','mem'):
+     name='cleanup-wait-'+view+'.txt'
+     try:cmd('pidin -p '+str(pid)+' '+view+' > '+name+' 2>&1',False);cmd('chmod 644 '+name,False);fetch(name)
+     except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as e:summary.setdefault('diagnostic_errors',[]).append(dict(file=name,error=str(e)))
   if shell:
    summary['actions']=summary.get('actions',[])+shell.actions;shell.close()
   persist()

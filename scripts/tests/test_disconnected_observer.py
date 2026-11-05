@@ -3,9 +3,9 @@ from pathlib import Path as _TestPath
 import sys as _test_sys
 _test_sys.path.insert(0, str(_TestPath(__file__).resolve().parents[1]))
 from project_console import console_session, status
-import contextlib,ftplib,io,json,struct,tempfile,unittest
+import contextlib,ftplib,io,json,struct,tempfile,unittest,types
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import patch,Mock
 import run_disconnected_observer as m
 from test_androidauto_observer import AssessmentTests
 def factory_report(status=1):
@@ -177,7 +177,7 @@ class WorkflowTests(unittest.TestCase):
      self.assertTrue(state['shells'][-1].closed);return ''
     self.assertFalse(any('cleanup-disconnected ' in c for c in state['commands']))
     return 'later' if mode=='decline' or resume and state.get('first',True) else 'PHONE REMOVED'
-  with patch('cluster_preflight.verify_navigation'),patch.object(m,'ROOT',root),patch.object(m,'package',return_value=uploads),patch.object(m.old,'REFERENCES',refs),patch.object(m.ftplib,'FTP',FTP),patch.object(m,'Shell',Shell),patch.object(m,'wait_for_capture_ready',side_effect=RuntimeError('not ready') if mode=='readyfail' else None,return_value=f'LAUNCH_READY capture_seconds={seconds}\n'.encode()),patch.object(m.time,'sleep'),(patch.object(m.time,'monotonic',side_effect=[0,0,0,0,31]) if mode=='pendingnever' else contextlib.nullcontext()),patch('builtins.input',side_effect=answer),contextlib.redirect_stdout(io.StringIO()):
+  with patch('cluster_preflight.verify_navigation'),patch.object(m,'progress'),patch.object(m,'ROOT',root),patch.object(m,'package',return_value=uploads),patch.object(m.old,'REFERENCES',refs),patch.object(m.ftplib,'FTP',FTP),patch.object(m,'Shell',Shell),patch.object(m,'wait_for_capture_ready',side_effect=RuntimeError('not ready') if mode=='readyfail' else None,return_value=f'LAUNCH_READY capture_seconds={seconds}\n'.encode()),patch.object(m.time,'sleep'),(patch.object(m,'time',types.SimpleNamespace(monotonic=Mock(side_effect=[0,0,0,0,31]),sleep=lambda _:None)) if mode=='pendingnever' else contextlib.nullcontext()),patch('builtins.input',side_effect=answer),contextlib.redirect_stdout(io.StringIO()):
     code=m.main(['--run','--phone-unplugged']+(['--phone-capture'] if phone else [])+(['--cluster-preflight'] if cluster else ['--secondary-stream'] if secondary else ['--factory-probe'] if factory else []))
     folder=next((root/'delphi-dump').iterdir());summary=json.loads((folder/'disconnect-summary.json').read_text())
     if resume:

@@ -1,42 +1,43 @@
-Recorded Android Auto map playback v7 - lifecycle recovery
-=========================================================
-Goal: show the saved Google Maps recording in the cluster. Phone remains unplugged.
+Recorded Android Auto cluster playback v9
+========================================
+Goal: sustained Google Maps playback in the instrument cluster.
+This is a saved 20-second excerpt, not live phone navigation.
 
-The factory map is selectable on the radio OR cluster using the location button.
-Check each location in turn, then leave the actual factory map visible IN THE
-CLUSTER before starting. Simultaneous maps are not required.
-
-1. Extract the entire v7 ZIP into a fresh folder on the connected laptop.
-2. Park, keep ignition on, phone unplugged, Ethernet connected. Select a working
-   factory map in the instrument cluster.
-3. Run:
+1. Extract the entire ZIP into a fresh folder on the connected laptop.
+2. Start with working factory maps. If the previous failed test left maps stuck,
+   reboot the radio first and wait for factory maps to render.
+3. Park, keep ignition on, phone unplugged and Ethernet connected. Use the map
+   location toggle to select factory maps IN THE CLUSTER. Radio and cluster
+   maps are checked sequentially; simultaneous maps are not required.
+4. Run:
    python scripts/run_cluster_replay.py --run --phone-unplugged --cluster-map-selected
-4. Startup uses the now car-validated SAL shutdown. If and only if the exact
-   captured map-cleanup crash occurs, the helper terminates that already-crashed
-   process once so the factory manager can restart it. This may take about
-   25 seconds. The launcher allows a longer startup window.
-5. Select the factory map in the cluster again if needed. The script waits for
-   actual accepted native map writes. At the prompt, confirm that real factory
-   map graphics are visibly rendering before pressing Enter. If stuck at
-   Starting map/Starting navigation, type SKIP; do not authorize playback.
-6. Observe the saved recording. After playback, the same validated lifecycle
-   restores stock navigation. Report recording visibility separately from
-   whether factory maps work on radio and cluster when each is selected.
+5. After startup, select the factory map in the cluster again if needed.
+   Press Enter at the playback prompt only when actual factory map graphics
+   are visible. Enter SKIP if it remains at Starting map.
+6. Observe the approximately20-second recording. Answer whether it played
+   continuously, then check factory maps on radio and cluster in turn.
 7. Return the entire new delphi-dump/_cluster_replay_* folder.
 
-Additional evidence is collected during this same run:
-- MOST readiness flags and video-transmit thread state before/after playback.
-- Bounded first1MiB of actual accepted factory video, before explicit arming.
-  The report gives valid prefix length; the rest of the mapping is padding.
-- Actual accepted native byte/write counts and per-edge lifecycle helper logs.
+Changes in v9:
+-259 recorded frames, reencoded as800x480 Baseline H.264 with an independent
+ keyframe and repeated codec headers every five frames (52 keyframes).
+ Original frame timestamps and color metadata are preserved. Pixels are
+ reencoded; all frames passed the35dB minimum RGB PSNR gate (measured39.38dB
+ minimum). The replay remains below the existing8MiB memory limit.
+-Continues the accepted factory PCR/PTS/DTS clock and packet counters.
+ Native fragmented writes are reassembled into188-byte packets. Handoff
+ occurs only at a complete packet boundary; no clock reset packets are added.
+-The exact captured replay NavMain/thread3 allocator SIGSEGV is recognized.
+ The original stock NavMain/thread2 signature remains separate. Both require
+ the captured fault frame, map-deletion caller, allocator owner and unchanged
+ process identity. No generic termination fallback or heap repair is added.
+-Saves playback completion and the continuous-visibility answer before cleanup.
+ Records playback state/packet count at the first endpoint close and collects
+ thread/register/backtrace/mapping diagnostics if cleanup fails.
 
-Codec, packetization, recorded timing, zero-write retry limits and single-writer
-ownership remain as previously validated. The recorder uses the existing owned
-descriptor. No extra isoTX writer is opened. Source copying is bounded memory
-copying without new I/O/allocation in the write hook.
-MOST snapshots are read-only and unit-specific; they do not force readiness.
-
-Process restart alone is not a claim of functional map restoration, and bytes
-accepted by TransportServer are not a claim that recorded pixels were visible.
-A full unit reboot remains manual if an unrecognized failure leaves maps stuck.
-Do not run the earlier v6 package; its lifecycle is obsolete.
+MOST status and the bounded factory-video prefix are collected in the same run.
+Only the existing owned transport descriptor writes replay video. Retry limits,
+firmware reference checks and explicit arm requirements remain in force.
+The new recovery signature and frequent-keyframe replay have passed offline/QNX
+validation; functional restoration and continuous cluster playback need this
+car test. Do not repeat the earlier v7/v8 trials.

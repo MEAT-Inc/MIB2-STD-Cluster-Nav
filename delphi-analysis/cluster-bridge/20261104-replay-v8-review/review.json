@@ -1,0 +1,17 @@
+{
+  "collection": "_cluster_replay_20261104_190458_e401023c",
+  "wait_collection": "_replay_wait_20261104_192001_24680794",
+  "restoration_fault": "NavMain TID3 allocator SIGSEGV during map deletion, signal reporting reenters allocator via native logger",
+  "original_guard_failure": "Fixed TID2 selects replay worker condition-variable wait",
+  "captured_stack_sha256": "81d767a5d33a9a9409d86613c784dadf6befdd3ecba9f8e89692db14fbdc84a0",
+  "captured_mutex_sha256": "a674507df2411c9c81faed2c5af1af4aec264153cd41f8c2d582930c6ba6831c",
+  "main_tid": 3,
+  "main_sp": "0x5da64",
+  "mutex_owner": "0x80480003",
+  "fault_pc": "0x1026384",
+  "map_delete_return": "0x1b8f2c",
+  "logging_return": "0x1338f4",
+  "guard_requires_full_captured_signature": true,
+  "timer_following_page_unmapped": true,
+  "main_stack_and_mutex_valid": true
+}

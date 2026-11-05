@@ -9,7 +9,7 @@ import run_cluster_replay as m
 LOG=(m.ROOT/'native/cluster-bridge/nav-launch/qemu/qemu.log').read_text()
 def state(final=False):return bytes.fromhex(re.search(r'^NAV_DISCONNECT_'+('FINAL' if final else 'PENDING')+r'_HEX ([0-9a-f]+)$',LOG,re.M)[1])
 def report(pid,done=False):
- w=[0]*128;w[:6]=[0x31504c52,1,512,pid,3 if done else 1,0];w[6]=1;w[7]=2;w[8]=1 if done else 0;w[10]=3 if done else 0;w[11]=564 if done else 0;w[16]=2 if done else 0;w[17]=30;w[18]=3;w[19]=612;w[21]=int(done);w[22]=7;w[36]=0x78000000;w[15]=17;w[29:32]=[200,201,202];w[37:40]=[1,2,3];w[40:43]=w[29:32];w[43]=0x123400;w[44]=17;w[45:50]=[800,480,800,480,0];w[50]=1;w[52]=564;w[53]=564;w[54]=2;return struct.pack('<128I',*w)
+ w=[0]*128;w[:6]=[0x31504c52,1,512,pid,3 if done else 1,0];w[6]=1;w[7]=2;w[8]=1 if done else 0;w[10]=3 if done else 0;w[11]=564 if done else 0;w[16]=2 if done else 0;w[17]=30;w[18]=3;w[19]=612;w[21]=int(done);w[22]=7;w[36]=0x78000000;w[15]=17;w[29:32]=[200,201,202];w[37:40]=[1,2,3];w[40:43]=w[29:32];w[43]=0x123400;w[44]=17;w[45:50]=[800,480,800,480,0];w[50]=1;w[52]=564;w[53]=564;w[54]=2;w[55]=1;w[56]=15;w[57]=12000000;w[60]=12000090 if done else 0;w[62]=3 if done else 0;return struct.pack('<128I',*w)
 class Tests(unittest.TestCase):
  def test_plan_and_phone_attestation_no_network(self):
   with patch.object(m.ftplib,'FTP') as ftp,contextlib.redirect_stdout(io.StringIO()):self.assertEqual(m.main([]),0)
@@ -24,13 +24,13 @@ class Tests(unittest.TestCase):
    if offset in (64,72,80,88):struct.pack_into('<Q',b,offset,0)
    with self.subTest(offset=offset),self.assertRaises(ValueError):m.assess_controller(b,root,True)
  def test_delivery_never_implies_visible_maps(self):
-  manifest=dict(hook_mode='app_import_slots',startup_contract_revision=7,canonical_image_exec=True,preserve_standard_streams=True,post_exec_identity_ack=True,activation_mode="native_frames_then_explicit_arm",lifecycle_mode="sal_shutdown_exact_crash_recovery",replay=dict(packets=3,groups=2),files={'replay.bin':dict(bytes=612)})
+  manifest=dict(hook_mode='app_import_slots',startup_contract_revision=9,canonical_image_exec=True,preserve_standard_streams=True,post_exec_identity_ack=True,activation_mode="native_frames_then_explicit_arm",lifecycle_mode="sal_shutdown_exact_crash_recovery",timeline_mode="continue_live_clock_and_cc",video_mode="periodic_idr",replay=dict(packets=3,groups=2),files={'replay.bin':dict(bytes=612)})
   v=m.assess_replay(report(22,True),22,manifest,True);self.assertTrue(v['packets_delivered']);self.assertFalse(v['physical_display_proven'])
   for i in (0,1,2,3,4,18,19,21,22,127):
    b=bytearray(report(22,True));struct.pack_into('<I',b,i*4,0xffffffff)
    with self.subTest(i=i),self.assertRaises(ValueError):m.assess_replay(b,22,manifest,True)
  def run_fake(self,mode='',resume=False):
-  pending,final=state(),state(True);oldroot=pending[96:224].split(b'\0')[0].decode();w=struct.unpack_from('<16I',final);files={n:(bytes(612) if n=='replay.bin' else n.encode()) for n in m.NAMES};refs={n:dict(path='/stock/'+n,bytes=len(n),sha256=m.sha(n.encode())) for n in ('NavigationServer.original','NavServer.cfg.reference','procman.reference','procman-core.cfg')};profile=dict(offsets=[0x100,0x200,0x300],code=['11'*32,'22'*32,'33'*32]);manifest=dict(libc_profile=profile,hook_mode='app_import_slots',startup_contract_revision=7,canonical_image_exec=True,preserve_standard_streams=True,post_exec_identity_ack=True,activation_mode="native_frames_then_explicit_arm",lifecycle_mode="sal_shutdown_exact_crash_recovery",references=refs,replay=dict(packets=3,groups=2),files={n:dict(bytes=len(v),sha256=m.sha(v)) for n,v in files.items()});db={v['path']:n.encode() for n,v in refs.items()};commands=[];remote=None
+  pending,final=state(),state(True);oldroot=pending[96:224].split(b'\0')[0].decode();w=struct.unpack_from('<16I',final);files={n:(bytes(612) if n=='replay.bin' else n.encode()) for n in m.NAMES};refs={n:dict(path='/stock/'+n,bytes=len(n),sha256=m.sha(n.encode())) for n in ('NavigationServer.original','NavServer.cfg.reference','procman.reference','procman-core.cfg')};profile=dict(offsets=[0x100,0x200,0x300],code=['11'*32,'22'*32,'33'*32]);manifest=dict(libc_profile=profile,hook_mode='app_import_slots',startup_contract_revision=9,canonical_image_exec=True,preserve_standard_streams=True,post_exec_identity_ack=True,activation_mode="native_frames_then_explicit_arm",lifecycle_mode="sal_shutdown_exact_crash_recovery",timeline_mode="continue_live_clock_and_cc",video_mode="periodic_idr",references=refs,replay=dict(packets=3,groups=2),files={n:dict(bytes=len(v),sha256=m.sha(v)) for n,v in files.items()});db={v['path']:n.encode() for n,v in refs.items()};commands=[];remote=None
   class FTP:
    def __init__(self,**kw):pass
    def __enter__(self):return self
@@ -109,7 +109,7 @@ class Tests(unittest.TestCase):
  def test_delivery_report_stays_separate_from_prearm_native_frame_gate(self):
   b=bytearray(report(22,True))
   for i in (7,8,9,38):struct.pack_into('<I',b,i*4,0)
-  manifest=dict(hook_mode='app_import_slots',startup_contract_revision=7,replay=dict(packets=3,groups=2),files={'replay.bin':dict(bytes=612)})
+  manifest=dict(hook_mode='app_import_slots',startup_contract_revision=9,replay=dict(packets=3,groups=2),files={'replay.bin':dict(bytes=612)})
   self.assertTrue(m.assess_replay(b,22,manifest,True)['packets_delivered'])
   self.assertFalse(m.assess_replay(b,22,manifest,True)['physical_display_proven']);self.assertIn('no native map writes observed',m.native_channel_missing(b))
  def test_stalled_activation_collects_report_and_restores_without_long_wait(self):
@@ -123,14 +123,14 @@ class Tests(unittest.TestCase):
  def test_interrupt_restores_without_arming(self):
   rc,s,c=self.run_fake('interrupt');self.assertEqual(rc,2);self.assertTrue(s['restoration_verified']);self.assertFalse(any('arm-replay' in x for x in c))
  def test_refused_cleanup_does_not_retry_or_claim_restoration(self):
-  rc,s,c=self.run_fake('cleanupfail');self.assertEqual(rc,2);self.assertTrue(s['cleanup_pending']);self.assertFalse(s['restoration_verified']);self.assertEqual(sum('cleanup-disconnected' in x for x in c),1)
+  rc,s,c=self.run_fake('cleanupfail');self.assertEqual(rc,2);self.assertTrue(s['cleanup_pending']);self.assertFalse(s['restoration_verified']);self.assertTrue(s['replay']['packets_delivered']);self.assertTrue(s['cluster_maps_seen']);self.assertIn('replay-final-before-cleanup.bin',{v['file'] for v in s['artifacts']});self.assertEqual(sum('cleanup-disconnected' in x for x in c),1)
  def test_resume_restores_without_second_launch_or_arm(self):
   rc,s,c=self.run_fake('cleanupfail',resume=True);self.assertEqual(rc,0);self.assertTrue(s['restoration_verified']);self.assertNotIn('error',s);self.assertTrue(s['previous_errors']);self.assertFalse(any('start-disconnected' in x or 'arm-replay' in x for x in c));self.assertEqual(sum('cleanup-disconnected' in x for x in c),1)
  def test_early_bootstrap_failure_retains_startup_logs_and_never_arms(self):
   rc,s,c=self.run_fake('bootstrapfail');self.assertEqual(rc,2);self.assertTrue(s['restoration_verified']);self.assertIn('stage 3 code 1003',s['error']);self.assertFalse(any('arm-replay' in x for x in c));self.assertTrue({'start.txt','nav-startup.txt'}<={v['file'] for v in s['artifacts']})
  def test_loading_and_error_reports_do_not_require_completed_payload_profile(self):
   mft=dict(hook_mode='app_import_slots',startup_contract_revision=4,replay=dict(packets=3,groups=2),files={'replay.bin':dict(bytes=612)})
-  b=bytearray(report(22));b[52*4:55*4]=bytes(12);struct.pack_into('<I',b,16,0);struct.pack_into('<I',b,22*4,1);struct.pack_into('<2I',b,18*4,0,0);self.assertEqual(m.assess_replay(b,22,mft)['status'],0)
+  b=bytearray(report(22));b[52*4:67*4]=bytes(60);struct.pack_into('<I',b,16,0);struct.pack_into('<I',b,22*4,1);struct.pack_into('<2I',b,18*4,0,0);self.assertEqual(m.assess_replay(b,22,mft)['status'],0)
   struct.pack_into('<I',b,16,4);struct.pack_into('<I',b,20,1004);self.assertEqual(m.assess_replay(b,22,mft)['error'],1004)
  def test_old_global_hook_bundle_is_held_before_asset_reads(self):
   with tempfile.TemporaryDirectory() as t:
@@ -149,7 +149,7 @@ class Tests(unittest.TestCase):
   ftp.assert_not_called()
  def test_channel_gate_checks_each_native_condition(self):
   good=report(22);self.assertEqual(m.native_channel_missing(good),[])
-  for i,value in ((6,0),(7,0),(52,0),(54,0),(15,0xffffffff),(44,99),(43,0),(45,799),(46,479),(47,832),(48,479),(49,32),(40,0),(29,0),(50,0),(51,9)):
+  for i,value in ((6,0),(7,0),(52,0),(54,0),(15,0xffffffff),(44,99),(43,0),(45,799),(46,479),(47,832),(48,479),(49,32),(40,0),(29,0),(50,0),(51,9),(55,0),(56,7),(63,1)):
    bad=bytearray(good);struct.pack_into('<I',bad,i*4,value)
    with self.subTest(i=i):self.assertTrue(m.native_channel_missing(bad))
  def test_older_report_remains_readable_for_resume(self):
