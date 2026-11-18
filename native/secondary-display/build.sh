@@ -44,13 +44,13 @@ $P-gcc $flags -DSECONDARY_KEYFRAME_PROBE -fPIC -fvisibility=hidden -c observer.c
 # Margin200 is the standard secondary profile; density140 also shrinks secondary text.
 $P-gcc $flags -fPIC -fvisibility=hidden -c ../cluster-bridge/layout-margin/wire-margin.c -o wire-margin.o
 $P-gcc $flags -DLAYOUT_DENSITY_DPI=140 -fPIC -fvisibility=hidden -c ../cluster-bridge/layout-margin/wire-margin.c -o wire-margin-density140.o
-$P-gcc $flags -DMARGIN_WIDTH_PIXELS=0 -DLAYOUT_DENSITY_DPI=140 -DLAYOUT_UI_INSET_PIXELS=120 -fPIC -fvisibility=hidden -c ../cluster-bridge/layout-margin/wire-margin.c -o wire-uiinsets.o
+$P-gcc $flags -DMARGIN_WIDTH_PIXELS=0 -DLAYOUT_DENSITY_DPI=140 -DLAYOUT_UI_INSET_PIXELS=120 -DLAYOUT_UI_BOTTOM_INSET_PIXELS=64 -fPIC -fvisibility=hidden -c ../cluster-bridge/layout-margin/wire-margin.c -o wire-uiinsets.o
 $P-gcc -shared route-policy.o route-hook.o proc_readonly.o live-queue.o probe.o factory.o runtime.o observer-probe.o wire-margin.o entry.o -Wl,-z,now -Wl,-z,noexecstack -Wl,-soname,libdelphi_observer.so -lc -o libdelphi_observer_keyframe.so
 $P-gcc -shared route-policy.o route-hook.o proc_readonly.o live-queue.o probe.o factory.o runtime.o observer-probe.o wire-margin-density140.o entry.o -Wl,-z,now -Wl,-z,noexecstack -Wl,-soname,libdelphi_observer.so -lc -o libdelphi_observer_keyframe_density140.so
 $P-gcc -shared route-policy.o route-hook.o proc_readonly.o live-queue.o probe.o factory.o runtime.o observer-probe.o wire-uiinsets.o entry.o -Wl,-z,now -Wl,-z,noexecstack -Wl,-soname,libdelphi_observer.so -lc -o libdelphi_observer_keyframe_uiinsets.so
 $P-gcc $flags ../cluster-bridge/layout-margin/margin-fixture.c -Wl,-z,noexecstack -o margin_wire_fixture
 $P-gcc $flags -DLAYOUT_DENSITY_DPI=140 ../cluster-bridge/layout-margin/margin-fixture.c -Wl,-z,noexecstack -o margin_density140_fixture
-$P-gcc $flags -DMARGIN_WIDTH_PIXELS=0 -DLAYOUT_DENSITY_DPI=140 -DLAYOUT_UI_INSET_PIXELS=120 ../cluster-bridge/layout-margin/uiinsets-fixture.c -Wl,-z,noexecstack -o uiinsets_wire_fixture
+$P-gcc $flags -DMARGIN_WIDTH_PIXELS=0 -DLAYOUT_DENSITY_DPI=140 -DLAYOUT_UI_INSET_PIXELS=120 -DLAYOUT_UI_BOTTOM_INSET_PIXELS=64 ../cluster-bridge/layout-margin/uiinsets-fixture.c -Wl,-z,noexecstack -o uiinsets_wire_fixture
 $P-gcc $flags probe-fixture.c runtime.c ../cluster-bridge/live/queue.c ../endpoint-factory/factory.c -Wl,-z,noexecstack -o keyframe_probe_fixture
 console_status STEP 'Compiling wire_fixture.'
 $P-gcc $flags wire-fixture.c wire.c -Wl,-z,noexecstack -o wire_fixture

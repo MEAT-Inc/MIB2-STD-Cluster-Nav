@@ -41,6 +41,24 @@ class LiveInputTests(unittest.TestCase):
   b=bytearray(self.reader);struct.pack_into('<I',b,127*4,1)
   with self.assertRaises(ValueError):reader_report(b,self.pid)
   with self.assertRaises(ValueError):reader_report(self.reader,self.pid+1)
+ def test_v2_planned_cutoff_accounts_for_published_queue_tail(self):
+  meta=bytearray(self.meta);count=struct.unpack_from('<I',meta,24)[0]-4;end=struct.unpack_from('<I',meta,32+count*32+16)[0]
+  struct.pack_into('<I',meta,24,count);meta[32+count*32:]=bytes(len(meta)-32-count*32)
+  reader=bytearray(self.reader)
+  for i,v in ((1,2),(7,count),(8,end),(19,2),(22,count+4),(23,4),(25,1)):struct.pack_into('<I',reader,i*4,v)
+  secondary=dict(self.secondary);secondary['keyframe_probe']=dict(self.secondary['keyframe_probe'],ipc_closed=True)
+  v=assess_live(reader,meta,self.copy[:end],self.timing,self.raw,self.pid,secondary)
+  self.assertTrue(v['owned_live_copy_verified']);self.assertEqual(v['reader']['unconsumed_published_frames'],4)
+  for i,value in ((1,1),(6,255),(9,1),(22,count+3),(25,0)):
+   bad=bytearray(reader);struct.pack_into('<I',bad,i*4,value)
+   if i==1:
+    with self.assertRaises(ValueError):assess_live(bad,meta,self.copy[:end],self.timing,self.raw,self.pid,secondary)
+   else:self.assertFalse(assess_live(bad,meta,self.copy[:end],self.timing,self.raw,self.pid,secondary)['owned_live_copy_verified'])
+ def test_reader_v2_reserved_and_queue_bounds_remain_strict(self):
+  b=bytearray(self.reader);struct.pack_into('<I',b,4,2)
+  for i,value in ((22,2054),(23,5),(24,2),(25,2),(26,1),(127,1)):
+   bad=bytearray(b);struct.pack_into('<I',bad,i*4,value)
+   with self.assertRaises(ValueError):reader_report(bad,self.pid)
  def test_probe_report_requires_explicit_mode(self):
   w=list(struct.unpack('<128I',self.report_original));w[43]=1;w[44]=3;w[45]=1;w[46]=w[26];w[48]=1;w[50]=w[26];w[55]=777;b=struct.pack('<128I',*w)
   with self.assertRaises(ValueError):workflow.assess_secondary(b,self.raw,self.pid,self.router)

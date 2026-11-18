@@ -17,6 +17,15 @@
 #ifndef LAYOUT_UI_INSET_PIXELS
 #define LAYOUT_UI_INSET_PIXELS 0
 #endif
+#ifndef LAYOUT_UI_BOTTOM_INSET_PIXELS
+#define LAYOUT_UI_BOTTOM_INSET_PIXELS 0
+#endif
+#if LAYOUT_UI_BOTTOM_INSET_PIXELS < 0 || LAYOUT_UI_BOTTOM_INSET_PIXELS > 160
+#error Invalid bottom UI inset
+#endif
+#if LAYOUT_UI_BOTTOM_INSET_PIXELS && !LAYOUT_UI_INSET_PIXELS
+#error Bottom inset requires the UI inset profile
+#endif
 #if LAYOUT_UI_INSET_PIXELS < 0 || LAYOUT_UI_INSET_PIXELS > 320
 #error Invalid UI inset
 #endif
@@ -31,7 +40,7 @@ static int layout_config(Writer *out,const Field *cfg){unsigned pos=0,seen[9]={0
  * Schema: borconi/obd2aa 5768e939, app/src/main/proto/protos.proto.
  * Phone interpretation must be verified on the target AA version. */
 {unsigned char edges[32],config[80];Writer inset={edges,0,sizeof edges},ui={config,0,sizeof config};
-if(!putvar(&inset,8)||!putvar(&inset,0)||!putvar(&inset,16)||!putvar(&inset,0)||!putvar(&inset,24)||!putvar(&inset,LAYOUT_UI_INSET_PIXELS)||!putvar(&inset,32)||!putvar(&inset,LAYOUT_UI_INSET_PIXELS)||!message(&ui,2,&inset)||!message(&ui,3,&inset)||!message(out,11,&ui))return 0;}
+if(!putvar(&inset,8)||!putvar(&inset,0)||!putvar(&inset,16)||!putvar(&inset,LAYOUT_UI_BOTTOM_INSET_PIXELS)||!putvar(&inset,24)||!putvar(&inset,LAYOUT_UI_INSET_PIXELS)||!putvar(&inset,32)||!putvar(&inset,LAYOUT_UI_INSET_PIXELS)||!message(&ui,2,&inset)||!message(&ui,3,&inset)||!message(out,11,&ui))return 0;}
 #endif
 return 1;}
 static int layout_media(Writer *out,const Field *media,struct LayoutWorkspace *work){unsigned pos=0,count=0;Field f;Writer cfg={work->config,0,sizeof work->config};while(pos<media->len){if(!next(media->data,media->len,&pos,&f))return 0;if(f.number==4){if(f.wire!=2||++count!=1||!layout_config(&cfg,&f)||!message(out,4,&cfg))return 0;}else if(!put(out,f.raw,f.size))return 0;}return count==1;}

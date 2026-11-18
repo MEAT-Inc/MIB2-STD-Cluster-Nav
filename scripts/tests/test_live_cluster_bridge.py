@@ -66,7 +66,7 @@ class LiveBridgeTests(unittest.TestCase):
   struct.pack_into('<I',b,85*4,1);self.assertFalse(output_delivered(assess_output(b,123),456,354))
  def test_v4_native_return_requires_verified_stop_and_accepted_factory_output(self):
   b=bytearray(self.report())
-  for i,v in ((67,4),(86,1000),(87,2),(88,1),(89,100),(92,1000),(94,1200),(98,1),(99,900)):struct.pack_into('<I',b,i*4,v)
+  for i,v in ((67,4),(74,5),(86,1000),(87,2),(88,1),(89,100),(92,1000),(94,1200),(96,5),(98,1),(99,900)):struct.pack_into('<I',b,i*4,v)
   self.assertTrue(native_factory_return_verified(assess_output(b,123)))
   for i,v in ((87,1),(89,0),(94,999),(98,0)):
    copy=bytearray(b);struct.pack_into('<I',copy,i*4,v)
@@ -82,6 +82,28 @@ class LiveBridgeTests(unittest.TestCase):
   for field,value in (('source_frames_emitted',17),('startup_overflows',1),('frames',23),('source_frames_emitted',0)):
    bad=dict(v);bad[field]=value;self.assertFalse(output_delivered(bad,456,22))
   v['stop_reason']=1;self.assertFalse(output_delivered(v,456,22))
+ def test_v5_latency_profile_is_explicit_and_legacy_v4_remains_strict(self):
+  b=bytearray(self.report())
+  for i,v in ((67,5),(68,354),(84,354),(86,1000),(102,250),(103,4),(104,5),(10,100),(11,18800),(62,100)):struct.pack_into('<I',b,i*4,v)
+  v=assess_output(b,123);self.assertEqual(v['startup_delay_ms'],250);self.assertEqual(v['startup_initial_delay_ms'],1000);self.assertTrue(output_delivered(v,456,354))
+  for i,value in ((86,250),(102,1000),(103,5),(104,4),(105,1),(127,1),(67,4)):
+   bad=bytearray(b);struct.pack_into('<I',bad,i*4,value)
+   with self.subTest(i=i),self.assertRaises(ValueError):assess_output(bad,123)
+ def test_planned_timeout_returns_without_claiming_a_disconnect_event(self):
+  b=bytearray(self.report())
+  for i,v in ((67,4),(74,2),(86,1000),(87,2),(88,1),(89,100),(92,1000),(94,1200),(96,2)):struct.pack_into('<I',b,i*4,v)
+  self.assertTrue(native_factory_return_verified(assess_output(b,123)))
+  for i,v in ((4,4),(5,255),(70,1),(73,255),(91,5),(96,5)):
+   bad=bytearray(b);struct.pack_into('<I',bad,i*4,v)
+   if i==91:
+    with self.assertRaises(ValueError):assess_output(bad,123)
+   else:self.assertFalse(native_factory_return_verified(assess_output(bad,123)))
+ def test_actual_v10_error_is_preserved_despite_visible_video_and_successful_recovery(self):
+  p=Path(__file__).resolve().parents[2]/'delphi-dump/_disconnect_observer_20261118_192938_41991359'
+  v=assess_output((p/'live-output.bin').read_bytes())
+  self.assertEqual(v['error'],255);self.assertEqual(v['factory_return']['state'],2)
+  self.assertFalse(native_factory_return_verified(v))
+  self.assertFalse(output_delivered(v,v['source_pid'],v['frames']))
  def test_automatic_return_observation_persists_before_manual_recovery(self):
   b=LiveBridge.__new__(LiveBridge);b.state={};b.manifest={'automatic_factory_return_required':True};saved=[];b.save=lambda:saved.append(dict(b.state))
   with patch('live_cluster_bridge.input',side_effect=['n','y','y']):

@@ -1,0 +1,55 @@
+{
+  "bundle": "native/cluster-bridge/live-output/live-cluster-v10-ui-insets120-density140-laptop.zip",
+  "bytes": 190814,
+  "sha256": "e0111d8f5e43a8d45cf1117d3b96c26349d9ff020e57363715ae6f8da97f9504",
+  "qnx_ui_insets_passed": true,
+  "portable_plan_passed": true,
+  "portable_assets_passed": true,
+  "payload_and_script_hashes_passed": true,
+  "nonlayout_payloads_and_scripts_identical_to_v9": true,
+  "baseline_archive_unchanged": true,
+  "on_car_tested": false,
+  "layout": {
+    "video_service_id": 9,
+    "width_margin_total": 0,
+    "height_margin_total": 0,
+    "left_right_pixels": 0,
+    "content_rectangle": [
+      0,
+      0,
+      800,
+      480
+    ],
+    "coded_dimensions": [
+      800,
+      480
+    ],
+    "density": 140,
+    "ui_config_field": 11,
+    "content_insets": {
+      "top": 0,
+      "bottom": 0,
+      "left": 120,
+      "right": 120
+    },
+    "stable_content_insets": {
+      "top": 0,
+      "bottom": 0,
+      "left": 120,
+      "right": 120
+    },
+    "ui_content_rectangle": [
+      120,
+      0,
+      680,
+      480
+    ],
+    "full_frame_map_requested": true,
+    "phone_honors_ui_insets_unverified": true,
+    "phone_rendering_test_needed": true,
+    "primary_configuration_unchanged": true,
+    "reencoded": false,
+    "protocol_schema": "https://github.com/borconi/obd2aa/blob/5768e9399777b7d44e0874967f7bd4c47d6fced7/app/src/main/proto/protos.proto#L110-L136",
+    "baseline_bundle_sha256": "f195a869d09dd5c81221abfc4740ae62faf5b02da7ce63f0915ba4d1ffc52485"
+  }
+}

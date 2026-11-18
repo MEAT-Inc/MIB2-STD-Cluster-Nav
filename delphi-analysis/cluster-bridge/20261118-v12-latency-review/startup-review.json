@@ -1,0 +1,22 @@
+{
+  "source": "_disconnect_observer_20261118_201524_1f980346",
+  "source_frames": 539,
+  "output_frames": 542,
+  "bootstrap_frames": 3,
+  "all_original_frames_and_pixels_preserved": true,
+  "source_order_preserved": true,
+  "frame_pts_follow_schedule": true,
+  "reencoded": false,
+  "sanitizers_passed": true,
+  "initial_delay_ms": 1000,
+  "steady_delay_ms": 250,
+  "catchup_pace_numerator": 4,
+  "catchup_pace_denominator": 5,
+  "catchup_finished_at_ms": 4000,
+  "decoder_hardware_tested": false,
+  "source_sha256": {
+    "native/cluster-bridge/live/startup.c": "f744f36e7a9159e69cb2dd6d4b2477033446e6731d588e800352e94ebada880c",
+    "native/cluster-bridge/live/startup.h": "57376ab1ad3f53df320a994c56bfde97bf02609c1838d5b07d6190c465df37b8",
+    "native/cluster-bridge/live/mux.c": "da039477a95fc576e38cc50a0c24ff973573da645ad299443f7a9d4f1576e409"
+  }
+}

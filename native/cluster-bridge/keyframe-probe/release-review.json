@@ -1,7 +1,7 @@
 {
-  "bundle": "native/cluster-bridge/keyframe-probe/live-input-v9-laptop.zip",
-  "bytes": 97079,
-  "sha256": "682298fb6a25f7a77236f71c7b4b594fcdd35db70e16b50db9cc8124ea2f1929",
+  "bundle": "native/cluster-bridge/keyframe-probe/live-input-v14-laptop.zip",
+  "bytes": 97643,
+  "sha256": "ab886761bbe1acc37aa825397403b9d2a9b9f37766e7cfdc73fa105c4e63f4b1",
   "qnx_gates_passed": true,
   "workflow_tests_passed": true,
   "portable_plan_passed": true,
@@ -82,17 +82,17 @@
       "native/cluster-bridge/nav_snapshot.c": "948aa416994408bf185966384091ea558a4f56af41c6daf1227771a1c23ee8ca",
       "native/cluster-bridge/build.sh": "566932ca6b9781a6c013c960a17b7807a7814977cfa0fdff3b436ebe74baec22",
       "native/observer/launch/proc_guard.c": "e0e8f56b9280f456d8c8bf698cc3246b197696592f39196adc7f9870cb8998dd",
-      "native/secondary-display/build.sh": "e529a8c4da972431253ce5fc6460847af9bac6b34dc222097a81aece8fea628e",
+      "native/secondary-display/build.sh": "f49f8ebd38bdae9edb83f69af52a2a83c7a8cc164e4ab1e3db9a65cb2a9d7eb7",
       "native/secondary-display/probe-fixture.c": "5dea754136a467cde2c1ae7cd4c82203b2aabf0a50710d44201155cfb86b52c7",
       "native/secondary-display/route-forward-fixture.c": "7449748e9784f29f255b9a8586b1aa1a6c20ea8d5f557653c71dcfa98859059b",
       "native/secondary-display/route-forward-runner.c": "9b1c3031e52e7ac868345094d1a93f6a5a5f1f742ccfabc848c2f0e84b7465ca",
       "native/secondary-display/route-hook-fixture.c": "66958eb984ca06b39811674c0bb115e88b4f9a3e649a029e640c33db139c1a53",
-      "native/secondary-display/route-hook.c": "854c463e6fef2f0345f3fd96c8a0fa9ec2f669dd421a80d97c101afde300b086",
+      "native/secondary-display/route-hook.c": "e5a56f1587a86763c6bcccff51cf7f6446b99b4141ac1ffc4f6f85f73f876992",
       "native/secondary-display/route-policy-fixture.c": "c7fa76d120925dd027f95b1956ffd6c8b99f80be42d4ef52cba7d01899a60e82",
       "native/secondary-display/route-policy.c": "df05cb2a8ee71f34c0b2acabfb76328381a2aed80d4e66e8bd43267c83ee09a5",
       "native/secondary-display/route-policy.h": "5a48e684465fa10f90ad4e14f5b76e473acc743fc693f7cfcdecacda9528ad6d",
       "native/secondary-display/route-profile.h": "14afdfa738c71701877aeef9f30bcfb86df13fdaffad1d0c6ed3021afc958ae4",
-      "native/secondary-display/test-qemu.sh": "48e998e8467e9197ffe9f957da69ce10813abdfe222d746b475f90f361449529",
+      "native/secondary-display/test-qemu.sh": "1562734a25b0754a7f4d22d99eed48540db1da175a590ddfddf860e88cbe8d72",
       "native/cluster-bridge/live/capture.c": "751f7c67ebf86e13064d16a05ad41c385b768580d4029717c324217f64150120",
       "native/cluster-bridge/live/deadline.h": "392f7079bbb97dae4ac63c7ebfa7fe68170191f762001c2ef76a785a225a94ef",
       "native/cluster-bridge/live/mux-fixture.c": "82a19edacb6fcc79996eb745a2aae3d329a53fbd5bc35975cf7dd319d592ddc4",
@@ -102,19 +102,21 @@
       "native/cluster-bridge/live/queue-prepare.c": "4175e2221fb7ce714fe9e589aa73f7a729e173764d891a1305d99f33e99a83fd",
       "native/cluster-bridge/live/queue.c": "3ae2ccea3385861cedc4ec59fb5470d0a6a11dd7b3ac5a8338962a524d4fd8fa",
       "native/cluster-bridge/live/queue.h": "8fe7a0085c9696a791ace73f61d63b02e0265d955de0826d735da1754b534616",
-      "native/cluster-bridge/live/sink-fixture.c": "a2cd8bcb9848bfd8e4e5880c3bb569552f3f2b0453918e58b3409e8027932115",
-      "native/cluster-bridge/live/sink.c": "ad611e331f3d8786235e80de81fc50fc3ce1357f5f878a5f8e3f49b552147b5e",
+      "native/cluster-bridge/live/sink-fixture.c": "5c9ccac85b845d2f271eb16fbc383d09c480363223662e2fe1f7c67d48b078ba",
+      "native/cluster-bridge/live/sink.c": "d723afc381cc42505cd635bea4a3e58a455ba88a1b62682d5d0b98713b816f1a",
       "native/cluster-bridge/live/sink.h": "5419cca427fd76ecca2340ecdd30beb8c75b4ec87548f1acd492c654888271b1",
       "native/cluster-bridge/live/startup-file.c": "2e3c9c728b60536d599f0f92402566ae599ab6acb9030b3878bf32ed920a8856",
-      "native/cluster-bridge/live/startup-fixture.c": "766a488e659c44e6e561e1c80f47d1f575ad6947287641928d69f9f094fb1db7",
-      "native/cluster-bridge/live/startup.c": "3159af4336f7be43737b20ee9dc94108350ae3131980f5252c3a8042f1d254a2",
-      "native/cluster-bridge/live/startup.h": "4e4195f644cff2452cd1c7824f861b24c13cb4a2fbc460df8fc6211d918c57c7",
+      "native/cluster-bridge/live/startup-fixture.c": "87d546f4876d00b35b48a536916a64159e3c0d074247149317b8e17e0d04683e",
+      "native/cluster-bridge/live/startup.c": "f744f36e7a9159e69cb2dd6d4b2477033446e6731d588e800352e94ebada880c",
+      "native/cluster-bridge/live/startup.h": "57376ab1ad3f53df320a994c56bfde97bf02609c1838d5b07d6190c465df37b8",
       "native/cluster-bridge/live/test-qemu.sh": "c58dbf140b7c98091537cc443a0747f5f0c9b70885ca4254dffb69286bf9febb",
       "native/cluster-bridge/layout-margin/build-container.py": "8d6a0b91f11212dfc1fbe0c875f2a60482f17d10b73911991e6ba38cac851bfb",
       "native/cluster-bridge/layout-margin/margin-fixture.c": "aa6f261f442dd974767920ca0707ed4b8ff6772e7d164c80be66f5f70d460e3c",
       "native/cluster-bridge/layout-margin/package.py": "d0ac72c30e5f93e019a8c0bddb49b5eeeb53e8909af02dd3f24fd791579c69fb",
+      "native/cluster-bridge/layout-margin/uiinsets-fixture.c": "0331e16e5e30554cf736467a7710c7451a274b464bc2028eefb5f29ddbf00e71",
+      "native/cluster-bridge/layout-margin/uiinsets-vectors.h": "d88abadd36d5cbe0f444f51861c01eef2a7180f1d09daa690e94a7b44d3fb324",
       "native/cluster-bridge/layout-margin/vectors.h": "d2610632e1116c7841e4e26bfd1b48ff9b62cb3cb6bad1ea51d57e6e54dac8d6",
-      "native/cluster-bridge/layout-margin/wire-margin.c": "830d899b0b45a3aba52c07f2e476b82498759f9bdfd0aecd25d5aef5fc653b73"
+      "native/cluster-bridge/layout-margin/wire-margin.c": "17415decbfda1094144dd789e7980e5c915ac3eb3c116dc02a94c2dc91a4b9df"
     },
     "scripts_sha256": {
       "secondary_timing.py": "8445d51d1572dbedaef326c75b26fdd2c7c2bd391f0dfdec80b6c95ae589879a",
@@ -125,7 +127,7 @@
       "delphi_inventory.py": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518",
       "decode_delphi_observer.py": "beb7d8e74a58aaffd45769b614ed85e11bf38d647206ab4d631b2266857599d9",
       "review_secondary_keyframes.py": "4d4268bdfb3317ee523f14f430f7f52596f85e3bd7eed4ff88c0e630b154c24d",
-      "review_live_input.py": "46fcc50107b745fe5141244ba79658ecf5a7091cbcad890583e7cf5bd391fb8d",
+      "review_live_input.py": "260c6194e9059db1eb85596a18414b72d7e31f6afc15567d5e0fe33db353ffc7",
       "project_console.py": "1693776432be4b45937221882f281f24c6a30701877ea72e921735bb85ce7c5f",
       "decode_androidauto_display.py": "b7fee6d14d190f2e99d18f9a4a1fcca6f55cef7fd1c2aac5d0e7aa5b09da51a7"
     },
@@ -169,8 +171,8 @@
     ],
     "files": {
       "libdelphi_observer.so": {
-        "bytes": 53083,
-        "sha256": "d3241b61afbb34de35c98b5f0ee8b1f64f1cf52591e968bc2953abf66e86a2a6"
+        "bytes": 53479,
+        "sha256": "75e876880eb655a1fe13c49080b7175d5a2e984a642b03f579ed8942933f1394"
       },
       "nav_snapshot": {
         "bytes": 11518,
@@ -211,25 +213,48 @@
     "navigation_live_sampling_readonly": true,
     "navigation_restart": false,
     "on_car_tested": false,
-    "release_version": 9,
+    "release_version": 14,
     "layout_trial": {
       "video_service_id": 9,
-      "width_margin_total": 200,
+      "width_margin_total": 0,
       "height_margin_total": 0,
-      "left_right_pixels": 100,
+      "left_right_pixels": 0,
       "content_rectangle": [
-        100,
         0,
-        700,
+        0,
+        800,
         480
       ],
       "coded_dimensions": [
         800,
         480
       ],
-      "density": 160,
-      "phone_rendering_test_needed": true,
-      "primary_configuration_unchanged": true
+      "density": 140,
+      "ui_config_field": 11,
+      "content_insets": {
+        "top": 0,
+        "bottom": 64,
+        "left": 120,
+        "right": 120
+      },
+      "stable_content_insets": {
+        "top": 0,
+        "bottom": 64,
+        "left": 120,
+        "right": 120
+      },
+      "ui_content_rectangle": [
+        120,
+        0,
+        680,
+        416
+      ],
+      "full_frame_map_requested": true,
+      "phone_honors_ui_insets_unverified": false,
+      "bottom_inset_on_car_verified": false,
+      "layout_on_car_verified": false,
+      "primary_configuration_unchanged": true,
+      "reencoded": false
     }
   }
 }
