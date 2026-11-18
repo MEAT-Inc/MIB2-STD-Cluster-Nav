@@ -66,7 +66,7 @@ def assess_factory(data,observed,bias,trace):
 def assess_secondary(data,raw,observed,factory_router,probe=False):
     if len(data)!=512:raise ValueError('Incorrect secondary report size')
     h=struct.unpack('<128I',data)
-    if h[:4]!=(0x31505253,1,512,observed) or h[4]>5 or h[39]!=8388608 or h[42]>2 or ((h[43]!=1 or h[44]>3 or h[45]>h[26] or h[46]>h[26] or h[48]>1 or h[50]>h[26] or h[51]>h[26] or h[52]>h[26] or h[56]>1 or any(h[57:])) if probe else any(h[43:])):raise ValueError('Secondary report format/process/limit mismatch')
+    if h[:4]!=(0x31505253,1,512,observed) or h[4]>5 or h[39]!=8388608 or h[42]>2 or ((h[43]!=1 or h[44]>3 or h[45]>h[26] or h[46]>h[26] or h[48]>1 or h[50]>h[26] or h[51]>h[26] or h[52]>h[26] or h[56]>1 or h[53]>1 or any(h[57:])) if probe else any(h[43:])):raise ValueError('Secondary report format/process/limit mismatch')
     if h[8] not in (0,factory_router) or h[16] not in (0,2) or len(raw)>h[39] or h[28]>h[39] or h[29]>h[28]:raise ValueError('Secondary identity/registration/byte accounting invalid')
     if h[16]==2 and (h[12:16]!=(9,10,0,0) or not all(h[9:12]) or len(set(h[9:12]))!=3 or h[40] not in (0,1) or h[42]!=2):raise ValueError('Paired secondary endpoint identities invalid')
     nal_types=sorted({m[1][0]&31 for m in re.finditer(rb'\x00\x00(?:\x00)?\x01(.)',raw,re.S)})
@@ -76,7 +76,7 @@ def assess_secondary(data,raw,observed,factory_router,probe=False):
     flow=bool(h[26] and h[31]>=h[26] and 0<h[33]<255)
     passed=bool(received and accounting and flow and not h[5] and not h[34])
     state='video_received' if received else 'setup_no_frames' if h[20] else 'awaiting_phone_setup' if advertised else 'not_advertised'
-    return dict(secondary_attempt_completed=advertised,secondary_video_received=received,secondary_trial_passed=passed,state=state,native_error=h[5],registered_endpoints=h[16],discovery_calls=h[17],discovery_rewrites=h[18],fallbacks=h[19],setup_calls=h[20],codec_calls=h[21],playback_starts=h[22],playback_stops=h[23],frames=h[26],frame_bytes=h[27],saved_bytes=h[28],codec_saved_bytes=h[29],dropped=h[30],ack_requests=h[31],session=h[32],channel=h[33],io_error=h[34],wire_error=h[35],primary_backup_bytes=h[36],raw_accounting_matches=accounting,private_flow_control_observed=flow,keyframe_probe=dict(requests=h[44],idr_frames=h[45],last_request_frame=h[46],clock_error=h[47],ipc_attached=bool(h[48]),ipc_error=h[49],ipc_frames=h[50],ipc_dropped=h[51],ipc_malformed=h[52],ipc_consumer_pid=h[55],ipc_closed=bool(h[56])) if probe else None,annexb_nal_types=nal_types,supported_cluster_keys=[23,65536] if h[42]==2 else [],cluster_transport_connected=False)
+    return dict(secondary_attempt_completed=advertised,secondary_video_received=received,secondary_trial_passed=passed,state=state,native_error=h[5],registered_endpoints=h[16],discovery_calls=h[17],discovery_rewrites=h[18],fallbacks=h[19],setup_calls=h[20],codec_calls=h[21],playback_starts=h[22],playback_stops=h[23],frames=h[26],frame_bytes=h[27],saved_bytes=h[28],codec_saved_bytes=h[29],dropped=h[30],ack_requests=h[31],session=h[32],channel=h[33],io_error=h[34],wire_error=h[35],primary_backup_bytes=h[36],raw_accounting_matches=accounting,private_flow_control_observed=flow,keyframe_probe=dict(refresh_disabled=bool(h[53]),requests=h[44],idr_frames=h[45],last_request_frame=h[46],clock_error=h[47],ipc_attached=bool(h[48]),ipc_error=h[49],ipc_frames=h[50],ipc_dropped=h[51],ipc_malformed=h[52],ipc_consumer_pid=h[55],ipc_closed=bool(h[56])) if probe else None,annexb_nal_types=nal_types,supported_cluster_keys=[23,65536] if h[42]==2 else [],cluster_transport_connected=False)
 
 def assess_discovery_capture(data,observed):
     if len(data)!=24600:raise ValueError('Incorrect discovery capture size')
@@ -87,13 +87,15 @@ def assess_discovery_capture(data,observed):
 
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__);g=p.add_mutually_exclusive_group();g.add_argument('--run',action='store_true');g.add_argument('--resume',type=Path)
-    p.add_argument('--keyframe-probe',action='store_true',help='Measure bounded focus refresh and new keyframes on secondary display9 only')
+    p.add_argument('--live-cluster',action='store_true',help='First live maps trial through the owned Nav descriptor; requires factory cluster maps before arm')
+    p.add_argument('--live-input','--keyframe-probe',dest='keyframe_probe',action='store_true',help='Validate live secondary frames; waits for phone before capture timer starts')
     p.add_argument('--cluster-preflight',action='store_true',help='Read native geometry and preserve secondary frame boundaries/timestamps')
     p.add_argument('--secondary-stream',action='store_true',help='Register paired endpoints, advertise cluster display and capture secondary video; self-check gated')
     p.add_argument('--factory-probe',action='store_true',help='Isolated native endpoint construction/destruction; no registration or advertisement')
     p.add_argument('--phone-capture',action='store_true',help='Native phone capture: Ethernet -> phone -> Ethernet, explicit disconnected cleanup only')
     p.add_argument('--phone-unplugged',action='store_true',help='Attest phone is physically unplugged before initial launch or resume')
     p.add_argument('--host',default='192.168.1.4');p.add_argument('--port',type=int,default=21);p.add_argument('--username',default='ftpuser');p.add_argument('--ask-password',action='store_true');p.add_argument('--telnet-port',type=int,default=23);p.add_argument('--telnet-user',default='root');p.add_argument('--timeout',type=float,default=90);a=p.parse_args(argv)
+    if a.live_cluster:a.keyframe_probe=True
     if a.keyframe_probe:a.cluster_preflight=True
     if a.cluster_preflight:a.secondary_stream=True
     if a.secondary_stream:
@@ -117,6 +119,7 @@ def main(argv=None):
         if report['native_sha256']!=old.sha(files['observer_launch']):raise ValueError('Saved run and native controller differ')
         if bool(report.get('cluster_preflight_requested',False))!=a.cluster_preflight:raise ValueError('Resume requires the saved cluster-preflight selection')
         if bool(report.get('factory_probe_requested',False))!=a.factory_probe:raise ValueError('Resume requires the saved factory-probe selection')
+        if bool(report.get('live_cluster_requested',False))!=a.live_cluster:raise ValueError('Resume requires the saved live-cluster selection')
         if bool(report.get('keyframe_probe_requested',False))!=a.keyframe_probe:raise ValueError('Resume requires the saved keyframe-probe selection')
         if bool(report.get('secondary_stream_requested',False))!=a.secondary_stream:raise ValueError('Resume requires the saved secondary-stream selection')
         report['secondary_video_received']=False
@@ -131,9 +134,13 @@ def main(argv=None):
     else:
         token=uuid.uuid4().hex;remote=old.validate_remote(old.REMOTE_PREFIX+token);folder=base/('_disconnect_observer_'+dt.datetime.now(dt.timezone.utc).strftime('%Y%m%d_%H%M%S')+'_'+token[:8]);folder.mkdir();session=folder
         seconds=20 if a.factory_probe else (60 if a.phone_capture else 20)
-        report=dict(keyframe_probe_requested=a.keyframe_probe,cluster_preflight_requested=a.cluster_preflight,secondary_stream_requested=a.secondary_stream,secondary_video_received=False,secondary_trial_passed=False,observer_sha256=old.sha(files['libdelphi_observer.so']),factory_probe_requested=a.factory_probe,factory_probe_passed=False,capture_profile_seconds=seconds,phone_capture_requested=a.phone_capture,phone_capture_completed=False,kind='disconnected_observer_control_trial',remote_directory=remote,native_sha256=old.sha(files['observer_launch']),controller_trial_passed=False,cleanup_pending=False,actions=[],artifacts=[])
+        report=dict(physical_swap_started=False,live_cluster_requested=a.live_cluster,keyframe_probe_requested=a.keyframe_probe,cluster_preflight_requested=a.cluster_preflight,secondary_stream_requested=a.secondary_stream,secondary_video_received=False,secondary_trial_passed=False,observer_sha256=old.sha(files['libdelphi_observer.so']),factory_probe_requested=a.factory_probe,factory_probe_passed=False,capture_profile_seconds=seconds,phone_capture_requested=a.phone_capture,phone_capture_completed=False,kind='disconnected_observer_control_trial',remote_directory=remote,native_sha256=old.sha(files['observer_launch']),controller_trial_passed=False,cleanup_pending=False,actions=[],artifacts=[])
     token=remote.rsplit('_',1)[1];blobs={f.name:f.read_bytes() for f in folder.iterdir() if f.is_file() and f.suffix in ('.txt','.bin','.reference','.original','.cfg')}
     shell=None;cwd=False;authorized=False;history=[];password=getpass.getpass('FTP password: ') if a.ask_password else 'ftpuser'
+    bridge=None
+    if a.live_cluster:
+        from live_cluster_bridge import LiveBridge
+        bridge=LiveBridge(ROOT,a,folder,report,password)
     def persist():(folder/'disconnect-summary.json').write_text(json.dumps(report,indent=2),encoding='utf8')
     def fetch(name):
         with ftplib.FTP(timeout=a.timeout) as ftp:
@@ -162,6 +169,10 @@ def main(argv=None):
         command('cp '+source+' '+dest);command('chmod 644 '+dest);return fetch(dest)
     persist()
     try:
+        if bridge and not a.resume:
+            shell=Shell(a,session)
+            from radio_ram import prepare_space
+            report['ram_preflight']=prepare_space(shell,a,password,ROOT/'native/cluster-bridge/live-output/release/cleanup-plan.json',folder/'ram-preflight.json',expected_sha=bridge.manifest['cleanup_plan_sha256']);persist()
         with ftplib.FTP(timeout=a.timeout) as ftp:
             progress('Connecting to the head unit over FTP.', key='ftp', interval=10)
             ftp.connect(a.host,a.port);ftp.login(a.username,password);ftp.voidcmd('TYPE I')
@@ -172,7 +183,8 @@ def main(argv=None):
                     ftp.storbinary('STOR '+remote+'/'+name,io.BytesIO(b))
                     if retrieve(ftp,remote+'/'+name)!=b:raise ValueError('Upload readback mismatch: '+name)
             elif retrieve(ftp,remote+'/observer_launch')!=files['observer_launch']:raise ValueError('Staged controller changed; cleanup not attempted')
-        shell=Shell(a,session);command('cd '+shlex.quote(remote));cwd=True
+        if shell is None:shell=Shell(a,session)
+        command('cd '+shlex.quote(remote));cwd=True
         if not a.resume:
             for name in old.NAMES:command('chmod 500 '+name)
             command('pidin -p AndroidAuto arguments > stock-before.txt 2>&1');command('chmod 644 stock-before.txt');before=old.fresh_stock_pid(fetch('stock-before.txt'))
@@ -180,13 +192,16 @@ def main(argv=None):
             command('cp /etc/procman_core.cfg procman-core.cfg');command('chmod 644 procman-core.cfg');old.verify_manager_config(fetch('procman-core.cfg'))
             command('pidin -p AndroidAuto arguments > stock-fresh.txt 2>&1');command('chmod 644 stock-fresh.txt');pid=old.fresh_stock_pid(fetch('stock-fresh.txt'))
             if pid!=before:raise ValueError('Stock PID changed before staging')
+            if bridge:bridge.prepare(command,fetch,copy_report)
             if a.cluster_preflight:
                 import cluster_preflight as cp
                 print('Before the phone test, display the VW factory navigation map in the instrument cluster.',flush=True)
-                input('Keep the phone unplugged and Ethernet connected. Press Enter when the native cluster map is visible (or if unavailable): ')
+                if not bridge:input('Keep the phone unplugged and Ethernet connected. Press Enter when the native cluster map is visible (or if unavailable): ')
                 command('pidin -p NavigationServer arguments > nav-before-arguments.txt');command('chmod 644 nav-before-arguments.txt')
                 native_pid=cp.nav_pid(fetch('nav-before-arguments.txt'))
-                command('cp /extbin/apps/bin/NavigationServer NavigationServer.reference');command('chmod 644 NavigationServer.reference');cp.verify_navigation(fetch('NavigationServer.reference'))
+                if bridge:cp.verify_navigation(bridge.navigation_image())
+                else:
+                    command('cp /extbin/apps/bin/NavigationServer NavigationServer.reference');command('chmod 644 NavigationServer.reference');cp.verify_navigation(fetch('NavigationServer.reference'))
                 command('chmod 500 nav_snapshot');report['native_before']=snapshot_native('before',native_pid);persist()
                 if not report['native_before']['active_geometry_observed']:print('Native encoder geometry is inactive; preserving that result and continuing timing capture.',flush=True)
             command('chmod 500 AndroidAuto.original')
@@ -207,8 +222,10 @@ def main(argv=None):
                     candidates=set(re.findall(rb'LAUNCH_OBSERVED pid=(\d+)',ready))
                     if len(candidates)!=1:raise ValueError('Live source process identity is ambiguous')
                     source_pid=int(next(iter(candidates)))
-                    command('chmod 500 live_capture')
-                    command('LD_PRELOAD= LD_LIBRARY_PATH=/proc/boot ./live_capture --detach '+token+' '+str(source_pid)+' 30 '+str(native_pid)+' > live-start.txt 2>&1')
+                    if bridge:bridge.phone_ready(command,fetch,copy_report,source_pid)
+                    else:
+                        command('chmod 500 live_capture')
+                        command('LD_PRELOAD= LD_LIBRARY_PATH=/proc/boot ./live_capture --detach '+token+' '+str(source_pid)+' 30 '+str(native_pid)+' > live-start.txt 2>&1')
                     from review_live_input import reader_report
                     until=time.monotonic()+10
                     while True:
@@ -219,14 +236,18 @@ def main(argv=None):
                             if struct.unpack_from('<I',reader_bytes,20)[0]==0:
                                 if time.monotonic()>=until:raise TimeoutError('Live reader bootstrap not committed')
                                 time.sleep(.2);continue
-                            ready_reader=reader_report(reader_bytes,source_pid)
-                            if ready_reader['state']==4:raise ValueError('Live input reader refused startup')
+                            ready_reader=reader_report(reader_bytes,source_pid,consumer_pid=bridge.state['observed_pid'] if bridge else None,allow_unbound=bool(bridge))
+                            if ready_reader['state']==4:
+                                report['live_reader_failure']=ready_reader;persist()
+                                if bridge:bridge.state['output_before_handoff_error']=__import__('live_cluster_bridge').assess_output(bridge.report('live-nav-handoff-error.bin'),bridge.state['observed_pid']);bridge.save()
+                                raise RuntimeError('Live input stopped before handoff; native error '+str(ready_reader['error'])+' (32=EPIPE)')
                             if ready_reader['state'] in (1,2):break
                         if time.monotonic()>=until:raise TimeoutError('Live input reader not ready; phone handoff cancelled')
                         time.sleep(.2)
                     report['live_reader_ready']=ready_reader
-                    report['native_live_sampler_requested']=True
+                    report['native_live_sampler_requested']=not bool(bridge)
                 history.extend(shell.actions);report['actions']=list(history);persist();shell.close();shell=None;cwd=False
+                report['physical_swap_started']=True;persist()
                 print('CAPTURE READY: swap Ethernet for the phone now and start Android Auto navigation.',flush=True)
                 handoff_started=time.monotonic()
                 input('Once navigation starts'+(', start a route and run it about12 seconds' if a.keyframe_probe else ', start a route and run it about10 seconds' if a.secondary_stream else '')+', unplug the phone, reconnect Ethernet, wait for its link, then press Enter: ')
@@ -250,7 +271,7 @@ def main(argv=None):
             report['pending_state']=validate_report(pending,remote,True,seconds);report['cleanup_pending']=True;persist()
         print('Capture has not authorized any interruption. Keep Ethernet connected and the phone physically unplugged.',flush=True)
         if input('Type PHONE REMOVED to request the explicit disconnected-only cleanup (anything else leaves it pending): ').strip()!='PHONE REMOVED':
-            print('Cleanup remains pending. Use --resume "'+str(folder)+'" --phone-unplugged'+(' --cluster-preflight' if a.cluster_preflight else ' --secondary-stream' if a.secondary_stream else ' --factory-probe' if a.factory_probe else '')+' later.');return 2
+            print('Cleanup remains pending. Use --resume "'+str(folder)+'" --phone-unplugged'+(' --live-cluster' if a.live_cluster else ' --cluster-preflight' if a.cluster_preflight else ' --secondary-stream' if a.secondary_stream else ' --factory-probe' if a.factory_probe else '')+' later.');return 2
         authorized=True;report['cleanup_requested_host_utc']=dt.datetime.now(dt.timezone.utc).isoformat();persist()
         command('if test ! -f cleanup.txt; then : > cleanup.txt; fi');command('chmod 644 cleanup.txt')
         code=command('LD_PRELOAD= ./observer_launch cleanup-disconnected '+shlex.quote(remote)+' >> cleanup.txt 2>&1',required=False)
@@ -288,10 +309,14 @@ def main(argv=None):
                     if native_reader['state'] in (3,4):break
                     if time.monotonic()>=until:raise TimeoutError('Live input reader still pending')
                     time.sleep(.2)
-                for source,dest in (('video-'+token+'.h264','live-copy.h264'),('timing-'+token+'.bin','live-copy-timing.bin'),('nav-'+token+'.jsonl','nav-live-snapshot.jsonl')):
+                for source,dest in (('video-'+token+'.h264','live-copy.h264'),('timing-'+token+'.bin','live-copy-timing.bin'),*(() if bridge else (('nav-'+token+'.jsonl','nav-live-snapshot.jsonl'),('nav-'+token+'.errors.txt','nav-live-errors.txt')))):
                     copy_report('/dev/shmem/delphi-live-'+source,dest)
                 report['live_input']=assess_live(blobs['live-reader.bin'],blobs['live-copy-timing.bin'],blobs['live-copy.h264'],blobs['timing.bin'],blobs['secondary.h264'],report['observed_pid'],report['secondary'])
-                report['live_native_geometry']=assess_native_geometry(blobs['nav-live-snapshot.jsonl'],report['native_before']['pid'],report['timing']['records_detail'])
+                if bridge:
+                    report['live_output']=bridge.collect(command,fetch,copy_report)
+                    from review_route_policy import assess_route_policy
+                    report['route_policy']=assess_route_policy(copy_report('/dev/shmem/delphi-route-policy-'+token+'.bin','route-policy.bin'),report['observed_pid'],bridge.state['observed_pid'])
+                else:report['live_native_geometry']=assess_native_geometry(blobs['nav-live-snapshot.jsonl'],report['native_before']['pid'],report['timing']['records_detail'])
                 persist()
             command('pidin -p NavigationServer arguments > nav-after-arguments.txt');command('chmod 644 nav-after-arguments.txt');current_nav=cp.nav_pid(fetch('nav-after-arguments.txt'))
             before_nav=report['native_before']
@@ -313,15 +338,38 @@ def main(argv=None):
             try:
                 command('pidin -p AndroidAuto arguments > stock-current.txt 2>&1',required=False);command('chmod 644 stock-current.txt',required=False);fetch('stock-current.txt')
             except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as exc:report.setdefault('diagnostic_errors',[]).append(dict(file='stock-current.txt',error=type(exc).__name__))
+        if bridge and shell and cwd and not shell.broken and not report.get('physical_swap_started',False) and a.phone_unplugged and report.get('native_launch_requested') and not report.get('controller_trial_passed'):
+            try:
+                from finish_live_session import cleanup_aa
+                report['aa_restoration']=cleanup_aa(command,copy_report,fetch,remote,seconds);report['aa_restoration_verified']=True;report['cleanup_pending']=False;authorized=True;report['cleanup_authorization']='initial_phone_unplugged_before_any_handoff'
+            except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as exc:report['aa_cleanup_error']=str(exc);report['cleanup_pending']=True
+        if bridge and shell and not shell.broken:
+            from live_cluster_bridge import cleanup_allowed
+            if cleanup_allowed(report.get('physical_swap_started',False),authorized,report.get('cleanup_pending',False)):
+                try:bridge.cleanup(command,fetch,copy_report)
+                except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as exc:report['live_bridge_cleanup_error']=str(exc)
+            report['live_bridge']=bridge.state;bridge.save()
         if shell:
             report['actions']=history+shell.actions;shell.close()
         report['operator_cleanup_confirmed']=authorized;persist()
     ok=report['controller_trial_passed'] and (not report.get('phone_capture_requested') or report.get('phone_capture_completed',False)) and (not a.factory_probe or report.get('factory_probe_passed',False)) and (not a.secondary_stream or report.get('secondary_trial_passed',False))
     if a.cluster_preflight:ok=ok and report.get('cluster_preflight_passed',False)
+    if a.keyframe_probe:
+        ok=bool(ok and 'error' not in report and report.get('live_input',{}).get('owned_live_copy_verified',False))
+        print('Live frame copy: '+('VERIFIED' if report.get('live_input',{}).get('owned_live_copy_verified') else 'NOT VERIFIED; return this collection for review.'))
+    if bridge:
+        from live_cluster_bridge import output_delivered
+        v=report.get('live_output',{});ok=bool(ok and not report.get('route_policy',{}).get('release_errors',0) and bridge.state.get('restoration_verified') and bridge.state.get('factory_maps_restored') and bridge.state.get('live_maps_seen') and output_delivered(v,report.get('observed_pid'),report.get('live_input',{}).get('frames',0)))
+        print('Live cluster output: '+str(v.get('frames',0))+' frames; '+str(v.get('packets',0))+' packets; native error='+str(v.get('error',0))+'; active closes='+str(v.get('active_closes',0)))
+        policy=report.get('route_policy',{})
+        if policy:print('Route presentation trial: held='+str(policy.get('held',0))+'; released='+str(policy.get('released',0))+'; cancelled='+str(policy.get('cancelled',0))+'; release errors='+str(policy.get('release_errors',0)))
+        request=policy.get('last_request',{})
+        if request:print('Route request: native focus='+str(request['native_focus'])+'; decision='+request['decision']+'; target='+str(request['app'])+'/'+str(request['thread'])+'; Nav status='+str(request['nav_status']))
+        if bridge.state.get('cleanup_pending'):print('Nav cleanup pending. Keep the phone unplugged; resume this SAME bundle: python scripts/run_disconnected_observer.py --resume "'+str(folder)+'" --live-cluster --phone-unplugged')
     if a.secondary_stream and 'secondary' in report:print('Secondary state: '+report['secondary']['state']+'; frames='+str(report['secondary']['frames']))
     if 'error' in report:print('Result: '+report['error'])
     print('Saved: '+str(folder))
-    print('Trial complete; the physical cluster transport is not connected.' if ok else 'Partial trial or pending cleanup: return this folder for review.')
+    print(('Live maps confirmed in the cluster.' if bridge else 'Trial complete; the physical cluster transport is not connected.') if ok else 'Partial trial or pending cleanup: return this folder for review.')
     return 0 if ok else 2
 if __name__ == '__main__':
     with console_session(__file__, __doc__):

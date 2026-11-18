@@ -1,0 +1,104 @@
+{
+  "source_session": "_disconnect_observer_20261118_125442_314326f0",
+  "decoded_frames": 405,
+  "pixels_match": true,
+  "streams": {
+    "phone": {
+      "sps": [
+        {
+          "profile": 66,
+          "constraints": 128,
+          "level": 31,
+          "id": 0,
+          "log2_max_frame_num_minus4": 0,
+          "pic_order_cnt_type": 2,
+          "max_num_ref_frames": 1,
+          "gaps_in_frame_num_value_allowed": 0,
+          "pic_width_in_mbs_minus1": 49,
+          "pic_height_in_map_units_minus1": 29,
+          "frame_mbs_only_flag": 1,
+          "direct_8x8_inference_flag": 1,
+          "frame_cropping_flag": 0,
+          "vui_parameters_present_flag": 1,
+          "hex": "6742801fda0320f69a8080808368509a80"
+        }
+      ],
+      "pps": [
+        "68ce06f2"
+      ],
+      "nal_counts": {
+        "1": 404,
+        "5": 1,
+        "6": 0,
+        "7": 1,
+        "8": 1,
+        "9": 0
+      }
+    },
+    "proven_replay": {
+      "sps": [
+        {
+          "profile": 66,
+          "constraints": 192,
+          "level": 31,
+          "id": 0,
+          "log2_max_frame_num_minus4": 0,
+          "pic_order_cnt_type": 2,
+          "max_num_ref_frames": 1,
+          "gaps_in_frame_num_value_allowed": 0,
+          "pic_width_in_mbs_minus1": 49,
+          "pic_height_in_map_units_minus1": 29,
+          "frame_mbs_only_flag": 1,
+          "direct_8x8_inference_flag": 1,
+          "frame_cropping_flag": 0,
+          "vui_parameters_present_flag": 1,
+          "hex": "6742c01fda0320f69a808080a000000300200057e401e30654"
+        }
+      ],
+      "pps": [
+        "68ce023c80"
+      ],
+      "nal_counts": {
+        "1": 414,
+        "5": 104,
+        "6": 1,
+        "7": 52,
+        "8": 52,
+        "9": 0
+      }
+    },
+    "native": {
+      "sps": [
+        {
+          "profile": 66,
+          "constraints": 128,
+          "level": 31,
+          "id": 0,
+          "log2_max_frame_num_minus4": 10,
+          "pic_order_cnt_type": 0,
+          "log2_max_pic_order_cnt_lsb_minus4": 4,
+          "max_num_ref_frames": 1,
+          "gaps_in_frame_num_value_allowed": 0,
+          "pic_width_in_mbs_minus1": 49,
+          "pic_height_in_map_units_minus1": 29,
+          "frame_mbs_only_flag": 1,
+          "direct_8x8_inference_flag": 1,
+          "frame_cropping_flag": 0,
+          "vui_parameters_present_flag": 0,
+          "hex": "2742801f8b9501907b20"
+        }
+      ],
+      "pps": [
+        "28de01ae20"
+      ],
+      "nal_counts": {
+        "1": 48,
+        "5": 13,
+        "6": 0,
+        "7": 13,
+        "8": 13,
+        "9": 0
+      }
+    }
+  }
+}

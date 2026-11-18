@@ -1,7 +1,7 @@
 {
-  "bundle": "native/cluster-bridge/keyframe-probe/live-input-v1-laptop.zip",
-  "bytes": 86691,
-  "sha256": "3166080ba7b4820ee6ef03c5aeb98bdf57b4b6d32aa24c0e13c811e6b8915f07",
+  "bundle": "native/cluster-bridge/keyframe-probe/live-input-v2-laptop.zip",
+  "bytes": 93897,
+  "sha256": "3c568a5193559eb1ed4647cfbb9fe7032b1bf884bfd1360eddf7a08682f4b8f6",
   "qnx_gates_passed": true,
   "workflow_tests_passed": true,
   "portable_plan_passed": true,
@@ -64,11 +64,11 @@
     ],
     "source_sha256": {
       "native/secondary-display/forward-fixture.c": "8ae0751d1f33ad339490b1bb1bedcdf32ea7c03cab4e186c2b3baf1d598a831d",
-      "native/secondary-display/observer.c": "16f51176ec6c47f4e6f71f4953dfa17ab09dd504bae0309bcc97df53c8b0a898",
-      "native/secondary-display/provider-extra.c": "46fc80899d1df5afdb7779037252d7632900630a0c5c939be82d7d3531ae1774",
+      "native/secondary-display/observer.c": "b1402ec79c2e5a1df8ea12058c9499969a58909b2385b7322d1e3f34db64f1e7",
+      "native/secondary-display/provider-extra.c": "843f7d5fa88c5912d47bf93a8b0a5d72f6eb3be79012d0b135e4d2296cd6c356",
       "native/secondary-display/runtime-fixture.c": "7f90e79503a957e29f9c05d2f84c1c49476ac0e4727b87e8ba4702323ac22a7e",
-      "native/secondary-display/runtime.c": "466227e59312f3a3dd4c6dde3c60aea564389dbd0a96a790554706914ebbb99b",
-      "native/secondary-display/runtime.h": "f5d38f4da1771dc4297a0e6ef9097c0e9c47a2012d9d52c3389136d3ad287403",
+      "native/secondary-display/runtime.c": "47bd09e8e2baac62134d76084d5af99819681a3e05f15ff09b9137b58f3e8415",
+      "native/secondary-display/runtime.h": "314e6a4d71d5046517a8eb843cb2ad8212506b61e3dfa6d9b45c2cf15fb989e9",
       "native/secondary-display/test-runner.c": "589c935ee9d9f9cc7fe876a33023dcac9a006c836918c42d3376486a44cb4498",
       "native/secondary-display/transaction-fixture.c": "c8a2f196e54cd89c26a5a5f5bcf4c70d6438f9e4defb481bf429b2af508f410f",
       "native/secondary-display/wire-fixture.c": "cdd5bc428669908d35e909321f4fc566b0a435b43b909b93bd874b3812b1e767",
@@ -82,25 +82,41 @@
       "native/cluster-bridge/nav_snapshot.c": "948aa416994408bf185966384091ea558a4f56af41c6daf1227771a1c23ee8ca",
       "native/cluster-bridge/build.sh": "885ebe53016c1395597df669fda9eeffdaeec05a3ca147b9f02c4880539e1a9a",
       "native/observer/launch/proc_guard.c": "e0e8f56b9280f456d8c8bf698cc3246b197696592f39196adc7f9870cb8998dd",
-      "native/secondary-display/build.sh": "e645cae4e5dd684279b9b40332823f2d0b1a155d24defeed1cf6a42eb32b06d3",
-      "native/secondary-display/probe-fixture.c": "5db0db8e016b070d7ecccaf72c3a8ef39d210bbcfa487a8162d04143dcaca4a6",
-      "native/secondary-display/test-qemu.sh": "5acd9c01b7eb70bb7d4e8673ed1fba3dad53398e9d5627c1cfde80b7483a8b81",
-      "native/cluster-bridge/live/capture.c": "415d484b7dab1d5480e91731f831722f1a3bbbbb3d2056a1aca2da3974c35110",
+      "native/secondary-display/build.sh": "f709ba04e48c7a0ddd9cedcefc9af9727edc13528e8d02be3780dfe0f0669c47",
+      "native/secondary-display/probe-fixture.c": "5dea754136a467cde2c1ae7cd4c82203b2aabf0a50710d44201155cfb86b52c7",
+      "native/secondary-display/route-forward-fixture.c": "b141e81c21a08fd7fa22d7d21f8de4ca83f094be3dc27c476364124052ee5058",
+      "native/secondary-display/route-forward-runner.c": "9b1c3031e52e7ac868345094d1a93f6a5a5f1f742ccfabc848c2f0e84b7465ca",
+      "native/secondary-display/route-hook-fixture.c": "f962e27230a55e5e1e8807cd818ee5b2800f47d87e803f7b34e99e8b94595cd6",
+      "native/secondary-display/route-hook.c": "2c31feedfec6531d3dbb2d19dca17332391fdba4a130c97fdd851fdf3fc0f1d6",
+      "native/secondary-display/route-policy-fixture.c": "c7fa76d120925dd027f95b1956ffd6c8b99f80be42d4ef52cba7d01899a60e82",
+      "native/secondary-display/route-policy.c": "5f61239f895a40c25ae5c26a20c4fd505169a4a12018c49a2ba5ed429bc38af0",
+      "native/secondary-display/route-policy.h": "ad809d49059dee13037ba9413f40f33c641cf6f88e2f36d6a689d66d78b07faa",
+      "native/secondary-display/route-profile.h": "b7fa1fb964d8938deffc42651934a163e5cd8af46eb0b7e12795dc454c3a9443",
+      "native/secondary-display/test-qemu.sh": "8491da29b42958045f9fb42e9c7d9a9ed62d7a5aa2867e342b14ba032a7057ab",
+      "native/cluster-bridge/live/capture.c": "751f7c67ebf86e13064d16a05ad41c385b768580d4029717c324217f64150120",
+      "native/cluster-bridge/live/deadline.h": "392f7079bbb97dae4ac63c7ebfa7fe68170191f762001c2ef76a785a225a94ef",
+      "native/cluster-bridge/live/mux-fixture.c": "82a19edacb6fcc79996eb745a2aae3d329a53fbd5bc35975cf7dd319d592ddc4",
+      "native/cluster-bridge/live/mux.c": "da039477a95fc576e38cc50a0c24ff973573da645ad299443f7a9d4f1576e409",
+      "native/cluster-bridge/live/mux.h": "c4223c31de35752a64fd1c696e9a5704beeb9c259c2517a687be4a0647c69862",
       "native/cluster-bridge/live/queue-fixture.c": "04dee399748413ef1ab85bb9763c13a149993c567d595844560c61de68fe5c47",
+      "native/cluster-bridge/live/queue-prepare.c": "4175e2221fb7ce714fe9e589aa73f7a729e173764d891a1305d99f33e99a83fd",
       "native/cluster-bridge/live/queue.c": "3ae2ccea3385861cedc4ec59fb5470d0a6a11dd7b3ac5a8338962a524d4fd8fa",
       "native/cluster-bridge/live/queue.h": "8fe7a0085c9696a791ace73f61d63b02e0265d955de0826d735da1754b534616",
+      "native/cluster-bridge/live/sink-fixture.c": "8c47eb42947d2ede6f7d65bef1d3abcace249f9407d6204c2937122652cce99e",
+      "native/cluster-bridge/live/sink.c": "4b6d79be07c26b56b4b9547e12d6fa4f3daaf164adfc858a2226e6dcaaeb4f8d",
+      "native/cluster-bridge/live/sink.h": "5419cca427fd76ecca2340ecdd30beb8c75b4ec87548f1acd492c654888271b1",
       "native/cluster-bridge/live/test-qemu.sh": "c58dbf140b7c98091537cc443a0747f5f0c9b70885ca4254dffb69286bf9febb"
     },
     "scripts_sha256": {
       "secondary_timing.py": "8445d51d1572dbedaef326c75b26fdd2c7c2bd391f0dfdec80b6c95ae589879a",
       "cluster_preflight.py": "31e9682f954dc6ce8197f5b154788b37a6ea3e493c1f20532956a8f01381b704",
-      "run_disconnected_observer.py": "c47944dbff16fffdeb9c6d9670bfa0b5b5533892c2f6b0782a938d84bbacb972",
+      "run_disconnected_observer.py": "8905682ad033b056babb2f5f02b65558bebdeacd72f2e3b29111c81cd2bd953e",
       "run_androidauto_observer.py": "1121513c5a37f7db75b1a4aef64568f4e83b26db905c2e22bc9fef173ef1f84f",
-      "run_observer_smoke.py": "5baab0bfe920faedb3aa8c64ade5264b2646f3e81b69a03d27912418849465e4",
+      "run_observer_smoke.py": "57ea7e59402fc1002a05d5bf1d2fd065d6c34f160206f3cb6693d8df5a7e3888",
       "delphi_inventory.py": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518",
       "decode_delphi_observer.py": "beb7d8e74a58aaffd45769b614ed85e11bf38d647206ab4d631b2266857599d9",
       "review_secondary_keyframes.py": "4d4268bdfb3317ee523f14f430f7f52596f85e3bd7eed4ff88c0e630b154c24d",
-      "review_live_input.py": "297d06d460f3b53d050e1ec326521748f39043fe16d509fd44c99065c0a164ef",
+      "review_live_input.py": "46fcc50107b745fe5141244ba79658ecf5a7091cbcad890583e7cf5bd391fb8d",
       "project_console.py": "1693776432be4b45937221882f281f24c6a30701877ea72e921735bb85ce7c5f",
       "decode_androidauto_display.py": "b7fee6d14d190f2e99d18f9a4a1fcca6f55cef7fd1c2aac5d0e7aa5b09da51a7"
     },
@@ -144,24 +160,37 @@
     ],
     "files": {
       "libdelphi_observer.so": {
-        "bytes": 38037,
-        "sha256": "44d831d6991d6d183646e5741bce839bedc5247e80210bf18226d196985c665f"
+        "bytes": 48260,
+        "sha256": "7190eda6e1a59b7e7fe51b86fcd184c67490ca26df59bab5396bf542648c4959"
       },
       "nav_snapshot": {
         "bytes": 11518,
         "sha256": "fcb91d686f51e800f18024a227e719e6d84e0c94851d733025cc6f4e7866ed5d"
       },
       "live_capture": {
-        "bytes": 18255,
-        "sha256": "1ebe308bdb4a1d4fced9a7208d86fecdd9629d1cfa52ac265bc2d5153fa46b28"
+        "bytes": 18423,
+        "sha256": "b9a060d60c8c194610e32c5dc6e62cbd2b46680b7ae085c3c396fd3058f46a5c"
       },
       "observer_launch": {
         "bytes": 20939,
         "sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae"
       }
     },
+    "route_presentation_trial": true,
+    "route_presentation_hold_seconds": 40,
+    "route_presentation_event": 5961,
+    "route_native_projected": 1,
+    "route_native_native": 2,
+    "route_policy_report_version": 2,
+    "route_phone_ack_helper": [
+      1149408,
+      1153088
+    ],
+    "route_presentation_extra_aa_threads_when_live": 1,
     "keyframe_probe_enabled": true,
-    "keyframe_probe_max_requests": 3,
+    "keyframe_probe_max_requests": 0,
+    "focus_refresh_disabled": true,
+    "live_wait_for_first_frame_seconds": 180,
     "live_owned_frame_capture": true,
     "live_queue_capacity": 4,
     "live_frame_limit": 1048576,

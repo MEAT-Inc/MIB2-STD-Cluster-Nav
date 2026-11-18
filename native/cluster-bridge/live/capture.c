@@ -1,5 +1,6 @@
 #define _QNX_SOURCE 1
 #include "queue.h"
+#include "deadline.h"
 #include "../../observer/launch/proc_guard.h"
 #include <sys/mman.h>
 #include <sys/stat.h>
@@ -23,7 +24,7 @@ static int make(const char *path,size_t bytes,void **mapped){int fd=open(path,O_
 static int token_ok(const char *s){return s&&strlen(s)==32&&strspn(s,"0123456789abcdef")==32;}
 static int sample_nav(pid_t nav,int out,int errors){char number[24];pid_t child;int status;snprintf(number,sizeof(number),"%u",(unsigned)nav);child=fork();if(!child){if(dup2(out,STDOUT_FILENO)<0||dup2(errors,STDERR_FILENO)<0)_exit(126);execl("./nav_snapshot","nav_snapshot",number,(char*)0);_exit(127);}if(child<0)return -1;while(waitpid(child,&status,0)<0)if(errno!=EINTR)return -1;return WIFEXITED(status)&&!WEXITSTATUS(status)?0:-1;}
 static int run(const char *token,pid_t producer,unsigned seconds,pid_t nav,int testing){
- char qpath[128],rpath[128],vpath[128],mpath[128],npath[128],epath[128],expected[160];uint32_t nonce[4],*r=0;struct live_shared *q=0;struct metadata *m=0;struct live_peer consumer;struct live_frame frame;pg_identity peer,parent;int peerfd=-1,parentfd=-1,out=-1,navout=-1,naverr=-1,result=3;unsigned i,reason=0,loops=0;uint64_t start,end,next_sample=0;unsigned char *owned=0;
+ char qpath[128],rpath[128],vpath[128],mpath[128],npath[128],epath[128],expected[160];uint32_t nonce[4],*r=0;struct live_shared *q=0;struct metadata *m=0;struct live_peer consumer;struct live_frame frame;pg_identity peer,parent;int peerfd=-1,parentfd=-1,out=-1,navout=-1,naverr=-1,result=3;unsigned i,reason=0,loops=0;uint64_t start,next_sample=0;struct live_deadline deadline;unsigned char *owned=0;
  if(!token_ok(token)||producer<=0||seconds<1||seconds>30)return 2;
  for(i=0;i<4;i++){char text[9];memcpy(text,token+i*8,8);text[8]=0;nonce[i]=(uint32_t)strtoul(text,0,16);}
  peerfd=pg_open(producer,0,&peer);if(peerfd<0)return 3;
@@ -49,17 +50,17 @@ static int run(const char *token,pid_t producer,unsigned seconds,pid_t nav,int t
  out=open(vpath,O_WRONLY|O_CREAT|O_EXCL,0600);owned=malloc(LIVE_AU_LIMIT);if(out<0||!owned)goto done;
  m->h[0]=0x31544c43;m->h[1]=1;m->h[2]=getpid();m->h[3]=producer;m->h[4]=32;m->h[5]=META_CAP;
  if(live_init(q,sizeof(*q),nonce,(uint32_t)producer,(uint32_t)getpid())||live_bind(&consumer,q,sizeof(*q),nonce,(uint32_t)producer,(uint32_t)getpid()))goto done;
- start=now_ns();if(!start)goto done;end=start+(uint64_t)seconds*1000000000ULL;r[15]=(uint32_t)start;r[16]=start>>32;__atomic_store_n(&r[5],1,__ATOMIC_RELEASE);
- while(1){uint64_t current=now_ns();if(!current){r[6]=EIO;goto stop;}if(current>=end)break;
+ start=now_ns();if(!start)goto done;live_deadline_init(&deadline,start);r[15]=(uint32_t)start;r[16]=start>>32;__atomic_store_n(&r[5],1,__ATOMIC_RELEASE);
+ while(1){uint64_t current=now_ns();if(!current){r[6]=EIO;goto stop;}if((reason=live_deadline_reason(&deadline,current)))break;
   int rc=live_consume(&consumer,owned,LIVE_AU_LIMIT,&frame);if(rc<0){r[6]=EPROTO;goto stop;}
   if(rc){struct meta_record *record;
    if(r[7]>=META_CAP||frame.bytes>8388608u-r[8]){reason=3;break;}
    if(write_all(out,owned,frame.bytes)){r[6]=errno?errno:EIO;goto stop;}
    record=&m->records[r[7]];record->timestamp=frame.timestamp;record->monotonic_ns=now_ns();record->offset=r[8];record->bytes=frame.bytes;record->session=frame.session;record->flags=frame.flags;
-   if(!r[7]){r[11]=(uint32_t)frame.timestamp;r[12]=frame.timestamp>>32;}r[13]=(uint32_t)frame.timestamp;r[14]=frame.timestamp>>32;r[8]+=frame.bytes;r[7]++;__atomic_store_n(&m->h[6],r[7],__ATOMIC_RELEASE);__atomic_store_n(&r[5],2,__ATOMIC_RELEASE);
+   if(!r[7]){live_deadline_first(&deadline,current,seconds);r[11]=(uint32_t)frame.timestamp;r[12]=frame.timestamp>>32;}r[13]=(uint32_t)frame.timestamp;r[14]=frame.timestamp>>32;r[8]+=frame.bytes;r[7]++;__atomic_store_n(&m->h[6],r[7],__ATOMIC_RELEASE);__atomic_store_n(&r[5],2,__ATOMIC_RELEASE);
   }
   r[9]=__atomic_load_n(&q->dropped,__ATOMIC_ACQUIRE);r[10]=__atomic_load_n(&q->request_idr,__ATOMIC_ACQUIRE);
-  if(nav&&current>=next_sample){if(sample_nav(nav,navout,naverr))r[21]++;r[20]++;next_sample=current+1000000000ULL;}
+  if(nav&&(r[7]||!r[20])&&current>=next_sample){if(sample_nav(nav,navout,naverr))r[21]++;r[20]++;next_sample=current+1000000000ULL;}
   if(++loops%100==0&&(pg_matches(peerfd,&peer)||pg_matches(parentfd,&parent))){reason=1;break;}
   pause_ms();
  }
@@ -69,12 +70,23 @@ static int run(const char *token,pid_t producer,unsigned seconds,pid_t nav,int t
 }
 #ifdef LIVE_CAPTURE_TEST
 static int self_test(void){
+ struct live_deadline d;uint64_t base=1000000000ULL;
+ live_deadline_init(&d,base);
+ if(live_deadline_reason(&d,base+45000000000ULL))return 20;
+ live_deadline_first(&d,base+45000000000ULL,30);
+ if(live_deadline_reason(&d,base+74999999999ULL)||live_deadline_reason(&d,base+75000000000ULL)!=2)return 21;
+ live_deadline_first(&d,base+70000000000ULL,30);
+ if(live_deadline_reason(&d,base+75000000000ULL)!=2)return 22;
+ live_deadline_init(&d,base);
+ if(live_deadline_reason(&d,base+179999999999ULL)||live_deadline_reason(&d,base+180000000000ULL)!=4)return 23;
+ puts("LIVE_CAPTURE_DELAY_POLICY_PASS delayed_phone_45s=1 active_timer_first_frame=1 no_timer_extension=1 idle_limit_180s=1");
  const char *token="11111111111111111111111111111111";uint32_t nonce[4]={0x11111111,0x11111111,0x11111111,0x11111111};pid_t p;int rc,status,fd;unsigned i;char path[160];uint32_t report[128];struct stat st;
  p=fork();if(p<0)return 1;
  if(!p){struct live_shared *q;struct live_peer writer;unsigned char codec[]={0,0,1,0x67,0x42,0x80,0x1f,0,0,1,0x68,0xee},idr[]={0,0,1,0x65,0x88,0x84};snprintf(path,sizeof(path),"/dev/shmem/delphi-live-%s.bin",token);
   for(i=0;i<5000;i++){fd=open(path,O_RDWR);if(fd>=0){struct stat qs;if(!fstat(fd,&qs)&&(uint64_t)qs.st_size==sizeof(*q))break;close(fd);fd=-1;}pause_ms();}if(fd<0)_exit(2);q=mmap(0,sizeof(*q),PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);close(fd);if(q==MAP_FAILED)_exit(3);
   for(i=0;i<5000&&__atomic_load_n(&q->magic,__ATOMIC_ACQUIRE)!=LIVE_MAGIC;i++)pause_ms();
   if(live_bind(&writer,q,sizeof(*q),nonce,getpid(),getppid()))_exit(4);
+  for(i=0;i<200;i++)pause_ms();
   for(i=0;i<20;i++){if(live_publish(&writer,codec,sizeof(codec),idr,sizeof(idr),37,(uint64_t)i*100000)<0)_exit(5);pause_ms();pause_ms();pause_ms();}
   munmap(q,sizeof(*q));_exit(0);
  }

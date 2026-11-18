@@ -1,0 +1,12 @@
+{
+  "collection": "_disconnect_observer_20261110_144234_43c19936",
+  "cause": "QNX cp reported Ran out of disk space writing libc.so.3.reference",
+  "nav_launched": false,
+  "aa_launched": false,
+  "fixes": [
+    "Space check before any on-radio staging",
+    "Hash and final-controller proof checked pruning of archived completed staging files only",
+    "Removed redundant4.9MB Nav firmware staging copy"
+  ],
+  "next_bundle": "native/cluster-bridge/live-output/live-cluster-v2-laptop.zip"
+}

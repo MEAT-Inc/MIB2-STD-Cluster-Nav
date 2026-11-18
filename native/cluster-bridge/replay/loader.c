@@ -2,6 +2,9 @@
 #define _QNX_SOURCE 1
 #include "replay.h"
 #include "imports.h"
+#ifdef REPLAY_LIVE
+#include "../live/sink.h"
+#endif
 #include "libc-profile.h"
 #ifdef REPLAY_LOADER_TEST
 #include "sdk-libc-profile.h"
@@ -90,6 +93,12 @@ __attribute__((constructor)) static void load(void){
  c.timeline_required=1;
 #endif
  out[22]=4;c.file_bytes=bytes;c.file_size=at;c.report=out;c.defer_ready=1;
+ #ifdef REPLAY_LIVE
+ {char token[33];memcpy(token,report+n,32);token[32]=0;c.live_opaque=live_sink_open(token,out);if(!c.live_opaque){error=1010;goto end;}c.live_run=live_sink_run;c.live_poll=live_sink_poll;
+ snprintf(path,sizeof(path),"/dev/shmem/delphi-nav-output-%s.bin",token);
+ {int livefd=c.native_open(path,O_CREAT|O_EXCL|O_RDWR,0600);void *m=MAP_FAILED;if(livefd>=0&&!ftruncate(livefd,2097152))m=mmap(0,2097152,PROT_READ|PROT_WRITE,MAP_SHARED,livefd,0);if(livefd>=0)c.native_close(livefd);if(m==MAP_FAILED){error=1011;goto end;}c.live_capture=m;c.live_capture_capacity=2097152;}
+ }
+#endif
  if(replay_init(&c)){error=1005;goto end;}started=1;out[22]=5;
  hooks[0].native=(uintptr_t)c.native_open;hooks[1].native=(uintptr_t)c.native_write;hooks[2].native=(uintptr_t)c.native_close;hooks[0].replacement=(uintptr_t)delphi_replay_open;hooks[1].replacement=(uintptr_t)delphi_replay_write;hooks[2].replacement=(uintptr_t)delphi_replay_close;
  for(i=0;i<3;i++){hooks[i].slot=(volatile uint32_t*)(uintptr_t)slot[i];out[26+i]=hooks[i].native;out[29+i]=hooks[i].replacement;out[32+i]=slot[i];if(!exact(slot[i],&v,4)){error=1006;goto end;}

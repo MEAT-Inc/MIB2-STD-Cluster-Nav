@@ -21,6 +21,11 @@ struct replay_config {
  int defer_ready;
  int timeline_required;
  void (*inspect)(void *,volatile uint32_t *);
+ int (*live_run)(void *,ssize_t (*)(void *,const void *,size_t),void *);
+ void *live_opaque;
+ int (*live_poll)(void *);
+ unsigned char *live_capture;
+ size_t live_capture_capacity;
 };
 void replay_bind_callbacks(int (*)(const char *,int,...),ssize_t (*)(int,const void *,size_t),int (*)(int));
 int replay_init(const struct replay_config *);

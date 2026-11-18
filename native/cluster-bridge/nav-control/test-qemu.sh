@@ -50,6 +50,8 @@ stall.stack
 stall.mutex
 stall.replay.stack
 stall.replay.mutex
+stall.live.stack
+stall.live.mutex
 EOF
 T=/opt/qnx650/target/qnx6/armle-v7
 cp "$T/lib/libc.so.3" "$T/lib/libsocket.so.3" "$T/boot/sys/procnto-smp" .
@@ -80,3 +82,5 @@ sha256sum "$out/build/sal_init_fixture" "$out/build/idle_fixture" "$out/build/na
 printf 'NAV_CONTROL_INIT_QNX_PASS\n'
 
 grep -q NAV_REPLAY_STALL_CAPTURE_GUARD_PASS "$out/qemu/qemu.log"
+
+grep -q NAV_LIVE_STALL_CAPTURE_GUARD_PASS "$out/qemu/qemu.log"

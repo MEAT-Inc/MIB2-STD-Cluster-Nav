@@ -52,7 +52,7 @@ static int data(void *p,int session,uint64_t timestamp,const struct factory_shar
  if(!n||saved!=n)add(c,SDROPPED,1);
  ack=session>=0&&session==c->session&&((unsigned char*)c->video)[4]&&((unsigned char*)c->video)[5];
  if(ack)add(c,SACKS,1);
- if(c->probe_enabled&&ack&&n&&saved==n&&c->active&&c->installed&&c->api.focus&&c->probe_requests<3&&word(c->video,12)==9&&((unsigned char*)c->video)[5]==9){
+ if(c->probe_enabled&&!c->probe_refresh_disabled&&ack&&n&&saved==n&&c->active&&c->installed&&c->api.focus&&c->probe_requests<3&&word(c->video,12)==9&&((unsigned char*)c->video)[5]==9){
   struct timespec now;if(clock_gettime(CLOCK_MONOTONIC,&now))c->report->w[47]=errno?errno:EIO;
   else{uint64_t ns=(uint64_t)now.tv_sec*1000000000ULL+now.tv_nsec;
    if(!c->probe_next_ns)c->probe_next_ns=ns+2000000000ULL;

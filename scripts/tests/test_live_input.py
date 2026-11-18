@@ -18,6 +18,19 @@ class LiveInputTests(unittest.TestCase):
   struct.pack_into('<8I',meta,0,0x31544c43,1,777,cls.pid,32,2048,count,0);r=[0]*128;r[:9]=[0x3152434c,1,512,777,cls.pid,3,0,count,offset];cls.reader=struct.pack('<128I',*r);cls.meta=bytes(meta);cls.copy=b''.join(parts);sec['keyframe_probe']=dict(ipc_attached=True,ipc_error=0,ipc_dropped=0,ipc_malformed=0,ipc_consumer_pid=777,ipc_frames=count);cls.secondary=sec
  def test_real_captured_frames_owned_byte_identity(self):
   v=assess_live(self.reader,self.meta,self.copy,self.timing,self.raw,self.pid,self.secondary);self.assertTrue(v['owned_live_copy_verified']);self.assertEqual(v['frames'],617);self.assertEqual(v['source_to_copy_median_ms'],2);self.assertFalse(v['cluster_transport_connected'])
+ def test_empty_reader_never_claims_byte_identity_or_live_copy(self):
+  b=bytearray(self.reader);struct.pack_into('<II',b,28,0,0);meta=bytearray(self.meta);struct.pack_into('<I',meta,24,0);meta[32:]=bytes(len(meta)-32)
+  v=assess_live(bytes(b),bytes(meta),b'',self.timing,self.raw,self.pid,self.secondary)
+  self.assertFalse(v['owned_live_copy_verified']);self.assertFalse(v['all_copied_access_units_match'])
+ def test_missing_concurrent_samples_are_unknown(self):
+  from review_live_input import assess_native_geometry
+  v=assess_native_geometry(b'',1,[dict(kind=2,monotonic_ns=1)])
+  self.assertFalse(v['observation_available']);self.assertEqual(v['samples_during_phone_video'],0)
+ def test_unbound_native_epipe_is_diagnosed_only_with_exact_consumer(self):
+  p=Path(__file__).resolve().parents[2]/'delphi-dump/_disconnect_observer_20261117_134509_a3a6c5c7/live-reader-ready.bin';b=p.read_bytes()
+  with self.assertRaises(ValueError):reader_report(b,1822798)
+  v=reader_report(b,1822798,consumer_pid=1548373,allow_unbound=True);self.assertEqual(v['error'],32);self.assertEqual(v['source_pid'],0);self.assertEqual(v['state'],4)
+  with self.assertRaises(ValueError):reader_report(b,1822798,consumer_pid=1548374,allow_unbound=True)
  def test_corrupt_copy_never_passes(self):
   b=bytearray(self.copy);b[-1]^=1;v=assess_live(self.reader,self.meta,bytes(b),self.timing,self.raw,self.pid,self.secondary);self.assertFalse(v['owned_live_copy_verified'])
  def test_metadata_bounds_and_identity_refused(self):

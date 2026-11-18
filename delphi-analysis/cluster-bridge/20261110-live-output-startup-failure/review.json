@@ -1,0 +1,9 @@
+{
+  "collection": "_disconnect_observer_20261110_150334_10e0eaad",
+  "startup_failure": "Required cp ran before asynchronous Nav report existed",
+  "startup_fix": "Poll report existence/size and initialized ready header within bounded native-channel timeout",
+  "cleanup_failure": "Controller error1005; lifecycle helper exit3; restoration false",
+  "packets_sent": 0,
+  "phone_handoff": false,
+  "next": "Read-only pinned lifecycle/thread/stack capture before replay or reboot"
+}

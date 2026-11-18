@@ -9,14 +9,14 @@ def sha(b):return hashlib.sha256(b).hexdigest()
 def main():
  base=ROOT/'native/cluster-bridge/keyframe-probe';release=base/'release';release.mkdir(parents=True,exist_ok=True)
  native=ROOT/'native/secondary-display';log=(native/'qemu/qemu.log').read_text()
- for marker in ('SECONDARY_KEYFRAME_PROBE_PASS','LIVE_CAPTURE_QNX_PASS','NAV_TIMED_SNAPSHOT_QNX_PASS','SECONDARY_RUNTIME_QNX_PASS','SECONDARY_DISCOVERY_TRANSACTION_QNX_PASS','SECONDARY_HOOK_FORWARD_QNX_PASS','DELPHI_SMOKE_QNX_SUITE_PASS'):
+ for marker in ('unknown_thread_target=1','native_projected_1_hmi_2=1','ROUTE_HOOK_QNX_PASS','ROUTE_POLICY_PRELOAD_FORWARD_PASS','ROUTE_POLICY_PRELOAD_RUNNER_PASS','ROUTE_POLICY_QNX_PASS','SECONDARY_KEYFRAME_PROBE_PASS','LIVE_CAPTURE_QNX_PASS','LIVE_CAPTURE_DELAY_POLICY_PASS','LIVE_MUX_QNX_PASS','NAV_TIMED_SNAPSHOT_QNX_PASS','SECONDARY_RUNTIME_QNX_PASS','SECONDARY_DISCOVERY_TRANSACTION_QNX_PASS','SECONDARY_HOOK_FORWARD_QNX_PASS','DELPHI_SMOKE_QNX_SUITE_PASS'):
   if marker not in log:raise ValueError('Missing native gate: '+marker)
  if 'LIVE_QUEUE_PROCESS_PASS' not in (ROOT/'native/cluster-bridge/live/qemu/qemu.log').read_text():raise ValueError('Live queue cross-process gate')
  checked={Path(line.split()[1]).name:line.split()[0] for line in (native/'qemu/keyframe-probe-tested.sha256').read_text().splitlines()}
  sources={'libdelphi_observer.so':native/'build/libdelphi_observer_keyframe.so','nav_snapshot':ROOT/'native/cluster-bridge/build/nav_snapshot_timed','live_capture':native/'build/live_capture'}
  files={}
  libc={s['name'] for s in json.loads((ROOT/'delphi-analysis/control-runtime/libc.so.3.index.json').read_text())['symbols'] if s['defined']}
- exports_expected={'_init','_fini','_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase','delphi_observer_view','_ZN13MessageRouter32populateServiceDiscoveryResponseEP24ServiceDiscoveryResponse','_ZN13MessageRouter13queueOutgoingEhPvj'}
+ exports_expected={'SAL_Send','_init','_fini','_ZN11GalReceiver15registerServiceEP20ProtocolEndpointBase','delphi_observer_view','_ZN13MessageRouter32populateServiceDiscoveryResponseEP24ServiceDiscoveryResponse','_ZN13MessageRouter13queueOutgoingEhPvj'}
  for name,path in sources.items():
   b=path.read_bytes()
   if checked.get(path.name)!=sha(b):raise ValueError('Native gate hash changed '+name)
@@ -34,7 +34,7 @@ def main():
   status('Running '+test)
   result=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/tests'/test)],cwd=ROOT,capture_output=True,text=True)
   if result.returncode:raise ValueError(result.stderr[-16000:])
- manifest.update(keyframe_probe_enabled=True,keyframe_probe_max_requests=3,live_owned_frame_capture=True,live_queue_capacity=4,live_frame_limit=1048576,live_capture_limit=8388608,live_capture_timeout_seconds=30,navigation_live_sampling_readonly=True,navigation_restart=False,cluster_transport_connected=False,on_car_tested=False,factory_contract_revision=6)
+ manifest.update(route_presentation_trial=True,route_presentation_hold_seconds=40,route_presentation_event=0x1749,route_native_projected=1,route_native_native=2,route_policy_report_version=2,route_phone_ack_helper=[0x1189e0,0x119840],route_presentation_extra_aa_threads_when_live=1,keyframe_probe_enabled=True,keyframe_probe_max_requests=0,focus_refresh_disabled=True,live_wait_for_first_frame_seconds=180,live_owned_frame_capture=True,live_queue_capacity=4,live_frame_limit=1048576,live_capture_limit=8388608,live_capture_timeout_seconds=30,navigation_live_sampling_readonly=True,navigation_restart=False,cluster_transport_connected=False,on_car_tested=False,factory_contract_revision=6)
  manifest['files']={name:dict(bytes=len(b),sha256=sha(b)) for name,b in files.items()}
  scripts=tuple(dict.fromkeys(tuple(manifest['scripts_sha256'])+('review_secondary_keyframes.py','review_live_input.py','project_console.py','decode_androidauto_display.py')))
  manifest['scripts_sha256']={n:sha((ROOT/'scripts'/n).read_bytes()) for n in scripts}
@@ -42,16 +42,16 @@ def main():
  manifest['source_sha256']['native/cluster-bridge/nav_snapshot.c']=sha((ROOT/'native/cluster-bridge/nav_snapshot.c').read_bytes())
  for name,b in files.items():(release/name).write_bytes(b)
  (release/'manifest.json').write_text(json.dumps(manifest,indent=2))
- readme="""LIVE INPUT TEST v1
+ readme="""LIVE INPUT TEST v2
 ==================
-Goal: move actual phone frames through the new owned queue and determine whether
-secondary focus refreshes produce fresh keyframes. It writes RAM captures; this
+Goal: verify actual phone frames through the owned queue after a delayed phone
+connection, with factory encoder sampling during the live feed. It writes RAM captures; this
 test does not replace the cluster video writer.
 
 1. Extract the entire ZIP into a fresh folder on the connected laptop.
 2. Park, ignition on, phone unplugged, Ethernet connected, working factory maps.
 3. Run:
- python scripts/run_disconnected_observer.py --run --keyframe-probe --phone-unplugged
+ python scripts/run_disconnected_observer.py --run --live-input --phone-unplugged
 4. Select the factory map in the cluster at the prompt.
 5. At CAPTURE READY swap Ethernet for phone, start a Google Maps route, and let
  it run about12 seconds. Unplug phone, reconnect Ethernet, then press Enter.
@@ -59,8 +59,8 @@ test does not replace the cluster video writer.
 7. Return the entire delphi-dump/_disconnect_observer_* folder.
 
 This run:
--Adds at most three native focus notifications on secondary video channel9,
- after the current frame ACK. No extra AndroidAuto thread is created.
+-Disables ineffective focus refresh notifications. No extra AndroidAuto thread
+ is created. Waits up to180 seconds for the first usable phone frame.
 -Copies borrowed phone frames into a fixed four-slot/1MiB-per-frame queue.
  A separate bounded reader writes live-copy.h264 plus timing data in RAM.
  Frames are checked byte-for-byte against the receiver capture on the laptop.
@@ -68,17 +68,18 @@ This run:
  without restarting NavigationServer or opening the cluster transport.
 -Uses the existing validated AndroidAuto launch and disconnected cleanup.
  Queue overflow drops data and waits for codec+IDR; it never blocks phone ACKs.
- The capture reader stops within30 seconds or when its source process ends.
+ The capture reader stops30 seconds after the first usable frame, or when its
+ source process ends. The connection wait has a separate180-second limit.
 """
  (release/'README.txt').write_text(readme)
- bundle=base/'live-input-v1-laptop.zip'
+ bundle=base/'live-input-v2-laptop.zip'
  with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
   for n in scripts:z.write(ROOT/'scripts'/n,'scripts/'+n)
   for n in (*files,'manifest.json','README.txt'):z.write(release/n,(release/n).relative_to(ROOT).as_posix())
  with tempfile.TemporaryDirectory() as temp:
   p=Path(temp)
   with zipfile.ZipFile(bundle) as z:z.extractall(p)
-  result=subprocess.run([sys.executable,'-S','-B',str(p/'scripts/run_disconnected_observer.py'),'--keyframe-probe'],cwd=p,capture_output=True,text=True)
+  result=subprocess.run([sys.executable,'-S','-B',str(p/'scripts/run_disconnected_observer.py'),'--live-input'],cwd=p,capture_output=True,text=True)
   if result.returncode or 'Plan only' not in result.stdout or (p/'delphi-dump').exists():raise ValueError('Portable plan '+result.stderr)
   code="import sys;from pathlib import Path;sys.path.insert(0,str(Path(sys.argv[1])/'scripts'));import run_disconnected_observer as m;print(len(m.package(Path(sys.argv[1])/'native/cluster-bridge/keyframe-probe/release',phone=True,factory=True,secondary=True,cluster=True,probe=True)))"
   result=subprocess.run([sys.executable,'-S','-B','-c',code,str(p)],cwd=p,capture_output=True,text=True)

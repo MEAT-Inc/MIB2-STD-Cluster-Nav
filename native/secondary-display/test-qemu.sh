@@ -31,7 +31,11 @@ cat >> test.build <<'EOF'
     wire_fixture
     runtime_fixture
     keyframe_probe_fixture
+    route_policy_fixture
+    route_hook_fixture
+    route_forward_runner
     live_capture_test --self-test
+    live_mux_fixture
     transaction_fixture
     secondary_test_runner
     smoke_qemu_runner
@@ -55,7 +59,13 @@ factory_fixture
 wire_fixture
 runtime_fixture
 keyframe_probe_fixture
+route_policy_fixture
+route_hook_fixture
+route_forward_fixture
+route_forward_runner
+libdelphi_observer_keyframe.so
 live_capture_test
+live_mux_fixture
 transaction_fixture
 secondary_forward_fixture
 secondary_test_runner
@@ -94,6 +104,10 @@ sha256sum libdelphi_observer.so libautoreceiver.so wire_fixture runtime_fixture 
 grep -q "NAV_SNAPSHOT_QNX_PASS" "$w/qemu.log"
 sha256sum nav_snapshot > /src/native/cluster-bridge/nav-snapshot-tested.sha256
 
+grep -q ROUTE_POLICY_PRELOAD_FORWARD_PASS "$w/qemu.log"
+grep -q ROUTE_POLICY_PRELOAD_RUNNER_PASS "$w/qemu.log"
+grep -q ROUTE_HOOK_QNX_PASS "$w/qemu.log"
+grep -q ROUTE_POLICY_QNX_PASS "$w/qemu.log"
 grep -q SECONDARY_KEYFRAME_PROBE_PASS "$w/qemu.log"
 sha256sum libdelphi_observer_keyframe.so keyframe_probe_fixture > "$w/keyframe-probe-tested.sha256"
 
@@ -102,3 +116,7 @@ sha256sum nav_snapshot_timed >> "$w/keyframe-probe-tested.sha256"
 
 grep -q LIVE_CAPTURE_QNX_PASS "$w/qemu.log"
 sha256sum live_capture live_capture_test >> "$w/keyframe-probe-tested.sha256"
+
+grep -q LIVE_CAPTURE_DELAY_POLICY_PASS "$w/qemu.log"
+grep -q LIVE_MUX_QNX_PASS "$w/qemu.log"
+sha256sum live_mux_fixture >> "$w/keyframe-probe-tested.sha256"

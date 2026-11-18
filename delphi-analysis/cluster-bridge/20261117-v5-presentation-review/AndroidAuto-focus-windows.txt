@@ -1,0 +1,1020 @@
+
+REF Server::onMessage - EV_AA_REGISTER_LISTENER - listener %llx, appId %d, threadId %d passiveObjId %d
+001107c8 mov       r3, r0 
+001107cc ldr       r3, [r3, #0x1c] 
+001107d0 mov       r0, #1 
+001107d4 mov       r1, #5 
+001107d8 blx       r3 
+001107dc mov       r3, r0 
+001107e0 cmp       r3, #0 
+001107e4 beq       #0x110848 
+001107e8 bl        #0x104b78 DTS_Client_Get_Frontend
+001107ec mov       r3, r0 
+001107f0 ldr       ip, [r3, #0x2c] 
+001107f4 vldr      d16, [sp, #0x2d8] 
+001107f8 ldr       r1, [sp, #0x2d4] 
+001107fc ldr       r2, [sp, #0x2d0] 
+00110800 ldr       r3, [sp, #0x2cc] 
+00110804 mov       r0, #0xa2 
+00110808 str       r0, [sp] 
+0011080c ldr       r0, [pc, #0x2f4] 
+00110810 add       r0, r4, r0 
+00110814 str       r0, [sp, #4] 
+00110818 vstr      d16, [sp, #8] 
+0011081c str       r1, [sp, #0x10] 
+00110820 str       r2, [sp, #0x14] 
+00110824 str       r3, [sp, #0x18] 
+00110828 mov       r0, #1 
+0011082c mov       r1, #5 
+00110830 ldr       r3, [pc, #0x320] 
+00110834 add       r3, r4, r3 
+00110838 mov       r2, r3 
+0011083c ldr       r3, [pc, #0x318] 
+00110840 add       r3, r4, r3 
+00110844 blx       ip 
+00110848 ldr       r2, [sp, #0x2d4] 
+0011084c ldr       r3, [sp, #0x2d0] 
+00110850 ldr       r1, [sp, #0x2cc] 
+00110854 str       r1, [sp] 
+00110858 ldr       r0, [sp, #0x24] 
+0011085c ldr       r1, [sp, #0x324] 
+00110860 bl        #0x11262c 
+00110864 b         #0x1125e0 
+00110868 ldr       r0, [sp, #0x20] 
+0011086c bl        #0x113f74 
+00110870 mov       r2, r0 
+00110874 add       r3, sp, #0x2c0 
+00110878 ldm       r2, {r0, r1, r2} 
+0011087c stm       r3, {r0, r1, r2} 
+00110880 vldr      d16, [pc, #0x270] 
+00110884 vstr      d16, [sp, #0x2b8] 
+00110888 add       r2, sp, #0x2c0 
+0011088c add       r3, sp, #0x2b8 
+00110890 mov       r0, r2 
+00110894 mov       r1, r3 
+00110898 bl        #0x114158 
+0011089c add       r3, sp, #0x2b8 
+001108a0 ldrd      r2, r3, [r3] 
+001108a4 mov       r3, r2 
+001108a8 str       r3, [sp, #0x328] 
+001108ac bl        #0x104b78 DTS_Client_Get_Frontend
+001108b0 mov       r3, r0 
+001108b4 ldr       r3, [r3, #0x1c] 
+001108b8 mov       r0, #1 
+001108bc mov       r1, #5 
+001108c0 blx       r3 
+001108c4 mov       r3, r0 
+001108c8 cmp       r3, #0 
+001108cc beq       #0x110918 
+001108d0 bl        #0x104b78 DTS_Client_Get_Frontend
+001108d4 mov       r3, r0 
+001108d8 ldr       ip, [r3, #0x2c] 
+001108dc vldr      d16, [sp, #0x2b8] 
+001108e0 mov       r3, #0xb0 
+001108e4 str       r3, [sp] 
+001108e8 ldr       r3, [pc, #0x21c] 
+001108ec add       r3, r4, r3 
+001108f0 str       r3, [sp, #4] 
+001108f4 vstr      d16, [sp, #8] 
+001108f8 mov       r0, #1 
+001108fc mov       r1, #5 
+00110900 ldr       r3, [pc, #0x250] 
+00110904 add       r3, r4, r3 
+00110908 mov       r2, r3 
+0011090c ldr       r3, [pc, #0x248] 
+00110910 add       r3, r4, r3 
+
+REF Server::onMessage - EV_AA_UNREGISTER_LISTENER - listener %llx
+001108a4 mov       r3, r2 
+001108a8 str       r3, [sp, #0x328] 
+001108ac bl        #0x104b78 DTS_Client_Get_Frontend
+001108b0 mov       r3, r0 
+001108b4 ldr       r3, [r3, #0x1c] 
+001108b8 mov       r0, #1 
+001108bc mov       r1, #5 
+001108c0 blx       r3 
+001108c4 mov       r3, r0 
+001108c8 cmp       r3, #0 
+001108cc beq       #0x110918 
+001108d0 bl        #0x104b78 DTS_Client_Get_Frontend
+001108d4 mov       r3, r0 
+001108d8 ldr       ip, [r3, #0x2c] 
+001108dc vldr      d16, [sp, #0x2b8] 
+001108e0 mov       r3, #0xb0 
+001108e4 str       r3, [sp] 
+001108e8 ldr       r3, [pc, #0x21c] 
+001108ec add       r3, r4, r3 
+001108f0 str       r3, [sp, #4] 
+001108f4 vstr      d16, [sp, #8] 
+001108f8 mov       r0, #1 
+001108fc mov       r1, #5 
+00110900 ldr       r3, [pc, #0x250] 
+00110904 add       r3, r4, r3 
+00110908 mov       r2, r3 
+0011090c ldr       r3, [pc, #0x248] 
+00110910 add       r3, r4, r3 
+00110914 blx       ip 
+00110918 ldr       r0, [sp, #0x24] 
+0011091c ldr       r1, [sp, #0x328] 
+00110920 bl        #0x1127c0 
+00110924 b         #0x1125e0 
+00110928 ldr       r0, [sp, #0x20] 
+0011092c bl        #0x113f74 
+00110930 mov       r2, r0 
+00110934 add       r3, sp, #0x2ac 
+00110938 ldm       r2, {r0, r1, r2} 
+0011093c stm       r3, {r0, r1, r2} 
+00110940 mov       r3, #0 
+00110944 strb      r3, [sp, #0x2ab] 
+00110948 mvn       r3, #0 
+0011094c str       r3, [sp, #0x2a4] 
+00110950 add       r2, sp, #0x2ac 
+00110954 add       r3, sp, #0x2a8 
+00110958 add       r3, r3, #3 
+0011095c mov       r0, r2 
+00110960 mov       r1, r3 
+00110964 bl        #0x1141b8 
+00110968 add       r2, sp, #0x2ac 
+0011096c add       r3, sp, #0x2a4 
+00110970 mov       r0, r2 
+00110974 mov       r1, r3 
+00110978 bl        #0x114100 
+0011097c bl        #0x104b78 DTS_Client_Get_Frontend
+00110980 mov       r3, r0 
+00110984 ldr       r3, [r3, #0x1c] 
+00110988 mov       r0, #1 
+0011098c mov       r1, #5 
+00110990 blx       r3 
+00110994 mov       r3, r0 
+00110998 cmp       r3, #0 
+0011099c beq       #0x1109f4 
+001109a0 bl        #0x104b78 DTS_Client_Get_Frontend
+001109a4 mov       r3, r0 
+001109a8 ldr       ip, [r3, #0x2c] 
+001109ac ldrb      r3, [sp, #0x2ab] 
+001109b0 mov       r2, r3 
+001109b4 ldr       r3, [sp, #0x2a4] 
+001109b8 mov       r1, #0xbe 
+001109bc str       r1, [sp] 
+001109c0 ldr       r1, [pc, #0x148] 
+001109c4 add       r1, r4, r1 
+001109c8 str       r1, [sp, #4] 
+001109cc str       r2, [sp, #8] 
+001109d0 str       r3, [sp, #0xc] 
+001109d4 mov       r0, #1 
+001109d8 mov       r1, #5 
+001109dc ldr       r3, [pc, #0x174] 
+001109e0 add       r3, r4, r3 
+001109e4 mov       r2, r3 
+001109e8 ldr       r3, [pc, #0x16c] 
+001109ec add       r3, r4, r3 
+
+REF Server::processRegisterListener - number of clients %d
+00112730 ldr       r3, [r3, #0x1c] 
+00112734 mov       r0, #1 
+00112738 mov       r1, #6 
+0011273c blx       r3 
+00112740 mov       r3, r0 
+00112744 cmp       r3, #0 
+00112748 beq       #0x1127a4 
+0011274c bl        #0x104b78 DTS_Client_Get_Frontend
+00112750 mov       r3, r0 
+00112754 ldr       r5, [r3, #0x2c] 
+00112758 ldr       r3, [sp, #0x1c] 
+0011275c add       r3, r3, #0x2c 
+00112760 mov       r0, r3 
+00112764 bl        #0x114d7c 
+00112768 mov       r3, r0 
+0011276c movw      r2, #0x2a7 
+00112770 str       r2, [sp] 
+00112774 ldr       r2, [pc, #0x38] 
+00112778 add       r2, r4, r2 
+0011277c str       r2, [sp, #4] 
+00112780 str       r3, [sp, #8] 
+00112784 mov       r0, #1 
+00112788 mov       r1, #6 
+0011278c ldr       r3, [pc, #0x24] 
+00112790 add       r3, r4, r3 
+00112794 mov       r2, r3 
+00112798 ldr       r3, [pc, #0x1c] 
+0011279c add       r3, r4, r3 
+001127a0 blx       r5 
+001127a4 add       sp, sp, #0x60 
+001127a8 pop       {r4, r5, r6, pc} 
+001127ac strdeq    r3, r4, [r6], -r0 
+001127b0 .byte     0x20, 0x29, 0xff, 0xff 
+001127b4 .byte     0x2c, 0x29, 0xff, 0xff 
+001127b8 .byte     0xd0, 0x20, 0xff, 0xff 
+001127bc .byte     0xbc, 0x20, 0xff, 0xff 
+001127c0 push      {r4, r5, lr} 
+001127c4 sub       sp, sp, #0x24 
+001127c8 ldr       r4, [pc, #0x1d8] 
+001127cc add       r4, pc, r4 
+001127d0 str       r0, [sp, #0x14] 
+001127d4 str       r1, [sp, #0x10] 
+001127d8 ldr       r3, [sp, #0x14] 
+001127dc add       r3, r3, #0x2c 
+001127e0 mov       r0, r3 
+001127e4 bl        #0x114ad4 
+001127e8 mov       r3, r0 
+001127ec str       r3, [sp, #0x18] 
+001127f0 b         #0x1128ec 
+001127f4 add       r3, sp, #0x18 
+001127f8 mov       r0, r3 
+001127fc bl        #0x114b70 
+00112800 mov       r3, r0 
+00112804 ldr       r3, [r3] 
+00112808 mov       r0, r3 
+0011280c bl        #0x1145e8 
+00112810 mov       r2, r0 
+00112814 ldr       r3, [sp, #0x10] 
+00112818 cmp       r2, r3 
+0011281c movne     r3, #0 
+00112820 moveq     r3, #1 
+00112824 uxtb      r3, r3 
+00112828 cmp       r3, #0 
+0011282c beq       #0x1128dc 
+00112830 bl        #0x104b78 DTS_Client_Get_Frontend
+00112834 mov       r3, r0 
+00112838 ldr       r3, [r3, #0x1c] 
+0011283c mov       r0, #1 
+00112840 mov       r1, #5 
+00112844 blx       r3 
+00112848 mov       r3, r0 
+0011284c cmp       r3, #0 
+00112850 beq       #0x112894 
+00112854 bl        #0x104b78 DTS_Client_Get_Frontend
+00112858 mov       r3, r0 
+0011285c ldr       ip, [r3, #0x2c] 
+00112860 movw      r3, #0x2b1 
+00112864 str       r3, [sp] 
+00112868 ldr       r3, [pc, #0x13c] 
+0011286c add       r3, r4, r3 
+00112870 str       r3, [sp, #4] 
+00112874 mov       r0, #1 
+00112878 mov       r1, #5 
+
+REF Server::processUnregisterListener(listener) - listener unregistered
+00112824 uxtb      r3, r3 
+00112828 cmp       r3, #0 
+0011282c beq       #0x1128dc 
+00112830 bl        #0x104b78 DTS_Client_Get_Frontend
+00112834 mov       r3, r0 
+00112838 ldr       r3, [r3, #0x1c] 
+0011283c mov       r0, #1 
+00112840 mov       r1, #5 
+00112844 blx       r3 
+00112848 mov       r3, r0 
+0011284c cmp       r3, #0 
+00112850 beq       #0x112894 
+00112854 bl        #0x104b78 DTS_Client_Get_Frontend
+00112858 mov       r3, r0 
+0011285c ldr       ip, [r3, #0x2c] 
+00112860 movw      r3, #0x2b1 
+00112864 str       r3, [sp] 
+00112868 ldr       r3, [pc, #0x13c] 
+0011286c add       r3, r4, r3 
+00112870 str       r3, [sp, #4] 
+00112874 mov       r0, #1 
+00112878 mov       r1, #5 
+0011287c ldr       r3, [pc, #0x12c] 
+00112880 add       r3, r4, r3 
+00112884 mov       r2, r3 
+00112888 ldr       r3, [pc, #0x124] 
+0011288c add       r3, r4, r3 
+00112890 blx       ip 
+00112894 add       r3, sp, #0x18 
+00112898 mov       r0, r3 
+0011289c bl        #0x114b70 
+001128a0 mov       r3, r0 
+001128a4 ldr       r3, [r3] 
+001128a8 cmp       r3, #0 
+001128ac beq       #0x1128c4 
+001128b0 ldr       r2, [r3] 
+001128b4 add       r2, r2, #4 
+001128b8 ldr       r2, [r2] 
+001128bc mov       r0, r3 
+001128c0 blx       r2 
+001128c4 ldr       r3, [sp, #0x14] 
+001128c8 add       r3, r3, #0x2c 
+001128cc mov       r0, r3 
+001128d0 ldr       r1, [sp, #0x18] 
+001128d4 bl        #0x114dc4 
+001128d8 b         #0x112924 
+001128dc add       r3, sp, #0x18 
+001128e0 mov       r0, r3 
+001128e4 mov       r1, #0 
+001128e8 bl        #0x114b98 
+001128ec ldr       r3, [sp, #0x14] 
+001128f0 add       r3, r3, #0x2c 
+001128f4 mov       r0, r3 
+001128f8 bl        #0x114b08 
+001128fc mov       r3, r0 
+00112900 str       r3, [sp, #0x1c] 
+00112904 add       r2, sp, #0x18 
+00112908 add       r3, sp, #0x1c 
+0011290c mov       r0, r2 
+00112910 mov       r1, r3 
+00112914 bl        #0x114b3c 
+00112918 mov       r3, r0 
+0011291c cmp       r3, #0 
+00112920 bne       #0x1127f4 
+00112924 bl        #0x104b78 DTS_Client_Get_Frontend
+00112928 mov       r3, r0 
+0011292c ldr       r3, [r3, #0x1c] 
+00112930 mov       r0, #1 
+00112934 mov       r1, #6 
+00112938 blx       r3 
+0011293c mov       r3, r0 
+00112940 cmp       r3, #0 
+00112944 beq       #0x1129a0 
+00112948 bl        #0x104b78 DTS_Client_Get_Frontend
+0011294c mov       r3, r0 
+00112950 ldr       r5, [r3, #0x2c] 
+00112954 ldr       r3, [sp, #0x14] 
+00112958 add       r3, r3, #0x2c 
+0011295c mov       r0, r3 
+00112960 bl        #0x114d7c 
+00112964 mov       r3, r0 
+00112968 movw      r2, #0x2b9 
+0011296c str       r2, [sp] 
+
+REF Server::processUnregisterListener - number of clients %d
+0011292c ldr       r3, [r3, #0x1c] 
+00112930 mov       r0, #1 
+00112934 mov       r1, #6 
+00112938 blx       r3 
+0011293c mov       r3, r0 
+00112940 cmp       r3, #0 
+00112944 beq       #0x1129a0 
+00112948 bl        #0x104b78 DTS_Client_Get_Frontend
+0011294c mov       r3, r0 
+00112950 ldr       r5, [r3, #0x2c] 
+00112954 ldr       r3, [sp, #0x14] 
+00112958 add       r3, r3, #0x2c 
+0011295c mov       r0, r3 
+00112960 bl        #0x114d7c 
+00112964 mov       r3, r0 
+00112968 movw      r2, #0x2b9 
+0011296c str       r2, [sp] 
+00112970 ldr       r2, [pc, #0x40] 
+00112974 add       r2, r4, r2 
+00112978 str       r2, [sp, #4] 
+0011297c str       r3, [sp, #8] 
+00112980 mov       r0, #1 
+00112984 mov       r1, #6 
+00112988 ldr       r3, [pc, #0x20] 
+0011298c add       r3, r4, r3 
+00112990 mov       r2, r3 
+00112994 ldr       r3, [pc, #0x18] 
+00112998 add       r3, r4, r3 
+0011299c blx       r5 
+001129a0 add       sp, sp, #0x24 
+001129a4 pop       {r4, r5, pc} 
+001129a8 andeq     r3, r6, ip, asr sb 
+001129ac .byte     0x64, 0x29, 0xff, 0xff 
+001129b0 .byte     0xd0, 0x20, 0xff, 0xff 
+001129b4 .byte     0xbc, 0x20, 0xff, 0xff 
+001129b8 .byte     0xa8, 0x29, 0xff, 0xff 
+001129bc push      {r4, r5, lr} 
+001129c0 sub       sp, sp, #0x24 
+001129c4 ldr       r4, [pc, #0x1d8] 
+001129c8 add       r4, pc, r4 
+001129cc str       r0, [sp, #0x14] 
+001129d0 str       r1, [sp, #0x10] 
+001129d4 ldr       r3, [sp, #0x14] 
+001129d8 add       r3, r3, #0x2c 
+001129dc mov       r0, r3 
+001129e0 bl        #0x114ad4 
+001129e4 mov       r3, r0 
+001129e8 str       r3, [sp, #0x18] 
+001129ec b         #0x112ae8 
+001129f0 add       r3, sp, #0x18 
+001129f4 mov       r0, r3 
+001129f8 bl        #0x114b70 
+001129fc mov       r3, r0 
+00112a00 ldr       r3, [r3] 
+00112a04 mov       r0, r3 
+00112a08 bl        #0x114604 
+00112a0c mov       r2, r0 
+00112a10 ldr       r3, [sp, #0x10] 
+00112a14 cmp       r2, r3 
+00112a18 movne     r3, #0 
+00112a1c moveq     r3, #1 
+00112a20 uxtb      r3, r3 
+00112a24 cmp       r3, #0 
+00112a28 beq       #0x112ad8 
+00112a2c bl        #0x104b78 DTS_Client_Get_Frontend
+00112a30 mov       r3, r0 
+00112a34 ldr       r3, [r3, #0x1c] 
+00112a38 mov       r0, #1 
+00112a3c mov       r1, #5 
+00112a40 blx       r3 
+00112a44 mov       r3, r0 
+00112a48 cmp       r3, #0 
+00112a4c beq       #0x112a90 
+00112a50 bl        #0x104b78 DTS_Client_Get_Frontend
+00112a54 mov       r3, r0 
+00112a58 ldr       ip, [r3, #0x2c] 
+00112a5c mov       r3, #0x2c4 
+00112a60 str       r3, [sp] 
+00112a64 ldr       r3, [pc, #0x13c] 
+00112a68 add       r3, r4, r3 
+00112a6c str       r3, [sp, #4] 
+00112a70 mov       r0, #1 
+00112a74 mov       r1, #5 
+
+REF Server::processUnregisterListener(appId) - listener unregistered
+00112a20 uxtb      r3, r3 
+00112a24 cmp       r3, #0 
+00112a28 beq       #0x112ad8 
+00112a2c bl        #0x104b78 DTS_Client_Get_Frontend
+00112a30 mov       r3, r0 
+00112a34 ldr       r3, [r3, #0x1c] 
+00112a38 mov       r0, #1 
+00112a3c mov       r1, #5 
+00112a40 blx       r3 
+00112a44 mov       r3, r0 
+00112a48 cmp       r3, #0 
+00112a4c beq       #0x112a90 
+00112a50 bl        #0x104b78 DTS_Client_Get_Frontend
+00112a54 mov       r3, r0 
+00112a58 ldr       ip, [r3, #0x2c] 
+00112a5c mov       r3, #0x2c4 
+00112a60 str       r3, [sp] 
+00112a64 ldr       r3, [pc, #0x13c] 
+00112a68 add       r3, r4, r3 
+00112a6c str       r3, [sp, #4] 
+00112a70 mov       r0, #1 
+00112a74 mov       r1, #5 
+00112a78 ldr       r3, [pc, #0x12c] 
+00112a7c add       r3, r4, r3 
+00112a80 mov       r2, r3 
+00112a84 ldr       r3, [pc, #0x124] 
+00112a88 add       r3, r4, r3 
+00112a8c blx       ip 
+00112a90 add       r3, sp, #0x18 
+00112a94 mov       r0, r3 
+00112a98 bl        #0x114b70 
+00112a9c mov       r3, r0 
+00112aa0 ldr       r3, [r3] 
+00112aa4 cmp       r3, #0 
+00112aa8 beq       #0x112ac0 
+00112aac ldr       r2, [r3] 
+00112ab0 add       r2, r2, #4 
+00112ab4 ldr       r2, [r2] 
+00112ab8 mov       r0, r3 
+00112abc blx       r2 
+00112ac0 ldr       r3, [sp, #0x14] 
+00112ac4 add       r3, r3, #0x2c 
+00112ac8 mov       r0, r3 
+00112acc ldr       r1, [sp, #0x18] 
+00112ad0 bl        #0x114dc4 
+00112ad4 b         #0x112b20 
+00112ad8 add       r3, sp, #0x18 
+00112adc mov       r0, r3 
+00112ae0 mov       r1, #0 
+00112ae4 bl        #0x114b98 
+00112ae8 ldr       r3, [sp, #0x14] 
+00112aec add       r3, r3, #0x2c 
+00112af0 mov       r0, r3 
+00112af4 bl        #0x114b08 
+00112af8 mov       r3, r0 
+00112afc str       r3, [sp, #0x1c] 
+00112b00 add       r2, sp, #0x18 
+00112b04 add       r3, sp, #0x1c 
+00112b08 mov       r0, r2 
+00112b0c mov       r1, r3 
+00112b10 bl        #0x114b3c 
+00112b14 mov       r3, r0 
+00112b18 cmp       r3, #0 
+00112b1c bne       #0x1129f0 
+00112b20 bl        #0x104b78 DTS_Client_Get_Frontend
+00112b24 mov       r3, r0 
+00112b28 ldr       r3, [r3, #0x1c] 
+00112b2c mov       r0, #1 
+00112b30 mov       r1, #6 
+00112b34 blx       r3 
+00112b38 mov       r3, r0 
+00112b3c cmp       r3, #0 
+00112b40 beq       #0x112b9c 
+00112b44 bl        #0x104b78 DTS_Client_Get_Frontend
+00112b48 mov       r3, r0 
+00112b4c ldr       r5, [r3, #0x2c] 
+00112b50 ldr       r3, [sp, #0x14] 
+00112b54 add       r3, r3, #0x2c 
+00112b58 mov       r0, r3 
+00112b5c bl        #0x114d7c 
+00112b60 mov       r3, r0 
+00112b64 mov       r2, #0x2cc 
+00112b68 str       r2, [sp] 
+
+REF Server::processUnregisterListener(appId) - number of clients %d
+00112b28 ldr       r3, [r3, #0x1c] 
+00112b2c mov       r0, #1 
+00112b30 mov       r1, #6 
+00112b34 blx       r3 
+00112b38 mov       r3, r0 
+00112b3c cmp       r3, #0 
+00112b40 beq       #0x112b9c 
+00112b44 bl        #0x104b78 DTS_Client_Get_Frontend
+00112b48 mov       r3, r0 
+00112b4c ldr       r5, [r3, #0x2c] 
+00112b50 ldr       r3, [sp, #0x14] 
+00112b54 add       r3, r3, #0x2c 
+00112b58 mov       r0, r3 
+00112b5c bl        #0x114d7c 
+00112b60 mov       r3, r0 
+00112b64 mov       r2, #0x2cc 
+00112b68 str       r2, [sp] 
+00112b6c ldr       r2, [pc, #0x40] 
+00112b70 add       r2, r4, r2 
+00112b74 str       r2, [sp, #4] 
+00112b78 str       r3, [sp, #8] 
+00112b7c mov       r0, #1 
+00112b80 mov       r1, #6 
+00112b84 ldr       r3, [pc, #0x20] 
+00112b88 add       r3, r4, r3 
+00112b8c mov       r2, r3 
+00112b90 ldr       r3, [pc, #0x18] 
+00112b94 add       r3, r4, r3 
+00112b98 blx       r5 
+00112b9c add       sp, sp, #0x24 
+00112ba0 pop       {r4, r5, pc} 
+00112ba4 andeq     r3, r6, r0, ror #14 
+00112ba8 .byte     0xe4, 0x29, 0xff, 0xff 
+00112bac .byte     0xd0, 0x20, 0xff, 0xff 
+00112bb0 .byte     0xbc, 0x20, 0xff, 0xff 
+00112bb4 .byte     0x28, 0x2a, 0xff, 0xff 
+00112bb8 push      {r4, r5, lr} 
+00112bbc sub       sp, sp, #0x2c 
+00112bc0 ldr       r4, [pc, #0x23c] 
+00112bc4 add       r4, pc, r4 
+00112bc8 str       r0, [sp, #0x1c] 
+00112bcc str       r1, [sp, #0x18] 
+00112bd0 str       r2, [sp, #0x14] 
+00112bd4 str       r3, [sp, #0x10] 
+00112bd8 ldr       r3, [sp, #0x1c] 
+00112bdc add       r3, r3, #0x2c 
+00112be0 mov       r0, r3 
+00112be4 bl        #0x114ad4 
+00112be8 mov       r3, r0 
+00112bec str       r3, [sp, #0x20] 
+00112bf0 b         #0x112d48 
+00112bf4 add       r3, sp, #0x20 
+00112bf8 mov       r0, r3 
+00112bfc bl        #0x114b70 
+00112c00 mov       r3, r0 
+00112c04 ldr       r3, [r3] 
+00112c08 mov       r0, r3 
+00112c0c bl        #0x114604 
+00112c10 mov       r2, r0 
+00112c14 ldr       r3, [sp, #0x18] 
+00112c18 cmp       r2, r3 
+00112c1c bne       #0x112c80 
+00112c20 add       r3, sp, #0x20 
+00112c24 mov       r0, r3 
+00112c28 bl        #0x114b70 
+00112c2c mov       r3, r0 
+00112c30 ldr       r3, [r3] 
+00112c34 mov       r0, r3 
+00112c38 bl        #0x114620 
+00112c3c mov       r2, r0 
+00112c40 ldr       r3, [sp, #0x14] 
+00112c44 cmp       r2, r3 
+00112c48 bne       #0x112c80 
+00112c4c add       r3, sp, #0x20 
+00112c50 mov       r0, r3 
+00112c54 bl        #0x114b70 
+00112c58 mov       r3, r0 
+00112c5c ldr       r3, [r3] 
+00112c60 mov       r0, r3 
+00112c64 bl        #0x11463c 
+00112c68 mov       r2, r0 
+00112c6c ldr       r3, [sp, #0x10] 
+00112c70 cmp       r2, r3 
+
+REF Server::processUnregisterListener(appId, threadId, passiveObjId) - listener unregistered
+00112c80 mov       r3, #0 
+00112c84 cmp       r3, #0 
+00112c88 beq       #0x112d38 
+00112c8c bl        #0x104b78 DTS_Client_Get_Frontend
+00112c90 mov       r3, r0 
+00112c94 ldr       r3, [r3, #0x1c] 
+00112c98 mov       r0, #1 
+00112c9c mov       r1, #5 
+00112ca0 blx       r3 
+00112ca4 mov       r3, r0 
+00112ca8 cmp       r3, #0 
+00112cac beq       #0x112cf0 
+00112cb0 bl        #0x104b78 DTS_Client_Get_Frontend
+00112cb4 mov       r3, r0 
+00112cb8 ldr       ip, [r3, #0x2c] 
+00112cbc mov       r3, #0x2d8 
+00112cc0 str       r3, [sp] 
+00112cc4 ldr       r3, [pc, #0x13c] 
+00112cc8 add       r3, r4, r3 
+00112ccc str       r3, [sp, #4] 
+00112cd0 mov       r0, #1 
+00112cd4 mov       r1, #5 
+00112cd8 ldr       r3, [pc, #0x12c] 
+00112cdc add       r3, r4, r3 
+00112ce0 mov       r2, r3 
+00112ce4 ldr       r3, [pc, #0x124] 
+00112ce8 add       r3, r4, r3 
+00112cec blx       ip 
+00112cf0 add       r3, sp, #0x20 
+00112cf4 mov       r0, r3 
+00112cf8 bl        #0x114b70 
+00112cfc mov       r3, r0 
+00112d00 ldr       r3, [r3] 
+00112d04 cmp       r3, #0 
+00112d08 beq       #0x112d20 
+00112d0c ldr       r2, [r3] 
+00112d10 add       r2, r2, #4 
+00112d14 ldr       r2, [r2] 
+00112d18 mov       r0, r3 
+00112d1c blx       r2 
+00112d20 ldr       r3, [sp, #0x1c] 
+00112d24 add       r3, r3, #0x2c 
+00112d28 mov       r0, r3 
+00112d2c ldr       r1, [sp, #0x20] 
+00112d30 bl        #0x114dc4 
+00112d34 b         #0x112d80 
+00112d38 add       r3, sp, #0x20 
+00112d3c mov       r0, r3 
+00112d40 mov       r1, #0 
+00112d44 bl        #0x114b98 
+00112d48 ldr       r3, [sp, #0x1c] 
+00112d4c add       r3, r3, #0x2c 
+00112d50 mov       r0, r3 
+00112d54 bl        #0x114b08 
+00112d58 mov       r3, r0 
+00112d5c str       r3, [sp, #0x24] 
+00112d60 add       r2, sp, #0x20 
+00112d64 add       r3, sp, #0x24 
+00112d68 mov       r0, r2 
+00112d6c mov       r1, r3 
+00112d70 bl        #0x114b3c 
+00112d74 mov       r3, r0 
+00112d78 cmp       r3, #0 
+00112d7c bne       #0x112bf4 
+00112d80 bl        #0x104b78 DTS_Client_Get_Frontend
+00112d84 mov       r3, r0 
+00112d88 ldr       r3, [r3, #0x1c] 
+00112d8c mov       r0, #1 
+00112d90 mov       r1, #6 
+00112d94 blx       r3 
+00112d98 mov       r3, r0 
+00112d9c cmp       r3, #0 
+00112da0 beq       #0x112dfc 
+00112da4 bl        #0x104b78 DTS_Client_Get_Frontend
+00112da8 mov       r3, r0 
+00112dac ldr       r5, [r3, #0x2c] 
+00112db0 ldr       r3, [sp, #0x1c] 
+00112db4 add       r3, r3, #0x2c 
+00112db8 mov       r0, r3 
+00112dbc bl        #0x114d7c 
+00112dc0 mov       r3, r0 
+00112dc4 mov       r2, #0x2e0 
+00112dc8 str       r2, [sp] 
+
+REF Server::processUnregisterListener(appId, threadId, passiveObjId) - number of clients %d
+00112d88 ldr       r3, [r3, #0x1c] 
+00112d8c mov       r0, #1 
+00112d90 mov       r1, #6 
+00112d94 blx       r3 
+00112d98 mov       r3, r0 
+00112d9c cmp       r3, #0 
+00112da0 beq       #0x112dfc 
+00112da4 bl        #0x104b78 DTS_Client_Get_Frontend
+00112da8 mov       r3, r0 
+00112dac ldr       r5, [r3, #0x2c] 
+00112db0 ldr       r3, [sp, #0x1c] 
+00112db4 add       r3, r3, #0x2c 
+00112db8 mov       r0, r3 
+00112dbc bl        #0x114d7c 
+00112dc0 mov       r3, r0 
+00112dc4 mov       r2, #0x2e0 
+00112dc8 str       r2, [sp] 
+00112dcc ldr       r2, [pc, #0x40] 
+00112dd0 add       r2, r4, r2 
+00112dd4 str       r2, [sp, #4] 
+00112dd8 str       r3, [sp, #8] 
+00112ddc mov       r0, #1 
+00112de0 mov       r1, #6 
+00112de4 ldr       r3, [pc, #0x20] 
+00112de8 add       r3, r4, r3 
+00112dec mov       r2, r3 
+00112df0 ldr       r3, [pc, #0x18] 
+00112df4 add       r3, r4, r3 
+00112df8 blx       r5 
+00112dfc add       sp, sp, #0x2c 
+00112e00 pop       {r4, r5, pc} 
+00112e04 andeq     r3, r6, r4, ror #10 
+00112e08 .byte     0x68, 0x2a, 0xff, 0xff 
+00112e0c .byte     0xd0, 0x20, 0xff, 0xff 
+00112e10 .byte     0xbc, 0x20, 0xff, 0xff 
+00112e14 .byte     0xc4, 0x2a, 0xff, 0xff 
+00112e18 push      {r4, lr} 
+00112e1c sub       sp, sp, #0x30 
+00112e20 ldr       r4, [pc, #0x16c] 
+00112e24 add       r4, pc, r4 
+00112e28 str       r0, [sp, #0x1c] 
+00112e2c mov       r3, r1 
+00112e30 str       r2, [sp, #0x14] 
+00112e34 strb      r3, [sp, #0x1b] 
+00112e38 bl        #0x104b78 DTS_Client_Get_Frontend
+00112e3c mov       r3, r0 
+00112e40 ldr       r3, [r3, #0x1c] 
+00112e44 mov       r0, #1 
+00112e48 mov       r1, #4 
+00112e4c blx       r3 
+00112e50 mov       r3, r0 
+00112e54 cmp       r3, #0 
+00112e58 beq       #0x112eac 
+00112e5c bl        #0x104b78 DTS_Client_Get_Frontend
+00112e60 mov       r3, r0 
+00112e64 ldr       ip, [r3, #0x2c] 
+00112e68 ldrb      r3, [sp, #0x1b] 
+00112e6c movw      r2, #0x2e5 
+00112e70 str       r2, [sp] 
+00112e74 ldr       r2, [pc, #0x11c] 
+00112e78 add       r2, r4, r2 
+00112e7c str       r2, [sp, #4] 
+00112e80 str       r3, [sp, #8] 
+00112e84 ldr       r3, [sp, #0x14] 
+00112e88 str       r3, [sp, #0xc] 
+00112e8c mov       r0, #1 
+00112e90 mov       r1, #4 
+00112e94 ldr       r3, [pc, #0x100] 
+00112e98 add       r3, r4, r3 
+00112e9c mov       r2, r3 
+00112ea0 ldr       r3, [pc, #0xf8] 
+00112ea4 add       r3, r4, r3 
+00112ea8 blx       ip 
+00112eac ldr       r0, [sp, #0x14] 
+00112eb0 bl        #0x11d678 
+00112eb4 mov       r3, r0 
+00112eb8 str       r3, [sp, #0x28] 
+00112ebc ldrb      r3, [sp, #0x1b] 
+00112ec0 cmp       r3, #0 
+00112ec4 beq       #0x112ed0 
+00112ec8 mov       r3, #1 
+00112ecc b         #0x112ed4 
+00112ed0 mov       r3, #0 
+
+REF navigationFocusCallback
+00134390 mov       r3, r0 
+00134394 ldr       r3, [r3, #0x1c] 
+00134398 mov       r0, #1 
+0013439c mov       r1, #4 
+001343a0 blx       r3 
+001343a4 mov       r3, r0 
+001343a8 cmp       r3, #0 
+001343ac beq       #0x134404 
+001343b0 bl        #0x104b78 DTS_Client_Get_Frontend
+001343b4 mov       r3, r0 
+001343b8 ldr       ip, [r3, #0x2c] 
+001343bc ldr       r3, [sp, #0x10] 
+001343c0 mov       r2, #0x48 
+001343c4 str       r2, [sp] 
+001343c8 ldr       r2, [pc, #0x70] 
+001343cc add       r2, r4, r2 
+001343d0 str       r2, [sp, #4] 
+001343d4 ldr       r2, [pc, #0x68] 
+001343d8 add       r2, r4, r2 
+001343dc str       r2, [sp, #8] 
+001343e0 str       r3, [sp, #0xc] 
+001343e4 mov       r0, #1 
+001343e8 mov       r1, #4 
+001343ec ldr       r3, [pc, #0x54] 
+001343f0 add       r3, r4, r3 
+001343f4 mov       r2, r3 
+001343f8 ldr       r3, [pc, #0x4c] 
+001343fc add       r3, r4, r3 
+00134400 blx       ip 
+00134404 ldr       r3, [sp, #0x10] 
+00134408 cmp       r3, #2 
+0013440c bne       #0x134418 
+00134410 mov       r3, #1 
+00134414 b         #0x13441c 
+00134418 mov       r3, #2 
+0013441c str       r3, [sp, #0x1c] 
+00134420 bl        #0x1103dc 
+00134424 mov       r3, r0 
+00134428 mov       r0, r3 
+0013442c ldr       r1, [sp, #0x1c] 
+00134430 bl        #0x113a44 
+00134434 add       sp, sp, #0x20 
+00134438 pop       {r4, pc} 
+0013443c andeq     r1, r4, r8, lsr #27 
+00134440 .byte     0xe8, 0x9a, 0xff, 0xff 
+00134444 .byte     0xd0, 0x9e, 0xff, 0xff 
+00134448 .byte     0x00, 0x9a, 0xff, 0xff 
+0013444c .byte     0x60, 0x9a, 0xff, 0xff 
+00134450 push      {r4, lr} 
+00134454 sub       sp, sp, #0x18 
+00134458 ldr       r4, [pc, #0xe0] 
+0013445c add       r4, pc, r4 
+00134460 str       r0, [sp, #0x14] 
+00134464 str       r1, [sp, #0x10] 
+00134468 bl        #0x104b78 DTS_Client_Get_Frontend
+0013446c mov       r3, r0 
+00134470 ldr       r3, [r3, #0x1c] 
+00134474 mov       r0, #1 
+00134478 mov       r1, #4 
+0013447c blx       r3 
+00134480 mov       r3, r0 
+00134484 cmp       r3, #0 
+00134488 beq       #0x1344e0 
+0013448c bl        #0x104b78 DTS_Client_Get_Frontend
+00134490 mov       r3, r0 
+00134494 ldr       ip, [r3, #0x2c] 
+00134498 ldr       r3, [sp, #0x10] 
+0013449c mov       r2, #0x51 
+001344a0 str       r2, [sp] 
+001344a4 ldr       r2, [pc, #0x98] 
+001344a8 add       r2, r4, r2 
+001344ac str       r2, [sp, #4] 
+001344b0 ldr       r2, [pc, #0x90] 
+001344b4 add       r2, r4, r2 
+001344b8 str       r2, [sp, #8] 
+001344bc str       r3, [sp, #0xc] 
+001344c0 mov       r0, #1 
+001344c4 mov       r1, #4 
+001344c8 ldr       r3, [pc, #0x7c] 
+001344cc add       r3, r4, r3 
+001344d0 mov       r2, r3 
+001344d4 ldr       r3, [pc, #0x74] 
+001344d8 add       r3, r4, r3 
+
+REF assertion failed: SAL_UNKNOWN_THREAD_ID == threadId || (threadId > 0 && threadId <= static_cast<int>( getMaxNumberOfThreads() ) )
+00143d8c add       r3, r1, #8 
+00143d90 strb      r0, [r3, #4] 
+00143d94 beq       #0x143e20 
+00143d98 cmn       r5, #1 
+00143d9c beq       #0x143df0 
+00143da0 cmp       r5, #0 
+00143da4 ble       #0x143db4 
+00143da8 bl        #0x14424c 
+00143dac cmp       r5, r0 
+00143db0 ble       #0x143df0 
+00143db4 bl        #0x104b78 DTS_Client_Get_Frontend
+00143db8 mov       r5, #0x23 
+00143dbc ldr       r1, [pc, #0xa0] 
+00143dc0 ldr       ip, [pc, #0xa0] 
+00143dc4 add       r2, r7, r1 
+00143dc8 add       r3, r7, ip 
+00143dcc str       r5, [sp] 
+00143dd0 ldr       r4, [pc, #0x94] 
+00143dd4 add       r6, r7, r4 
+00143dd8 str       r6, [sp, #4] 
+00143ddc ldr       r7, [r0, #0x2c] 
+00143de0 mov       r0, #0 
+00143de4 mov       r1, r0 
+00143de8 blx       r7 
+00143dec bl        #0x104ef0 abort
+00143df0 mov       r0, r4 
+00143df4 add       sp, sp, #0xc 
+00143df8 pop       {r4, r5, r6, r7, pc} 
+00143dfc ldr       lr, [pc, #0x6c] 
+00143e00 ldr       ip, [pc, #0x6c] 
+00143e04 ldr       r2, [pc, #0x6c] 
+00143e08 add       r0, r7, lr 
+00143e0c add       r3, r7, r2 
+00143e10 add       r1, r7, ip 
+00143e14 mov       r2, #0x93 
+00143e18 bl        #0x104bd8 __assert
+00143e1c b         #0x143d58 
+00143e20 bl        #0x104b78 DTS_Client_Get_Frontend
+00143e24 mov       r1, #0x1f 
+00143e28 ldr       ip, [pc, #0x4c] 
+00143e2c str       r1, [sp] 
+00143e30 add       r5, r7, ip 
+00143e34 ldr       r2, [pc, #0x28] 
+00143e38 ldr       r3, [pc, #0x28] 
+00143e3c add       r2, r7, r2 
+00143e40 add       r3, r7, r3 
+00143e44 str       r5, [sp, #4] 
+00143e48 mov       r1, r6 
+00143e4c ldr       r4, [r0, #0x2c] 
+00143e50 mov       r0, r6 
+00143e54 blx       r4 
+00143e58 bl        #0x104ef0 abort
+00143e5c andeq     r2, r3, ip, ror #7 
+00143e60 muleq     r0, r8, r3 
+00143e64 .byte     0xc8, 0xd9, 0xff, 0xff 
+00143e68 .byte     0xac, 0xd5, 0xff, 0xff 
+00143e6c .byte     0xa8, 0xda, 0xff, 0xff 
+00143e70 .byte     0x5c, 0xda, 0xff, 0xff 
+00143e74 .byte     0x68, 0xda, 0xff, 0xff 
+00143e78 .byte     0xc0, 0xd9, 0xff, 0xff 
+00143e7c .byte     0x84, 0xda, 0xff, 0xff 
+00143e80 push      {r4, r5, r6, r7, lr} 
+00143e84 mov       r4, r0 
+00143e88 cmn       r1, #1 
+00143e8c movne     r6, #0 
+00143e90 moveq     r6, #1 
+00143e94 mov       r5, r1 
+00143e98 strb      r6, [r0, #8] 
+00143e9c str       r1, [r4, #4] 
+00143ea0 ldr       r7, [pc, #0x120] 
+00143ea4 ldr       r1, [pc, #0x120] 
+00143ea8 add       r7, pc, r7 
+00143eac sub       sp, sp, #0xc 
+00143eb0 ldr       r0, [r7, r1] 
+00143eb4 subs      r6, r2, #0 
+00143eb8 add       r3, r0, #8 
+00143ebc str       r3, [r4] 
+00143ec0 beq       #0x143f68 
+00143ec4 mov       r0, r6 
+00143ec8 bl        #0x104a88 strlen
+00143ecc mov       r1, r6 
+00143ed0 cmp       r0, #8 
+00143ed4 movlo     r2, r0 
+
+REF assertion failed: SAL_UNKNOWN_THREAD_ID == threadId || (threadId > 0 && threadId <= static_cast<int>( getMaxNumberOfThreads() ) )
+00143ef8 add       r3, r1, #8 
+00143efc strb      r0, [r3, #4] 
+00143f00 beq       #0x143f8c 
+00143f04 cmn       r5, #1 
+00143f08 beq       #0x143f5c 
+00143f0c cmp       r5, #0 
+00143f10 ble       #0x143f20 
+00143f14 bl        #0x14424c 
+00143f18 cmp       r5, r0 
+00143f1c ble       #0x143f5c 
+00143f20 bl        #0x104b78 DTS_Client_Get_Frontend
+00143f24 mov       r5, #0x23 
+00143f28 ldr       r1, [pc, #0xa0] 
+00143f2c ldr       ip, [pc, #0xa0] 
+00143f30 add       r2, r7, r1 
+00143f34 add       r3, r7, ip 
+00143f38 str       r5, [sp] 
+00143f3c ldr       r4, [pc, #0x94] 
+00143f40 add       r6, r7, r4 
+00143f44 str       r6, [sp, #4] 
+00143f48 ldr       r7, [r0, #0x2c] 
+00143f4c mov       r0, #0 
+00143f50 mov       r1, r0 
+00143f54 blx       r7 
+00143f58 bl        #0x104ef0 abort
+00143f5c mov       r0, r4 
+00143f60 add       sp, sp, #0xc 
+00143f64 pop       {r4, r5, r6, r7, pc} 
+00143f68 ldr       lr, [pc, #0x6c] 
+00143f6c ldr       ip, [pc, #0x6c] 
+00143f70 ldr       r2, [pc, #0x6c] 
+00143f74 add       r0, r7, lr 
+00143f78 add       r3, r7, r2 
+00143f7c add       r1, r7, ip 
+00143f80 mov       r2, #0x93 
+00143f84 bl        #0x104bd8 __assert
+00143f88 b         #0x143ec4 
+00143f8c bl        #0x104b78 DTS_Client_Get_Frontend
+00143f90 mov       r1, #0x1f 
+00143f94 ldr       ip, [pc, #0x4c] 
+00143f98 str       r1, [sp] 
+00143f9c add       r5, r7, ip 
+00143fa0 ldr       r2, [pc, #0x28] 
+00143fa4 ldr       r3, [pc, #0x28] 
+00143fa8 add       r2, r7, r2 
+00143fac add       r3, r7, r3 
+00143fb0 str       r5, [sp, #4] 
+00143fb4 mov       r1, r6 
+00143fb8 ldr       r4, [r0, #0x2c] 
+00143fbc mov       r0, r6 
+00143fc0 blx       r4 
+00143fc4 bl        #0x104ef0 abort
+00143fc8 andeq     r2, r3, r0, lsl #5 
+00143fcc muleq     r0, r8, r3 
+00143fd0 .byte     0xc8, 0xd9, 0xff, 0xff 
+00143fd4 .byte     0xac, 0xd5, 0xff, 0xff 
+00143fd8 .byte     0xa8, 0xda, 0xff, 0xff 
+00143fdc .byte     0x5c, 0xda, 0xff, 0xff 
+00143fe0 .byte     0x68, 0xda, 0xff, 0xff 
+00143fe4 .byte     0xc0, 0xd9, 0xff, 0xff 
+00143fe8 .byte     0x84, 0xda, 0xff, 0xff 
+00143fec ldr       r0, [r0, #4] 
+00143ff0 adds      r0, r0, #1 
+00143ff4 movne     r0, #1 
+00143ff8 bx        lr 
+00143ffc push      {r4, lr} 
+00144000 mov       r4, r0 
+00144004 bl        #0x143fec 
+00144008 cmp       r0, #0 
+0014400c popeq     {r4, pc} 
+00144010 ldr       r0, [r4, #4] 
+00144014 pop       {r4, lr} 
+00144018 b         #0x105160 SAL_Stop_Timer
+0014401c push      {r4, r5, r6, r7, r8, lr} 
+00144020 mov       r5, r1 
+00144024 mov       r4, r2 
+00144028 mov       r7, r3 
+0014402c mov       r6, r0 
+00144030 bl        #0x143fec 
+00144034 cmp       r0, #0 
+00144038 beq       #0x144054 
+0014403c ldr       r0, [r6, #4] 
+00144040 mov       r1, r5 

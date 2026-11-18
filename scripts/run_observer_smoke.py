@@ -73,6 +73,7 @@ class Shell:
         except BaseException:
             self.broken=True
             raise
+        self.last_response=response
         code=int(done.search(response).group(1))
         self.actions.append(dict(command=command,exit_code=code))
         if required and code: raise RuntimeError('Remote test step returned '+str(code)+': '+command)

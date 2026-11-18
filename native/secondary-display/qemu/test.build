@@ -17,7 +17,11 @@
     wire_fixture
     runtime_fixture
     keyframe_probe_fixture
+    route_policy_fixture
+    route_hook_fixture
+    route_forward_runner
     live_capture_test --self-test
+    live_mux_fixture
     transaction_fixture
     secondary_test_runner
     smoke_qemu_runner
@@ -41,7 +45,13 @@ factory_fixture
 wire_fixture
 runtime_fixture
 keyframe_probe_fixture
+route_policy_fixture
+route_hook_fixture
+route_forward_fixture
+route_forward_runner
+libdelphi_observer_keyframe.so
 live_capture_test
+live_mux_fixture
 transaction_fixture
 secondary_forward_fixture
 secondary_test_runner

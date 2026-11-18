@@ -1,0 +1,48 @@
+{
+  "source_session": "_disconnect_observer_20261117_154132_637ff210",
+  "all_artifact_hashes_verified": true,
+  "live_frames": 368,
+  "live_bytes": 4795970,
+  "live_packets": 27378,
+  "source_span_seconds": 27.583972416,
+  "reader_completed_normally": true,
+  "route_policy": {
+    "pid": 1728590,
+    "state": 1,
+    "error": 0,
+    "nav_pid": 1536085,
+    "held": 0,
+    "released": 0,
+    "cancelled": 0,
+    "phone_acknowledgements": 0,
+    "release_errors": 0,
+    "watch_ticks": 1105,
+    "release_reason": 0,
+    "deadline_ms": 0,
+    "requests": 1,
+    "eligible": false,
+    "bounded_trial": true
+  },
+  "factory_restored": true,
+  "visible_maps": false,
+  "root_cause": "V5 used DSI/HMI focus2 in the native SAL event0x1749 hook. Native projected1 maps to HMI phone-focus2 in AndroidAutoServices; V5 treated native1 as release.",
+  "firmware_conversion": {
+    "file": "delphi-dump/extbin/apps/bin/AndroidAutoServices",
+    "sha256": "87a771218d43a820fb71a0be242c854079aade715b1fcb51b541ce4c0b991ff3",
+    "address": "0x112760",
+    "words": [
+      "0xe3530001",
+      "0x1a000001",
+      "0xe3a03002",
+      "0xea000000",
+      "0xe3a03001"
+    ],
+    "native_projected": 1,
+    "hmi_phone": 2,
+    "native_native": 2,
+    "hmi_native": 1
+  },
+  "additional_bug": "Completed sink was polled again after descriptor close; live_sink_poll returned ECANCELED47 and overwrote DONE. V6 never polls an already-attempted sink.",
+  "v6": "Correct native enum;40s maximum presentation hold, released when30s live stream completes; per-request native focus/refusal snapshot and16-record trace.",
+  "on_car_test_needed": true
+}

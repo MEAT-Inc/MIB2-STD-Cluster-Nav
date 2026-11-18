@@ -1,0 +1,9 @@
+{
+  "bundle": "native/cluster-bridge/live-output/live-cluster-v6-laptop.zip",
+  "bytes": 179184,
+  "sha256": "25f083900721f7e75ab72e8fbda20ec01b033e19f0c22240a482256781438e69",
+  "qnx_live_sink_passed": true,
+  "workflow_tests_passed": true,
+  "portable_plan_passed": true,
+  "on_car_tested": false
+}

@@ -22,6 +22,8 @@ cat >> test.build <<'EOF'
     replay_imports_fixture
     replay_fixture
     replay_timeline_fixture
+    live_startup_fixture
+    live_sink_fixture
     replay_hook_runner
     display_msg "REPLAY_QNX_END"
 }
@@ -34,6 +36,8 @@ procnto-smp
 devc-serdebug
 replay_fixture
 replay_timeline_fixture
+live_sink_fixture
+live_startup_fixture
 replay_hook_runner
 replay_hook_fixture
 replay_imports_fixture
@@ -92,3 +96,7 @@ grep -q "REPLAY_ARMED_DESCRIPTOR_PASS" "$out/qemu.log"
 grep -q "REPLAY_PRELOAD_ARMED_DESCRIPTOR_PASS" "$out/qemu.log"
 
 grep -q REPLAY_TIMELINE_PASS "$out/qemu.log"
+
+grep -q LIVE_STARTUP_QNX_PASS "$out/qemu.log"
+grep -q LIVE_NAV_SINK_QNX_PASS "$out/qemu.log"
+sha256sum /src/native/cluster-bridge/replay/build/libdelphi_cluster_live.so /src/native/cluster-bridge/replay/build/live_queue_prepare /src/native/cluster-bridge/replay/build/live_sink_fixture >> "$out/tested.sha256"

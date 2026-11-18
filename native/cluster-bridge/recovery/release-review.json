@@ -1,0 +1,11 @@
+{
+  "bundle": "native/cluster-bridge/recovery/live-recovery-and-cluster-v3-laptop.zip",
+  "bytes": 217046,
+  "sha256": "ff7f946463556a5a0e1af30585ada7722c2e4a3219eb0de011eea48523089355",
+  "qnx_crash_guard_passed": true,
+  "qnx_finalization_passed": true,
+  "host_recovery_tests_passed": true,
+  "portable_plans_passed": true,
+  "previous_session_identity_passed": true,
+  "on_car_recovery_test_needed": true
+}

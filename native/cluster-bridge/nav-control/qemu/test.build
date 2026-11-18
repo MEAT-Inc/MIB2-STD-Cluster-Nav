@@ -36,4 +36,6 @@ stall.stack
 stall.mutex
 stall.replay.stack
 stall.replay.mutex
+stall.live.stack
+stall.live.mutex
 libsocket.so.3

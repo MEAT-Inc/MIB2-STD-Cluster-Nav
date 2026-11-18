@@ -206,6 +206,43 @@ static int cleanup_disconnected(const char *path) {
  if(!state->error&&state->restoration_verified){puts("LAUNCH_COMPLETE");status=0;}else status=1;
  done:if(m>=0)close(m);if(o>=0)close(o);if(status)printf("LAUNCH_CLEANUP_REFUSED_OR_INCOMPLETE status=%d\n",status);fflush(stdout);return status;
 }
+/* Reconcile only the captured failed-cleanup state after a separately guarded
+ * recovery has already produced a different canonical factory process.
+ * This entry point never signals, launches, removes aliases, or retries cleanup. */
+static int finalize_recovery(const char *path){
+ struct launch_state copy;struct stat st;pg_identity manager,stock;int fd=-1,m=-1,o=-1,lock=-1,status=3;char finish[192],recovered[192];unsigned previous;struct launch_state *shared,next;
+ if(!paths(path))return 2;
+ snprintf(recovered,sizeof(recovered),"/dev/shmem/delphi-nav-launch-recovered-%s.bin",root+strlen(LAUNCH_PREFIX));
+ fd=open(LAUNCH_ACTIVE,O_RDWR);
+ if(fd<0){
+  if(load_state(recovered,&copy)||!valid_state(&copy)||copy.phase!=6||copy.error||!copy.restoration_verified)return 3;
+  m=pg_open(copy.manager_pid,0,&manager);o=pg_open(copy.restored_pid,0,&stock);
+  if(m>=0&&o>=0&&manager.start_time==copy.manager_start&&!strcmp(manager.executable,MANAGER_TARGET)&&stock.parent==manager.pid&&stock.start_time==copy.restored_start&&!strcmp(stock.executable,NAV_TARGET)&&!pg_matches(m,&manager)&&!pg_matches(o,&stock)&&!own_alias()&&references()){puts("NAV_RECOVERY_ALREADY_FINALIZED");status=0;}
+  goto out;
+ }
+ if(fstat(fd,&st)||!S_ISREG(st.st_mode)||st.st_size!=sizeof(*state))goto out;
+ state=mmap(0,sizeof(*state),PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);if(state==MAP_FAILED)goto out;
+ if(!valid_state(state)||state->phase!=4||state->restoration_verified||!state->cleanup_authorized||!state->cleanup_started||state->initial_signal_error||state->observed_signal_error!=3||(state->error!=1005&&state->error!=1006)||!state->alias_removed||own_alias()||!references()||!active_owned())goto out;
+ if(load_state(finalpath,&copy)||!valid_state(&copy)||copy.phase!=4||copy.error!=state->error||copy.observed_signal_error!=3||copy.restoration_verified||copy.observed_pid!=state->observed_pid||copy.observed_start!=state->observed_start||copy.manager_start!=state->manager_start)goto out;
+ m=pg_open(state->manager_pid,0,&manager);if(m<0||manager.start_time!=state->manager_start||strcmp(manager.executable,MANAGER_TARGET)||pg_matches(m,&manager))goto out;
+ o=pg_open(state->observed_pid,0,&stock);if(o>=0||(errno!=ENOENT&&errno!=ESRCH))goto out;
+ snprintf(finish,sizeof(finish),"/dev/shmem/delphi-nav-launch-finalize-%s.lock",root+strlen(LAUNCH_PREFIX));
+ /* Verify the new stock instance before acquiring the finalization-only lock. */
+ {pg_identity fresh;int f=pg_find(NAV_TARGET,manager.pid,&fresh);if(f<0)goto out;if(fresh.pid==(pid_t)state->observed_pid||fresh.start_time==state->observed_start||pg_matches(f,&fresh)){close(f);goto out;}close(f);}
+ lock=open(finish,O_WRONLY|O_CREAT|O_EXCL,0600);if(lock<0)goto out;close(lock);lock=-1;
+ if(!active_owned()||pg_matches(m,&manager))goto out;
+ shared=state;next=*shared;state=&next;
+ if(stock_now(manager)){state=shared;goto out;}
+ previous=state->error;state->error=0;state->observed_signal_error=0;
+ /* Keep the original failure record immutable. Publish a separate recovered
+  * record before committing the active-state transition. */
+ if(write_state(recovered,state)){state=shared;goto out;}
+ state=shared;if(!active_owned()||pg_matches(m,&manager))goto out;
+ *shared=next;
+ if(active_owned()&&unlink(LAUNCH_ACTIVE))goto out;
+ printf("NAV_RECOVERY_FINALIZED previous_error=%u new_pid=%u\n",previous,state->restored_pid);status=0;
+ out:if(fd>=0)close(fd);if(m>=0)close(m);if(o>=0)close(o);if(status)puts("NAV_RECOVERY_FINALIZE_REFUSED");return status;
+}
 /* Explicit operator arm; identity/report validation only, no transport or signal. */
 static int arm_replay(const char *path) {
  struct launch_state copy={0};pg_identity manager={0},observed={0};struct stat st;uint32_t *w;const char *stage="active-open";unsigned report_status=0,report_error=0,report_stage=0;int a=-1,m=-1,o=-1,r=-1,rc=3;ssize_t n;
@@ -230,6 +267,7 @@ int main(int argc,char **argv) {
  struct sigaction action;
  if(sizeof(struct launch_state)!=512)return 2;
  if(!strcmp(argv[0],"NavigationServer")||!strcmp(argv[0],NAV_TARGET))return wrapper_main(argc,argv);
+ if(argc==3&&!strcmp(argv[1],"finalize-recovery"))return finalize_recovery(argv[2]);
  if(argc==3&&!strcmp(argv[1],"arm-replay"))return arm_replay(argv[2]);
  if(argc==3&&!strcmp(argv[1],"cleanup-disconnected"))return cleanup_disconnected(argv[2]);
  if(argc<2||strcmp(argv[1],"start-disconnected"))return 2;

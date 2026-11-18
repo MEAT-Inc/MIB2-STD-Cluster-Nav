@@ -15,6 +15,8 @@
     replay_imports_fixture
     replay_fixture
     replay_timeline_fixture
+    live_startup_fixture
+    live_sink_fixture
     replay_hook_runner
     display_msg "REPLAY_QNX_END"
 }
@@ -27,6 +29,8 @@ procnto-smp
 devc-serdebug
 replay_fixture
 replay_timeline_fixture
+live_sink_fixture
+live_startup_fixture
 replay_hook_runner
 replay_hook_fixture
 replay_imports_fixture

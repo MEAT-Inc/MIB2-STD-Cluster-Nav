@@ -1,0 +1,42 @@
+{
+  "artifacts_verified": 30,
+  "live_input": {
+    "owned_live_copy_verified": true,
+    "frames": 354,
+    "bytes": 3311131,
+    "all_copied_access_units_match": true,
+    "keyframes": 1,
+    "resyncs": 1,
+    "queue_dropped": 0,
+    "source_to_copy_median_ms": 1.999998,
+    "source_to_copy_max_ms": 11.999988,
+    "reader": {
+      "pid": 2498657,
+      "source_pid": 2478156,
+      "state": 3,
+      "error": 0,
+      "frames": 354,
+      "bytes": 3311131,
+      "queue_dropped": 0,
+      "request_idr": false,
+      "stop_reason": 2,
+      "nav_samples": 31,
+      "nav_errors": 0
+    },
+    "cluster_transport_connected": false
+  },
+  "native_geometry": {
+    "observation_available": true,
+    "samples": 31,
+    "samples_during_phone_video": 29,
+    "active_during_phone_video": 29,
+    "native_geometry_stayed_present": true,
+    "cluster_transport_writes_measured": false
+  },
+  "cleanup_pending": false,
+  "next": "Native Nav queue consumer and existing descriptor/timeline handoff",
+  "native_live_sink_qnx_verified": true,
+  "native_live_output_integration": "Shared queue consumed directly by the single existing Nav worker; native mux output follows retained descriptor/generation/timeline checks. Accepted output is captured up to2MiB.",
+  "next_car_bundle": "native/cluster-bridge/live-output/live-cluster-v1-laptop.zip",
+  "on_car_live_display_proven": false
+}

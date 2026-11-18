@@ -30,8 +30,9 @@ int main(void){
  if(report.w[50]!=5||report.w[51]||report.w[52]||refreshes!=3||acks!=5||report.w[44]!=3||report.w[45]!=5||report.w[47]||bad)return 7;
  {unsigned probes=0;for(i=0;i<timing->count;i++)if(timing->records[i].kind==3){probes++;if(timing->records[i].requested||timing->records[i].saved)return 8;}if(probes!=3)return 9;}
  for(i=1;i<=8;i++)if(get(router,0x100+i*4)!=0x20000000+i*4)return 10;
+ c.probe_refresh_disabled=1;c.probe_requests=0;c.probe_next_ns=1;expected_ack=acks+1;expected_head=shared->head+1;if(api.object.data(c.video,37,&b,0)||refreshes!=3)return 15;
  c.active=0;c.probe_next_ns=1;expected_head=shared->head;if(api.object.data(c.video,7,&b,0)||refreshes!=3)return 11;
  close(fd);unlink("/dev/shmem/keyframe-probe-fixture.bin");pthread_mutex_destroy(&c.mutex);free(timing);free(c.live_codec);free(shared);
  for(i=0;i<32;i++)if(allocations[i])free(allocations[i]);
- puts("SECONDARY_KEYFRAME_PROBE_PASS scoped_channel9=1 ack_before_refresh=1 requests_max3=1 active_session_only=1 timing_markers=1 primary_unchanged=1 no_extra_thread=1 callback_owned_queue=1 codec_copy=1");return 0;
+ puts("SECONDARY_KEYFRAME_PROBE_PASS scoped_channel9=1 ack_before_refresh=1 requests_max3=1 active_session_only=1 timing_markers=1 primary_unchanged=1 no_extra_thread=1 callback_owned_queue=1 codec_copy=1 refresh_disabled=1");return 0;
 }

@@ -16,6 +16,7 @@ static const struct timespec tick={0,100000000};
 static int read_state(const char *path,struct launch_state *s){int fd=open(path,O_RDONLY);ssize_t n;if(fd<0)return -1;n=read(fd,s,sizeof(*s));close(fd);return n==(ssize_t)sizeof(*s)?0:-1;}
 static pid_t start(const char *root,pid_t pid,int phone){pid_t p;char exe[192],n[32];snprintf(exe,sizeof(exe),"%s/nav_launch",root);snprintf(n,sizeof(n),"%u",(unsigned)pid);fflush(0);p=fork();if(!p){if(setsid()<0)_exit(98);(void)phone;execl(exe,"nav_launch","start-disconnected",root,n,(char*)0);_exit(99);}return p;}
 static int cleanup(const char *root){pid_t p;int status;char exe[192];snprintf(exe,sizeof(exe),"%s/nav_launch",root);fflush(0);p=fork();if(!p){execl(exe,"nav_launch","cleanup-disconnected",root,(char*)0);_exit(99);}if(p<0||waitpid(p,&status,0)!=p||!WIFEXITED(status))return 99;return WEXITSTATUS(status);}
+static int finalize(const char *root){pid_t p;int status;char exe[192];snprintf(exe,sizeof(exe),"%s/nav_launch",root);fflush(0);p=fork();if(!p){execl(exe,"nav_launch","finalize-recovery",root,(char*)0);_exit(99);}if(p<0||waitpid(p,&status,0)!=p||!WIFEXITED(status))return 99;return WEXITSTATUS(status);}
 static int arm(const char *root){pid_t p;int status;char exe[192];snprintf(exe,sizeof(exe),"%s/nav_launch",root);fflush(0);p=fork();if(!p){execl(exe,"nav_launch","arm-replay",root,(char*)0);_exit(99);}if(p<0||waitpid(p,&status,0)!=p||!WIFEXITED(status))return 99;return WEXITSTATUS(status);}
 static int same_observed(struct launch_state *s,pid_t manager){int fd;pg_identity p;fd=pg_open(s->observed_pid,0,&p);if(fd<0)return -1;if(p.parent!=manager||p.start_time!=s->observed_start||strcmp(p.executable,NAV_TARGET)||pg_matches(fd,&p)){close(fd);return -1;}close(fd);return 0;}
 static void dump(const char *label,struct launch_state *s){unsigned i;printf("%s ",label);for(i=0;i<sizeof(*s);++i)printf("%02x",((unsigned char*)s)[i]);puts("");}
@@ -66,11 +67,20 @@ int main(void){pid_t manager,p;pg_identity stock;struct launch_state s,final;int
   {uint32_t report[128];int rf;snprintf(path,sizeof(path),"/dev/shmem/delphi-nav-report-%s.bin",roots[k]+strlen(LAUNCH_PREFIX));
    if(arm(roots[k])||arm(roots[k]))return 24;
    rf=open(path,O_RDONLY);if(rf<0||read(rf,report,sizeof(report))!=(ssize_t)sizeof(report)||report[21]!=1)return 25;close(rf);puts("NAV_REPLAY_ARM_PASS");}
+  if(k){struct launch_state *q;fd=open(LAUNCH_ACTIVE,O_RDWR);if(fd<0)return 40;q=mmap(0,sizeof(*q),PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);close(fd);if(q==MAP_FAILED)return 41;q->error=1005;q->observed_signal_error=3;q->cleanup_authorized=q->cleanup_started=1;
+   if(finalize(roots[k])!=3||same_observed(&s,manager))return 42;
+   q->error=q->observed_signal_error=q->cleanup_authorized=q->cleanup_started=0;munmap(q,sizeof(*q));puts("NAV_FINALIZE_ALIVE_REFUSAL_PASS");}
   if(cleanup(roots[k]))return 18;
   snprintf(path,sizeof(path),"/dev/shmem/delphi-nav-launch-final-%s.bin",roots[k]+strlen(LAUNCH_PREFIX));
   if(read_state(path,&final)||final.error||final.phase!=6||!final.capture_done||!final.cleanup_authorized||!final.cleanup_started||!final.restoration_verified||final.observed_pid==final.restored_pid)return 19;
   fd=pg_find(NAV_TARGET,manager,&stock);if(fd<0||stock.pid!=(pid_t)final.restored_pid)return 20;close(fd);
-  if(cleanup(roots[k]))return 21;
+  if(k){struct launch_state failed=s;uint64_t correct;struct launch_state *q;pid_t restored=stock.pid;failed.error=1005;failed.observed_signal_error=3;failed.cleanup_authorized=failed.cleanup_started=1;
+   if(cleanup(roots[k]))return 49;
+   fd=open(path,O_WRONLY|O_TRUNC);if(fd<0||write(fd,&failed,sizeof(failed))!=sizeof(failed))return 50;close(fd);
+   fd=open(LAUNCH_ACTIVE,O_CREAT|O_EXCL|O_RDWR,0600);if(fd<0||write(fd,&failed,sizeof(failed))!=sizeof(failed))return 43;q=mmap(0,sizeof(*q),PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);close(fd);if(q==MAP_FAILED)return 44;
+   correct=q->manager_start;q->manager_start++;if(finalize(roots[k])!=3)return 45;q->manager_start=correct;munmap(q,sizeof(*q));puts("NAV_FINALIZE_STALE_REFUSAL_PASS");
+   if(finalize(roots[k])||finalize(roots[k])){return 46;}fd=pg_find(NAV_TARGET,manager,&stock);if(fd<0||stock.pid!=restored)return 47;close(fd);snprintf(path,sizeof(path),"/dev/shmem/delphi-nav-launch-recovered-%s.bin",roots[k]+strlen(LAUNCH_PREFIX));if(read_state(path,&final)||final.error||!final.restoration_verified||final.phase!=6)return 48;puts("NAV_FINALIZE_RECOVERED_PASS");}
+  if(!k&&cleanup(roots[k]))return 21;
   fd=pg_find(NAV_TARGET,manager,&stock);if(fd<0||stock.pid!=(pid_t)final.restored_pid)return 22;close(fd);
   dump(k?"NAV_DISCONNECT_ORPHAN_FINAL_HEX":"NAV_DISCONNECT_FINAL_HEX",&final);
   puts(k?"NAV_DISCONNECT_ORPHAN_CLEANUP_PASS":"NAV_DISCONNECT_LATE_CLEANUP_PASS");puts("NAV_DISCONNECT_IDEMPOTENT_PASS");

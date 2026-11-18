@@ -61,6 +61,15 @@ static int stall_capture_test(void){
  saved=m[1];m[1]^=0x10000;if(stall_blob_tid(ext,m,0x5da64,1376328,3))return -1;m[1]=saved;
  puts("NAV_REPLAY_STALL_CAPTURE_GUARD_PASS");
  }
+ {uint32_t ext[STALL_EXT_WORDS];unsigned i;const unsigned required[]={0,10,28,46,56,57,58,59,60,71,72,73,74,75,76,103,104,105,106,107,108,109,110,112,115,116,117,118,208};
+ f=open("/proc/boot/stall.live.stack",O_RDONLY);if(f<0)return -1;n=read(f,ext,sizeof(ext));close(f);if(n!=sizeof(ext))return -1;
+ f=open("/proc/boot/stall.live.mutex",O_RDONLY);if(f<0)return -1;n=read(f,m,sizeof(m));close(f);if(n!=sizeof(m))return -1;
+ if(!stall_blob_tid(ext,m,0x5da64,1560661,3)||stall_blob_tid(ext,m,0x5da64,1560661,2)||stall_blob_tid(ext,m,0x5da64,1560661,4)||stall_blob_tid(ext,m,0x5da68,1560661,3)||stall_blob_tid(ext,m,0x5da64,1560662,3))return -1;
+ for(i=0;i<sizeof(required)/sizeof(required[0]);i++){unsigned k=required[i];saved=ext[k];ext[k]^=4;if(stall_blob_tid(ext,m,0x5da64,1560661,3))return -1;ext[k]=saved;}
+ saved=m[0];m[0]=0;if(stall_blob_tid(ext,m,0x5da64,1560661,3))return -1;m[0]=saved;
+ saved=m[1];m[1]^=0x10000;if(stall_blob_tid(ext,m,0x5da64,1560661,3))return -1;m[1]=saved;
+ puts("NAV_LIVE_STALL_CAPTURE_GUARD_PASS");
+ }
  puts("NAV_STALL_CAPTURE_GUARD_PASS");return 0;
 }
 static int recover_helper(pg_identity n,pg_identity pm,const char *mode,int bad){

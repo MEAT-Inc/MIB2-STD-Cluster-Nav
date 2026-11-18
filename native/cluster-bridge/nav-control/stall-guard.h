@@ -20,8 +20,20 @@ static int stall_blob_tid(const uint32_t w[STALL_EXT_WORDS],const uint32_t m[2],
  uint32_t owner=((pid&0x7fffu)<<16)|tid;
  if(tid==2)return stall_blob(w,m,sp,pid);
  if(tid!=3)return 0;
- return m[0]==0x80000000u&&(m[1]&0x7fffffffu)==owner&&
- w[0]==0x1028088&&w[10]==0x1338f4&&w[28]==0x133704&&w[46]==0x3df1dc&&
+ int common=m[0]==0x80000000u&&(m[1]&0x7fffffffu)==owner&&
+ w[0]==0x1028088&&w[10]==0x1338f4&&w[28]==0x133704&&w[46]==0x3df1dc;
+ if(!common)return 0;
+ /* Separately captured unarmed live teardown: __flist_dequeue_bin writes
+  * through a null next-link while removing the coalesced free-list node.
+  * Saved r0 is chunk+corrupted size; r1/r2/r3 links are zero. Exact signal,
+  * caller, frame layout, arena registers and same-owner logger wait required. */
+ if(w[56]==11&&w[57]==0x10278a8&&w[58]==4&&w[59]==2&&w[60]==0&&
+    w[71]==11&&w[72]==2&&w[73]==0&&w[74]==11&&w[75]==0x10278a8&&w[76]==4&&
+    w[104]==0&&w[105]==0&&w[106]==0&&w[108]==0x1075a00&&w[109]==0x1078ac8&&w[115]==0x10760cc&&
+    w[116]==sp+0x2f4&&w[117]==0x10264b8&&w[118]==0x10278a8&&w[208]==0x1b8f2c&&
+    w[107]&&w[110]&&w[107]<0xc0000000u&&w[110]<0xc0000000u&&
+    (uint64_t)w[107]+w[110]<0xc0000000u&&w[103]==w[107]+w[110]&&w[107]==w[112])return 1;
+ return
  w[56]==11&&w[57]==0x1026384&&w[58]==w[76]&&w[59]==1&&w[60]==0&&
  w[71]==11&&w[72]==1&&w[73]==0&&w[74]==11&&w[75]==0x1026384&&
  w[118]==0x1026384&&w[117]==0x1027fd4&&w[116]==sp+0x2f4&&

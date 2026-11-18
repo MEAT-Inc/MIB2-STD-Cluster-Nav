@@ -1,0 +1,45 @@
+{
+  "source_collection": "_disconnect_observer_20261110_133825_56032b20",
+  "source_frames": 314,
+  "native_packetizer_matches_reference": true,
+  "decoded_frames": 314,
+  "decoded_pixels_unchanged": true,
+  "dimensions": [
+    800,
+    480
+  ],
+  "bytes": 1849168,
+  "sha256": "3ba7499cee172839c378daa3b00b859ee122622a768813cc6c44a6fc4a5c8a6a",
+  "transport": {
+    "packet_size": 188,
+    "packets": 9836,
+    "pid_counts": {
+      "0": 71,
+      "16": 71,
+      "4096": 770,
+      "17": 8924
+    },
+    "pat": {
+      "transport_stream_id": 0,
+      "programs": {
+        "1": 16
+      }
+    },
+    "pmts": {
+      "16": {
+        "program_number": 1,
+        "pcr_pid": 4096,
+        "streams": [
+          {
+            "stream_type": 27,
+            "pid": 17,
+            "descriptors": "2a077fff000005dddf28044280323f"
+          }
+        ]
+      }
+    },
+    "limitation": "No multi-packet PSI/PES reassembly, SPS check, PCR timing analysis or vehicle compatibility validation."
+  },
+  "live_queue_on_car_verified": false,
+  "cluster_transport_connected": false
+}

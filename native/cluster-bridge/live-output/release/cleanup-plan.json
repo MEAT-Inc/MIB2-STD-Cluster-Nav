@@ -1,0 +1,461 @@
+{
+  "version": 1,
+  "required_bytes": 31457280,
+  "entries": [
+    {
+      "root": "/ramdisk/delphi-aa-observer_637ff210e29c440faa8e67b0f31a3239",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "5532c8fb1dc74360bd0bd3f21082907620dd70acc8885290d854ecfc44485607"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        },
+        {
+          "name": "secondary.h264",
+          "bytes": 4795970,
+          "sha256": "315213baebe733e536b654c7c2c9ebdd48b029935372495e0eff62dabe636ffc"
+        },
+        {
+          "name": "timing.bin",
+          "bytes": 81952,
+          "sha256": "0127b3d20bb35609ccdc7592729f3976c9d8a2044a0fc098e7f702182b8858db"
+        },
+        {
+          "name": "live-copy.h264",
+          "bytes": 4795970,
+          "sha256": "315213baebe733e536b654c7c2c9ebdd48b029935372495e0eff62dabe636ffc"
+        },
+        {
+          "name": "live-copy-timing.bin",
+          "bytes": 65568,
+          "sha256": "5db6726c3eae85568ce901cf333c0c91cdc88d08c1c0a3029a4310ccceab7483"
+        },
+        {
+          "name": "nav-accepted-output.bin",
+          "bytes": 2097152,
+          "sha256": "7462bc52afa0ba73624cef41cdb8087d94c781fbea472757ba9524d149c3c6d5"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-aa-observer_34dda4492f664f3d969335306623ba7e",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "32f6d4c7508f72d2514d234051e2872745fe589752d0a9da79087cac1b16d764"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        },
+        {
+          "name": "secondary.h264",
+          "bytes": 3751822,
+          "sha256": "4ad6879bbcd68f85151be11ebcc5ef17f96211b896ad6341933fd6983ee1b754"
+        },
+        {
+          "name": "timing.bin",
+          "bytes": 81952,
+          "sha256": "f7d97656275862819d2185a4b662cf5bb51d78c42c8838afba5973deb6592a3b"
+        },
+        {
+          "name": "live-copy.h264",
+          "bytes": 917914,
+          "sha256": "68e1241637062c735eb4a40f3bf0f66c2077ab257a9a04adc525c9b8ab4b441f"
+        },
+        {
+          "name": "live-copy-timing.bin",
+          "bytes": 65568,
+          "sha256": "0abbe9a45340e6f3a5076d019dc519c41832de0df6a12ed65e6c4b8eeb211eac"
+        },
+        {
+          "name": "nav-accepted-output.bin",
+          "bytes": 2097152,
+          "sha256": "bfd23c909839c3097c3d4d8ba65f7b4ea73e5d0c94c86e8c296b654a684667bd"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-aa-observer_9fba06f26b3a408ba6c9676cf0a2f062",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "ef0e32102eda169b9ed4df74ef69519f9196956acf705aee1e3ec2263408f3c0"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        },
+        {
+          "name": "NavigationServer.reference",
+          "bytes": 4909668,
+          "sha256": "a999725350df8503c44a25da2676a8c1a99914a99a36f24bb6334a509def4afe"
+        },
+        {
+          "name": "secondary.h264",
+          "bytes": 3311131,
+          "sha256": "2b49f2eb0dba269a9dfd311d22ff27c05acc534d8a26da2e7ee7177599d1b30c"
+        },
+        {
+          "name": "timing.bin",
+          "bytes": 81952,
+          "sha256": "75c2c82963680ef7962bca54e1bb30c84c19c3310fe816865016e4ecf3b22465"
+        },
+        {
+          "name": "live-copy.h264",
+          "bytes": 3311131,
+          "sha256": "2b49f2eb0dba269a9dfd311d22ff27c05acc534d8a26da2e7ee7177599d1b30c"
+        },
+        {
+          "name": "live-copy-timing.bin",
+          "bytes": 65568,
+          "sha256": "083fff937c80d873f0f8be7044974ae7e4a2910863bb9e5b6f3a2dc94b6aa483"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-aa-observer_56032b2011574d898e090d331b91771f",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "246ce3012840771a3468674b667bd0c8ba2c40d82275c98e0c5898e03241f716"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        },
+        {
+          "name": "NavigationServer.reference",
+          "bytes": 4909668,
+          "sha256": "a999725350df8503c44a25da2676a8c1a99914a99a36f24bb6334a509def4afe"
+        },
+        {
+          "name": "secondary.h264",
+          "bytes": 1611470,
+          "sha256": "b2b70c4628477c7fa91b986a12e68d66160e03ba8b44f9f61bbfc717d38d9ee4"
+        },
+        {
+          "name": "timing.bin",
+          "bytes": 81952,
+          "sha256": "365ebcd9f94a06b4e6a3b6f1c284e1da5f003621e1fdc22e99a97737f2154693"
+        },
+        {
+          "name": "live-copy-timing.bin",
+          "bytes": 65568,
+          "sha256": "b495840cac3b83c641c421460994866bee4e2a11d300fba9fd1a48c4344a71eb"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-aa-observer_3b445220da51420da376c045ca755c9b",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "f6d4d9968f86daf344ca8ee0371f82275e4912017d688928888e6c031708cec3"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        },
+        {
+          "name": "NavigationServer.reference",
+          "bytes": 4909668,
+          "sha256": "a999725350df8503c44a25da2676a8c1a99914a99a36f24bb6334a509def4afe"
+        },
+        {
+          "name": "secondary.h264",
+          "bytes": 5485067,
+          "sha256": "471a67435476f87a2300615bc92ff3d2c0c6505b3522c8972b68b8e73edaba87"
+        },
+        {
+          "name": "timing.bin",
+          "bytes": 81952,
+          "sha256": "366ce05a4482cc9196249d8db8d5375e102dcccc0c40d074dded4a7b34950358"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-aa-observer_1b83e2fa04b04facae079aa52e1e06c8",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "e815a90f393074f3819d077912cab5d80c8f3a8c4bc9efede47cb0cb6b0a9f6c"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        },
+        {
+          "name": "secondary.h264",
+          "bytes": 2776803,
+          "sha256": "2962fa64ead8aac8095daf65ac240b246e342d46404bc24f7b935881e051b3ee"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-aa-observer_854fe87e856a4975a78b22fca67f2cdd",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "24beeeadeca1fa1e77d4439fd9be85b4592bab45c5f8753d921f9e6d042f8bbd"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-aa-observer_26e4d417f1244c30b8da1869809c53fe",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "2c1361173ad30f901424c27c81397abae2ad7a58e10b897f50ce45cbd5071477"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-aa-observer_512db91031234a5c817d252146d400e1",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "4b3a8ba2935b1ab4a2f6ffe653f5ec33a8bb5ff7687aed38f14e1f6c08c68345"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-aa-observer_669ee00c38bb4c93b4d42db30e8c1745",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "140f58fc2c8d14d43885ff883b1c4dc84f1982a27f302b05c99ef7d58eb750db"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-nav-bridge_44022e92390447b5a61c83eaacb9bd3b",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "0ad106c9b845f1cfc921cf18547171f19a8fa9fa167eaf9614386634621a0594"
+      },
+      "files": [
+        {
+          "name": "NavigationServer.original",
+          "bytes": 4909668,
+          "sha256": "a999725350df8503c44a25da2676a8c1a99914a99a36f24bb6334a509def4afe"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        },
+        {
+          "name": "libc.so.3.reference",
+          "bytes": 490310,
+          "sha256": "76ff9b07201a77ad231905741b25a97fd722a163c26a7ca0e36f17331bd12e9b"
+        },
+        {
+          "name": "libXSAL.so.reference",
+          "bytes": 130364,
+          "sha256": "b754301a9656e9d8f296d9ab0f9326749073cca602e79e63689d0290228ad4e1"
+        },
+        {
+          "name": "native-map-prefix.bin",
+          "bytes": 1048576,
+          "sha256": "85ccda73ecf6fa15ca8bca840d0bf6d8444cbfc9b18c441201502f49dd300d66"
+        },
+        {
+          "name": "replay.bin",
+          "bytes": 5960980,
+          "sha256": "c29b56633405cbf36047255b32d37de746d53617061f0bd761ee1dce7160d81d"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-nav-bridge_537435f02abf4b4c8bc389b8e937c811",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "e8379f4c695f983905717b4c8bbadb9271fd3ac42d5f26a52a4bbf17179599c6"
+      },
+      "files": [
+        {
+          "name": "NavigationServer.original",
+          "bytes": 4909668,
+          "sha256": "a999725350df8503c44a25da2676a8c1a99914a99a36f24bb6334a509def4afe"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        },
+        {
+          "name": "replay.bin",
+          "bytes": 6031660,
+          "sha256": "2625f67cbc3539cc7ccf70b4ebb4ea405dc42ff73c29cd24ffd803e05681fa1e"
+        }
+      ]
+    },
+    {
+      "root": "/ramdisk/delphi-nav-bridge_b925faeb61e94efea7d96d0717e84f96",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "a86fd015558f0c109d9b2390b49ee5dbdfa90baa1718c6aa358d9b200f85871b"
+      },
+      "files": [
+        {
+          "name": "NavigationServer.original",
+          "bytes": 4909668,
+          "sha256": "a999725350df8503c44a25da2676a8c1a99914a99a36f24bb6334a509def4afe"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        },
+        {
+          "name": "replay.bin",
+          "bytes": 6031660,
+          "sha256": "2625f67cbc3539cc7ccf70b4ebb4ea405dc42ff73c29cd24ffd803e05681fa1e"
+        }
+      ]
+    }
+  ]
+}

@@ -110,3 +110,5 @@ grep -q NAV_LIFECYCLE_DELAYED_START_PASS "$w/qemu.log"
 grep -q NAV_LIFECYCLE_INTEGRATION_PASS "$w/qemu.log"
 grep -q NAV_FIXTURE_ARGV_CWD_CONFIG_PASS "$w/qemu.log"
 sha256sum nav_launch nav_launch_race_fixture libdelphi_cluster.so > "$w/tested.sha256"
+
+for marker in NAV_FINALIZE_ALIVE_REFUSAL_PASS NAV_FINALIZE_STALE_REFUSAL_PASS NAV_FINALIZE_RECOVERED_PASS; do grep -q "$marker" "$w/qemu.log"; done

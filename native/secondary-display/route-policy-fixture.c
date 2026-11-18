@@ -1,0 +1,8 @@
+#include "route-policy.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define CHECK(x) do{if(!(x)){fprintf(stderr,"ROUTE_POLICY_FAIL line=%d\n",__LINE__);exit(1);}}while(0)
+static unsigned sends;static int send(unsigned a,unsigned t,unsigned e,const void *b,unsigned n){CHECK(a<=255&&(t==ROUTE_UNKNOWN_THREAD||(t>0&&t<=255))&&e==ROUTE_EVENT&&b&&n==12);sends++;return 1;}
+int main(void){struct route_policy p={0};uint32_t b[3]={123,0,1};unsigned i;CHECK(!route_apply(&p,0,10,85,1,ROUTE_EVENT,b,12));CHECK(!route_apply(&p,1,10,85,1,ROUTE_EVENT+1,b,12));CHECK(!route_apply(&p,1,10,85,1,ROUTE_EVENT,b,8));CHECK(!route_apply(&p,1,10,256,1,ROUTE_EVENT,b,12));CHECK(route_apply(&p,1,10,85,1,ROUTE_EVENT,b,12));CHECK(route_apply(&p,1,20,85,1,ROUTE_EVENT,b,12));CHECK(p.deadline==40010&&p.held==2);b[2]=2;CHECK(!route_apply(&p,1,30,85,1,ROUTE_EVENT,b,12)&&p.cancelled==1);b[2]=1;CHECK(route_apply(&p,1,40,85,1,ROUTE_EVENT,b,12));route_release(&p,send);CHECK(sends==1&&p.released==1&&!p.errors&&p.disabled);CHECK(!route_apply(&p,1,50,85,1,ROUTE_EVENT,b,12));route_release(&p,send);CHECK(sends==1);
+ memset(&p,0,sizeof(p));for(i=0;i<ROUTE_SLOTS;i++){b[0]=i+1;CHECK(route_apply(&p,1,100,85,1,ROUTE_EVENT,b,12));}b[0]=999;CHECK(!route_apply(&p,1,100,85,1,ROUTE_EVENT,b,12));CHECK(!route_apply(&p,1,40100,85,1,ROUTE_EVENT,b,12));route_release(&p,send);CHECK(sends==17&&p.released==16);memset(&p,0,sizeof(p));b[2]=1;CHECK(route_apply(&p,1,100,0,ROUTE_UNKNOWN_THREAD,ROUTE_EVENT,b,12));route_release(&p,send);CHECK(p.released==1);puts("ROUTE_POLICY_QNX_PASS unknown_thread_target=1 native_projected_1_hmi_2=1 stock_passthrough=1 exact_event=1 bounded_hold=1 duplicates=1 route_end_cancel=1 release=1 capacity=1");return 0;}

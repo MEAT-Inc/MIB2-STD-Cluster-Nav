@@ -1,0 +1,20 @@
+{
+  "bundle": "native/cluster-bridge/live-output/live-failure-capture-laptop.zip",
+  "bytes": 37246,
+  "sha256": "7c2d684bd20d65dd69d51e1cf8ec4e1381821b082547ea88a174c6022f065715",
+  "session_source": "_disconnect_observer_20261110_150334_10e0eaad",
+  "pin": {
+    "remote": "/ramdisk/delphi-nav-bridge_10e0eaada197461b9e0a1566b24c7c5d",
+    "pid": 1560661,
+    "start_time": 1422774167646832353,
+    "manager_pid": 417823,
+    "manager_start": 1422774000985999014,
+    "helper_sha256": "b791aa3c8887b88df20bd67cc8d7bae24eb64dc1f4ed76dab42b04a519348542"
+  },
+  "requires_pin_file": false,
+  "portable_session_resolution_passed": true,
+  "startup_race_regression_passed": true,
+  "readonly_collector_tests_passed": true,
+  "portable_plan_passed": true,
+  "vehicle_capture_needed": true
+}

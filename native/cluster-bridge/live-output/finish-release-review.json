@@ -1,0 +1,10 @@
+{
+  "bundle": "native/cluster-bridge/live-output/live-finish-and-cluster-v4-laptop.zip",
+  "bytes": 180519,
+  "sha256": "ab36a609add92e356dc3957b4e59f730f2efbb0cc1dd50c30e722e9a2f12704f",
+  "source_session": "_disconnect_observer_20261117_134509_a3a6c5c7",
+  "previous_session_identity_passed": true,
+  "portable_plans_passed": true,
+  "payload_script_hashes_passed": true,
+  "on_car_test_needed": true
+}

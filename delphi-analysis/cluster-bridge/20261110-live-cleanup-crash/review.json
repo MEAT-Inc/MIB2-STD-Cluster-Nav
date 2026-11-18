@@ -1,0 +1,17 @@
+{
+  "capture": "_live_failure_20261110_153835_06eec794",
+  "nav_pid": 1560661,
+  "tid": 3,
+  "signal": 11,
+  "fault_pc": "0x10278a8",
+  "fault_address": 4,
+  "fault_instruction": "str r3,[r2,#4]",
+  "saved_r2": 0,
+  "caller": "0x10264b8 (_list_release)",
+  "map_delete_return": "0x1b8f2c",
+  "logger_reentrant_malloc_mutex": "0x1076ee8",
+  "stack_and_mutex_stable_both_samples": true,
+  "video_packets_sent": 0,
+  "missing_adjacent_pages_not_needed_for_this_signature": true,
+  "fix": "Third distinct exact crash signature plus signal-free finalization after independently guarded restart"
+}

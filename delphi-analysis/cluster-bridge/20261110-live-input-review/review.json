@@ -1,0 +1,126 @@
+{
+  "secondary": {
+    "secondary_attempt_completed": true,
+    "secondary_video_received": true,
+    "secondary_trial_passed": true,
+    "state": "video_received",
+    "native_error": 0,
+    "registered_endpoints": 2,
+    "discovery_calls": 1,
+    "discovery_rewrites": 1,
+    "fallbacks": 0,
+    "setup_calls": 1,
+    "codec_calls": 1,
+    "playback_starts": 1,
+    "playback_stops": 0,
+    "frames": 314,
+    "frame_bytes": 1611441,
+    "saved_bytes": 1611470,
+    "codec_saved_bytes": 29,
+    "dropped": 0,
+    "ack_requests": 314,
+    "session": 0,
+    "channel": 9,
+    "io_error": 0,
+    "wire_error": 0,
+    "primary_backup_bytes": 386,
+    "raw_accounting_matches": true,
+    "private_flow_control_observed": true,
+    "keyframe_probe": {
+      "requests": 3,
+      "idr_frames": 1,
+      "last_request_frame": 144,
+      "clock_error": 0,
+      "ipc_attached": false,
+      "ipc_error": 2,
+      "ipc_frames": 0,
+      "ipc_dropped": 0,
+      "ipc_malformed": 0,
+      "ipc_consumer_pid": 0,
+      "ipc_closed": false
+    },
+    "annexb_nal_types": [
+      1,
+      5,
+      7,
+      8
+    ],
+    "supported_cluster_keys": [
+      23,
+      65536
+    ],
+    "cluster_transport_connected": false
+  },
+  "keyframe_control": {
+    "complete": true,
+    "focus_refresh_requests": 3,
+    "idr_frames": 1,
+    "requests_match_native_counter": true,
+    "native_keyframes_match": true,
+    "phone_refresh_produces_fresh_idr": false,
+    "responses": [
+      {
+        "request_monotonic_ns": 674477325522,
+        "request_timestamp": 1286824239669,
+        "fresh_keyframe_observed": false,
+        "response_delay_ms": null
+      },
+      {
+        "request_monotonic_ns": 677496322503,
+        "request_timestamp": 1286827272936,
+        "fresh_keyframe_observed": false,
+        "response_delay_ms": null
+      },
+      {
+        "request_monotonic_ns": 681593318406,
+        "request_timestamp": 1286831372573,
+        "fresh_keyframe_observed": false,
+        "response_delay_ms": null
+      }
+    ],
+    "baseline_idr_frames": 1,
+    "cluster_transport_connected": false
+  },
+  "live_input": {
+    "owned_live_copy_verified": false,
+    "frames": 0,
+    "bytes": 0,
+    "all_copied_access_units_match": true,
+    "keyframes": 0,
+    "resyncs": 0,
+    "queue_dropped": 0,
+    "source_to_copy_median_ms": null,
+    "source_to_copy_max_ms": null,
+    "reader": {
+      "pid": 1249377,
+      "source_pid": 1228876,
+      "state": 3,
+      "error": 0,
+      "frames": 0,
+      "bytes": 0,
+      "queue_dropped": 0,
+      "request_idr": true,
+      "stop_reason": 2,
+      "nav_samples": 30,
+      "nav_errors": 0
+    },
+    "cluster_transport_connected": false
+  },
+  "live_native_geometry": {
+    "samples": 30,
+    "samples_during_phone_video": 0,
+    "active_during_phone_video": 0,
+    "native_geometry_stayed_present": false,
+    "cluster_transport_writes_measured": false
+  },
+  "navigation_identity_unchanged": true,
+  "cleanup_pending": false,
+  "artifacts_verified": 29,
+  "diagnosis": "Reader expired and unlinked queue before phone video began; source ENOENT. Native sampling had no overlap, so encoder coexistence is unknown.",
+  "phone_first_frame_ns": 672466327533,
+  "next": "Phone-triggered capture timer; focus refresh disabled; verify queue and encoder overlap before output integration.",
+  "native_packetizer_review": "native-mux-review.json",
+  "native_packetizer_frames_verified": 314,
+  "new_bundle": "native/cluster-bridge/keyframe-probe/live-input-v2-laptop.zip",
+  "car_needed": "Verify corrected first-frame-triggered queue capture and concurrent native geometry; packetizer remains offline until queue is verified."
+}

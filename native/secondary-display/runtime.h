@@ -14,7 +14,7 @@ struct stream_timing_record { uint32_t kind,session;uint64_t timestamp,monotonic
 struct stream_timing { uint32_t magic,version,pid,record_bytes,capacity,count,dropped,clock_error;struct stream_timing_record records[TIMING_CAPACITY]; };
 _Static_assert(sizeof(struct stream_timing_record)==40,"timing record ABI");
 _Static_assert(sizeof(struct stream_timing)==81952,"timing capture ABI");
-struct stream_context { struct stream_native api;struct stream_report *report;void *router,*video,*input;struct stream_timing *timing;int fd,attempted,configured,active,session;_Atomic int armed,installed;pthread_mutex_t mutex;int probe_enabled;unsigned probe_requests;uint64_t probe_next_ns;int live_enabled,live_attempted;struct live_peer live;char live_path[128];uint32_t live_nonce[4];unsigned char *live_codec;unsigned live_codec_bytes; };
+struct stream_context { struct stream_native api;struct stream_report *report;void *router,*video,*input;struct stream_timing *timing;int fd,attempted,configured,active,session;_Atomic int armed,installed;pthread_mutex_t mutex;int probe_enabled;int probe_refresh_disabled;unsigned probe_requests;uint64_t probe_next_ns;int live_enabled,live_attempted;struct live_peer live;char live_path[128];uint32_t live_nonce[4];unsigned char *live_codec;unsigned live_codec_bytes; };
 void stream_init(struct stream_context*,struct stream_report*,int);
 void stream_arm(struct stream_context*,const struct stream_native*,void*);
 int stream_install(struct stream_context*);
