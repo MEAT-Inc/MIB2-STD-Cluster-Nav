@@ -1,9 +1,11 @@
 {
-  "bundle": "native/cluster-bridge/live-output/live-cluster-v6-laptop.zip",
-  "bytes": 179184,
-  "sha256": "25f083900721f7e75ab72e8fbda20ec01b033e19f0c22240a482256781438e69",
+  "bundle": "native/cluster-bridge/live-output/live-cluster-v9-laptop.zip",
+  "bytes": 190843,
+  "sha256": "dc0a8524dfadfcafc2791d1fa85288eaf4ce53dde94f0953d5e82c18051e2674",
   "qnx_live_sink_passed": true,
   "workflow_tests_passed": true,
   "portable_plan_passed": true,
-  "on_car_tested": false
+  "on_car_tested": false,
+  "optional_density140_bundle": "native/cluster-bridge/live-output/live-cluster-v9-margin200-density140-laptop.zip",
+  "optional_density140_sha256": "f195a869d09dd5c81221abfc4740ae62faf5b02da7ce63f0915ba4d1ffc52485"
 }

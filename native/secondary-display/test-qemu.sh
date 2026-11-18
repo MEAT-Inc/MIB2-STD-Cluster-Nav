@@ -29,6 +29,9 @@ cat >> test.build <<'EOF'
     nav_snapshot_timed --self-test
     factory_fixture
     wire_fixture
+    margin_wire_fixture
+    margin_density140_fixture
+    uiinsets_wire_fixture
     runtime_fixture
     keyframe_probe_fixture
     route_policy_fixture
@@ -57,6 +60,9 @@ nav_snapshot
 nav_snapshot_timed
 factory_fixture
 wire_fixture
+margin_wire_fixture
+margin_density140_fixture
+uiinsets_wire_fixture
 runtime_fixture
 keyframe_probe_fixture
 route_policy_fixture
@@ -120,3 +126,10 @@ sha256sum live_capture live_capture_test >> "$w/keyframe-probe-tested.sha256"
 grep -q LIVE_CAPTURE_DELAY_POLICY_PASS "$w/qemu.log"
 grep -q LIVE_MUX_QNX_PASS "$w/qemu.log"
 sha256sum live_mux_fixture >> "$w/keyframe-probe-tested.sha256"
+
+grep -q 'CLUSTER_MARGIN_QNX_PASS width_total=200 height_total=0 dpi=160' "$w/qemu.log"
+grep -q 'CLUSTER_MARGIN_QNX_PASS width_total=200 height_total=0 dpi=140' "$w/qemu.log"
+sha256sum libdelphi_observer_keyframe.so libdelphi_observer_keyframe_density140.so margin_wire_fixture margin_density140_fixture > "$w/layout-margin-tested.sha256"
+
+grep -q 'CLUSTER_UI_INSETS_QNX_PASS' "$w/qemu.log"
+sha256sum libdelphi_observer_keyframe_uiinsets.so uiinsets_wire_fixture > "$w/ui-insets-tested.sha256"

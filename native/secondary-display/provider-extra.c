@@ -5,3 +5,5 @@ int pop(void *a,void*b){if(a!=(void*)0x1234||b!=(void*)0x5678||errno!=ERANGE)ret
 int queue(void*a,unsigned char ch,void*b,unsigned n){if(a!=(void*)0x1234||ch!=7||b!=(void*)0x5678||n!=19||errno!=ERANGE)return 0;errno=EDOM;return 0x223344;}
 
 int SAL_Send(unsigned app,unsigned thread,unsigned event,const void *bytes,unsigned n){(void)app;(void)thread;(void)event;(void)bytes;return 1409+(int)n;}
+
+int SAL_Publish(unsigned event,const void *bytes,unsigned n){(void)event;(void)bytes;return 1709+(int)n;}

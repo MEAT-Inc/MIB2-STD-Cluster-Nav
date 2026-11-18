@@ -65,6 +65,7 @@ mkifs test.build ifs.bin > "$out/mkifs.log" 2>&1
 mkdir -p fat
 cp ifs.bin fat/
 console_status STEP 'Booting QNX emulator; results are being collected in the test log.'
+: > "$out/qemu.log"
 ( printf '\n'; sleep 4; printf 'virtio scan\n'; sleep 2; printf 'fatload virtio 0:1 0x40200000 ifs.bin\n'; sleep 3; printf 'go 0x40200000\n'; sleep 15 ) | qemu-system-arm -M virt -nic none -m 256 -cpu cortex-a15 -bios u-boot.bin -drive file=fat:rw:/w/fat,format=raw,media=disk -display none -serial stdio > "$out/qemu.log" 2>&1 &
 qemu_pid=$!
 for probe in $(seq 1 400); do

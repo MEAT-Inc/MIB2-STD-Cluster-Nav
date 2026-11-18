@@ -1,0 +1,17 @@
+{
+  "source": "_disconnect_observer_20261118_125442_314326f0",
+  "source_frames": 405,
+  "output_frames": 408,
+  "bootstrap_frames": 3,
+  "all_original_frames_and_pixels_preserved": true,
+  "source_order_preserved": true,
+  "reencoded": false,
+  "delay_ms": 1000,
+  "sanitizers_passed": true,
+  "native_metrics": "LIVE_STARTUP_FILE_PASS source_frames=405 bootstrap_frames=3 peak_bytes=575245 peak_frames=27 delay_ms=1000",
+  "source_sha256": {
+    "native/cluster-bridge/live/startup.c": "3159af4336f7be43737b20ee9dc94108350ae3131980f5252c3a8042f1d254a2",
+    "native/cluster-bridge/live/startup.h": "4e4195f644cff2452cd1c7824f861b24c13cb4a2fbc460df8fc6211d918c57c7",
+    "native/cluster-bridge/live/mux.c": "da039477a95fc576e38cc50a0c24ff973573da645ad299443f7a9d4f1576e409"
+  }
+}

@@ -5,7 +5,7 @@ import argparse,datetime as dt,ftplib,hashlib,json,re,struct,time,types,uuid
 from run_observer_smoke import Shell,retrieve
 from run_disconnected_observer import validate_report
 from run_androidauto_observer import fresh_stock_pid
-from live_cluster_bridge import LiveBridge
+from live_cluster_bridge import LiveBridge,confirm_factory_map_locations
 ROOT=Path(__file__).resolve().parents[1]
 
 def session_metadata(root,session=None):
@@ -57,7 +57,8 @@ def main(argv=None):
  try:
   shell=Shell(a,folder)
   inactive=[cmd('test ! -e '+p,False)==0 for p in ('/dev/shmem/delphi-aa-observer-active.bin','/dev/shmem/delphi-nav-launch-active.bin')]
-  if all(inactive):summary['no_pending_controllers']=True;summary['factory_maps_working']=input('No test controllers are active. Do factory maps work? [y/n/unknown]: ').strip().lower() in ('y','yes')
+  if all(inactive):
+   summary['no_pending_controllers']=True;summary.update(confirm_factory_map_locations(input));summary['factory_maps_working']=summary['factory_maps_restored']
   else:
    (folder/'live-bridge-summary.json').write_text(json.dumps(state));(folder/'live-release-manifest.json').write_bytes(manifest);a.resume=source;bridge=LiveBridge(ROOT,a,folder,original,'ftpuser');cmd('cd '+remote)
    with ftp() as f:b=retrieve(f,remote+'/observer_launch',131072)

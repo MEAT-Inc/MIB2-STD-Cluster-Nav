@@ -1,6 +1,21 @@
-LIVE ANDROID AUTO CLUSTER TRIAL v6
+LIVE ANDROID AUTO CLUSTER TRIAL v9
 ==================================
-This is live phone video, with no saved map clip available for playback.
+V9 returns the existing cluster video channel to factory navigation after the
+verified phone-service stop. Return waits for complete native SPS/PPS/IDR and
+continues the same transport clock and continuity counters. After unplugging,
+observe whether factory compass/map returns automatically BEFORE any manual
+map-location toggle or cleanup. That observation is saved independently from
+subsequent manual radio/cluster restoration checks. Both are required to pass.
+If a stale mobile-navigation message is present before testing, reboot the radio
+once and wait for working factory maps.
+Secondary display requests 200 total horizontal margin pixels (100 per side)
+and density160, preserving the original 800x480 coded frame. Phone rendering
+and physical clipping remain to be verified.
+
+This is live phone video. The initial phone codec/keyframe is repeated three
+times while source frames are buffered in order. All original frames follow
+with approximately one second of added delay; no re-encoding is used. This
+tests whether the cluster missed the original single startup keyframe.
 Park with ignition on, working factory maps, phone unplugged and Ethernet connected.
 Extract the ENTIRE ZIP into a fresh laptop folder. Run:
  python scripts/run_disconnected_observer.py --run --live-cluster --phone-unplugged
@@ -19,7 +34,8 @@ production arbitration policy.
 Only at CAPTURE READY swap Ethernet for phone. Start a Google Maps route promptly: the video window begins with the first phone frame.
 Watch the cluster for about12 seconds of LIVE map updates. Unplug phone,
 reconnect Ethernet, then press Enter. Complete PHONE REMOVED cleanup and
-answer whether live maps appeared and factory maps restored.
+answer whether factory compass/map returned automatically before cleanup,
+then whether live maps appeared and factory maps restored after cleanup.
 Return the entire delphi-dump/_disconnect_observer_* folder.
 
 The existing native descriptor, app import guards, timeline handoff and exact

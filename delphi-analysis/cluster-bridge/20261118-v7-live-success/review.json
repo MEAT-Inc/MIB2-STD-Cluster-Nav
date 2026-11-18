@@ -1,0 +1,68 @@
+{
+  "source": "_disconnect_observer_20261118_140131_df3a9762",
+  "live_maps_displayed_and_updated_user_confirmed": true,
+  "source_frames": 436,
+  "source_frames_emitted": 436,
+  "bootstrap_frames": 3,
+  "packet_delivery": 16596,
+  "zero_drops_and_transport_errors": true,
+  "source_to_copy_median_ms": 1.999998,
+  "startup_delay_ms": 1000,
+  "radio_factory_map_working_user_confirmed": true,
+  "cluster_factory_map_restoration_not_verified": true,
+  "route_policy": {
+    "version": 2,
+    "pid": 1667153,
+    "state": 3,
+    "error": 0,
+    "nav_pid": 1450055,
+    "held": 2,
+    "released": 1,
+    "cancelled": 0,
+    "phone_acknowledgements": 2,
+    "release_errors": 0,
+    "watch_ticks": 771,
+    "release_reason": 1,
+    "deadline_ms": 317376,
+    "requests": 2,
+    "eligible": false,
+    "bounded_trial": true,
+    "last_request": {
+      "native_focus": 1,
+      "app": 90,
+      "thread": 1,
+      "decision": "deferred_projected_route",
+      "phone_instance_connected": 1,
+      "monotonic_ms": 285389,
+      "nav_status": 2,
+      "nav_error": 0,
+      "queue_closed": 0,
+      "queue_dropped": 0,
+      "source_verified": true,
+      "payload_bytes": 12
+    },
+    "trace": [
+      {
+        "monotonic_ms": 277376,
+        "native_focus": 1,
+        "app": 90,
+        "thread": 1,
+        "decision": "deferred_projected_route"
+      },
+      {
+        "monotonic_ms": 285389,
+        "native_focus": 1,
+        "app": 90,
+        "thread": 1,
+        "decision": "deferred_projected_route"
+      }
+    ]
+  },
+  "root_cause": "Deferred projected-route request replayed when video ended; can reassert HMI phone-active state after physical disconnect. V8 serializes verified service-stop publication, discards pending requests, restores native focus only to intercepted listeners and drops late projected requests.",
+  "firmware_stop_event": "0x173e at return0x119284",
+  "firmware_started_event": "0x173d at return0x119648",
+  "native_prefix_declared_first_1048576_bytes_hash_matches": true,
+  "native_prefix_file_has_additional_appended_data": true,
+  "video_core_changed_for_v8": false,
+  "on_car_disconnect_test_needed": true
+}

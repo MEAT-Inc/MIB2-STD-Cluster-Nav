@@ -1,0 +1,168 @@
+
+REF Publishing event EV_AA_PUB_SERVICE_AOAP_NOT_SUPPORTED_ON_MD
+0011918c mov       r0, #1
+00119190 mov       r1, #4
+00119194 blx       r3
+00119198 mov       r3, r0
+0011919c cmp       r3, #0
+001191a0 beq       #0x1191e4
+001191a4 bl        #0x104b78
+001191a8 mov       r3, r0
+001191ac ldr       ip, [r3, #0x2c]
+001191b0 mov       r3, #0xc1
+001191b4 str       r3, [sp]
+001191b8 ldr       r3, [pc, #0x1b0]
+001191bc add       r3, r4, r3
+001191c0 str       r3, [sp, #4]
+001191c4 mov       r0, #1
+001191c8 mov       r1, #4
+001191cc ldr       r3, [pc, #0x1a0]
+001191d0 add       r3, r4, r3
+001191d4 mov       r2, r3
+001191d8 ldr       r3, [pc, #0x198]
+001191dc add       r3, r4, r3
+001191e0 blx       ip
+001191e4 movw      r0, #0x173f
+001191e8 mov       r1, #0
+001191ec mov       r2, #0
+001191f0 bl        #0x144264
+001191f4 ldr       r0, [sp, #0xc]
+001191f8 bl        #0x11967c
+001191fc mov       r3, r0
+00119200 cmp       r3, #0
+00119204 beq       #0x119284
+00119208 ldr       r0, [sp, #0xc]
+0011920c bl        #0x119660
+00119210 bl        #0x104b78
+00119214 mov       r3, r0
+00119218 ldr       r3, [r3, #0x1c]
+0011921c mov       r0, #1
+00119220 mov       r1, #4
+00119224 blx       r3
+00119228 mov       r3, r0
+
+REF Publishing event EV_AA_PUB_SERVICE_STOPPED
+0011921c mov       r0, #1
+00119220 mov       r1, #4
+00119224 blx       r3
+00119228 mov       r3, r0
+0011922c cmp       r3, #0
+00119230 beq       #0x119274
+00119234 bl        #0x104b78
+00119238 mov       r3, r0
+0011923c ldr       ip, [r3, #0x2c]
+00119240 mov       r3, #0xc8
+00119244 str       r3, [sp]
+00119248 ldr       r3, [pc, #0x12c]
+0011924c add       r3, r4, r3
+00119250 str       r3, [sp, #4]
+00119254 mov       r0, #1
+00119258 mov       r1, #4
+0011925c ldr       r3, [pc, #0x110]
+00119260 add       r3, r4, r3
+00119264 mov       r2, r3
+00119268 ldr       r3, [pc, #0x108]
+0011926c add       r3, r4, r3
+00119270 blx       ip
+00119274 movw      r0, #0x173e
+00119278 mov       r1, #0
+0011927c mov       r2, #0
+00119280 bl        #0x144264
+00119284 mov       r0, #0
+00119288 bl        #0x118530
+0011928c ldr       r3, [sp, #0xc]
+00119290 mov       r2, #0
+00119294 strb      r2, [r3, #0xdc]
+00119298 ldr       r3, [sp, #0xc]
+0011929c ldr       r3, [r3, #0xd8]
+001192a0 mov       r0, r3
+001192a4 bl        #0x11f1ac
+001192a8 mov       r3, r0
+001192ac cmp       r3, #0
+001192b0 movne     r3, #0
+001192b4 moveq     r3, #1
+001192b8 uxtb      r3, r3
+
+REF Publishing event EV_AA_PUB_SERVICE_DISCONNECT_AA_DEVICE
+001192d0 mov       r0, #1
+001192d4 mov       r1, #4
+001192d8 blx       r3
+001192dc mov       r3, r0
+001192e0 cmp       r3, #0
+001192e4 beq       #0x119328
+001192e8 bl        #0x104b78
+001192ec mov       r3, r0
+001192f0 ldr       ip, [r3, #0x2c]
+001192f4 mov       r3, #0xd3
+001192f8 str       r3, [sp]
+001192fc ldr       r3, [pc, #0x7c]
+00119300 add       r3, r4, r3
+00119304 str       r3, [sp, #4]
+00119308 mov       r0, #1
+0011930c mov       r1, #4
+00119310 ldr       r3, [pc, #0x5c]
+00119314 add       r3, r4, r3
+00119318 mov       r2, r3
+0011931c ldr       r3, [pc, #0x54]
+00119320 add       r3, r4, r3
+00119324 blx       ip
+00119328 mov       r0, #0x1740
+0011932c mov       r1, #0
+00119330 mov       r2, #0
+00119334 bl        #0x144264
+00119338 ldr       r3, [sp, #0xc]
+0011933c ldr       r4, [r3, #0xd8]
+00119340 cmp       r4, #0
+00119344 beq       #0x119358
+00119348 mov       r0, r4
+0011934c bl        #0x11b148
+00119350 mov       r0, r4
+00119354 bl        #0x104a40
+00119358 ldr       r3, [sp, #0xc]
+0011935c mov       r2, #0
+00119360 str       r2, [r3, #0xd8]
+00119364 add       sp, sp, #0x10
+00119368 pop       {r4, pc}
+0011936c andeq     sp, r5, r8, lsr r0
+
+REF Publishing event EV_AA_PUB_SERVICE_STARTED
+001195e0 mov       r0, #1
+001195e4 mov       r1, #4
+001195e8 blx       r3
+001195ec mov       r3, r0
+001195f0 cmp       r3, #0
+001195f4 beq       #0x119638
+001195f8 bl        #0x104b78
+001195fc mov       r3, r0
+00119600 ldr       ip, [r3, #0x2c]
+00119604 movw      r3, #0x102
+00119608 str       r3, [sp]
+0011960c ldr       r3, [pc, #0x40]
+00119610 add       r3, r4, r3
+00119614 str       r3, [sp, #4]
+00119618 mov       r0, #1
+0011961c mov       r1, #4
+00119620 ldr       r3, [pc, #0x30]
+00119624 add       r3, r4, r3
+00119628 mov       r2, r3
+0011962c ldr       r3, [pc, #0x28]
+00119630 add       r3, r4, r3
+00119634 blx       ip
+00119638 movw      r0, #0x173d
+0011963c mov       r1, #0
+00119640 mov       r2, #0
+00119644 bl        #0x144264
+00119648 add       sp, sp, #0x10
+0011964c pop       {r4, pc}
+00119650 andeq     ip, r5, r8, ror #22
+00119654 .byte     0x4c, 0x34, 0xff, 0xff
+00119658 .byte     0x7c, 0x31, 0xff, 0xff
+0011965c .byte     0x64, 0x31, 0xff, 0xff
+00119660 sub       sp, sp, #8
+00119664 str       r0, [sp, #4]
+00119668 ldr       r3, [sp, #4]
+0011966c mov       r2, #0
+00119670 strb      r2, [r3, #0xdd]
+00119674 add       sp, sp, #8
+00119678 bx        lr
+0011967c sub       sp, sp, #8

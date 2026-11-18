@@ -3,21 +3,42 @@ from pathlib import Path
 import ftplib,hashlib,io,json,re,struct,time
 from project_console import log as print,prompt as input,status
 from run_observer_smoke import retrieve
-from run_cluster_replay import assess_controller,native_channel_missing
+from run_cluster_replay import assess_controller,native_channel_missing,peers
 from cluster_preflight import nav_pid
 
 def digest(b):return hashlib.sha256(b).hexdigest()
 def assess_output(b,pid=None):
  if len(b)!=512:raise ValueError('Live Nav report size')
- w=struct.unpack('<128I',b)
- if w[:3]!=(0x31504c52,1,512) or pid is not None and w[3]!=pid or not 0<w[3]<=0x7fffffff or w[4] not in (0,1,2,3,4) or w[67] not in (1,2) or w[68]>2048 or w[69]>8388608 or w[72]>1 or w[75]>2097152 or w[75]%188 or (any(w[76:]) if w[67]==1 else (any(w[80:]) or w[79]>w[13] or w[76] not in (0,2,3,4) or w[77]>w[10] or w[78]>w[14])):raise ValueError('Live Nav report identity/profile')
+ w=struct.unpack('<128I',b);version=w[67]
+ if w[:3]!=(0x31504c52,1,512) or pid is not None and w[3]!=pid or not 0<w[3]<=0x7fffffff or w[4] not in (0,1,2,3,4) or version not in (1,2,3,4) or w[68]>2048 or w[69]>8388608 or w[72]>1 or w[75]>2097152 or w[75]%188:raise ValueError('Live Nav report identity/profile')
+ if version==1 and any(w[76:]) or version>=2 and (w[79]>w[13] or w[76] not in (0,2,3,4) or w[77]>w[10] or w[78]>w[14]):raise ValueError('Live Nav close metrics')
+ if version==2 and any(w[80:]) or version>=3 and ((any(w[87:]) if version==3 else any(w[102:])) or w[80]>3 or w[81]>1048576 or w[82]>4194304 or w[83]>64 or w[84]>w[68] or w[86]!=1000):raise ValueError('Live Nav startup metrics')
+ if version==4 and (w[87]>4 or w[88]>1 or w[97]>770048 or w[101]>64 or w[74]!=5 and w[101] or w[87] and not w[88] or w[87]==2 and (not w[89] or w[91]) or w[87]==3 and not w[91]):raise ValueError('Live Nav factory return metrics')
  if w[4] in (1,2,3) and (w[22]!=7 or not w[36] or w[36]&4095):raise ValueError('Live Nav bootstrap incomplete')
- return dict(pid=w[3],status=w[4],error=w[5],frames=w[68],input_bytes=w[69],drops=w[70],source_pid=w[71],source_verified=bool(w[72]),sink_error=w[73],stop_reason=w[74],packets=w[10],bytes=w[11],rewritten_packets=w[62],suppressed_native_writes=w[8],bad_callers=w[20],closes=w[13],first_close_status=w[65],packets_at_first_close=w[66],timeline_error=w[63],active_closes=w[79] if w[67]==2 else None,first_active_close_status=w[76] if w[67]==2 else None,packets_at_active_close=w[77] if w[67]==2 else None,accepted_output_capture_bytes=w[75],transport_fd=struct.unpack_from('<i',b,60)[0])
+ v=dict(profile_version=version,pid=w[3],status=w[4],error=w[5],frames=w[68],input_bytes=w[69],drops=w[70],source_pid=w[71],source_verified=bool(w[72]),sink_error=w[73],stop_reason=w[74],packets=w[10],bytes=w[11],rewritten_packets=w[62],suppressed_native_writes=w[8],bad_callers=w[20],closes=w[13],first_close_status=w[65],packets_at_first_close=w[66],timeline_error=w[63],active_closes=w[79] if version>=2 else None,first_active_close_status=w[76] if version>=2 else None,packets_at_active_close=w[77] if version>=2 else None,accepted_output_capture_bytes=w[75],transport_fd=struct.unpack_from('<i',b,60)[0])
+ if version>=3:v.update(bootstrap_frames=w[80],bootstrap_keyframe_bytes=w[81],startup_peak_bytes=w[82],startup_peak_frames=w[83],source_frames_emitted=w[84],startup_overflows=w[85],startup_delay_ms=w[86])
+ if version==4:v['factory_return']=dict(state=w[87],requests=w[88],accepted_packets=w[89],discarded_packets=w[90],error=w[91],request_monotonic_ms=w[92]+(w[93]<<32),first_accepted_monotonic_ms=w[94]+(w[95]<<32),reason=w[96],recovery_buffer_peak_bytes=w[97],route_stop_observed=w[98],route_stop_monotonic_ms=w[99]+(w[100]<<32),discarded_source_frames=w[101])
+ return v
+
+def native_factory_return_verified(v):
+ r=v.get('factory_return',{})
+ return bool(v.get('profile_version')==4 and r.get('state')==2 and r.get('requests')==1 and r.get('accepted_packets',0)>0 and not r.get('error') and r.get('route_stop_observed',0)>0 and 0<r.get('route_stop_monotonic_ms',0)<=r.get('request_monotonic_ms',0)<=r.get('first_accepted_monotonic_ms',0))
 
 def output_delivered(v,source,frames):
- return bool(v.get('source_verified') and v.get('source_pid')==source and v.get('frames')==frames and frames and v.get('packets') and v.get('bytes')==188*v['packets'] and v['packets']==v.get('rewritten_packets') and not any(v.get(k) for k in ('error','sink_error','drops','bad_callers','timeline_error')))
+ count_ok=v.get('frames')==frames
+ source_ok=v.get('profile_version',0)<3 or v.get('source_frames_emitted')==frames and not v.get('startup_overflows')
+ if v.get('profile_version')==4 and v.get('stop_reason')==5:
+  emitted=v.get('source_frames_emitted',0);discarded=v.get('factory_return',{}).get('discarded_source_frames',0)
+  count_ok=0<v.get('frames',0)<=frames
+  source_ok=emitted>0 and emitted+discarded==v.get('frames') and not v.get('startup_overflows')
+ return bool(count_ok and source_ok and v.get('source_verified') and v.get('source_pid')==source and frames and v.get('packets') and v.get('bytes')==188*v['packets'] and v['packets']==v.get('rewritten_packets') and not any(v.get(k) for k in ('error','sink_error','drops','bad_callers','timeline_error')))
 
 def cleanup_allowed(handoff,authorized,aa_pending):return bool((not handoff or authorized) and not aa_pending)
+
+def confirm_factory_map_locations(prompt):
+ radio=prompt('Toggle factory maps to the RADIO. Once actual map graphics appear, do they work? [y/n/unknown]: ').strip().lower() in ('y','yes')
+ cluster=prompt('Toggle factory maps back to the INSTRUMENT CLUSTER. Do actual map graphics appear without the mobile-navigation message? [y/n/unknown]: ').strip().lower() in ('y','yes')
+ return dict(factory_radio_map_restored=radio,factory_cluster_map_restored=cluster,factory_maps_restored=radio and cluster)
 
 class LiveBridge:
  def __init__(self,root,args,folder,aa,password):
@@ -70,7 +91,25 @@ class LiveBridge:
   b,v=self.wait_channel()
   self.state['observed_pid']=v['pid'];self.save()
   if input('Wait for actual factory map graphics IN THE CLUSTER. Press Enter to arm live output, or type SKIP to restore: ').strip().upper()=='SKIP':raise RuntimeError('Live output skipped')
+  self.capture_native_prefix(b)
   self.state['factory_map_confirmed']=True;self.save()
+ def most_snapshot(self,label):
+  try:
+   inventory='most-peers-'+label+'.txt';name='most-'+label+'.json'
+   self.cmd('pidin arguments > '+inventory);self.cmd('chmod 644 '+inventory);pid=peers(self.fetch_aa(inventory)).get('Most')
+   if not pid:raise ValueError('Most process missing from inventory')
+   rc=self.command('LD_PRELOAD= ./nav_cycle most-status '+str(pid)+' > '+name+' 2>&1',False);self.cmd('chmod 644 '+self.remote+'/'+name);raw=self.fetch(name)
+   self.state.setdefault('most_snapshots',[]).append(dict(file='nav-'+name,exit_code=rc,sha256=digest(raw)));self.save()
+  except (OSError,EOFError,ValueError,RuntimeError,ftplib.Error) as e:self.state.setdefault('diagnostic_errors',[]).append(dict(file='most-'+label,error=str(e)))
+ def capture_native_prefix(self,b):
+  n=struct.unpack_from('<I',b,53*4)[0]
+  if not n:return
+  try:
+   if n>1048576:raise ValueError('Native map prefix exceeds bound')
+   raw=self.copy('/dev/shmem/delphi-nav-source-'+self.token+'.bin','native-map-prefix.bin')
+   if len(raw)!=1048576:raise ValueError('Native map prefix mapping size')
+   (self.folder/'native-map-prefix.ts').write_bytes(raw[:n]);self.state['native_source_capture']=dict(bytes=n,sha256=digest(raw[:n]));self.save()
+  except (OSError,ValueError,RuntimeError,ftplib.Error) as e:self.state.setdefault('diagnostic_errors',[]).append(dict(file='native-map-prefix.bin',error=str(e)))
  def wait_channel(self,timeout=120,clock=None,sleep=None):
   clock=clock or time.monotonic;sleep=sleep or time.sleep;until=clock()+timeout
   source='/dev/shmem/delphi-nav-report-'+self.token+'.bin'
@@ -97,6 +136,7 @@ class LiveBridge:
   self.state['source_pid']=pid;self.save()
   b,v=self.wait_channel(timeout=45)
   if native_channel_missing(b):raise RuntimeError('Native map channel changed after AA startup')
+  if self.manifest.get('startup_delay_ms'):self.most_snapshot('before-arm')
   if self.command('LD_PRELOAD= ./nav_launch arm-replay '+self.remote+' > arm.txt 2>&1',False):raise RuntimeError('Live Nav arm refused')
   requested=self.report('live-nav-arm-requested.bin');v=assess_output(requested,self.state['observed_pid'])
   if struct.unpack_from('<I',requested,84)[0]!=1:raise RuntimeError('Live Nav arm flag was not retained')
@@ -119,10 +159,17 @@ class LiveBridge:
   if len(b)!=2097152 or n>len(b):raise ValueError('Accepted-output mapping size')
   raw=b[:n];(self.folder/'nav-accepted-output.ts').write_bytes(raw)
   self.state['accepted_output_capture']=dict(bytes=n,sha256=digest(raw),bounded_prefix=True)
+ def confirm_automatic_factory_return(self):
+  if 'factory_automatic_return_observed' in self.state:return
+  answer=input('BEFORE any map-location toggle or cleanup: after unplugging the phone, did the factory COMPASS or MAP return automatically IN THE CLUSTER, with the mobile-navigation message gone? [y/n/unknown]: ').strip().lower()
+  self.state.update(factory_automatic_return_observed=answer in ('y','yes'),factory_automatic_return_answer=answer,factory_automatic_return_before_manual_toggle=True);self.save()
  def collect(self,cmd,fetch,copy):
-  self.cmd=cmd;self.fetch_aa=fetch;self.copy=copy;v=assess_output(self.report(),self.state['observed_pid']);self.state['output']=v;self.capture_output(v);self.state['live_maps_seen']=input('Did LIVE Android Auto maps appear and update IN THE INSTRUMENT CLUSTER during the route? [y/n/unknown]: ').strip().lower() in ('y','yes');self.save();return v
+  self.cmd=cmd;self.fetch_aa=fetch;self.copy=copy;self.confirm_automatic_factory_return();v=assess_output(self.report(),self.state['observed_pid']);self.state['output']=v;self.capture_output(v);self.most_snapshot('after-playback');self.state['live_maps_seen']=input('Did LIVE Android Auto maps appear and update IN THE INSTRUMENT CLUSTER during the route? [y/n/unknown]: ').strip().lower() in ('y','yes');self.save();return v
  def cleanup(self,cmd,fetch,copy):
-  if not self.state.get('started') or self.state.get('restoration_verified'):return
+  if not self.state.get('started'):return
+  if self.state.get('restoration_verified'):
+   if not self.state.get('factory_maps_restored'):self.confirm_factory_maps()
+   return
   try:return self._cleanup(cmd,fetch,copy)
   finally:self.collect_lifecycle(cmd,copy)
  def collect_lifecycle(self,cmd,copy):
@@ -157,4 +204,9 @@ class LiveBridge:
   v=assess_controller(copy(final,'nav-controller-final.bin'),self.remote,True);self.state.update(v);self.state['cleanup_pending']=False
   cmd('pidin -p NavigationServer arguments > nav-live-restored.txt');cmd('chmod 644 nav-live-restored.txt')
   if nav_pid(fetch('nav-live-restored.txt'))!=v['restored_pid']:raise ValueError('Restored Nav PID mismatch')
-  self.state['factory_maps_restored']=input('Using the location toggle, do factory maps work on the radio and then in the cluster? [y/n/unknown]: ').strip().lower() in ('y','yes');self.save()
+  self.confirm_factory_maps()
+ def confirm_factory_maps(self):
+  # Eventual manual recovery cannot establish automatic pre-cleanup return.
+  if getattr(self,'manifest',{}).get('automatic_factory_return_required') and 'factory_automatic_return_observed' not in self.state:
+   self.state.update(factory_automatic_return_observed=False,factory_automatic_return_answer='unavailable_before_cleanup',factory_automatic_return_before_manual_toggle=False);self.save()
+  self.state.update(confirm_factory_map_locations(input));self.save()

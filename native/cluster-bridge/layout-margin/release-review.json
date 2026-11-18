@@ -1,0 +1,33 @@
+{
+  "bundle": "native/cluster-bridge/layout-margin/live-cluster-v8-margin160-laptop.zip",
+  "sha256": "5748044734735fb5bfee8fc9cd634d13dbef46fdb5b63f02c108e5f4220ae196",
+  "bytes": 186148,
+  "baseline_bundle_unchanged": true,
+  "main_sources_unchanged": true,
+  "private_qnx_passed": true,
+  "existing_cleanup_regressions_passed": true,
+  "portable_plan_passed": true,
+  "all_nonlayout_payloads_and_scripts_unchanged": true,
+  "layout": {
+    "video_service_id": 9,
+    "width_margin_total": 160,
+    "height_margin_total": 0,
+    "left_right_pixels": 80,
+    "content_rectangle": [
+      80,
+      0,
+      720,
+      480
+    ],
+    "coded_dimensions": [
+      800,
+      480
+    ],
+    "density": 160,
+    "phone_rendering_test_needed": true,
+    "primary_configuration_unchanged": true,
+    "baseline_bundle_sha256": "84e0eee17685d51534e00017ae3a730f807522ac00a2f58408adc5c918a4dcc3",
+    "historical_manifest_build_hash": "885ebe53016c1395597df669fda9eeffdaeec05a3ca147b9f02c4880539e1a9a",
+    "current_prerequisite_build_hash": "566932ca6b9781a6c013c960a17b7807a7814977cfa0fdff3b436ebe74baec22"
+  }
+}

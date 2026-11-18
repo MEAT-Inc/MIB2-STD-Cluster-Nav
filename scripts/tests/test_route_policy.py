@@ -2,7 +2,7 @@
 from pathlib import Path
 import struct,sys,unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from review_route_policy import assess_route_policy
+from review_route_policy import assess_route_policy,disconnect_verified
 class PolicyTests(unittest.TestCase):
  def data(self,**values):
   w=[0]*128;w[:7]=[0x31545052,1,512,44,1,0,55];w[17]=1
@@ -36,6 +36,21 @@ class PolicyTests(unittest.TestCase):
   # cmp native,#1; bne other; mov HMI,#2; b done; other: mov HMI,#1.
   compare,yes,no=words[0]&255,words[2]&255,words[4]&255
   self.assertEqual(yes if 1==compare else no,2);self.assertEqual(yes if 2==compare else no,1)
+ def test_v3_disconnect_discards_and_restores_owned_state(self):
+  b=self.data(**{'1':3,'4':3,'7':2,'9':1,'10':2,'16':3,'104':1,'106':1,'107':1,'108':1,'110':300000,'112':0x173e,'113':0x119284,'114':1,'118':1})
+  v=assess_route_policy(b,44,55);self.assertTrue(disconnect_verified(v));self.assertEqual(v['disconnect']['pending_discarded'],1)
+  for field,value in (('104',0),('109',1),('115',1),('116',1)):
+   copy=bytearray(b);struct.pack_into('<I',copy,int(field)*4,value)
+   if field=='109':struct.pack_into('<I',copy,11*4,1)
+   self.assertFalse(disconnect_verified(assess_route_policy(copy,44,55)))
+ def test_v3_native_route_end_already_cleared_state(self):
+  b=self.data(**{'1':3,'4':3,'7':1,'9':1,'10':1,'16':2,'104':1,'114':1,'117':1})
+  self.assertTrue(disconnect_verified(assess_route_policy(b,44,55)))
+ def test_v3_late_callback_trace_and_reserved_bounds(self):
+  b=self.data(**{'1':3,'16':1,'21':8,'31':1,'34':1,'35':90,'36':1,'37':8,'106':1,'114':1})
+  self.assertEqual(assess_route_policy(b,44,55)['trace'][0]['decision'],'discarded_after_phone_service_stop')
+  copy=bytearray(b);struct.pack_into('<I',copy,119*4,1)
+  with self.assertRaises(ValueError):assess_route_policy(copy,44,55)
 if __name__=='__main__':
  from project_console import console_session
  with console_session(__file__,__doc__):unittest.main()

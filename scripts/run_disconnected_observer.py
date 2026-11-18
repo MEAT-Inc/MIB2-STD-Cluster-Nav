@@ -270,6 +270,7 @@ def main(argv=None):
             pending=copy_report(pending_source,'controller-pending.bin')
             report['pending_state']=validate_report(pending,remote,True,seconds);report['cleanup_pending']=True;persist()
         print('Capture has not authorized any interruption. Keep Ethernet connected and the phone physically unplugged.',flush=True)
+        if bridge:bridge.confirm_automatic_factory_return()
         if input('Type PHONE REMOVED to request the explicit disconnected-only cleanup (anything else leaves it pending): ').strip()!='PHONE REMOVED':
             print('Cleanup remains pending. Use --resume "'+str(folder)+'" --phone-unplugged'+(' --live-cluster' if a.live_cluster else ' --cluster-preflight' if a.cluster_preflight else ' --secondary-stream' if a.secondary_stream else ' --factory-probe' if a.factory_probe else '')+' later.');return 2
         authorized=True;report['cleanup_requested_host_utc']=dt.datetime.now(dt.timezone.utc).isoformat();persist()
@@ -303,7 +304,7 @@ def main(argv=None):
                 from review_secondary_keyframes import assess_probe
                 from review_live_input import reader_report,assess_live,assess_native_geometry
                 report['keyframe_control']=assess_probe(blobs['timing.bin'],blobs['secondary.h264'],report['observed_pid'],report['secondary'])
-                until=time.monotonic()+10
+                until=time.monotonic()+(36 if bridge else 10)
                 while True:
                     native_reader=reader_report(copy_report('/dev/shmem/delphi-live-report-'+token+'.bin','live-reader.bin'),report['observed_pid'])
                     if native_reader['state'] in (3,4):break
@@ -314,6 +315,11 @@ def main(argv=None):
                 report['live_input']=assess_live(blobs['live-reader.bin'],blobs['live-copy-timing.bin'],blobs['live-copy.h264'],blobs['timing.bin'],blobs['secondary.h264'],report['observed_pid'],report['secondary'])
                 if bridge:
                     report['live_output']=bridge.collect(command,fetch,copy_report)
+                    from live_cluster_bridge import output_delivered
+                    connected=output_delivered(report['live_output'],report['observed_pid'],report['live_input']['frames'])
+                    for item in ('live_input','secondary','keyframe_control'):
+                        if item in report:report[item]['cluster_transport_connected']=connected
+                    report['cluster_display_confirmed']=bool(bridge.state.get('live_maps_seen'))
                     from review_route_policy import assess_route_policy
                     report['route_policy']=assess_route_policy(copy_report('/dev/shmem/delphi-route-policy-'+token+'.bin','route-policy.bin'),report['observed_pid'],bridge.state['observed_pid'])
                 else:report['live_native_geometry']=assess_native_geometry(blobs['nav-live-snapshot.jsonl'],report['native_before']['pid'],report['timing']['records_detail'])
@@ -361,10 +367,19 @@ def main(argv=None):
         from live_cluster_bridge import output_delivered
         v=report.get('live_output',{});ok=bool(ok and not report.get('route_policy',{}).get('release_errors',0) and bridge.state.get('restoration_verified') and bridge.state.get('factory_maps_restored') and bridge.state.get('live_maps_seen') and output_delivered(v,report.get('observed_pid'),report.get('live_input',{}).get('frames',0)))
         print('Live cluster output: '+str(v.get('frames',0))+' frames; '+str(v.get('packets',0))+' packets; native error='+str(v.get('error',0))+'; active closes='+str(v.get('active_closes',0)))
+        if v.get('profile_version',0)>=3:print('Video startup: '+str(v.get('bootstrap_frames',0))+' repeated keyframes; '+str(v.get('source_frames_emitted',0))+' original frames emitted; added delay='+str(v.get('startup_delay_ms',0))+'ms; buffer overflows='+str(v.get('startup_overflows',0)))
+        if bridge.manifest.get('automatic_factory_return_required'):
+            from live_cluster_bridge import native_factory_return_verified
+            report['automatic_factory_return_verified']=bool(bridge.state.get('factory_automatic_return_observed') and bridge.state.get('factory_automatic_return_before_manual_toggle') and native_factory_return_verified(v));ok=bool(ok and report['automatic_factory_return_verified']);persist()
+            print('Automatic factory compass/map return before manual toggle: '+str(report['automatic_factory_return_verified']))
         policy=report.get('route_policy',{})
         if policy:print('Route presentation trial: held='+str(policy.get('held',0))+'; released='+str(policy.get('released',0))+'; cancelled='+str(policy.get('cancelled',0))+'; release errors='+str(policy.get('release_errors',0)))
         request=policy.get('last_request',{})
         if request:print('Route request: native focus='+str(request['native_focus'])+'; decision='+request['decision']+'; target='+str(request['app'])+'/'+str(request['thread'])+'; Nav status='+str(request['nav_status']))
+        if bridge.manifest.get('route_disconnect_restore'):
+            from review_route_policy import disconnect_verified
+            report['disconnect_restoration_verified']=disconnect_verified(policy);ok=bool(ok and report['disconnect_restoration_verified']);persist()
+            disconnect_state=policy.get('disconnect',{});print('Phone disconnect: stopped events='+str(disconnect_state.get('stopped_events',0))+'; discarded pending='+str(disconnect_state.get('pending_discarded',0))+'; native resets='+str(disconnect_state.get('native_focus_resets',0))+'; late callbacks discarded='+str(disconnect_state.get('late_projected_discarded',0))+'; verified='+str(report['disconnect_restoration_verified']))
         if bridge.state.get('cleanup_pending'):print('Nav cleanup pending. Keep the phone unplugged; resume this SAME bundle: python scripts/run_disconnected_observer.py --resume "'+str(folder)+'" --live-cluster --phone-unplugged')
     if a.secondary_stream and 'secondary' in report:print('Secondary state: '+report['secondary']['state']+'; frames='+str(report['secondary']['frames']))
     if 'error' in report:print('Result: '+report['error'])

@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,struct,unittest,tempfile,json,hashlib,types
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from live_cluster_bridge import assess_output,cleanup_allowed,output_delivered,LiveBridge
+from live_cluster_bridge import assess_output,cleanup_allowed,output_delivered,native_factory_return_verified,LiveBridge
 from unittest.mock import patch
 class LiveBridgeTests(unittest.TestCase):
  def report(self):
@@ -55,11 +55,55 @@ class LiveBridgeTests(unittest.TestCase):
   self.assertEqual(assess_output(b,123)['active_closes'],1)
   struct.pack_into('<I',b,77*4,101)
   with self.assertRaises(ValueError):assess_output(b,123)
+ def test_v3_preserves_source_frame_accounting_and_bounds(self):
+  b=bytearray(self.report())
+  for i,v in ((67,3),(10,1000),(11,188000),(62,1000),(80,3),(81,2742),(82,575245),(83,27),(84,354),(86,1000)):struct.pack_into('<I',b,i*4,v)
+  v=assess_output(b,123);self.assertEqual(v['startup_delay_ms'],1000);self.assertTrue(output_delivered(v,456,354))
+  struct.pack_into('<I',b,84*4,353);self.assertFalse(output_delivered(assess_output(b,123),456,354));struct.pack_into('<I',b,84*4,354)
+  for index,value in ((80,4),(81,1048577),(82,4194305),(83,65),(84,355),(86,0),(87,1)):
+   copy=bytearray(b);struct.pack_into('<I',copy,index*4,value)
+   with self.subTest(index=index),self.assertRaises(ValueError):assess_output(copy,123)
+  struct.pack_into('<I',b,85*4,1);self.assertFalse(output_delivered(assess_output(b,123),456,354))
+ def test_v4_native_return_requires_verified_stop_and_accepted_factory_output(self):
+  b=bytearray(self.report())
+  for i,v in ((67,4),(86,1000),(87,2),(88,1),(89,100),(92,1000),(94,1200),(98,1),(99,900)):struct.pack_into('<I',b,i*4,v)
+  self.assertTrue(native_factory_return_verified(assess_output(b,123)))
+  for i,v in ((87,1),(89,0),(94,999),(98,0)):
+   copy=bytearray(b);struct.pack_into('<I',copy,i*4,v)
+   if i==89:
+    with self.assertRaises(ValueError):assess_output(copy,123)
+   else:self.assertFalse(native_factory_return_verified(assess_output(copy,123)))
+  for i,v in ((87,5),(88,2),(97,770049),(101,65),(102,1)):
+   copy=bytearray(b);struct.pack_into('<I',copy,i*4,v)
+   with self.subTest(i=i),self.assertRaises(ValueError):assess_output(copy,123)
+ def test_disconnect_discarded_tail_is_accounted_without_claiming_all_reader_frames_emitted(self):
+  v=dict(profile_version=4,stop_reason=5,source_frames_emitted=18,frames=20,source_verified=True,source_pid=456,packets=100,bytes=18800,rewritten_packets=100,factory_return={'discarded_source_frames':2})
+  self.assertTrue(output_delivered(v,456,22))
+  for field,value in (('source_frames_emitted',17),('startup_overflows',1),('frames',23),('source_frames_emitted',0)):
+   bad=dict(v);bad[field]=value;self.assertFalse(output_delivered(bad,456,22))
+  v['stop_reason']=1;self.assertFalse(output_delivered(v,456,22))
+ def test_automatic_return_observation_persists_before_manual_recovery(self):
+  b=LiveBridge.__new__(LiveBridge);b.state={};b.manifest={'automatic_factory_return_required':True};saved=[];b.save=lambda:saved.append(dict(b.state))
+  with patch('live_cluster_bridge.input',side_effect=['n','y','y']):
+   b.confirm_automatic_factory_return();b.confirm_factory_maps()
+  self.assertFalse(b.state['factory_automatic_return_observed']);self.assertTrue(b.state['factory_maps_restored']);self.assertTrue(saved[0]['factory_automatic_return_before_manual_toggle']);self.assertNotIn('factory_maps_restored',saved[0])
+  with patch('live_cluster_bridge.input',side_effect=AssertionError('Must not overwrite original observation')):b.confirm_automatic_factory_return()
+ def test_manual_restoration_without_prior_observation_cannot_prove_automatic_return(self):
+  b=LiveBridge.__new__(LiveBridge);b.state={};b.manifest={'automatic_factory_return_required':True};b.save=lambda:None
+  with patch('live_cluster_bridge.input',side_effect=['y','y']):b.confirm_factory_maps()
+  self.assertTrue(b.state['factory_maps_restored']);self.assertFalse(b.state['factory_automatic_return_observed']);self.assertFalse(b.state['factory_automatic_return_before_manual_toggle'])
  def test_cleanup_does_not_touch_nav_without_start_or_after_restore(self):
-  for state in ({'started':False},{'started':True,'restoration_verified':True}):
+  for state in ({'started':False},{'started':True,'restoration_verified':True,'factory_maps_restored':True}):
    b=LiveBridge.__new__(LiveBridge);b.state=state
    def forbidden(*args,**kwargs):raise AssertionError('No Nav command should run')
    b.cleanup(forbidden,forbidden,forbidden)
+ def test_radio_only_cannot_mark_factory_map_restoration_complete(self):
+  b=LiveBridge.__new__(LiveBridge);b.state={'started':True,'restoration_verified':True,'factory_maps_restored':False};b.save=lambda:None
+  def forbidden(*args,**kw):raise AssertionError('Visual recheck must not restart Nav')
+  with patch('live_cluster_bridge.input',side_effect=['y','n']):b.cleanup(forbidden,forbidden,forbidden)
+  self.assertTrue(b.state['factory_radio_map_restored']);self.assertFalse(b.state['factory_cluster_map_restored']);self.assertFalse(b.state['factory_maps_restored'])
+  with patch('live_cluster_bridge.input',side_effect=['y','yes']):b.cleanup(forbidden,forbidden,forbidden)
+  self.assertTrue(b.state['factory_maps_restored'])
  def test_corrupt_pending_controller_refuses_restart(self):
   b=LiveBridge.__new__(LiveBridge);b.state={'started':True,'observed_pid':123};b.token='a'*32;b.remote='/ramdisk/delphi-nav-bridge_'+b.token;b.report=lambda *a:self.report();b.capture_output=lambda v:None;b.files={'nav_launch':b'nav','nav_cycle':b'cycle'};b.manifest={'files':{n:dict(bytes=len(v),sha256=__import__('hashlib').sha256(v).hexdigest()) for n,v in b.files.items()}};commands=[]
   class FTP:

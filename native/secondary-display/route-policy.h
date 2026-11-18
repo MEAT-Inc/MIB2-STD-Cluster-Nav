@@ -10,11 +10,14 @@
 /* MU0890 SAL native enum, NOT DSI/HMI values: AndroidAutoServices
  * 0x112760..0x112774 maps native1 to HMI2, native2 to HMI1. */
 enum {ROUTE_PROJECTED=1,ROUTE_NATIVE=2};
-struct route_item {unsigned app,thread;unsigned char bytes[12];int used;};
-struct route_policy {struct route_item items[ROUTE_SLOTS];uint64_t deadline;unsigned held,released,cancelled,errors;int disabled;};
+struct route_item {unsigned app,thread;unsigned char bytes[12];int used,known;};
+struct route_policy {struct route_item items[ROUTE_SLOTS];uint64_t deadline;unsigned held,released,cancelled,errors,discarded,restored,restore_errors;int disabled;};
 typedef int (*route_send)(unsigned,unsigned,unsigned,const void*,unsigned);
 /* This is a bounded bridge trial: hold only phone-route presentation requests.
  * End requests, all unrelated traffic and every unverified state pass through. */
 int route_apply(struct route_policy*,int,uint64_t,unsigned,unsigned,unsigned,const void*,unsigned);
 void route_release(struct route_policy*,route_send);
+void route_discard(struct route_policy*);
+void route_restore_native(struct route_policy*,route_send);
+unsigned route_owned(const struct route_policy*);
 #endif

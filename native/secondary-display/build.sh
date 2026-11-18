@@ -3,6 +3,8 @@ set -eu
 . /src/scripts/project-console.sh
 console_start "Build native secondary-display binaries." "$@"
 w=$(mktemp -d /tmp/delphi-secondary.XXXXXX)
+mkdir -p "$w/cluster-bridge/layout-margin"
+cp /src/native/cluster-bridge/layout-margin/*.[ch] "$w/cluster-bridge/layout-margin/"
 mkdir -p "$w/secondary-display" "$w/endpoint-factory" "$w/observer" "$w/cluster-bridge/live"
 cp /src/native/secondary-display/*.[ch] "$w/secondary-display/"
 cp /src/native/endpoint-factory/*.[ch] "$w/endpoint-factory/"
@@ -39,7 +41,16 @@ $P-gcc $flags route-policy.c route-policy-fixture.c -Wl,-z,noexecstack -o route_
 $P-gcc $flags -fPIC -fvisibility=hidden -I../observer/launch -c route-policy.c route-hook.c proc_readonly.c
 console_status STEP 'Compiling scoped secondary focus/keyframe probe variant.'
 $P-gcc $flags -DSECONDARY_KEYFRAME_PROBE -fPIC -fvisibility=hidden -c observer.c -o observer-probe.o
-$P-gcc -shared route-policy.o route-hook.o proc_readonly.o live-queue.o probe.o factory.o runtime.o observer-probe.o wire.o entry.o -Wl,-z,now -Wl,-z,noexecstack -Wl,-soname,libdelphi_observer.so -lc -o libdelphi_observer_keyframe.so
+# Margin200 is the standard secondary profile; density140 also shrinks secondary text.
+$P-gcc $flags -fPIC -fvisibility=hidden -c ../cluster-bridge/layout-margin/wire-margin.c -o wire-margin.o
+$P-gcc $flags -DLAYOUT_DENSITY_DPI=140 -fPIC -fvisibility=hidden -c ../cluster-bridge/layout-margin/wire-margin.c -o wire-margin-density140.o
+$P-gcc $flags -DMARGIN_WIDTH_PIXELS=0 -DLAYOUT_DENSITY_DPI=140 -DLAYOUT_UI_INSET_PIXELS=120 -fPIC -fvisibility=hidden -c ../cluster-bridge/layout-margin/wire-margin.c -o wire-uiinsets.o
+$P-gcc -shared route-policy.o route-hook.o proc_readonly.o live-queue.o probe.o factory.o runtime.o observer-probe.o wire-margin.o entry.o -Wl,-z,now -Wl,-z,noexecstack -Wl,-soname,libdelphi_observer.so -lc -o libdelphi_observer_keyframe.so
+$P-gcc -shared route-policy.o route-hook.o proc_readonly.o live-queue.o probe.o factory.o runtime.o observer-probe.o wire-margin-density140.o entry.o -Wl,-z,now -Wl,-z,noexecstack -Wl,-soname,libdelphi_observer.so -lc -o libdelphi_observer_keyframe_density140.so
+$P-gcc -shared route-policy.o route-hook.o proc_readonly.o live-queue.o probe.o factory.o runtime.o observer-probe.o wire-uiinsets.o entry.o -Wl,-z,now -Wl,-z,noexecstack -Wl,-soname,libdelphi_observer.so -lc -o libdelphi_observer_keyframe_uiinsets.so
+$P-gcc $flags ../cluster-bridge/layout-margin/margin-fixture.c -Wl,-z,noexecstack -o margin_wire_fixture
+$P-gcc $flags -DLAYOUT_DENSITY_DPI=140 ../cluster-bridge/layout-margin/margin-fixture.c -Wl,-z,noexecstack -o margin_density140_fixture
+$P-gcc $flags -DMARGIN_WIDTH_PIXELS=0 -DLAYOUT_DENSITY_DPI=140 -DLAYOUT_UI_INSET_PIXELS=120 ../cluster-bridge/layout-margin/uiinsets-fixture.c -Wl,-z,noexecstack -o uiinsets_wire_fixture
 $P-gcc $flags probe-fixture.c runtime.c ../cluster-bridge/live/queue.c ../endpoint-factory/factory.c -Wl,-z,noexecstack -o keyframe_probe_fixture
 console_status STEP 'Compiling wire_fixture.'
 $P-gcc $flags wire-fixture.c wire.c -Wl,-z,noexecstack -o wire_fixture
@@ -57,4 +68,4 @@ $P-gcc $flags route-forward-runner.c -Wl,-z,noexecstack -o route_forward_runner
 console_status STEP 'Compiling secondary_test_runner.'
 $P-gcc $flags test-runner.c -Wl,-z,noexecstack -o secondary_test_runner
 mkdir -p /src/native/secondary-display/build
-cp route_hook_fixture route_forward_fixture route_forward_runner route_policy_fixture live_mux_fixture live_capture live_capture_test libdelphi_observer_keyframe.so keyframe_probe_fixture libdelphi_observer.so libautoreceiver.so wire_fixture runtime_fixture secondary_forward_fixture secondary_test_runner transaction_fixture /src/native/secondary-display/build/
+cp uiinsets_wire_fixture libdelphi_observer_keyframe_uiinsets.so margin_wire_fixture margin_density140_fixture libdelphi_observer_keyframe_density140.so route_hook_fixture route_forward_fixture route_forward_runner route_policy_fixture live_mux_fixture live_capture live_capture_test libdelphi_observer_keyframe.so keyframe_probe_fixture libdelphi_observer.so libautoreceiver.so wire_fixture runtime_fixture secondary_forward_fixture secondary_test_runner transaction_fixture /src/native/secondary-display/build/
