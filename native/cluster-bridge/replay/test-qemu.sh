@@ -45,6 +45,10 @@ replay_libc_fixture
 replay_libc_check_test
 libdelphi_cluster_early_legacy.so
 libdelphi_cluster_test.so
+[type=link]
+/ramdisk/delphi-nav-bridge_55555555555555555555555555555555=/dev/shmem
+/ramdisk/delphi-nav-bridge_66666666666666666666666666666666=/dev/shmem
+/ramdisk/delphi-nav-bridge_77777777777777777777777777777777=/dev/shmem
 [type=dir]
 /ramdisk
 /ramdisk/delphi-nav-bridge_00000000000000000000000000000000
@@ -68,7 +72,7 @@ console_status STEP 'Booting QNX emulator; results are being collected in the te
 : > "$out/qemu.log"
 ( printf '\n'; sleep 4; printf 'virtio scan\n'; sleep 2; printf 'fatload virtio 0:1 0x40200000 ifs.bin\n'; sleep 3; printf 'go 0x40200000\n'; sleep 15 ) | qemu-system-arm -M virt -nic none -m 256 -cpu cortex-a15 -bios u-boot.bin -drive file=fat:rw:/w/fat,format=raw,media=disk -display none -serial stdio > "$out/qemu.log" 2>&1 &
 qemu_pid=$!
-for probe in $(seq 1 400); do
+for probe in $(seq 1 1000); do
  if grep -q REPLAY_QNX_END "$out/qemu.log"; then break; fi
  if ! kill -0 "$qemu_pid" 2>/dev/null; then break; fi
  sleep .1
@@ -101,3 +105,7 @@ grep -q REPLAY_TIMELINE_PASS "$out/qemu.log"
 grep -q LIVE_STARTUP_QNX_PASS "$out/qemu.log"
 grep -q LIVE_NAV_SINK_QNX_PASS "$out/qemu.log"
 sha256sum /src/native/cluster-bridge/replay/build/libdelphi_cluster_live.so /src/native/cluster-bridge/replay/build/live_queue_prepare /src/native/cluster-bridge/replay/build/live_sink_fixture >> "$out/tested.sha256"
+
+grep -q LIVE_OPTIONS_QNX_PASS "$out/qemu.log"
+grep -q LIVE_EXTENDED_QNX_PASS "$out/qemu.log"
+grep -q LIVE_EXTENDED_OVERFLOW_QNX_PASS "$out/qemu.log"

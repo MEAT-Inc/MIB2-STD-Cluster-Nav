@@ -10,16 +10,18 @@ def digest(b):return hashlib.sha256(b).hexdigest()
 def assess_output(b,pid=None):
  if len(b)!=512:raise ValueError('Live Nav report size')
  w=struct.unpack('<128I',b);version=w[67]
- if w[:3]!=(0x31504c52,1,512) or pid is not None and w[3]!=pid or not 0<w[3]<=0x7fffffff or w[4] not in (0,1,2,3,4) or version not in (1,2,3,4,5) or w[68]>2048 or w[69]>8388608 or w[72]>1 or w[75]>2097152 or w[75]%188:raise ValueError('Live Nav report identity/profile')
+ if w[:3]!=(0x31504c52,1,512) or pid is not None and w[3]!=pid or not 0<w[3]<=0x7fffffff or w[4] not in (0,1,2,3,4) or version not in (1,2,3,4,5,6) or w[68]>2048 or w[69]>8388608 or w[72]>1 or w[75]>2097152 or w[75]%188:raise ValueError('Live Nav report identity/profile')
  if version==1 and any(w[76:]) or version>=2 and (w[79]>w[13] or w[76] not in (0,2,3,4) or w[77]>w[10] or w[78]>w[14]):raise ValueError('Live Nav close metrics')
- if version==2 and any(w[80:]) or version>=3 and ((any(w[87:]) if version==3 else any(w[102:]) if version==4 else any(w[105:])) or w[80]>3 or w[81]>1048576 or w[82]>4194304 or w[83]>64 or w[84]>w[68] or w[86]!=1000):raise ValueError('Live Nav startup metrics')
+ if version==2 and any(w[80:]) or version>=3 and ((any(w[87:]) if version==3 else any(w[102:]) if version==4 else any(w[105:]) if version==5 else any(w[110:])) or w[80]>3 or w[81]>1048576 or w[82]>4194304 or w[83]>64 or w[84]>(w[105] if version==6 else w[68]) or w[86]!=1000):raise ValueError('Live Nav startup metrics')
  if version>=4 and (w[87]>4 or w[88]>1 or w[97]>770048 or w[101]>64 or w[74]!=5 and w[101] or w[87] and not w[88] or w[87]==2 and (not w[89] or w[91]) or w[87]==3 and not w[91]):raise ValueError('Live Nav factory return metrics')
- if version==5 and (w[102]!=250 or w[103:105]!=(4,5)):raise ValueError('Live Nav catchup timing profile')
+ if version>=5 and (w[102]!=250 or w[103:105]!=(4,5)):raise ValueError('Live Nav catchup timing profile')
+ if version==6 and (w[105]<w[68] or w[108]>1 or w[109] not in (0,30)):raise ValueError('Live Nav extended profile')
  if w[4] in (1,2,3) and (w[22]!=7 or not w[36] or w[36]&4095):raise ValueError('Live Nav bootstrap incomplete')
  v=dict(profile_version=version,pid=w[3],status=w[4],error=w[5],frames=w[68],input_bytes=w[69],drops=w[70],source_pid=w[71],source_verified=bool(w[72]),sink_error=w[73],stop_reason=w[74],packets=w[10],bytes=w[11],rewritten_packets=w[62],suppressed_native_writes=w[8],bad_callers=w[20],closes=w[13],first_close_status=w[65],packets_at_first_close=w[66],timeline_error=w[63],active_closes=w[79] if version>=2 else None,first_active_close_status=w[76] if version>=2 else None,packets_at_active_close=w[77] if version>=2 else None,accepted_output_capture_bytes=w[75],transport_fd=struct.unpack_from('<i',b,60)[0])
  if version>=3:v.update(bootstrap_frames=w[80],bootstrap_keyframe_bytes=w[81],startup_peak_bytes=w[82],startup_peak_frames=w[83],source_frames_emitted=w[84],startup_overflows=w[85],startup_delay_ms=w[86])
  if version>=4:v['factory_return']=dict(state=w[87],requests=w[88],accepted_packets=w[89],discarded_packets=w[90],error=w[91],request_monotonic_ms=w[92]+(w[93]<<32),first_accepted_monotonic_ms=w[94]+(w[95]<<32),reason=w[96],recovery_buffer_peak_bytes=w[97],route_stop_observed=w[98],route_stop_monotonic_ms=w[99]+(w[100]<<32),discarded_source_frames=w[101])
- if version==5:v.update(startup_initial_delay_ms=w[86],startup_delay_ms=w[102],catchup_pace_numerator=w[103],catchup_pace_denominator=w[104])
+ if version>=5:v.update(startup_initial_delay_ms=w[86],startup_delay_ms=w[102],catchup_pace_numerator=w[103],catchup_pace_denominator=w[104])
+ if version==6:v.update(total_input_frames=w[105],total_input_bytes=w[106]+(w[107]<<32),diagnostic_prefix_truncated=bool(w[108]),live_seconds=w[109])
  return v
 
 def native_factory_return_verified(v):
@@ -35,7 +37,13 @@ def output_delivered(v,source,frames):
   emitted=v.get('source_frames_emitted',0);discarded=v.get('factory_return',{}).get('discarded_source_frames',0)
   count_ok=0<v.get('frames',0)<=frames
   source_ok=emitted>0 and emitted+discarded==v.get('frames') and not v.get('startup_overflows')
- return bool(count_ok and source_ok and v.get('source_verified') and v.get('source_pid')==source and frames and v.get('packets') and v.get('bytes')==188*v['packets'] and v['packets']==v.get('rewritten_packets') and not any(v.get(k) for k in ('error','sink_error','drops','bad_callers','timeline_error')))
+ if v.get('profile_version')==6:
+  total=v['total_input_frames'];discarded=v.get('factory_return',{}).get('discarded_source_frames',0)
+  rejected=1 if v.get('stop_reason')==3 and v.get('live_seconds')==30 and total==v['frames']+1 else 0
+  source_ok=(v.get('source_frames_emitted',0)+discarded+rejected==total and not v.get('startup_overflows'))
+ byte_count=188*v.get('packets',0)
+ if v.get('profile_version')==6:byte_count&=0xffffffff
+ return bool(count_ok and source_ok and v.get('source_verified') and v.get('source_pid')==source and frames and v.get('packets') and v.get('bytes')==byte_count and v['packets']==v.get('rewritten_packets') and not any(v.get(k) for k in ('error','sink_error','drops','bad_callers','timeline_error')))
 
 def cleanup_allowed(handoff,authorized,aa_pending):return bool((not handoff or authorized) and not aa_pending)
 
@@ -60,6 +68,10 @@ class LiveBridge:
   if args.resume and self.state.get('manifest_sha256')!=stamp:raise ValueError('Saved live Nav manifest differs from session')
   if snapshot.exists() and digest(snapshot.read_bytes())!=stamp:raise ValueError('Saved live release manifest differs')
   if not snapshot.exists():snapshot.write_bytes(raw)
+  selected=getattr(args,'live_seconds',None);saved_limit=self.state.get('live_seconds',30)
+  if args.resume and selected is not None and selected!=saved_limit:raise ValueError('Resume must use saved live-run limit')
+  self.state['live_seconds']=saved_limit if args.resume else 30 if selected is None else selected
+  if self.state['live_seconds']==0 and not self.manifest.get('extended_live_supported'):raise ValueError('Use the current extended-run bundle')
   self.state['manifest_sha256']=stamp;self.save()
  def save(self):self.local.write_text(json.dumps(self.state,indent=2))
  def ftp(self):
@@ -80,6 +92,11 @@ class LiveBridge:
    for name,b in self.files.items():
     status('Uploading live Nav payload: '+name);f.storbinary('STOR '+self.remote+'/'+name,io.BytesIO(b))
     if retrieve(f,self.remote+'/'+name)!=b:raise ValueError('Live Nav upload mismatch '+name)
+  from live_run_options import options_bytes
+  options=options_bytes(self.token,self.state['live_seconds'])
+  with self.ftp() as f:
+   f.storbinary('STOR '+self.remote+'/live-options.bin',io.BytesIO(options))
+   if retrieve(f,self.remote+'/live-options.bin')!=options:raise ValueError('Live-run options upload mismatch')
   for name in self.files:
    if name!='replay.bin':self.cmd('chmod 500 '+self.remote+'/'+name)
   for name,ref in self.manifest['references'].items():
@@ -93,6 +110,7 @@ class LiveBridge:
   self.command('LD_PRELOAD= ./nav_launch start-disconnected '+self.remote+' '+str(pid)+' > start.txt 2>&1 & live_nav_job=$!')
   print('Select the factory map in the instrument cluster while the live output initializes. Stop any VW route guidance before this presentation trial.')
   b,v=self.wait_channel()
+  if self.manifest.get('extended_live_supported') and (v.get('profile_version')!=6 or v.get('live_seconds')!=self.state['live_seconds']):raise ValueError('Native live-run settings differ from requested mode')
   self.state['observed_pid']=v['pid'];self.save()
   if input('Wait for actual factory map graphics IN THE CLUSTER. Press Enter to arm live output, or type SKIP to restore: ').strip().upper()=='SKIP':raise RuntimeError('Live output skipped')
   self.capture_native_prefix(b)
@@ -152,11 +170,12 @@ class LiveBridge:
    while True:
     policy=assess_route_policy(copy('/dev/shmem/delphi-route-policy-'+self.token+'.bin','route-policy-ready.bin'),pid,self.state['observed_pid'])
     if self.manifest.get('route_policy_report_version') and policy['version']!=self.manifest['route_policy_report_version']:raise RuntimeError('Route presentation report version differs from release; phone handoff cancelled')
+    if self.manifest.get('extended_live_supported') and policy.get('live_seconds')!=self.state['live_seconds']:raise RuntimeError('Route policy live-run mode differs; phone handoff cancelled')
     if policy['eligible'] and policy['state']==1:break
     if time.monotonic()>=until:raise TimeoutError('Route presentation gate not ready; phone handoff cancelled')
     time.sleep(.2)
    self.state['route_policy_ready']=policy;self.save()
-   print('Bounded route presentation trial ready: phone route handoff is deferred for at most 40 seconds while the verified bridge is healthy.')
+   print('Extended route presentation ready: handoff remains deferred while the verified bridge is healthy, until phone disconnect.' if self.state.get('live_seconds')==0 else 'Bounded route presentation trial ready: phone route handoff is deferred for at most 40 seconds while the verified bridge is healthy.')
   print('Live output armed; VW video continues until the first verified phone keyframe.')
  def capture_output(self,v):
   b=self.copy('/dev/shmem/delphi-nav-output-'+self.token+'.bin','nav-accepted-output.bin');n=v['accepted_output_capture_bytes']

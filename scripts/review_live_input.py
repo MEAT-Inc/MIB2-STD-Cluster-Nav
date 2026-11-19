@@ -3,10 +3,14 @@ import hashlib,json,struct,re,statistics
 from secondary_timing import assess_timing
 def reader_report(b,pid,*,consumer_pid=None,allow_unbound=False):
  if len(b)!=512:raise ValueError('Live reader report size')
- w=struct.unpack('<128I',b)
+ w=struct.unpack('<128I',b);version=w[1]
  unbound=bool(allow_unbound and consumer_pid is not None and w[4]==0 and w[5] in (0,4) and not w[7] and not w[8])
- if (w[0]!=0x3152434c or w[1] not in (1,2) or w[2]!=512) or not 0<w[3]<=0x7fffffff or (consumer_pid is not None and w[3]!=consumer_pid) or (w[4]!=pid and not unbound) or w[5] not in (0,1,2,3,4) or w[7]>2048 or w[8]>8388608 or (any(w[22:]) if w[1]==1 else any(w[26:]) or w[22]>2053 or w[23]>4 or w[24]>1 or w[25]>1):raise ValueError('Live reader identity/layout')
- return dict(version=w[1],published_frames=w[22] if w[1]==2 else None,unconsumed_published_frames=w[23] if w[1]==2 else None,limit_rejected_frames=w[24] if w[1]==2 else None,input_sealed_before_drain=bool(w[25]) if w[1]==2 else None,pid=w[3],source_pid=w[4],state=w[5],error=w[6],frames=w[7],bytes=w[8],queue_dropped=w[9],request_idr=bool(w[10]),stop_reason=w[19],nav_samples=w[20],nav_errors=w[21])
+ if w[0]!=0x3152434c or version not in (1,2,3) or w[2]!=512 or not 0<w[3]<=0x7fffffff or consumer_pid is not None and w[3]!=consumer_pid or w[4]!=pid and not unbound or w[5] not in (0,1,2,3,4) or w[7]>2048 or w[8]>8388608:raise ValueError('Live reader identity/layout')
+ if version==1 and any(w[22:]) or version==2 and (any(w[26:]) or w[22]>2053) or version>=2 and (w[23]>4 or w[24]>1 or w[25]>1) or version==3 and (any(w[31:]) or w[29]>1 or w[30] not in (0,30) or w[26]<w[7]):raise ValueError('Live reader completion layout')
+ v=dict(version=version,published_frames=w[22] if version>=2 else None,unconsumed_published_frames=w[23] if version>=2 else None,limit_rejected_frames=w[24] if version>=2 else None,input_sealed_before_drain=bool(w[25]) if version>=2 else None,pid=w[3],source_pid=w[4],state=w[5],error=w[6],frames=w[7],bytes=w[8],queue_dropped=w[9],request_idr=bool(w[10]),stop_reason=w[19],nav_samples=w[20],nav_errors=w[21])
+ if version==3:v.update(total_input_frames=w[26],total_input_bytes=w[27]+(w[28]<<32),diagnostic_prefix_truncated=bool(w[29]),live_seconds=w[30])
+ return v
+
 def nal_flags(b):
  flags=0
  for m in re.finditer(rb'\x00\x00(?:\x00)?\x01(.)',b,re.S):
@@ -47,8 +51,14 @@ def assess_live(report,metadata,copied,source_timing,source_raw,pid,secondary):
  publications_ok=probe.get('ipc_frames')==r['frames']
  if r['version']==2:
   publications_ok=(probe.get('ipc_frames')==r['published_frames']==r['frames']+r['unconsumed_published_frames']+r['limit_rejected_frames'] and r['published_frames']<=secondary.get('frames',0) and (r['stop_reason'] not in (2,3) or r['input_sealed_before_drain']) and (not r['limit_rejected_frames'] or r['stop_reason']==3))
- passed=bool(v['complete'] and r['state']==3 and not r['error'] and r['frames'] and exact and probe.get('ipc_attached') and probe.get('ipc_consumer_pid')==r['pid'] and not probe.get('ipc_error') and not probe.get('ipc_dropped') and not probe.get('ipc_malformed') and not r['queue_dropped'] and publications_ok)
- return dict(owned_live_copy_verified=passed,frames=r['frames'],bytes=r['bytes'],all_copied_access_units_match=bool(r['frames'] and exact),keyframes=keys,resyncs=resyncs,queue_dropped=r['queue_dropped'],source_to_copy_median_ms=statistics.median(lags) if lags else None,source_to_copy_max_ms=max(lags) if lags else None,reader=r,cluster_transport_connected=False)
+ extended=r['version']==3 and r['live_seconds']==0
+ source_complete=v['complete']
+ if r['version']==3:
+  publications_ok=(probe.get('ipc_frames')==r['published_frames']==r['total_input_frames']+r['unconsumed_published_frames'] and r['published_frames']<=secondary.get('frames',0) and (r['stop_reason'] not in (2,3) or r['input_sealed_before_drain']) and (not r['limit_rejected_frames'] or r['stop_reason']==3))
+ if extended:
+  source_complete=bool(v['codec_records'] and v['records'] and not v['clock_error'] and not v['source_timestamp_regressed'] and all(q['monotonic_ns']>0 for q in v['records_detail']))
+ passed=bool(source_complete and r['state']==3 and not r['error'] and r['frames'] and exact and probe.get('ipc_attached') and probe.get('ipc_consumer_pid')==r['pid'] and not probe.get('ipc_error') and not probe.get('ipc_dropped') and not probe.get('ipc_malformed') and not r['queue_dropped'] and publications_ok)
+ return dict(verification_scope='bounded_diagnostic_prefix' if extended else 'complete_captured_window',total_input_frames=r.get('total_input_frames',r['frames']),diagnostic_prefix_truncated=r.get('diagnostic_prefix_truncated',False),source_diagnostic_records_dropped=v['dropped_records'],owned_live_copy_verified=passed,frames=r['frames'],bytes=r['bytes'],all_copied_access_units_match=bool(r['frames'] and exact),keyframes=keys,resyncs=resyncs,queue_dropped=r['queue_dropped'],source_to_copy_median_ms=statistics.median(lags) if lags else None,source_to_copy_max_ms=max(lags) if lags else None,reader=r,cluster_transport_connected=False)
 def assess_native_geometry(raw,pid,records):
  import cluster_preflight as cp
  frames=[r for r in records if r['kind']==2];samples=[]

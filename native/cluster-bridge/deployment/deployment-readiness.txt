@@ -1,0 +1,11 @@
+Persistent deployment readiness — v15
+
+Confirmed: procman -f /etc/procman_core.cfg launches /extbin/apps/hmi/HMI/runHMI.sh. /extbin and /persistence are QNX6 mounts. /extbin/.boot exists; its startup semantics are not proven.
+
+The read-only startup-preflight bundle retrieves the actual launch script, configuration, mount information and path backing. Select the boot hook only after reviewing those results. No persistent installation is performed by either bundle.
+
+The extended maps bundle removes active video time limits when explicitly requested. It remains a single-session trial, requiring normal end-of-test cleanup. The current attempted/done/queue state is one-shot; automatic reconnect requires a tested session generation/reset lifecycle or supervisor, not merely adding the current trial to a boot script.
+
+Next deployment gates: validate the real launch chain, implement repeatable attach/detach/session reset, verify process replacement and radio startup, then package a version-checked install with backups, rollback and uninstall. Keep diagnostic buffers bounded and preserve factory restoration.
+
+UI candidate: content bottom72, stable bottom64. This holds stable UI metadata constant; actual Google Maps turn-card placement must be checked on the phone.

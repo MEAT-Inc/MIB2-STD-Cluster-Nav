@@ -9,7 +9,7 @@ def sha(b):return hashlib.sha256(b).hexdigest()
 def main():
  base=ROOT/'native/cluster-bridge/keyframe-probe';release=base/'release';release.mkdir(parents=True,exist_ok=True)
  native=ROOT/'native/secondary-display';log=(native/'qemu/qemu.log').read_text()
- for marker in ('CLUSTER_UI_INSETS_QNX_PASS','ROUTE_DISCONNECT_QNX_PASS','unknown_thread_target=1','native_projected_1_hmi_2=1','ROUTE_HOOK_QNX_PASS','ROUTE_POLICY_PRELOAD_FORWARD_PASS','ROUTE_POLICY_PRELOAD_RUNNER_PASS','ROUTE_POLICY_QNX_PASS','SECONDARY_KEYFRAME_PROBE_PASS','LIVE_CAPTURE_QNX_PASS','LIVE_CAPTURE_DELAY_POLICY_PASS','LIVE_MUX_QNX_PASS','NAV_TIMED_SNAPSHOT_QNX_PASS','SECONDARY_RUNTIME_QNX_PASS','SECONDARY_DISCOVERY_TRANSACTION_QNX_PASS','SECONDARY_HOOK_FORWARD_QNX_PASS','DELPHI_SMOKE_QNX_SUITE_PASS'):
+ for marker in ('ROUTE_EXTENDED_QNX_PASS','CLUSTER_UI_INSETS_QNX_PASS','ROUTE_DISCONNECT_QNX_PASS','unknown_thread_target=1','native_projected_1_hmi_2=1','ROUTE_HOOK_QNX_PASS','ROUTE_POLICY_PRELOAD_FORWARD_PASS','ROUTE_POLICY_PRELOAD_RUNNER_PASS','ROUTE_POLICY_QNX_PASS','SECONDARY_KEYFRAME_PROBE_PASS','LIVE_CAPTURE_QNX_PASS','LIVE_CAPTURE_DELAY_POLICY_PASS','LIVE_MUX_QNX_PASS','NAV_TIMED_SNAPSHOT_QNX_PASS','SECONDARY_RUNTIME_QNX_PASS','SECONDARY_DISCOVERY_TRANSACTION_QNX_PASS','SECONDARY_HOOK_FORWARD_QNX_PASS','DELPHI_SMOKE_QNX_SUITE_PASS'):
   if marker not in log:raise ValueError('Missing native gate: '+marker)
  if 'LIVE_QUEUE_PROCESS_PASS' not in (ROOT/'native/cluster-bridge/live/qemu/qemu.log').read_text():raise ValueError('Live queue cross-process gate')
  checked={Path(line.split()[1]).name:line.split()[0] for line in (native/'qemu/keyframe-probe-tested.sha256').read_text().splitlines()}
@@ -35,17 +35,17 @@ def main():
   status('Running '+test)
   result=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/tests'/test)],cwd=ROOT,capture_output=True,text=True)
   if result.returncode:raise ValueError(result.stderr[-16000:])
- manifest.update(route_presentation_trial=True,route_presentation_hold_seconds=40,route_presentation_event=0x1749,route_native_projected=1,route_native_native=2,route_policy_report_version=3,route_disconnect_event=0x173e,route_started_event=0x173d,route_disconnect_restore=True,route_phone_ack_helper=[0x1189e0,0x119840],route_presentation_extra_aa_threads_when_live=1,keyframe_probe_enabled=True,keyframe_probe_max_requests=0,focus_refresh_disabled=True,live_wait_for_first_frame_seconds=180,live_owned_frame_capture=True,live_queue_capacity=4,live_frame_limit=1048576,live_capture_limit=8388608,live_capture_timeout_seconds=30,navigation_live_sampling_readonly=True,navigation_restart=False,cluster_transport_connected=False,on_car_tested=False,factory_contract_revision=6,release_version=14)
- manifest['layout_trial']=dict(video_service_id=9,width_margin_total=0,height_margin_total=0,left_right_pixels=0,content_rectangle=[0,0,800,480],coded_dimensions=[800,480],density=140,ui_config_field=11,content_insets=dict(top=0,bottom=64,left=120,right=120),stable_content_insets=dict(top=0,bottom=64,left=120,right=120),ui_content_rectangle=[120,0,680,416],full_frame_map_requested=True,phone_honors_ui_insets_unverified=False,bottom_inset_on_car_verified=False,layout_on_car_verified=False,primary_configuration_unchanged=True,reencoded=False)
+ manifest.update(route_presentation_trial=True,route_presentation_hold_seconds=40,route_presentation_event=0x1749,route_native_projected=1,route_native_native=2,route_policy_report_version=4,route_disconnect_event=0x173e,route_started_event=0x173d,route_disconnect_restore=True,route_phone_ack_helper=[0x1189e0,0x119840],route_presentation_extra_aa_threads_when_live=1,keyframe_probe_enabled=True,keyframe_probe_max_requests=0,focus_refresh_disabled=True,live_wait_for_first_frame_seconds=180,live_owned_frame_capture=True,live_queue_capacity=4,live_frame_limit=1048576,live_capture_limit=8388608,live_capture_timeout_seconds=30,navigation_live_sampling_readonly=True,navigation_restart=False,cluster_transport_connected=False,on_car_tested=False,factory_contract_revision=6,release_version=15)
+ manifest['layout_trial']=dict(video_service_id=9,width_margin_total=0,height_margin_total=0,left_right_pixels=0,content_rectangle=[0,0,800,480],coded_dimensions=[800,480],density=140,ui_config_field=11,content_insets=dict(top=0,bottom=72,left=120,right=120),stable_content_insets=dict(top=0,bottom=64,left=120,right=120),ui_content_rectangle=[120,0,680,408],stable_ui_rectangle=[120,0,680,416],stable_ui_anchor_preserved=True,turn_card_position_on_car_verified=False,full_frame_map_requested=True,phone_honors_ui_insets_unverified=False,bottom_inset_on_car_verified=False,layout_on_car_verified=False,primary_configuration_unchanged=True,reencoded=False)
  manifest['source_sha256']={n:sha((ROOT/n).read_bytes()) for n in manifest.get('source_sha256',{})}
  manifest['files']={name:dict(bytes=len(b),sha256=sha(b)) for name,b in files.items()}
- scripts=tuple(dict.fromkeys(tuple(manifest['scripts_sha256'])+('review_secondary_keyframes.py','review_live_input.py','project_console.py','decode_androidauto_display.py')))
+ scripts=tuple(dict.fromkeys(tuple(manifest['scripts_sha256'])+('review_secondary_keyframes.py','review_live_input.py','project_console.py','decode_androidauto_display.py','live_run_options.py')))
  manifest['scripts_sha256']={n:sha((ROOT/'scripts'/n).read_bytes()) for n in scripts}
  manifest['source_sha256'].update({p.relative_to(ROOT).as_posix():sha(p.read_bytes()) for folder in (native,ROOT/'native/cluster-bridge/live',ROOT/'native/cluster-bridge/layout-margin') for p in folder.iterdir() if p.suffix in ('.c','.h','.sh','.py')})
  manifest['source_sha256']['native/cluster-bridge/nav_snapshot.c']=sha((ROOT/'native/cluster-bridge/nav_snapshot.c').read_bytes())
  for name,b in files.items():(release/name).write_bytes(b)
  (release/'manifest.json').write_text(json.dumps(manifest,indent=2))
- readme="""LIVE INPUT TEST v14
+ readme="""LIVE INPUT TEST v15
 ==================
 Goal: verify actual phone frames through the owned queue after a delayed phone
 connection, with factory encoder sampling during the live feed. It writes RAM captures; this
@@ -75,7 +75,7 @@ This run:
  source process ends. The connection wait has a separate180-second limit.
 """
  (release/'README.txt').write_text(readme)
- bundle=base/'live-input-v14-laptop.zip'
+ bundle=base/'live-input-v15-laptop.zip'
  with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
   for n in scripts:z.write(ROOT/'scripts'/n,'scripts/'+n)
   for n in (*files,'manifest.json','README.txt'):z.write(release/n,(release/n).relative_to(ROOT).as_posix())

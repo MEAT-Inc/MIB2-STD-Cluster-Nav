@@ -8,7 +8,7 @@ int main(void)
 {
     unsigned n; unsigned char out[16384],in[8192];
     (void)expected; (void)extra_expected;
-    CHECK(LAYOUT_UI_INSET_PIXELS==120 && LAYOUT_UI_BOTTOM_INSET_PIXELS==64 && MARGIN_WIDTH_PIXELS==0 && LAYOUT_DENSITY_DPI==140);
+    CHECK(LAYOUT_UI_INSET_PIXELS==120 && LAYOUT_UI_BOTTOM_INSET_PIXELS==72 && LAYOUT_UI_STABLE_BOTTOM_INSET_PIXELS==64 && MARGIN_WIDTH_PIXELS==0 && LAYOUT_DENSITY_DPI==140);
     CHECK(layout_metadata_rewrite(input,sizeof input,out,sizeof out,&n) && n==sizeof baseline && !memcmp(out,baseline,n));
     CHECK(cluster_wire_rewrite(input,sizeof input,out,sizeof out,&n) && n==sizeof ui_expected && !memcmp(out,ui_expected,n));
     CHECK(cluster_wire_rewrite(extra_input,sizeof extra_input,out,sizeof out,&n) && n==sizeof ui_extra_expected && !memcmp(out,ui_extra_expected,n));
@@ -19,6 +19,6 @@ int main(void)
     memcpy(in,input,sizeof input);n=99;
     CHECK(!cluster_wire_rewrite(in,sizeof input,in,sizeof in,&n)&&!n&&!memcmp(in,input,sizeof input));
     CHECK(!cluster_wire_rewrite(input,sizeof input,out,sizeof out,0));
-    puts("CLUSTER_UI_INSETS_QNX_PASS width_total=0 height_total=0 dpi=140 resolution=800x480 inset_left=120 inset_right=120 inset_bottom=64 secondary_only=1 primary_unchanged=1 unknown_preserved=1 existing_ui_refused=1 malformed_refused=1 bounds=1");
+    puts("CLUSTER_UI_INSETS_QNX_PASS width_total=0 height_total=0 dpi=140 resolution=800x480 inset_left=120 inset_right=120 inset_bottom=72 stable_bottom=64 secondary_only=1 primary_unchanged=1 unknown_preserved=1 existing_ui_refused=1 malformed_refused=1 bounds=1");
     return 0;
 }

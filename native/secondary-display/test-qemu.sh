@@ -133,3 +133,5 @@ sha256sum libdelphi_observer_keyframe.so libdelphi_observer_keyframe_density140.
 
 grep -q 'CLUSTER_UI_INSETS_QNX_PASS' "$w/qemu.log"
 sha256sum libdelphi_observer_keyframe_uiinsets.so uiinsets_wire_fixture > "$w/ui-insets-tested.sha256"
+
+grep -q ROUTE_EXTENDED_QNX_PASS "$w/qemu.log"

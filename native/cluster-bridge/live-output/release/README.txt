@@ -1,24 +1,28 @@
-LIVE ANDROID AUTO CLUSTER TRIAL v14
+LIVE ANDROID AUTO CLUSTER TRIAL v15
 ===================================
-Keeps the full800x480 map, density140 and120px horizontal UI insets.
-Requests64px bottom UI inset so the tilted-view vehicle icon stays inside the
-visible map. Video margins stay zero; the map background still fills the frame.
+Full800x480 map, density140,120px horizontal UI insets. Map/content bottom inset
+is72px; the separate stable UI bottom inset stays64px to preserve the previous
+UI anchor. Actual turn-card positioning is phone-controlled and must be checked.
+250ms steady buffering and the proven startup/catchup sequence are retained.
 
-Retains the proven first-second startup keyframes at0/333/666ms. After that,
-video catches up at1.25x for about3seconds, then keeps250ms of added buffering
-instead of1000ms. All original coded pictures remain in order; no re-encoding
-or picture drops are used. Actual cluster decoder latency needs an on-car check.
+Extract the ENTIRE ZIP into a fresh folder. Park, ignition on, working factory
+maps, phone unplugged and Ethernet connected. Configure/launch while parked.
+Extended output (until phone disconnect or a verified failure):
+ python scripts/run_disconnected_observer.py --run --live-cluster --phone-unplugged --no-live-timeout
+Bounded30-second trial (also the default when neither option is supplied):
+ python scripts/run_disconnected_observer.py --run --live-cluster --phone-unplugged --live-seconds 30
 
-Extract the ENTIRE ZIP into a fresh laptop folder. Park, ignition on, factory
-maps working, phone unplugged and Ethernet connected. Run:
- python scripts/run_disconnected_observer.py --run --live-cluster --phone-unplugged
-At CAPTURE READY swap Ethernet for phone and start a route promptly. Once startup
-has settled, compare the cluster with the radio and check the car icon in tilted
-and top-down views. Check that the directions box still fits and no black bars
-appear. Unplug phone, reconnect Ethernet and follow the usual cleanup prompts.
-Do not toggle map location until answering the automatic-return question.
-Return the whole delphi-dump/_disconnect_observer_* folder with visual feedback.
+Only at CAPTURE READY swap Ethernet for phone. The extended mode has no active
+video-duration cutoff. Diagnostic recording remains bounded at8MiB/2048 frames;
+video forwarding and source/disconnect monitoring continue after recording stops.
+After your test, park, unplug phone, reconnect Ethernet and finish the existing
+PHONE REMOVED cleanup. Do not operate the laptop while driving. Leave the map
+location button untouched until answering the automatic-return question.
+Return the complete delphi-dump/_disconnect_observer_* folder.
 
-The bounded30-second trial still starts at the FIRST phone video frame. Automatic
-return at the deadline is expected; the v11 graceful completion fix is retained.
-If cleanup is pending, keep phone unplugged and resume with this SAME bundle.
+This remains a single phone-session RAM trial with explicit end-of-test cleanup.
+Automatic boot installation and repeated phone reconnect without cleanup are
+separate deployment work; this bundle does not install a persistent hook.
+Use the separate startup-preflight bundle to collect the current boot script.
+If cleanup is pending, resume with this SAME bundle and the saved result folder;
+the chosen live limit is saved and cannot be changed during resume.

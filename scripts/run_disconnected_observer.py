@@ -87,6 +87,8 @@ def assess_discovery_capture(data,observed):
 
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__);g=p.add_mutually_exclusive_group();g.add_argument('--run',action='store_true');g.add_argument('--resume',type=Path)
+    from live_run_options import add_live_arguments
+    add_live_arguments(p)
     p.add_argument('--live-cluster',action='store_true',help='First live maps trial through the owned Nav descriptor; requires factory cluster maps before arm')
     p.add_argument('--live-input','--keyframe-probe',dest='keyframe_probe',action='store_true',help='Validate live secondary frames; waits for phone before capture timer starts')
     p.add_argument('--cluster-preflight',action='store_true',help='Read native geometry and preserve secondary frame boundaries/timestamps')
@@ -95,6 +97,7 @@ def main(argv=None):
     p.add_argument('--phone-capture',action='store_true',help='Native phone capture: Ethernet -> phone -> Ethernet, explicit disconnected cleanup only')
     p.add_argument('--phone-unplugged',action='store_true',help='Attest phone is physically unplugged before initial launch or resume')
     p.add_argument('--host',default='192.168.1.4');p.add_argument('--port',type=int,default=21);p.add_argument('--username',default='ftpuser');p.add_argument('--ask-password',action='store_true');p.add_argument('--telnet-port',type=int,default=23);p.add_argument('--telnet-user',default='root');p.add_argument('--timeout',type=float,default=90);a=p.parse_args(argv)
+    if a.live_seconds is not None and not a.live_cluster:p.error('Live duration options require --live-cluster')
     if a.live_cluster:a.keyframe_probe=True
     if a.keyframe_probe:a.cluster_preflight=True
     if a.cluster_preflight:a.secondary_stream=True
@@ -106,6 +109,7 @@ def main(argv=None):
     if a.phone_capture and a.resume:p.error('Resume uses the profile saved in its summary; omit --phone-capture')
     if (a.run or a.resume) and not a.phone_unplugged:p.error('Requires --phone-unplugged before initial launch or resume')
     print('Capture ends pending; only explicit disconnected cleanup restarts the observed app.')
+    if a.live_cluster:print('Live video: '+('until phone disconnect; diagnostic captures stay bounded.' if a.live_seconds==0 else '30-second bounded trial.'))
     if a.phone_capture:print('Phone capture: start unplugged; swap only at CAPTURE READY; remove phone and reconnect Ethernet before cleanup.')
     else:print('Default control trial: phone remains unplugged throughout.')
     if not a.run and not a.resume:print('Plan only. Add --run --phone-unplugged; keep --phone-capture for the phone profile.');return 0
@@ -141,6 +145,7 @@ def main(argv=None):
     if a.live_cluster:
         from live_cluster_bridge import LiveBridge
         bridge=LiveBridge(ROOT,a,folder,report,password)
+        report['live_seconds']=bridge.state['live_seconds']
     def persist():(folder/'disconnect-summary.json').write_text(json.dumps(report,indent=2),encoding='utf8')
     def fetch(name):
         with ftplib.FTP(timeout=a.timeout) as ftp:
@@ -250,7 +255,7 @@ def main(argv=None):
                 report['physical_swap_started']=True;persist()
                 print('CAPTURE READY: swap Ethernet for the phone now and start Android Auto navigation.',flush=True)
                 handoff_started=time.monotonic()
-                input('Once navigation starts'+(', start a route and run it about12 seconds' if a.keyframe_probe else ', start a route and run it about10 seconds' if a.secondary_stream else '')+', unplug the phone, reconnect Ethernet, wait for its link, then press Enter: ')
+                input(('Extended live output has no elapsed-time cutoff. After your test, unplug the phone, reconnect Ethernet, wait for its link, then press Enter: ' if bridge and bridge.state.get('live_seconds')==0 else 'Once navigation starts'+(', start a route and run it about12 seconds' if a.keyframe_probe else ', start a route and run it about10 seconds' if a.secondary_stream else '')+', unplug the phone, reconnect Ethernet, wait for its link, then press Enter: '))
                 report['host_handoff_elapsed_seconds']=round(time.monotonic()-handoff_started,3)
                 persist();collection=folder/'collection-session';collection.mkdir()
                 shell=Shell(a,collection);command('cd '+shlex.quote(remote));cwd=True
@@ -315,6 +320,8 @@ def main(argv=None):
                 report['live_input']=assess_live(blobs['live-reader.bin'],blobs['live-copy-timing.bin'],blobs['live-copy.h264'],blobs['timing.bin'],blobs['secondary.h264'],report['observed_pid'],report['secondary'])
                 if bridge:
                     report['live_output']=bridge.collect(command,fetch,copy_report)
+                    output=report['live_output'];reader=report['live_input']['reader']
+                    if output.get('profile_version')==6 and (output['total_input_frames']!=reader.get('total_input_frames') or output['total_input_bytes']!=reader.get('total_input_bytes') or output['live_seconds']!=bridge.state['live_seconds'] or reader.get('live_seconds')!=bridge.state['live_seconds'] or output['diagnostic_prefix_truncated']!=reader.get('diagnostic_prefix_truncated')):raise ValueError('Native stream totals or requested run mode differ from reader report')
                     from live_cluster_bridge import output_delivered
                     connected=output_delivered(report['live_output'],report['observed_pid'],report['live_input']['frames'])
                     for item in ('live_input','secondary','keyframe_control'):
@@ -366,7 +373,7 @@ def main(argv=None):
     if bridge:
         from live_cluster_bridge import output_delivered
         v=report.get('live_output',{});ok=bool(ok and not report.get('route_policy',{}).get('release_errors',0) and bridge.state.get('restoration_verified') and bridge.state.get('factory_maps_restored') and bridge.state.get('live_maps_seen') and output_delivered(v,report.get('observed_pid'),report.get('live_input',{}).get('frames',0)))
-        print('Live cluster output: '+str(v.get('frames',0))+' frames; '+str(v.get('packets',0))+' packets; native error='+str(v.get('error',0))+'; active closes='+str(v.get('active_closes',0)))
+        print('Live cluster output: '+str(v.get('total_input_frames',v.get('frames',0)))+' streamed frames; '+str(v.get('packets',0))+' packets; native error='+str(v.get('error',0))+'; active closes='+str(v.get('active_closes',0)))
         if v.get('profile_version',0)>=3:print('Video startup: '+str(v.get('bootstrap_frames',0))+' repeated keyframes; '+str(v.get('source_frames_emitted',0))+' original frames emitted; added delay='+str(v.get('startup_delay_ms',0))+'ms; buffer overflows='+str(v.get('startup_overflows',0)))
         if bridge.manifest.get('automatic_factory_return_required'):
             from live_cluster_bridge import native_factory_return_verified

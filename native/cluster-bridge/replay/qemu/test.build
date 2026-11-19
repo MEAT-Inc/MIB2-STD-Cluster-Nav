@@ -38,6 +38,10 @@ replay_libc_fixture
 replay_libc_check_test
 libdelphi_cluster_early_legacy.so
 libdelphi_cluster_test.so
+[type=link]
+/ramdisk/delphi-nav-bridge_55555555555555555555555555555555=/dev/shmem
+/ramdisk/delphi-nav-bridge_66666666666666666666666666666666=/dev/shmem
+/ramdisk/delphi-nav-bridge_77777777777777777777777777777777=/dev/shmem
 [type=dir]
 /ramdisk
 /ramdisk/delphi-nav-bridge_00000000000000000000000000000000
