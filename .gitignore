@@ -5,11 +5,6 @@
 **/__pycache__/
 scripts/__pycache__/
 
-# Dump Files
-delphi-dump/
-
-**/__pycache__/
-
 # Local radio acquisitions and per-run captures (keep on disk, never commit)
 /delphi-dump/
 
@@ -24,17 +19,17 @@ delphi-dump/
 *.mov
 *.avi
 *.m4v
-/delphi-analysis/cluster-bridge/**/*.ts
-/delphi-analysis/cluster-bridge/**/*.png
-/delphi-analysis/cluster-bridge/**/*.jpg
-/delphi-analysis/cluster-bridge/**/*.jpeg
-/delphi-analysis/cluster-bridge/**/*.webp
-/delphi-analysis/cluster-bridge/**/*.bmp
-/delphi-analysis/cluster-bridge/**/frames/
-/delphi-analysis/cluster-bridge/**/input.bin
-/delphi-analysis/cluster-bridge/**/*-input.bin
-/delphi-analysis/cluster-bridge/**/replay-keyframes.bin
-/delphi-analysis/cluster-bridge/**/*.records
+/delphi-analysis/**/*.ts
+/delphi-analysis/**/*.png
+/delphi-analysis/**/*.jpg
+/delphi-analysis/**/*.jpeg
+/delphi-analysis/**/*.webp
+/delphi-analysis/**/*.bmp
+/delphi-analysis/**/frames/
+/delphi-analysis/**/input.bin
+/delphi-analysis/**/*-input.bin
+/delphi-analysis/**/replay-keyframes.bin
+/delphi-analysis/**/*.records
 
 # Recorded Android Auto clip packaged for replay (local only)
 /native/cluster-bridge/replay/release/replay.bin
