@@ -16,56 +16,6 @@ Development and reverse engineering toward live Android Auto navigation in the i
 
 Native offsets, object layouts, and fingerprints are specific to this build. Laptop portability does not establish compatibility with another firmware train or head unit.
 
-## Progress so far
-
-| Stage | Demonstrated result | Remaining limits |
-| --- | --- | --- |
-| Acquisition and analysis | Firmware/configuration manifests, ELF/disassembly, Java HMI inspection, and hardware captures establish receiver, focus, map-control, and transport paths. | Hash consistency does not establish vendor authenticity or loaded-memory identity. |
-| Secondary phone display | Video 9/input 10 registration, discovery negotiation, independent callback ownership, phone video reception, and ACK handling work on the unit. | The implementation is firmware-specific. |
-| Geometry and timing | Phone and native map geometry match at 800x480. Callback measurements support microsecond timestamps and measured-time packetization. | This is evidence for the captured configuration, not all phones or firmware. |
-| Packetizer and recorded replay | Native/Python MPEG-TS comparisons and decoded pixels agree. The November 4 v9 trial confirmed continuous recorded Google Maps playback and restored factory navigation. | Recorded playback is a separate milestone from live guidance. |
-| Live-frame ownership | The bounded owned queue copies phone frames without retaining borrowed buffers. The input-only hardware review verified byte-identical copies and no queue drops. | Long-running overflow, resynchronization, and reconnect behavior need broader coverage. |
-| Visible live maps | The November 18 v7 trial confirmed visible, updating maps: 436 source frames emitted, three bootstrap frames, 16,596 delivered packets, and no reported drops/transport errors. | That first success did not verify cluster factory-map return. Later trials address return handling. |
-| Latency | The startup schedule retains a one-second initialization buffer, then catches up toward 250 ms steady buffering. Offboard v12 review preserves all 539 original frames/pixels and timestamp order without reencoding. | Configured buffering is not a measured end-to-end display-latency guarantee. |
-| Extended live trial | Latest v17 emitted 2,755 source frames and 122,224 packets / 22,978,112 bytes. Live maps were confirmed; forwarding continued beyond the bounded diagnostic prefix. | End-of-test cleanup is still required; automatic reconnect is not implemented. |
-| Factory return | Latest v17 verified automatic factory-map return, explicit cleanup, stock restoration, and working radio/cluster maps. Return error was zero. | Repeatability across longer sessions, reconnects, and failure paths still needs coverage. |
-| Layout and focus | V16 corrected the projected-focus acknowledgement. The v18 inset changes are user-verified, including the 96-pixel content bottom inset while retaining full 800x480/density 140. | Route-focus behavior and layout compatibility across phones/apps still need broader coverage. |
-| Startup/deployment | Read-only startup preflight captured the boot script, process-manager configuration, mounts, paths, and backing storage. | Persistent boot integration, repeatable session reset, installer, rollback, and uninstall remain future work. |
-
-CarPlay has initial screen-registration/H.264 analysis, but additional CarPlay display support is not established. Current implementation work centers on Android Auto.
-
-## Hardware milestones and current evidence
-
-### From saved playback to visible live navigation
-
-The [recorded replay review](delphi-analysis/cluster-bridge/20261104-replay-v9-success/review.json) confirms continuous physical cluster playback and factory-map restoration. The [live-input review](delphi-analysis/cluster-bridge/20261110-live-input-v2-success/review.json) then verifies 354 owned frame copies, with approximately 2 ms median and 12 ms maximum source-to-copy delay in that capture.
-
-Early live output reached the native transport and decoded correctly offboard but was not visible. The [v7 live-success review](delphi-analysis/cluster-bridge/20261118-v7-live-success/review.json), from `_disconnect_observer_20261118_140131_df3a9762`, records the first user-confirmed visible and updating live maps. That result supersedes the earlier README's unresolved-live-visibility status.
-
-Native transport ownership, timestamp continuity, decoder startup/bootstrap, and temporary phone-route presentation handling are part of the live bridge. It uses the native descriptor rather than opening a second cluster writer. The original phone video remains un-reencoded in the current live path.
-
-### Latency, layout, and extended forwarding
-
-The [v12 startup review](delphi-analysis/cluster-bridge/20261118-v12-latency-review/startup-review.json) verifies original frame order, pixels, and scheduled timestamps while reducing the steady buffer to 250 ms after startup/catchup. The initial delay is still 1,000 ms, and the catchup schedule reaches the reduced delay after about four seconds in that offboard review.
-
-Current v18 layout retains full 800x480 video, density 140, 120-pixel left/right content insets, top inset 8, and stable top/bottom insets of 0/64. Its content bottom inset increases from 72 to 96 pixels. The user confirms that these inset changes are verified on the unit. This confirmation supplements the latest saved v17 capture; it does not imply that a separate v18 evidence folder has been reviewed. Turn-card, car, and street positioning remain phone-controlled.
-
-The latest completed collection is `delphi-dump/_disconnect_observer_20261119_180451_9ea6d8d4/` (v17). It records 2,758 total input frames, 2,755 emitted source frames, 20,899,487 total input bytes, and 22,978,112 output transport bytes across 122,224 packets. It reports no queue drops, sink/timeline error, bad callers, or startup overflow. The shorter diagnostic prefix is deliberately bounded and does not represent the full forwarding run.
-
-This collection records `live_maps_seen=true`, `automatic_factory_return_verified=true`, and `disconnect_restoration_verified=true`, with working radio and cluster factory maps after cleanup. The factory-return report accepted 331,827 native packets and recorded error zero. These results advance beyond v15, where explicit cleanup worked but automatic return was unverified.
-
-### Route focus and diagnostic reporting
-
-The [v16 focus review](delphi-analysis/cluster-bridge/20261119-v16-review/route-focus-evidence.txt) identifies a concrete acknowledgement defect: v15 requested native focus while the phone requested projected focus. V16 corrected the helper argument. Whether that defect caused a particular phone route to end was not established; route initiation, sustained guidance/audio, cancellation, and unplug handling remain relevant acceptance checks.
-
-V17 corrected diagnostic-cap reporting so expected recording saturation is distinguished from live forwarding failure. Diagnostic capture stays bounded while video and disconnect monitoring continue. The latest run records `cluster_preflight_passed=true` despite its intentionally truncated diagnostic prefix. This is a reporting correction, not removal of the recording limit.
-
-### Deployment readiness
-
-The startup collection is `delphi-dump/_deployment_preflight_20261119_131638_794286b0/deployment-preflight/`. It contains the actual startup script, process-manager arguments/configuration, mount/path information, and storage checks. The [deployment notes](native/cluster-bridge/deployment/deployment-readiness.txt) identify `procman` launching `runHMI.sh`; the presence of `/extbin/.boot` alone does not prove a boot-hook contract.
-
-The extended trial removes the active video-duration limit when explicitly requested, but remains one phone session with explicit cleanup. The attempted/done/queue state is currently one-shot. Adding that trial to a boot script would not provide a repeatable attach/detach lifecycle. No persistent installation was performed by these packages.
-
 ## Repository contents
 
 ```text
@@ -103,6 +53,68 @@ The extended trial removes the active video-duration limit when explicitly reque
 [CLUSTER-BRIDGE-PROGRESS.txt](delphi-analysis/CLUSTER-BRIDGE-PROGRESS.txt) and [INVESTIGATION-STATUS.txt](delphi-analysis/INVESTIGATION-STATUS.txt) preserve earlier investigation stages. Their leading summaries stop at November 4; use the later dated reviews and returned captures for current progress. Historical one-off instructions are not the current vehicle procedure.
 
 
+## Radio debug mode and wired LAN setup
+
+These steps apply to the Delphi MST2 unit described above. Configure the radio and laptop while parked, with the infotainment powered and the phone unplugged.
+
+### Enable developer mode and Ethernet
+
+1. Connect a supported vehicle diagnostic interface, such as OBDeleven or VCDS, and open control module **5F - Information Electronics / Multimedia**.
+2. In OBDeleven, select **Change service > Development mode**, then **Adaptation > Developer mode > Activated**, and save. In VCDS, select the corresponding Developer mode adaptation using the access/session procedure supported by your unit. See the [MIB2 research instructions](https://github.com/mattcabb/mib2std-toolbox/blob/master/Research/README.md#enabling-developer-mode).
+3. Hold the radio's **MENU** button for about 10 seconds to open **Testmode Menue**. Open **Green Engineering Menu > debugging mlp**.
+4. Select **Ethernet** using the tuning/selection knob and press it to enable the option. Developer mode alone does not enable the USB network adapter.
+5. Reboot the radio by holding the power/volume knob for about 10 seconds, then allow it to start normally. Connect the USB Ethernet adapter to the radio's normal media/Android Auto USB port.
+6. Reopen **debugging mlp** to confirm the radio's Ethernet address before connecting the tools. The address used throughout this project is `192.168.1.4`.
+
+The Ethernet menu sequence is documented in a [firsthand Delphi P0890D setup guide](https://robpol86.com/mib2_comp_media.html#enabling-ethernet). Menu labels and diagnostic access requirements can differ across firmware; use the Delphi procedure rather than instructions for another MIB vendor. Change only the developer/Ethernet settings needed here.
+
+### USB Ethernet adapters and cabling
+
+Connect:
+
+```text
+Radio media USB port -> compatible USB-to-Ethernet adapter -> Ethernet cable -> laptop Ethernet port
+```
+
+The radio-side adapter must have a chipset/USB identity supported by the radio's QNX drivers. An adapter working on Windows does not establish radio compatibility. The repository inventory includes ASIX and SMSC network drivers, but the presence of a driver does not guarantee support for every adapter using that chip family.
+
+| Adapter choice | Guidance |
+| --- | --- |
+| ASIX AX88772A-based USB 2.0 10/100 adapter | A working AX88772A adapter is documented on the same P0890D firmware in the [firsthand guide](https://robpol86.com/mib2_comp_media.html#root-shell). [Plugable USB2-E100](https://plugable.com/products/usb2-e100) is a manufacturer-documented AX88772A example; its exact USB identity still needs to be accepted by the radio. |
+| D-Link DUB-E100 | Check the hardware revision and chipset before buying or substituting one. Earlier ASIX versions and later revisions are not interchangeable assumptions: [D-Link's D1 release notes](https://support.dlink.com/resource/products/dub-e100/REVD/DUB-E100_REVD_RELEASENOTES_2.4.0_MAC_EN.PDF) explicitly record a change from AX88772B to AX88772C and a changed USB ID. Use a revision already verified with your Delphi unit. |
+| Generic USB 3.x/Gigabit or USB-C hub Ethernet | Do not assume compatibility from the connector or advertised speed; verify the radio-side chipset, USB identity, and actual link. |
+
+A standard Cat5e/Cat6 Ethernet cable is sufficient. If the laptop has no RJ45 port, use a second USB Ethernet adapter supported by the laptop's operating system; it does not need to be the same model as the radio-side adapter. A USB-C-to-USB-A connector adapter changes the connector, not radio driver support. The single radio USB port is shared with the phone: follow the trial's handoff procedure when switching from Ethernet to Android Auto.
+
+### Laptop IP configuration and services
+
+Set a **manual IPv4 address on the laptop Ethernet interface connected to the radio**, not on Wi-Fi:
+
+| Setting | Project configuration |
+| --- | --- |
+| Radio / script `--host` | `192.168.1.4` - confirm in `debugging mlp` |
+| Laptop Ethernet IPv4 | `192.168.1.10` |
+| Subnet mask / prefix | `255.255.255.0` / `24` |
+| Default gateway | Leave blank |
+| DNS servers | Leave blank |
+| FTP | TCP `21`; username `ftpuser`, password `ftpuser` |
+| Telnet | TCP `23`; username `root`; this project's documented setup uses a blank password |
+
+These addresses and service defaults are also recorded in [scripts/USAGE.txt](scripts/USAGE.txt). Use the actual working credentials if your unit differs; the tools provide password prompts. FTP/Telnet are unencrypted, so use the direct wired connection rather than exposing these services to a shared network.
+
+On Windows, open `ncpa.cpl`, choose the connected Ethernet adapter, then **Properties > Internet Protocol Version 4 (TCP/IPv4) > Properties**. Enter the manual address/mask above. Record the previous settings and restore them after the session if needed. Avoid another active adapter or VPN route using `192.168.1.0/24`.
+
+Check the connection before starting a vehicle workflow:
+
+```powershell
+ping 192.168.1.4
+Test-NetConnection 192.168.1.4 -Port 21
+Test-NetConnection 192.168.1.4 -Port 23
+```
+
+If the connection fails, check radio Ethernet enablement after reboot, adapter recognition/link LEDs, cable, the selected laptop interface, and the address shown in `debugging mlp`. A failed ping alone is not a substitute for checking the required TCP services. If FTP login succeeds but transfers fail, check passive-data connections and the laptop firewall rule for the Python/FTP client. The project scripts do not enable developer mode, change laptop IP settings, or activate radio services automatically.
+
+
 ## Portable setup and use
 
 Clone or copy the complete project to any directory. Commands below run from the repository root; no machine-specific drive, username, or Codex installation is required. Defaults locate project assets relative to the scripts. Explicit relative CLI paths normally resolve from the current working directory. Keep the `scripts/` and matching `native/.../release/` structure together when extracting laptop packages.
@@ -130,13 +142,3 @@ python -m pip install -r requirements-analysis.txt
 Native rebuilding uses the pinned QNX toolchain and Docker emulator environment described by the relevant native build scripts and historical setup notes. Container mount paths such as `/src` and QNX paths such as `/proc` and `/dev/shmem` intentionally refer to their own filesystems. They are not fixed host checkout paths. `.gitattributes` keeps shell source line endings usable in Linux containers.
 
 Release manifests bind exact payload/source hashes. Rebuild the matching package after changing covered files; do not combine arbitrary binaries and scripts from different releases. ZIPs and local dependency directories are ignored by Git. Captures may include private or proprietary material; keep manifests with payloads and review artifacts before sharing.
-
-## Next steps
-
-1. Preserve the verified v18 layout while validating longer-session behavior, route changes, and additional phone/app combinations.
-2. Confirm sustained route initiation/guidance/audio and repeat automatic factory-map return across longer runs and cancellation/disconnect cases; measure display latency beyond configured buffer values.
-3. Implement repeatable attach/detach/session reset and startup supervision, using the captured launch chain instead of assuming a boot hook.
-4. Package version-checked persistent deployment with backups, rollback, and uninstall only after repeated sessions and factory restoration are validated.
-
-Visible live navigation, automatic factory return, and the v18 inset changes are verified. Repeatable reconnect/session handling and persistent deployment remain unfinished.
-
