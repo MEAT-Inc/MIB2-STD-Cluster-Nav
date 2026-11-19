@@ -1,14 +1,17 @@
+# Archives and Caches
 *.zip
 .tools/
+.venv/
+**/__pycache__/
 scripts/__pycache__/
 
-.venv/
-
-**/__pycache__/
+# Dump Files
+delphi-dump/
 
 # Generated logs and identifying device/phone captures stay local
 *.log
 *.log.*
-/delphi-analysis/control-runtime/captured-discovery-*.bin
-/delphi-analysis/control-runtime/*-aa-events.txt
-/native/secondary-display/build/
+delphi-analysis/**/*.bin
+delphi-analysis/**/*.png
+delphi-analysis/**/*.h264
+delphi-analysis/**/*.ts
