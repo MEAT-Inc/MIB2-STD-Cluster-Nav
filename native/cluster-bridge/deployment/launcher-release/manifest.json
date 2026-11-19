@@ -1,0 +1,23 @@
+{
+  "kind": "delphi_startup_witness_v1",
+  "maps_bridge_enabled": false,
+  "on_car_tested": false,
+  "persistent_startup_write": true,
+  "files": {
+    "runHMI.sh.stock": {
+      "bytes": 12221,
+      "sha256": "fcd910cfa317c60da4f352efce9bf8fd79b2f655475ce94f32ccabc7ef3e1182"
+    },
+    "boot.sh": {
+      "bytes": 664,
+      "sha256": "7d1432cb932e6f604f0912cc21092f793f58644dbafd11d2889d03d879a5d580"
+    }
+  },
+  "scripts_sha256": {
+    "cluster_startup_launcher.py": "ff263cef79ed801fd807b00e869b16cdfbcbb75ad44bb70c0af4eb1bc565a2d6",
+    "decode_delphi_observer.py": "beb7d8e74a58aaffd45769b614ed85e11bf38d647206ab4d631b2266857599d9",
+    "delphi_inventory.py": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518",
+    "project_console.py": "1693776432be4b45937221882f281f24c6a30701877ea72e921735bb85ce7c5f",
+    "run_observer_smoke.py": "57ea7e59402fc1002a05d5bf1d2fd065d6c34f160206f3cb6693d8df5a7e3888"
+  }
+}

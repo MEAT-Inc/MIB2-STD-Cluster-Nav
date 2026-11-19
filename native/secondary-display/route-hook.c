@@ -36,12 +36,12 @@ static int poll_policy(uint64_t ms,uint64_t start){int stop=0;pthread_mutex_lock
 static void *watch(void *arg){uint64_t start=nowms();(void)arg;for(;;){struct timespec t={0,100000000};nanosleep(&t,0);if(poll_policy(nowms(),start))break;}return 0;}
 #ifdef ROUTE_HOOK_TEST
 extern void *route_test_object(void);
-extern void route_test_ack(void*);
+extern void route_test_ack(void*,int);
 static void *phone_instance(void){return route_test_object();}
-static void phone_ack(void *p){route_test_ack(p);}
+static void phone_ack(void *p,int projected){route_test_ack(p,projected);}
 #else
 static void *phone_instance(void){return ((void*(*)(void))0x1189e0)();}
-static void phone_ack(void *p){((void(*)(void*,int))0x119840)(p,0);}
+static void phone_ack(void *p,int projected){((void(*)(void*,int))0x119840)(p,projected);}
 #endif
 __attribute__((constructor)) static void route_init(void){const char *p=getenv("DELPHI_OBSERVER_LOG"),*prefix="/dev/shmem/delphi-observer-aa-";char token[33],path[160],hex[9];unsigned i,n=strlen(prefix);pthread_t worker;Dl_info info;stock=(route_send)dlsym(RTLD_NEXT,"SAL_Send");stock_publish=(route_publish)dlsym(RTLD_NEXT,"SAL_Publish");if(!p||strncmp(p,prefix,n)||strlen(p)!=n+36||strcmp(p+n+32,".bin")||strspn(p+n,"0123456789abcdef")!=32)return;memcpy(token,p+n,32);token[32]=0;
  snprintf(path,sizeof(path),"/dev/shmem/delphi-nav-report-%s.bin",token);nav=map(path,512,0);if(!nav)return;
@@ -55,7 +55,7 @@ __attribute__((visibility("default"))) int SAL_Send(unsigned app,unsigned thread
  pthread_mutex_lock(&lock);report[16]++;ms=nowms();good=healthy();report[18]=focus;report[19]=app;report[20]=thread;report[22]=0xffffffffu;report[23]=(uint32_t)ms;report[24]=ms>>32;report[25]=nav[4];report[26]=nav[5];report[27]=queue->closed;report[28]=queue->dropped;report[29]=nav[72];report[30]=n;
  if(policy.deadline&&(!good||!ms||ms>=policy.deadline)){route_release(&policy,stock);report[4]=3;good=0;}
  if(n==12&&bytes&&focus==ROUTE_PROJECTED&&post_stop){held=2;decision=8;report[106]++;}
- else if(n==12&&bytes&&focus==ROUTE_PROJECTED){decision=4;if(good&&ms){void *object=phone_instance();report[22]=object?*((unsigned char*)object+0xdc):0;decision=5;if(object&&report[22]){held=route_apply(&policy,1,ms,app,thread,event,bytes,n);if(held&&!limit_seconds)policy.deadline=UINT64_MAX;decision=held?1:6;if(held){/* Same stock acknowledgement as DSI phone focus2. */phone_ack(object);report[10]++;report[4]=2;}}}}
+ else if(n==12&&bytes&&focus==ROUTE_PROJECTED){decision=4;if(good&&ms){void *object=phone_instance();report[22]=object?*((unsigned char*)object+0xdc):0;decision=5;if(object&&report[22]){held=route_apply(&policy,1,ms,app,thread,event,bytes,n);if(held&&!limit_seconds)policy.deadline=UINT64_MAX;decision=held?1:6;if(held){/* Stock DSI phone focus2 becomes native focus1 and passes true to 0x119840. */phone_ack(object,1);report[10]++;report[4]=2;}}}}
  else if(n==12&&bytes&&focus==ROUTE_NATIVE){decision=2;route_apply(&policy,0,ms,app,thread,event,bytes,n);}
  /* Never forward a new projected request ahead of older deferred listeners. */
  if(focus==ROUTE_PROJECTED&&!held&&policy.held&&!policy.disabled){route_release(&policy,stock);report[4]=3;}

@@ -1,0 +1,11 @@
+{
+  "bundle": ".\\native\\cluster-bridge\\deployment\\startup-launcher-v1-laptop.zip",
+  "bytes": 26540,
+  "sha256": "7181f63f9f5d54949aecd630494419af1fdd49195fee65cda1a80ea190b0197f",
+  "portable_plans_passed": true,
+  "tampered_payload_refused": true,
+  "transaction_and_shell_tests": "========================================================================\ntest_cluster_startup_launcher.py | version 1.0\nArguments: (none)\nUse case: Exercise startup install/collection/rollback transactions without a car.\n========================================================================\n[09:56:09] [STEP  ] Starting script.\n......\n----------------------------------------------------------------------\nRan 6 tests in 0.649s\n\nOK\n[09:56:10] [OK    ] Finished with exit 0 (0.7s).",
+  "shell_validation_scope": "Git Bash with isolated factory-JVM stubs; live QNX syntax gate runs before persistent writes",
+  "on_car_tested": false,
+  "maps_bridge_enabled": false
+}

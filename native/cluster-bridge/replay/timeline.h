@@ -15,7 +15,11 @@ static int tl_observe(struct replay_timeline *t,const unsigned char *p,uint64_t 
 static int tl_feed(struct replay_timeline *t,const unsigned char *p,size_t n,uint64_t ms){if(n>1048576)return -1;while(n){size_t take=188-t->used;if(take>n)take=n;memcpy(t->pending+t->used,p,take);t->used+=(unsigned)take;p+=take;n-=take;if(t->used==188){t->used=0;if(tl_observe(t,t->pending,ms))return -1;}}return 0;}
 static int tl_ready(const struct replay_timeline *t,uint64_t ms){return !t->used&&t->seen==15&&t->has_pcr&&ms>=t->ms&&ms-t->ms<=1000;}
 static int tl_start(struct replay_timeline *t,uint64_t ms){if(!tl_ready(t,ms))return -1;/* Continue the accepted live clock, including time since its last PCR. */t->offset=(t->pcr+(ms-t->ms)*90+90)&TL_MASK;return 0;}
-static int tl_rewrite(struct replay_timeline *t,const unsigned char *src,unsigned char *p){unsigned off;int idx,afc;memcpy(p,src,188);afc=tl_header(p,&off,&idx);if(afc<0||idx<0||!(t->seen&(1u<<idx)))return -1;
+/* Factory startup uses payload-only MPEG-TS null packets as padding. */
+static inline int tl_factory_null(const unsigned char *p,int afc){return afc==1&&(p[1]&0x5f)==0x1f&&p[2]==0xff;}
+static int tl_rewrite_impl(struct replay_timeline *t,const unsigned char *src,unsigned char *p,int factory){unsigned off;int idx,afc;memcpy(p,src,188);afc=tl_header(p,&off,&idx);if(afc<0)return -1;
+ if(factory&&tl_factory_null(p,afc))return 0;
+ if(idx<0||!(t->seen&(1u<<idx)))return -1;
 /* Discontinuity/reset markers are forbidden on this continuous handoff. */
  if((afc&2)&&p[4]&&(p[5]&0x80))return -1;
  if(afc&1){t->cc[idx]=(t->cc[idx]+1)&15;}p[3]=(p[3]&0xf0)|t->cc[idx];
@@ -23,4 +27,6 @@ static int tl_rewrite(struct replay_timeline *t,const unsigned char *src,unsigne
  if(idx==2&&(afc&1)&&(p[1]&0x40)){unsigned flags;unsigned char *q=p+off;if(off+9>188||q[0]||q[1]||q[2]!=1||q[3]!=0xe0)return -1;flags=q[7]>>6;if((flags!=2&&flags!=3)||q[8]<(flags==3?10:5)||off+9+q[8]>188)return -1;if((q[9]&0xf1)!=(flags==3?0x31:0x21)||(q[11]&1)!=1||(q[13]&1)!=1)return -1;tl_put_stamp(q+9,tl_stamp(q+9)+t->offset);if(flags==3){if((q[14]&0xf1)!=0x11||(q[16]&1)!=1||(q[18]&1)!=1)return -1;tl_put_stamp(q+14,tl_stamp(q+14)+t->offset);}}
  return 0;
 }
+static inline int tl_rewrite(struct replay_timeline *t,const unsigned char *src,unsigned char *p){return tl_rewrite_impl(t,src,p,0);}
+static inline int tl_rewrite_factory(struct replay_timeline *t,const unsigned char *src,unsigned char *p){return tl_rewrite_impl(t,src,p,1);}
 #endif

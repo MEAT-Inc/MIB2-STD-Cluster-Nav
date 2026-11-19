@@ -3,6 +3,61 @@
   "required_bytes": 31457280,
   "entries": [
     {
+      "root": "/ramdisk/delphi-aa-observer_fb46ba95fd574f2a8144e06b5a7bbfe8",
+      "marker": {
+        "name": "controller.bin",
+        "bytes": 512,
+        "sha256": "f4e633060c0b9711a9cb79d3d85c7455432b253f7a68a0ceb2ecadfc012c8534"
+      },
+      "files": [
+        {
+          "name": "AndroidAuto.original",
+          "bytes": 482967,
+          "sha256": "da1fd5776f6b85962b84ad77c6f564d3f09dd8079652229cda57b4138060c271"
+        },
+        {
+          "name": "receiver.reference",
+          "bytes": 1621327,
+          "sha256": "e14aa58d7867955d968d291fd43b941223fb5072ca7184d8885ef40f2323c92d"
+        },
+        {
+          "name": "procman.reference",
+          "bytes": 196184,
+          "sha256": "c32c018b515396bd0b322fb2014b45f2fba37d6000b2d178e9dc402c6845f05d"
+        },
+        {
+          "name": "native-map-prefix.bin",
+          "bytes": 1048576,
+          "sha256": "1993274de6f5dae96c334121883da23f1c1c7db3e8555e3ab5f74fbe8e72ebed"
+        },
+        {
+          "name": "secondary.h264",
+          "bytes": 8388516,
+          "sha256": "728508de419e8817c49171deb24fe4a8bb728dfabf7784893659a56c1ff84c62"
+        },
+        {
+          "name": "timing.bin",
+          "bytes": 81952,
+          "sha256": "cacc0c4fd6676f2ac62be822f1629c004b2f76beccd57df069c970f0d2b5b703"
+        },
+        {
+          "name": "live-copy.h264",
+          "bytes": 8361760,
+          "sha256": "dce14b663108c5bb56fa7dc19a703f934331c0f543af8cb0e26c5c5730f6064f"
+        },
+        {
+          "name": "live-copy-timing.bin",
+          "bytes": 65568,
+          "sha256": "5a8634243c2b1ff8720440fc604e628662bd33f32573f2f1d4229e02d25d1081"
+        },
+        {
+          "name": "nav-accepted-output.bin",
+          "bytes": 2097152,
+          "sha256": "9fd2eb57fc0017b42bee35822461616d0fb2c26f09808ab0332c84ef7717b121"
+        }
+      ]
+    },
+    {
       "root": "/ramdisk/delphi-aa-observer_2455dc3c3ba2457fb02352fd167bc706",
       "marker": {
         "name": "controller.bin",

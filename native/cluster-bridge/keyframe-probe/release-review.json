@@ -1,7 +1,7 @@
 {
-  "bundle": "native/cluster-bridge/keyframe-probe/live-input-v15-laptop.zip",
-  "bytes": 99557,
-  "sha256": "906104a57f98508a0f65ac0bdd6e8faa65216ac75140fb1294d43a494bd034fc",
+  "bundle": "native/cluster-bridge/keyframe-probe/live-input-v16-laptop.zip",
+  "bytes": 99578,
+  "sha256": "ff81b4f961d0ec54362866931188441bd274268e7e903d16c8c81ea5e2d1b6c5",
   "qnx_gates_passed": true,
   "workflow_tests_passed": true,
   "portable_plan_passed": true,
@@ -82,12 +82,12 @@
       "native/cluster-bridge/nav_snapshot.c": "948aa416994408bf185966384091ea558a4f56af41c6daf1227771a1c23ee8ca",
       "native/cluster-bridge/build.sh": "566932ca6b9781a6c013c960a17b7807a7814977cfa0fdff3b436ebe74baec22",
       "native/observer/launch/proc_guard.c": "e0e8f56b9280f456d8c8bf698cc3246b197696592f39196adc7f9870cb8998dd",
-      "native/secondary-display/build.sh": "d886209d46defb904b8d4c61893552ad9daf3de2b026471defd7e48fe229bb1d",
+      "native/secondary-display/build.sh": "442aff8aedce9100f996be11ac624034adaa5ab8e395cc1cb5bbb722c8e0a025",
       "native/secondary-display/probe-fixture.c": "5dea754136a467cde2c1ae7cd4c82203b2aabf0a50710d44201155cfb86b52c7",
       "native/secondary-display/route-forward-fixture.c": "7449748e9784f29f255b9a8586b1aa1a6c20ea8d5f557653c71dcfa98859059b",
       "native/secondary-display/route-forward-runner.c": "9b1c3031e52e7ac868345094d1a93f6a5a5f1f742ccfabc848c2f0e84b7465ca",
-      "native/secondary-display/route-hook-fixture.c": "c2488957921b363278f2547014971f1d31c4a5e0fafebcb98502c2bc25a0d829",
-      "native/secondary-display/route-hook.c": "fc3039d3d33f5ecf804103010ada0b319d04e612f8eb3e18de503d24d603733e",
+      "native/secondary-display/route-hook-fixture.c": "cd8f02543eced7874d0e7705f2d4dbe5c5070068e6800284425a1bf4a3ab03dd",
+      "native/secondary-display/route-hook.c": "4701404dffb859b8b3d7d46543fe88c528789520d99cb0b9aed414eb6dfd5b67",
       "native/secondary-display/route-policy-fixture.c": "c7fa76d120925dd027f95b1956ffd6c8b99f80be42d4ef52cba7d01899a60e82",
       "native/secondary-display/route-policy.c": "df05cb2a8ee71f34c0b2acabfb76328381a2aed80d4e66e8bd43267c83ee09a5",
       "native/secondary-display/route-policy.h": "5a48e684465fa10f90ad4e14f5b76e473acc743fc693f7cfcdecacda9528ad6d",
@@ -103,7 +103,7 @@
       "native/cluster-bridge/live/queue-prepare.c": "4175e2221fb7ce714fe9e589aa73f7a729e173764d891a1305d99f33e99a83fd",
       "native/cluster-bridge/live/queue.c": "3ae2ccea3385861cedc4ec59fb5470d0a6a11dd7b3ac5a8338962a524d4fd8fa",
       "native/cluster-bridge/live/queue.h": "8fe7a0085c9696a791ace73f61d63b02e0265d955de0826d735da1754b534616",
-      "native/cluster-bridge/live/sink-fixture.c": "f0fb80328b22c86ba4f79f156542eca1cd254fd8cdbd66c79ecc68ae965307b8",
+      "native/cluster-bridge/live/sink-fixture.c": "6abde8feecd8b3e6aae7f4d2e6729f89fb5705ef05ef60e49f85001a31f1d20a",
       "native/cluster-bridge/live/sink.c": "fdb1b7e8fcd87f356301aedbc9db1a59a76351729dcffe8828a4a04f51b599a4",
       "native/cluster-bridge/live/sink.h": "5419cca427fd76ecca2340ecdd30beb8c75b4ec87548f1acd492c654888271b1",
       "native/cluster-bridge/live/startup-file.c": "2e3c9c728b60536d599f0f92402566ae599ab6acb9030b3878bf32ed920a8856",
@@ -114,10 +114,10 @@
       "native/cluster-bridge/layout-margin/build-container.py": "8d6a0b91f11212dfc1fbe0c875f2a60482f17d10b73911991e6ba38cac851bfb",
       "native/cluster-bridge/layout-margin/margin-fixture.c": "aa6f261f442dd974767920ca0707ed4b8ff6772e7d164c80be66f5f70d460e3c",
       "native/cluster-bridge/layout-margin/package.py": "d0ac72c30e5f93e019a8c0bddb49b5eeeb53e8909af02dd3f24fd791579c69fb",
-      "native/cluster-bridge/layout-margin/uiinsets-fixture.c": "4943ff6b8fe1913155446a82d91777338d197104614cf63efd40911885bf27f2",
-      "native/cluster-bridge/layout-margin/uiinsets-vectors.h": "c6000e219b7405c2416e2a2d30c919982cbdb6802cab4ed518c656f7811d8e79",
+      "native/cluster-bridge/layout-margin/uiinsets-fixture.c": "9a78c2a925faa76b64668d2440655b21649d3f4ef7f42916263d71a9ead8e17e",
+      "native/cluster-bridge/layout-margin/uiinsets-vectors.h": "af276b6b5e5d0a16fdf5de5e5e7d88e110f41b9603661fbca0f5955f43fb62a2",
       "native/cluster-bridge/layout-margin/vectors.h": "d2610632e1116c7841e4e26bfd1b48ff9b62cb3cb6bad1ea51d57e6e54dac8d6",
-      "native/cluster-bridge/layout-margin/wire-margin.c": "82f93e4a15c89cd0993700288ea36c3cae97a581fd228147899dcd2390614deb"
+      "native/cluster-bridge/layout-margin/wire-margin.c": "363849e4e8e35678f44059753666a3428952c1df725681bafcd8356da4e59f90"
     },
     "scripts_sha256": {
       "secondary_timing.py": "8445d51d1572dbedaef326c75b26fdd2c7c2bd391f0dfdec80b6c95ae589879a",
@@ -174,7 +174,7 @@
     "files": {
       "libdelphi_observer.so": {
         "bytes": 54570,
-        "sha256": "1952c2823550e7e9b4d60e8765f6d921287c5981e5e02a1da9d889edd02fc709"
+        "sha256": "1b79f812b2e2e87b1f7abdb2923c1c2dc83bd0200b0d3ef6387b66bb62bcc180"
       },
       "nav_snapshot": {
         "bytes": 11518,
@@ -189,6 +189,7 @@
         "sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae"
       }
     },
+    "route_phone_ack_projected": true,
     "route_presentation_trial": true,
     "route_presentation_hold_seconds": 40,
     "route_presentation_event": 5961,
@@ -215,7 +216,7 @@
     "navigation_live_sampling_readonly": true,
     "navigation_restart": false,
     "on_car_tested": false,
-    "release_version": 15,
+    "release_version": 16,
     "layout_trial": {
       "video_service_id": 9,
       "width_margin_total": 0,
@@ -234,7 +235,7 @@
       "density": 140,
       "ui_config_field": 11,
       "content_insets": {
-        "top": 0,
+        "top": 8,
         "bottom": 72,
         "left": 120,
         "right": 120
@@ -247,7 +248,7 @@
       },
       "ui_content_rectangle": [
         120,
-        0,
+        8,
         680,
         408
       ],
@@ -258,6 +259,8 @@
         416
       ],
       "stable_ui_anchor_preserved": true,
+      "content_center_y": 208,
+      "content_center_matches_bottom64": true,
       "turn_card_position_on_car_verified": false,
       "full_frame_map_requested": true,
       "phone_honors_ui_insets_unverified": false,

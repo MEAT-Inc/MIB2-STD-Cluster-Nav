@@ -4,7 +4,7 @@
 struct handback { unsigned char packet[188],data[HB_CAP]; unsigned used,skip,bytes,flags,zeros,pes_left; int candidate,unbounded,have_pcr,ready; uint64_t pcr,anchor; };
 static void hb_reset_pes(struct handback *h){h->bytes=h->flags=h->zeros=0;h->candidate=h->unbounded=0;h->pes_left=0;}
 /* A complete fresh SPS/PPS/IDR PES is required. No raw timeout fallback. */
-static int hb_packet(struct handback *h,const unsigned char *p){unsigned off,pid,j;int idx,afc=tl_header(p,&off,&idx);if(afc<0||idx<0)return -1;pid=((p[1]&31)<<8)|p[2];if((afc&2)&&p[4]&&(p[5]&0x80))return -1;
+static int hb_packet(struct handback *h,const unsigned char *p){unsigned off,pid,j;int idx,afc=tl_header(p,&off,&idx);if(afc<0)return -1;if(tl_factory_null(p,afc))return 0;if(idx<0)return -1;pid=((p[1]&31)<<8)|p[2];if((afc&2)&&p[4]&&(p[5]&0x80))return -1;
  if((afc&2)&&p[4]&&(p[5]&0x10)){if(idx!=3||p[4]<7)return -1;h->pcr=tl_pcr(p+6);h->have_pcr=1;}
  if(pid==17&&(afc&1)&&(p[1]&0x40)){
   if(h->candidate&&h->unbounded&&h->flags==7&&h->have_pcr){h->ready=1;return 1;}

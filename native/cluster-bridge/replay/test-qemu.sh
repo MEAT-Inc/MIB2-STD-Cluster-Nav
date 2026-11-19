@@ -109,3 +109,5 @@ sha256sum /src/native/cluster-bridge/replay/build/libdelphi_cluster_live.so /src
 grep -q LIVE_OPTIONS_QNX_PASS "$out/qemu.log"
 grep -q LIVE_EXTENDED_QNX_PASS "$out/qemu.log"
 grep -q LIVE_EXTENDED_OVERFLOW_QNX_PASS "$out/qemu.log"
+
+grep -q REPLAY_FACTORY_NULL_PASS "$out/qemu.log"

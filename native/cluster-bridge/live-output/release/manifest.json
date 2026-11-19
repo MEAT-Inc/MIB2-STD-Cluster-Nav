@@ -313,8 +313,8 @@
   },
   "files": {
     "libdelphi_cluster.so": {
-      "bytes": 45050,
-      "sha256": "a6b592f1f52a501b59af61da648e847b2d501cef94e0e2069db5ec39e794b050"
+      "bytes": 45231,
+      "sha256": "6547f87188f03bcfa5d5d309328db45e81a7829f01db25a5b6eacf437532d6ea"
     },
     "live_queue_prepare": {
       "bytes": 12826,
@@ -338,23 +338,23 @@
     }
   },
   "scripts_sha256": {
+    "live_cluster_bridge.py": "9c7c8ac51dddd763bd129ec014c522c90896dc833ca93cfac43be1ae17d664a3",
     "run_cluster_replay.py": "4c981ace2919eb32c5c243fdc04b786a50ab8589dc70c35ed8e8d48601b40586",
-    "delphi_inventory.py": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518",
-    "finish_live_session.py": "113c9ac44d6f38ceb84f3b17a38a132e9a92221da6a6c383d66ce3cbded3a617",
+    "live_run_options.py": "a530d45404a86c3388dd1d55aed2ffd6517ea3f9e45c9e0377857c832cb23d09",
+    "review_secondary_keyframes.py": "4d4268bdfb3317ee523f14f430f7f52596f85e3bd7eed4ff88c0e630b154c24d",
+    "run_androidauto_observer.py": "1121513c5a37f7db75b1a4aef64568f4e83b26db905c2e22bc9fef173ef1f84f",
     "radio_ram.py": "6bf2c851ae60bf624d3e85f085a54e386572f6c2ce2d317124fd6960c47a1f9b",
     "cluster_preflight.py": "31e9682f954dc6ce8197f5b154788b37a6ea3e493c1f20532956a8f01381b704",
-    "run_observer_smoke.py": "57ea7e59402fc1002a05d5bf1d2fd065d6c34f160206f3cb6693d8df5a7e3888",
-    "live_run_options.py": "a530d45404a86c3388dd1d55aed2ffd6517ea3f9e45c9e0377857c832cb23d09",
-    "review_route_policy.py": "4f27f0ed1b9891a28646c8dc711357d9c8a049ca2cddb8404e55d55d095bce4e",
-    "decode_delphi_observer.py": "beb7d8e74a58aaffd45769b614ed85e11bf38d647206ab4d631b2266857599d9",
-    "live_cluster_bridge.py": "9c7c8ac51dddd763bd129ec014c522c90896dc833ca93cfac43be1ae17d664a3",
     "decode_androidauto_display.py": "b7fee6d14d190f2e99d18f9a4a1fcca6f55cef7fd1c2aac5d0e7aa5b09da51a7",
-    "secondary_timing.py": "8445d51d1572dbedaef326c75b26fdd2c7c2bd391f0dfdec80b6c95ae589879a",
+    "decode_delphi_observer.py": "beb7d8e74a58aaffd45769b614ed85e11bf38d647206ab4d631b2266857599d9",
     "project_console.py": "1693776432be4b45937221882f281f24c6a30701877ea72e921735bb85ce7c5f",
-    "run_androidauto_observer.py": "1121513c5a37f7db75b1a4aef64568f4e83b26db905c2e22bc9fef173ef1f84f",
-    "run_disconnected_observer.py": "4db2e8e73144431b97e30e9c8ce38f9b6534466800e9f0e8d0373cb259ca289f",
-    "review_secondary_keyframes.py": "4d4268bdfb3317ee523f14f430f7f52596f85e3bd7eed4ff88c0e630b154c24d",
-    "review_live_input.py": "b04eca774c423f72853e0bec873fc5529a9f6a2393ad8c9fe63f6084c779c106"
+    "finish_live_session.py": "113c9ac44d6f38ceb84f3b17a38a132e9a92221da6a6c383d66ce3cbded3a617",
+    "review_route_policy.py": "4f27f0ed1b9891a28646c8dc711357d9c8a049ca2cddb8404e55d55d095bce4e",
+    "secondary_timing.py": "8445d51d1572dbedaef326c75b26fdd2c7c2bd391f0dfdec80b6c95ae589879a",
+    "run_observer_smoke.py": "57ea7e59402fc1002a05d5bf1d2fd065d6c34f160206f3cb6693d8df5a7e3888",
+    "delphi_inventory.py": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518",
+    "review_live_input.py": "b04eca774c423f72853e0bec873fc5529a9f6a2393ad8c9fe63f6084c779c106",
+    "run_disconnected_observer.py": "4db2e8e73144431b97e30e9c8ce38f9b6534466800e9f0e8d0373cb259ca289f"
   },
   "source_sha256": {
     "native/cluster-bridge/replay/build.sh": "4549397f940dd6f8448b6ba51c2c363e191fe73acf0f35191a48fb761dbb5e9b",
@@ -373,11 +373,11 @@
     "native/cluster-bridge/replay/libc-preflight.c": "8916a3d872252924c16f4583e81d1138a4036af15ae79afdc96e0083816958f7",
     "native/cluster-bridge/replay/libc-profile.h": "1934ddad597347e456ab1abe2e925de821d52a2c975c22fce80d17108da483b6",
     "native/cluster-bridge/replay/loader.c": "f101e6fad516de0c2462bc1f8c2fc2f718a432eb3a008f90890f8a5b520e4cb9",
-    "native/cluster-bridge/replay/replay.c": "88f51e7cd1664ec8a5059fe1be25ef66f3a851e9e50651eabb9ab7fa23b21d8b",
+    "native/cluster-bridge/replay/replay.c": "f6381255d7b849f104a9735b119ef576c6169ba80303fcfbb450095d6bcc7148",
     "native/cluster-bridge/replay/replay.h": "9a0292777b7c3e50b8e49d29938b3ba8ea6d4bb8de8c9074defe0db44430b8f2",
-    "native/cluster-bridge/replay/test-qemu.sh": "59c5ceb257c357550e4330d4be739ea0da0add406aabe364f7a60d5c020f114b",
-    "native/cluster-bridge/replay/timeline-fixture.c": "517cb392b2e96d93dea0ff69e8790723f666be062183bc3216f5730061fc3a13",
-    "native/cluster-bridge/replay/timeline.h": "627a8c01b40a220b96d8bcd5798e9461a6898a033e222a8be7eeb990ad96870b",
+    "native/cluster-bridge/replay/test-qemu.sh": "0e4af59bf94376b63bade1b634336d024b857c950dc9968b0ab2fc264a852b8c",
+    "native/cluster-bridge/replay/timeline-fixture.c": "b3aef9716113ee45d942870d128bc3469961090d6d828f87e1e97a23118bb1b8",
+    "native/cluster-bridge/replay/timeline.h": "c984785a563052074a0f3318bd7bbfcd0e0a5e70e6b34a17f116b6430d8e7bbe",
     "native/cluster-bridge/replay/unit-libc-profile.h": "0830666e148bf8fb40cab71772fd5b22ce8a5232c9e1c14f83223ec40d0fec51",
     "native/cluster-bridge/nav-launch/build.sh": "980bb9f656c295605b44c5aed636017c54f958f81764dbca2eb42d75a80f7c13",
     "native/cluster-bridge/nav-launch/controller.c": "d188f9f8754c5886f28decd002660417eade7a707162e09fe3f57add7696f984",
@@ -407,7 +407,7 @@
     "native/cluster-bridge/live/queue-prepare.c": "4175e2221fb7ce714fe9e589aa73f7a729e173764d891a1305d99f33e99a83fd",
     "native/cluster-bridge/live/queue.c": "3ae2ccea3385861cedc4ec59fb5470d0a6a11dd7b3ac5a8338962a524d4fd8fa",
     "native/cluster-bridge/live/queue.h": "8fe7a0085c9696a791ace73f61d63b02e0265d955de0826d735da1754b534616",
-    "native/cluster-bridge/live/sink-fixture.c": "f0fb80328b22c86ba4f79f156542eca1cd254fd8cdbd66c79ecc68ae965307b8",
+    "native/cluster-bridge/live/sink-fixture.c": "6abde8feecd8b3e6aae7f4d2e6729f89fb5705ef05ef60e49f85001a31f1d20a",
     "native/cluster-bridge/live/sink.c": "fdb1b7e8fcd87f356301aedbc9db1a59a76351729dcffe8828a4a04f51b599a4",
     "native/cluster-bridge/live/sink.h": "5419cca427fd76ecca2340ecdd30beb8c75b4ec87548f1acd492c654888271b1",
     "native/cluster-bridge/live/startup-file.c": "2e3c9c728b60536d599f0f92402566ae599ab6acb9030b3878bf32ed920a8856",
@@ -415,14 +415,14 @@
     "native/cluster-bridge/live/startup.c": "f744f36e7a9159e69cb2dd6d4b2477033446e6731d588e800352e94ebada880c",
     "native/cluster-bridge/live/startup.h": "57376ab1ad3f53df320a994c56bfde97bf02609c1838d5b07d6190c465df37b8",
     "native/cluster-bridge/live/test-qemu.sh": "c58dbf140b7c98091537cc443a0747f5f0c9b70885ca4254dffb69286bf9febb",
-    "native/cluster-bridge/replay/handback.h": "6afb8524e5fa9c7d9ba022f6081dd66e2f5d37de48181172aa170f4e62963ed3",
+    "native/cluster-bridge/replay/handback.h": "3ebda3964a86b1eea65dcf122b74563f88c4bf5076e3b973bccc4fff5e7e6553",
     "native/cluster-bridge/layout-margin/build-container.py": "8d6a0b91f11212dfc1fbe0c875f2a60482f17d10b73911991e6ba38cac851bfb",
     "native/cluster-bridge/layout-margin/margin-fixture.c": "aa6f261f442dd974767920ca0707ed4b8ff6772e7d164c80be66f5f70d460e3c",
     "native/cluster-bridge/layout-margin/package.py": "d0ac72c30e5f93e019a8c0bddb49b5eeeb53e8909af02dd3f24fd791579c69fb",
-    "native/cluster-bridge/layout-margin/uiinsets-fixture.c": "4943ff6b8fe1913155446a82d91777338d197104614cf63efd40911885bf27f2",
-    "native/cluster-bridge/layout-margin/uiinsets-vectors.h": "c6000e219b7405c2416e2a2d30c919982cbdb6802cab4ed518c656f7811d8e79",
+    "native/cluster-bridge/layout-margin/uiinsets-fixture.c": "9a78c2a925faa76b64668d2440655b21649d3f4ef7f42916263d71a9ead8e17e",
+    "native/cluster-bridge/layout-margin/uiinsets-vectors.h": "af276b6b5e5d0a16fdf5de5e5e7d88e110f41b9603661fbca0f5955f43fb62a2",
     "native/cluster-bridge/layout-margin/vectors.h": "d2610632e1116c7841e4e26bfd1b48ff9b62cb3cb6bad1ea51d57e6e54dac8d6",
-    "native/cluster-bridge/layout-margin/wire-margin.c": "82f93e4a15c89cd0993700288ea36c3cae97a581fd228147899dcd2390614deb",
+    "native/cluster-bridge/layout-margin/wire-margin.c": "363849e4e8e35678f44059753666a3428952c1df725681bafcd8356da4e59f90",
     "native/observer/launch/proc_guard.c": "e0e8f56b9280f456d8c8bf698cc3246b197696592f39196adc7f9870cb8998dd",
     "native/observer/launch/proc_guard.h": "a17e8645d718752cf00d20cfbd6bf821f2c9e6c5c1d04390fdcd6b78555c1df2"
   },
@@ -439,7 +439,7 @@
   "live_report_version": 6,
   "extended_live_supported": true,
   "automatic_factory_return_required": true,
-  "release_version": 15,
+  "release_version": 16,
   "live_reader_report_version": 3,
   "bounded_input_closed_before_drain": true,
   "startup_delay_ms": 250,
@@ -473,7 +473,7 @@
     "density": 140,
     "ui_config_field": 11,
     "content_insets": {
-      "top": 0,
+      "top": 8,
       "bottom": 72,
       "left": 120,
       "right": 120
@@ -486,7 +486,7 @@
     },
     "ui_content_rectangle": [
       120,
-      0,
+      8,
       680,
       408
     ],
@@ -497,6 +497,8 @@
       416
     ],
     "stable_ui_anchor_preserved": true,
+    "content_center_y": 208,
+    "content_center_matches_bottom64": true,
     "turn_card_position_on_car_verified": false,
     "full_frame_map_requested": true,
     "phone_honors_ui_insets_unverified": false,
@@ -505,5 +507,5 @@
     "primary_configuration_unchanged": true,
     "reencoded": false
   },
-  "cleanup_plan_sha256": "a334b92f03f73469bd8d4638a082c570ec6fc066078457f99a5f73ee998e4f57"
+  "cleanup_plan_sha256": "4eb2d3b0145794a77641c8f840cca0c9187e0cc414fcc103909cf879a2c1be74"
 }

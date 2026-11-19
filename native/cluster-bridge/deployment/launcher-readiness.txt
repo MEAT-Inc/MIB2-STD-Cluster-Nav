@@ -1,0 +1,49 @@
+Startup launcher v1 readiness - 2026-11-19
+
+Supersedes deployment-readiness.txt's v15 preflight status.
+Reviewed: delphi-dump/_deployment_preflight_20261119_131638_794286b0/deployment-preflight.
+Active procman -f /etc/procman_core.cfg launches /extbin/apps/hmi/HMI/runHMI.sh.
+/extbin is QNX6 /dev/mmc0t177; /persistence is QNX6 /dev/mmc0t180.
+/etc resolves through /ffs. No use is made of the unproven /extbin/.boot directory.
+
+Exact supported stock launch script: 12221 bytes, SHA256
+fcd910cfa317c60da4f352efce9bf8fd79b2f655475ce94f32ccabc7ef3e1182.
+Exact supported procman config: 6408 bytes, SHA256
+004783991da86ca2956470636265be212ab189c5f393afa161affead873680a1.
+The factory script already backgrounds the JVM. The witness hook is appended
+after all original bytes, launches a short background shell, and bypasses SWDL
+and unknown run modes. Factory launch commands are never edited.
+
+CAR TEST READY: startup-launcher-v1-laptop.zip. See launcher-README.txt.
+This is a persistent, reversible boot-witness test, not automatic maps.
+Install, fully restart the radio, collect the receipt, then roll back and verify
+normal factory startup. Receipt is under 256 bytes, overwritten at most once
+per kernel boot; /ramdisk lock prevents duplicate HMI launches growing logs.
+No apps are killed, no preload or route event is installed, no reboot is issued.
+Remote QNX syntax checks precede persistent staging. Exact identity/readback
+checks, verified persistent backup, same-directory rename and rollback included.
+Rollback leaves only inert backup/receipt files; no boot hook references them.
+No vehicle changes were made during bundle development.
+
+Offline verification: transaction interruption tests at each mutation boundary,
+firmware/active-experiment refusals, exact rollback and receipt identity tests;
+Git Bash execution with isolated JVM stubs verifies factory launch, run-mode
+bypass and duplicate-witness suppression. Extracted stdlib-only plan modes and
+tampered-payload refusal pass. QNX execution and actual boot remain car gates.
+
+RECONNECT STILL PENDING: session.c/session.h is an isolated control-plane gate,
+not linked into current observer/replay builds or the launcher witness. It uses
+monotonic generations and requires factory-return proof plus producer stopped,
+consumer stopped, callbacks idle and route reset before rearm. Faults latch.
+session-fixture.c is supplied but has NOT yet been compiled or run here.
+Integration must allocate a fresh generation-bound queue/nonce after quiescence;
+never clear closed/attempted/done flags while a peer or callback can still use
+them. Native route policy and transport timeline must be reset consistently.
+
+Next gates after the boot test: integrate the generation gate outside media
+callbacks, validate route stop/start without disconnect, repeated physical
+attach/detach with the same processes, process replacement and identity guards,
+factory stream handback, bounded resources across many sessions, then package
+the tested native supervisor with install, disable, rollback and uninstall.
+Do not install the present single-session maps trial into an automatic boot loop.
+Concurrent observer v16 guidance/layout work belongs to the original chat.

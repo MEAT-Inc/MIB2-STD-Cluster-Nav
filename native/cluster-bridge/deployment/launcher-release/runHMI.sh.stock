@@ -1,0 +1,391 @@
+#!/bin/sh
+#  =============================================================================
+#  DELPHIDrop Template
+#  =============================================================================
+
+#
+# HMI Version Number
+#
+
+VERSION=H29.319.58
+
+#
+#define the relative system structure
+#
+
+
+
+PRJBASE=/extbin/apps
+
+if [ -d $PRJBASE/HMI ]; then 
+BASE_DIR=$PRJBASE/HMI 
+VWHMIBASE_DIR=$BASE_DIR/hmi 
+fi 
+
+if [ -d $PRJBASE/hmi ]; then 
+BASE_DIR=$PRJBASE/hmi 
+VWHMIBASE_DIR=$BASE_DIR/HMI 
+fi 
+
+
+
+#
+#VW HMI releated path
+#
+
+MIBJAR=$VWHMIBASE_DIR/jar
+MIBLIB=$VWHMIBASE_DIR/lib
+MIBCFG=$VWHMIBASE_DIR/config
+MIBRES=$VWHMIBASE_DIR/res
+
+# Skin related dir
+VWSKIN_DIR=$BASE_DIR/Resources
+VWSKINS=$BASE_DIR/Resources
+
+#
+#define the Delphi releated path
+#
+
+DELPHIJAR=$PRJBASE/jar
+J9_OBJECTSWAPPER_DIR=$DELPHIJAR
+J9_XIPLOADER_DIR=$DELPHIJAR
+
+
+JDSI_CONFIG_DIR=$PRJBASE/cfg
+
+#
+#define the J9 path
+#
+
+export JAVA_HOME=/ifs2
+export JAVA_HOME2=$PRJBASE/J9
+export J9VM="on -Xaps=System  $JAVA_HOME/j9"
+
+# export J9VM=on -Xaps=System $JAVA_HOME/bin/j9 future setting
+
+export J9=$J9VM
+export PATH="$JAVA_HOME:$JAVA_HOME2/bin:$PATH"
+
+
+#
+#define the J9 LIB path
+#
+export LD_LIBRARY_PATH="$JAVA_HOME:$LD_LIBRARY_PATH:$JAVA_HOME2/bin:$JAVA_HOME2/lib:."
+export LD_BOOTLIBRARY_PATH="$LD_LIBRARY_PATH"
+
+J9LIB=$JAVA_HOME2/lib
+J9LIBF=$J9LIB/jclFoundation11
+
+# 
+#############################################################
+# Here begins the VW specific part
+# Script Version 7.10.10 23.06.17_RELEASE_1
+# HMI Variant: STD2Nav_NAR
+# ############################################################
+
+# JVM memory management parameters
+VMOPTIONS="$VMOPTIONS -Xmca256k -Xmco128k -Xmo44m -Xmoi0 -Xmn2048k -Xmx46m"
+
+# JVM use micro JIT
+VMOPTIONS="$VMOPTIONS -Xmjit:code=4096,singlecache"
+
+
+# Defines this build as a development version
+# VMOPTIONS="$VMOPTIONS -Dde.vw.mib.developmentbuild"
+
+# Setup logging for DSITracer
+VMOPTIONS="$VMOPTIONS -DLOG=all=2"
+# VMOPTIONS="$VMOPTIONS -Dde.audi.tghu.traceConfig=$MIBCFG/traceConfig.properties"
+# VMOPTIONS="$VMOPTIONS -Ddsitracer.client.lib=$MIBCFG/DSITracer-clientData.bin"
+
+# Set the HMI internal startup order
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.startup.order=TARGET"
+VMOPTIONS="$VMOPTIONS -noverify"
+VMOPTIONS="$VMOPTIONS -DuseStartupBootExtension"
+# VMOPTIONS="$VMOPTIONS -Dde.vw.mib.startup.flag=DEBUG"
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.main.thread.prio=6"
+
+# use a diffent threshold for the ASL Dispatcher queue before the DSI events are disabled
+VMOPTIONS="$VMOPTIONS -DGenericEvents.queueOverloadThreshold=400"
+
+################# Disable this section for SOP Release #####################
+
+
+
+
+###################### END ##########################################
+
+
+# HMI: Base installation paths of the HMI
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.installation.directory=$VWHMIBASE_DIR/"
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.configuration.directory=$MIBCFG/"
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.resources.directory=$VWSKINS/"
+
+# HMI: Tell the HMI where the bundles.properties file is located
+VMOPTIONS="$VMOPTIONS -Dbundles.properties=$MIBCFG/bundles.properties"
+
+# HMI: Tell the HMI where the threads.properties file is located
+VMOPTIONS="$VMOPTIONS -Dthreads.properties=$MIBCFG/threads.properties"
+
+# HMI: Tell the HMI where the logging.properties file is located
+VMOPTIONS="$VMOPTIONS -Dlogging.properties=$MIBCFG/logging.properties"
+
+# HMI: Tell the HMI where the system.properties file is located
+VMOPTIONS="$VMOPTIONS -Dsystem.properties=$MIBCFG/system.properties"
+
+# HMI: Tell the HMI where the debugprobe.properties file is located
+# VMOPTIONS="$VMOPTIONS -Ddebugprobes.config=$MIBCFG/debugprobes.config"
+
+# HMI: Tell the HMI-Monitor where to find the other config files
+VMOPTIONS="$VMOPTIONS -Ddebugprobes.config.path=$MIBCFG"
+
+# HMI: Tell the HMI where the dsiexclude.properties is located
+VMOPTIONS="$VMOPTIONS -Ddsiexclude.properties=$MIBCFG/dsiexclude.properties"
+
+# Tell the HMI where the diagApi.properties file is located
+# VMOPTIONS="$VMOPTIONS -DdiagApi.properties=$MIBCFG/diagApi.properties"
+
+
+
+# Mountpoint for SD-Cards
+VMOPTIONS="$VMOPTIONS -DConfigurationManager.SdRoots=/sdc1;/sdc2"
+
+# Enable JXE-Loader for zipped view handlers
+VMOPTIONS="$VMOPTIONS -Dviewhandler.format=zip"
+
+
+# Path to the widgetfactory resource file (temporary parameter)
+VMOPTIONS="$VMOPTIONS -Dvw.mib.resources=$MIBRES"
+
+# Generic Event Pooling settings
+VMOPTIONS="$VMOPTIONS -DGenericEvents.activatePooling=true"
+VMOPTIONS="$VMOPTIONS -DGenericEventPool.poolSize=2048"
+VMOPTIONS="$VMOPTIONS -DGenericEventPool.poolPreFill=512"
+
+# Define the Timeout for DSI and the domain
+VMOPTIONS="$VMOPTIONS -DdsiTimeout=20000 -DdomainTimeout=120000"
+
+# Tell the HMI where the .esd files for GEM are located
+VMOPTIONS="$VMOPTIONS -Dde.audi.gem.path.scriptfifo=/etc"
+if [ -f /tmp/production ];
+then
+    VMOPTIONS="$VMOPTIONS -Dde.audi.gem.path.esdfiles=$PRJBASE/GEM_PROD"
+else
+    VMOPTIONS="$VMOPTIONS -Dde.audi.gem.path.esdfiles=$PRJBASE/GEM"
+fi
+
+
+# reference to the supplier implemented location factory
+VMOPTIONS="$VMOPTIONS -Ddsi.adapter.factory.class=delphi.dsi.navigation.util.NavigationFactory"
+
+
+
+# Temporary parameter in order to get the target started (last user mode)
+VMOPTIONS="$VMOPTIONS -DSTARTUP_LUM_READY=true"
+
+# Set ABT initial gesture mask
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.asl.internal.util.SystemKeyUtil.abtMaskSetting=255"
+
+# Enable the logging watchdog
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.log4mib.watchdog.enabled=true"
+
+# The time ASL media waits for the last used medium
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.asl.media.startupListTimer=20000"
+
+
+# Ruleset for all languages
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.format.4asl.rulesets=$MIBCFG/locationformattingrules_en_US.properties"
+
+# Rulesetdirectory
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.format.4asl.rulesets.directory=$MIBCFG"
+
+
+
+# HMI: Reduce the drawing frequency for the debug version
+# VMOPTIONS="$VMOPTIONS -Dde.vw.mib.animation.frequency=20"
+# VMOPTIONS="$VMOPTIONS -Dde.vw.mib.repaint.frequency=20"
+
+
+
+
+# Activation for new DisplayOff function
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.useNewScreenOff=true"
+
+
+
+#  new flag to set the time scale factor for the gesture update 2 method, by default shall be set to 10 
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.asl.internal.system.updateGesture2TimeScaleFactor=10"
+
+#  new flag to set the timeout for the LSC. In the delphi system the default is with 30s to small and must be set to 60s
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.lsc.languagechangetimeout4language=60000"
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.lsc.languagechangetimeouttotal=60000"
+
+# Enable the MIB Logging Protocol
+VMOPTIONS="$VMOPTIONS -Dde.vw.mib.log4mib.mlp.enabled=true"
+
+# Enable Personalization. This means to enable the listerener to get the information for the user profile
+VMOPTIONS="$VMOPTIONS  -Dde.vw.mib.personalization.useDsiUpdates=true"
+
+# Define the default values used by driverdistraction (NHTSA) if no valid coding is available on the target (coding will overwrite the default value)
+VMOPTIONS="$VMOPTIONS  -Dde.vw.mib.driverdistraction.default=ALLOFF"
+# VMOPTIONS="$VMOPTIONS  -Dde.vw.mib.driverdistraction.default=ALLON"
+
+# # Define the  values used by driverdistraction (NHTSA) to overwrite the coding for tests
+# VMOPTIONS="$VMOPTIONS  -Dde.vw.mib.driverdistraction.overwrite=ALLOFF"
+# VMOPTIONS="$VMOPTIONS  -Dde.vw.mib.driverdistraction.overwrite=ALLON"
+# VMOPTIONS="$VMOPTIONS  -Dde.vw.mib.driverdistraction.overwrite=<value>"
+
+
+# # ##################################################################################################################
+# RSE specific settings 
+# # ##################################################################################################################
+
+
+# # ##################################################################################################################
+# SWDL specific settings 
+# # ##################################################################################################################
+
+if [ "$SYSTEM_RUNMODE" == "swdl" ]; then
+   echo "---------------------------------------------
+   echo "Runmode: SWDL was detected"
+   echo "---------------------------------------------
+   VMOPTIONS="$VMOPTIONS -Dde.vw.mib.runmode.is_swdl"
+else
+  VMOPTIONS="$VMOPTIONS -Dde.vw.mib.runmode.is_normal"
+fi
+
+
+
+# #### DEBUG stuff ############################################-
+# Enable Linenumbers in case of exceptions, even if no debugging is enabled
+# VMOPTIONS="$VMOPTIONS -Xlinenumbers"
+
+# Start J9 Micro Analyzer
+# VMOPTIONS="$VMOPTIONS -analyze:ia=192.168.1.2" 
+
+# Set verbosity of the VM
+# VMOPTIONS="$VMOPTIONS -verbose:gc"    
+
+# Enables the MB Java Profiler on the target
+# VMOPTIONS="$VMOPTIONS -Djava.compiler=NONE -Xrunprof:net=192.168.1.2:5115"
+
+# Enable thread dumps in case of fatal errors
+# VMOPTIONS="$VMOPTIONS -DdumpThreadsMs=60000 -DdumpThreadDelayMs=60000
+
+# Enable the heap dump in case of a OOM
+VMOPTIONS="$VMOPTIONS -DheapDumpOnOOM=true"
+
+# JVM parameters for remote debugging, must be added on first position
+# VMOPTIONS="-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=12345 $VMOPTIONS"
+
+# # Set the priority of the logging thread
+# # VMOPTIONS="$VMOPTIONS -Dde.vw.mib.log4mib.thread.prio=9"
+
+# # Disable watchdog for Java-debugging
+# VMOPTIONS="$VMOPTIONS -Dde.vw.mib.threads.disableWatchdog=true"
+
+VMOPTIONS="$VMOPTIONS -DErrorDumpDir=$BASE_DIR/errlog/"
+
+
+
+#  -----------------------------------------------------------------------------
+#   Delphi sw properties:
+#  -----------------------------------------------------------------------------
+
+
+
+VMOPTIONS="$VMOPTIONS -Dcom.delphi.vw.mib.spi.resourcespath=$VWSKIN_DIR"
+VMOPTIONS="$VMOPTIONS -Dcom.delphi.vw.mib.spi.file.basedirectory=$VWSKIN_DIR"
+VMOPTIONS="$VMOPTIONS -Dcom.delphi.vw.mib.spi.file.useobjectswapperjava=false"
+
+#      VMOPTIONS="$VMOPTIONS -Dcom.delphi.vw.mib.spi.debug.log.file=debugspi.log"
+#      VMOPTIONS="$VMOPTIONS -Dcom.delphi.vw.mib.spi.debug.tcpip.port=15001"
+#      VMOPTIONS="$VMOPTIONS -Dcom.delphi.vw.mib.spi.debug.udp.port=15002"
+
+VMOPTIONS="$VMOPTIONS -Dcom.delphi.vw.mib.spi.debug.enable.stdout=true"
+VMOPTIONS="$VMOPTIONS -Dcom.delphi.vw.mib.spi.debug.enable.stderr=true"
+
+#      VMOPTIONS="$VMOPTIONS -DJDSI_AVERAGE_LOGGING=0"
+VMOPTIONS="$VMOPTIONS -DJDSI_THREAD_POOL_TYPE=SIMPLE"
+VMOPTIONS="$VMOPTIONS -DJDSI_THREAD_POOL_TYPE=ONE2ONEMAPPING"
+VMOPTIONS="$VMOPTIONS -DJDSI_THREAD_POOL_NUM_THREADS=3"
+VMOPTIONS="$VMOPTIONS -DJDSI_THREAD_POOL_QUEUE_LIMIT=500"
+VMOPTIONS="$VMOPTIONS -DJDSI_POOL_THREAD_PRIO=7"
+VMOPTIONS="$VMOPTIONS -DJDSI_NOTIFIER_QUEUE_SIZE=300"
+VMOPTIONS="$VMOPTIONS -DJDSI_NOTIFIER_THREAD_PRIO=16"
+VMOPTIONS="$VMOPTIONS -DJDSI_PROCESS_CONFIG_FILE=$JDSI_CONFIG_DIR/apps.txt"
+VMOPTIONS="$VMOPTIONS -DJDSI_DOMAIN_CONFIG_FILE=$JDSI_CONFIG_DIR/domains.txt"
+VMOPTIONS="$VMOPTIONS -DJDSI_DEBUG=0"
+VMOPTIONS="$VMOPTIONS -DJSAL_DEBUG=0"
+
+
+
+#  -----------------------------------------------------------------------------
+#   Build the ClassPath
+#  -----------------------------------------------------------------------------
+
+
+
+
+
+
+BOOTCLASSPATH="/ifs1/delphi.jxe:/ifs1/MIBHMI.jxe:$MIBJAR/TestInterface-H29.319.58.jar:$J9LIB/charconv.zip:$J9LIBF/locale.zip:$MIBJAR/GEM.jar:$MIBLIB/bcprov-jdk14.jar:$J9LIBF/ext/j9jce.jar"
+
+
+
+
+PARAMETERS="$PARAMETERS -jcl:foun11"
+PARAMETERS="$PARAMETERS -Dcom.ibm.oti.vm.bootstrap.library.path=$LD_BOOTLIBRARY_PATH"
+PARAMETERS="$PARAMETERS -Djava.library.path=$LD_LIBRARY_PATH"
+PARAMETERS="$PARAMETERS -Xbootclasspath:$BOOTCLASSPATH"
+
+
+# PARAMETERS="$PARAMETERS -Xbootclasspath:$BOOTCLASSPATH:vwhmi.jxe" # future extend
+# PARAMETERS="$PARAMETERS -jxe vwhmi.jxe" # future extend
+
+
+# echo "============== BCP: =================================="
+# echo "$BOOTCLASSPATH"
+# echo "============== CP: ==================================="
+# 
+echo "$CLASSPATH" 
+# echo "============== VM Options  ============================="
+# 
+echo "$VMOPTIONS" 
+# echo "============== VM Parameter  ============================="
+# echo " $PARAMETERS" 
+# 
+# ensure the ifs is available 
+waitfor /ifs1/MIBHMI.jxe 
+waitfor /ifs1/delphi.jxe 
+
+echo "---call ------------------------------------------------"
+$J9VM  $VMOPTIONS $PARAMETERS de.vw.mib.MIBMain &
+echo "---call ------------------------------------------------"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
