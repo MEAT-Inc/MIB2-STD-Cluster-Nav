@@ -7,6 +7,23 @@ import run_androidauto_observer as old
 from run_observer_smoke import Shell,retrieve
 ROOT=Path(__file__).resolve().parents[1]
 
+def assess_cluster_preflight(report):
+    timing=report.get('timing',{});live=report.get('live_input',{});reader=live.get('reader',{});output=report.get('live_output',{})
+    complete=bool(timing.get('complete'));prefix=False
+    if not complete and report.get('live_cluster_requested') and report.get('live_seconds')==0:
+        from live_cluster_bridge import output_delivered
+        # A full diagnostic buffer is expected in an untimed session. Its captured
+        # prefix is still byte-verified; source/native totals cover forwarding.
+        cap_reached=timing.get('records')==2048 or (live.get('diagnostic_prefix_truncated') and 7340032<=timing.get('raw_bytes_accounted',0)<=8388608)
+        prefix=bool(cap_reached and timing.get('dropped_records',0)>0 and timing.get('codec_records',0)>0 and not timing.get('clock_error') and not timing.get('source_timestamp_regressed')
+            and live.get('verification_scope')=='bounded_diagnostic_prefix' and live.get('owned_live_copy_verified') and live.get('all_copied_access_units_match')
+            and reader.get('version')==3 and reader.get('live_seconds')==0 and reader.get('state')==3 and not reader.get('error') and not reader.get('queue_dropped')
+            and output.get('profile_version')==6 and output.get('live_seconds')==0 and output.get('total_input_frames')==reader.get('total_input_frames') and output.get('total_input_bytes')==reader.get('total_input_bytes')
+            and output_delivered(output,report.get('observed_pid'),live.get('frames',0)))
+    geometry=bool(report.get('native_before',{}).get('active_geometry_observed') and report.get('navigation_identity_unchanged'))
+    return dict(passed=bool((complete or prefix) and geometry),timing_verified=bool(complete or prefix),timing_scope='complete_captured_window' if complete else 'bounded_diagnostic_prefix' if prefix else 'unverified',expected_recording_limit=prefix,native_geometry_verified=geometry)
+
+
 def wait_for_capture_ready(read_log,started,seconds,limit=25):
     expected=f'LAUNCH_READY capture_seconds={seconds}'.encode()
     while time.monotonic()-started<limit:
@@ -336,7 +353,8 @@ def main(argv=None):
             report['navigation_pid_unchanged']=current_nav==before_nav['pid']
             report['native_after']=snapshot_native('after',current_nav)
             report['navigation_identity_unchanged']=report['navigation_pid_unchanged'] and report['native_after']['start_time']==before_nav['start_time'] and report['native_after']['parent']==before_nav['parent']
-            report['cluster_preflight_passed']=bool(report['timing']['complete'] and before_nav['active_geometry_observed'] and report['navigation_identity_unchanged'])
+            report['cluster_preflight']=assess_cluster_preflight(report)
+            report['cluster_preflight_passed']=report['cluster_preflight']['passed']
         (folder/'observer-decoded.json').write_text(json.dumps(report.pop('decoded_log'),indent=2))
     except (OSError,EOFError,ValueError,RuntimeError,KeyError,ftplib.Error) as exc:report['error']=(type(exc).__name__+': '+str(exc)).replace(password,'[redacted]') if password else str(exc)
     finally:
@@ -366,7 +384,11 @@ def main(argv=None):
             report['actions']=history+shell.actions;shell.close()
         report['operator_cleanup_confirmed']=authorized;persist()
     ok=report['controller_trial_passed'] and (not report.get('phone_capture_requested') or report.get('phone_capture_completed',False)) and (not a.factory_probe or report.get('factory_probe_passed',False)) and (not a.secondary_stream or report.get('secondary_trial_passed',False))
-    if a.cluster_preflight:ok=ok and report.get('cluster_preflight_passed',False)
+    if a.cluster_preflight:
+        ok=ok and report.get('cluster_preflight_passed',False)
+        preflight=report.get('cluster_preflight',{})
+        print('Preflight timing: '+str(preflight.get('timing_scope','unverified'))+'; native geometry verified='+str(preflight.get('native_geometry_verified',False)))
+        if preflight.get('expected_recording_limit'):print('Diagnostic recording reached its cap; the captured prefix and continuing live-stream counters are verified.')
     if a.keyframe_probe:
         ok=bool(ok and 'error' not in report and report.get('live_input',{}).get('owned_live_copy_verified',False))
         print('Live frame copy: '+('VERIFIED' if report.get('live_input',{}).get('owned_live_copy_verified') else 'NOT VERIFIED; return this collection for review.'))

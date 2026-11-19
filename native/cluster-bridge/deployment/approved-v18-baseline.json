@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "approved_release": 18,
+  "approved_by": "user",
+  "approval_date": "2026-11-19",
+  "approval": "Everything worked correctly, exit code was successful, Google logo fully visible. Use V18 as installed-version baseline.",
+  "result_folder": "delphi-dump/_disconnect_observer_20261119_180451_9ea6d8d4",
+  "checks": {
+    "controller_trial_passed": true,
+    "secondary_trial_passed": true,
+    "cluster_preflight_passed": true,
+    "cluster_display_confirmed": true,
+    "completed_restored": true,
+    "process_restoration_verified": true,
+    "automatic_factory_return_verified": true,
+    "disconnect_restoration_verified": true
+  },
+  "cleanup_pending": false,
+  "zero_transport_errors": true,
+  "total_input_frames": 2758,
+  "layout": {
+    "coded_dimensions": [
+      800,
+      480
+    ],
+    "density": 140,
+    "content_insets": {
+      "top": 8,
+      "bottom": 96,
+      "left": 120,
+      "right": 120
+    },
+    "stable_content_insets": {
+      "top": 0,
+      "bottom": 64,
+      "left": 120,
+      "right": 120
+    },
+    "video_margins": {
+      "width": 0,
+      "height": 0
+    }
+  },
+  "steady_added_delay_ms": 250,
+  "bundle": {
+    "path": "native/cluster-bridge/live-output/live-cluster-v18-laptop.zip",
+    "sha256": "306a1a3f87449e4e5848f5f3dbf086771af31b6e0afc22dbec42faeabc41ddf8"
+  },
+  "assets": {
+    "native/cluster-bridge/live-output/release/manifest.json": {
+      "manifest_sha256": "f196086390f8d691877cfec3bfe91e496fbf54610f9536ea073d5f7adc51a71e",
+      "files": {
+        "libdelphi_cluster.so": {
+          "bytes": 45231,
+          "sha256": "6547f87188f03bcfa5d5d309328db45e81a7829f01db25a5b6eacf437532d6ea"
+        },
+        "live_queue_prepare": {
+          "bytes": 12826,
+          "sha256": "27a4e51adab8182eb3f723d84dae47c4c7c3d17b36f0e62272b11e59f244107b"
+        },
+        "nav_launch": {
+          "bytes": 27513,
+          "sha256": "4de3b0946b984831549466059ef3842a1580f6dd9b4be62749b4a084e7d921df"
+        },
+        "nav_cycle": {
+          "bytes": 21378,
+          "sha256": "64bf259a7b6a783fb9563aaaedd02cb29a9eaacd39a0eebb9f01c4abdc1625cf"
+        },
+        "replay_libc_check": {
+          "bytes": 9101,
+          "sha256": "4c651d2d275ce4c945478f7197bb9e9a583f5fa044c3dcf29cd913d2a6b47ed3"
+        },
+        "replay.bin": {
+          "bytes": 612,
+          "sha256": "4eb3d801be54737d367b4eeaa0ad06d5522541c3947c8cff444360907d4d4869"
+        }
+      },
+      "scripts_sha256": {
+        "cluster_preflight.py": "31e9682f954dc6ce8197f5b154788b37a6ea3e493c1f20532956a8f01381b704",
+        "review_route_policy.py": "4f27f0ed1b9891a28646c8dc711357d9c8a049ca2cddb8404e55d55d095bce4e",
+        "run_androidauto_observer.py": "1121513c5a37f7db75b1a4aef64568f4e83b26db905c2e22bc9fef173ef1f84f",
+        "live_cluster_bridge.py": "9c7c8ac51dddd763bd129ec014c522c90896dc833ca93cfac43be1ae17d664a3",
+        "run_cluster_replay.py": "4c981ace2919eb32c5c243fdc04b786a50ab8589dc70c35ed8e8d48601b40586",
+        "decode_delphi_observer.py": "beb7d8e74a58aaffd45769b614ed85e11bf38d647206ab4d631b2266857599d9",
+        "finish_live_session.py": "113c9ac44d6f38ceb84f3b17a38a132e9a92221da6a6c383d66ce3cbded3a617",
+        "review_live_input.py": "b04eca774c423f72853e0bec873fc5529a9f6a2393ad8c9fe63f6084c779c106",
+        "secondary_timing.py": "8445d51d1572dbedaef326c75b26fdd2c7c2bd391f0dfdec80b6c95ae589879a",
+        "review_secondary_keyframes.py": "4d4268bdfb3317ee523f14f430f7f52596f85e3bd7eed4ff88c0e630b154c24d",
+        "radio_ram.py": "6bf2c851ae60bf624d3e85f085a54e386572f6c2ce2d317124fd6960c47a1f9b",
+        "project_console.py": "1693776432be4b45937221882f281f24c6a30701877ea72e921735bb85ce7c5f",
+        "run_observer_smoke.py": "57ea7e59402fc1002a05d5bf1d2fd065d6c34f160206f3cb6693d8df5a7e3888",
+        "delphi_inventory.py": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518",
+        "run_disconnected_observer.py": "168b020524a1291660c862081283568a547e634ea2cf7d5bca299413bc1950c0",
+        "decode_androidauto_display.py": "b7fee6d14d190f2e99d18f9a4a1fcca6f55cef7fd1c2aac5d0e7aa5b09da51a7",
+        "live_run_options.py": "a530d45404a86c3388dd1d55aed2ffd6517ea3f9e45c9e0377857c832cb23d09"
+      }
+    },
+    "native/cluster-bridge/keyframe-probe/release/manifest.json": {
+      "manifest_sha256": "81c6502ba3a884159935ea5df7dad22393389394600672d6d3fcb190a7694ca2",
+      "files": {
+        "libdelphi_observer.so": {
+          "bytes": 54570,
+          "sha256": "f1eb50f9dcc9f499b3cfc82888266a8d206229098d3f78207335c4d614d635e0"
+        },
+        "nav_snapshot": {
+          "bytes": 11518,
+          "sha256": "fcb91d686f51e800f18024a227e719e6d84e0c94851d733025cc6f4e7866ed5d"
+        },
+        "live_capture": {
+          "bytes": 18423,
+          "sha256": "b9a060d60c8c194610e32c5dc6e62cbd2b46680b7ae085c3c396fd3058f46a5c"
+        },
+        "observer_launch": {
+          "bytes": 20939,
+          "sha256": "980107c5d5de2558375fd5e51583e266bfaafc9ed510e70cd581af7e5d8419ae"
+        }
+      },
+      "scripts_sha256": {
+        "secondary_timing.py": "8445d51d1572dbedaef326c75b26fdd2c7c2bd391f0dfdec80b6c95ae589879a",
+        "cluster_preflight.py": "31e9682f954dc6ce8197f5b154788b37a6ea3e493c1f20532956a8f01381b704",
+        "run_disconnected_observer.py": "168b020524a1291660c862081283568a547e634ea2cf7d5bca299413bc1950c0",
+        "run_androidauto_observer.py": "1121513c5a37f7db75b1a4aef64568f4e83b26db905c2e22bc9fef173ef1f84f",
+        "run_observer_smoke.py": "57ea7e59402fc1002a05d5bf1d2fd065d6c34f160206f3cb6693d8df5a7e3888",
+        "delphi_inventory.py": "3d3bf4ac22de7a76f88abcec815b7ae996b14e08dc6d3798c36eb1fcf2a55518",
+        "decode_delphi_observer.py": "beb7d8e74a58aaffd45769b614ed85e11bf38d647206ab4d631b2266857599d9",
+        "review_secondary_keyframes.py": "4d4268bdfb3317ee523f14f430f7f52596f85e3bd7eed4ff88c0e630b154c24d",
+        "review_live_input.py": "b04eca774c423f72853e0bec873fc5529a9f6a2393ad8c9fe63f6084c779c106",
+        "project_console.py": "1693776432be4b45937221882f281f24c6a30701877ea72e921735bb85ce7c5f",
+        "decode_androidauto_display.py": "b7fee6d14d190f2e99d18f9a4a1fcca6f55cef7fd1c2aac5d0e7aa5b09da51a7",
+        "live_run_options.py": "a530d45404a86c3388dd1d55aed2ffd6517ea3f9e45c9e0377857c832cb23d09"
+      }
+    }
+  },
+  "installation_requirements": [
+    "Use these approved rendering parameters and behavior for the installed version.",
+    "Retain corrected projected-navigation-focus acknowledgements, factory handback, and bounded-prefix result handling.",
+    "Production lifecycle must start with the radio and support repeated phone connections and disconnections without manual cleanup.",
+    "Continuous production video must not inherit the test-mode 30-second cutoff.",
+    "This approval records a working baseline; it does not claim that persistent installation or automatic reconnect is already complete."
+  ]
+}

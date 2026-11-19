@@ -2,7 +2,7 @@
 
 Development and reverse engineering toward live Android Auto navigation in the instrument cluster of a Delphi MIB2 infotainment system.
 
-**Status - November 19, 2026:** live Google Maps are user-confirmed and updating in the physical cluster. Recorded playback, owned live-frame transfer, native MPEG-TS delivery, and explicit cleanup back to working factory maps are demonstrated. Current work refines latency/layout, makes disconnect return consistent, and prepares repeatable startup/session handling. The current package remains a RAM-based single-session trial; persistent installation and automatic reconnect are not implemented.
+**Status - November 19, 2026:** live Google Maps are user-confirmed and updating in the physical cluster. The latest v17 trial also verified automatic return to factory maps and successful explicit cleanup. The v18 inset/layout changes are user-verified. Current work focuses on route/session reliability and deployment. Extended live forwarding works beyond diagnostic recording limits. Persistent installation and automatic phone reconnect remain unimplemented; the package is still a temporary single-session trial.
 
 ## Target system
 
@@ -27,8 +27,9 @@ Native offsets, object layouts, and fingerprints are specific to this build. Lap
 | Live-frame ownership | The bounded owned queue copies phone frames without retaining borrowed buffers. The input-only hardware review verified byte-identical copies and no queue drops. | Long-running overflow, resynchronization, and reconnect behavior need broader coverage. |
 | Visible live maps | The November 18 v7 trial confirmed visible, updating maps: 436 source frames emitted, three bootstrap frames, 16,596 delivered packets, and no reported drops/transport errors. | That first success did not verify cluster factory-map return. Later trials address return handling. |
 | Latency | The startup schedule retains a one-second initialization buffer, then catches up toward 250 ms steady buffering. Offboard v12 review preserves all 539 original frames/pixels and timestamp order without reencoding. | Configured buffering is not a measured end-to-end display-latency guarantee. |
-| Extended live trial | November 19 v15 emitted 2,703 source frames and 129,465 packets / 24,339,420 bytes. Diagnostic recording stopped at its bound while forwarding continued. Live maps were confirmed. | Single-session operation still requires end-of-test cleanup; automatic reconnect is not implemented. |
-| Factory return | Explicit cleanup in the latest trial verified stock process restoration and working radio/cluster maps. A prior November 18 trial also recorded automatic return verified. | Latest v15 recorded automatic return unverified, so disconnect return is not consistently complete. |
+| Extended live trial | Latest v17 emitted 2,755 source frames and 122,224 packets / 22,978,112 bytes. Live maps were confirmed; forwarding continued beyond the bounded diagnostic prefix. | End-of-test cleanup is still required; automatic reconnect is not implemented. |
+| Factory return | Latest v17 verified automatic factory-map return, explicit cleanup, stock restoration, and working radio/cluster maps. Return error was zero. | Repeatability across longer sessions, reconnects, and failure paths still needs coverage. |
+| Layout and focus | V16 corrected the projected-focus acknowledgement. The v18 inset changes are user-verified, including the 96-pixel content bottom inset while retaining full 800x480/density 140. | Route-focus behavior and layout compatibility across phones/apps still need broader coverage. |
 | Startup/deployment | Read-only startup preflight captured the boot script, process-manager configuration, mounts, paths, and backing storage. | Persistent boot integration, repeatable session reset, installer, rollback, and uninstall remain future work. |
 
 CarPlay has initial screen-registration/H.264 analysis, but additional CarPlay display support is not established. Current implementation work centers on Android Auto.
@@ -47,11 +48,17 @@ Native transport ownership, timestamp continuity, decoder startup/bootstrap, and
 
 The [v12 startup review](delphi-analysis/cluster-bridge/20261118-v12-latency-review/startup-review.json) verifies original frame order, pixels, and scheduled timestamps while reducing the steady buffer to 250 ms after startup/catchup. The initial delay is still 1,000 ms, and the catchup schedule reaches the reduced delay after about four seconds in that offboard review.
 
-Current v15 layout uses the full 800x480 map, density 140, 120-pixel horizontal UI insets, a 72-pixel content bottom inset, and a separate 64-pixel stable UI bottom inset. Turn-card positioning is phone-controlled and remains a visual refinement task; the inset values do not guarantee a particular card location.
+Current v18 layout retains full 800x480 video, density 140, 120-pixel left/right content insets, top inset 8, and stable top/bottom insets of 0/64. Its content bottom inset increases from 72 to 96 pixels. The user confirms that these inset changes are verified on the unit. This confirmation supplements the latest saved v17 capture; it does not imply that a separate v18 evidence folder has been reviewed. Turn-card, car, and street positioning remain phone-controlled.
 
-The latest collection is `delphi-dump/_disconnect_observer_20261119_132442_fb46ba95/`. It records 2,705 input frames, 2,703 emitted source frames, 22,238,329 total input bytes, and 24,339,420 output transport bytes. No sink/timeline error or reported queue drop is recorded. These total-forwarding counters are distinct from the shorter diagnostic H.264 prefix: forwarding continues after recording limits are reached.
+The latest completed collection is `delphi-dump/_disconnect_observer_20261119_180451_9ea6d8d4/` (v17). It records 2,758 total input frames, 2,755 emitted source frames, 20,899,487 total input bytes, and 22,978,112 output transport bytes across 122,224 packets. It reports no queue drops, sink/timeline error, bad callers, or startup overflow. The shorter diagnostic prefix is deliberately bounded and does not represent the full forwarding run.
 
-The same summary records `live_maps_seen=true`, verified cleanup/restoration, and working factory maps in both selected locations, but `automatic_factory_return_verified=false`. Factory return recorded an internal error value of 71; its cause needs review. Explicit cleanup succeeded. A prior collection, `_disconnect_observer_20261118_213635_2455dc3c`, records automatic return verified, so the latest result should not be generalized into either universal success or universal failure.
+This collection records `live_maps_seen=true`, `automatic_factory_return_verified=true`, and `disconnect_restoration_verified=true`, with working radio and cluster factory maps after cleanup. The factory-return report accepted 331,827 native packets and recorded error zero. These results advance beyond v15, where explicit cleanup worked but automatic return was unverified.
+
+### Route focus and diagnostic reporting
+
+The [v16 focus review](delphi-analysis/cluster-bridge/20261119-v16-review/route-focus-evidence.txt) identifies a concrete acknowledgement defect: v15 requested native focus while the phone requested projected focus. V16 corrected the helper argument. Whether that defect caused a particular phone route to end was not established; route initiation, sustained guidance/audio, cancellation, and unplug handling remain relevant acceptance checks.
+
+V17 corrected diagnostic-cap reporting so expected recording saturation is distinguished from live forwarding failure. Diagnostic capture stays bounded while video and disconnect monitoring continue. The latest run records `cluster_preflight_passed=true` despite its intentionally truncated diagnostic prefix. This is a reporting correction, not removal of the recording limit.
 
 ### Deployment readiness
 
@@ -126,9 +133,10 @@ Release manifests bind exact payload/source hashes. Rebuild the matching package
 
 ## Next steps
 
-1. Make automatic return to the factory map reliable on physical phone disconnect, including presentation-policy release and native-stream handoff; review the latest return error before claiming completion.
-2. Refine and verify map/turn-card layout and measure end-to-end latency beyond the configured buffer values.
+1. Preserve the verified v18 layout while validating longer-session behavior, route changes, and additional phone/app combinations.
+2. Confirm sustained route initiation/guidance/audio and repeat automatic factory-map return across longer runs and cancellation/disconnect cases; measure display latency beyond configured buffer values.
 3. Implement repeatable attach/detach/session reset and startup supervision, using the captured launch chain instead of assuming a boot hook.
 4. Package version-checked persistent deployment with backups, rollback, and uninstall only after repeated sessions and factory restoration are validated.
 
-Visible live navigation is demonstrated. Reliable automatic return, repeated-session operation, and persistent installation remain the main unfinished milestones.
+Visible live navigation, automatic factory return, and the v18 inset changes are verified. Repeatable reconnect/session handling and persistent deployment remain unfinished.
+

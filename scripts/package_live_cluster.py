@@ -30,8 +30,8 @@ def main():
  files['replay_libc_check']=b
  files['replay.bin']=(replay/'hook-replay.bin').read_bytes()
  m.pop('replay',None)
- m.update(kind='native_cluster_live_output',route_presentation_trial=True,route_presentation_hold_seconds=40,route_policy_report_version=4,route_disconnect_restore=True,route_disconnect_event=0x173e,route_started_event=0x173d,route_native_projected=1,route_native_native=2,route_presentation_extra_aa_threads_when_live=1,phone_must_stay_unplugged=False,phone_unplugged_before_launch_and_cleanup=True,cluster_display_proven=False,video_mode='live_original_baseline_no_reencode',live_report_version=6,extended_live_supported=True,automatic_factory_return_required=True,release_version=16,live_reader_report_version=3,bounded_input_closed_before_drain=True,startup_delay_ms=250,startup_initial_delay_ms=1000,startup_catchup_pace_numerator=4,startup_catchup_pace_denominator=5,startup_bootstrap_frames=3,startup_buffer_bytes=4194304,live_output_capture_limit=2097152,recorded_video_available=False,live_phone_navigation=True,on_car_tested=False,live_frame_wait_seconds=180,live_capture_seconds=30,timeline_mode='continue_live_clock_and_cc',activation_mode='native_clock_then_first_verified_phone_frame',single_native_descriptor=True,output_packetizer='native_bounded_live_mux',new_nav_threads=1)
- m['layout_trial']=dict(video_service_id=9,width_margin_total=0,height_margin_total=0,left_right_pixels=0,content_rectangle=[0,0,800,480],coded_dimensions=[800,480],density=140,ui_config_field=11,content_insets=dict(top=8,bottom=72,left=120,right=120),stable_content_insets=dict(top=0,bottom=64,left=120,right=120),ui_content_rectangle=[120,8,680,408],stable_ui_rectangle=[120,0,680,416],stable_ui_anchor_preserved=True,content_center_y=208,content_center_matches_bottom64=True,turn_card_position_on_car_verified=False,full_frame_map_requested=True,phone_honors_ui_insets_unverified=False,bottom_inset_on_car_verified=False,layout_on_car_verified=False,primary_configuration_unchanged=True,reencoded=False)
+ m.update(kind='native_cluster_live_output',route_presentation_trial=True,route_presentation_hold_seconds=40,route_policy_report_version=4,route_disconnect_restore=True,route_disconnect_event=0x173e,route_started_event=0x173d,route_native_projected=1,route_native_native=2,route_presentation_extra_aa_threads_when_live=1,phone_must_stay_unplugged=False,phone_unplugged_before_launch_and_cleanup=True,cluster_display_proven=False,video_mode='live_original_baseline_no_reencode',live_report_version=6,extended_live_supported=True,automatic_factory_return_required=True,release_version=18,live_reader_report_version=3,bounded_input_closed_before_drain=True,startup_delay_ms=250,startup_initial_delay_ms=1000,startup_catchup_pace_numerator=4,startup_catchup_pace_denominator=5,startup_bootstrap_frames=3,startup_buffer_bytes=4194304,live_output_capture_limit=2097152,recorded_video_available=False,live_phone_navigation=True,on_car_tested=False,live_frame_wait_seconds=180,live_capture_seconds=30,timeline_mode='continue_live_clock_and_cc',activation_mode='native_clock_then_first_verified_phone_frame',single_native_descriptor=True,output_packetizer='native_bounded_live_mux',new_nav_threads=1)
+ m['layout_trial']=dict(video_service_id=9,width_margin_total=0,height_margin_total=0,left_right_pixels=0,content_rectangle=[0,0,800,480],coded_dimensions=[800,480],density=140,ui_config_field=11,content_insets=dict(top=8,bottom=96,left=120,right=120),stable_content_insets=dict(top=0,bottom=64,left=120,right=120),ui_content_rectangle=[120,8,680,384],stable_ui_rectangle=[120,0,680,416],stable_ui_anchor_preserved=True,content_center_y=196,content_center_matches_bottom64=False,turn_card_position_on_car_verified=False,full_frame_map_requested=True,phone_honors_ui_insets_unverified=False,bottom_inset_on_car_verified=False,layout_on_car_verified=False,primary_configuration_unchanged=True,reencoded=False)
  m['source_sha256']={n:sha((ROOT/n).read_bytes()) for n in m.get('source_sha256',{})}
  m['files']={n:dict(bytes=len(b),sha256=sha(b)) for n,b in files.items()}
  m.setdefault('source_sha256',{}).update({p.relative_to(ROOT).as_posix():sha(p.read_bytes()) for folder in (ROOT/'native/cluster-bridge/live',replay,ROOT/'native/cluster-bridge/nav-control',ROOT/'native/cluster-bridge/nav-launch',ROOT/'native/cluster-bridge/layout-margin') for p in folder.iterdir() if p.suffix in ('.c','.h','.sh','.S','.py')})
@@ -43,7 +43,7 @@ def main():
  if not am.get('route_presentation_trial') or am.get('route_presentation_hold_seconds')!=40 or am.get('route_native_projected')!=1 or am.get('route_native_native')!=2 or am.get('route_policy_report_version')!=4 or not am.get('route_disconnect_restore'):raise ValueError('Rebuild the QNX-gated presentation-capable AA release first')
  for name,e in am['files'].items():
   if sha((aa/name).read_bytes())!=e['sha256']:raise ValueError('Validated AA input payload changed '+name)
- for test in ('test_extended_live.py','test_live_input.py','test_disconnected_observer.py','test_live_cluster_bridge.py','test_radio_ram.py','test_finish_live_session.py','test_route_policy.py'):
+ for test in ('test_preflight_limits.py','test_extended_live.py','test_live_input.py','test_disconnected_observer.py','test_live_cluster_bridge.py','test_radio_ram.py','test_finish_live_session.py','test_route_policy.py'):
   status('Running '+test);v=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/tests'/test)],capture_output=True,text=True)
   if v.returncode:raise ValueError(v.stdout[-2000:]+v.stderr[-10000:])
  names=set(am['scripts_sha256'])|{'live_cluster_bridge.py','run_cluster_replay.py','radio_ram.py'}
@@ -63,14 +63,13 @@ def main():
  from radio_ram import build_cleanup_plan
  cleanup=build_cleanup_plan(ROOT);(out/'cleanup-plan.json').write_text(json.dumps(cleanup,indent=2))
  m['cleanup_plan_sha256']=sha((out/'cleanup-plan.json').read_bytes());(out/'manifest.json').write_text(json.dumps(m,indent=2))
- readme="""LIVE ANDROID AUTO CLUSTER TRIAL v16
+ readme="""LIVE ANDROID AUTO CLUSTER TRIAL v18
 ===================================
-Full800x480 map, density140,120px horizontal UI insets. Map/content bottom inset
-is72px; the separate stable UI bottom inset stays64px to preserve the previous
-UI anchor. Content top8/bottom72 restores the old content center at y208.
-Actual turn-card placement still needs the car test. Projected route focus is
-now acknowledged as projected, avoiding the previous native-focus notification.
-250ms steady buffering and the proven startup/catchup sequence are retained.
+Bottom content inset is now96px (previously72). Top remains8px, left/right120,
+stable top0/bottom64, full800x480 video and density140. The content midpoint
+moves from208 to196px. Directions bubble and car/street positions may move.
+This trial checks whether the Google Maps logo now clears the bottom border.
+The v17 diagnostic-cap reporting correction and250ms steady buffering remain.
 
 Extract the ENTIRE ZIP into a fresh folder. Park, ignition on, working factory
 maps, phone unplugged and Ethernet connected. Configure/launch while parked.
@@ -85,11 +84,10 @@ video forwarding and source/disconnect monitoring continue after recording stops
 After your test, park, unplug phone, reconnect Ethernet and finish the existing
 PHONE REMOVED cleanup. Do not operate the laptop while driving. Leave the map
 location button untouched until answering the automatic-return question.
-Start a route from the RADIO first and keep guidance running for at least60
-seconds. Confirm Loading clears and guidance does not stop after30 seconds.
-Then stop it and start a route from the PHONE; check the same behavior, bubble
-position and bottom marker clearance. Finally unplug the phone and confirm
-automatic factory-map return before toggling map location.
+Check the complete Google Maps logo on the idle map. Also check the car,
+street name and directions bubble during guidance. Run for about3 minutes,
+then disconnect and finish normal cleanup. Expected recording saturation
+should no longer fail preflight.
 Return the complete delphi-dump/_disconnect_observer_* folder.
 
 This remains a single phone-session temporary trial with explicit end-of-test cleanup.
@@ -100,7 +98,7 @@ If cleanup is pending, resume with this SAME bundle and the saved result folder;
 the chosen live limit is saved and cannot be changed during resume.
 """
  (out/'README.txt').write_text(readme)
- bundle=base/'live-cluster-v16-laptop.zip'
+ bundle=base/'live-cluster-v18-laptop.zip'
  with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
   z.writestr('README.txt',readme)
   for n in sorted(names):z.write(ROOT/'scripts'/n,'scripts/'+n)
@@ -115,7 +113,7 @@ the chosen live limit is saved and cannot be changed during resume.
   code="import sys,json;from pathlib import Path;sys.path.insert(0,str(Path(sys.argv[1])/'scripts'));import live_cluster_bridge;import run_disconnected_observer as m;print(len(m.package(Path(sys.argv[1])/'native/cluster-bridge/keyframe-probe/release',phone=True,factory=True,secondary=True,cluster=True,probe=True)))"
   v=subprocess.run([sys.executable,'-S','-B','-c',code,str(p)],cwd=p,capture_output=True,text=True)
   if v.returncode or v.stdout.strip()!='4':raise ValueError('Portable live imports/assets '+v.stderr)
- review=dict(bundle=bundle.relative_to(ROOT).as_posix(),bytes=bundle.stat().st_size,sha256=sha(bundle.read_bytes()),qnx_live_sink_passed=True,qnx_deadline_drain_passed=True,workflow_tests_passed=True,portable_plan_passed=True,horizontal_layout_preserved=True,added_top_ui_inset=8,added_bottom_ui_inset=72,stable_bottom_ui_inset=64,steady_added_delay_ms=250,on_car_tested=False)
+ review=dict(bundle=bundle.relative_to(ROOT).as_posix(),bytes=bundle.stat().st_size,sha256=sha(bundle.read_bytes()),qnx_live_sink_passed=True,qnx_deadline_drain_passed=True,workflow_tests_passed=True,portable_plan_passed=True,horizontal_layout_preserved=True,layout_unchanged_from_v16=False,logo_adjustment_applied=True,added_top_ui_inset=8,added_bottom_ui_inset=96,stable_bottom_ui_inset=64,steady_added_delay_ms=250,on_car_tested=False)
  (base/'release-review.json').write_text(json.dumps(review,indent=2));print(json.dumps(review,indent=2))
 if __name__=='__main__':
  with console_session(__file__,__doc__):main()

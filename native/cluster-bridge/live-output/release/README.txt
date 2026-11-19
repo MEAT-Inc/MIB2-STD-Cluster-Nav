@@ -1,11 +1,10 @@
-LIVE ANDROID AUTO CLUSTER TRIAL v16
+LIVE ANDROID AUTO CLUSTER TRIAL v18
 ===================================
-Full800x480 map, density140,120px horizontal UI insets. Map/content bottom inset
-is72px; the separate stable UI bottom inset stays64px to preserve the previous
-UI anchor. Content top8/bottom72 restores the old content center at y208.
-Actual turn-card placement still needs the car test. Projected route focus is
-now acknowledged as projected, avoiding the previous native-focus notification.
-250ms steady buffering and the proven startup/catchup sequence are retained.
+Bottom content inset is now96px (previously72). Top remains8px, left/right120,
+stable top0/bottom64, full800x480 video and density140. The content midpoint
+moves from208 to196px. Directions bubble and car/street positions may move.
+This trial checks whether the Google Maps logo now clears the bottom border.
+The v17 diagnostic-cap reporting correction and250ms steady buffering remain.
 
 Extract the ENTIRE ZIP into a fresh folder. Park, ignition on, working factory
 maps, phone unplugged and Ethernet connected. Configure/launch while parked.
@@ -20,11 +19,10 @@ video forwarding and source/disconnect monitoring continue after recording stops
 After your test, park, unplug phone, reconnect Ethernet and finish the existing
 PHONE REMOVED cleanup. Do not operate the laptop while driving. Leave the map
 location button untouched until answering the automatic-return question.
-Start a route from the RADIO first and keep guidance running for at least60
-seconds. Confirm Loading clears and guidance does not stop after30 seconds.
-Then stop it and start a route from the PHONE; check the same behavior, bubble
-position and bottom marker clearance. Finally unplug the phone and confirm
-automatic factory-map return before toggling map location.
+Check the complete Google Maps logo on the idle map. Also check the car,
+street name and directions bubble during guidance. Run for about3 minutes,
+then disconnect and finish normal cleanup. Expected recording saturation
+should no longer fail preflight.
 Return the complete delphi-dump/_disconnect_observer_* folder.
 
 This remains a single phone-session temporary trial with explicit end-of-test cleanup.
