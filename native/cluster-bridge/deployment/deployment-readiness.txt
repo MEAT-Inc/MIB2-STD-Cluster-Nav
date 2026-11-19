@@ -8,4 +8,4 @@ The extended maps bundle removes active video time limits when explicitly reques
 
 Next deployment gates: validate the real launch chain, implement repeatable attach/detach/session reset, verify process replacement and radio startup, then package a version-checked install with backups, rollback and uninstall. Keep diagnostic buffers bounded and preserve factory restoration.
 
-UI candidate: content bottom72, stable bottom64. This holds stable UI metadata constant; actual Google Maps turn-card placement must be checked on the phone.
+Approved V18 rendering baseline: content top8/bottom96/left120/right120; stable top0/bottom64/left120/right120; full800x480, density140, zero encoded-video margins. Confirmed on car. Use approved-v18-baseline.json for the installed version.
