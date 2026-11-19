@@ -1,5 +1,5 @@
 {
-  "bundle": ".\\native\\cluster-bridge\\deployment\\startup-launcher-v1-laptop.zip",
+  "bundle": "C:\\Users\\zwals\\Source\\MIB2 Cluster Nav\\native\\cluster-bridge\\deployment\\startup-launcher-v1-laptop.zip",
   "bytes": 26540,
   "sha256": "7181f63f9f5d54949aecd630494419af1fdd49195fee65cda1a80ea190b0197f",
   "portable_plans_passed": true,

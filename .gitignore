@@ -34,10 +34,3 @@ scripts/__pycache__/
 
 # Recorded Android Auto clip packaged for replay (local only)
 /native/cluster-bridge/replay/release/replay.bin
-
-# Generated logs and identifying device/phone captures stay local
-*.log
-*.log.*
-/delphi-analysis/control-runtime/captured-discovery-*.bin
-/delphi-analysis/control-runtime/*-aa-events.txt
-/native/secondary-display/build/
